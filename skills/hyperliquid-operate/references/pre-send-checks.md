@@ -2,7 +2,7 @@
 
 Run every item immediately before requesting final approval. Record PASS or the exact mismatch.
 
-1. Ticket ID, immutable action digest, risk sign-off, user approval phrase, and expiry refer to the same revision.
+1. Ticket ID, immutable action digest, risk sign-off, requested approval phrase, and expiry refer to the same revision.
 2. Network and REST endpoint equal the ticket. Mainnet is never inferred.
 3. User or subaccount address equals the ticket. Signer is an approved API wallet for that account, not the account key.
 4. Account abstraction mode is unchanged. Read every balance and margin surface required by that mode.

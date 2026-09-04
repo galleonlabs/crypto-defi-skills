@@ -33,7 +33,7 @@ It does not cover deposits, withdrawals, bridging, token sends, balance transfer
 3. Validate the action and recovery path with [order safety](references/order-safety.md). Record fresh client order IDs, nonce owner, and expiry before the send.
 4. Simulate or dry-run when the trusted tool supports it. A successful simulation is preflight only.
 5. Show the final ticket and obtain exact approval by ticket ID in a new user turn.
-6. Follow [the action state machine](references/action-state-machine.md). Send exactly once with a finite client timeout. Capture the request digest, send time, and raw response without secrets.
+6. Verify the approval line matches the unchanged ticket. Follow [the action state machine](references/action-state-machine.md). Send exactly once with a finite client timeout. Capture the request digest, send time, and raw response without secrets.
 7. Reconcile order status by client order ID or order ID, detailed open orders, fills since send, positions, balances, leverage, and margin. An accepted response alone is not proof.
 8. If anything disagrees or the result is unknown, run [incident response](references/incident-response.md). Do not improvise a second write.
 9. Report the request digest, response class, order IDs, fill amounts and prices, fees, funding where relevant, resulting exposure, protection, skipped work, and unresolved uncertainty.
