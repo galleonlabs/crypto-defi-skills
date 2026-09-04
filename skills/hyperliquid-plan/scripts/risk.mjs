@@ -79,7 +79,7 @@ function main() {
   const stressedDistance = Math.abs(entryPrice - stressedStopFill) + feesPerUnit;
   const rawSize = riskBudgetUsd / stressedDistance;
   const factor = 10 ** sizeDecimals;
-  const size = Math.floor((rawSize + Number.EPSILON) * factor) / factor;
+  const size = Math.floor(rawSize * factor) / factor;
   const entryNotionalUsd = size * entryPrice;
   const stressedRiskUsd = size * stressedDistance;
   process.stdout.write(`${JSON.stringify({

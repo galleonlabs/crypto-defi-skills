@@ -109,7 +109,7 @@ export function roundDown(value: number, decimals: number): number {
     throw new Error("decimals must be an integer between 0 and 18");
   }
   const factor = 10 ** decimals;
-  return Math.floor((value + Number.EPSILON) * factor) / factor;
+  return Math.floor(value * factor) / factor;
 }
 
 export function sizeRisk(input: RiskSizingInput): RiskSizingResult {

@@ -1,5 +1,13 @@
 import { describe, expect, test } from "bun:test";
-import { liquidationDistance, normalizeFunding, reviewTrade, sizeRisk } from "../src/math.ts";
+import { liquidationDistance, normalizeFunding, reviewTrade, roundDown, sizeRisk } from "../src/math.ts";
+
+describe("roundDown", () => {
+  test("never returns more than the input", () => {
+    const value = 1.23456789;
+    expect(roundDown(value, 4)).toBe(1.2345);
+    expect(roundDown(value, 4)).toBeLessThanOrEqual(value);
+  });
+});
 
 describe("sizeRisk", () => {
   test("sizes from the stressed stop and rounds down", () => {
