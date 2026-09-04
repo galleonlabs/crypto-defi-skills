@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { spawnSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -7,7 +8,7 @@ import { SKILL_CATALOG } from "./catalog.js";
 import { buildRange, evaluateEconomics, evaluatePosition } from "./math.js";
 import { validateCorpus } from "./validation.js";
 
-const VERSION = "0.1.0";
+const VERSION = "0.2.0";
 type Flags = Map<string, string | true>;
 
 interface ParsedArgs {
@@ -72,6 +73,7 @@ Usage:
   lp-skills catalog [--json]
   lp-skills show <skill>
   lp-skills validate [path] [--json]
+  lp-skills uniswap-link --help
   lp-skills range --price <n> --width <pct> --tick-spacing <n> [--decimals0 <n>] [--decimals1 <n>] [--json]
   lp-skills status --tick-current <n> --tick-lower <n> --tick-upper <n> [--edge-buffer <n>] [--json]
   lp-skills economics --capital <usd> --fees <usd> --days <n> [--incentives <usd>] [--costs <usd>] [--json]
@@ -99,6 +101,14 @@ async function main(): Promise<void> {
   }
   if (command === "--version" || command === "version") {
     process.stdout.write(`${VERSION}\n`);
+    return;
+  }
+
+  if (command === "uniswap-link") {
+    const script = resolve(packageRoot(), "skills", "lp-plan", "scripts", "uniswap-link.mjs");
+    const result = spawnSync(process.execPath, [script, ...rest], { stdio: "inherit" });
+    if (result.error) throw result.error;
+    if (result.status !== 0) process.exitCode = result.status ?? 1;
     return;
   }
 

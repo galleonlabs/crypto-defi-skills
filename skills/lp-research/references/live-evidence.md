@@ -10,6 +10,8 @@
 
 Search snippets, model memory, pool names, and dashboard cards are not evidence of current state.
 
+DexScreener can discover candidate pools and current market labels. DefiLlama can cross-check reported TVL, fee yield, and incentives. Treat both as independent analytics: bind their returned addresses to verified pools, inspect metric definitions and windows, and confirm execution-critical state through RPC or a protocol-native source.
+
 ## Minimum live record
 
 For each changing claim, retain:

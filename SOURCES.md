@@ -22,6 +22,7 @@ This corpus was written from primary protocol documentation, public skill reposi
 
 ## Skill research
 
+- [Uniswap AI skills](https://github.com/Uniswap/uniswap-ai/tree/936734cdc8e704b1fdcce3211d9e6215cd10da7f), MIT. Used for the official interface handoff, LP API response contract, direct v4 SDK routing, and concrete hook-risk cases. The resulting instructions and link builder were independently written with stricter transaction controls.
 - [Minara AI skills](https://github.com/Minara-AI/skills/tree/b93aba1029827c37cf5ad82b19bfa8c289912091), MIT. Used for confirmation and tool-boundary patterns.
 - [BankrBot skills](https://github.com/BankrBot/skills/tree/5fa72464c855c49ef3d6d85846424f61b0f50922). No repository license was present at the reviewed commit, so no Bankr text or code was copied.
 - [DeFi Native](https://github.com/emlai/defi-native-skill), MIT. Used for fee, incentive, divergence, LVR, and exit-cost decomposition.

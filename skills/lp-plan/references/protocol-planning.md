@@ -12,7 +12,7 @@ Plan fee tier, onchain tick spacing, lower and upper ticks, desired amounts, min
 
 ## Uniswap v4
 
-Bind the full PoolKey and inspect hook permissions before planning. Verify the current position manager action model, currency settlement, native token behavior, Permit2 path, unlock callback, and hook-specific data. Reject a plan that treats the pool as v3 with a different address.
+Bind the full PoolKey and inspect hook permissions before planning. Read pool state through the current StateView deployment. Verify the current PositionManager action model, currency settlement, native token behavior, Permit2 path, unlock callback, and hook-specific data. Position discovery can depend on indexed events, so recheck the selected position onchain. Reject a plan that treats the pool as v3 with a different address.
 
 ## Aerodrome classic
 

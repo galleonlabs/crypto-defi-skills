@@ -33,7 +33,7 @@
 
 ## Hooks and callbacks
 
-Treat each v4 hook as an independent application. Decode permissions from its address, inspect every enabled callback, admin and upgrade control, external calls, dynamic fees, deltas, and reentrancy assumptions. Fuzz hook data and callback ordering. A verified PoolManager does not make a hook safe.
+Treat each v4 hook as an independent application. Decode permissions from its address, inspect every enabled callback, admin and upgrade control, external calls, dynamic fees, deltas, and reentrancy assumptions. `beforeRemoveLiquidity` can block exits. Return-delta permissions can change what LPs deposit or receive. In callbacks, `msg.sender` should be the PoolManager and the `sender` parameter can be a router rather than the end user. Do not trust user identity decoded from hook data unless the router is authenticated. Fuzz hook data, callback ordering, delta settlement, and direct callback attempts. A verified PoolManager does not make a hook safe.
 
 ## Reporting
 

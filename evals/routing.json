@@ -148,5 +148,35 @@
     "expected": "lp-engineer",
     "mustNotInvoke": ["lp-monitor"],
     "reason": "Implementation of degraded-state handling."
+  },
+  {
+    "prompt": "Build a reviewed Uniswap create-position interface link for this chosen v3 pool and range.",
+    "expected": "lp-plan",
+    "mustNotInvoke": ["lp-operate"],
+    "reason": "A prefilled interface link is a planning handoff, not wallet execution."
+  },
+  {
+    "prompt": "Use my wallet and the official Uniswap LP API transaction builder to increase position 42 now.",
+    "expected": "lp-operate",
+    "mustNotInvoke": ["lp-research"],
+    "reason": "The user explicitly requests a fund-moving action through a transaction builder."
+  },
+  {
+    "prompt": "Implement the Uniswap Liquidity Provisioning API approval, Permit2, create, decrease, and claim flows.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": ["lp-operate"],
+    "reason": "This is application integration work rather than a live wallet action."
+  },
+  {
+    "prompt": "Could this v4 beforeRemoveLiquidity or return-delta hook trap or shortchange my LP withdrawal?",
+    "expected": "lp-research",
+    "mustNotInvoke": ["lp-operate"],
+    "reason": "The request is a pre-deployment hook and exit-risk assessment."
+  },
+  {
+    "prompt": "Reconstruct my v4 position using PositionManager events and verify its pool state through StateView.",
+    "expected": "lp-monitor",
+    "mustNotInvoke": ["lp-operate"],
+    "reason": "The request concerns authoritative state for an existing position."
   }
 ]

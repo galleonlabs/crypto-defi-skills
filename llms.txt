@@ -19,5 +19,6 @@ npm install --global galleon-lp-skills
 
 - package: galleon-lp-skills
 - CLI: lp-skills
+- Uniswap interface link: lp-skills uniswap-link --help
 - discovery schema: https://schemas.agentskills.io/discovery/0.2.0/schema.json
 - source: https://github.com/galleonlabs/lp-skills

@@ -4,7 +4,8 @@ description: "Evaluate an existing Uniswap v2, v3, or v4 or Aerodrome or Slipstr
 license: MIT
 compatibility: "Requires read-only chain access for current position state. The bundled position script needs Node.js 20 or newer."
 metadata:
-  version: "0.1.0"
+  author: "Galleon Labs"
+  version: "0.2.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 

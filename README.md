@@ -45,12 +45,21 @@ Coverage includes Uniswap v2, v3, and v4, plus Aerodrome classic pools and Slips
 ```bash
 lp-skills catalog
 lp-skills validate .
+lp-skills uniswap-link --help
 lp-skills range --price 1.25 --width 10 --tick-spacing 60 --json
 lp-skills status --tick-current 100 --tick-lower 0 --tick-upper 200 --edge-buffer 20 --json
 lp-skills economics --capital 10000 --fees 120 --incentives 40 --costs 25 --days 30 --json
 ```
 
-The CLI performs local arithmetic and validation. It has no RPC, wallet, key, signing, or submission code.
+The CLI performs local arithmetic, validation, and reviewed Uniswap interface-link construction. It has no RPC, wallet, key, signing, or submission code.
+
+## Uniswap integration paths
+
+- Build locally with the current Uniswap SDKs and verified deployments.
+- Use the official Liquidity Provisioning API as an unsigned transaction builder.
+- Hand a reviewed plan to the Uniswap interface with a generated create-position link.
+
+The skills preserve the exact API response contract, approval and Permit2 flow, v4 StateView and PositionManager model, and interface-link format. Every returned transaction remains untrusted until it is decoded, independently simulated, confirmed, mined, and reconciled against chain state.
 
 ## Operating rules
 

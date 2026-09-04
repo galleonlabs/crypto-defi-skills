@@ -34,6 +34,15 @@ type UnsignedStep = {
   limits: Record<string, bigint | string>;
   expectedStateDiff: readonly string[];
 };
+
+type BuilderProposal = {
+  source: "local-sdk" | "uniswap-lp-api";
+  sourceVersion: string;
+  requestId?: string;
+  builtAt: string;
+  requestDigest: `0x${string}`;
+  step: UnsignedStep;
+};
 ```
 
 ## Layers
@@ -43,7 +52,7 @@ type UnsignedStep = {
 3. Curator decides eligibility for new positions.
 4. Strategy proposes an intent from snapshots and user policy.
 5. Planner converts intent into bounded steps and recovery checkpoints.
-6. Adapter builds the next unsigned step for one protocol version.
+6. Adapter builds the next unsigned step for one protocol version. An external builder response is wrapped as a proposal with provenance, never promoted directly to a wallet request.
 7. Simulator decodes and checks expected changes from the exact wallet.
 8. Wallet boundary displays, confirms, signs, and submits.
 9. Receipt reconciler proves the mined state and advances the plan.

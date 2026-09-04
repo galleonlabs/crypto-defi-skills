@@ -23,6 +23,13 @@ Emit this structure in prose, JSON, or both.
     "price": "token1 per token0",
     "tick": "exact tick"
   },
+  "handoff": {
+    "kind": "direct | uniswap-lp-api | uniswap-interface",
+    "sourceVersion": "current verified source or null",
+    "requestId": "builder request id or null",
+    "builtAt": "UTC timestamp or null",
+    "url": "reviewed interface link or null"
+  },
   "position": {
     "model": "full-range | concentrated",
     "tickLower": "exact or null",
@@ -52,6 +59,6 @@ Emit this structure in prose, JSON, or both.
 
 ## Ready criteria
 
-A plan is ready only when identity, balances, approvals, quote, gas, deadlines, targets, calldata, simulations, and expected state changes are internally consistent. A deferred downstream step is acceptable only when the plan explains which mined value is required to build it.
+A plan is ready only when identity, balances, approvals, quote, gas, deadlines, targets, calldata, simulations, handoff terms, and expected state changes are internally consistent. A deferred downstream step is acceptable only when the plan explains which mined value is required to build it.
 
 Do not include a signature request. Do not represent simulated transaction hashes as receipts.

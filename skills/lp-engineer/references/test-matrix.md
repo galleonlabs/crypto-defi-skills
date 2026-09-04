@@ -20,6 +20,8 @@ Pin chain, block, deployment addresses, and expected code hashes. Cover:
 - native and wrapped value paths
 - Permit2 and direct approval paths
 - v4 pools with no hook and each supported hook class
+- StateView reads, PositionManager event discovery, and onchain position reconciliation
+- LP API approval wrappers, permit normalization, field-name variants, KYC warnings, and stale transaction payloads
 - Aerodrome stable, volatile, and Slipstream routes
 - receipt decode and state reconciliation
 
@@ -31,7 +33,7 @@ Pin chain, block, deployment addresses, and expected code hashes. Cover:
 - expired deadline, excessive price impact, gas cap, spend cap, and minimum-output failure
 - fee-on-transfer, rebasing, paused, blacklisted, honeypot, and high-tax tokens
 - indexer lag, RPC disagreement, partial bitmap read, and missing logs
-- hook revert, callback reentrancy, malicious delta, and unexpected external call
+- hook revert, blocked removal, callback reentrancy, malicious delta, forged hook user identity, and unexpected external call
 - gauge epoch change, reward exhaustion, and fee-right mismatch
 
 ## Partial-state tests

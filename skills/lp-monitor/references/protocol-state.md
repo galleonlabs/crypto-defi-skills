@@ -17,7 +17,7 @@ Read NFT owner, pool, fee tier, tick spacing, lower and upper ticks, liquidity, 
 
 ## Uniswap v4
 
-Read the complete PoolKey, position ownership, liquidity, current tick, fee state, subscriber or manager state, and hook state. Decode hook permissions. Do not infer state from a v3-shaped dashboard. Hook logic can change fee, liquidity, donation, or settlement behavior.
+Read pool state through the deployed StateView or the current official read path, not a v3-shaped pool contract. Bind the complete PoolKey and PoolId. Read position ownership, liquidity, current tick, fee state, subscriber or manager state, and hook state. Position discovery may require indexed PositionManager events, but the index is only discovery evidence; recheck ownership and state onchain. Decode hook permissions. Hook logic can change fee, liquidity, donation, or settlement behavior.
 
 ## Slipstream
 

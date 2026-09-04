@@ -4,7 +4,8 @@ description: "Assess and compare Uniswap v2, v3, or v4 and Aerodrome or Slipstre
 license: MIT
 compatibility: "Requires web or read-only chain access for current claims. Works without wallet access."
 metadata:
-  version: "0.1.0"
+  author: "Galleon Labs"
+  version: "0.2.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -32,7 +33,7 @@ Read [venue models](references/venue-models.md) before comparing versions. The a
 
 - Uniswap v2 and Aerodrome classic positions are fungible LP tokens and normally full range.
 - Uniswap v3, Uniswap v4, and Slipstream positions are concentrated and range-dependent.
-- Uniswap v4 hook behavior is part of the pool's trust model.
+- Uniswap v4 hook behavior is part of the pool's trust model. Read [v4 hook risk](references/v4-hook-risk.md) for every hooked pool.
 - Aerodrome fee and gauge reward rights depend on the pool and staking route. Verify the exact contracts.
 
 ## Stop conditions

@@ -4,7 +4,8 @@ description: "Implement or review software for Uniswap v2, v3, or v4 and Aerodro
 license: MIT
 compatibility: "Designed for TypeScript integrations with RPC, indexer, simulation, and wallet boundaries. Protocol concepts apply in other languages."
 metadata:
-  version: "0.1.0"
+  author: "Galleon Labs"
+  version: "0.2.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -16,7 +17,7 @@ Build protocol-aware LP software with deterministic plans, explicit signer bound
 
 1. Fix the supported chains, protocol versions, actions, custody model, execution authority, and failure budget.
 2. Verify current official deployments, ABIs, SDK behavior, audited contracts, and protocol specifications. Pin fork tests to named blocks. Do not hardcode an address from memory.
-3. Separate discovery, read state, strategy, unsigned transaction construction, simulation, confirmation, signing, submission, receipt interpretation, and reconciliation. Use [adapter architecture](references/adapter-architecture.md).
+3. Separate discovery, read state, strategy, unsigned transaction construction, simulation, confirmation, signing, submission, receipt interpretation, and reconciliation. Use [adapter architecture](references/adapter-architecture.md). For Uniswap, choose and verify an [official integration surface](references/uniswap-integration-surfaces.md).
 4. Implement protocol differences from [protocol matrix](references/protocol-matrix.md). Do not hide them behind a false common denominator.
 5. Enforce [security invariants](references/security-invariants.md) at every boundary.
 6. Make automation dry-run by default. A live mode requires explicit authority, serialized wallet writes, hard caps, and a durable receipt ledger.
