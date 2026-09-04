@@ -1,0 +1,12 @@
+{
+  "name": "galleon-hyperliquid-skills",
+  "version": "0.1.0",
+  "description": "Agent skills for Hyperliquid research, trading operations, review, and engineering.",
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "homepage": "https://github.com/galleonlabs/hyperliquid-skills",
+  "repository": "https://github.com/galleonlabs/hyperliquid-skills",
+  "license": "MIT",
+  "keywords": ["defi", "hyperliquid", "perpetuals", "trading"]
+}

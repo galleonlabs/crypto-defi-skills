@@ -1,0 +1,16 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Hyperliquid decisions",
+      "description": "Research, plan, and monitor before any exchange write.",
+      "skills": ["hyperliquid-research", "hyperliquid-plan", "hyperliquid-monitor"]
+    },
+    {
+      "title": "Hyperliquid delivery",
+      "description": "Execute explicit actions, review outcomes, and build integrations.",
+      "skills": ["hyperliquid-operate", "hyperliquid-review", "hyperliquid-engineer"]
+    }
+  ]
+}
