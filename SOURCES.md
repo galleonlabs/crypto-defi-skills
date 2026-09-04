@@ -28,6 +28,14 @@ This corpus was written from primary protocol documentation, public skill reposi
 - [DeFi Native](https://github.com/emlai/defi-native-skill), MIT. Used for fee, incentive, divergence, LVR, and exit-cost decomposition.
 - Galleon Labs UnaBot history. Private implementation evidence was used to identify failure modes and tests. No private source is included.
 
+## Revert Finance research
+
+- [Revert agent skill](https://mcp.revert.finance/skill), served version 1.8, reviewed 2026-09-04. No license statement was present in the served skill. Its public behavior informed independent approval-phase, freshness, capability, atomic-funding, and receipt-contract analysis. No text, code, endpoint dependency, transaction route, or fee path was copied.
+- [v3utils](https://github.com/revert-finance/v3utils/tree/e29e49af36ee05d2c9734fc4cdb1855c929555e9), MIT. Reviewed for stateless NFT transformations, one-token and third-token funding, swap bounds, leftovers, approval cleanup, automation triggers, and position-ID transitions.
+- [Compoundor](https://github.com/revert-finance/compoundor/tree/800d0a6462be0bf78a418f3d58dd407eeadef173), MIT. Reviewed for fee compounding, owner and beneficial-owner accounting, TWAP guards, operator rewards, loose balances, and custody risks.
+- [Revert backtester](https://github.com/revert-finance/revert-backtester/tree/701dfcdddd742566db90a06c2a50f5f0619b3a3c), MIT. Reviewed for historical position reconstruction, active-liquidity dilution, sparse intervals, time-in-range estimation, benchmark choice, and validation bias. The guidance treats fee dilution, candle paths, and incomplete position histories as estimates.
+- [StableSwap Hooks](https://github.com/revert-finance/stableswap-hooks/tree/101ba88167c711a05e32553c0c750eab5694818c), Business Source License 1.1 with a future MIT change license. This is source-available, not treated as MIT. It was used only to identify generic share-model, reserve, rate-source, amplification, convergence, fee, and exit questions. No text or code was copied or adapted.
+
 ## Independent implementation
 
-All instructions, schemas, examples, math utilities, tests, and transaction controls in this repository were independently written for this project. Protocol addresses are deliberately absent. Integrators must resolve current deployments from official registries and verify bytecode and chain state.
+All instructions, schemas, examples, math utilities, tests, and transaction controls in this repository were independently written for this project. Research sources do not imply affiliation, endorsement, or runtime dependence. Protocol addresses are deliberately absent. Integrators must resolve current deployments from official registries and verify bytecode and chain state.

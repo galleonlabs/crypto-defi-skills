@@ -1,11 +1,11 @@
 ---
 name: lp-monitor
-description: "Evaluate an existing Uniswap v2, v3, or v4 or Aerodrome or Slipstream liquidity position. Use when the user asks whether it is in range, what it earned, how it performed versus HOLD, whether rewards or fees are real, or whether to hold, collect, recenter, restake, reduce, or exit. Produces a current recommendation only; not transaction execution."
+description: "Evaluate an existing Uniswap v2, v3, or v4 or Aerodrome or Slipstream liquidity position. Use when the user asks whether it is in range, what it earned, how it performed versus HOLD, who controls it, whether automation is active, or whether to hold, collect, recenter, restake, reduce, or exit. Produces a current recommendation only; not transaction execution."
 license: MIT
 compatibility: "Requires read-only chain access for current position state. The bundled position script needs Node.js 20 or newer."
 metadata:
   author: "Galleon Labs"
-  version: "0.2.0"
+  version: "0.3.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -16,7 +16,7 @@ Reconstruct the position from chain state, measure it against HOLD, and decide w
 ## Workflow
 
 1. Bind chain ID, wallet, protocol version, pool identity, token order, position ID or LP balance, gauge or staking state, and observation block.
-2. Read authoritative state. Use [protocol state](references/protocol-state.md) to distinguish reserves, liquidity, owed fees, rewards, and range status.
+2. Read authoritative state. Use [protocol state](references/protocol-state.md) to distinguish reserves, liquidity, owed fees, rewards, and range status. Apply [automation state](references/automation-state.md) when an operator, gauge, vault, or utility can act on the position.
 3. Reconstruct the original quantities and cash flows from receipts or a trusted ledger. Follow [position accounting](references/position-accounting.md). If the baseline is unknown, label it unknown; never overwrite it with the current state.
 4. Include every attributable asset once: active position inventory, unclaimed fees, unclaimed rewards, claimed proceeds, unstaked LP or NFT state, and loose wallet residue.
 5. Measure current value, inventory change versus HOLD, realized fees, incentives, all costs, and net result over stated windows. Separate measured values from projections.

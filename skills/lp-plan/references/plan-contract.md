@@ -4,7 +4,10 @@ Emit this structure in prose, JSON, or both.
 
 ```json
 {
-  "status": "ready | blocked | expired",
+  "status": "approval-required | ready | blocked | expired",
+  "phase": "approvals | action",
+  "schemaVersion": "versioned contract",
+  "planDigest": "canonical digest of every material field",
   "createdAt": "UTC timestamp",
   "expiresAt": "UTC timestamp",
   "chainId": 0,
@@ -21,7 +24,8 @@ Emit this structure in prose, JSON, or both.
   "observation": {
     "block": "exact block",
     "price": "token1 per token0",
-    "tick": "exact tick"
+    "tick": "exact tick",
+    "freshness": "fresh | lagging | diverged | unknown"
   },
   "handoff": {
     "kind": "direct | uniswap-lp-api | uniswap-interface",
@@ -60,5 +64,9 @@ Emit this structure in prose, JSON, or both.
 ## Ready criteria
 
 A plan is ready only when identity, balances, approvals, quote, gas, deadlines, targets, calldata, simulations, handoff terms, and expected state changes are internally consistent. A deferred downstream step is acceptable only when the plan explains which mined value is required to build it.
+
+An `approval-required` result contains only the finite approvals needed for the next action. It does not contain ready action calldata. After approval receipts, reread state and create a new action-phase digest.
+
+A `ready` result contains one exact next transaction. Bind the digest to chain, wallet, pool, position, inputs, recipients, target, calldata, native value, limits, quote, observation block, and expiry. Any material change expires it.
 
 Do not include a signature request. Do not represent simulated transaction hashes as receipts.

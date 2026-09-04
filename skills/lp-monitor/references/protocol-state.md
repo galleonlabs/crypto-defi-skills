@@ -19,6 +19,8 @@ Read NFT owner, pool, fee tier, tick spacing, lower and upper ticks, liquidity, 
 
 Read pool state through the deployed StateView or the current official read path, not a v3-shaped pool contract. Bind the complete PoolKey and PoolId. Read position ownership, liquidity, current tick, fee state, subscriber or manager state, and hook state. Position discovery may require indexed PositionManager events, but the index is only discovery evidence; recheck ownership and state onchain. Decode hook permissions. Hook logic can change fee, liquidity, donation, or settlement behavior.
 
+For a hook-issued share model, read the full currency set, internal reserves, actual balances, share supply, wallet or custodied shares, rate sources, amplification or other invariant state, and fee accumulators. Do not interpret the position as an NFT or sum shared reserves once per pairwise PoolKey.
+
 ## Slipstream
 
 Read NFT owner, gauge custody or deposit state, liquidity, ticks, current tick, fee rights, reward accrual, epoch state, and reward dilution. Confirm whether unstaking is required to collect or modify. Never add unstaked fees and staked emissions unless current contracts prove both accrue.

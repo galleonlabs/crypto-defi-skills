@@ -13,6 +13,7 @@ State:
 - range, fee, tick spacing, hook, and gauge where applicable
 - every transaction target and decoded function
 - transaction-builder source, request ID, build time, and adjusted range or dependent amounts when applicable
+- plan digest, quote mode, quote time, and signing cutoff
 - native value
 - approval token, spender, amount, mechanism, and expiry
 - maximum input, minimum output or liquidity, slippage bound, price-impact bound, deadline, and gas estimate

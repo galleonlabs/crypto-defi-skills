@@ -14,6 +14,8 @@ Plan fee tier, onchain tick spacing, lower and upper ticks, desired amounts, min
 
 Bind the full PoolKey and inspect hook permissions before planning. Read pool state through the current StateView deployment. Verify the current PositionManager action model, currency settlement, native token behavior, Permit2 path, unlock callback, and hook-specific data. Position discovery can depend on indexed events, so recheck the selected position onchain. Reject a plan that treats the pool as v3 with a different address.
 
+If the hook issues fungible shares against internal reserves, do not use concentrated range or NFT planning. Bind every supported currency, reserve, rate source, invariant control, expected shares, minimum shares, actual token amounts, per-token minima, refunds, and proportional exit quote.
+
 ## Aerodrome classic
 
 Classify stable versus volatile invariant. Plan add liquidity, LP receipt, optional gauge approval and deposit, reward claim, gauge withdrawal, and removal as separate states. Verify who receives trading fees in the selected route and how rewards accrue.

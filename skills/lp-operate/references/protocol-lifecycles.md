@@ -27,6 +27,8 @@ Decrease and collect are distinct. Confirm NFT owner, operator approval, recipie
 
 Use the deployed position manager and action model. Bind the full PoolKey. Verify hook permissions and hook data, manager unlock behavior, currency settlement, native value, Permit2 path, and nested actions. Do not reuse v3 calldata or infer safety from a matching pair and fee.
 
+A hook-issued fungible share model has a different lifecycle: approve currencies, add proportional liquidity or use a reviewed zap, receive shares, then burn shares for proportional withdrawal. Verify all currencies, internal reserves, rate sources, minimum shares, per-currency minima, refunds, and whether swaps or adds can fail while withdrawal remains available.
+
 ## Aerodrome classic
 
 ```text

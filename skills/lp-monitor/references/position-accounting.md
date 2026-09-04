@@ -6,6 +6,8 @@ The HOLD benchmark is the original token quantities valued at current prices. Re
 
 If a position is imported without history, report a first-seen reference separately. Do not call it the original HOLD baseline and do not overwrite a later reconstructed baseline.
 
+When a range move creates a replacement position ID, preserve one lineage across the old and new IDs. The withdrawal, swap, and remint are cash flows inside the strategy, not fresh deposits or profit.
+
 ## Balance sheet
 
 Classify each attributable unit once:
@@ -21,6 +23,8 @@ LP net value
 ```
 
 Do not count claimed fees both as realized proceeds and loose wallet balances. Do not treat principal withdrawn during a reduction as fee income.
+
+Include balances attributable to the beneficial owner but held in a gauge, vault, or automation contract. Deduct operator and protocol rewards separately. Do not classify contract-held residue as lost or earned until its withdrawal right is verified.
 
 ```text
 inventory divergence = current position inventory / current HOLD value - 1

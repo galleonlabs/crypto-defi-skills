@@ -1,6 +1,6 @@
 {
   "name": "galleon-lp-skills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Agent skills and deterministic tools for Uniswap and Aerodrome liquidity provision.",
   "type": "module",
   "license": "MIT",

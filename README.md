@@ -40,6 +40,8 @@ The repository also ships Codex and Claude Code plugin manifests. Cursor discove
 
 Coverage includes Uniswap v2, v3, and v4, plus Aerodrome classic pools and Slipstream concentrated pools.
 
+The corpus also covers atomic one-token funding, range moves, automation and custody, LP backtesting, and v4 hooks that issue fungible shares against their own StableSwap-style reserves.
+
 ## CLI
 
 ```bash
@@ -52,6 +54,8 @@ lp-skills economics --capital 10000 --fees 120 --incentives 40 --costs 25 --days
 ```
 
 The CLI performs local arithmetic, validation, and reviewed Uniswap interface-link construction. It has no RPC, wallet, key, signing, or submission code.
+
+No hosted LP agent service is bundled or required. External projects listed in [SOURCES.md](SOURCES.md) are research provenance, not runtime dependencies or execution routes.
 
 ## Uniswap integration paths
 
@@ -68,6 +72,8 @@ The skills preserve the exact API response contract, approval and Permit2 flow, 
 - Separate swap fees, incentives, divergence from HOLD, gas, slippage, MEV, and tax.
 - Treat Aerodrome fee and gauge reward routes as protocol-specific choices. Never add both without proof.
 - Treat Uniswap v4 hooks as separate trust domains.
+- Detect share-based hook accounting before applying concentrated-liquidity assumptions.
+- Separate finite approvals from ready action calldata and rebuild after approval receipts.
 - A simulation is preflight. Only a mined receipt plus a state reread proves execution.
 - Never retry an ambiguous write.
 

@@ -2,6 +2,8 @@
 
 Portable Agent Skills for Uniswap and Aerodrome liquidity provision.
 
+Includes pool research, exact planning, position monitoring, wallet-safe operation, integration engineering, backtesting, automation and custody, atomic position actions, and share-based v4 hooks. No hosted LP agent service is required.
+
 ## Install
 
 npx skills add galleonlabs/lp-skills

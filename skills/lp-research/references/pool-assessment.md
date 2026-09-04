@@ -17,6 +17,7 @@ Test both assets for transfer restrictions, taxes, rebases, blacklists, pausing,
 
 ## Pool gate
 
+- Position model: concentrated NFT, fungible reserve share, gauge receipt, vault claim, or hook-issued share
 - Pool age and observation history
 - Total liquidity and active liquidity near the current price
 - Depth at the user's entry and exit size, not headline TVL
@@ -25,6 +26,8 @@ Test both assets for transfer restrictions, taxes, rebases, blacklists, pausing,
 - Oracle or TWAP availability and manipulation cost
 - Liquidity and ownership concentration
 - Pauses, incidents, migrations, and prior range or reward discontinuities
+
+If a utility, vault, or keeper is part of the intended route, apply a separate custody and automation gate. Verify beneficial ownership, standing approvals, executable triggers, operator compensation, disable and withdrawal paths, and whether a replacement position preserves configuration.
 
 ## Return decomposition
 

@@ -10,7 +10,7 @@ Chain ID, wallet, protocol, pool, position ID or LP balance, staking state, toke
 
 ## State
 
-For concentrated positions show current tick, range, active state, distance to each edge, liquidity, claimable fees, and claimable rewards. For full-range positions show reserve share and gauge state.
+For concentrated positions show current tick, range, active state, distance to each edge, liquidity, claimable fees, and claimable rewards. For ordinary full-range positions show reserve share and gauge state. For hook-issued shares show all currencies, internal reserves, actual balances, share supply, attributable shares, rate sources, invariant controls, and proportional exit amounts.
 
 ## Accounting
 

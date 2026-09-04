@@ -21,6 +21,7 @@ type Snapshot<TState> = {
   observedAt: string;
   state: TState;
   source: "rpc" | "indexer" | "last-good";
+  freshness: "fresh" | "lagging" | "diverged" | "unknown";
 };
 
 type UnsignedStep = {
@@ -36,7 +37,7 @@ type UnsignedStep = {
 };
 
 type BuilderProposal = {
-  source: "local-sdk" | "uniswap-lp-api";
+  source: "local-sdk" | "uniswap-lp-api" | "other-reviewed-builder";
   sourceVersion: string;
   requestId?: string;
   builtAt: string;
@@ -56,6 +57,8 @@ type BuilderProposal = {
 7. Simulator decodes and checks expected changes from the exact wallet.
 8. Wallet boundary displays, confirms, signs, and submits.
 9. Receipt reconciler proves the mined state and advances the plan.
+
+Expose capability and freshness reports before planning. A provider may support reads for a venue without supporting safe transaction preparation for it.
 
 Do not put private keys, signing, or submission inside an adapter. Do not let the strategy emit raw calldata. Do not let an indexer result bypass an RPC freshness gate for execution.
 

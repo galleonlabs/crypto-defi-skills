@@ -8,7 +8,7 @@ One line: preferred pool, conditional choice, reject, or not assessable.
 
 ## Bound identity
 
-Chain ID, protocol version, pool address or PoolId, ordered token addresses, fee, tick spacing or invariant, hook, gauge, and observation block.
+Chain ID, protocol version, position model, pool address or PoolId, ordered token addresses or full currency set, fee, tick spacing or invariant, hook, share token, gauge, and observation block.
 
 ## Hard gates
 

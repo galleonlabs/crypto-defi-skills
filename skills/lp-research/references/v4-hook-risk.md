@@ -8,6 +8,7 @@ Use this gate for every pool whose PoolKey has a nonzero hook.
 - Decode the callback permission bits from the hook address and compare them with implemented callbacks.
 - Verify source, deployed bytecode, proxy implementation, owners, roles, upgrade delays, pause paths, and fee controllers.
 - Treat a mismatch between address permissions, verified source, and deployed code as a failed gate.
+- Classify whether the hook preserves ordinary concentrated-liquidity accounting or implements its own reserves, invariant, fungible shares, or multi-pool accounting. Use [share-based hook analysis](share-based-hooks.md) for the latter.
 
 ## Fund-loss paths
 

@@ -3,8 +3,10 @@
 Use this state machine for every write.
 
 ```text
-DISCOVER -> BIND -> QUOTE -> BUILD -> SIMULATE -> CONFIRM
-CONFIRM -> SUBMIT_ONE -> RECEIPT -> REREAD -> RECONCILE
+DISCOVER -> BIND -> QUOTE -> BUILD
+BUILD -> APPROVAL_REQUIRED | SIMULATE
+APPROVAL_REQUIRED -> CONFIRM_APPROVAL -> SUBMIT_ONE -> RECEIPT -> REREAD -> BUILD
+SIMULATE -> CONFIRM_ACTION -> SUBMIT_ONE -> RECEIPT -> REREAD -> RECONCILE
 RECONCILE -> COMPLETE | BUILD_NEXT | STOP | RECOVER
 ```
 
@@ -16,9 +18,11 @@ Read the wallet and chain from the signer, not from prior conversation. Resolve 
 
 Use current onchain state or an official protocol integration. Add hard spend, receive, liquidity, price, slippage, impact, gas, and deadline limits. Reject empty calldata, placeholder payloads, unrecognized selectors, unknown multicalls, and values that exceed the plan.
 
+Return either finite approvals or one ready action. Never treat action calldata built before approval receipts as current. Bind each phase to a canonical plan digest.
+
 ## Simulate and confirm
 
-Simulate from the exact wallet with the exact native value. Decode nested calls, approvals, transfers, mints, burns, stakes, and claims. Compare expected state changes with the plan. Then obtain the exact confirmation contract.
+Simulate from the exact wallet with the exact native value. Decode nested calls, approvals, transfers, mints, burns, stakes, and claims. Compare expected state changes with the plan. Then obtain the exact confirmation contract. A confirmation binds the plan digest and all displayed terms.
 
 ## Submit one
 

@@ -178,5 +178,35 @@
     "expected": "lp-monitor",
     "mustNotInvoke": ["lp-operate"],
     "reason": "The request concerns authoritative state for an existing position."
+  },
+  {
+    "prompt": "Assess this v4 StableSwap hook that issues ERC-20 shares against several internal reserves.",
+    "expected": "lp-research",
+    "mustNotInvoke": ["lp-plan", "lp-operate"],
+    "reason": "The position model and hook risks must be verified before capital planning."
+  },
+  {
+    "prompt": "Backtest this v3 range against HOLD with fee dilution, gas, sparse hours, and no lookahead.",
+    "expected": "lp-plan",
+    "mustNotInvoke": ["lp-operate"],
+    "reason": "Historical strategy simulation informs an unsigned range plan."
+  },
+  {
+    "prompt": "Check whether my active auto-range configuration or vault custody blocks a manual recenter.",
+    "expected": "lp-monitor",
+    "mustNotInvoke": ["lp-operate"],
+    "reason": "The user asks for current automation and custody state, not execution."
+  },
+  {
+    "prompt": "Use my wallet to move this reviewed v3 range atomically and verify the replacement NFT and refunds.",
+    "expected": "lp-operate",
+    "mustNotInvoke": ["lp-research"],
+    "reason": "The user explicitly requests an atomic fund-moving position action."
+  },
+  {
+    "prompt": "Design provider-neutral capability, freshness, approval-phase, plan-digest, and receipt schemas for an LP agent.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": ["lp-operate"],
+    "reason": "The request concerns machine-readable integration contracts."
   }
 ]

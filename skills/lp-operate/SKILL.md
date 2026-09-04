@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires a trusted wallet or transaction tool, simulation, receipt lookup, and read-only chain access. Never imports private keys."
 metadata:
   author: "Galleon Labs"
-  version: "0.2.0"
+  version: "0.3.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -25,7 +25,7 @@ Do not handle private keys or seed phrases. Use the user's current trusted walle
 
 1. Load the reviewed plan. If none exists, stop and use `lp-plan`.
 2. Refresh chain ID, wallet, balances, ownership, allowance, pool, tick or reserves, hook, gauge, quote, gas, nonce, deadlines, and target bytecode. Expire the plan on material change.
-3. Validate the action against [target and calldata policy](references/target-calldata-policy.md) and the correct [protocol lifecycle](references/protocol-lifecycles.md). If an official Uniswap transaction builder is used, also apply [Uniswap builders](references/uniswap-builders.md).
+3. Validate the action against [target and calldata policy](references/target-calldata-policy.md) and the correct [protocol lifecycle](references/protocol-lifecycles.md). Apply [atomic position actions](references/atomic-position-actions.md) when a utility swaps, compounds, exits, or remints inside one transaction. If an official Uniswap transaction builder is used, also apply [Uniswap builders](references/uniswap-builders.md).
 4. Simulate from the actual wallet with exact target, calldata, and native value. Decode the call and state changes. A successful simulation is preflight only.
 5. Send the standalone [confirmation contract](references/confirmation-contract.md). Do not combine it with analysis or a new recommendation.
 6. After exact confirmation, follow [the transaction state machine](references/transaction-state-machine.md). Submit only the confirmed next step.

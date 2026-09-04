@@ -14,11 +14,15 @@ Decode the outer selector and every nested call. Verify:
 - amounts, minimums, limits, ticks, fee, hook data, deadline, and native value match the plan
 - no unexpected transfer, permit, delegatecall, approval, arbitrary call, bridge, swap, sweep, unwrap, or fee recipient exists
 
+For swap-assisted liquidity actions, also bind quote provider, quote time, expiry, allowance target, router target, path, per-leg minimum output, and refund behavior. Reject a combined-value minimum when one required pool-token leg can fall below its mint requirement.
+
 Reject opaque arbitrary calldata when a trusted decoder cannot explain it. Do not accept a frontend's label as a decode.
 
 ## Approval limits
 
 Verify the exact spender. Prefer a bounded amount and expiry. Distinguish direct ERC-20 approval, NFT operator approval, Permit2 token allowance, Permit2 application authorization, and one-time signature transfer. Revoke residual authority when the confirmed plan requires it and the cleanup action is itself reviewed and confirmed.
+
+Prefer approval of one NFT token ID over `setApprovalForAll`. Treat a transfer-and-callback utility as a contract call with encoded instructions, not as an ordinary NFT transfer.
 
 ## Plan freshness
 

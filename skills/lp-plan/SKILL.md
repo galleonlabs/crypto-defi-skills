@@ -1,11 +1,11 @@
 ---
 name: lp-plan
-description: "Design an exact unsigned liquidity plan for a chosen Uniswap v2, v3, or v4 or Aerodrome or Slipstream pool. Use when the user asks for position size, token amounts, range or ticks, fee tier, staking route, approvals, slippage limits, deadlines, transaction order, or preflight checks. Planning only; not for selecting an unassessed pool, signing, or submitting."
+description: "Design or backtest an exact unsigned liquidity plan for a chosen Uniswap v2, v3, or v4 or Aerodrome or Slipstream pool. Use when the user asks for position size, token amounts, range or ticks, historical range performance, fee tier, staking route, approvals, slippage limits, deadlines, transaction order, or preflight checks. Planning only; not for selecting an unassessed pool, signing, or submitting."
 license: MIT
 compatibility: "Requires read-only chain and quote access for executable plans. The bundled range script needs Node.js 20 or newer."
 metadata:
   author: "Galleon Labs"
-  version: "0.2.0"
+  version: "0.3.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -21,9 +21,9 @@ Require chain, wallet address, protocol version, exact pool identity, capital an
 
 1. Rebind chain ID, current block, wallet, pool, token order, decimals, fee, tick spacing or invariant, hook, manager, router, gauge, and reward assets from current reads.
 2. Choose the position model from [protocol planning](references/protocol-planning.md). Do not apply concentrated-liquidity math to a full-range pair.
-3. Design the range with [range design](references/range-design.md). Use `node scripts/range.mjs --help` for deterministic tick snapping. Treat its output as arithmetic, not a strategy recommendation.
+3. Design the range with [range design](references/range-design.md). If historical simulation informs the choice, apply [backtesting standards](references/backtesting.md). Use `node scripts/range.mjs --help` for deterministic tick snapping. Treat its output as arithmetic, not a strategy recommendation.
 4. Compute the required token ratio at the quoted execution price with exact integer math or the current official SDK. Include wallet balances and loose assets from prior actions.
-5. Choose a transaction-construction or interface handoff from [Uniswap handoffs](references/uniswap-handoffs.md) when the venue is Uniswap. Quote the complete sequence. Apply max input, min output, minimum liquidity, price-impact, gas, deadline, and spend-cap constraints to every step.
+5. Choose a transaction-construction or interface handoff from [Uniswap handoffs](references/uniswap-handoffs.md) when the venue is Uniswap. For one-token funding, third-token funding, compounding, or range moves, apply [atomic funding and transformations](references/atomic-funding.md). Quote the complete sequence. Apply max input, min output, minimum liquidity, price-impact, gas, deadline, and spend-cap constraints to every step.
 6. Plan approvals with [approval policy](references/approval-policy.md). Bind each approval to the exact token, spender, amount, mechanism, expiry, and cleanup rule.
 7. Simulate every transaction from the actual wallet with the exact value and calldata. For sequential plans, later calldata that depends on mined output remains deferred.
 8. Emit [the plan contract](references/plan-contract.md). Include state reads, recovery checkpoints, and any optional interface link, but no signature request.
