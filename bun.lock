@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@galleonlabs/lp-skills",
+      "name": "galleon-lp-skills",
       "devDependencies": {
         "@types/bun": "^1.4.1",
         "@types/node": "^24.3.0",
