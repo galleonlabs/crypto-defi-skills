@@ -1,0 +1,12 @@
+{
+  "name": "galleon-lp-skills",
+  "version": "0.1.0",
+  "description": "Agent skills for Uniswap and Aerodrome liquidity provision.",
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "homepage": "https://github.com/galleonlabs/lp-skills",
+  "repository": "https://github.com/galleonlabs/lp-skills",
+  "license": "MIT",
+  "keywords": ["aerodrome", "defi", "liquidity", "uniswap"]
+}

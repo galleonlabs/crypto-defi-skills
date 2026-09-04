@@ -1,0 +1,16 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "LP decisions",
+      "description": "Research, plan, and monitor liquidity positions before any wallet action.",
+      "skills": ["lp-research", "lp-plan", "lp-monitor"]
+    },
+    {
+      "title": "LP delivery",
+      "description": "Execute explicit wallet actions and build protocol integrations.",
+      "skills": ["lp-operate", "lp-engineer"]
+    }
+  ]
+}

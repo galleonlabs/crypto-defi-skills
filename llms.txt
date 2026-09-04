@@ -1,0 +1,23 @@
+# LP Skills
+
+Portable Agent Skills for Uniswap and Aerodrome liquidity provision.
+
+## Install
+
+npx skills add galleonlabs/lp-skills
+npm install --global galleon-lp-skills
+
+## Skill entrypoints
+
+- skills/lp-research/SKILL.md: compare pools and assess risk before deployment
+- skills/lp-plan/SKILL.md: produce an exact unsigned position plan
+- skills/lp-monitor/SKILL.md: inspect a live position and decide whether action is justified
+- skills/lp-operate/SKILL.md: execute an explicitly requested action through a user-controlled wallet
+- skills/lp-engineer/SKILL.md: build and review protocol integrations
+
+## Machine interfaces
+
+- package: galleon-lp-skills
+- CLI: lp-skills
+- discovery schema: https://schemas.agentskills.io/discovery/0.2.0/schema.json
+- source: https://github.com/galleonlabs/lp-skills

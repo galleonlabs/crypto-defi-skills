@@ -1,0 +1,25 @@
+# Monitor output
+
+## Verdict
+
+One line: hold, collect, recenter, restake, reduce, exit, or state unknown. Include the condition that would change it.
+
+## Bound position
+
+Chain ID, wallet, protocol, pool, position ID or LP balance, staking state, token order, observation block, and evidence class.
+
+## State
+
+For concentrated positions show current tick, range, active state, distance to each edge, liquidity, claimable fees, and claimable rewards. For full-range positions show reserve share and gauge state.
+
+## Accounting
+
+Show original quantities or `unknown`, current inventory, HOLD value, claimable and realized income, loose residue, costs, divergence, and net result versus HOLD. Label every estimate and window.
+
+## Action economics
+
+Show full action cost, expected incremental benefit, break-even assumption, invalidation, and skipped gates. If no action clears the hurdle, say HOLD.
+
+## Next read
+
+State the next block, time, price, range, reward epoch, or security event that warrants another check. Do not include calldata.
