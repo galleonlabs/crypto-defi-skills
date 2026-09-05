@@ -16,8 +16,10 @@ try {
   const all = await packages();
   for (const pack of all) {
     const cwd = resolve(root, pack.directory);
-    const packed = JSON.parse(capture("npm", ["pack", "--json", "--ignore-scripts", "--pack-destination", temporary], cwd))[0];
-    if (packed.name !== pack.manifest.name || packed.version !== pack.manifest.version) throw new Error("Packed identity mismatch");
+    const result = JSON.parse(capture("npm", ["pack", "--json", "--ignore-scripts", "--pack-destination", temporary], cwd));
+    // npm 12 returns workspace results keyed by package name; earlier npm returns an array.
+    const packed = Array.isArray(result) ? result.find((item) => item.name === pack.manifest.name) : result[pack.manifest.name];
+    if (!packed || packed.name !== pack.manifest.name || packed.version !== pack.manifest.version) throw new Error("Packed identity mismatch");
     for (const other of all.filter((item) => item.id !== pack.id)) {
       if (packed.files.some((file: { path: string }) => file.path.startsWith(`packages/${other.id}/`) || file.path.startsWith(`skills/${other.id}-`))) throw new Error("Tarball contains another pack");
     }

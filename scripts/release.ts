@@ -9,6 +9,7 @@ const status = spawnSync("git", ["status", "--porcelain"], { cwd: root, encoding
 if (status.status !== 0 || status.stdout.trim()) throw new Error("Release requires a clean Git checkout");
 const tag = `${pack.manifest.name}@${pack.manifest.version}`;
 const cwd = resolve(root, pack.directory);
+run("bun", ["test", "./test/workspaces.test.ts"]);
 run("bun", ["run", "check"], cwd);
 // npm handles registry authentication; never read or print credentials here.
 run("npm", ["publish", "--access", "public", "--ignore-scripts"], cwd);
