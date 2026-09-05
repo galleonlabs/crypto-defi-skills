@@ -1,11 +1,11 @@
 ---
 name: galleon-defi-data
-description: Connect official CoinGecko and DefiLlama data tools and evaluate prices, protocol metrics and yield evidence. Use when configuring data access, researching DeFi markets, or reconciling source identity, freshness and coverage.
+description: Connect official CoinGecko, DefiLlama and AIXBT data tools and evaluate prices, protocol metrics, crypto narratives and yield evidence. Use when configuring data access, researching DeFi markets, or reconciling source identity, freshness and coverage.
 license: MIT
 compatibility: Portable agent instructions; optional price diagnostic requires Node.js 20+ and public network access. MCP setup requires a compatible client; paid providers require the user's own access.
 metadata:
   author: Galleon Labs
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # DeFi data
@@ -14,7 +14,7 @@ Make market and protocol evidence usable without confusing an aggregator observa
 
 ## Connect the right source
 
-Use [provider setup](references/providers.md) when enabling access or choosing between CoinGecko market/onchain data, DefiLlama protocol/yield data, and public API fallbacks. Reuse official MCP or SDK clients already present. Discover current tool schemas: advertised tool counts and names can lag the running server. Record unavailable capabilities separately from working ones.
+Use [provider setup](references/providers.md) when enabling access or choosing between CoinGecko market/onchain data, DefiLlama protocol/yield data, and public API fallbacks. For crypto projects, narratives and event research, use the [AIXBT workflow](references/aixbt.md). Reuse official MCP or SDK clients already present. Discover current tool schemas: advertised tool counts and names can lag the running server. Record unavailable capabilities separately from working ones.
 
 CoinGecko has a public keyless MCP path. DefiLlama's official MCP requires an API subscription and OAuth; its public REST endpoints are a distinct free surface. Credentials and plan enrollment are user-owned. Installing this skill grants neither spending authority nor permission to change an existing client's authentication.
 
@@ -25,6 +25,7 @@ Our name is `galleon-defi-data`; DefiLlama also publishes a different skill name
 - Resolve names to provider IDs and, for onchain decisions, chain IDs and exact contract/pool addresses. A ticker alone is insufficient; wrapped and bridged assets can differ.
 - Select the narrowest query and period that answers the question. Batch bounded IDs; choose server-side filters/limits when offered. Do not fetch entire histories for a spot lookup.
 - Preserve source URL/tool, normalized parameters, provider and chain identity, units, observation time, retrieval time, period/block when supplied, and missing fields. Never record credentials, authenticated URL paths, OAuth callbacks or request headers.
+- For vault, lending or stablecoin comparisons, use [product diligence](references/diligence.md) to identify yield payers, collateral, decision makers, oracle behavior and exit constraints.
 - Apply the [methodology checks](references/methodology.md) before comparing TVL, prices, fees or APY. State what the metric includes, what it excludes, and whether sources share an upstream feed.
 - Validate consequential pool, token, balance and position facts against an appropriate chain/RPC or protocol tool at a recorded block. A price observation is not a guaranteed fill; a listed pool is not proof of eligibility or safety.
 

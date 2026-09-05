@@ -26,6 +26,8 @@ Protocol fees, protocol revenue and holder revenue are not interchangeable. Comp
 
 Compare the same capital basis and time horizon. Separate reward-token price exposure, compounding assumptions, out-of-range time, impermanent loss, lending utilization, debt/liquidation exposure and incentive expiry. Subtract expected gas, swaps, automation/provider charges, borrowing and exit costs without double-counting charges already netted in the source. Highest displayed APY can reflect temporary incentives, thin capacity or a failed/empty-data assumption; validate before ranking it as best.
 
+For product assessments, extend these metric checks with [yield, collateral, oracle and exit diligence](diligence.md). Preserve canonical block hashes and finality when conclusions depend on chain state.
+
 ## Evidence record
 
 A concise record can be embedded in an analysis or saved as a local artifact:

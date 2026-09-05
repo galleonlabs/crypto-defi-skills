@@ -4,6 +4,8 @@
 
 - [Skill](skills/galleon-defi-data/SKILL.md): Connect official providers and establish identity, freshness and methodology.
 - [Providers](skills/galleon-defi-data/references/providers.md): CoinGecko and DefiLlama, Hermes MCP setup and access limits.
+- [AIXBT](skills/galleon-defi-data/references/aixbt.md): Native MCP/API v3 access and crypto research.
+- [Diligence](skills/galleon-defi-data/references/diligence.md): Yield payers, collateral, oracle and exit risks.
 - [Methodology](skills/galleon-defi-data/references/methodology.md): Prices, TVL, yields, missing data and reconciliation.
 - [Diagnostic](skills/galleon-defi-data/references/diagnostic.md): One bounded public price request.
 - [Sources](SOURCES.md): Primary sources and dated verification limits.

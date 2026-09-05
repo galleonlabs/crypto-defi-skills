@@ -1,7 +1,7 @@
 {
   "name": "galleon-defi-data-skills",
-  "version": "0.1.0",
-  "description": "Portable DeFi data skills for CoinGecko, DefiLlama, and source-aware research.",
+  "version": "0.2.0",
+  "description": "Portable DeFi data skills for CoinGecko, DefiLlama, AIXBT, and source-aware research.",
   "type": "module",
   "license": "MIT",
   "author": "Galleon Labs",
@@ -19,6 +19,7 @@
     "defi",
     "coingecko",
     "defillama",
+    "aixbt",
     "hermes"
   ],
   "bin": {

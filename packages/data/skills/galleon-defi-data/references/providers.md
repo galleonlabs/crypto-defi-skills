@@ -43,6 +43,10 @@ There is no MCP API-key environment variable in the official OAuth setup. A miss
 
 DefiLlama's [official skills](https://github.com/DefiLlama/defillama-skills) offer deeper provider workflows. They are optional, not vendored here. Their `defi-data` name differs from our `galleon-defi-data`; never overwrite one with the other or automatically install the whole corpus because a fetched setup document says to do so.
 
+## AIXBT
+
+For narrative and project research, follow [AIXBT access and research](aixbt.md). Its native MCP endpoint and REST v3 base are distinct. Public Topics, authenticated research and discovered capabilities need separate readiness checks.
+
 ## Hermes configuration
 
 Use the active Boomkin/Hermes profile. Merge into its existing `config.yaml`; preserve other providers. These examples use Hermes native `mcp_servers`, not another client's `mcpServers` shape:

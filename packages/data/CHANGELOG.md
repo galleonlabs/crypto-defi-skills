@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+- Add AIXBT native MCP and API v3 research guidance, separate authentication carriers, bounded discovery and event-time semantics.
+- Extend provider-neutral diligence with yield payers, collateral and loss allocation, oracle governance, redemption constraints and chain finality evidence.
+- Preserve the existing skill name and keyless diagnostic; no provider runtime, credentials or transaction authority are added.
+
 ## 0.1.0
 
 - Add independent `galleon-defi-data` workflow for official CoinGecko and DefiLlama access and source-aware research.
