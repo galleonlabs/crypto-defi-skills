@@ -10,7 +10,6 @@ Modular agent skills for DeFi, built around maintained official tools. Install o
 | --- | --- | --- | --- |
 | [LP](packages/lp) | [0.4.2](https://github.com/galleonlabs/crypto-defi-skills/releases/tag/galleon-lp-skills%400.4.2) | [`galleon-lp-skills`](https://www.npmjs.com/package/galleon-lp-skills) | Uniswap v2/v3/v4 and Aerodrome classic/Slipstream, with optional Revert and VFAT guidance |
 | [Hyperliquid](packages/hyperliquid) | [0.2.1](https://github.com/galleonlabs/crypto-defi-skills/releases/tag/galleon-hyperliquid-skills%400.2.1) | [`galleon-hyperliquid-skills`](https://www.npmjs.com/package/galleon-hyperliquid-skills) | Perps, spot, HIP-3 markets, account modes, trade planning and performance review |
-
 | [Infrastructure](packages/infra) | [0.1.0](https://github.com/galleonlabs/crypto-defi-skills/releases/tag/galleon-defi-infra-skills%400.1.0) | [`galleon-defi-infra-skills`](https://www.npmjs.com/package/galleon-defi-infra-skills) | RPC, Alchemy, Coinbase account and Agentic Wallet access, permissions and readiness |
 | [Data](packages/data) | [0.1.0](https://github.com/galleonlabs/crypto-defi-skills/releases/tag/galleon-defi-data-skills%400.1.0) | [`galleon-defi-data-skills`](https://www.npmjs.com/package/galleon-defi-data-skills) | DeFiLlama and CoinGecko access, market observations, identity, freshness and methodology |
 
@@ -127,7 +126,7 @@ LP 0.4.2 adds role-specific VFAT guidance across all six workflows: APR/TVL inte
 
 Installing a pack does not register an external provider or supply a wallet, signer, market-data subscription or hosted trading service. Connect tools through your harness. Financial actions require explicit authority, reviewed terms and reconciliation against chain or exchange records. There are no mandatory partner routes or hidden builder fees.
 
-Protocol-specific evidence and reviewed upstream revisions live in [LP sources](packages/lp/SOURCES.md) [Hyperliquid sources](packages/hyperliquid/SOURCES.md), [infrastructure sources](packages/infra/SOURCES.md) and [data sources](packages/data/SOURCES.md). Dated reviews are not guarantees about current provider capabilities or deployed contracts.
+Protocol-specific evidence and reviewed upstream revisions live in [LP sources](packages/lp/SOURCES.md), [Hyperliquid sources](packages/hyperliquid/SOURCES.md), [infrastructure sources](packages/infra/SOURCES.md) and [data sources](packages/data/SOURCES.md). Dated reviews are not guarantees about current provider capabilities or deployed contracts.
 
 ## One repository, independent releases
 
