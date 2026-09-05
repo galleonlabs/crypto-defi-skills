@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Designed for TypeScript integrations with RPC, indexer, simulation, and wallet boundaries. Protocol concepts apply in other languages."
 metadata:
   author: "Galleon Labs"
-  version: "0.4.1"
+  version: "0.4.2"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -17,7 +17,7 @@ If a skill rule blocks progress, cite its file and exact rule, explain the missi
 
 ## Tool selection
 
-When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
+When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority. For VFAT yield screening, Sickle positions or automation, also read [VFAT guidance](references/vfat.md).
 
 ## Start here and connected workflow
 

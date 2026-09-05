@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Portable instructions for any skill-capable agent. The optional read-only RPC diagnostic requires Node.js 20+ and a user-configured LP_RPC_URL environment variable."
 metadata:
   author: "Galleon Labs"
-  version: "0.4.1"
+  version: "0.4.2"
 ---
 
 # LP setup
@@ -14,7 +14,7 @@ Get from an installed skill to one verified chain observation, then identify exa
 
 ## Tool selection
 
-When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
+When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority. For VFAT yield screening, Sickle positions or automation, also read [VFAT guidance](references/vfat.md).
 
 ## First useful task
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2
+
+- Add optional VFAT yield discovery and role-specific Sickle guidance to all six canonical LP workflows.
+- Explain APR/TVL comparison limits, fee bases, automation permissions, reminted-position accounting and the distinction between rebalance stop-loss and exit.
+- Document official-source provenance and public SDK/API availability gaps without adding a runtime dependency.
+
 ## 0.4.1
 
 - Move to the crypto-defi-skills monorepo while preserving the npm package and CLI names.

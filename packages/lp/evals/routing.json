@@ -365,5 +365,69 @@
       "lp-execute"
     ],
     "reason": "Keep plan blocked until fees, custody and scope are explicitly reviewed; ordinary LP authority does not authorize lending."
+  },
+  {
+    "prompt": "Use VFAT to discover Base farms without connecting a wallet; which access paths actually work?",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Use public discovery and report unverified SDK/API availability without inventing credentials or enabling Sickle automation."
+  },
+  {
+    "prompt": "VFAT shows high Avg APR and low Rewarded TVL. Is that the net return my narrow range will earn?",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Separate trailing fees, projected emissions, eligibility, denominators, range assumptions and route costs before comparing yield."
+  },
+  {
+    "prompt": "Plan this VFAT deposit with automated compounding and show every fee, Sickle permission and withdrawal path, without signing.",
+    "expected": "lp-plan",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "A one-click route still needs explicit fee bases, custody, approvals, automation settings and a non-executable draft until verified."
+  },
+  {
+    "prompt": "My VFAT rebalance stop-loss was crossed. Confirm whether the position was sold and where its assets are.",
+    "expected": "lp-monitor",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Rebalance stop-loss suspends rebalancing rather than exiting; require receipt and current inventory evidence for any separate exit."
+  },
+  {
+    "prompt": "VFAT reminted my NFT during a rebalance. Reconstruct its balances, returned dust and inherited automation settings.",
+    "expected": "lp-monitor",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Trace the old/new position identity without double-counting funds and reread actual permissions."
+  },
+  {
+    "prompt": "Integrate VFAT using its official SDK; the public package returns 404 and the repository refers to a local sibling dependency.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Report the unavailable distribution and choose documented upstream alternatives, never invent an API or adopt a lookalike package."
+  },
+  {
+    "prompt": "The Sickle wrapper sends rewards through a partner router. Review its ownership, fee admin and principal-withdrawal paths.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Wrapper custody and mutable reward fees are separate integration decisions; source limits are not live fee quotes."
+  },
+  {
+    "prompt": "Execute my reviewed VFAT exit through the connected wallet, keeping exactly the approved recipients and route.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [
+      "lp-analyze"
+    ],
+    "reason": "Requires exact authority, full route decoding, simulation, one send and receipt/state reconciliation; no hidden wrapper substitution."
   }
 ]

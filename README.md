@@ -51,7 +51,7 @@ Codex plugin manifests remain in each package's `.codex-plugin/` directory. For 
 
 ## Use official tools first
 
-The skills help choose and connect the maintained upstream tools for a task: Uniswap's official skills, SDKs and liquidity API; Aerodrome's documented protocol tooling; Hyperliquid's official SDK and public APIs; and optional Revert tools. They explain required access, supported capabilities, and how to verify the result.
+The skills help choose and connect the maintained upstream tools for a task: Uniswap's official skills, SDKs and liquidity API; Aerodrome's documented protocol tooling; Hyperliquid's official SDK and public APIs; optional Revert tools; and VFAT yield discovery and Sickle resources. They explain required access, supported capabilities, and how to verify the result.
 
 Start with `lp-setup` or `hyperliquid-setup`. A skill installation provides guidance and small diagnostics, not a wallet, market-data subscription, signer, or hosted trading service. Tool access and financial authority remain explicit. There are no mandatory partner routes or hidden builder fees.
 

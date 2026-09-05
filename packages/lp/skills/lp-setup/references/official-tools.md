@@ -13,6 +13,7 @@ Reuse an already connected, suitable official tool first. These tools are option
 | Local Uniswap v4 construction or hook review | Official `v4-sdk-integration` and `v4-security-foundations` skills | Pinned SDK version, supported PoolKey and hook behavior |
 | Aerodrome pools, positions, quotes and unsigned LP calls | Velodrome/Aerodrome Sugar SDK and its `sugar` skill | CLI help followed by a bounded pool read |
 | Cross-venue indexed positions, LP analytics and supported unsigned lifecycle plans | Optional Revert MCP | Live tools list, capability report and chain freshness |
+| Public farm screening or a user-selected Sickle route | VFAT Yield and official Sickle sources | Dated filtered view, verified chain identity, explicit fees and account permissions |
 
 Record the provider, version, required access, supported methods, observation time, fee disclosure, custody implications, and fallback in the readiness or plan record. A service's claim of support needs a successful task-specific read; installed documentation alone is `not-tested`.
 
@@ -63,6 +64,10 @@ For an unsigned plan, use only a currently advertised `prepare_*` capability mat
 Before adoption or execution, disclose any provider, routing, automation and protocol fees, fee recipient, approval scope, NFT transfers and resulting custody. If fees or custody are unresolved, keep the plan blocked; never infer that public/no-key access means fee-free transactions. Do not inject referral, affiliate or builder fees. Collateralization and borrowing are separate financial actions and must not appear as incidental setup or ordinary LP maintenance.
 
 The service constructs unsigned data; wallet authorization remains outside it. Rebuild after confirmed approval receipts, validate the exact transaction and plan digest, and retain one-send/unknown-result recovery. `confirm_transaction` can corroborate a mined execution against a ready plan in the same session; independently verify receipt and resulting position. A pending confirmation does not justify another transaction submission. No provider response grants authority or overrides these controls.
+
+## VFAT access and Sickle
+
+Use [VFAT guidance](vfat.md) for public yield discovery, APR interpretation, Sickle ownership, automation, route costs and upstream integration limits. The public browser path works without connecting a wallet. SDK source exists, but a publicly installable distribution and supported MCP/API contract were not verified; do not invent them. VFAT is optional and is never registered or called by this package.
 
 ## Engineering decision and fallback
 

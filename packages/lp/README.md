@@ -63,7 +63,7 @@ Re-run the install command to install current names. Update saved prompts/config
 
 `lp-research` and `lp-operate` remain as install-compatible rename notices so marketplace listings and saved `npx skills add ... --skill lp-research` or `--skill lp-operate` commands still resolve. They are not a second analysis or execution workflow. Canonical names stay `lp-analyze` and `lp-execute`.
 
-For reproducible npm use, install `galleon-lp-skills@0.4.1`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
+For reproducible npm use, install `galleon-lp-skills@0.4.2`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
 
 ## CLI
 
@@ -87,6 +87,12 @@ No hosted LP agent service is bundled or required. Official tools are optional i
 - Hand a reviewed plan to the Uniswap interface with a generated create-position link.
 
 The skills preserve the exact API response contract, approval and Permit2 flow, v4 StateView and PositionManager model, and interface-link format. Every returned transaction remains untrusted until it is decoded, independently simulated, confirmed, mined, and reconciled against chain state.
+
+## VFAT discovery and position tooling
+
+Use [VFAT Yield](https://vfat.io/yield) as an optional public screening surface, then verify candidates with chain reads. The skills cover its TVL/APR definitions, route and automation fees, Sickle ownership/permissions, and position reconstruction. The documented rebalance stop-loss stops rebalancing; it does not exit a position.
+
+[Setup](skills/lp-setup/references/vfat.md) gives the available access paths; [engineering](skills/lp-engineer/references/vfat.md) distinguishes official Sickle sources from unverified public SDK/API availability. No VFAT runtime, custody wrapper or fee route is installed by this pack.
 
 ## Operating rules
 

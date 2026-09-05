@@ -27,3 +27,9 @@ npm install --global galleon-lp-skills
 - Uniswap interface link: lp-skills uniswap-link --help
 - discovery schema: https://schemas.agentskills.io/discovery/0.2.0/schema.json
 - source: https://github.com/galleonlabs/crypto-defi-skills
+
+## Optional VFAT resource
+
+Public yield screening: https://vfat.io/yield
+Official sources: https://github.com/vfat-io
+Role-specific VFAT references live inside each canonical skill. They cover APR definitions, Sickle custody, automation, fee bases and verified access limits. No provider is installed or required.
