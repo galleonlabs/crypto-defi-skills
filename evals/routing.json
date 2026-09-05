@@ -1,218 +1,337 @@
 [
   {
     "prompt": "Compare BTC and ETH perpetual liquidity, funding, basis, and liquidation behavior before I choose a market.",
-    "expected": "hyperliquid-research",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "expected": "hyperliquid-analyze",
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Market comparison before a trade intent is chosen."
   },
   {
     "prompt": "Assess whether this HIP-3 market has enough real depth and open interest for a 50000 dollar position.",
-    "expected": "hyperliquid-research",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "expected": "hyperliquid-analyze",
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Venue and market due diligence at the proposed size."
   },
   {
     "prompt": "Test the claim that positive predicted funding makes this short carry trade profitable after fees and slippage.",
-    "expected": "hyperliquid-research",
-    "mustNotInvoke": ["hyperliquid-plan", "hyperliquid-operate"],
+    "expected": "hyperliquid-analyze",
+    "mustNotInvoke": [
+      "hyperliquid-plan",
+      "hyperliquid-execute"
+    ],
     "reason": "Strategy evidence and cost analysis before planning."
   },
   {
     "prompt": "Explain the current oracle, mark, and robust price index risks for this thin Hyperliquid perpetual.",
-    "expected": "hyperliquid-research",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "expected": "hyperliquid-analyze",
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Market-mechanism research without an execution request."
   },
   {
     "prompt": "Find current primary-source evidence for how portfolio margin would affect a cross-asset basis strategy.",
-    "expected": "hyperliquid-research",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "expected": "hyperliquid-analyze",
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Current protocol research for a strategy hypothesis."
   },
   {
     "prompt": "Evaluate this proposed HYPE momentum rule with clear invalidation criteria and no order plan yet.",
-    "expected": "hyperliquid-research",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "expected": "hyperliquid-analyze",
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "A testable strategy verdict belongs in research."
   },
   {
     "prompt": "Build an unsigned BTC long ticket risking 0.5 percent with a stressed stop and exact precision.",
     "expected": "hyperliquid-plan",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Exact sizing and ticket construction without submission."
   },
   {
     "prompt": "Specify a reduce-only stop and take-profit pair for my chosen ETH position, but do not sign anything.",
     "expected": "hyperliquid-plan",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Unsigned protective-order design after intent selection."
   },
   {
     "prompt": "Turn this entry idea into an IOC limit with a worst price, client order ID, expiry, and failure branches.",
     "expected": "hyperliquid-plan",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Bounded order semantics and preflight planning."
   },
   {
     "prompt": "Calculate size for a short when the stop is 2 percent above entry and include stop slippage and both fees.",
     "expected": "hyperliquid-plan",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Deterministic stressed-stop sizing for a chosen side."
   },
   {
     "prompt": "Draft a TWAP ticket that covers partial fills, cancellation, protection, and the final reconciliation reads.",
     "expected": "hyperliquid-plan",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "An unsigned multi-state order plan is required."
   },
   {
     "prompt": "Plan a leverage change for this isolated position and show the post-change liquidation assumptions only.",
     "expected": "hyperliquid-plan",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "A requested account action needs a reviewable ticket first."
   },
   {
     "prompt": "Reconcile my current BTC position, open orders, trigger orders, fills, and liquidation buffer.",
     "expected": "hyperliquid-monitor",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Read-only reconstruction of current account state."
   },
   {
     "prompt": "Did order 123 fill, rest, reject, or disappear, and what exposure is left now?",
     "expected": "hyperliquid-monitor",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Order and position reconciliation from exchange records."
   },
   {
     "prompt": "Watch this account and alert me if the ETH stop is missing or no longer covers the full position.",
     "expected": "hyperliquid-monitor",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Continuous read-only protection monitoring."
   },
   {
     "prompt": "Normalize these predicted funding rates by each venue interval and show my signed 24 hour cashflow.",
     "expected": "hyperliquid-monitor",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Funding stream normalization and account cashflow monitoring."
   },
   {
     "prompt": "The WebSocket reconnected after a gap. Tell me what is known, unavailable, and needs backfill.",
     "expected": "hyperliquid-monitor",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Degraded stream state requires read-only reconciliation."
   },
   {
     "prompt": "Check unified-account balances, borrow-lend state, positions, and available margin without changing anything.",
     "expected": "hyperliquid-monitor",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Current account abstraction state must be read together."
   },
   {
     "prompt": "Submit the exact approved BTC limit ticket once and reconcile its client order ID before doing anything else.",
-    "expected": "hyperliquid-operate",
-    "mustNotInvoke": ["hyperliquid-research"],
+    "expected": "hyperliquid-execute",
+    "mustNotInvoke": [
+      "hyperliquid-analyze"
+    ],
     "reason": "Explicit execution of an already approved exact ticket."
   },
   {
     "prompt": "Cancel this named order now, send only once, and verify that it is no longer open.",
-    "expected": "hyperliquid-operate",
-    "mustNotInvoke": ["hyperliquid-research"],
+    "expected": "hyperliquid-execute",
+    "mustNotInvoke": [
+      "hyperliquid-analyze"
+    ],
     "reason": "Explicit cancel request with a bounded target and reconciliation."
   },
   {
     "prompt": "Close exactly half of this ETH position with the approved reduce-only IOC ticket and verify the remainder.",
-    "expected": "hyperliquid-operate",
-    "mustNotInvoke": ["hyperliquid-research"],
+    "expected": "hyperliquid-execute",
+    "mustNotInvoke": [
+      "hyperliquid-analyze"
+    ],
     "reason": "Explicit approved exposure reduction and state verification."
   },
   {
     "prompt": "Place the two approved reduce-only protective orders with their distinct client IDs and confirm both are open.",
-    "expected": "hyperliquid-operate",
-    "mustNotInvoke": ["hyperliquid-research"],
+    "expected": "hyperliquid-execute",
+    "mustNotInvoke": [
+      "hyperliquid-analyze"
+    ],
     "reason": "Explicit submission of reviewed protection legs."
   },
   {
     "prompt": "Modify this approved resting order to the exact new price and size, stopping on any unknown response.",
-    "expected": "hyperliquid-operate",
-    "mustNotInvoke": ["hyperliquid-research"],
+    "expected": "hyperliquid-execute",
+    "mustNotInvoke": [
+      "hyperliquid-analyze"
+    ],
     "reason": "Explicit bounded modification with an ambiguity rule."
   },
   {
     "prompt": "Run the approved isolated leverage change now, then reread the position and liquidation estimate.",
-    "expected": "hyperliquid-operate",
-    "mustNotInvoke": ["hyperliquid-research"],
+    "expected": "hyperliquid-execute",
+    "mustNotInvoke": [
+      "hyperliquid-analyze"
+    ],
     "reason": "Explicit execution of a reviewed leverage ticket."
   },
   {
     "prompt": "Review yesterday's fills, fees, funding, realized PnL, and adherence to the approved risk ticket.",
     "expected": "hyperliquid-review",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Post-trade accounting and process grading."
   },
   {
     "prompt": "Reconstruct the execution cost of this closed short from every fill and funding payment.",
     "expected": "hyperliquid-review",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Historical fill-level outcome attribution."
   },
   {
     "prompt": "Grade whether the profitable trade was still a process failure because its stop was missing for six minutes.",
     "expected": "hyperliquid-review",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Process quality must be separated from profit."
   },
   {
     "prompt": "Append this completed trade to a tamper-evident journal and preserve corrections as new entries.",
     "expected": "hyperliquid-review",
-    "mustNotInvoke": ["hyperliquid-plan", "hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-plan",
+      "hyperliquid-execute"
+    ],
     "reason": "Historical journal maintenance belongs to review."
   },
   {
     "prompt": "Compare this week's planned risk, actual risk, slippage, funding, and R multiples by trade.",
     "expected": "hyperliquid-review",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "A bounded period review using exchange records."
   },
   {
     "prompt": "Explain why the order response looked successful but the final position did not change, using the audit trail.",
     "expected": "hyperliquid-review",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Incident reconstruction after an ambiguous action result."
   },
   {
     "prompt": "Build a TypeScript Hyperliquid adapter with typed info reads, action signing, and explicit reconciliation states.",
     "expected": "hyperliquid-engineer",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Integration implementation is engineering, not an exchange action."
   },
   {
     "prompt": "Review this bot for nonce reuse, blind retries, float serialization, and API wallet address mistakes.",
     "expected": "hyperliquid-engineer",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Security and correctness review of automation code."
   },
   {
     "prompt": "Add tests for spot and perp asset IDs, HIP-3 market names, tick rules, and size precision.",
     "expected": "hyperliquid-engineer",
-    "mustNotInvoke": ["hyperliquid-plan"],
+    "mustNotInvoke": [
+      "hyperliquid-plan"
+    ],
     "reason": "Protocol invariant tests belong to integration engineering."
   },
   {
     "prompt": "Design a WebSocket consumer that snapshots, deduplicates, detects gaps, reconnects, and backfills safely.",
     "expected": "hyperliquid-engineer",
-    "mustNotInvoke": ["hyperliquid-monitor"],
+    "mustNotInvoke": [
+      "hyperliquid-monitor"
+    ],
     "reason": "Building the monitoring infrastructure is engineering work."
   },
   {
     "prompt": "Fix the client so an unknown order result cannot trigger an automatic second send.",
     "expected": "hyperliquid-engineer",
-    "mustNotInvoke": ["hyperliquid-operate"],
+    "mustNotInvoke": [
+      "hyperliquid-execute"
+    ],
     "reason": "Implementation of idempotent action handling."
   },
   {
     "prompt": "Model standard, unified, and portfolio-margin account state without assuming perp DEX balances are independent.",
     "expected": "hyperliquid-engineer",
-    "mustNotInvoke": ["hyperliquid-research"],
+    "mustNotInvoke": [
+      "hyperliquid-analyze"
+    ],
     "reason": "Account abstraction data modeling is an integration concern."
+  },
+  {
+    "prompt": "I installed this pack; help my agent get started without a wallet.",
+    "expected": "hyperliquid-setup",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "Connection readiness and first use precede market decisions or actions."
+  },
+  {
+    "prompt": "My harness cannot read market data. What tools do I need?",
+    "expected": "hyperliquid-setup",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "Connection readiness and first use precede market decisions or actions."
+  },
+  {
+    "prompt": "Check whether my configured tools support analysis or execution.",
+    "expected": "hyperliquid-setup",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "Connection readiness and first use precede market decisions or actions."
+  },
+  {
+    "prompt": "Verify a first public ETH market read and list missing capabilities.",
+    "expected": "hyperliquid-setup",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "Connection readiness and first use precede market decisions or actions."
+  },
+  {
+    "prompt": "How do I connect these skills to the tools already in my agent?",
+    "expected": "hyperliquid-setup",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "Connection readiness and first use precede market decisions or actions."
   }
 ]

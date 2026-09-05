@@ -1,7 +1,7 @@
 {
   "name": "galleon-hyperliquid-skills",
-  "version": "0.1.0",
-  "description": "Agent skills and deterministic tools for Hyperliquid research, planning, monitoring, execution, review, and engineering.",
+  "version": "0.2.0",
+  "description": "Agent skills for Hyperliquid setup, market analysis, trade planning and execution, monitoring, and performance review.",
   "type": "module",
   "license": "MIT",
   "author": "Galleon Labs",

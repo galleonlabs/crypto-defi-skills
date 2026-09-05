@@ -3,14 +3,29 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "Start here",
+      "description": "Connect tools and verify the first public read.",
+      "skills": [
+        "hyperliquid-setup"
+      ]
+    },
+    {
       "title": "Hyperliquid decisions",
       "description": "Research, plan, and monitor before any exchange write.",
-      "skills": ["hyperliquid-research", "hyperliquid-plan", "hyperliquid-monitor"]
+      "skills": [
+        "hyperliquid-analyze",
+        "hyperliquid-plan",
+        "hyperliquid-monitor"
+      ]
     },
     {
       "title": "Hyperliquid delivery",
       "description": "Execute explicit actions, review outcomes, and build integrations.",
-      "skills": ["hyperliquid-operate", "hyperliquid-review", "hyperliquid-engineer"]
+      "skills": [
+        "hyperliquid-execute",
+        "hyperliquid-review",
+        "hyperliquid-engineer"
+      ]
     }
   ]
 }

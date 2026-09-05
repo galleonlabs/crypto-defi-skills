@@ -4,7 +4,7 @@ description: "Build an exact unsigned Hyperliquid ticket for an entry, exit, red
 license: MIT
 compatibility: "Requires read-only market and account access for executable plans. The bundled risk script needs Node.js 20 or newer."
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   protocol: "hyperliquid"
 ---
 
@@ -13,6 +13,10 @@ metadata:
 Turn one user intent into an unsigned ticket that can be reviewed, expired, and reconciled.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## First task and connected workflow
+
+Prepare an unsigned ticket for the selected action. For a hypothetical sizing example, state supplied inputs and missing live preflight fields. A cancel needs order identity, not an invented entry price. Read [agent integration and handoffs](references/agent-integration.md) on first use or when a tool or related skill is missing.
 
 ## Task handling
 
@@ -45,4 +49,4 @@ Require the network, user account address, target market and DEX, side, action, 
 
 ## Boundary
 
-Do not construct a signature, expose a key, submit an action, or claim that a plan or simulation changed exchange state. Route explicit execution to `hyperliquid-operate` only after the ticket is complete.
+Do not construct a signature, expose a key, submit an action, or claim that a plan or simulation changed exchange state. Route explicit execution to `hyperliquid-execute` only after the ticket is complete.

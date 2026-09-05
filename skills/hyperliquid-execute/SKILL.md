@@ -1,18 +1,22 @@
 ---
-name: hyperliquid-operate
+name: hyperliquid-execute
 description: "Safely carry out a user-requested Hyperliquid trading action through a trusted signer, then reconcile the exchange record. Use only when the user explicitly asks to place, cancel, modify, reduce, close, set a trigger or TWAP, change leverage, or change isolated margin and an exact reviewed ticket exists. Requires fresh approval by ticket ID."
 license: MIT
 compatibility: "Requires current read access, a trusted signer or official SDK boundary, and an approved API wallet. Never imports or stores a private key."
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   protocol: "hyperliquid"
 ---
 
-# Hyperliquid operate
+# Hyperliquid execute
 
 Execute one reviewed trading action, once, and prove the resulting exchange state.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## First task and connected workflow
+
+Inspect the supplied ticket and available execution/reconciliation tool schemas. Return readiness or exact missing inputs before any action; do not create a connection by handling secrets. Read [agent integration and handoffs](references/agent-integration.md) on first use or when a tool or related skill is missing.
 
 ## Authorization gate
 

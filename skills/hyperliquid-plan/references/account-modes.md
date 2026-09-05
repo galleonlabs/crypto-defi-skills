@@ -29,4 +29,4 @@ Treat discontinued DEX abstraction as a legacy state to migrate deliberately thr
 
 ## Planning consequence
 
-Every ticket records the observed account mode and expires if it changes. Account-mode changes, transfers, API-wallet approval, and builder configuration require separate authorization and are outside `hyperliquid-operate`.
+Every ticket records the observed account mode and expires if it changes. Account-mode changes, transfers, API-wallet approval, and builder configuration require separate authorization and are outside `hyperliquid-execute`.

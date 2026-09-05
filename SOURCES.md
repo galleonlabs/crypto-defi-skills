@@ -24,3 +24,7 @@ This corpus reorganizes public Galleon Labs operating knowledge around portable 
 ## Implementation
 
 The skill routing, references, evaluation cases, TypeScript tools, tests, and package are maintained here. Mutable constants are deliberately absent from executable code. Agents must query current metadata, account state, and official documentation before acting.
+
+## Setup helper
+
+Public read request bodies and network URLs were checked against the [official SDK Info methods](https://github.com/hyperliquid-dex/hyperliquid-python-sdk/blob/master/hyperliquid/info.py) and [network constants](https://github.com/hyperliquid-dex/hyperliquid-python-sdk/blob/master/hyperliquid/utils/constants.py) on 2026-09-05. The helper is limited to validator-operated perpetual markets and does not interpret metadata indices as execution asset IDs.

@@ -4,7 +4,7 @@ description: "Reconcile a Hyperliquid account, position, order, fill, funding st
 license: MIT
 compatibility: "Requires read-only Hyperliquid API access and the user account address. The bundled funding script needs Node.js 20 or newer."
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   protocol: "hyperliquid"
 ---
 
@@ -13,6 +13,10 @@ metadata:
 Reconstruct current exchange state and distinguish safe, triggered, and unavailable observations.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## First task and connected workflow
+
+Reconcile one requested public user account from read-only tools and report positions, protection, timestamps and gaps. A failed read is unavailable, never an empty healthy account. Read [agent integration and handoffs](references/agent-integration.md) on first use or when a tool or related skill is missing.
 
 ## Task handling
 
@@ -41,4 +45,4 @@ Reuse the requested account or position identity, then verify it from current re
 
 ## Boundary
 
-Do not place, modify, cancel, close, change leverage, transfer, or submit any exchange action. State the exact next read or unsigned action needed. Route a requested action to `hyperliquid-plan` or `hyperliquid-operate`.
+Do not place, modify, cancel, close, change leverage, transfer, or submit any exchange action. State the exact next read or unsigned action needed. Route a requested action to `hyperliquid-plan` or `hyperliquid-execute`.

@@ -1,7 +1,7 @@
 # Research output
 
 ```markdown
-# Hyperliquid research
+# Hyperliquid analyze
 
 - decision: <question being settled>
 - scope: <network, product, DEX, market, size, horizon>

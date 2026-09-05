@@ -1,6 +1,7 @@
 export const SKILL_CATALOG = [
+  { name: "hyperliquid-setup", purpose: "Discover tools, verify a public market read, and map workflow readiness." },
   {
-    name: "hyperliquid-research",
+    name: "hyperliquid-analyze",
     purpose: "Assess markets, funding, liquidity, catalysts, and strategy evidence.",
   },
   {
@@ -12,7 +13,7 @@ export const SKILL_CATALOG = [
     purpose: "Reconcile account, position, order, fill, funding, and feed state.",
   },
   {
-    name: "hyperliquid-operate",
+    name: "hyperliquid-execute",
     purpose: "Execute one explicitly approved trading action and reconcile it.",
   },
   {

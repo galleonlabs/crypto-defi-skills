@@ -1,4 +1,0 @@
-interface:
-  display_name: Hyperliquid Research
-  short_description: Assess Hyperliquid markets with live evidence
-  default_prompt: Use $hyperliquid-research to assess this market or trading claim with current, sourced evidence.

@@ -4,7 +4,7 @@ description: "Journal and review Hyperliquid orders, fills, positions, funding, 
 license: MIT
 compatibility: "Requires read-only account history and the relevant ticket or intent record. The bundled review script needs Node.js 20 or newer."
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   protocol: "hyperliquid"
 ---
 
@@ -13,6 +13,10 @@ metadata:
 Reconstruct what happened from exchange records, then grade process separately from outcome.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## First task and connected workflow
+
+Reconstruct one completed trade from fills, fees and funding; use the bundled arithmetic script on explicit inputs and mark any missing exchange evidence. Read [agent integration and handoffs](references/agent-integration.md) on first use or when a tool or related skill is missing.
 
 ## Task handling
 
@@ -43,4 +47,4 @@ Use `clean`, `minor break`, or `major break`. Major breaks include an unapproved
 
 ## Boundary
 
-Do not recommend a new trade, modify controls to excuse an outcome, or perform any exchange write. Route new research to `hyperliquid-research` and any new action through a fresh plan.
+Do not recommend a new trade, modify controls to excuse an outcome, or perform any exchange write. Route new research to `hyperliquid-analyze` and any new action through a fresh plan.

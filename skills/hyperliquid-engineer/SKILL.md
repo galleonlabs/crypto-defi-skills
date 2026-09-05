@@ -4,7 +4,7 @@ description: "Implement or review Hyperliquid market-data, account, order, signi
 license: MIT
 compatibility: "Designed for typed integrations using current official APIs and SDKs. Architecture and safety rules apply in any language."
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   protocol: "hyperliquid"
 ---
 
@@ -13,6 +13,10 @@ metadata:
 Build exchange software with typed intent, isolated signing, idempotent reconciliation, and explicit degraded states.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## First task and connected workflow
+
+Inventory one missing integration capability and produce a minimal adapter contract with failure fixtures before implementation. Keep signer material outside the agent context. Read [agent integration and handoffs](references/agent-integration.md) on first use or when a tool or related skill is missing.
 
 ## Task handling
 
