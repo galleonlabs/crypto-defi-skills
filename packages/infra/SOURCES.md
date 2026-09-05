@@ -38,3 +38,7 @@ Tarball integrity (npm metadata):
 ## Validation boundary
 
 The local diagnostic uses standard EVM JSON-RPC reads and is tested against deterministic provider fixtures, including HTTP 402, rate limits, wrong chain, malformed state, oversized responses and secret-bearing exceptions. Those checks do not certify a production provider or wallet. Package validation covers frontmatter, version agreement and self-contained local links; it is not a measured skill-routing benchmark.
+
+## Primitive expansion — 2026-09-05
+
+Expand official DeFi tool selection, Hermes progressive disclosure and EVM/Solana transaction context. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.

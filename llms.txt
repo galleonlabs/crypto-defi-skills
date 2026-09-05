@@ -1,13 +1,24 @@
 # Crypto DeFi Skills
 
-Independently installable LP and Hyperliquid skill packs from Galleon Labs.
+Fourteen independent DeFi skill packs; 25 current skills. Official tools, portable instructions and source-backed workflows.
 
-- LP skills: https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lp
-- Hyperliquid skills: https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid
-- npm: galleon-lp-skills and galleon-hyperliquid-skills
-- Agent setup and updates: https://github.com/galleonlabs/boomkin
-- Install one skill: npx skills add galleonlabs/crypto-defi-skills --skill lp-monitor
-- Package release procedure: RELEASING.md
-- Migration: MIGRATION.md
+- [infra](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/infra): RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration
+- [data](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/data): CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence
+- [lp](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lp): Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows
+- [hyperliquid](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid): Spot, perps, HIP-3, account modes, execution and review
+- [lending](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lending): Aave, Morpho, Compound, Euler, Spark and Solana lending
+- [staking](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/staking): Lido, Rocket Pool, EigenLayer and Symbiotic staking and exits
+- [yield](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/yield): Vaults, Pendle PT/YT, Yearn, Spark savings and Ethena
+- [tokenized-assets](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/tokenized-assets): Ondo and OpenEden eligibility, issuer risk and settlement
+- [routing](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/routing): 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP
+- [derivatives](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/derivatives): GMX, Derive, Drift and Pendle Boros trading lifecycles
+- [portfolio](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/portfolio): Positions, liabilities, net exposure, cash flows and performance
+- [security](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/security): Transaction decoding, permissions, simulation and receipt review
+- [payments](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/payments): Stablecoin transfers, x402, Sablier and Superfluid
+- [governance](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/governance): Snapshot, Cactus, Governor, voting and Safe execution
 
-Each pack has its own versions, CLI, references, plugin manifests and tests. The private root workspace is not an npm package. Prefer official protocol tools and verify tool capabilities before use. No wallet, signer, subscription, or trading authority is included by installing skills.
+- [Research and verification](docs/research/report-source.md)
+- [Hermes onboarding: Boomkin](https://github.com/galleonlabs/boomkin)
+- [Independent releases](RELEASING.md)
+
+Install one skill or any selected packs. No signer, subscription or financial authority is supplied by installation.

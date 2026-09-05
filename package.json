@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "check": "bun scripts/workspaces.ts check",
-    "test": "bun test ./test/workspaces.test.ts",
+    "test": "bun test ./test ./scripts/content-pack/validation.test.ts",
     "pack": "bun scripts/workspaces.ts pack",
     "discovery": "bun scripts/build-discovery-index.ts",
     "release": "bun scripts/release.ts",

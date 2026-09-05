@@ -1,0 +1,18 @@
+{
+  "name": "galleon-defi-security-skills",
+  "version": "0.1.0",
+  "description": "Review transaction intent, permissions and simulation evidence.",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/security#readme",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "hermes",
+    "security"
+  ],
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "skills": "./skills/"
+}

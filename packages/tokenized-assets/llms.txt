@@ -1,0 +1,7 @@
+# Galleon DeFi Tokenized-Assets Skills
+
+Research tokenized assets, eligibility and issuer settlement.
+
+- [Workflow](skills/galleon-defi-tokenized-assets/SKILL.md)
+- [Providers](skills/galleon-defi-tokenized-assets/references/providers.md)
+- [Sources](SOURCES.md)

@@ -10,7 +10,7 @@ One portable skill for connecting official market and DeFi data tools and turnin
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-data
-npx --package galleon-defi-data-skills@0.2.0 defi-data-skills catalog
+npx --package galleon-defi-data-skills@0.3.0 defi-data-skills catalog
 ```
 
 The `galleon-defi-data` name avoids colliding with DefiLlama's own `defi-data` skill. Do not overwrite upstream skills when adding its optional research workflows. This pack does not install or authenticate MCP servers just by being installed.
@@ -30,8 +30,8 @@ Read [the skill](skills/galleon-defi-data/SKILL.md) or its [provider setup](skil
 ## Verify public data
 
 ```bash
-npx --package galleon-defi-data-skills@0.2.0 defi-data-skills price-check --provider coingecko --id bitcoin
-npx --package galleon-defi-data-skills@0.2.0 defi-data-skills price-check --provider defillama --id bitcoin
+npx --package galleon-defi-data-skills@0.3.0 defi-data-skills price-check --provider coingecko --id bitcoin
+npx --package galleon-defi-data-skills@0.3.0 defi-data-skills price-check --provider defillama --id bitcoin
 ```
 
 Node 20+; one keyless public GET per invocation, no environment credentials, no redirects, a 10-second deadline and a 64 KiB response limit. A failed or stale response exits nonzero without exposing provider error bodies. This is a connectivity/freshness check, not an executable quote or production price oracle. The DefiLlama route uses its CoinGecko-ID namespace, so agreement is not necessarily independent corroboration.

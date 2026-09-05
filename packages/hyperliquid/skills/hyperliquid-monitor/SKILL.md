@@ -4,7 +4,7 @@ description: "Reconcile a Hyperliquid account, position, order, fill, funding st
 license: MIT
 compatibility: "Requires read-only Hyperliquid API access and the user account address. The bundled funding script needs Node.js 20 or newer."
 metadata:
-  version: "0.2.1"
+  version: "0.3.0"
   protocol: "hyperliquid"
 ---
 

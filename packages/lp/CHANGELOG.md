@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0 - 2026-09-05
+
+Expand official Curve and Balancer guidance, VFAT custody and fees, and Revert planner/confirmation boundaries. Preserve standalone MIT and attribution notices in every package and skill archive.
+
 ## 0.4.2
 
 - Add optional VFAT yield discovery and role-specific Sickle guidance to all six canonical LP workflows.

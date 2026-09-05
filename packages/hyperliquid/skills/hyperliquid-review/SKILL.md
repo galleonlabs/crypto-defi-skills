@@ -4,7 +4,7 @@ description: "Journal and review Hyperliquid orders, fills, positions, funding, 
 license: MIT
 compatibility: "Requires read-only account history and the relevant ticket or intent record. The bundled review script needs Node.js 20 or newer."
 metadata:
-  version: "0.2.1"
+  version: "0.3.0"
   protocol: "hyperliquid"
 ---
 

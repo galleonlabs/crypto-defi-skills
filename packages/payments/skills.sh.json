@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "DeFi payments",
+      "description": "Plan stablecoin payments, x402 purchases and token streams.",
+      "skills": [
+        "galleon-defi-payments"
+      ]
+    }
+  ]
+}

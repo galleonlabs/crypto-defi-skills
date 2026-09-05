@@ -3,7 +3,7 @@ import { spawnSync } from "node:child_process";
 import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { parse } from "yaml";
-import { packages } from "./workspaces.ts";
+import { checkAttribution } from "./check-attribution.ts";
 
 const schema = "https://schemas.agentskills.io/discovery/0.2.0/schema.json";
 const root = resolve(import.meta.dirname, "..");
@@ -11,6 +11,9 @@ const outputDirectory = resolve(root, "artifacts");
 const baseUrl = process.argv[2];
 
 if (!baseUrl) throw new Error("Usage: bun scripts/build-discovery-index.ts <artifact-base-url>");
+
+const source = await checkAttribution({ root, revision: "HEAD" });
+const commit = source.commit!;
 
 const archiveEnvironment = {
   ...process.env,
@@ -46,7 +49,7 @@ function runBuffer(command: string, args: string[], input?: Uint8Array): Uint8Ar
 
 function readMetadata(directory: string): { name: string; description: string } {
   const path = `${directory}/SKILL.md`;
-  const source = runText("git", ["show", `HEAD:${path}`]);
+  const source = runText("git", ["show", `${commit}:${path}`]);
   const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1];
   if (!frontmatter) throw new Error(`Missing frontmatter in ${path}`);
   const metadata = parse(frontmatter) as { name?: unknown; description?: unknown };
@@ -65,9 +68,9 @@ function readMetadata(directory: string): { name: string; description: string } 
 }
 
 function createArchive(directory: string): Uint8Array {
-  const tree = runText("git", ["rev-parse", `HEAD:${directory}`]).trim();
-  const commit = runText("git", ["commit-tree", tree], "Agent Skills archive\n").trim();
-  const tar = runBuffer("git", ["archive", "--format=tar", commit]);
+  const tree = runText("git", ["rev-parse", `${commit}:${directory}`]).trim();
+  const archiveCommit = runText("git", ["commit-tree", tree], "Agent Skills archive\n").trim();
+  const tar = runBuffer("git", ["archive", "--format=tar", archiveCommit]);
   return runBuffer("gzip", ["-n", "-9", "-c"], tar);
 }
 
@@ -75,9 +78,9 @@ rmSync(outputDirectory, { force: true, recursive: true });
 mkdirSync(outputDirectory);
 
 const directories: string[] = [];
-for (const pack of await packages()) {
-  const prefix = `${pack.directory}/skills`;
-  const names = runText("git", ["ls-tree", "-d", "--name-only", `HEAD:${prefix}`]).trim().split("\n").filter(Boolean);
+for (const directory of source.packageDirectories) {
+  const prefix = `${directory}/skills`;
+  const names = runText("git", ["ls-tree", "-d", "--name-only", `${commit}:${prefix}`]).trim().split("\n").filter(Boolean);
   directories.push(...names.map((name) => `${prefix}/${name}`));
 }
 

@@ -1,0 +1,7 @@
+# Galleon DeFi Security Skills
+
+Review transaction intent, permissions and simulation evidence.
+
+- [Workflow](skills/galleon-defi-security/SKILL.md)
+- [Providers](skills/galleon-defi-security/references/providers.md)
+- [Sources](SOURCES.md)

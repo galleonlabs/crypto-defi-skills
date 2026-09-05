@@ -1,0 +1,7 @@
+# Galleon DeFi Governance Skills
+
+Research proposals, prepare votes and track governance execution.
+
+- [Workflow](skills/galleon-defi-governance/SKILL.md)
+- [Providers](skills/galleon-defi-governance/references/providers.md)
+- [Sources](SOURCES.md)

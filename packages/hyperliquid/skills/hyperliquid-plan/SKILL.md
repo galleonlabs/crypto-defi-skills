@@ -4,7 +4,7 @@ description: "Build an exact unsigned Hyperliquid ticket for an entry, exit, red
 license: MIT
 compatibility: "Requires read-only market and account access for executable plans. The bundled risk script needs Node.js 20 or newer."
 metadata:
-  version: "0.2.1"
+  version: "0.3.0"
   protocol: "hyperliquid"
 ---
 

@@ -1,6 +1,6 @@
 {
   "name": "galleon-lp-skills",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Agent skills for Uniswap and Aerodrome liquidity provision.",
   "author": {
     "name": "Galleon Labs"

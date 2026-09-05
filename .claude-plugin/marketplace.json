@@ -26,6 +26,56 @@
       "name": "galleon-defi-data-skills",
       "source": "./packages/data",
       "description": "DeFi and market data access using official DeFiLlama and CoinGecko sources."
+    },
+    {
+      "name": "galleon-defi-lending-skills",
+      "source": "./packages/lending",
+      "description": "Research lending markets, plan borrowing and monitor liquidation exposure."
+    },
+    {
+      "name": "galleon-defi-staking-skills",
+      "source": "./packages/staking",
+      "description": "Plan liquid staking, restaking and queued withdrawals."
+    },
+    {
+      "name": "galleon-defi-yield-skills",
+      "source": "./packages/yield",
+      "description": "Evaluate vaults and yield tokens, including liquidity and maturity."
+    },
+    {
+      "name": "galleon-defi-tokenized-assets-skills",
+      "source": "./packages/tokenized-assets",
+      "description": "Research tokenized assets, eligibility and issuer settlement."
+    },
+    {
+      "name": "galleon-defi-routing-skills",
+      "source": "./packages/routing",
+      "description": "Compare swaps and bridges and track cross-chain settlement."
+    },
+    {
+      "name": "galleon-defi-derivatives-skills",
+      "source": "./packages/derivatives",
+      "description": "Plan derivatives positions and reconcile venue execution."
+    },
+    {
+      "name": "galleon-defi-portfolio-skills",
+      "source": "./packages/portfolio",
+      "description": "Reconcile DeFi assets, liabilities, cash flows and exposure."
+    },
+    {
+      "name": "galleon-defi-security-skills",
+      "source": "./packages/security",
+      "description": "Review transaction intent, permissions and simulation evidence."
+    },
+    {
+      "name": "galleon-defi-payments-skills",
+      "source": "./packages/payments",
+      "description": "Plan stablecoin payments, x402 purchases and token streams."
+    },
+    {
+      "name": "galleon-defi-governance-skills",
+      "source": "./packages/governance",
+      "description": "Research proposals, prepare votes and track governance execution."
     }
   ]
 }

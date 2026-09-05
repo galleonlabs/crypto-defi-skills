@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 — 2026-09-05
+
+Add cross-primitive evidence, vault standards and portfolio accounting while preserving AIXBT research. Preserve standalone MIT and attribution notices in every package and skill archive.
+
 ## 0.2.0
 
 - Add AIXBT native MCP and API v3 research guidance, separate authentication carriers, bounded discovery and event-time semantics.

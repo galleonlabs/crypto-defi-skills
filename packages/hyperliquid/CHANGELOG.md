@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 - 2026-09-05
+
+Refresh account modes, dynamic asset namespaces, nonce lifecycle and explicit builder fee guidance. Preserve standalone MIT and attribution notices in every package and skill archive.
+
 ## 0.2.1
 
 - Move to the crypto-defi-skills monorepo while preserving the npm package and CLI names.

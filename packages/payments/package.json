@@ -1,0 +1,56 @@
+{
+  "name": "galleon-defi-payments-skills",
+  "version": "0.1.0",
+  "description": "Plan stablecoin payments, x402 purchases and token streams.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Galleon Labs",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/payments#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galleonlabs/crypto-defi-skills.git",
+    "directory": "packages/payments"
+  },
+  "bugs": {
+    "url": "https://github.com/galleonlabs/crypto-defi-skills/issues"
+  },
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "hermes",
+    "payments"
+  ],
+  "bin": {
+    "defi-payments-skills": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./skills/*": "./skills/*/SKILL.md"
+  },
+  "files": [
+    ".claude-plugin",
+    ".codex-plugin",
+    "dist",
+    "skills",
+    "llms.txt",
+    "skills.sh.json",
+    "SOURCES.md",
+    "ATTRIBUTION.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "bun@1.3.14",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun ../../scripts/build-content-pack.ts",
+    "check": "bun ../../scripts/check-content-pack.ts",
+    "prepack": "bun run check",
+    "validate": "bun ../../scripts/check-content-pack.ts --validate-only"
+  }
+}

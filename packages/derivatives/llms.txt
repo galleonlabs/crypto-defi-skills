@@ -1,0 +1,7 @@
+# Galleon DeFi Derivatives Skills
+
+Plan derivatives positions and reconcile venue execution.
+
+- [Workflow](skills/galleon-defi-derivatives/SKILL.md)
+- [Providers](skills/galleon-defi-derivatives/references/providers.md)
+- [Sources](SOURCES.md)

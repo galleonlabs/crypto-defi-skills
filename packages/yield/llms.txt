@@ -1,0 +1,7 @@
+# Galleon DeFi Yield Skills
+
+Evaluate vaults and yield tokens, including liquidity and maturity.
+
+- [Workflow](skills/galleon-defi-yield/SKILL.md)
+- [Providers](skills/galleon-defi-yield/references/providers.md)
+- [Sources](SOURCES.md)

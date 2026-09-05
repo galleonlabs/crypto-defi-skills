@@ -12,7 +12,7 @@
     },
     "packages/data": {
       "name": "galleon-defi-data-skills",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "bin": {
         "defi-data-skills": "dist/cli.js",
       },
@@ -21,6 +21,20 @@
         "@types/node": "^24.3.0",
         "typescript": "^5.9.3",
         "yaml": "2.9.0",
+      },
+    },
+    "packages/derivatives": {
+      "name": "galleon-defi-derivatives-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-derivatives-skills": "dist/cli.js",
+      },
+    },
+    "packages/governance": {
+      "name": "galleon-defi-governance-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-governance-skills": "dist/cli.js",
       },
     },
     "packages/hyperliquid": {
@@ -50,6 +64,13 @@
         "yaml": "2.9.0",
       },
     },
+    "packages/lending": {
+      "name": "galleon-defi-lending-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-lending-skills": "dist/cli.js",
+      },
+    },
     "packages/lp": {
       "name": "galleon-lp-skills",
       "version": "0.4.2",
@@ -63,6 +84,55 @@
         "yaml": "2.9.0",
       },
     },
+    "packages/payments": {
+      "name": "galleon-defi-payments-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-payments-skills": "dist/cli.js",
+      },
+    },
+    "packages/portfolio": {
+      "name": "galleon-defi-portfolio-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-portfolio-skills": "dist/cli.js",
+      },
+    },
+    "packages/routing": {
+      "name": "galleon-defi-routing-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-routing-skills": "dist/cli.js",
+      },
+    },
+    "packages/security": {
+      "name": "galleon-defi-security-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-security-skills": "dist/cli.js",
+      },
+    },
+    "packages/staking": {
+      "name": "galleon-defi-staking-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-staking-skills": "dist/cli.js",
+      },
+    },
+    "packages/tokenized-assets": {
+      "name": "galleon-defi-tokenized-assets-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-tokenized-assets-skills": "dist/cli.js",
+      },
+    },
+    "packages/yield": {
+      "name": "galleon-defi-yield-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-yield-skills": "dist/cli.js",
+      },
+    },
   },
   "packages": {
     "@types/bun": ["@types/bun@1.4.1", "", { "dependencies": { "bun-types": "1.4.1" } }, "sha512-0AVGiTXGajf1rgKom3N+c5L7CBxuoyyv1i44M0nX4UDK0G/fnRAMiri93nHuVPIb429KKtAgj7HatVmmOjeQLA=="],
@@ -73,7 +143,27 @@
 
     "galleon-defi-data-skills": ["galleon-defi-data-skills@workspace:packages/data"],
 
+    "galleon-defi-derivatives-skills": ["galleon-defi-derivatives-skills@workspace:packages/derivatives"],
+
+    "galleon-defi-governance-skills": ["galleon-defi-governance-skills@workspace:packages/governance"],
+
     "galleon-defi-infra-skills": ["galleon-defi-infra-skills@workspace:packages/infra"],
+
+    "galleon-defi-lending-skills": ["galleon-defi-lending-skills@workspace:packages/lending"],
+
+    "galleon-defi-payments-skills": ["galleon-defi-payments-skills@workspace:packages/payments"],
+
+    "galleon-defi-portfolio-skills": ["galleon-defi-portfolio-skills@workspace:packages/portfolio"],
+
+    "galleon-defi-routing-skills": ["galleon-defi-routing-skills@workspace:packages/routing"],
+
+    "galleon-defi-security-skills": ["galleon-defi-security-skills@workspace:packages/security"],
+
+    "galleon-defi-staking-skills": ["galleon-defi-staking-skills@workspace:packages/staking"],
+
+    "galleon-defi-tokenized-assets-skills": ["galleon-defi-tokenized-assets-skills@workspace:packages/tokenized-assets"],
+
+    "galleon-defi-yield-skills": ["galleon-defi-yield-skills@workspace:packages/yield"],
 
     "galleon-hyperliquid-skills": ["galleon-hyperliquid-skills@workspace:packages/hyperliquid"],
 

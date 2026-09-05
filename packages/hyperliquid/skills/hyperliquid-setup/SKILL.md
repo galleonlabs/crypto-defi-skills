@@ -4,7 +4,7 @@ description: "Connect an agent's available tools to Hyperliquid workflows and co
 license: MIT
 compatibility: "Any Agent Skills harness. Public reads need HTTP access or Node.js 20+. Account work needs a user-provided public account address; execution needs a separately configured trusted signer."
 metadata:
-  version: "0.2.1"
+  version: "0.3.0"
   protocol: "hyperliquid"
 ---
 

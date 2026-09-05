@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires web or read-only chain access for current claims. Works without wallet access."
 metadata:
   author: "Galleon Labs"
-  version: "0.4.2"
+  version: "0.5.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 

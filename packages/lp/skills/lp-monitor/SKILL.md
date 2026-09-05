@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires read-only chain access for current position state. The bundled position script needs Node.js 20 or newer."
 metadata:
   author: "Galleon Labs"
-  version: "0.4.2"
+  version: "0.5.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 

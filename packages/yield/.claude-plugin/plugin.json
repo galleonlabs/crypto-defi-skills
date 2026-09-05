@@ -1,0 +1,17 @@
+{
+  "name": "galleon-defi-yield-skills",
+  "version": "0.1.0",
+  "description": "Evaluate vaults and yield tokens, including liquidity and maturity.",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/yield#readme",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "hermes",
+    "yield"
+  ],
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills"
+}

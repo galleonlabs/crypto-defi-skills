@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "DeFi staking",
+      "description": "Plan liquid staking, restaking and queued withdrawals.",
+      "skills": [
+        "galleon-defi-staking"
+      ]
+    }
+  ]
+}

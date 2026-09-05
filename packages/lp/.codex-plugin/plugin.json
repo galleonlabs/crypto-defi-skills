@@ -1,6 +1,6 @@
 {
   "name": "galleon-lp-skills",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Set up, analyze, plan, monitor, execute, and engineer Uniswap and Aerodrome liquidity positions.",
   "author": {
     "name": "Galleon Labs"

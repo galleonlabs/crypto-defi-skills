@@ -1,0 +1,7 @@
+# Galleon DeFi Lending Skills
+
+Research lending markets, plan borrowing and monitor liquidation exposure.
+
+- [Workflow](skills/galleon-defi-lending/SKILL.md)
+- [Providers](skills/galleon-defi-lending/references/providers.md)
+- [Sources](SOURCES.md)

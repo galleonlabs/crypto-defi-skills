@@ -66,6 +66,76 @@
         "hyperliquid-review",
         "hyperliquid-engineer"
       ]
+    },
+    {
+      "title": "Lending",
+      "description": "Research lending markets, plan borrowing and monitor liquidation exposure.",
+      "skills": [
+        "galleon-defi-lending"
+      ]
+    },
+    {
+      "title": "Staking",
+      "description": "Plan liquid staking, restaking and queued withdrawals.",
+      "skills": [
+        "galleon-defi-staking"
+      ]
+    },
+    {
+      "title": "Yield",
+      "description": "Evaluate vaults and yield tokens, including liquidity and maturity.",
+      "skills": [
+        "galleon-defi-yield"
+      ]
+    },
+    {
+      "title": "Tokenized Assets",
+      "description": "Research tokenized assets, eligibility and issuer settlement.",
+      "skills": [
+        "galleon-defi-tokenized-assets"
+      ]
+    },
+    {
+      "title": "Routing",
+      "description": "Compare swaps and bridges and track cross-chain settlement.",
+      "skills": [
+        "galleon-defi-routing"
+      ]
+    },
+    {
+      "title": "Derivatives",
+      "description": "Plan derivatives positions and reconcile venue execution.",
+      "skills": [
+        "galleon-defi-derivatives"
+      ]
+    },
+    {
+      "title": "Portfolio",
+      "description": "Reconcile DeFi assets, liabilities, cash flows and exposure.",
+      "skills": [
+        "galleon-defi-portfolio"
+      ]
+    },
+    {
+      "title": "Security",
+      "description": "Review transaction intent, permissions and simulation evidence.",
+      "skills": [
+        "galleon-defi-security"
+      ]
+    },
+    {
+      "title": "Payments",
+      "description": "Plan stablecoin payments, x402 purchases and token streams.",
+      "skills": [
+        "galleon-defi-payments"
+      ]
+    },
+    {
+      "title": "Governance",
+      "description": "Research proposals, prepare votes and track governance execution.",
+      "skills": [
+        "galleon-defi-governance"
+      ]
     }
   ]
 }

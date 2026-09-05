@@ -1,0 +1,7 @@
+# Galleon DeFi Routing Skills
+
+Compare swaps and bridges and track cross-chain settlement.
+
+- [Workflow](skills/galleon-defi-routing/SKILL.md)
+- [Providers](skills/galleon-defi-routing/references/providers.md)
+- [Sources](SOURCES.md)

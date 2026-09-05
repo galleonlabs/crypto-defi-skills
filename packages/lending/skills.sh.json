@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "DeFi lending",
+      "description": "Research lending markets, plan borrowing and monitor liquidation exposure.",
+      "skills": [
+        "galleon-defi-lending"
+      ]
+    }
+  ]
+}

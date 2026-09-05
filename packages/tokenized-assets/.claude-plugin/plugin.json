@@ -1,0 +1,17 @@
+{
+  "name": "galleon-defi-tokenized-assets-skills",
+  "version": "0.1.0",
+  "description": "Research tokenized assets, eligibility and issuer settlement.",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/tokenized-assets#readme",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "hermes",
+    "tokenized-assets"
+  ],
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills"
+}

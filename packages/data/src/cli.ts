@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 import { SKILL_CATALOG } from "./catalog.js";
 import { validateCorpus } from "./validation.js";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const version = "0.2.0";
+const version = "0.3.0";
 const print = (value: unknown) => process.stdout.write(`${JSON.stringify(value, null, 2)}\n`);
 try {
   const [command = "help", ...args] = process.argv.slice(2);

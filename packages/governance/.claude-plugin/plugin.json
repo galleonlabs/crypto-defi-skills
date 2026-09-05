@@ -1,0 +1,17 @@
+{
+  "name": "galleon-defi-governance-skills",
+  "version": "0.1.0",
+  "description": "Research proposals, prepare votes and track governance execution.",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/governance#readme",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "hermes",
+    "governance"
+  ],
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills"
+}

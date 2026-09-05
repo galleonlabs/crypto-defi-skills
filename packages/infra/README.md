@@ -9,7 +9,7 @@ A standalone skill pack for wiring a DeFi agent's RPC, managed wallets, paid API
 ## Install
 
 ```bash
-npm install -g galleon-defi-infra-skills@0.1.0
+npm install -g galleon-defi-infra-skills@0.2.0
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-infra
 ```
 

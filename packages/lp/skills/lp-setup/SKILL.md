@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Portable instructions for any skill-capable agent. The optional read-only RPC diagnostic requires Node.js 20+ and a user-configured LP_RPC_URL environment variable."
 metadata:
   author: "Galleon Labs"
-  version: "0.4.2"
+  version: "0.5.0"
 ---
 
 # LP setup

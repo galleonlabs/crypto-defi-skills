@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable agent instructions; optional price diagnostic requires Node.js 20+ and public network access. MCP setup requires a compatible client; paid providers require the user's own access.
 metadata:
   author: Galleon Labs
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # DeFi data
@@ -30,6 +30,8 @@ Our name is `galleon-defi-data`; DefiLlama also publishes a different skill name
 - Validate consequential pool, token, balance and position facts against an appropriate chain/RPC or protocol tool at a recorded block. A price observation is not a guaranteed fill; a listed pool is not proof of eligibility or safety.
 
 For a simple connectivity check, use [the public diagnostic](references/diagnostic.md). It validates one timestamped public price response; it does not prove MCP authentication or wider protocol coverage.
+
+For lending, staking, vaults, derivatives, tokenized assets and portfolio reporting, apply [primitive evidence](references/primitive-evidence.md). Keep protocol versions, accounting units and pending claims explicit.
 
 ## Handle gaps without fabricating continuity
 

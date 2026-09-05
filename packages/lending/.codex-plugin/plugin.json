@@ -1,0 +1,18 @@
+{
+  "name": "galleon-defi-lending-skills",
+  "version": "0.1.0",
+  "description": "Research lending markets, plan borrowing and monitor liquidation exposure.",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lending#readme",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "hermes",
+    "lending"
+  ],
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "skills": "./skills/"
+}

@@ -63,7 +63,7 @@ Re-run the install command to install current names. Update saved prompts/config
 
 `lp-research` and `lp-operate` remain as install-compatible rename notices so marketplace listings and saved `npx skills add ... --skill lp-research` or `--skill lp-operate` commands still resolve. They are not a second analysis or execution workflow. Canonical names stay `lp-analyze` and `lp-execute`.
 
-For reproducible npm use, install `galleon-lp-skills@0.4.2`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
+For reproducible npm use, install `galleon-lp-skills@0.5.0`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
 
 ## CLI
 

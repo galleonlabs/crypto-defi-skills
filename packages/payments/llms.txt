@@ -1,0 +1,7 @@
+# Galleon DeFi Payments Skills
+
+Plan stablecoin payments, x402 purchases and token streams.
+
+- [Workflow](skills/galleon-defi-payments/SKILL.md)
+- [Providers](skills/galleon-defi-payments/references/providers.md)
+- [Sources](SOURCES.md)

@@ -57,3 +57,7 @@ All guides are included inside each independently installable skill. The package
 - [vfat-tools](https://github.com/vfat-io/vfat-tools/tree/0b0d90c63fd5c6f40ee5789eb50e39992b0cc0ae), MIT notices in LICENSE. Treat this as legacy vfat.tools adapter/calculation research, not the complete source of the current vfat.io/yield application. The VFAT Sugar SDK fork does not supersede its maintained Velodrome upstream.
 
 All additions are independently written guidance. No VFAT code, contract addresses, API credentials or live positions are vendored. Each canonical skill carries its own role-specific reference for standalone installation.
+
+## Primitive expansion - 2026-09-05
+
+Expand official Curve and Balancer guidance, VFAT custody and fees, and Revert planner/confirmation boundaries. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.

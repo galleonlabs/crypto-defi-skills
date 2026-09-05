@@ -29,3 +29,7 @@ Public CoinGecko simple-price REST and `coins.llama.fi/prices/current/coingecko:
 Offline tests exercise malformed/stale/missing observations, HTTP access/rate/payment failures, redaction, body limits and timeout handling. Package validation and clean-consumer smoke establish portability. They do not measure agent research quality, validate every chain or prove a provider's uptime. Recheck live tools, schemas, plans and methodology before consequential use.
 
 For AIXBT v0.2.0, public documentation and the live v3 OpenAPI contract were retrieved on 2026-09-05. Protected research reads, account entitlements and Hermes header resolution were not tested by this package release; consumer provisioning must verify them separately. No credentials were used in package validation.
+
+## Primitive expansion — 2026-09-05
+
+Add cross-primitive evidence, vault standards and portfolio accounting while preserving AIXBT research. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.

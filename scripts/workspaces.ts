@@ -1,6 +1,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { spawnSync } from "node:child_process";
+import { checkAttribution } from "./check-attribution.ts";
 
 export const root = resolve(import.meta.dirname, "..");
 export async function packages() {
@@ -21,6 +22,7 @@ export function run(command: string, args: string[], cwd = root) {
 if (import.meta.main) {
   const command = process.argv[2];
   if (command !== "check" && command !== "pack") throw new Error("Usage: bun scripts/workspaces.ts check|pack");
+  await checkAttribution({ root });
   for (const pack of await packages()) {
     process.stdout.write(`${command}: ${pack.manifest.name}\n`);
     const cwd = resolve(root, pack.directory);
@@ -30,6 +32,6 @@ if (import.meta.main) {
   if (command === "check") {
     run("bun", ["scripts/check-style.ts"]);
     run("bunx", ["tsc", "--noEmit"]);
-    run("bun", ["test", "./test"]);
+    run("bun", ["test", "./test", "./scripts/content-pack/validation.test.ts"]);
   }
 }

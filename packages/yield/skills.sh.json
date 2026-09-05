@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "DeFi yield",
+      "description": "Evaluate vaults and yield tokens, including liquidity and maturity.",
+      "skills": [
+        "galleon-defi-yield"
+      ]
+    }
+  ]
+}
