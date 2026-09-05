@@ -1,19 +1,21 @@
 # Crypto DeFi Skills
 
 [![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
+[![LP npm](https://img.shields.io/npm/v/galleon-lp-skills?label=LP)](https://www.npmjs.com/package/galleon-lp-skills)
+[![Hyperliquid npm](https://img.shields.io/npm/v/galleon-hyperliquid-skills?label=Hyperliquid)](https://www.npmjs.com/package/galleon-hyperliquid-skills)
 
-Modular agent skills for DeFi, built around official protocol tools. Install one skill, one pack, or both. Each pack has its own npm release, CLI, plugin manifests, references, and tests.
+Modular agent skills for DeFi, built around maintained official tools. Install one skill, one pack, or both. Each pack has its own npm release, CLI, plugin manifests, references, and tests. New packs can join the monorepo without becoming dependencies of the others.
 
-| Pack | npm package | Workflows |
-| --- | --- | --- |
-| [LP](packages/lp) | [`galleon-lp-skills`](https://www.npmjs.com/package/galleon-lp-skills) | Uniswap and Aerodrome setup, analysis, planning, execution, monitoring, engineering |
-| [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills`](https://www.npmjs.com/package/galleon-hyperliquid-skills) | Setup, analysis, planning, execution, monitoring, performance review, engineering |
+| Pack | Published version | npm package | Coverage |
+| --- | --- | --- | --- |
+| [LP](packages/lp) | [0.4.2](https://github.com/galleonlabs/crypto-defi-skills/releases/tag/galleon-lp-skills%400.4.2) | [`galleon-lp-skills`](https://www.npmjs.com/package/galleon-lp-skills) | Uniswap v2/v3/v4 and Aerodrome classic/Slipstream, with optional Revert and VFAT guidance |
+| [Hyperliquid](packages/hyperliquid) | [0.2.1](https://github.com/galleonlabs/crypto-defi-skills/releases/tag/galleon-hyperliquid-skills%400.2.1) | [`galleon-hyperliquid-skills`](https://www.npmjs.com/package/galleon-hyperliquid-skills) | Perps, spot, HIP-3 markets, account modes, trade planning and performance review |
 
-There are 13 current workflows, plus two LP install-name migration notices.
+There are **13 current workflows**: six LP skills and seven Hyperliquid skills. Two additional LP directories preserve previous install names as migration notices.
 
 ## Install only what you need
 
-Choose a pack with the upstream Agent Skills installer:
+Choose a pack with the upstream [Agent Skills installer](https://github.com/vercel-labs/skills):
 
 ```bash
 npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lp
@@ -27,17 +29,27 @@ npx skills add galleonlabs/crypto-defi-skills --skill lp-monitor
 npx skills add galleonlabs/crypto-defi-skills --skill hyperliquid-setup
 ```
 
-Each skill carries its required references and scripts. Installing an LP skill does not require the Hyperliquid pack, or vice versa. The installer may ask which agent harness should receive the skills.
+Append `--list` to inspect available skills before installing. The installer may ask which skills and agent harness should receive the installation. Prefer the current names listed below over the LP migration notices.
 
-For deterministic CLI tools, install either npm package independently:
+Each skill carries its required references and scripts. Installing an LP skill does not require the Hyperliquid pack, or vice versa. These source commands follow `main`; use a reviewed source revision or Boomkin's pinned catalog when you need reproducible installs.
+
+### npm CLIs
+
+For local arithmetic, corpus validation and skill discovery, install either npm package independently. Node.js 20 or newer is required; Bun is only needed for repository development.
 
 ```bash
-npm install --global galleon-lp-skills
+npm install --global galleon-lp-skills@0.4.2
 lp-skills catalog
+lp-skills --version
 
-npm install --global galleon-hyperliquid-skills
+npm install --global galleon-hyperliquid-skills@0.2.1
 hl-skills catalog
+hl-skills --version
 ```
+
+Use `@latest` instead of a version for the current published package. An npm installation supplies the CLI and bundled corpus; use the Agent Skills installer or Boomkin to place skills in your harness's discovery directory. The CLIs do not sign or submit transactions.
+
+### Plugins and Boomkin
 
 Claude Code users can add the marketplace and choose either plugin:
 
@@ -47,13 +59,47 @@ Claude Code users can add the marketplace and choose either plugin:
 /plugin install galleon-hyperliquid-skills@galleon-defi
 ```
 
-Codex plugin manifests remain in each package's `.codex-plugin/` directory. For harness setup, selected pack installation, and verified updates, use [Boomkin](https://github.com/galleonlabs/boomkin).
+Codex plugin manifests live in [LP's `.codex-plugin/`](packages/lp/.codex-plugin) and [Hyperliquid's `.codex-plugin/`](packages/hyperliquid/.codex-plugin).
+
+[Boomkin](https://github.com/galleonlabs/boomkin) handles harness setup, selected pack installation and verified updates for Hermes, Eve, OpenClaw, Codex, Claude Code and OpenCode. Its catalog pins each pack's version, source commit, package path and expected skills independently. Use `--pack lp-skills` or `--pack hyperliquid-skills` to choose a pack; updates preserve that selection and future packs remain opt-in. Follow [Boomkin's setup and update guide](https://github.com/galleonlabs/boomkin#the-catalog).
+
+## Choose a workflow
+
+| Task | LP skill | Hyperliquid skill |
+| --- | --- | --- |
+| Discover tools and verify read access | [lp-setup](packages/lp/skills/lp-setup) | [hyperliquid-setup](packages/hyperliquid/skills/hyperliquid-setup) |
+| Assess pools, markets and evidence | [lp-analyze](packages/lp/skills/lp-analyze) | [hyperliquid-analyze](packages/hyperliquid/skills/hyperliquid-analyze) |
+| Prepare an exact unsigned plan | [lp-plan](packages/lp/skills/lp-plan) | [hyperliquid-plan](packages/hyperliquid/skills/hyperliquid-plan) |
+| Carry out an explicitly approved action | [lp-execute](packages/lp/skills/lp-execute) | [hyperliquid-execute](packages/hyperliquid/skills/hyperliquid-execute) |
+| Reconcile positions and monitor risk | [lp-monitor](packages/lp/skills/lp-monitor) | [hyperliquid-monitor](packages/hyperliquid/skills/hyperliquid-monitor) |
+| Review completed trading activity | Included in LP position monitoring | [hyperliquid-review](packages/hyperliquid/skills/hyperliquid-review) |
+| Build or review integrations | [lp-engineer](packages/lp/skills/lp-engineer) | [hyperliquid-engineer](packages/hyperliquid/skills/hyperliquid-engineer) |
+
+Start with a read-only task:
+
+> Use lp-setup to check my Base RPC connection and list missing tools. Then use lp-analyze to inspect this pool's identity and risks: [pool address].
+
+> Use hyperliquid-setup to read the ETH perpetual market on mainnet without connecting an account. Explain the observed spread, funding and missing data.
+
+Supply the actual pool address and configure RPC credentials through your harness's environment or secret settings. The LP setup helper verifies chain identity and freshness; the Hyperliquid setup helper reads public market data. Neither first-read check needs wallet authority. Each skill documents its required inputs, outputs and fallback when another skill is absent.
 
 ## Use official tools first
 
-The skills help choose and connect the maintained upstream tools for a task: Uniswap's official skills, SDKs and liquidity API; Aerodrome's documented protocol tooling; Hyperliquid's official SDK and public APIs; optional Revert tools; and VFAT yield discovery and Sickle resources. They explain required access, supported capabilities, and how to verify the result.
+Reuse a suitable existing tool before building another SDK, signer, indexer or transaction encoder. The packs describe access requirements, supported capabilities, fees, custody and verification for these optional paths:
 
-Start with `lp-setup` or `hyperliquid-setup`. A skill installation provides guidance and small diagnostics, not a wallet, market-data subscription, signer, or hosted trading service. Tool access and financial authority remain explicit. There are no mandatory partner routes or hidden builder fees.
+| Tool source | Covered use | Guide |
+| --- | --- | --- |
+| Uniswap | Official agent skills, protocol SDKs, Liquidity Provisioning API and reviewed interface links | [LP tool access](packages/lp/skills/lp-setup/references/official-tools.md#uniswap) |
+| Aerodrome / Velodrome | Sugar SDK and its skill for pool/position reads, quotes and unsigned LP calls | [Sugar access and limits](packages/lp/skills/lp-setup/references/official-tools.md#aerodrome-and-slipstream) |
+| Hyperliquid | Official Python SDK, public Info API and WebSocket interfaces | [Hyperliquid tools](packages/hyperliquid/skills/hyperliquid-setup/references/official-tools.md) |
+| Revert | Optional MCP discovery, indexed position analytics and supported unsigned plans | [Revert access and permissions](packages/lp/skills/lp-setup/references/official-tools.md#revert-explicitly-optional) |
+| VFAT | Public yield screening, Sickle position management and automation, and official integration sources | [VFAT access](packages/lp/skills/lp-setup/references/vfat.md) and [engineering](packages/lp/skills/lp-engineer/references/vfat.md) |
+
+LP 0.4.2 adds role-specific VFAT guidance across all six workflows: APR/TVL interpretation, fee bases, Sickle ownership and operators, reminted-position accounting, and automation. It distinguishes the documented rebalance stop-loss, which suspends rebalancing, from a separate exit. Public SDK distribution and supported MCP/API access were not verified in the September 5, 2026 review; the guides record those gaps rather than inventing an integration.
+
+Installing a pack does not register an external provider or supply a wallet, signer, market-data subscription or hosted trading service. Connect tools through your harness. Financial actions require explicit authority, reviewed terms and reconciliation against chain or exchange records. There are no mandatory partner routes or hidden builder fees.
+
+Protocol-specific evidence and reviewed upstream revisions live in [LP sources](packages/lp/SOURCES.md) and [Hyperliquid sources](packages/hyperliquid/SOURCES.md). Dated reviews are not guarantees about current provider capabilities or deployed contracts.
 
 ## One repository, independent releases
 
@@ -64,18 +110,33 @@ packages/
 scripts/          workspace checks, discovery, selected-package releases
 ```
 
-The root workspace is private and never published to npm. Shared tooling discovers package directories; versions remain independent. Package-qualified tags such as `galleon-lp-skills@0.4.1` identify releases without forcing another pack to change.
+The root workspace is private and never published to npm. Each pack has an independent version and package-qualified tag, such as `galleon-lp-skills@0.4.2` or `galleon-hyperliquid-skills@0.2.1`. Releasing one pack does not require releasing the other.
 
-CI validates every package and its npm payload. Discovery releases contain a combined index and a separate archive for each skill. Add a new pack under `packages/`, then register its marketplace entry and discovery grouping. No harness runtime is copied here.
+CI checks every package, builds its npm payload and tests a clean consumer install. [Discovery releases](https://github.com/galleonlabs/crypto-defi-skills/releases) use `agent-skills-<commit>` tags and contain `index.json` plus a separate archive and SHA-256 digest for each skill. The current corpus produces 15 archives, including the two LP migration notices. Discovery artifacts and npm releases are separate publication paths.
+
+Add a pack under `packages/` with its own npm manifest, version, skill directory, checks, build and plugin manifests. Register it in [the Claude marketplace](.claude-plugin/marketplace.json) and [skill discovery groupings](skills.sh.json). Shared tooling discovers the package directories automatically. Follow [contributing](CONTRIBUTING.md) and [releasing](RELEASING.md).
+
+## Updates and migration
+
+The former `galleonlabs/lp-skills` and `galleonlabs/hyperliquid-skills` repositories have been consolidated here. Update saved Git URLs to this monorepo; the npm package and CLI names remain unchanged. Original Git histories and historical release archives were preserved. See [migration details](MIGRATION.md).
+
+Use `lp-analyze` instead of `lp-research`, and `lp-execute` instead of `lp-operate`. The old LP names resolve to install notices. Hyperliquid uses `hyperliquid-analyze` and `hyperliquid-execute` with no legacy alias skills. Review local edits before removing old installed directories, and preserve your harness configuration and credentials.
+
+For updates, rerun the selected install command or use Boomkin's explicit update command. Updating this repository does not automatically update an existing harness installation.
 
 ## Development
+
+Use Bun 1.3.14 and Git from the repository root:
 
 ```bash
 bun install --frozen-lockfile
 bun run check
 bun run pack
+bun run smoke
 ```
 
-See [releasing](RELEASING.md), [migration](MIGRATION.md), and [contributing](CONTRIBUTING.md). Protocol-specific evidence lives in each package's `SOURCES.md`.
+After changing skills, also run `validate-agent-skills packages/<pack>/skills`. Keep all required references and scripts inside the individual skill. Follow [RELEASING.md](RELEASING.md) to publish one selected package from a clean, verified commit.
 
-Built by [Galleon Labs](https://galleonlabs.io). MIT licensed.
+Report security issues through [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new).
+
+Built by [Galleon Labs](https://galleonlabs.io). [MIT licensed](LICENSE).
