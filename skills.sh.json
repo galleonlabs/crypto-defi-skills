@@ -3,6 +3,14 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "DeFi foundations",
+      "description": "Connect the agent infrastructure and establish reliable market data before protocol workflows.",
+      "skills": [
+        "galleon-defi-infra",
+        "galleon-defi-data"
+      ]
+    },
+    {
       "title": "LP onboarding",
       "description": "Verify read access and map missing tools before the first task.",
       "skills": [

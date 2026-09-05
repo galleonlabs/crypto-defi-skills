@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "outDir": "dist/types",
+    "rootDir": ".",
+    "stripInternal": true
+  },
+  "include": [
+    "src/index.ts",
+    "skills/**/*.ts"
+  ]
+}

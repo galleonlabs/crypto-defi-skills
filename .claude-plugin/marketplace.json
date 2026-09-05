@@ -16,6 +16,16 @@
       "name": "galleon-hyperliquid-skills",
       "source": "./packages/hyperliquid",
       "description": "Hyperliquid research, planning, execution and review."
+    },
+    {
+      "name": "galleon-defi-infra-skills",
+      "source": "./packages/infra",
+      "description": "RPC, wallet and agent infrastructure using official Alchemy and Coinbase tooling."
+    },
+    {
+      "name": "galleon-defi-data-skills",
+      "source": "./packages/data",
+      "description": "DeFi and market data access using official DeFiLlama and CoinGecko sources."
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "DeFi infrastructure",
+      "description": "Connect RPC, managed wallets and Hermes with verified permissions.",
+      "skills": [
+        "galleon-defi-infra"
+      ]
+    }
+  ]
+}

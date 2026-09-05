@@ -1,0 +1,19 @@
+{
+  "name": "galleon-defi-infra-skills",
+  "version": "0.1.0",
+  "description": "RPC, wallet and Hermes infrastructure skills with read-only readiness diagnostics.",
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/infra#readme",
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "infrastructure",
+    "rpc",
+    "wallet",
+    "hermes"
+  ]
+}

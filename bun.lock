@@ -10,6 +10,19 @@
         "yaml": "2.9.0",
       },
     },
+    "packages/data": {
+      "name": "galleon-defi-data-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-data-skills": "dist/cli.js",
+      },
+      "devDependencies": {
+        "@types/bun": "^1.4.1",
+        "@types/node": "^24.3.0",
+        "typescript": "^5.9.3",
+        "yaml": "2.9.0",
+      },
+    },
     "packages/hyperliquid": {
       "name": "galleon-hyperliquid-skills",
       "version": "0.2.1",
@@ -24,9 +37,22 @@
         "yaml": "2.9.0",
       },
     },
+    "packages/infra": {
+      "name": "galleon-defi-infra-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-infra-skills": "dist/cli.js",
+      },
+      "devDependencies": {
+        "@types/bun": "^1.4.1",
+        "@types/node": "^24.3.0",
+        "typescript": "^5.9.3",
+        "yaml": "2.9.0",
+      },
+    },
     "packages/lp": {
       "name": "galleon-lp-skills",
-      "version": "0.4.1",
+      "version": "0.4.2",
       "bin": {
         "lp-skills": "dist/cli.js",
       },
@@ -44,6 +70,10 @@
     "@types/node": ["@types/node@24.13.3", "", { "dependencies": { "undici-types": "~7.18.0" } }, "sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q=="],
 
     "bun-types": ["bun-types@1.4.1", "", { "dependencies": { "@types/node": "*" } }, "sha512-loKuVrAFZKfEv+JvWkHRS9GW5IqLuLRjVXN9p+vZvBN86O5hf/pBZQ5hSoyipsrMmWObZBDvWnlmKvjKTM0PdA=="],
+
+    "galleon-defi-data-skills": ["galleon-defi-data-skills@workspace:packages/data"],
+
+    "galleon-defi-infra-skills": ["galleon-defi-infra-skills@workspace:packages/infra"],
 
     "galleon-hyperliquid-skills": ["galleon-hyperliquid-skills@workspace:packages/hyperliquid"],
 

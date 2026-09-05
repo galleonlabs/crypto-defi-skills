@@ -1,0 +1,10 @@
+# Galleon DeFi Infrastructure Skills
+
+> Independently installable infrastructure guidance and read-only diagnostics for DeFi agents.
+
+- [Infrastructure skill](skills/galleon-defi-infra/SKILL.md): RPC, managed wallet, payment and Hermes onboarding.
+- [RPC and Alchemy](skills/galleon-defi-infra/references/rpc-alchemy.md): Provider access and network selection.
+- [Wallets](skills/galleon-defi-infra/references/wallets.md): Custody and scoped account choices.
+- [Payments](skills/galleon-defi-infra/references/payments.md): Spending authority and official x402 tools.
+- [Hermes](skills/galleon-defi-infra/references/hermes.md): Native runtime and MCP configuration.
+- [Readiness](skills/galleon-defi-infra/references/readiness.md): Bounded RPC checks and truthful status.
