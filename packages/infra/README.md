@@ -1,5 +1,9 @@
 # Galleon DeFi Infrastructure Skills
 
+[![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/galleon-defi-infra-skills)](https://www.npmjs.com/package/galleon-defi-infra-skills)
+[![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
+
 A standalone skill pack for wiring a DeFi agent's RPC, managed wallets, paid APIs and Hermes runtime. Prefer official Alchemy and Coinbase tooling; keep account authentication and transaction authority explicit.
 
 ## Install
@@ -27,3 +31,13 @@ Supply `DEFI_RPC_URL` through your private environment. The doctor checks chain 
 No wallet creation, login, funding, signing or payment occurs when installing or validating this pack. The references explain operator-driven onboarding through upstream tools, including current availability limits. Coinbase for Agents' remote MCP does not currently support arbitrary harnesses such as Hermes; use its official CLI. Coinbase for Agents x402 is coming soon, while Agentic Wallet supports it today.
 
 See [sources and versions](SOURCES.md), [release notes](CHANGELOG.md), and [readiness details](skills/galleon-defi-infra/references/readiness.md). For development run `bun run check`; for the whole monorepo use its root release instructions.
+
+## Contributing
+
+Documentation fixes, reproducible connection failures and source-backed workflow improvements are welcome. Follow the [contributor guide](https://github.com/galleonlabs/crypto-defi-skills/blob/main/CONTRIBUTING.md) for local checks and pull requests. Keep diagnostics read-only and each skill independently installable.
+
+Report security issues through [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new).
+
+## License
+
+[MIT](LICENSE). See [SOURCES.md](SOURCES.md) for provenance and dated verification.

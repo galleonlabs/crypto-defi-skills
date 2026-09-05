@@ -11,4 +11,4 @@ The previous repositories are retired. Replace saved Git URLs with the package U
 
 The imported LP head was `797110d392cd2de7bb0dabcf1046b1c0ae03a143`; Hyperliquid was `894cf1f1681fa74191cb0b161a41655ff23341d2`. Both repositories had no issues, pull requests, forks, or stars at migration inspection. Historic release archives are preserved in the migration archive release on this repository.
 
-WizzyBot is renamed [Boomkin](https://github.com/galleonlabs/boomkin). Its catalog now identifies a monorepo revision and a package subdirectory; users can select packs independently. See Boomkin's update guide for existing workspace state migration. A Git URL change does not require deleting installed skills, user instructions, credentials, or harness configuration.
+[Boomkin](https://github.com/galleonlabs/boomkin) pins each pack to a monorepo revision and package subdirectory. Users can select packs independently, and updates preserve their selection. See [Boomkin's update guide](https://github.com/galleonlabs/boomkin/blob/main/docs/UPDATES.md) for the current update workflow.

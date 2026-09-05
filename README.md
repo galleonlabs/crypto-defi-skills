@@ -3,8 +3,15 @@
 [![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
 [![LP npm](https://img.shields.io/npm/v/galleon-lp-skills?label=LP)](https://www.npmjs.com/package/galleon-lp-skills)
 [![Hyperliquid npm](https://img.shields.io/npm/v/galleon-hyperliquid-skills?label=Hyperliquid)](https://www.npmjs.com/package/galleon-hyperliquid-skills)
+[![Infrastructure npm](https://img.shields.io/npm/v/galleon-defi-infra-skills?label=Infrastructure)](https://www.npmjs.com/package/galleon-defi-infra-skills)
+[![Data npm](https://img.shields.io/npm/v/galleon-defi-data-skills?label=Data)](https://www.npmjs.com/package/galleon-defi-data-skills)
+[![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-Modular agent skills for DeFi, built around maintained official tools. Install one skill, one pack, or any combination of the four packs. Each pack has its own npm release, CLI, plugin manifests, references, and tests. New packs can join the monorepo without becoming dependencies of the others.
+Open-source agent skills for DeFi, built around maintained official tools. Install one skill, one pack, or any combination of the four packs. Each pack has its own npm release, CLI, plugin manifests, references and tests.
+
+[Get started](#get-started) · [Install a pack](#install-only-what-you-need) · [Explore workflows](#choose-a-workflow) · [Contribute](CONTRIBUTING.md)
+
+## Four independent packs
 
 | Pack | Published version | npm package | Coverage |
 | --- | --- | --- | --- |
@@ -15,7 +22,11 @@ Modular agent skills for DeFi, built around maintained official tools. Install o
 
 There are **15 current skills**: six LP skills, seven Hyperliquid skills, one infrastructure skill and one data skill. Two additional LP directories preserve previous install names as migration notices.
 
+## Get started
+
 For a complete Hermes agent, start with [Boomkin](https://github.com/galleonlabs/boomkin). Its onboarding installs the native Hermes runtime when needed, configures an isolated DeFi profile and public CoinGecko access, and installs all four packs. Model login and optional provider or wallet access use their native setup flows.
+
+Already have an agent? Install a pack below, then try one of the [read-only workflows](#choose-a-workflow). Start with infrastructure for connections, data for research, or a protocol pack for a specific task.
 
 ## Install only what you need
 
@@ -122,8 +133,6 @@ Reuse a suitable existing tool before building another SDK, signer, indexer or t
 | Revert | Optional MCP discovery, indexed position analytics and supported unsigned plans | [Revert access and permissions](packages/lp/skills/lp-setup/references/official-tools.md#revert-explicitly-optional) |
 | VFAT | Public yield screening, Sickle position management and automation, and official integration sources | [VFAT access](packages/lp/skills/lp-setup/references/vfat.md) and [engineering](packages/lp/skills/lp-engineer/references/vfat.md) |
 
-LP 0.4.2 adds role-specific VFAT guidance across all six workflows: APR/TVL interpretation, fee bases, Sickle ownership and operators, reminted-position accounting, and automation. It distinguishes the documented rebalance stop-loss, which suspends rebalancing, from a separate exit. Public SDK distribution and supported MCP/API access were not verified in the September 5, 2026 review; the guides record those gaps rather than inventing an integration.
-
 Installing a pack does not register an external provider or supply a wallet, signer, market-data subscription or hosted trading service. Connect tools through your harness. Financial actions require explicit authority, reviewed terms and reconciliation against chain or exchange records. There are no mandatory partner routes or hidden builder fees.
 
 Protocol-specific evidence and reviewed upstream revisions live in [LP sources](packages/lp/SOURCES.md), [Hyperliquid sources](packages/hyperliquid/SOURCES.md), [infrastructure sources](packages/infra/SOURCES.md) and [data sources](packages/data/SOURCES.md). Dated reviews are not guarantees about current provider capabilities or deployed contracts.
@@ -153,7 +162,11 @@ Use `lp-analyze` instead of `lp-research`, and `lp-execute` instead of `lp-opera
 
 For updates, rerun the selected install command or use Boomkin's explicit update command. Updating this repository does not automatically update an existing harness installation.
 
-## Development
+## Contribute
+
+Help improve a workflow, fix unclear documentation, reproduce an integration issue, or add a self-contained pack. Start with the [contributor guide](CONTRIBUTING.md); small documentation fixes are welcome as pull requests. For a new provider or workflow, [open an issue](https://github.com/galleonlabs/crypto-defi-skills/issues/new) with the intended task and official sources.
+
+### Local checks
 
 Use Bun 1.3.14 and Git from the repository root:
 

@@ -31,13 +31,13 @@ The repository also ships Codex and Claude Code plugin manifests. Cursor discove
 ## Skills
 
 | Skill | Use it for | Output |
-|---|---|---|
-| `lp-setup` | Connect read access and inventory missing tools | Verified chain observation, capability report, next task |
-| `lp-analyze` | Compare pools before deploying capital | Dated evidence, risk gates, ranked choices |
-| `lp-plan` | Design a position in a chosen pool | Exact unsigned plan, range, budgets, preflight |
-| `lp-monitor` | Inspect an existing position | P&L versus HOLD, range state, action verdict |
-| `lp-execute` | Carry out an explicit wallet action | Confirmed steps, receipts, state reconciliation |
-| `lp-engineer` | Build or review LP integrations | Adapter contract, tests, security findings |
+| --- | --- | --- |
+| [lp-setup](skills/lp-setup/SKILL.md) | Connect read access and inventory missing tools | Verified chain observation, capability report, next task |
+| [lp-analyze](skills/lp-analyze/SKILL.md) | Compare pools before deploying capital | Dated evidence, risk gates, ranked choices |
+| [lp-plan](skills/lp-plan/SKILL.md) | Design a position in a chosen pool | Exact unsigned plan, range, budgets, preflight |
+| [lp-monitor](skills/lp-monitor/SKILL.md) | Inspect an existing position | P&L versus HOLD, range state, action verdict |
+| [lp-execute](skills/lp-execute/SKILL.md) | Carry out an explicit wallet action | Confirmed steps, receipts, state reconciliation |
+| [lp-engineer](skills/lp-engineer/SKILL.md) | Build or review LP integrations | Adapter contract, tests, security findings |
 
 Coverage includes Uniswap v2, v3, and v4, plus Aerodrome classic pools and Slipstream concentrated pools.
 
@@ -108,12 +108,15 @@ Use [VFAT Yield](https://vfat.io/yield) as an optional public screening surface,
 
 ## Repository checks
 
+From the monorepo root, using Bun 1.3.14:
+
 ```bash
-bun install
+bun install --frozen-lockfile
 bun run check
+bun run pack
 ```
 
-`bun run check` runs style gates, strict type checks, tests, skill validation, and a production build. CI also checks the npm payload. Every change to `skills/` on `main` publishes an immutable Agent Skills discovery index and one archive per skill.
+`bun run check` runs style gates, strict type checks, tests, skill validation, and a production build. CI also checks the npm payload. Package changes on `main` also publish an immutable Agent Skills discovery index and one archive per skill. npm releases are published separately.
 
 ## Contributing
 
@@ -123,4 +126,4 @@ Security reports belong in [private vulnerability reporting](https://github.com/
 
 ## License
 
-MIT. See [SOURCES.md](SOURCES.md) for research and implementation provenance.
+[MIT](LICENSE). See [SOURCES.md](SOURCES.md) for research and implementation provenance.

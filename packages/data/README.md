@@ -1,5 +1,9 @@
 # Galleon DeFi Data Skills
 
+[![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/galleon-defi-data-skills)](https://www.npmjs.com/package/galleon-defi-data-skills)
+[![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
+
 One portable skill for connecting official market and DeFi data tools and turning their responses into evidence with known identity, age, units and coverage. It complements the LP, Hyperliquid and infra packs without requiring them.
 
 ## Install
@@ -35,3 +39,13 @@ Node 20+; one keyless public GET per invocation, no environment credentials, no 
 `defi-data-skills` supports `--version`, `catalog --json`, `show galleon-defi-data`, `validate [path] --json`, and `price-check`. The ESM export supplies `SKILL_CATALOG`; `galleon-defi-data-skills/skills/galleon-defi-data` resolves the skill document. The npm package, Claude plugin and Codex plugin contain the same standalone corpus.
 
 [Boomkin](https://github.com/galleonlabs/boomkin) consumes this pack as part of its Hermes DeFi onboarding. [Sources and verification limits](SOURCES.md) distinguish documented integrations from live checks. Maintainers run `bun run check` and the root pack/install smoke before release.
+
+## Contributing
+
+Documentation fixes, reproducible connection failures and source-backed workflow improvements are welcome. Follow the [contributor guide](https://github.com/galleonlabs/crypto-defi-skills/blob/main/CONTRIBUTING.md) for local checks and pull requests. Keep diagnostics read-only and each skill independently installable.
+
+Report security issues through [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new).
+
+## License
+
+[MIT](LICENSE). See [SOURCES.md](SOURCES.md) for provenance and dated verification.

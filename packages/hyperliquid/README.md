@@ -31,14 +31,14 @@ The repository also ships Codex and Claude Code plugin manifests. Cursor discove
 ## Skills
 
 | Skill | Use it for | Output |
-|---|---|---|
-| `hyperliquid-setup` | Discover tools and verify a first public read | Capability report, dated market snapshot, next task |
-| `hyperliquid-analyze` | Assess markets, funding, liquidity, catalysts, and strategies | Dated evidence, risks, testable verdict |
-| `hyperliquid-plan` | Size and specify an order or position change | Exact unsigned ticket and preflight |
-| `hyperliquid-monitor` | Inspect accounts, positions, orders, fills, and live risk | Reconciled state and alert verdict |
-| `hyperliquid-execute` | Carry out an explicitly approved trading action | One send, exchange reconciliation, incident state |
-| `hyperliquid-review` | Journal and review completed activity | Cost attribution, process grade, one finding |
-| `hyperliquid-engineer` | Build or review Hyperliquid integrations | Typed adapter, tests, security findings |
+| --- | --- | --- |
+| [hyperliquid-setup](skills/hyperliquid-setup/SKILL.md) | Discover tools and verify a first public read | Capability report, dated market snapshot, next task |
+| [hyperliquid-analyze](skills/hyperliquid-analyze/SKILL.md) | Assess markets, funding, liquidity, catalysts, and strategies | Dated evidence, risks, testable verdict |
+| [hyperliquid-plan](skills/hyperliquid-plan/SKILL.md) | Size and specify an order or position change | Exact unsigned ticket and preflight |
+| [hyperliquid-monitor](skills/hyperliquid-monitor/SKILL.md) | Inspect accounts, positions, orders, fills, and live risk | Reconciled state and alert verdict |
+| [hyperliquid-execute](skills/hyperliquid-execute/SKILL.md) | Carry out an explicitly approved trading action | One send, exchange reconciliation, incident state |
+| [hyperliquid-review](skills/hyperliquid-review/SKILL.md) | Journal and review completed activity | Cost attribution, process grade, one finding |
+| [hyperliquid-engineer](skills/hyperliquid-engineer/SKILL.md) | Build or review Hyperliquid integrations | Typed adapter, tests, security findings |
 
 Coverage includes perps, spot, HIP-3 markets, standard accounts, unified accounts, and portfolio margin. Transfers, withdrawals, bridging, staking, vault deposits, and builder-fee approval are outside the execution skill.
 
@@ -93,12 +93,15 @@ Perpetual futures can lose the full margin balance. This repository is software 
 
 ## Repository checks
 
+From the monorepo root, using Bun 1.3.14:
+
 ```bash
-bun install
+bun install --frozen-lockfile
 bun run check
+bun run pack
 ```
 
-CI checks style, strict types, tests, skill metadata, links, and the npm payload. Every change to `skills/` on `main` publishes an immutable Agent Skills discovery index and one archive per skill.
+CI checks style, strict types, tests, skill metadata, links, and the npm payload. Package changes on `main` also publish an immutable Agent Skills discovery index and one archive per skill. npm releases are published separately.
 
 ## Contributing
 
@@ -108,4 +111,4 @@ Report vulnerabilities through [private vulnerability reporting](https://github.
 
 ## License
 
-MIT. See [SOURCES.md](SOURCES.md) for provenance.
+[MIT](LICENSE). See [SOURCES.md](SOURCES.md) for provenance.

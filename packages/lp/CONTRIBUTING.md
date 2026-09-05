@@ -1,5 +1,7 @@
 # Contributing
 
+Start with the [monorepo contributor guide](../../CONTRIBUTING.md) for setup, shared checks and pull requests. The guidance below covers this pack.
+
 Contributions should make LP work safer, clearer, or more reproducible.
 
 ## Good changes
@@ -17,7 +19,7 @@ Contributions should make LP work safer, clearer, or more reproducible.
 3. Put the decision loop in `SKILL.md`; move detailed tables and cases to one-level `references/` files.
 4. Keep `SKILL.md` below 500 lines.
 5. Add positive, negative, and failure-path routing cases under `evals/`.
-6. Run `bun run check`.
+6. Run `bun run check` and `bun run pack` from the monorepo root. After skill edits, also run `validate-agent-skills packages/lp/skills`.
 
 A protocol claim without a source or test is incomplete. A transaction path without recovery behavior will not merge.
 
