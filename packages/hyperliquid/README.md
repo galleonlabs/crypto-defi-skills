@@ -64,7 +64,7 @@ Version 0.2.0 renames `hyperliquid-research` to `hyperliquid-analyze` and `hyper
 
 Reinstall to get the current names. Update saved prompts and harness configuration, then remove the old installed directories only after checking for local edits. No alias skills are retained. Other skills and credentials are unaffected by the repository rename.
 
-Pin `galleon-hyperliquid-skills@0.3.0` for a reproducible npm release, or use `@latest` for the current published package. Skill installers and deployers should pin a reviewed source revision and inspect changes before upgrading.
+Pin `galleon-hyperliquid-skills@0.3.1` for a reproducible npm release, or use `@latest` for the current published package. Skill installers and deployers should pin a reviewed source revision and inspect changes before upgrading.
 
 ## CLI
 

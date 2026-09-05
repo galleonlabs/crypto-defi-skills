@@ -1,6 +1,6 @@
 {
   "name": "galleon-hyperliquid-skills",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Agent skills for Hyperliquid setup, market analysis, trade planning and execution, monitoring, and performance review.",
   "type": "module",
   "license": "MIT",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 - 2026-09-05
+
+Reconcile active automation and shared account writers before manual execution; document authorized handoff and outstanding-order recovery.
+
 ## 0.3.0 - 2026-09-05
 
 Refresh account modes, dynamic asset namespaces, nonce lifecycle and explicit builder fee guidance. Preserve standalone MIT and attribution notices in every package and skill archive.

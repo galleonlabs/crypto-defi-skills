@@ -4,7 +4,7 @@ description: "Implement or review Hyperliquid market-data, account, order, signi
 license: MIT
 compatibility: "Designed for typed integrations using current official APIs and SDKs. Architecture and safety rules apply in any language."
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
   protocol: "hyperliquid"
 ---
 

@@ -9,7 +9,7 @@ Review transaction intent, permissions and simulation evidence. One portable ski
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-security
-npx --package galleon-defi-security-skills@0.1.0 defi-security-skills catalog
+npx --package galleon-defi-security-skills@0.1.1 defi-security-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-security/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

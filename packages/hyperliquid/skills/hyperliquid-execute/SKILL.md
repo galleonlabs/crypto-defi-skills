@@ -4,7 +4,7 @@ description: "Safely carry out a user-requested Hyperliquid trading action throu
 license: MIT
 compatibility: "Requires current read access, a trusted signer or official SDK boundary, and an approved API wallet. Never imports or stores a private key."
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
   protocol: "hyperliquid"
 ---
 
@@ -39,7 +39,7 @@ It does not cover deposits, withdrawals, bridging, token sends, balance transfer
 ## Workflow
 
 1. Load the reviewed ticket. If it is absent or incomplete, use `hyperliquid-plan` to prepare it within the requested scope; ask for missing material inputs and keep execution blocked until the ticket is complete.
-2. Refresh every material field and run [pre-send checks](references/pre-send-checks.md). Any mismatch invalidates approval.
+2. Check [account control](references/account-control.md) for other writers, active automation and any required authorized handoff. Refresh every material field and run [pre-send checks](references/pre-send-checks.md). Any mismatch invalidates approval.
 3. Validate the action and recovery path with [order safety](references/order-safety.md). Record fresh client order IDs, nonce owner, and expiry before the send.
 4. Simulate or dry-run when the trusted tool supports it. A successful simulation is preflight only.
 5. Show the final ticket and obtain exact approval by ticket ID in a subsequent user turn. On resumption, a verified approval already given for this unchanged, unexpired, unsent ticket satisfies this step; do not restart the approval loop.

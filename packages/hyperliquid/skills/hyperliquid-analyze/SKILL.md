@@ -4,7 +4,7 @@ description: "Assess Hyperliquid markets, funding, liquidity, catalysts, venue m
 license: MIT
 compatibility: "Requires web or read-only Hyperliquid API access for current claims. Works without a wallet or account address."
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
   protocol: "hyperliquid"
 ---
 

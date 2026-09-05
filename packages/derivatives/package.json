@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-derivatives-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Plan derivatives positions and reconcile venue execution.",
   "type": "module",
   "license": "MIT",

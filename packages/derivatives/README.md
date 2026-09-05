@@ -9,7 +9,7 @@ Plan derivatives positions and reconcile venue execution. One portable skill, in
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-derivatives
-npx --package galleon-defi-derivatives-skills@0.1.0 defi-derivatives-skills catalog
+npx --package galleon-defi-derivatives-skills@0.1.1 defi-derivatives-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-derivatives/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

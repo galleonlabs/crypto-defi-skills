@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs official venue data and optional user-authorized wallet tooling. No signer, provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # DeFi derivatives
@@ -33,6 +33,8 @@ For options include premium, contract multiplier, settlement asset, exercise/exp
 ## Authorize and reconcile
 
 Use the official builder within the user's established execution boundary. A delegated key with limited withdrawals can still lose trading collateral. Granting or renewing delegation, changing margin mode, depositing and withdrawing are distinct financial actions; none is incidental setup. Never handle a key, create an agent wallet, insert a fee recipient or authorize a trade from this skill's presence.
+
+Before manual changes to a managed account, read [account control](references/account-control.md) to reconcile active bots, open orders and an authorized handoff.
 
 Follow [the venue lifecycle](references/workflows.md): persist operation identity; separate prepared, submitted, created/resting, partially filled, executed, cancelled and unknown states; reconcile authoritative fills and account changes. Resolve unknown outcomes before retries. A keeper-created order, relayer acceptance or successful transport response is not a completed trade. Cancel and replace can race with fills; reread both before calculating remaining size.
 

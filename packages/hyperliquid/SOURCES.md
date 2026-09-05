@@ -38,3 +38,7 @@ A fresh isolated SDK 0.24.0 installation successfully called `Info(..., skip_ws=
 ## Primitive expansion - 2026-09-05
 
 Refresh account modes, dynamic asset namespaces, nonce lifecycle and explicit builder fee guidance. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
+
+## Minara workflow review
+
+Reviewed [Minara skills at b93aba1](https://github.com/Minara-AI/minara-skills/tree/b93aba1029827c37cf5ad82b19bfa8c289912091) on 2026-09-05 as research input. Reconcile active automation and shared account writers before manual execution; document authorized handoff and outstanding-order recovery. These are independently authored procedures, with primary references inside each affected skill. No Minara CLI, hosted service, code or installer is bundled.

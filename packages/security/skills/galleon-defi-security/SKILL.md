@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable agent instructions. Optional Tenderly, Safe, Blockaid and GoPlus tools require their supported networks and the user's own access; no signer or service is bundled.
 metadata:
   author: Galleon Labs
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # DeFi transaction review
@@ -28,7 +28,7 @@ For provider access and a constrained Hermes setup, use [official tools](referen
 - Inspect transfers, balance changes, allowance/exposure changes, logs, nested calls and reverts. List omitted/truncated results and any artificial balances, approvals, timestamps or overridden storage. Use fresh chain state for an execution review; label fork experiments separately.
 - Use risk feeds as additional signals. An unsupported chain, absent result, timeout or stale label means unknown, not a clean bill of health. Conflicting evidence remains a finding until resolved.
 
-Read [review outcomes](references/review.md) for expiry, re-quoting, Safe execution and receipt reconciliation. Review does not itself authorize signing, approvals, proposals, revocations, payments, broadcast or account-policy changes. Reuse any valid user authorization only within its actual limits.
+Read [review outcomes](references/review.md) for full-recipient provenance, address poisoning, expiry, re-quoting, Safe execution and receipt reconciliation. Review does not itself authorize signing, approvals, proposals, revocations, payments, broadcast or account-policy changes. Reuse any valid user authorization only within its actual limits.
 
 ## Deliver a decision-ready review
 

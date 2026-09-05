@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 - 2026-09-05
+
+Add scoped CLI/session recovery, lazy authentication and explicit vendor-wallet isolation checks.
+
 ## 0.2.0 - 2026-09-05
 
 Expand official DeFi tool selection, Hermes progressive disclosure and EVM/Solana transaction context. Preserve standalone MIT and attribution notices in every package and skill archive.

@@ -42,3 +42,7 @@ The local diagnostic uses standard EVM JSON-RPC reads and is tested against dete
 ## Primitive expansion - 2026-09-05
 
 Expand official DeFi tool selection, Hermes progressive disclosure and EVM/Solana transaction context. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
+
+## Minara workflow review
+
+Reviewed [Minara skills at b93aba1](https://github.com/Minara-AI/minara-skills/tree/b93aba1029827c37cf5ad82b19bfa8c289912091) on 2026-09-05 as research input. Add scoped CLI/session recovery, lazy authentication and explicit vendor-wallet isolation checks. These are independently authored procedures, with primary references inside each affected skill. No Minara CLI, hosted service, code or installer is bundled.

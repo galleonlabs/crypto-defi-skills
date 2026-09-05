@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-infra-skills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "RPC, wallet and Hermes infrastructure skills with read-only readiness diagnostics.",
   "type": "module",
   "license": "MIT",

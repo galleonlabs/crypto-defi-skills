@@ -4,7 +4,7 @@ description: Set up and diagnose DeFi agent infrastructure, RPC access, managed 
 license: MIT
 compatibility: Portable instructions; optional diagnostics require Node.js 20+ and public network access.
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
   author: Galleon Labs
 ---
 
@@ -18,6 +18,7 @@ Make the requested agent capable of its first task through maintained provider t
 - Wallet ownership and Coinbase: read [Managed wallets](references/wallets.md) before selecting custody, an isolated portfolio or an agent wallet. Existing exchange access is not an onchain signer.
 - Paid APIs, sponsorship and scoped permissions: read [Payments and authority](references/payments.md). An HTTP 402 is a price offer, not approval to pay.
 - Hermes installation and tool exposure: read [Hermes wiring](references/hermes.md). Keep Hermes as the runtime; integrate its native skills, profiles and MCP configuration instead of maintaining a fork.
+- CLI prompts, authentication failures or stalled sessions: use [CLI recovery](references/cli-recovery.md) to distinguish missing access from transport and uncertain writes.
 - Broken connectivity: use [Readiness diagnostics](references/readiness.md) for a bounded, read-only probe and a precise readiness report.
 
 Start with the user's selected chain and task. Read-only research needs RPC or indexed data, not a newly created wallet. Reuse an existing compatible provider connection when its account and permissions match; do not install every wallet product. Keep seed phrases and private keys outside agent prompts, repository files and diagnostic logs.

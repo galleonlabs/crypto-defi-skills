@@ -4,6 +4,8 @@
 
 This is broad coverage of major providers, not a claim to exhaust every protocol or to have executed every integration. The new packs are operational guidance with source references; they are not a universal transaction adapter.
 
+Follow-up: [Minara workflow review](minara-review.md) records improvements to CLI recovery, controller ownership and recipient verification.
+
 ## Method and evidence levels
 
 We read provider documentation, official repositories, machine-readable documentation indexes, SDK guidance and agent-specific surfaces. We followed primary links for consequential mechanics and distinguished current product versions from older examples. Three bounded research lanes covered credit/yield, execution/markets, and security/portfolio; integration research covered Hermes, portable skills, payments and governance.

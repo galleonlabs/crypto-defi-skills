@@ -15,22 +15,22 @@ Fourteen packs, 25 current skills. Each pack has its own npm release, CLI, plugi
 
 | Pack | npm release | Coverage |
 | --- | --- | --- |
-| [Infra](packages/infra) | [`galleon-defi-infra-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.2.0) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
+| [Infra](packages/infra) | [`galleon-defi-infra-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.2.1) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
 | [Data](packages/data) | [`galleon-defi-data-skills@0.3.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.3.0) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
 | [Lp](packages/lp) | [`galleon-lp-skills@0.5.0`](https://www.npmjs.com/package/galleon-lp-skills/v/0.5.0) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
-| [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.3.0`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.3.0) | Spot, perps, HIP-3, account modes, execution and review |
+| [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.3.1`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.3.1) | Spot, perps, HIP-3, account modes, execution and review |
 | [Lending](packages/lending) | [`galleon-defi-lending-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.1.0) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
 | [Staking](packages/staking) | [`galleon-defi-staking-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-staking-skills/v/0.1.0) | Lido, Rocket Pool, EigenLayer and Symbiotic staking and exits |
 | [Yield](packages/yield) | [`galleon-defi-yield-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.1.0) | Vaults, Pendle PT/YT, Yearn, Spark savings and Ethena |
 | [Tokenized Assets](packages/tokenized-assets) | [`galleon-defi-tokenized-assets-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-tokenized-assets-skills/v/0.1.0) | Ondo and OpenEden eligibility, issuer risk and settlement |
 | [Routing](packages/routing) | [`galleon-defi-routing-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.1.0) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
-| [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.0) | GMX, Derive, Drift and Pendle Boros trading lifecycles |
+| [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.1`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.1) | GMX, Derive, Drift and Pendle Boros trading lifecycles |
 | [Portfolio](packages/portfolio) | [`galleon-defi-portfolio-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-portfolio-skills/v/0.1.0) | Positions, liabilities, net exposure, cash flows and performance |
-| [Security](packages/security) | [`galleon-defi-security-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.1.0) | Transaction decoding, permissions, simulation and receipt review |
+| [Security](packages/security) | [`galleon-defi-security-skills@0.1.1`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.1.1) | Transaction decoding, permissions, simulation and receipt review |
 | [Payments](packages/payments) | [`galleon-defi-payments-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-payments-skills/v/0.1.0) | Stablecoin transfers, x402, Sablier and Superfluid |
 | [Governance](packages/governance) | [`galleon-defi-governance-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-governance-skills/v/0.1.0) | Snapshot, Cactus, Governor, voting and Safe execution |
 
-Coverage means operational guidance and reviewed official interfaces. It does not imply that every provider has an MCP server, every account can access it, or every action was executed in testing. [The research report](docs/research/report-source.md) records those distinctions and the remaining gaps.
+Coverage means operational guidance and reviewed official interfaces. It does not imply that every provider has an MCP server, every account can access it, or every action was executed in testing. [The research report](docs/research/report-source.md) records those distinctions and the remaining gaps. The [Minara workflow review](docs/research/minara-review.md) documents subsequent CLI recovery, automation ownership and recipient-verification improvements.
 
 ## Install only what you need
 
