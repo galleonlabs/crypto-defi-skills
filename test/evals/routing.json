@@ -84,5 +84,85 @@
       "galleon-defi-data"
     ],
     "reason": "Choosing an LP pool by executable yield and risk is lp-analyze, not aggregator research."
+  },
+  {
+    "prompt": "Compare the liquidation and exit constraints of these Aave and Morpho loans.",
+    "expected": "galleon-defi-lending",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "Borrowing and collateral mechanics belong to lending; vault yield is secondary."
+  },
+  {
+    "prompt": "Explain when I can claim my queued Lido withdrawal and who owns the claim.",
+    "expected": "galleon-defi-staking",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Queue and claim rights require the staking lifecycle."
+  },
+  {
+    "prompt": "Compare this Yearn vault with a Pendle PT position held until maturity.",
+    "expected": "galleon-defi-yield",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "Unlevered vault and yield-token planning belongs to yield."
+  },
+  {
+    "prompt": "Can this account subscribe to OUSG and redeem it through the issuer?",
+    "expected": "galleon-defi-tokenized-assets",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "Issuer eligibility and settlement differ from a secondary-market swap."
+  },
+  {
+    "prompt": "My bridge source receipt succeeded but the destination has not received the tokens.",
+    "expected": "galleon-defi-routing",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Cross-chain route recovery needs destination and refund reconciliation."
+  },
+  {
+    "prompt": "My GMX order is created. Check whether it executed and what margin remains.",
+    "expected": "galleon-defi-derivatives",
+    "mustNotInvoke": [
+      "hyperliquid-analyze"
+    ],
+    "reason": "Venue-specific keeper order lifecycle belongs to derivatives, not Hyperliquid."
+  },
+  {
+    "prompt": "Reconcile wallet assets, lending debt and vault shares without counting underlying twice.",
+    "expected": "galleon-defi-portfolio",
+    "mustNotInvoke": [
+      "galleon-defi-data"
+    ],
+    "reason": "Account-level net exposure and ownership reconciliation require portfolio accounting."
+  },
+  {
+    "prompt": "Decode this Permit2 signature and compare the spender and amount to my intended swap.",
+    "expected": "galleon-defi-security",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "The task is permission and payload review, not a new route quote."
+  },
+  {
+    "prompt": "This paid API request timed out after authorization; check whether I was charged.",
+    "expected": "galleon-defi-payments",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "Payment recovery requires obligation and settlement evidence, not generic RPC setup."
+  },
+  {
+    "prompt": "Summarize this Snapshot proposal and recommend a vote without casting it.",
+    "expected": "galleon-defi-governance",
+    "mustNotInvoke": [
+      "galleon-defi-data"
+    ],
+    "reason": "Proposal choice and voting mechanics belong to governance; analysis is not a public action."
   }
 ]

@@ -1,10 +1,8 @@
 import { expect, test } from "bun:test";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { SKILL_CATALOG as dataCatalog } from "../packages/data/src/catalog.ts";
-import { SKILL_CATALOG as hyperliquidCatalog } from "../packages/hyperliquid/src/catalog.ts";
-import { SKILL_CATALOG as infraCatalog } from "../packages/infra/src/index.ts";
-import { SKILL_CATALOG as lpCatalog } from "../packages/lp/src/catalog.ts";
+import { packages, root } from "../scripts/workspaces.ts";
+import { pathToFileURL } from "node:url";
 
 interface RoutingCase {
   prompt: string;
@@ -13,7 +11,11 @@ interface RoutingCase {
   reason: string;
 }
 
-const UNION_CATALOG = [...infraCatalog, ...dataCatalog, ...lpCatalog, ...hyperliquidCatalog];
+const UNION_CATALOG: { name: string }[] = [];
+for (const pack of await packages()) {
+  const catalog = await import(pathToFileURL(resolve(root, pack.directory, "src/index.ts")).href);
+  UNION_CATALOG.push(...catalog.SKILL_CATALOG);
+}
 const UNION_NAMES = new Set<string>(UNION_CATALOG.map((skill) => skill.name));
 
 const REQUIRED_BOUNDARIES = [

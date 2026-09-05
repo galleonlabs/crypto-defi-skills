@@ -49,8 +49,9 @@
   },
   "scripts": {
     "build": "bun ../../scripts/build-content-pack.ts",
-    "check": "bun ../../scripts/check-content-pack.ts",
+    "check": "bun run style && bun ../../scripts/check-content-pack.ts",
     "prepack": "bun run check",
-    "validate": "bun ../../scripts/check-content-pack.ts --validate-only"
+    "validate": "bun ../../scripts/check-content-pack.ts --validate-only",
+    "style": "bun ../../scripts/check-style.ts"
   }
 }

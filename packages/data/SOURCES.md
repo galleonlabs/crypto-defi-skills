@@ -30,6 +30,6 @@ Offline tests exercise malformed/stale/missing observations, HTTP access/rate/pa
 
 For AIXBT v0.2.0, public documentation and the live v3 OpenAPI contract were retrieved on 2026-09-05. Protected research reads, account entitlements and Hermes header resolution were not tested by this package release; consumer provisioning must verify them separately. No credentials were used in package validation.
 
-## Primitive expansion — 2026-09-05
+## Primitive expansion - 2026-09-05
 
 Add cross-primitive evidence, vault standards and portfolio accounting while preserving AIXBT research. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
