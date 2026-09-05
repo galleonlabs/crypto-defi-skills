@@ -4,7 +4,7 @@ import { spawnSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { SKILL_CATALOG } from "./catalog.js";
+import { SKILL_CATALOG, canonicalSkillName } from "./catalog.js";
 import { buildRange, evaluateEconomics, evaluatePosition } from "./math.js";
 import { validateCorpus } from "./validation.js";
 
@@ -124,8 +124,10 @@ async function main(): Promise<void> {
     rejectUnknown(parsed.flags, []);
     const [name, ...extra] = parsed.positionals;
     if (!name || extra.length > 0) throw new Error("show requires exactly one skill name");
-    if (!SKILL_CATALOG.some((skill) => skill.name === name)) throw new Error(`unknown skill: ${name}`);
-    process.stdout.write(await readFile(resolve(packageRoot(), "skills", name, "SKILL.md"), "utf8"));
+    const canonical = canonicalSkillName(name);
+    if (!SKILL_CATALOG.some((skill) => skill.name === canonical)) throw new Error(`unknown skill: ${name}`);
+    if (canonical !== name) process.stderr.write(`note: ${name} was renamed to ${canonical} in 0.4.0\n`);
+    process.stdout.write(await readFile(resolve(packageRoot(), "skills", canonical, "SKILL.md"), "utf8"));
     return;
   }
 

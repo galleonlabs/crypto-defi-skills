@@ -12,11 +12,12 @@ npm install --global galleon-lp-skills
 ## Skill entrypoints
 
 - skills/lp-setup/SKILL.md: verify read access and map required tools
-
 - skills/lp-analyze/SKILL.md: compare pools and assess risk before deployment
+- skills/lp-research/SKILL.md: install-compatible rename notice for lp-analyze
 - skills/lp-plan/SKILL.md: produce an exact unsigned position plan
 - skills/lp-monitor/SKILL.md: inspect a live position and decide whether action is justified
 - skills/lp-execute/SKILL.md: execute an explicitly requested action through a user-controlled wallet
+- skills/lp-operate/SKILL.md: install-compatible rename notice for lp-execute
 - skills/lp-engineer/SKILL.md: build and review protocol integrations
 
 ## Machine interfaces

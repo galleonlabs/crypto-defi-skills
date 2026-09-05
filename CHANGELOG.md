@@ -1,14 +1,15 @@
 # Changelog
 
+## Unreleased
+
+- Restore install-compatible `lp-research` and `lp-operate` names so marketplace and saved `--skill` installs resolve after the 0.4.0 rename.
+
 ## 0.4.0 - 2026-09-05
 
 - Rename `lp-research` to `lp-analyze` and `lp-operate` to `lp-execute`; update saved prompts and reinstall current names.
 - Add `lp-setup` with a standalone read-only RPC diagnostic, capability map and first-task workflow.
 - Add explicit handoff contracts, standalone fallbacks and first useful tasks to all six skills.
 - Preserve external wallet, exact confirmation, one-send, receipt and reconciliation boundaries.
-
-## Unreleased
-
 - Audit agent and skill instructions against [OpenAI's GPT-6 Astra guidance](https://developers.openai.com/api/docs/guides/latest-model): clarify task continuity, material questions, blocker explanations, and proportionate verification while preserving financial authorization and evidence gates.
 
 ## 0.3.0 - 2026-09-04

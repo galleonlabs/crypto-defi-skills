@@ -1,4 +1,10 @@
-export { SKILL_CATALOG, type SkillName } from "./catalog.js";
+export {
+  RENAMED_SKILLS,
+  SKILL_CATALOG,
+  canonicalSkillName,
+  type RenamedSkillName,
+  type SkillName,
+} from "./catalog.js";
 export {
   MAX_TICK,
   MIN_TICK,

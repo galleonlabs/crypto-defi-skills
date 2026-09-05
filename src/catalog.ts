@@ -26,3 +26,14 @@ export const SKILL_CATALOG = [
 ] as const;
 
 export type SkillName = (typeof SKILL_CATALOG)[number]["name"];
+
+export const RENAMED_SKILLS = {
+  "lp-research": "lp-analyze",
+  "lp-operate": "lp-execute",
+} as const satisfies Record<string, SkillName>;
+
+export type RenamedSkillName = keyof typeof RENAMED_SKILLS;
+
+export function canonicalSkillName(name: string): string {
+  return Object.hasOwn(RENAMED_SKILLS, name) ? RENAMED_SKILLS[name as RenamedSkillName] : name;
+}

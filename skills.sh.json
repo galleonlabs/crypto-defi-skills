@@ -25,6 +25,14 @@
         "lp-execute",
         "lp-engineer"
       ]
+    },
+    {
+      "title": "Previous names",
+      "description": "Install-compatible 0.3.0 names. Prefer lp-analyze and lp-execute.",
+      "skills": [
+        "lp-research",
+        "lp-operate"
+      ]
     }
   ]
 }

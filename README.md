@@ -59,7 +59,9 @@ An installed skill is a procedure, not an executable trading integration. The CL
 
 Version 0.4.0 renames `lp-research` to `lp-analyze` and `lp-operate` to `lp-execute`, and adds `lp-setup`. The explicit names distinguish market/pool analysis from research provenance and execution from general operations. Existing `lp-plan`, `lp-monitor` and `lp-engineer` names remain.
 
-Re-run the install command to install current names. Update saved prompts/configuration that reference the two old names, then remove only the old installed skill directories after verifying they contain no user edits. Do not delete unrelated skills or harness configuration. Existing old installations remain at their installed version until updated; renamed skills are not duplicate aliases.
+Re-run the install command to install current names. Update saved prompts/configuration that reference the two old names, then remove only the old installed skill directories after verifying they contain no user edits. Do not delete unrelated skills or harness configuration. Existing old installations remain at their installed version until updated.
+
+`lp-research` and `lp-operate` remain as install-compatible rename notices so marketplace listings and saved `npx skills add ... --skill lp-research` or `--skill lp-operate` commands still resolve. They are not a second analysis or execution workflow. Canonical names stay `lp-analyze` and `lp-execute`.
 
 For reproducible npm use, install `galleon-lp-skills@0.4.0`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
 

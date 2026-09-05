@@ -317,5 +317,21 @@
       "lp-analyze"
     ],
     "reason": "Connection readiness is needed before analysis or an authorized execution."
+  },
+  {
+    "prompt": "Use lp-research to compare these Uniswap and Aerodrome pools before I choose one.",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Saved prompts that still name lp-research should load the current analysis skill."
+  },
+  {
+    "prompt": "Use lp-operate to collect fees from position 42 with my connected wallet now.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [
+      "lp-analyze"
+    ],
+    "reason": "Saved prompts that still name lp-operate should load the current execution skill."
   }
 ]
