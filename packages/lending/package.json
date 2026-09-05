@@ -17,8 +17,12 @@
   "keywords": [
     "agent-skills",
     "defi",
-    "hermes",
-    "lending"
+    "lending",
+    "aave",
+    "morpho",
+    "compound",
+    "euler",
+    "spark"
   ],
   "bin": {
     "defi-lending-skills": "dist/cli.js"

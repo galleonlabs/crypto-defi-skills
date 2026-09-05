@@ -17,8 +17,11 @@
   "keywords": [
     "agent-skills",
     "defi",
-    "hermes",
-    "portfolio"
+    "portfolio",
+    "zerion",
+    "debank",
+    "coingecko",
+    "defillama"
   ],
   "bin": {
     "defi-portfolio-skills": "dist/cli.js"

@@ -14,7 +14,8 @@
     "infrastructure",
     "rpc",
     "wallet",
-    "hermes"
+    "alchemy",
+    "coinbase"
   ],
   "skills": "./skills/"
 }

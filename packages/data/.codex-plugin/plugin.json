@@ -13,8 +13,7 @@
     "defi",
     "coingecko",
     "defillama",
-    "aixbt",
-    "hermes"
+    "aixbt"
   ],
   "skills": "./skills/"
 }

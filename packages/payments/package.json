@@ -17,8 +17,10 @@
   "keywords": [
     "agent-skills",
     "defi",
-    "hermes",
-    "payments"
+    "payments",
+    "x402",
+    "sablier",
+    "superfluid"
   ],
   "bin": {
     "defi-payments-skills": "dist/cli.js"

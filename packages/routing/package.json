@@ -17,8 +17,13 @@
   "keywords": [
     "agent-skills",
     "defi",
-    "hermes",
-    "routing"
+    "routing",
+    "1inch",
+    "jupiter",
+    "cow-protocol",
+    "lifi",
+    "across",
+    "cctp"
   ],
   "bin": {
     "defi-routing-skills": "dist/cli.js"

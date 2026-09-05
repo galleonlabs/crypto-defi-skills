@@ -32,6 +32,6 @@ if (import.meta.main) {
   if (command === "check") {
     run("bun", ["scripts/check-style.ts"]);
     run("bunx", ["tsc", "--noEmit"]);
-    run("bun", ["test", "./test", "./scripts/content-pack/validation.test.ts"]);
+    run("bun", ["test", "./test", "./scripts/content-pack"]);
   }
 }

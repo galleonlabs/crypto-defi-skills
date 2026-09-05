@@ -17,8 +17,11 @@
   "keywords": [
     "agent-skills",
     "defi",
-    "hermes",
-    "governance"
+    "governance",
+    "snapshot",
+    "cactus",
+    "governor",
+    "safe"
   ],
   "bin": {
     "defi-governance-skills": "dist/cli.js"
