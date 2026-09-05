@@ -109,6 +109,8 @@ Start with [CONTRIBUTING.md](CONTRIBUTING.md). Protocol claims need a current pr
 
 Report vulnerabilities through [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new).
 
-## License
+## License and credit
 
-[MIT](LICENSE). See [SOURCES.md](SOURCES.md) for provenance.
+[MIT licensed](LICENSE). Preserve the copyright and permission notice when reusing copies or substantial portions. See [attribution guidance](ATTRIBUTION.md) for an optional credit line naming Andrew Wilkinson and Galleon Labs.
+
+See [SOURCES.md](SOURCES.md) for provenance.

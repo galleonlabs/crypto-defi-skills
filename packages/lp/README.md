@@ -124,6 +124,8 @@ Start with [CONTRIBUTING.md](CONTRIBUTING.md). New protocol claims need a primar
 
 Security reports belong in [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new), not public issues.
 
-## License
+## License and credit
 
-[MIT](LICENSE). See [SOURCES.md](SOURCES.md) for research and implementation provenance.
+[MIT licensed](LICENSE). Preserve the copyright and permission notice when reusing copies or substantial portions. See [attribution guidance](ATTRIBUTION.md) for an optional credit line naming Andrew Wilkinson and Galleon Labs.
+
+See [SOURCES.md](SOURCES.md) for research and implementation provenance.

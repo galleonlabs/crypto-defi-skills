@@ -39,7 +39,8 @@
     "skills",
     "llms.txt",
     "skills.sh.json",
-    "SOURCES.md"
+    "SOURCES.md",
+    "ATTRIBUTION.md"
   ],
   "engines": {
     "node": ">=20"

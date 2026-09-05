@@ -181,4 +181,8 @@ After changing skills, also run `validate-agent-skills packages/<pack>/skills`. 
 
 Report security issues through [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new).
 
-Built by [Galleon Labs](https://galleonlabs.io). [MIT licensed](LICENSE).
+## License and credit
+
+[MIT licensed](LICENSE), with the copyright and permission notice retained when reusing copies or substantial portions. Created by [Andrew Wilkinson](https://andrewwilkinson.io) and [Galleon Labs](https://github.com/galleonlabs).
+
+See [reuse and attribution](ATTRIBUTION.md) for a ready-to-copy credit line. If Crypto DeFi Skills helps your work, [a star on the original repository](https://github.com/galleonlabs/crypto-defi-skills) is appreciated and entirely optional.

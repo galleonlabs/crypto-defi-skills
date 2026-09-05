@@ -41,7 +41,8 @@
     "skills.sh.json",
     "SOURCES.md",
     "AGENTS.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "ATTRIBUTION.md"
   ],
   "engines": {
     "node": ">=20"

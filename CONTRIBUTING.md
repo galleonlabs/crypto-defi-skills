@@ -64,3 +64,7 @@ Do not include installed dependencies or generated release archives. Maintainers
 ## Report a security issue
 
 Use [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new) for security issues. Share only a redacted reproduction; never post live keys or private account data in an issue or pull request.
+
+## Credit and reuse
+
+Retain existing authorship and license notices in contributions and derived work. [ATTRIBUTION.md](ATTRIBUTION.md) explains MIT notice requirements and offers an optional visible credit line.
