@@ -13,6 +13,12 @@ metadata:
 
 Turn a chosen pool and capital budget into an unsigned, simulation-backed plan.
 
+If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Task handling
+
+Reuse the user's stated intent and constraints across turns. Ask only for missing material inputs; never invent wallet identity, spend limits, or risk tolerance. Continue independent reads and show incomplete fields while awaiting answers. If prerequisite research is missing, complete the relevant read-only assessment when possible; keep the plan non-executable until its gates pass.
+
 ## Inputs
 
 Require chain, wallet address, protocol version, exact pool identity, capital and max spend per token, objective, horizon, loss constraints, intended maintenance cadence, and approval preference. If the pool has not passed due diligence, stop and route to `lp-research`.

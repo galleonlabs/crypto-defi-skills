@@ -13,6 +13,12 @@ metadata:
 
 Build protocol-aware LP software with deterministic plans, explicit signer boundaries, and receipt-based truth.
 
+If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Task handling
+
+For a review request, inspect and report without editing. For an implementation request, complete the change and relevant validation using existing project conventions. Resolve routine details from context; ask only about material gaps. Local fixture tests need no separate trading approval; any testnet write still requires explicit authority. Run the applicable test-matrix cases and required repository checks, then stop unless a failure or new risk warrants more testing.
+
 ## Workflow
 
 1. Fix the supported chains, protocol versions, actions, custody model, execution authority, and failure budget.
@@ -22,7 +28,7 @@ Build protocol-aware LP software with deterministic plans, explicit signer bound
 5. Enforce [security invariants](references/security-invariants.md) at every boundary.
 6. Make automation dry-run by default. A live mode requires explicit authority, serialized wallet writes, hard caps, and a durable receipt ledger.
 7. Implement degraded reads and catalog behavior with [curation and snapshots](references/curation-snapshots.md).
-8. Run [the test matrix](references/test-matrix.md). Include negative and partial-state paths, not only successful mints.
+8. Run the applicable cases from [the test matrix](references/test-matrix.md). Include negative and partial-state paths, not only successful mints.
 9. Report changed contracts, assumptions, unsupported paths, validation evidence, and residual risk.
 
 ## Engineering rules

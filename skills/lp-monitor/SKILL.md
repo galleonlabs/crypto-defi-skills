@@ -13,6 +13,12 @@ metadata:
 
 Reconstruct the position from chain state, measure it against HOLD, and decide whether action clears its cost and risk hurdle.
 
+If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Task handling
+
+Reuse the requested account or position identity, then verify it from current reads. Ask only for missing identity or monitoring constraints; never substitute another account. Finish unaffected checks when a source fails and mark the affected result unavailable. Report the current state, material changes, and next required read concisely, retaining the output contract.
+
 ## Workflow
 
 1. Bind chain ID, wallet, protocol version, pool identity, token order, position ID or LP balance, gauge or staking state, and observation block.
