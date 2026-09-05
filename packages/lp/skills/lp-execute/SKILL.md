@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires a trusted wallet or transaction tool, simulation, receipt lookup, and read-only chain access. Never imports private keys."
 metadata:
   author: "Galleon Labs"
-  version: "0.4.0"
+  version: "0.4.1"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -14,6 +14,10 @@ metadata:
 Execute one explicit, reviewed LP intent through a wallet the user controls.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Tool selection
+
+When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
 
 ## Start here and connected workflow
 

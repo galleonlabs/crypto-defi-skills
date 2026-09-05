@@ -1,0 +1,21 @@
+{
+  "name": "galleon-defi",
+  "owner": {
+    "name": "Galleon Labs"
+  },
+  "metadata": {
+    "description": "Independently installable DeFi agent skill packs."
+  },
+  "plugins": [
+    {
+      "name": "galleon-lp-skills",
+      "source": "./packages/lp",
+      "description": "Uniswap and Aerodrome liquidity workflows."
+    },
+    {
+      "name": "galleon-hyperliquid-skills",
+      "source": "./packages/hyperliquid",
+      "description": "Hyperliquid research, planning, execution and review."
+    }
+  ]
+}

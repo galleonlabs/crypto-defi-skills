@@ -3,6 +3,7 @@ import { spawnSync } from "node:child_process";
 import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { parse } from "yaml";
+import { packages } from "./workspaces.ts";
 
 const schema = "https://schemas.agentskills.io/discovery/0.2.0/schema.json";
 const root = resolve(import.meta.dirname, "..");
@@ -32,7 +33,7 @@ function runText(command: string, args: string[], input?: string): string {
   return result.stdout;
 }
 
-function runBuffer(command: string, args: string[], input?: Uint8Array): Buffer {
+function runBuffer(command: string, args: string[], input?: Uint8Array): Uint8Array {
   const result = spawnSync(command, args, {
     cwd: root,
     encoding: "buffer",
@@ -40,11 +41,11 @@ function runBuffer(command: string, args: string[], input?: Uint8Array): Buffer 
     input,
   });
   if (result.status !== 0) throw new Error(result.stderr.toString() || `${command} failed`);
-  return result.stdout;
+  return new Uint8Array(result.stdout);
 }
 
 function readMetadata(directory: string): { name: string; description: string } {
-  const path = `skills/${directory}/SKILL.md`;
+  const path = `${directory}/SKILL.md`;
   const source = runText("git", ["show", `HEAD:${path}`]);
   const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1];
   if (!frontmatter) throw new Error(`Missing frontmatter in ${path}`);
@@ -63,8 +64,8 @@ function readMetadata(directory: string): { name: string; description: string } 
   return { name: metadata.name, description: metadata.description };
 }
 
-function createArchive(directory: string): Buffer {
-  const tree = runText("git", ["rev-parse", `HEAD:skills/${directory}`]).trim();
+function createArchive(directory: string): Uint8Array {
+  const tree = runText("git", ["rev-parse", `HEAD:${directory}`]).trim();
   const commit = runText("git", ["commit-tree", tree], "Agent Skills archive\n").trim();
   const tar = runBuffer("git", ["archive", "--format=tar", commit]);
   return runBuffer("gzip", ["-n", "-9", "-c"], tar);
@@ -73,10 +74,12 @@ function createArchive(directory: string): Buffer {
 rmSync(outputDirectory, { force: true, recursive: true });
 mkdirSync(outputDirectory);
 
-const directories = runText("git", ["ls-tree", "-d", "--name-only", "HEAD:skills"])
-  .trim()
-  .split("\n")
-  .filter(Boolean);
+const directories: string[] = [];
+for (const pack of await packages()) {
+  const prefix = `${pack.directory}/skills`;
+  const names = runText("git", ["ls-tree", "-d", "--name-only", `HEAD:${prefix}`]).trim().split("\n").filter(Boolean);
+  directories.push(...names.map((name) => `${prefix}/${name}`));
+}
 
 const skills = directories
   .map((directory) => {

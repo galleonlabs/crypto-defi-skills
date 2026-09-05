@@ -1,16 +1,23 @@
 name: Agent Skills Discovery
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
-      - "skills/**"
+      - "packages/**"
+      - "package.json"
+      - "bun.lock"
+      - "scripts/workspaces.ts"
       - "scripts/build-discovery-index.ts"
       - ".github/workflows/discovery.yml"
   push:
     branches: [main]
     paths:
-      - "skills/**"
+      - "packages/**"
+      - "package.json"
+      - "bun.lock"
+      - "scripts/workspaces.ts"
       - "scripts/build-discovery-index.ts"
       - ".github/workflows/discovery.yml"
 

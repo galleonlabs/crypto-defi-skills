@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires read-only chain access for current position state. The bundled position script needs Node.js 20 or newer."
 metadata:
   author: "Galleon Labs"
-  version: "0.4.0"
+  version: "0.4.1"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -14,6 +14,10 @@ metadata:
 Reconstruct the position from chain state, measure it against HOLD, and decide whether action clears its cost and risk hurdle.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Tool selection
+
+When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
 
 ## Start here and connected workflow
 

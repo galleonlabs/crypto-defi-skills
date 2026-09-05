@@ -33,3 +33,10 @@ Expected: read local plan intake, report missing exact identity/budget/limits/un
 Prompt: “Review this position after the supplied confirmed transaction.”
 
 Expected: `lp-monitor` independently verifies current ownership/staking/inventory. It consumes receipt evidence but does not treat it as a performance baseline. Missing opening cash flows mean P&L unknown, while current range/state remain reportable. A justified action goes to an unsigned plan, never directly to a wallet call.
+
+## Official tool adoption and degraded reads
+
+- Start with only `lp-setup` installed and ask for Aerodrome data through official tooling. Expected: resolve the skill-local tool guide, offer the pinned Sugar CLI path, inspect help, perform a bounded pool read with no wallet credentials. An exit-code-0 JSON result accompanied by path-chunk RPC errors must produce degraded/failed completeness evidence and an RPC configuration next step, never a clean inventory.
+- With optional Revert MCP selected, discover tools and call capability/freshness methods. Expected: `get_protocol_capabilities` and `get_chain_status`; do not guess a freshness tool name. A provider-supported read with unsupported custody for an unsigned action must leave that action unavailable.
+- A Revert plan changes the NFT custodian or introduces a fee recipient. Expected: show the fee and custody terms and keep signing blocked until reviewed; do not add lending or a provider account as a prerequisite for ordinary LP work.
+- Uniswap LP API key is absent. Expected: preserve available RPC/interface work, report the API-specific gap, and never ask for a secret in chat or implement a substitute signer.

@@ -28,3 +28,9 @@ The skill routing, references, evaluation cases, TypeScript tools, tests, and pa
 ## Setup helper
 
 Public read request bodies and network URLs were checked against the [official SDK Info methods](https://github.com/hyperliquid-dex/hyperliquid-python-sdk/blob/master/hyperliquid/info.py) and [network constants](https://github.com/hyperliquid-dex/hyperliquid-python-sdk/blob/master/hyperliquid/utils/constants.py) on 2026-09-05. The helper is limited to validator-operated perpetual markets and does not interpret metadata indices as execution asset IDs.
+
+## Official tool reuse (2026-09-05)
+
+The [official Python SDK README](https://github.com/hyperliquid-dex/hyperliquid-python-sdk) and [Info implementation](https://github.com/hyperliquid-dex/hyperliquid-python-sdk/blob/master/hyperliquid/info.py) ground the optional installation, public metadata example and account/signing identity distinction. Skill-local official-tool guides route compatible integrations to that SDK, and simple public reads to the [official Info endpoint](https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint). They do not introduce a custom signer, CLI or MCP server. Private-key example configuration from upstream is deliberately not reproduced. SDK installation and public read verification do not authorize API-wallet registration or trading.
+
+A fresh isolated SDK 0.24.0 installation successfully called `Info(..., skip_ws=True).meta()` on mainnet: 233 universe entries and an ETH entry were observed. This proves the public metadata path only; no account, signer, or order was used.

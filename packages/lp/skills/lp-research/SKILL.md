@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Install-compatible rename notice. Not a second analysis workflow."
 metadata:
   author: "Galleon Labs"
-  version: "0.4.0"
+  version: "0.4.1"
   renamed-to: "lp-analyze"
 ---
 
@@ -16,7 +16,7 @@ This skill was renamed to `lp-analyze` in 0.4.0. Keep using that name for pool c
 ## First useful task
 
 1. If `lp-analyze` is already installed in this harness, load it and continue the user's comparison or due-diligence request there.
-2. If it is not installed, tell the user to run `npx skills add galleonlabs/lp-skills --skill lp-analyze` or to install the full package, then stop. Do not invent a substitute analysis.
+2. If it is not installed, tell the user to run `npx skills add galleonlabs/crypto-defi-skills --skill lp-analyze` or to install the full package, then stop. Do not invent a substitute analysis.
 3. Do not request approvals, connect a wallet, sign, or submit transactions.
 
 ## Boundaries

@@ -1,0 +1,13 @@
+# Crypto DeFi Skills
+
+Independently installable LP and Hyperliquid skill packs from Galleon Labs.
+
+- LP skills: https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lp
+- Hyperliquid skills: https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid
+- npm: galleon-lp-skills and galleon-hyperliquid-skills
+- Agent setup and updates: https://github.com/galleonlabs/boomkin
+- Install one skill: npx skills add galleonlabs/crypto-defi-skills --skill lp-monitor
+- Package release procedure: RELEASING.md
+- Migration: MIGRATION.md
+
+Each pack has its own versions, CLI, references, plugin manifests and tests. The private root workspace is not an npm package. Prefer official protocol tools and verify tool capabilities before use. No wallet, signer, subscription, or trading authority is included by installing skills.

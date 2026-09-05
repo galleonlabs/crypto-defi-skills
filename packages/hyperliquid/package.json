@@ -1,17 +1,18 @@
 {
   "name": "galleon-hyperliquid-skills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Agent skills for Hyperliquid setup, market analysis, trade planning and execution, monitoring, and performance review.",
   "type": "module",
   "license": "MIT",
   "author": "Galleon Labs",
-  "homepage": "https://github.com/galleonlabs/hyperliquid-skills#readme",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/galleonlabs/hyperliquid-skills.git"
+    "url": "git+https://github.com/galleonlabs/crypto-defi-skills.git",
+    "directory": "packages/hyperliquid"
   },
   "bugs": {
-    "url": "https://github.com/galleonlabs/hyperliquid-skills/issues"
+    "url": "https://github.com/galleonlabs/crypto-defi-skills/issues"
   },
   "keywords": [
     "agent-skills",
@@ -50,7 +51,7 @@
   "scripts": {
     "build": "bun scripts/build.ts",
     "check": "bun run style && bun run typecheck && bun test && bun run validate && bun run build",
-    "discovery": "bun scripts/build-discovery-index.ts",
+    "discovery": "bun ../../scripts/build-discovery-index.ts",
     "prepack": "bun run check",
     "style": "bun scripts/check-style.ts",
     "test": "bun test",

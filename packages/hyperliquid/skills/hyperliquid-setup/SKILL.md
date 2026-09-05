@@ -4,13 +4,17 @@ description: "Connect an agent's available tools to Hyperliquid workflows and co
 license: MIT
 compatibility: "Any Agent Skills harness. Public reads need HTTP access or Node.js 20+. Account work needs a user-provided public account address; execution needs a separately configured trusted signer."
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
   protocol: "hyperliquid"
 ---
 
 # Hyperliquid setup
 
 Take a new agent from installed instructions to a verified first read and a precise next step.
+
+## Tool selection
+
+When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
 
 ## First task and connected workflow
 

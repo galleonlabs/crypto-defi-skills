@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+- Move to the crypto-defi-skills monorepo while preserving the npm package and CLI names.
+- Add current official-tool selection and access guidance.
+
 ## 0.2.0 - 2026-09-05
 
 - Add hyperliquid-setup with a public market-read diagnostic and capability mapping.

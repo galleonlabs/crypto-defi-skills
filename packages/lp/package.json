@@ -1,17 +1,18 @@
 {
   "name": "galleon-lp-skills",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Agent skills and deterministic tools for Uniswap and Aerodrome liquidity provision.",
   "type": "module",
   "license": "MIT",
   "author": "Galleon Labs",
-  "homepage": "https://github.com/galleonlabs/lp-skills#readme",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lp#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/galleonlabs/lp-skills.git"
+    "url": "git+https://github.com/galleonlabs/crypto-defi-skills.git",
+    "directory": "packages/lp"
   },
   "bugs": {
-    "url": "https://github.com/galleonlabs/lp-skills/issues"
+    "url": "https://github.com/galleonlabs/crypto-defi-skills/issues"
   },
   "keywords": [
     "agent-skills",
@@ -51,7 +52,7 @@
   "scripts": {
     "build": "bun scripts/build.ts",
     "check": "bun run style && bun run typecheck && bun test && bun run validate && bun run build",
-    "discovery": "bun scripts/build-discovery-index.ts",
+    "discovery": "bun ../../scripts/build-discovery-index.ts",
     "prepack": "bun run check",
     "style": "bun scripts/check-style.ts",
     "test": "bun test",

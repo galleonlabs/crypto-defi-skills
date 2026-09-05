@@ -1,12 +1,12 @@
 {
   "name": "galleon-hyperliquid-skills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Agent skills for Hyperliquid setup, market analysis, trade planning and execution, monitoring, and performance review.",
   "author": {
     "name": "Galleon Labs"
   },
-  "homepage": "https://github.com/galleonlabs/hyperliquid-skills",
-  "repository": "https://github.com/galleonlabs/hyperliquid-skills",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid",
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills",
   "license": "MIT",
   "keywords": [
     "defi",

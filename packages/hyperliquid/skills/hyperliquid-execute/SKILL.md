@@ -4,7 +4,7 @@ description: "Safely carry out a user-requested Hyperliquid trading action throu
 license: MIT
 compatibility: "Requires current read access, a trusted signer or official SDK boundary, and an approved API wallet. Never imports or stores a private key."
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
   protocol: "hyperliquid"
 ---
 
@@ -13,6 +13,10 @@ metadata:
 Execute one reviewed trading action, once, and prove the resulting exchange state.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Tool selection
+
+When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
 
 ## First task and connected workflow
 

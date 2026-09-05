@@ -8,7 +8,7 @@ import { SKILL_CATALOG, canonicalSkillName } from "./catalog.js";
 import { buildRange, evaluateEconomics, evaluatePosition } from "./math.js";
 import { validateCorpus } from "./validation.js";
 
-const VERSION = "0.4.0";
+const VERSION = "0.4.1";
 type Flags = Map<string, string | true>;
 
 interface ParsedArgs {

@@ -1,0 +1,22 @@
+{
+  "name": "crypto-defi-skills",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.3.14",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "bun scripts/workspaces.ts check",
+    "test": "bun test ./test/workspaces.test.ts",
+    "pack": "bun scripts/workspaces.ts pack",
+    "discovery": "bun scripts/build-discovery-index.ts",
+    "release": "bun scripts/release.ts",
+    "smoke": "bun scripts/smoke.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.1",
+    "typescript": "^5.9.3",
+    "yaml": "2.9.0"
+  }
+}

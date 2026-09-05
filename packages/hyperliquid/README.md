@@ -1,6 +1,6 @@
 # Hyperliquid Skills
 
-[![CI](https://github.com/galleonlabs/hyperliquid-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/hyperliquid-skills/actions/workflows/ci.yml)
+[![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/galleon-hyperliquid-skills)](https://www.npmjs.com/package/galleon-hyperliquid-skills)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
@@ -11,13 +11,13 @@ Agent workflows for Hyperliquid market analysis, trade planning and execution, p
 Install every skill:
 
 ```bash
-npx skills add galleonlabs/hyperliquid-skills
+npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid
 ```
 
 Install one skill:
 
 ```bash
-npx skills add galleonlabs/hyperliquid-skills --skill hyperliquid-monitor
+npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid --skill hyperliquid-monitor
 ```
 
 Install the CLI:
@@ -64,7 +64,7 @@ Version 0.2.0 renames `hyperliquid-research` to `hyperliquid-analyze` and `hyper
 
 Reinstall to get the current names. Update saved prompts and harness configuration, then remove the old installed directories only after checking for local edits. No alias skills are retained. Other skills and credentials are unaffected by the repository rename.
 
-Pin `galleon-hyperliquid-skills@0.2.0` for a reproducible npm release, or use `@latest` for the current published package. Skill installers and deployers should pin a reviewed source revision and inspect changes before upgrading.
+Pin `galleon-hyperliquid-skills@0.2.1` for a reproducible npm release, or use `@latest` for the current published package. Skill installers and deployers should pin a reviewed source revision and inspect changes before upgrading.
 
 ## CLI
 
@@ -104,7 +104,7 @@ CI checks style, strict types, tests, skill metadata, links, and the npm payload
 
 Start with [CONTRIBUTING.md](CONTRIBUTING.md). Protocol claims need a current primary source, a test or reproducible read, and explicit failure behavior.
 
-Report vulnerabilities through [private vulnerability reporting](https://github.com/galleonlabs/hyperliquid-skills/security/advisories/new).
+Report vulnerabilities through [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new).
 
 ## License
 

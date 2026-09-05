@@ -1,6 +1,6 @@
 # LP Skills
 
-[![CI](https://github.com/galleonlabs/lp-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/lp-skills/actions/workflows/ci.yml)
+[![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/galleon-lp-skills)](https://www.npmjs.com/package/galleon-lp-skills)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
@@ -11,13 +11,13 @@ Portable agent workflows for liquidity analysis, planning, execution and monitor
 Install all skills with the open Agent Skills installer:
 
 ```bash
-npx skills add galleonlabs/lp-skills
+npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lp
 ```
 
 Install one skill:
 
 ```bash
-npx skills add galleonlabs/lp-skills --skill lp-monitor
+npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lp --skill lp-monitor
 ```
 
 Install the read-only CLI:
@@ -63,7 +63,7 @@ Re-run the install command to install current names. Update saved prompts/config
 
 `lp-research` and `lp-operate` remain as install-compatible rename notices so marketplace listings and saved `npx skills add ... --skill lp-research` or `--skill lp-operate` commands still resolve. They are not a second analysis or execution workflow. Canonical names stay `lp-analyze` and `lp-execute`.
 
-For reproducible npm use, install `galleon-lp-skills@0.4.0`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
+For reproducible npm use, install `galleon-lp-skills@0.4.1`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
 
 ## CLI
 
@@ -78,7 +78,7 @@ lp-skills economics --capital 10000 --fees 120 --incentives 40 --costs 25 --days
 
 The CLI performs local arithmetic, validation, and reviewed Uniswap interface-link construction. It has no RPC, wallet, key, signing, or submission code.
 
-No hosted LP agent service is bundled or required. External projects listed in [SOURCES.md](SOURCES.md) are research provenance, not runtime dependencies or execution routes.
+No hosted LP agent service is bundled or required. Official tools are optional integrations selected for the task. See [official tool access](skills/lp-setup/references/official-tools.md) and [SOURCES.md](SOURCES.md) for provenance, access requirements, and limits.
 
 ## Uniswap integration paths
 
@@ -113,7 +113,7 @@ bun run check
 
 Start with [CONTRIBUTING.md](CONTRIBUTING.md). New protocol claims need a primary source, a test or reproducible read, and explicit failure behavior.
 
-Security reports belong in [private vulnerability reporting](https://github.com/galleonlabs/lp-skills/security/advisories/new), not public issues.
+Security reports belong in [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new), not public issues.
 
 ## License
 

@@ -5,12 +5,16 @@ license: MIT
 compatibility: "Portable instructions for any skill-capable agent. The optional read-only RPC diagnostic requires Node.js 20+ and a user-configured LP_RPC_URL environment variable."
 metadata:
   author: "Galleon Labs"
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # LP setup
 
 Get from an installed skill to one verified chain observation, then identify exactly which tools are still missing for the user's intended task.
+
+## Tool selection
+
+When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
 
 ## First useful task
 

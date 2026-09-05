@@ -1,6 +1,6 @@
 # Security policy
 
-Report vulnerabilities through [GitHub private vulnerability reporting](https://github.com/galleonlabs/hyperliquid-skills/security/advisories/new).
+Report vulnerabilities through [GitHub private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new).
 
 Do not open a public issue for private-key exposure, signature flaws, replay risk, incorrect asset resolution, unsafe retries, authorization bypass, or transaction-state errors.
 

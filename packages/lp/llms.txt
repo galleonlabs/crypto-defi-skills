@@ -6,7 +6,7 @@ Includes connection setup, pool analysis, exact planning, position monitoring, w
 
 ## Install
 
-npx skills add galleonlabs/lp-skills
+npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lp
 npm install --global galleon-lp-skills
 
 ## Skill entrypoints
@@ -26,4 +26,4 @@ npm install --global galleon-lp-skills
 - CLI: lp-skills
 - Uniswap interface link: lp-skills uniswap-link --help
 - discovery schema: https://schemas.agentskills.io/discovery/0.2.0/schema.json
-- source: https://github.com/galleonlabs/lp-skills
+- source: https://github.com/galleonlabs/crypto-defi-skills

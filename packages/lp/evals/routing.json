@@ -333,5 +333,37 @@
       "lp-analyze"
     ],
     "reason": "Saved prompts that still name lp-operate should load the current execution skill."
+  },
+  {
+    "prompt": "Use official Aerodrome tooling to get started and list three Base pools; do not write an adapter.",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Reuse Sugar CLI, verify version/help and bounded public read; report RPC failure honestly."
+  },
+  {
+    "prompt": "Connect the optional Revert MCP for indexed LP analytics, with no wallet permissions.",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Discover current tools, capability coverage and chain freshness; no approval, custody transfer or planner during setup."
+  },
+  {
+    "prompt": "Use the official Uniswap LP API to implement unsigned mint construction in our app.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Reuse the official LP integration skill/API; configure API key privately and preserve unsigned response checks."
+  },
+  {
+    "prompt": "Revert returned a new fee recipient and wants my NFT in a vault; should this LP plan proceed?",
+    "expected": "lp-plan",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Keep plan blocked until fees, custody and scope are explicitly reviewed; ordinary LP authority does not authorize lending."
   }
 ]

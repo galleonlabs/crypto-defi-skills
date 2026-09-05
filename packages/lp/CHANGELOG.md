@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1
+
+- Move to the crypto-defi-skills monorepo while preserving the npm package and CLI names.
+- Add current official-tool selection and access guidance.
+
 ## Unreleased
 
 - Restore install-compatible `lp-research` and `lp-operate` names so marketplace and saved `--skill` installs resolve after the 0.4.0 rename.

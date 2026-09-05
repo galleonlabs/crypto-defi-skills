@@ -3,7 +3,33 @@
   "configVersion": 1,
   "workspaces": {
     "": {
+      "name": "crypto-defi-skills",
+      "devDependencies": {
+        "@types/bun": "^1.4.1",
+        "typescript": "^5.9.3",
+        "yaml": "2.9.0",
+      },
+    },
+    "packages/hyperliquid": {
+      "name": "galleon-hyperliquid-skills",
+      "version": "0.2.1",
+      "bin": {
+        "hyperliquid-skills": "dist/cli.js",
+        "hl-skills": "dist/cli.js",
+      },
+      "devDependencies": {
+        "@types/bun": "^1.4.1",
+        "@types/node": "^24.3.0",
+        "typescript": "^5.9.3",
+        "yaml": "2.9.0",
+      },
+    },
+    "packages/lp": {
       "name": "galleon-lp-skills",
+      "version": "0.4.1",
+      "bin": {
+        "lp-skills": "dist/cli.js",
+      },
       "devDependencies": {
         "@types/bun": "^1.4.1",
         "@types/node": "^24.3.0",
@@ -18,6 +44,10 @@
     "@types/node": ["@types/node@24.13.3", "", { "dependencies": { "undici-types": "~7.18.0" } }, "sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q=="],
 
     "bun-types": ["bun-types@1.4.1", "", { "dependencies": { "@types/node": "*" } }, "sha512-loKuVrAFZKfEv+JvWkHRS9GW5IqLuLRjVXN9p+vZvBN86O5hf/pBZQ5hSoyipsrMmWObZBDvWnlmKvjKTM0PdA=="],
+
+    "galleon-hyperliquid-skills": ["galleon-hyperliquid-skills@workspace:packages/hyperliquid"],
+
+    "galleon-lp-skills": ["galleon-lp-skills@workspace:packages/lp"],
 
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
