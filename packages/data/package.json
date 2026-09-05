@@ -19,8 +19,7 @@
     "defi",
     "coingecko",
     "defillama",
-    "aixbt",
-    "hermes"
+    "aixbt"
   ],
   "bin": {
     "defi-data-skills": "dist/cli.js"

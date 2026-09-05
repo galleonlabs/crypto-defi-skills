@@ -20,7 +20,8 @@
     "infrastructure",
     "rpc",
     "wallet",
-    "hermes"
+    "alchemy",
+    "coinbase"
   ],
   "bin": {
     "defi-infra-skills": "dist/cli.js"
