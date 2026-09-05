@@ -12,6 +12,12 @@ metadata:
 
 Reconstruct current exchange state and distinguish safe, triggered, and unavailable observations.
 
+If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Task handling
+
+Reuse the requested account or position identity, then verify it from current reads. Ask only for missing identity or monitoring constraints; never substitute another account. Finish unaffected checks when a source fails and mark the affected result unavailable. Report the current state, material changes, and next required read concisely, retaining the output contract.
+
 ## Workflow
 
 1. Bind the network, user account address, account abstraction mode, DEX, markets, observation time, freshness bound, and requested condition.

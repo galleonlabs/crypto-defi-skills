@@ -12,6 +12,12 @@ metadata:
 
 Reconstruct what happened from exchange records, then grade process separately from outcome.
 
+If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Task handling
+
+Use the existing ticket and conversation to scope the review. Ask only for missing identity or history that affects the result; complete supported accounting while marking gaps unknown. Lead with the process finding and evidence. A follow-up question does not reset the review or authorize an exchange action.
+
 ## Workflow
 
 1. Bind the network, user account, market and DEX, review window, ticket ID, account mode, and known client order IDs.

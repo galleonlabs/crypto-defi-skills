@@ -12,6 +12,12 @@ metadata:
 
 Build exchange software with typed intent, isolated signing, idempotent reconciliation, and explicit degraded states.
 
+If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Task handling
+
+For a review request, inspect and report without editing. For an implementation request, complete the change and relevant validation using existing project conventions. Resolve routine details from context; ask only about material gaps. Local fixture tests need no separate trading approval; any testnet write still requires explicit authority. Run the applicable test-matrix cases and required repository checks, then stop unless a failure or new risk warrants more testing.
+
 ## Workflow
 
 1. Fix supported networks, product classes, account modes, DEXs, reads, writes, custody, throughput, latency, and failure budget.
@@ -21,7 +27,7 @@ Build exchange software with typed intent, isolated signing, idempotent reconcil
 5. Keep private keys outside the repository and protocol adapter. Prefer official or audited SDK signing. If manual signing is required, add byte-for-byte parity fixtures against the official SDK.
 6. Treat WebSocket data with [stream invariants](references/stream-invariants.md). Snapshots, updates, gaps, reconnects, and backfill are different states.
 7. Apply [security invariants](references/security-invariants.md) to every write path. Dry-run by default. Serialize writes per signer and persist the intent before submission.
-8. Run [the test matrix](references/test-matrix.md). Cover rejects, partial fills, delayed responses, unknown results, precision edges, account modes, rate limits, and recovery.
+8. Run the applicable cases from [the test matrix](references/test-matrix.md). Cover rejects, partial fills, delayed responses, unknown results, precision edges, account modes, rate limits, and recovery.
 9. Report supported contracts, pinned evidence, validation, unsupported actions, operational assumptions, and residual risk.
 
 ## Engineering rules
@@ -38,4 +44,4 @@ Build exchange software with typed intent, isolated signing, idempotent reconcil
 
 ## Boundary
 
-Engineering tests may use fixtures or testnet only within explicit authorization. Never use a user's production signer or send a mainnet action as part of ordinary development or validation.
+Local fixture tests are part of an engineering request. Testnet writes require explicit authorization. Never use a user's production signer or send a mainnet action as part of ordinary development or validation.

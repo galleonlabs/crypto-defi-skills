@@ -12,6 +12,12 @@ metadata:
 
 Turn one user intent into an unsigned ticket that can be reviewed, expired, and reconciled.
 
+If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Task handling
+
+Reuse the user's stated intent and constraints across turns. Ask only for missing material inputs; never invent wallet identity, spend limits, or risk tolerance. Continue independent reads and show incomplete fields while awaiting answers. If prerequisite research is missing, complete the relevant read-only assessment when possible; keep the plan non-executable until its gates pass.
+
 ## Inputs
 
 Require the network, user account address, target market and DEX, side, action, order type, entry or limit, invalidation or stop, risk budget, slippage policy, time horizon, and account-mode assumptions. Missing risk inputs stop an exposure-increasing plan.

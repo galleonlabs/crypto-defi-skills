@@ -12,9 +12,11 @@ metadata:
 
 Execute one reviewed trading action, once, and prove the resulting exchange state.
 
+If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
 ## Authorization gate
 
-The current user request must explicitly ask for the action. A research request, price target, strategy, connected account, prior approval, standing enthusiasm, watch alert, or prepared ticket is not authorization.
+The active user request must explicitly ask for the action. A research request, price target, strategy, connected account, standing enthusiasm, watch alert, or prepared ticket is not authorization. Keep the request across turns during preparation. Approval for a different, changed, expired, or already submitted ticket cannot authorize this action.
 
 Show the exact ticket and require the user to type `approve <ticket-id>` after seeing it. The approval covers only that immutable ticket and expires with it. Never type, quote forward, predict, or manufacture the user's approval.
 
@@ -28,11 +30,11 @@ It does not cover deposits, withdrawals, bridging, token sends, balance transfer
 
 ## Workflow
 
-1. Load the reviewed ticket. If it is absent or incomplete, stop and use `hyperliquid-plan`.
+1. Load the reviewed ticket. If it is absent or incomplete, use `hyperliquid-plan` to prepare it within the requested scope; ask for missing material inputs and keep execution blocked until the ticket is complete.
 2. Refresh every material field and run [pre-send checks](references/pre-send-checks.md). Any mismatch invalidates approval.
 3. Validate the action and recovery path with [order safety](references/order-safety.md). Record fresh client order IDs, nonce owner, and expiry before the send.
 4. Simulate or dry-run when the trusted tool supports it. A successful simulation is preflight only.
-5. Show the final ticket and obtain exact approval by ticket ID in a new user turn.
+5. Show the final ticket and obtain exact approval by ticket ID in a subsequent user turn. On resumption, a verified approval already given for this unchanged, unexpired, unsent ticket satisfies this step; do not restart the approval loop.
 6. Verify the approval line matches the unchanged ticket. Follow [the action state machine](references/action-state-machine.md). Send exactly once with a finite client timeout. Capture the request digest, send time, and raw response without secrets.
 7. Reconcile order status by client order ID or order ID, detailed open orders, fills since send, positions, balances, leverage, and margin. An accepted response alone is not proof.
 8. If anything disagrees or the result is unknown, run [incident response](references/incident-response.md). Do not improvise a second write.
