@@ -1,5 +1,5 @@
 import { spawnSync } from "node:child_process";
-import { mkdtemp, readdir, rm } from "node:fs/promises";
+import { mkdtemp, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { packages, root } from "./workspaces.ts";
@@ -24,6 +24,7 @@ try {
       if (packed.files.some((file: { path: string }) => file.path.startsWith(`packages/${other.id}/`) || file.path.startsWith(`skills/${other.id}-`))) throw new Error("Tarball contains another pack");
     }
     const consumer = await mkdtemp(resolve(temporary, `${pack.id}-`));
+    await writeFile(resolve(consumer, "package.json"), JSON.stringify({ name: `smoke-${pack.id}`, private: true }));
     capture("npm", ["install", "--ignore-scripts", "--no-audit", "--no-fund", "--package-lock=false", resolve(temporary, packed.filename)], consumer);
     const installed = resolve(consumer, "node_modules", pack.manifest.name);
     const cli = resolve(installed, "dist/cli.js");
