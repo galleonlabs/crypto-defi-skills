@@ -10,6 +10,7 @@
     "check": "bun scripts/workspaces.ts check",
     "test": "bun test ./test ./scripts/content-pack/validation.test.ts",
     "pack": "bun scripts/workspaces.ts pack",
+    "link-health": "bun scripts/link-health.ts",
     "discovery": "bun scripts/build-discovery-index.ts",
     "release": "bun scripts/release.ts",
     "smoke": "bun scripts/smoke.ts"

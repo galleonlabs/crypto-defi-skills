@@ -1,0 +1,21 @@
+# Advisory scheduled probe of skill reference URLs. Not a required pull-request check.
+name: Link health
+
+on:
+  schedule:
+    - cron: "27 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      - run: bun install --frozen-lockfile
+      - run: bun scripts/link-health.ts --summary "$GITHUB_STEP_SUMMARY"

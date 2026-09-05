@@ -47,7 +47,7 @@ Primary-source review: **2026-09-05**. Documented tools below are not automatica
 
 [Staking Key Functions - Ethena](https://docs.ethena.fi/solution-design/staking-usde/staking-key-functions) documents sUSDe's configurable unstaking cooldown and freeze permissions. Read the live cooldown and request state instead of assuming seven days or confusing staking with separately locked campaign positions.
 
-[sUSDe Rewards Mechanism - Ethena](https://docs.ethena.fi/solution-overview/protocol-revenue-explanation/susde-rewards-mechanism) explains weekly accounting/distribution; annualizing a recent payment can differ from the provider's stated APY. [Order validity - Ethena](https://docs.ethena.fi/solution-design/minting-usde/order-validity-checks) requires whitelisted KYC/KYB for direct mint/redeem and distinguishes RFQ, signed order, expiry, last-look and submission. Secondary-market acquisition does not confer issuer access. No official agent MCP was established.
+[sUSDe Rewards Mechanism - Ethena](https://docs.ethena.fi/protocol-overview/rewards-mechanism) explains weekly accounting/distribution; annualizing a recent payment can differ from the provider's stated APY. [Order validity - Ethena](https://docs.ethena.fi/solution-design/minting-usde/order-validity-checks) requires whitelisted KYC/KYB for direct mint/redeem and distinguishes RFQ, signed order, expiry, last-look and submission. Secondary-market acquisition does not confer issuer access. No official agent MCP was established.
 
 ## Interface standards
 
