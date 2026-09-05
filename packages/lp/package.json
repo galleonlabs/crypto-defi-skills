@@ -55,7 +55,7 @@
     "check": "bun run style && bun run typecheck && bun test && bun run validate && bun run build",
     "discovery": "bun ../../scripts/build-discovery-index.ts",
     "prepack": "bun run check",
-    "style": "bun scripts/check-style.ts",
+    "style": "bun ../../scripts/check-style.ts",
     "test": "bun test",
     "typecheck": "bunx tsc --noEmit",
     "validate": "bun src/cli.ts validate ."

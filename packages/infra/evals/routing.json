@@ -1,0 +1,32 @@
+[
+  {
+    "prompt": "Set up RPC, a managed wallet, and Hermes tool connections before any protocol-specific work.",
+    "expected": "galleon-defi-infra",
+    "mustNotInvoke": [],
+    "reason": "Foundation onboarding is infrastructure, not a protocol workflow."
+  },
+  {
+    "prompt": "My Hermes agent cannot reach Alchemy; diagnose the connection failure.",
+    "expected": "galleon-defi-infra",
+    "mustNotInvoke": [],
+    "reason": "Broken provider access is diagnosed before LP or Hyperliquid setup."
+  },
+  {
+    "prompt": "Check Coinbase wallet permissions and payment scope for this agent, not a trade.",
+    "expected": "galleon-defi-infra",
+    "mustNotInvoke": [],
+    "reason": "Custody and permission wiring belongs to infrastructure."
+  },
+  {
+    "prompt": "Help me connect my RPC during first agent setup, before LP or Hyperliquid activity.",
+    "expected": "galleon-defi-infra",
+    "mustNotInvoke": [],
+    "reason": "Generic RPC onboarding precedes protocol-specific connection checks."
+  },
+  {
+    "prompt": "Onboarding failed: Hermes tools are missing and the RPC endpoint is unset.",
+    "expected": "galleon-defi-infra",
+    "mustNotInvoke": [],
+    "reason": "First-touch connection failures are an infrastructure diagnosis."
+  }
+]

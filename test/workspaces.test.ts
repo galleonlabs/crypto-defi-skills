@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test";
+import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { parse } from "yaml";
@@ -28,4 +29,14 @@ test("every package is independently releasable with aligned metadata and unique
     }
   }
   expect(names.size).toBeGreaterThan(0);
+});
+
+test("every pack uses the shared build-time style checker", async () => {
+  expect(existsSync(resolve(root, "scripts/check-style.ts"))).toBe(true);
+  for (const pack of await packages()) {
+    expect(pack.manifest.scripts.style).toBe("bun ../../scripts/check-style.ts");
+    expect(String(pack.manifest.scripts.check).startsWith("bun run style &&")).toBe(true);
+    expect(existsSync(resolve(root, pack.directory, "scripts/check-style.ts"))).toBe(false);
+    expect(Object.keys(pack.manifest.dependencies ?? {})).toEqual([]);
+  }
 });

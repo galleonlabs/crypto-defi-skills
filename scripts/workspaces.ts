@@ -28,7 +28,8 @@ if (import.meta.main) {
     else run("npm", ["pack", "--dry-run", "--ignore-scripts"], cwd);
   }
   if (command === "check") {
+    run("bun", ["scripts/check-style.ts"]);
     run("bunx", ["tsc", "--noEmit"]);
-    run("bun", ["test", "./test/workspaces.test.ts"]);
+    run("bun", ["test", "./test"]);
   }
 }
