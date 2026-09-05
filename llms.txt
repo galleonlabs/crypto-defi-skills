@@ -2,7 +2,7 @@
 
 Portable Agent Skills for Uniswap and Aerodrome liquidity provision.
 
-Includes pool research, exact planning, position monitoring, wallet-safe operation, integration engineering, backtesting, automation and custody, atomic position actions, and share-based v4 hooks. No hosted LP agent service is required.
+Includes connection setup, pool analysis, exact planning, position monitoring, wallet-safe operation, integration engineering, backtesting, automation and custody, atomic position actions, and share-based v4 hooks. No hosted LP agent service is required.
 
 ## Install
 
@@ -11,10 +11,12 @@ npm install --global galleon-lp-skills
 
 ## Skill entrypoints
 
-- skills/lp-research/SKILL.md: compare pools and assess risk before deployment
+- skills/lp-setup/SKILL.md: verify read access and map required tools
+
+- skills/lp-analyze/SKILL.md: compare pools and assess risk before deployment
 - skills/lp-plan/SKILL.md: produce an exact unsigned position plan
 - skills/lp-monitor/SKILL.md: inspect a live position and decide whether action is justified
-- skills/lp-operate/SKILL.md: execute an explicitly requested action through a user-controlled wallet
+- skills/lp-execute/SKILL.md: execute an explicitly requested action through a user-controlled wallet
 - skills/lp-engineer/SKILL.md: build and review protocol integrations
 
 ## Machine interfaces

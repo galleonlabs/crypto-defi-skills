@@ -3,14 +3,28 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "LP onboarding",
+      "description": "Verify read access and map missing tools before the first task.",
+      "skills": [
+        "lp-setup"
+      ]
+    },
+    {
       "title": "LP decisions",
-      "description": "Research, plan, and monitor liquidity positions before any wallet action.",
-      "skills": ["lp-research", "lp-plan", "lp-monitor"]
+      "description": "Analyze pools, plan and monitor liquidity positions before any wallet action.",
+      "skills": [
+        "lp-analyze",
+        "lp-plan",
+        "lp-monitor"
+      ]
     },
     {
       "title": "LP delivery",
       "description": "Execute explicit wallet actions and build protocol integrations.",
-      "skills": ["lp-operate", "lp-engineer"]
+      "skills": [
+        "lp-execute",
+        "lp-engineer"
+      ]
     }
   ]
 }

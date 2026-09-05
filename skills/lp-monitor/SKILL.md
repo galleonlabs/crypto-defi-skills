@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires read-only chain access for current position state. The bundled position script needs Node.js 20 or newer."
 metadata:
   author: "Galleon Labs"
-  version: "0.3.0"
+  version: "0.4.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -14,6 +14,14 @@ metadata:
 Reconstruct the position from chain state, measure it against HOLD, and decide whether action clears its cost and risk hurdle.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Start here and connected workflow
+
+Given a chain and public position identity, first return ownership/staking and current inventory/range at a recorded block. If opening cash flows are unavailable, report current state with performance unknown instead of inventing P&L.
+
+Receive confirmed receipts and expected state from `lp-execute`, or reconstruct directly from the supplied position and chain reads. Return position identity, observation block/time, inventory/fees/rewards, baseline quality, measured costs, verdict and candidate action constraints to `lp-plan`. If planning is absent, deliver this recommendation and the required quote/simulation inputs; do not construct or execute a trade.
+
+Resolve script and reference paths from this installed skill directory, not the agent workspace. Discover related skills by exact name in the harness; do not assume a sibling directory or silently install another skill. For missing RPC, ABI, quote or wallet capabilities, use `lp-setup` if available, otherwise inventory actual tools and report the missing method. Instructions alone do not supply live data or execution integrations.
 
 ## Task handling
 
@@ -43,4 +51,4 @@ Use `node scripts/position.mjs --help` for range state and balance-sheet arithme
 
 ## Boundary
 
-Do not construct calldata, request approval, sign, submit, or claim an action occurred. Route a justified action to `lp-plan`, then to `lp-operate` only on an explicit execution request.
+Do not construct calldata, request approval, sign, submit, or claim an action occurred. Route a justified action to `lp-plan`, then to `lp-execute` only on an explicit execution request.

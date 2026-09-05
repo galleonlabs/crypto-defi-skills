@@ -1,19 +1,27 @@
 ---
-name: lp-operate
+name: lp-execute
 description: "Safely carry out a user-requested Uniswap v2, v3, or v4 or Aerodrome or Slipstream liquidity action through a user-controlled wallet. Use only when the user explicitly asks to open, increase, decrease, collect, recenter, stake, unstake, claim, or exit and a trusted wallet execution tool is available. Requires exact confirmation, one-step receipt checks, and chain-state reconciliation."
 license: MIT
 compatibility: "Requires a trusted wallet or transaction tool, simulation, receipt lookup, and read-only chain access. Never imports private keys."
 metadata:
   author: "Galleon Labs"
-  version: "0.3.0"
+  version: "0.4.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
-# LP operate
+# LP execution
 
 Execute one explicit, reviewed LP intent through a wallet the user controls.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Start here and connected workflow
+
+Before any signature, audit one supplied plan against fresh wallet/chain/pool reads and return a preflight report with each exact missing capability or term. No complete plan means no submission.
+
+Receive the exact unsigned plan, its source block, amounts, targets/calldata/value, limits, expiry, simulations and expected effects. If `lp-plan` is absent, use the local [standalone plan intake](references/plan-intake.md) to check a user-supplied plan; do not assume missing planning instructions are installed. Return transaction hashes, receipt blocks/status, reconciled inventory/ownership/allowances, residual funds and unresolved steps to `lp-monitor`. If monitoring is absent, return the same evidence directly for later reconciliation.
+
+Resolve script and reference paths from this installed skill directory, not the agent workspace. Discover related skills by exact name in the harness; do not assume a sibling directory or silently install another skill. For missing RPC, ABI, quote or wallet capabilities, use `lp-setup` if available, otherwise inventory actual tools and report the missing method. Instructions alone do not supply live data or execution integrations.
 
 ## Authorization gate
 
@@ -25,7 +33,7 @@ Do not handle private keys or seed phrases. Use the user's current trusted walle
 
 ## Workflow
 
-1. Load the reviewed plan. If none exists, use `lp-plan` to prepare it within the requested scope; ask for missing material inputs and keep execution blocked until the plan is complete.
+1. Load the reviewed plan. If none exists, use `lp-plan` when available to prepare it within the requested scope; otherwise return the local plan intake checklist; ask for missing material inputs and keep execution blocked until the plan is complete.
 2. Refresh chain ID, wallet, balances, ownership, allowance, pool, tick or reserves, hook, gauge, quote, gas, nonce, deadlines, and target bytecode. Expire the plan on material change.
 3. Validate the action against [target and calldata policy](references/target-calldata-policy.md) and the correct [protocol lifecycle](references/protocol-lifecycles.md). Apply [atomic position actions](references/atomic-position-actions.md) when a utility swaps, compounds, exits, or remints inside one transaction. If an official Uniswap transaction builder is used, also apply [Uniswap builders](references/uniswap-builders.md).
 4. Simulate from the actual wallet with exact target, calldata, and native value. Decode the call and state changes. A successful simulation is preflight only.

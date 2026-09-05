@@ -1,6 +1,10 @@
 export const SKILL_CATALOG = [
   {
-    name: "lp-research",
+    name: "lp-setup",
+    purpose: "Verify chain connectivity and connect the tools required for a first LP task.",
+  },
+  {
+    name: "lp-analyze",
     purpose: "Compare pools, token risk, yield quality, and exits before deployment.",
   },
   {
@@ -12,7 +16,7 @@ export const SKILL_CATALOG = [
     purpose: "Measure an existing position and decide whether action is justified.",
   },
   {
-    name: "lp-operate",
+    name: "lp-execute",
     purpose: "Execute an explicitly requested LP action through a user-controlled wallet.",
   },
   {

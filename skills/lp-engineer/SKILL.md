@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Designed for TypeScript integrations with RPC, indexer, simulation, and wallet boundaries. Protocol concepts apply in other languages."
 metadata:
   author: "Galleon Labs"
-  version: "0.3.0"
+  version: "0.4.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -14,6 +14,14 @@ metadata:
 Build protocol-aware LP software with deterministic plans, explicit signer boundaries, and receipt-based truth.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+## Start here and connected workflow
+
+Identify one concrete missing capability or adapter defect, define its input/output and failure contract, then run a read-only fixture or inspect a test that demonstrates it. Installation alone is not evidence that an integration exists.
+
+Receive the readiness gap from `lp-setup` or equivalent actual tool inventory, chain/protocol, required methods and failed evidence. Return implemented capability, installation/configuration instructions without secrets, exact tests, unsupported paths and a read-only verification procedure to `lp-setup`. If it is absent, perform and report that procedure directly. Keep analysis, planning, execution and monitoring interfaces explicit even when their skills are not installed.
+
+Resolve script and reference paths from this installed skill directory, not the agent workspace. Discover related skills by exact name in the harness; do not assume a sibling directory or silently install another skill. For missing RPC, ABI, quote or wallet capabilities, use `lp-setup` if available, otherwise inventory actual tools and report the missing method. Instructions alone do not supply live data or execution integrations.
 
 ## Task handling
 

@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires read-only chain and quote access for executable plans. The bundled range script needs Node.js 20 or newer."
 metadata:
   author: "Galleon Labs"
-  version: "0.3.0"
+  version: "0.4.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -15,13 +15,21 @@ Turn a chosen pool and capital budget into an unsigned, simulation-backed plan.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
 
+## Start here and connected workflow
+
+For a chosen verified pool, first produce a field-complete draft showing known and missing identity, user budget, range and spend limits. Use the local range script only after token orientation and tick spacing are known. Missing quotes or simulation make the plan explicitly non-executable.
+
+Receive analysis evidence or equivalent independently verified identity, risk and exit evidence. Return chain/wallet/pool identity, observation block, exact amounts/ticks, maximum spends, approval terms, targets/calldata/value, expected effects, simulation evidence, deadline and missing fields to `lp-execute`. Related skills are optional: if analysis is absent, verify identity, token behavior, hook/gauge risk and exit feasibility through trusted reads; if these cannot be established, retain a non-executable draft. If execution is absent, return the unsigned plan without asking for a signature.
+
+Resolve script and reference paths from this installed skill directory, not the agent workspace. Discover related skills by exact name in the harness; do not assume a sibling directory or silently install another skill. For missing RPC, ABI, quote or wallet capabilities, use `lp-setup` if available, otherwise inventory actual tools and report the missing method. Instructions alone do not supply live data or execution integrations.
+
 ## Task handling
 
 Reuse the user's stated intent and constraints across turns. Ask only for missing material inputs; never invent wallet identity, spend limits, or risk tolerance. Continue independent reads and show incomplete fields while awaiting answers. If prerequisite research is missing, complete the relevant read-only assessment when possible; keep the plan non-executable until its gates pass.
 
 ## Inputs
 
-Require chain, wallet address, protocol version, exact pool identity, capital and max spend per token, objective, horizon, loss constraints, intended maintenance cadence, and approval preference. If the pool has not passed due diligence, stop and route to `lp-research`.
+Require chain, wallet address, protocol version, exact pool identity, capital and max spend per token, objective, horizon, loss constraints, intended maintenance cadence, and approval preference. If pool due diligence is incomplete, use `lp-analyze` when installed or the standalone checks above; keep the plan non-executable until they pass.
 
 ## Workflow
 
@@ -46,4 +54,4 @@ Require chain, wallet address, protocol version, exact pool identity, capital an
 
 ## Boundary
 
-Do not connect a wallet, request confirmation, sign, submit, or claim completion. Route a reviewed plan to `lp-operate` only after the user explicitly asks to execute it.
+Do not connect a wallet, request confirmation, sign, submit, or claim completion. Route a reviewed plan to `lp-execute` only after the user explicitly asks to execute it.

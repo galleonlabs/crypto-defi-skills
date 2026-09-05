@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/galleon-lp-skills)](https://www.npmjs.com/package/galleon-lp-skills)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-Agent skills and deterministic tools for liquidity provision on Uniswap and Aerodrome.
+Portable agent workflows for liquidity analysis, planning, execution and monitoring on Uniswap and Aerodrome. Start with verified read access and progress to a reviewed plan; execution requires your own trusted wallet tools.
 
 ## Install
 
@@ -32,15 +32,36 @@ The repository also ships Codex and Claude Code plugin manifests. Cursor discove
 
 | Skill | Use it for | Output |
 |---|---|---|
-| `lp-research` | Compare pools before deploying capital | Dated evidence, risk gates, ranked choices |
+| `lp-setup` | Connect read access and inventory missing tools | Verified chain observation, capability report, next task |
+| `lp-analyze` | Compare pools before deploying capital | Dated evidence, risk gates, ranked choices |
 | `lp-plan` | Design a position in a chosen pool | Exact unsigned plan, range, budgets, preflight |
 | `lp-monitor` | Inspect an existing position | P&L versus HOLD, range state, action verdict |
-| `lp-operate` | Carry out an explicit wallet action | Confirmed steps, receipts, state reconciliation |
+| `lp-execute` | Carry out an explicit wallet action | Confirmed steps, receipts, state reconciliation |
 | `lp-engineer` | Build or review LP integrations | Adapter contract, tests, security findings |
 
 Coverage includes Uniswap v2, v3, and v4, plus Aerodrome classic pools and Slipstream concentrated pools.
 
 The corpus also covers atomic one-token funding, range moves, automation and custody, LP backtesting, and v4 hooks that issue fungible shares against their own StableSwap-style reserves.
+
+## From install to first useful result
+
+Ask your agent: **Use lp-setup to check my Base RPC connection, list missing LP tools, then use lp-analyze to inspect the identity and risks of this pool: [pool address].** Supply the actual pool address and intended chain. Configure `LP_RPC_URL` through your harness environment or secret settings, never in chat. No wallet or funds are needed for this first task.
+
+`lp-setup` includes a dependency-free Node diagnostic: from its installed directory, run `node scripts/connection.mjs --chain-id 8453`. It verifies the endpoint's chain and fresh head. It does not verify pool state, signer readiness, or profitability. Without RPC, the agent still reports its available tools and the precise missing connection.
+
+The connected workflow is `lp-setup → lp-analyze → lp-plan → lp-execute → lp-monitor → lp-plan`. Use `lp-engineer` for missing adapters and software changes. Every skill includes explicit input/output handoffs and a standalone fallback when another skill is not installed. Each installed skill contains its own required references and scripts.
+
+For a first position review, ask: **Use lp-monitor to read this public position on [chain]; report current ownership, inventory and range, and mark performance unknown if you cannot establish the opening cash flows.**
+
+An installed skill is a procedure, not an executable trading integration. The CLI provides local tools; setup supplies a narrow RPC diagnostic. Current pool/account reads, historical data, quotes, unsigned transaction construction, simulation, user-controlled wallet tools, receipt lookup and reconciliation must be connected separately. See the [capability map](skills/lp-setup/references/connections.md). Missing tools leave the affected stage unavailable.
+
+## Updates and migration
+
+Version 0.4.0 renames `lp-research` to `lp-analyze` and `lp-operate` to `lp-execute`, and adds `lp-setup`. The explicit names distinguish market/pool analysis from research provenance and execution from general operations. Existing `lp-plan`, `lp-monitor` and `lp-engineer` names remain.
+
+Re-run the install command to install current names. Update saved prompts/configuration that reference the two old names, then remove only the old installed skill directories after verifying they contain no user edits. Do not delete unrelated skills or harness configuration. Existing old installations remain at their installed version until updated; renamed skills are not duplicate aliases.
+
+For reproducible npm use, install `galleon-lp-skills@0.4.0`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
 
 ## CLI
 
