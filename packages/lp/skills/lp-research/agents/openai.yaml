@@ -1,0 +1,6 @@
+interface:
+  display_name: "LP Research (renamed)"
+  short_description: "Deprecated name; load lp-analyze instead"
+  default_prompt: "Use $lp-research only as the pre-0.4.0 name and continue this pool comparison with lp-analyze."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,337 @@
+[
+  {
+    "prompt": "Compare the USDC/WETH pools on Uniswap v3 and Aerodrome before I choose one.",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Opportunity comparison before a pool is chosen."
+  },
+  {
+    "prompt": "Is this Slipstream APR real, and do staked LPs also keep swap fees?",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Yield decomposition and protocol due diligence."
+  },
+  {
+    "prompt": "Check whether this Uniswap v4 hook makes the pool unsafe for LPs.",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Pre-deployment hook risk assessment."
+  },
+  {
+    "prompt": "Rank these Base pools by organic fee quality and executable exit depth for a $25,000 position.",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-plan",
+      "lp-execute"
+    ],
+    "reason": "Pool screening and comparison at user size."
+  },
+  {
+    "prompt": "I found a new token pool. Check taxes, holder concentration, active liquidity, and whether I can exit.",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Token and exit gates before deployment."
+  },
+  {
+    "prompt": "The pool is approved. Build an unsigned v3 mint plan for $8,000 with a 15 percent range.",
+    "expected": "lp-plan",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Exact planning after pool selection."
+  },
+  {
+    "prompt": "Calculate usable ticks for this price, token order, decimals, and onchain tick spacing.",
+    "expected": "lp-plan",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Deterministic range construction."
+  },
+  {
+    "prompt": "Lay out the approval, mint, stake, and recovery steps for this Slipstream position, but do not sign anything.",
+    "expected": "lp-plan",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Unsigned sequence and approval design."
+  },
+  {
+    "prompt": "Give me max spends, minimum amounts, deadlines, and simulations for this chosen Aerodrome pool.",
+    "expected": "lp-plan",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Bounded preflight planning."
+  },
+  {
+    "prompt": "How much token0 and token1 will this concentrated range need at the current quote?",
+    "expected": "lp-plan",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Concentrated amount planning."
+  },
+  {
+    "prompt": "Check my current NFT position and tell me whether it is still in range.",
+    "expected": "lp-monitor",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Existing position state inspection."
+  },
+  {
+    "prompt": "Did this LP beat holding the original tokens after fees, rewards, gas, and loose balances?",
+    "expected": "lp-monitor",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Position accounting versus HOLD."
+  },
+  {
+    "prompt": "Should I collect now or wait until the claim covers gas and reinvestment costs?",
+    "expected": "lp-monitor",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Action recommendation, not execution."
+  },
+  {
+    "prompt": "My pool was removed from the app. Reconstruct the live position and available exit path.",
+    "expected": "lp-monitor",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Manageability and state for a delisted position."
+  },
+  {
+    "prompt": "The indexer is stale. Tell me what is actually known about my LP and what read is missing.",
+    "expected": "lp-monitor",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Degraded existing-position evidence."
+  },
+  {
+    "prompt": "Use my connected wallet to collect fees from position 42 now.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [
+      "lp-analyze"
+    ],
+    "reason": "Explicit wallet execution request."
+  },
+  {
+    "prompt": "Execute the reviewed plan to add liquidity, then verify the receipt and resulting NFT.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [],
+    "reason": "Explicit execution of a reviewed plan."
+  },
+  {
+    "prompt": "Exit this Aerodrome gauge position through my wallet and stop if any transaction is ambiguous.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [],
+    "reason": "Explicit multi-step fund-moving request."
+  },
+  {
+    "prompt": "Recenter this v3 position to the exact reviewed range and show me every transaction before signing.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [],
+    "reason": "Explicit wallet action with confirmation requirement."
+  },
+  {
+    "prompt": "Stake this Slipstream NFT in the verified gauge now, then reread its custody and reward state.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [],
+    "reason": "Explicit gauge staking request."
+  },
+  {
+    "prompt": "Implement a TypeScript adapter for Uniswap v4 PoolKeys and hook-aware simulations.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Integration code, not a wallet action."
+  },
+  {
+    "prompt": "Review this keeper for blind retries, stale plans, and placeholder calldata.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Automation code review."
+  },
+  {
+    "prompt": "Add property tests for negative tick compression and upper-tick exclusivity.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "Protocol math test implementation."
+  },
+  {
+    "prompt": "Design the data model for v2 LP tokens, v3 NFTs, v4 PoolKeys, and Slipstream gauges.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-analyze"
+    ],
+    "reason": "Protocol-aware software architecture."
+  },
+  {
+    "prompt": "Fix the snapshot job so a failed RPC read cannot overwrite live liquidity with zero.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-monitor"
+    ],
+    "reason": "Implementation of degraded-state handling."
+  },
+  {
+    "prompt": "Build a reviewed Uniswap create-position interface link for this chosen v3 pool and range.",
+    "expected": "lp-plan",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "A prefilled interface link is a planning handoff, not wallet execution."
+  },
+  {
+    "prompt": "Use my wallet and the official Uniswap LP API transaction builder to increase position 42 now.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [
+      "lp-analyze"
+    ],
+    "reason": "The user explicitly requests a fund-moving action through a transaction builder."
+  },
+  {
+    "prompt": "Implement the Uniswap Liquidity Provisioning API approval, Permit2, create, decrease, and claim flows.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "This is application integration work rather than a live wallet action."
+  },
+  {
+    "prompt": "Could this v4 beforeRemoveLiquidity or return-delta hook trap or shortchange my LP withdrawal?",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "The request is a pre-deployment hook and exit-risk assessment."
+  },
+  {
+    "prompt": "Reconstruct my v4 position using PositionManager events and verify its pool state through StateView.",
+    "expected": "lp-monitor",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "The request concerns authoritative state for an existing position."
+  },
+  {
+    "prompt": "Assess this v4 StableSwap hook that issues ERC-20 shares against several internal reserves.",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-plan",
+      "lp-execute"
+    ],
+    "reason": "The position model and hook risks must be verified before capital planning."
+  },
+  {
+    "prompt": "Backtest this v3 range against HOLD with fee dilution, gas, sparse hours, and no lookahead.",
+    "expected": "lp-plan",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Historical strategy simulation informs an unsigned range plan."
+  },
+  {
+    "prompt": "Check whether my active auto-range configuration or vault custody blocks a manual recenter.",
+    "expected": "lp-monitor",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "The user asks for current automation and custody state, not execution."
+  },
+  {
+    "prompt": "Use my wallet to move this reviewed v3 range atomically and verify the replacement NFT and refunds.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [
+      "lp-analyze"
+    ],
+    "reason": "The user explicitly requests an atomic fund-moving position action."
+  },
+  {
+    "prompt": "Design provider-neutral capability, freshness, approval-phase, plan-digest, and receipt schemas for an LP agent.",
+    "expected": "lp-engineer",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "The request concerns machine-readable integration contracts."
+  },
+  {
+    "prompt": "I just installed LP Skills; get me to a first verified chain read.",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "lp-execute",
+      "lp-analyze"
+    ],
+    "reason": "Connection readiness is needed before analysis or an authorized execution."
+  },
+  {
+    "prompt": "Check my RPC endpoint is on the intended chain.",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "lp-execute",
+      "lp-analyze"
+    ],
+    "reason": "Connection readiness is needed before analysis or an authorized execution."
+  },
+  {
+    "prompt": "Which wallet and read tools are missing before I can use these skills?",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "lp-execute",
+      "lp-analyze"
+    ],
+    "reason": "Connection readiness is needed before analysis or an authorized execution."
+  },
+  {
+    "prompt": "Diagnose stale RPC data before my first LP analysis.",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "lp-execute",
+      "lp-analyze"
+    ],
+    "reason": "Connection readiness is needed before analysis or an authorized execution."
+  },
+  {
+    "prompt": "Can this fresh agent read Base without importing a private key?",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "lp-execute",
+      "lp-analyze"
+    ],
+    "reason": "Connection readiness is needed before analysis or an authorized execution."
+  },
+  {
+    "prompt": "Use lp-research to compare these Uniswap and Aerodrome pools before I choose one.",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "lp-execute"
+    ],
+    "reason": "Saved prompts that still name lp-research should load the current analysis skill."
+  },
+  {
+    "prompt": "Use lp-operate to collect fees from position 42 with my connected wallet now.",
+    "expected": "lp-execute",
+    "mustNotInvoke": [
+      "lp-analyze"
+    ],
+    "reason": "Saved prompts that still name lp-operate should load the current execution skill."
+  }
+]

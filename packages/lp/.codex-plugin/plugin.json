@@ -1,0 +1,29 @@
+{
+  "name": "galleon-lp-skills",
+  "version": "0.4.0",
+  "description": "Set up, analyze, plan, monitor, execute, and engineer Uniswap and Aerodrome liquidity positions.",
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "homepage": "https://github.com/galleonlabs/lp-skills",
+  "repository": "https://github.com/galleonlabs/lp-skills",
+  "license": "MIT",
+  "keywords": ["aerodrome", "agent skills", "defi", "liquidity", "uniswap"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Galleon LP Skills",
+    "shortDescription": "Analyze and manage Uniswap and Aerodrome LP positions",
+    "longDescription": "Verify connections, analyze pools, plan ranges, monitor returns against HOLD, execute explicit wallet actions, and build protocol integrations for Uniswap and Aerodrome.",
+    "developerName": "Galleon Labs",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Read"],
+    "websiteURL": "https://github.com/galleonlabs/lp-skills",
+    "defaultPrompt": [
+      "Compare these Uniswap and Aerodrome pools for an LP position",
+      "Plan a concentrated liquidity range for this pool and budget",
+      "Review this LP position against HOLD and decide whether to act"
+    ],
+    "brandColor": "#0F766E",
+    "screenshots": []
+  }
+}
