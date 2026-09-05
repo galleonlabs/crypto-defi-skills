@@ -1,0 +1,4 @@
+{
+  "metaAndAssetCtxs": [{"universe":[{"name":"ETH","szDecimals":4,"maxLeverage":20}]},[{"markPx":"3000.1","oraclePx":"3000","funding":"0.00001","openInterest":"1200","dayNtlVlm":"12000000"}]],
+  "l2Book":{"coin":"ETH","time":1788588000000,"levels":[[{"px":"3000","sz":"2","n":1}],[{"px":"3000.2","sz":"3","n":1}]]}
+}

@@ -1,0 +1,38 @@
+{
+  "name": "galleon-hyperliquid-skills",
+  "version": "0.2.0",
+  "description": "Agent skills for Hyperliquid setup, market analysis, trade planning and execution, monitoring, and performance review.",
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "homepage": "https://github.com/galleonlabs/hyperliquid-skills",
+  "repository": "https://github.com/galleonlabs/hyperliquid-skills",
+  "license": "MIT",
+  "keywords": [
+    "agent skills",
+    "defi",
+    "hyperliquid",
+    "perpetuals",
+    "trading"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Galleon Hyperliquid Skills",
+    "shortDescription": "Work with Hyperliquid safely and precisely",
+    "longDescription": "Research markets, size exact tickets, monitor live risk, execute explicit actions, review fills, and build Hyperliquid integrations.",
+    "developerName": "Galleon Labs",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://github.com/galleonlabs/hyperliquid-skills",
+    "defaultPrompt": [
+      "Assess this Hyperliquid market with current funding and depth",
+      "Build an exact unsigned Hyperliquid order ticket",
+      "Reconcile this account and flag any unprotected position"
+    ],
+    "brandColor": "#0F766E",
+    "screenshots": []
+  }
+}

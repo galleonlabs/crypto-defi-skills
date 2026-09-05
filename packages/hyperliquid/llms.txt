@@ -1,0 +1,21 @@
+# Hyperliquid Skills
+
+Portable Agent Skills for Hyperliquid research, planning, monitoring, execution, review, and engineering.
+
+## Skills
+
+- [Analyze](skills/hyperliquid-analyze/SKILL.md)
+- [Plan](skills/hyperliquid-plan/SKILL.md)
+- [Monitor](skills/hyperliquid-monitor/SKILL.md)
+- [Execute](skills/hyperliquid-execute/SKILL.md)
+- [Review](skills/hyperliquid-review/SKILL.md)
+- [Engineer](skills/hyperliquid-engineer/SKILL.md)
+
+## Project
+
+- [README](README.md)
+- [Sources](SOURCES.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security](SECURITY.md)
+
+- [Hyperliquid setup](skills/hyperliquid-setup/SKILL.md): Start here for tool discovery, a public read, and workflow readiness.

@@ -1,0 +1,66 @@
+{
+  "name": "galleon-hyperliquid-skills",
+  "version": "0.2.0",
+  "description": "Agent skills for Hyperliquid setup, market analysis, trade planning and execution, monitoring, and performance review.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Galleon Labs",
+  "homepage": "https://github.com/galleonlabs/hyperliquid-skills#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galleonlabs/hyperliquid-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/galleonlabs/hyperliquid-skills/issues"
+  },
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "hyperliquid",
+    "perpetuals",
+    "trading"
+  ],
+  "bin": {
+    "hyperliquid-skills": "dist/cli.js",
+    "hl-skills": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./skills/*": "./skills/*/SKILL.md"
+  },
+  "files": [
+    ".claude-plugin",
+    ".codex-plugin",
+    "dist",
+    "skills",
+    "llms.txt",
+    "skills.sh.json",
+    "SOURCES.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "bun@1.3.14",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "check": "bun run style && bun run typecheck && bun test && bun run validate && bun run build",
+    "discovery": "bun scripts/build-discovery-index.ts",
+    "prepack": "bun run check",
+    "style": "bun scripts/check-style.ts",
+    "test": "bun test",
+    "typecheck": "bunx tsc --noEmit",
+    "validate": "bun src/cli.ts validate ."
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.1",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.3",
+    "yaml": "2.9.0"
+  }
+}
