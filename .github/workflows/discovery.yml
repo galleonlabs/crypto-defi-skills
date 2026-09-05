@@ -35,7 +35,7 @@ jobs:
       - run: bun scripts/build-discovery-index.ts https://example.com/skills
 
   publish:
-    if: github.event_name == 'push'
+    if: github.event_name != 'pull_request'
     needs: validate
     concurrency:
       group: agent-skills-discovery-publish
