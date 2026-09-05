@@ -53,8 +53,9 @@
   },
   "scripts": {
     "build": "bun scripts/build.ts",
-    "check": "bun run typecheck && bun test && bun run validate && bun run build",
+    "check": "bun run style && bun run typecheck && bun test && bun run validate && bun run build",
     "prepack": "bun run check",
+    "style": "bun ../../scripts/check-style.ts",
     "test": "bun test",
     "typecheck": "bunx tsc --noEmit",
     "validate": "bun src/cli.ts validate ."

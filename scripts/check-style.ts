@@ -1,7 +1,7 @@
 import { readdir, readFile } from "node:fs/promises";
 import { extname, relative, resolve } from "node:path";
 
-const root = resolve(import.meta.dirname, "..");
+const root = resolve(process.argv[2] ?? process.cwd());
 const textExtensions = new Set([".json", ".md", ".mjs", ".ts", ".yaml", ".yml"]);
 const skipped = new Set([".git", "artifacts", "dist", "node_modules"]);
 const slopTerms = [

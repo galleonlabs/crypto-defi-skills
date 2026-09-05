@@ -1,0 +1,32 @@
+[
+  {
+    "prompt": "Connect official CoinGecko and DefiLlama tools and verify a public price read.",
+    "expected": "galleon-defi-data",
+    "mustNotInvoke": [],
+    "reason": "Provider access and a bounded market read are the data pack's job."
+  },
+  {
+    "prompt": "Is this protocol TVL and listed APY comparable across aggregators, and how fresh is it?",
+    "expected": "galleon-defi-data",
+    "mustNotInvoke": [],
+    "reason": "Cross-source yield evidence and freshness are data methodology, not pool selection."
+  },
+  {
+    "prompt": "Research current crypto narratives around this token using AIXBT.",
+    "expected": "galleon-defi-data",
+    "mustNotInvoke": [],
+    "reason": "Narrative and project research is the AIXBT path in the data pack."
+  },
+  {
+    "prompt": "Reconcile this ticker to a CoinGecko ID and contract before I trust the price.",
+    "expected": "galleon-defi-data",
+    "mustNotInvoke": [],
+    "reason": "Asset identity and source coverage belong to data setup and research."
+  },
+  {
+    "prompt": "Evaluate yield evidence for this lending market from DefiLlama, including methodology gaps.",
+    "expected": "galleon-defi-data",
+    "mustNotInvoke": [],
+    "reason": "Protocol-level yield evidence is data work until a specific LP pool is chosen."
+  }
+]

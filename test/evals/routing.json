@@ -1,0 +1,88 @@
+[
+  {
+    "prompt": "Help me connect my RPC and managed wallet during agent onboarding, before any protocol-specific activity.",
+    "expected": "galleon-defi-infra",
+    "mustNotInvoke": [
+      "lp-setup",
+      "hyperliquid-setup"
+    ],
+    "reason": "Generic RPC and wallet onboarding is infrastructure, not LP or Hyperliquid setup."
+  },
+  {
+    "prompt": "Hermes tool connections failed after install; fix infrastructure before I try LP or Hyperliquid setup.",
+    "expected": "galleon-defi-infra",
+    "mustNotInvoke": [
+      "lp-setup",
+      "hyperliquid-setup"
+    ],
+    "reason": "Runtime wiring failures are diagnosed by the infrastructure pack first."
+  },
+  {
+    "prompt": "I just installed LP Skills; diagnose my RPC and list missing LP read tools before the first pool task.",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "galleon-defi-infra",
+      "hyperliquid-setup"
+    ],
+    "reason": "LP-specific connection readiness is lp-setup once the LP pack is the task."
+  },
+  {
+    "prompt": "Check whether my LP_RPC_URL is on Base and fresh enough for lp-analyze.",
+    "expected": "lp-setup",
+    "mustNotInvoke": [
+      "galleon-defi-infra",
+      "hyperliquid-setup"
+    ],
+    "reason": "Stale LP RPC before analysis is an LP setup diagnosis."
+  },
+  {
+    "prompt": "Connect my agent to Hyperliquid public market data and complete a first ETH book read.",
+    "expected": "hyperliquid-setup",
+    "mustNotInvoke": [
+      "galleon-defi-infra",
+      "lp-setup"
+    ],
+    "reason": "A first Hyperliquid market read is hyperliquid-setup, not generic infra or LP RPC."
+  },
+  {
+    "prompt": "My harness cannot read Hyperliquid market data. What tools do I need before analysis?",
+    "expected": "hyperliquid-setup",
+    "mustNotInvoke": [
+      "galleon-defi-infra",
+      "lp-setup"
+    ],
+    "reason": "Missing Hyperliquid data tools are diagnosed by hyperliquid-setup."
+  },
+  {
+    "prompt": "Is this DefiLlama yield figure real, and can I compare it across protocols without picking an LP pool?",
+    "expected": "galleon-defi-data",
+    "mustNotInvoke": [
+      "lp-analyze"
+    ],
+    "reason": "Aggregator yield evidence without a pool choice is data methodology."
+  },
+  {
+    "prompt": "Evaluate protocol metrics and crypto narratives for this market using CoinGecko and AIXBT.",
+    "expected": "galleon-defi-data",
+    "mustNotInvoke": [
+      "lp-analyze"
+    ],
+    "reason": "Market-wide metrics and narratives are the data pack, not LP pool assessment."
+  },
+  {
+    "prompt": "Is this Uniswap v3 or Slipstream APR real, and how do fees compare with incentives and loss versus rebalancing?",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "galleon-defi-data"
+    ],
+    "reason": "LP fee, incentive, and inventory-loss decomposition is lp-analyze."
+  },
+  {
+    "prompt": "Which Uniswap or Aerodrome pool has real yield after hook, gauge, and exit risk at my size?",
+    "expected": "lp-analyze",
+    "mustNotInvoke": [
+      "galleon-defi-data"
+    ],
+    "reason": "Choosing an LP pool by executable yield and risk is lp-analyze, not aggregator research."
+  }
+]
