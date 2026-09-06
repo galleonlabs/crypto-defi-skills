@@ -1,6 +1,6 @@
 # Crypto DeFi Skills
 
-Fourteen independent DeFi skill packs; 25 current skills. Official tools, portable instructions and source-backed workflows.
+Fourteen independent DeFi skill packs; 26 current skills. Official tools, portable instructions and source-backed workflows.
 
 - [infra](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/infra): RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration
 - [data](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/data): CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence
@@ -13,7 +13,7 @@ Fourteen independent DeFi skill packs; 25 current skills. Official tools, portab
 - [routing](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/routing): 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP
 - [derivatives](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/derivatives): GMX, Derive, Drift and Pendle Boros trading lifecycles
 - [portfolio](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/portfolio): Positions, liabilities, net exposure, cash flows and performance
-- [security](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/security): Transaction decoding, permissions, simulation and receipt review
+- [security](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/security): Token diligence, transaction decoding, permissions and simulation review
 - [payments](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/payments): Stablecoin transfers, x402, Sablier and Superfluid
 - [governance](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/governance): Snapshot, Cactus, Governor, voting and Safe execution
 

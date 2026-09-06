@@ -1,7 +1,7 @@
 {
   "name": "galleon-defi-security-skills",
-  "version": "0.1.2",
-  "description": "Review transaction intent, permissions and simulation evidence.",
+  "version": "0.2.0",
+  "description": "Token due diligence, transaction review, permissions and simulation evidence.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/security#readme",
   "license": "MIT",
   "keywords": [
@@ -11,7 +11,8 @@
     "tenderly",
     "blockaid",
     "goplus",
-    "safe"
+    "safe",
+    "uniswap"
   ],
   "author": {
     "name": "Galleon Labs"

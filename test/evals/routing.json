@@ -164,5 +164,30 @@
       "galleon-defi-data"
     ],
     "reason": "Proposal choice and voting mechanics belong to governance; analysis is not a public action."
+  },
+  {
+    "prompt": "Investigate the launch allocations and removable liquidity of this exact EVM token.",
+    "expected": "galleon-defi-security-token-diligence",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-data"
+    ],
+    "reason": "Token-level economic diligence requires launch and custody evidence, not an unsigned transaction or market-wide metrics."
+  },
+  {
+    "prompt": "Compare this token with yesterday's diligence report, including evidence we could not refresh.",
+    "expected": "galleon-defi-security-token-diligence",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio"
+    ],
+    "reason": "This is a repeat token investigation, not accounting for a user portfolio."
+  },
+  {
+    "prompt": "Decode this unsigned token approval and check whether its spender matches my intent.",
+    "expected": "galleon-defi-security",
+    "mustNotInvoke": [
+      "galleon-defi-security-token-diligence"
+    ],
+    "reason": "A concrete transaction payload belongs to transaction review; it does not require a full token investigation."
   }
 ]
