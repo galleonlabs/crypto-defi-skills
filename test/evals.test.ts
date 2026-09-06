@@ -3,20 +3,14 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { packages, root } from "../scripts/workspaces.ts";
 import { pathToFileURL } from "node:url";
+import { boundaryIssues, caseIssues, countIssues, readRoutingCases, type RoutingCase } from "../scripts/routing-evals.ts";
 
-interface RoutingCase {
-  prompt: string;
-  expected: string;
-  mustNotInvoke: string[];
-  reason: string;
-}
-
-const UNION_CATALOG: { name: string }[] = [];
+const PACKS: { id: string; directory: string; skills: string[] }[] = [];
 for (const pack of await packages()) {
   const catalog = await import(pathToFileURL(resolve(root, pack.directory, "src/index.ts")).href);
-  UNION_CATALOG.push(...catalog.SKILL_CATALOG);
+  PACKS.push({ id: pack.id, directory: resolve(root, pack.directory), skills: catalog.SKILL_CATALOG.map((skill: { name: string }) => skill.name) });
 }
-const UNION_NAMES = new Set<string>(UNION_CATALOG.map((skill) => skill.name));
+const UNION_NAMES = new Set<string>(PACKS.flatMap((pack) => pack.skills));
 
 const REQUIRED_BOUNDARIES = [
   { expected: "galleon-defi-infra", competitor: "lp-setup" },
@@ -29,19 +23,29 @@ const REQUIRED_BOUNDARIES = [
   { expected: "lp-analyze", competitor: "galleon-defi-data" },
 ] as const;
 
-test("cross-pack routing evals cover documented skill overlaps", async () => {
-  const cases = JSON.parse(await readFile(resolve(import.meta.dirname, "evals/routing.json"), "utf8")) as RoutingCase[];
-  expect(cases.length).toBeGreaterThan(0);
-  for (const item of cases) {
-    expect(item.prompt.length).toBeGreaterThan(10);
-    expect(item.reason.length).toBeGreaterThan(10);
-    expect(UNION_NAMES.has(item.expected)).toBe(true);
-    expect(item.mustNotInvoke).not.toContain(item.expected);
-    for (const forbidden of item.mustNotInvoke) expect(UNION_NAMES.has(forbidden)).toBe(true);
-  }
+const CROSS_PACK_CASES = JSON.parse(await readFile(resolve(import.meta.dirname, "evals/routing.json"), "utf8")) as RoutingCase[];
+
+test("cross-pack routing evals cover documented skill overlaps", () => {
+  expect(CROSS_PACK_CASES.length).toBeGreaterThan(0);
+  for (const item of CROSS_PACK_CASES) expect(caseIssues(item, UNION_NAMES)).toEqual([]);
   for (const boundary of REQUIRED_BOUNDARIES) {
     expect(
-      cases.some((item) => item.expected === boundary.expected && item.mustNotInvoke.includes(boundary.competitor)),
+      CROSS_PACK_CASES.some((item) => item.expected === boundary.expected && item.mustNotInvoke.includes(boundary.competitor)),
     ).toBe(true);
   }
+});
+
+test("every pack ships a routing dataset covering each of its skills", async () => {
+  for (const pack of PACKS) {
+    const cases = await readRoutingCases(pack.directory);
+    for (const item of cases) expect(caseIssues(item, UNION_NAMES), pack.id).toEqual([]);
+    expect(cases.filter((item) => !pack.skills.includes(item.expected)), pack.id).toEqual([]);
+    expect(countIssues(cases, pack.skills), pack.id).toEqual([]);
+  }
+});
+
+test("every skill names at least one skill that must not load instead", async () => {
+  const corpus = [...CROSS_PACK_CASES];
+  for (const pack of PACKS) corpus.push(...(await readRoutingCases(pack.directory)));
+  expect(boundaryIssues(corpus, [...UNION_NAMES])).toEqual([]);
 });

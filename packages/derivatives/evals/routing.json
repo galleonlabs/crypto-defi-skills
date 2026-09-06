@@ -1,0 +1,56 @@
+[
+  {
+    "prompt": "Compare funding and fees for an ETH perpetual on GMX and Drift for a two-week hedge.",
+    "expected": "galleon-defi-derivatives",
+    "mustNotInvoke": [
+      "hyperliquid-analyze",
+      "galleon-defi-data"
+    ],
+    "reason": "Cross-venue derivative comparison is the derivatives pack; Hyperliquid has its own staged skills."
+  },
+  {
+    "prompt": "My GMX v2 request returned created. Is my long open?",
+    "expected": "galleon-defi-derivatives",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "galleon-defi-routing"
+    ],
+    "reason": "Order state versus keeper execution on GMX is derivatives reconciliation."
+  },
+  {
+    "prompt": "My Derive session key has Trade scope and I want to withdraw to the owner address.",
+    "expected": "galleon-defi-derivatives",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-payments"
+    ],
+    "reason": "Session-key scope and recipient rules on the venue are derivatives account control, not a generic payload or transfer."
+  },
+  {
+    "prompt": "Hedge my ETH funding exposure with Boros. Here is the ETH spot price.",
+    "expected": "galleon-defi-derivatives",
+    "mustNotInvoke": [
+      "galleon-defi-yield",
+      "hyperliquid-plan"
+    ],
+    "reason": "A funding-rate contract is a distinct exposure requiring reference rate and maturity, not a spot short or a yield position."
+  },
+  {
+    "prompt": "My cancel request timed out after half the order filled. Replace it.",
+    "expected": "galleon-defi-derivatives",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "galleon-defi-routing"
+    ],
+    "reason": "Reconciling remaining size before replacement is derivatives order recovery."
+  },
+  {
+    "prompt": "My Drift client reconnected but the account slot looks old. Size a new position.",
+    "expected": "galleon-defi-derivatives",
+    "mustNotInvoke": [
+      "galleon-defi-infra",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Stale venue account state before sizing is derivatives judgement, not a connection fault or a holdings report."
+  }
+]

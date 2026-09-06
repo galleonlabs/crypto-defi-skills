@@ -1,0 +1,56 @@
+[
+  {
+    "prompt": "I bought USDY on a DEX. Can I redeem it directly with the issuer?",
+    "expected": "galleon-defi-tokenized-assets",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "galleon-defi-yield"
+    ],
+    "reason": "Issuer eligibility is independent of secondary access; this is the tokenized assets pack, not a swap or a vault."
+  },
+  {
+    "prompt": "Compare OUSG and TBILL for this entity, including NAV timing, minimums and instant liquidity.",
+    "expected": "galleon-defi-tokenized-assets",
+    "mustNotInvoke": [
+      "galleon-defi-yield",
+      "galleon-defi-data"
+    ],
+    "reason": "Product, issuer and settlement comparison is tokenized assets, not a DeFi vault or a market feed."
+  },
+  {
+    "prompt": "The API offers an attestations endpoint and a soft one. Use whichever gets me a quote.",
+    "expected": "galleon-defi-tokenized-assets",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "galleon-defi-payments"
+    ],
+    "reason": "Distinguishing an indication from a binding issuer request is tokenized assets workflow."
+  },
+  {
+    "prompt": "My OpenEden recipient wallet is not whitelisted. Send it to my other address instead.",
+    "expected": "galleon-defi-tokenized-assets",
+    "mustNotInvoke": [
+      "galleon-defi-payments",
+      "galleon-defi-routing"
+    ],
+    "reason": "Transfer restrictions are issuer controls to resolve, not a payment or routing workaround."
+  },
+  {
+    "prompt": "My TBILL tokens burned but no USDC arrived. Is the redemption done?",
+    "expected": "galleon-defi-tokenized-assets",
+    "mustNotInvoke": [
+      "galleon-defi-payments",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Redemption settlement evidence is tokenized assets reconciliation, not a payment receipt lookup."
+  },
+  {
+    "prompt": "The token is self-custodied and the marketing says Treasury-backed, so my Treasuries are safe.",
+    "expected": "galleon-defi-tokenized-assets",
+    "mustNotInvoke": [
+      "galleon-defi-security-token-diligence",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Token custody versus issuer and fund legal claim is tokenized assets analysis, not EVM token diligence."
+  }
+]

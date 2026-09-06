@@ -1,0 +1,55 @@
+[
+  {
+    "prompt": "Reconcile my wallet tokens, Aave debt and vault receipts into one net worth figure without double counting.",
+    "expected": "galleon-defi-portfolio",
+    "mustNotInvoke": [
+      "galleon-defi-lending",
+      "galleon-defi-data"
+    ],
+    "reason": "Cross-protocol reconciliation and receipt-token handling are the portfolio pack, not a single market or a raw feed."
+  },
+  {
+    "prompt": "My equity went from 1,000 to 1,200 after I added 300. How did I actually perform?",
+    "expected": "galleon-defi-portfolio",
+    "mustNotInvoke": [
+      "galleon-defi-yield",
+      "galleon-defi-data"
+    ],
+    "reason": "Separating external contributions from economic change is portfolio performance accounting."
+  },
+  {
+    "prompt": "A borrowed 200 USDC shows as a wallet inflow. Am I up 200?",
+    "expected": "galleon-defi-portfolio",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "Recording an asset and its matching liability is portfolio accounting; the lending pack owns the loan mechanics."
+  },
+  {
+    "prompt": "The Zerion default response shows one token, but I know this account holds an Aave position.",
+    "expected": "galleon-defi-portfolio",
+    "mustNotInvoke": [
+      "galleon-defi-data",
+      "galleon-defi-lending"
+    ],
+    "reason": "Detecting incomplete protocol coverage before reporting a total is portfolio methodology."
+  },
+  {
+    "prompt": "I hold USDC on two chains, one bridged with no price and a pending receipt. What is my stablecoin balance?",
+    "expected": "galleon-defi-portfolio",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "galleon-defi-data"
+    ],
+    "reason": "Keeping chain and contract identity distinct with unpriced and in-transit status is portfolio accounting, not route recovery."
+  },
+  {
+    "prompt": "My perpetual has 10,000 notional on 1,000 equity. Add it to my net worth.",
+    "expected": "galleon-defi-portfolio",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives",
+      "hyperliquid-monitor"
+    ],
+    "reason": "Reporting notional separately from equity is portfolio accounting; venue mechanics stay with the derivatives skills."
+  }
+]

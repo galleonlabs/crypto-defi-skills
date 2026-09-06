@@ -1,0 +1,55 @@
+[
+  {
+    "prompt": "Compare the borrow cost of this Aave V3 reserve and this Morpho Blue market over a 30-day hold, reward-free first.",
+    "expected": "galleon-defi-lending",
+    "mustNotInvoke": [
+      "galleon-defi-yield",
+      "galleon-defi-data"
+    ],
+    "reason": "Borrow cost and liquidation terms across lending deployments are the lending pack, not vault comparison or generic market data."
+  },
+  {
+    "prompt": "My Compound III account has a positive base balance, so why is the WBTC I supplied earning nothing?",
+    "expected": "galleon-defi-lending",
+    "mustNotInvoke": [
+      "galleon-defi-yield",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Collateral versus base supply mechanics belong to the lending pack, not a yield product or a holdings report."
+  },
+  {
+    "prompt": "Prepare a Morpho repay and collateral withdrawal, showing each approval and leg before I sign anything.",
+    "expected": "galleon-defi-lending",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-routing"
+    ],
+    "reason": "Building the unsigned lending plan is the lending pack; payload review and swap routing are separate later steps."
+  },
+  {
+    "prompt": "An indexer reports my health factor at 1.03 from an old block and fresh oracle data is unavailable.",
+    "expected": "galleon-defi-lending",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "galleon-defi-data"
+    ],
+    "reason": "Liquidation risk under stale protocol data is a lending judgement, not portfolio accounting or a data freshness question alone."
+  },
+  {
+    "prompt": "The approval confirmed, my borrow transaction timed out, and the indexer shows no debt.",
+    "expected": "galleon-defi-lending",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-routing"
+    ],
+    "reason": "Partial lending completion is reconciled by the lending pack against the borrow hash and nonce."
+  },
+  {
+    "prompt": "Spark's interface shows this as an isolated Morpho market. Which liquidation rules actually apply to my loan?",
+    "expected": "galleon-defi-lending",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "Resolving the real market identity behind a frontend is lending mechanics, not a savings product comparison."
+  }
+]
