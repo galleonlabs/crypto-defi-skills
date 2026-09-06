@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 - 2026-09-06
+
+Replace internal keywords with named protocol terms from this pack's own skill guidance.
+
 ## 0.1.1 - 2026-09-05
 
 Verify full recipient provenance and nested beneficiaries against address poisoning; extend offline review cases.

@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs the selected provider's HTTP, MCP or SDK tools; signing stays in the user's trusted wallet. No provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # DeFi routing

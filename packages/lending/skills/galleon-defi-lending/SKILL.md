@@ -3,7 +3,7 @@ name: galleon-defi-lending
 description: "Use when researching lending markets, planning supply, borrow, repay or withdrawals, or monitoring liquidation risk across Aave, Morpho, Compound, Euler and Spark."
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

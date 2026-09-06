@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { credentialPresence, diagnoseRpc, SKILL_CATALOG } from "./index.js";
 import { validate } from "./validate.js";
-const VERSION = "0.2.1";
+const VERSION = "0.2.2";
 const HELP = `defi-infra-skills ${VERSION}
   catalog [--json]
   validate [directory] [--json]

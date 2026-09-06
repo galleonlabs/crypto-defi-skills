@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable agent instructions. Optional Zerion, DeBank, CoinGecko, DefiLlama and protocol reads require supported coverage and the user's own access. No custody, transaction execution or recurring scheduler is bundled.
 metadata:
   author: Galleon Labs
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # DeFi portfolio and treasury

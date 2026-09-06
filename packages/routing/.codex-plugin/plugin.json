@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-routing-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Compare swaps and bridges and track cross-chain settlement.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/routing#readme",
   "license": "MIT",

@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-portfolio-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Reconcile DeFi assets, liabilities, cash flows and exposure.",
   "type": "module",
   "license": "MIT",

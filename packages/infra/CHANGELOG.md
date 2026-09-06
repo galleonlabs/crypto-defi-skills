@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 - 2026-09-06
+
+Replace internal keywords with named protocol terms from this pack's own skill guidance.
+
 ## 0.2.1 - 2026-09-05
 
 Add scoped CLI/session recovery, lazy authentication and explicit vendor-wallet isolation checks.

@@ -3,7 +3,7 @@ name: galleon-defi-tokenized-assets
 description: "Use when researching tokenized Treasury or securities eligibility, custody, subscriptions, transfers and redemption settlement for Ondo and OpenEden."
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

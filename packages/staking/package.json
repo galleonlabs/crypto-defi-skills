@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-staking-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Plan liquid staking, restaking and queued withdrawals.",
   "type": "module",
   "license": "MIT",

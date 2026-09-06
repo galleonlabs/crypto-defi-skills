@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable agent instructions. Optional Tenderly, Safe, Blockaid and GoPlus tools require their supported networks and the user's own access; no signer or service is bundled.
 metadata:
   author: Galleon Labs
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # DeFi transaction review
