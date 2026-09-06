@@ -2,6 +2,8 @@
 
 ## 0.3.1 - 2026-09-06
 
+Add a clear first-price workflow, worked evidence examples, portable offline evaluation cases and credential-free diagnostic help. Preserve the existing observation JSON and one-request behavior.
+
 Replace internal keywords with named protocol terms from this pack's own skill guidance.
 
 ## 0.3.0 - 2026-09-05

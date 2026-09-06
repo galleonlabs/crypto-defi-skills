@@ -14,6 +14,8 @@ Make market and protocol evidence usable without confusing an aggregator observa
 
 ## Connect the right source
 
+For a first public price check, start with [the diagnostic workflow](references/diagnostic.md) and its known Bitcoin connectivity example. For analysis, start with the user's existing official provider connection and resolve the requested identity before querying. Do not configure additional providers just because they appear below.
+
 Use [provider setup](references/providers.md) when enabling access or choosing between CoinGecko market/onchain data, DefiLlama protocol/yield data, and public API fallbacks. For crypto projects, narratives and event research, use the [AIXBT workflow](references/aixbt.md). Reuse official MCP or SDK clients already present. Discover current tool schemas: advertised tool counts and names can lag the running server. Record unavailable capabilities separately from working ones.
 
 CoinGecko has a public keyless MCP path. DefiLlama's official MCP requires an API subscription and OAuth; its public REST endpoints are a distinct free surface. Credentials and plan enrollment are user-owned. Installing this skill grants neither spending authority nor permission to change an existing client's authentication.
@@ -42,3 +44,5 @@ If data freshness, identity or methodology cannot support the requested decision
 ## Deliver
 
 Return the answer with a compact provenance record and material limitations. A readiness report should identify each provider's access tier, transport, observed tool set, tested read and remaining account/coverage gaps. Never call a configured URL or successful handshake fully working until the requested bounded read succeeds.
+
+For conflicting, stale or incomplete observations, use [worked evidence examples](references/worked-examples.md) to check the decision and output before returning it. The [offline evaluation cases](evals/evals.json) exercise these boundaries with synthetic inputs; they require no provider account.

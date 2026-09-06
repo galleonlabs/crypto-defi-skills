@@ -92,6 +92,10 @@ function isMain() {
   catch { return false; }
 }
 if (isMain()) {
+  if (process.argv.length === 3 && ['--help', '-h'].includes(process.argv[2])) {
+    process.stdout.write('Public price diagnostic (Node.js 20+)\n\nUsage: node scripts/price-check.mjs [--provider coingecko|defillama] [--id bitcoin] [--max-age 300]\n\nOne keyless GET; no credentials, redirects or automatic retries.\nUse a CoinGecko ID, not a ticker. Success is JSON with price, identity and timestamps.\nFailures return JSON with a stable error code and exit 1. Help makes no request.\n');
+    process.exit(0);
+  }
   let result;
   try { result = await checkPrice(parseArgs(process.argv.slice(2))); }
   catch { result = { ok: false, error: 'invalid_arguments' }; }

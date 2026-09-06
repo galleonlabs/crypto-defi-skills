@@ -2,7 +2,7 @@
 
 Help make DeFi workflows easier to use, verify and maintain. Documentation fixes, clearer examples, reproducible bugs and new provider coverage are all welcome.
 
-[Browse the packs](README.md#four-independent-packs) · [Report an issue](https://github.com/galleonlabs/crypto-defi-skills/issues/new) · [Release a pack](RELEASING.md)
+[Browse the packs](README.md#independent-packs) · [Report an issue](https://github.com/galleonlabs/crypto-defi-skills/issues/new) · [Release a pack](RELEASING.md)
 
 ## Choose a starting point
 
@@ -26,7 +26,7 @@ bun run check
 bun run pack
 ```
 
-Read the affected package's `AGENTS.md` before editing. LP and Hyperliquid also have [LP-specific](packages/lp/CONTRIBUTING.md) and [Hyperliquid-specific](packages/hyperliquid/CONTRIBUTING.md) contribution guides. Shared instructions here apply to all four packs.
+Read the affected package's `AGENTS.md` before editing. LP and Hyperliquid also have [LP-specific](packages/lp/CONTRIBUTING.md) and [Hyperliquid-specific](packages/hyperliquid/CONTRIBUTING.md) contribution guides. Shared instructions here apply to all packs.
 
 After editing skills, run the skill-format validator for the affected pack:
 
@@ -35,6 +35,8 @@ validate-agent-skills packages/<pack>/skills
 ```
 
 `validate-agent-skills` is a separate contributor tool, not an npm runtime dependency. The repository's `bun run check` also runs each package's bundled corpus validation and an offline release-drift gate against package-qualified git tags, so clones used for `check` need those tags fetched. Run `bun run smoke` when changing package contents, exports, CLIs or installation behavior to verify clean consumer installs. `bun run link-health` probes skill reference URLs; it is scheduled and advisory, not part of `bun run check`.
+
+See [skill quality and verification](docs/SKILL-QUALITY.md) for the authoring contract and the distinction between structural checks and output evaluations.
 
 ## Keep skills portable
 

@@ -5,6 +5,7 @@ From this skill's directory:
 ```bash
 node scripts/price-check.mjs --provider coingecko --id bitcoin
 node scripts/price-check.mjs --provider defillama --id bitcoin --max-age 300
+node scripts/price-check.mjs --help
 ```
 
 Or run `defi-data-skills price-check` from the independently installed npm CLI. Both routes execute the same standalone script, which only needs Node.js 20+.

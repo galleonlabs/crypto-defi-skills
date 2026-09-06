@@ -25,3 +25,15 @@ test("routing evals cover every skill", async () => {
     expect(cases.filter((item) => item.expected === name).length).toBeGreaterThanOrEqual(5);
   }
 });
+
+test("standalone output cases carry inputs and concrete assertions", async () => {
+  const dataset = JSON.parse(await readFile(resolve(import.meta.dirname, "../skills/galleon-defi-data/evals/evals.json"), "utf8"));
+  expect(dataset.skill_name).toBe("galleon-defi-data");
+  expect(new Set(dataset.evals.map((item: { id: number }) => item.id)).size).toBe(dataset.evals.length);
+  for (const item of dataset.evals) {
+    expect(item.prompt.length).toBeGreaterThan(50);
+    expect(item.expected_output.length).toBeGreaterThan(50);
+    expect(item.assertions.length).toBeGreaterThanOrEqual(3);
+    expect(item.files).toEqual([]);
+  }
+});

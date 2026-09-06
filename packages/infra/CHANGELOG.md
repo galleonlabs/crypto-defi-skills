@@ -2,6 +2,8 @@
 
 ## 0.2.2 - 2026-09-06
 
+Add Codex discovery metadata, a more precise routing description and a concrete read-only readiness example.
+
 Replace internal keywords with named protocol terms from this pack's own skill guidance.
 
 ## 0.2.1 - 2026-09-05

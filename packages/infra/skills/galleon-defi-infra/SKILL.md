@@ -1,6 +1,6 @@
 ---
 name: galleon-defi-infra
-description: Set up and diagnose DeFi agent infrastructure, RPC access, managed wallets, payment permissions and Hermes tool connections. Use for onboarding or connection failures before protocol-specific activity.
+description: Set up and diagnose DeFi agent infrastructure, RPC access, managed wallets, payment permissions and Hermes tool connections. Use when onboarding or resolving connection failures before protocol-specific activity; market-data methodology belongs to the data workflow.
 license: MIT
 compatibility: Portable instructions; optional diagnostics require Node.js 20+ and public network access.
 metadata:
@@ -26,6 +26,8 @@ Start with the user's selected chain and task. Read-only research needs RPC or i
 Read [primitive tool wiring](references/primitive-tools.md) for official MCP/SDK selection, progressive disclosure, schema changes and EVM/Solana transaction context.
 
 ## First usable result
+
+For example, given “Check whether my existing Base RPC is ready; do not create a wallet,” load the readiness reference, run its bounded chain and freshness check, and report the observed chain ID and block time. A response from a different chain or a stale node is a failed readiness check even when the connection succeeds. If the endpoint is missing, identify the required environment setting without requesting its secret value in chat.
 
 Record the runtime/profile, provider, chain ID, tool or CLI version, authentication state, successful read with timestamp, and remaining limitation. For a signer also record its owner, active account, supported actions, spending/contract/chain limits, expiry and revocation path. Report unknown permission enforcement as unknown, rather than treating a prompt as a wallet policy.
 
