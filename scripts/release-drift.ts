@@ -7,6 +7,7 @@ const report = inspectPacks(root, (await packages()).map((pack) => ({
   directory: pack.directory,
   name: pack.manifest.name,
   version: pack.manifest.version,
+  files: pack.manifest.files ?? [],
 })));
 process.stdout.write(json ? `${JSON.stringify(report, null, 2)}\n` : formatReport(report));
 if (report.drift > 0) process.exitCode = 1;
