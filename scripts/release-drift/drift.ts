@@ -35,8 +35,12 @@ export function isPackageVersionTag(tag: string): boolean {
   return packageVersionTag.test(tag);
 }
 
+export function publishedRoots(files: readonly string[]): Set<string> {
+  return new Set(files.map((entry) => entry.replace(/^\.\//, "").replace(/\/+$/, "").split("/")[0] ?? ""));
+}
+
 export function unpublishedPrefixes(directory: string, files: readonly string[]): string[] {
-  const published = new Set(files.map((entry) => entry.replace(/^\.\//, "").replace(/\/+$/, "")));
+  const published = publishedRoots(files);
   return unpublishedDirectories.filter((name) => !published.has(name)).map((name) => `${directory}/${name}/`);
 }
 

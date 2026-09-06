@@ -9,6 +9,7 @@ import {
   isPackageVersionTag,
   missingTagsCause,
   partitionChanges,
+  publishedRoots,
   unpublishedDirectories,
   unpublishedPrefixes,
 } from "./drift.ts";
@@ -49,6 +50,7 @@ describe("published surface", () => {
       "packages/yield/test/",
     ]);
     expect(unpublishedPrefixes("packages/yield", ["dist", "skills", "evals/"])).toEqual(["packages/yield/test/"]);
+    expect(unpublishedPrefixes("packages/yield", ["dist", "./evals/**", "test/*.json"])).toEqual([]);
   });
 
   test("splits a diff into published and unpublished paths", () => {
@@ -67,10 +69,8 @@ describe("published surface", () => {
 
   test("no pack publishes a directory this gate treats as unpublished", async () => {
     for (const pack of await packages()) {
-      const files: string[] = pack.manifest.files ?? [];
-      for (const name of unpublishedDirectories) {
-        expect(files.map((entry) => entry.replace(/\/+$/, "")), pack.id).not.toContain(name);
-      }
+      const roots = publishedRoots(pack.manifest.files ?? []);
+      for (const name of unpublishedDirectories) expect([...roots], pack.id).not.toContain(name);
     }
   });
 });
