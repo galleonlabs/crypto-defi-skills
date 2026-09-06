@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0 - 2026-09-06
+
+Add a standalone token-diligence skill with conditional control, launch, liquidity and treasury investigations; bounded RPC snapshots; structured evidence validation; and comparisons that expose changed facts and lost coverage. Preserve the separate transaction-review skill.
+
 ## 0.1.2 - 2026-09-06
 
 Replace internal keywords with named protocol terms from this pack's own skill guidance.

@@ -1,7 +1,7 @@
 {
   "name": "galleon-defi-security-skills",
-  "version": "0.1.2",
-  "description": "Review transaction intent, permissions and simulation evidence.",
+  "version": "0.2.0",
+  "description": "Token due diligence, transaction review, permissions and simulation evidence.",
   "type": "module",
   "license": "MIT",
   "author": "Galleon Labs",
@@ -21,7 +21,8 @@
     "tenderly",
     "blockaid",
     "goplus",
-    "safe"
+    "safe",
+    "uniswap"
   ],
   "bin": {
     "defi-security-skills": "dist/cli.js"
@@ -52,7 +53,7 @@
   },
   "scripts": {
     "build": "bun ../../scripts/build-content-pack.ts",
-    "check": "bun run style && bun ../../scripts/check-content-pack.ts",
+    "check": "bun run style && bun test test && bun ../../scripts/check-content-pack.ts",
     "prepack": "bun run check",
     "validate": "bun ../../scripts/check-content-pack.ts --validate-only",
     "style": "bun ../../scripts/check-style.ts"

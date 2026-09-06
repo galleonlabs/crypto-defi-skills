@@ -11,7 +11,7 @@ Start with [Boomkin](https://github.com/galleonlabs/boomkin) for a complete Herm
 
 ## Independent packs
 
-Fourteen packs, 25 current skills. Each pack has its own npm release, CLI, plugin manifests and self-contained references. Two additional LP directories preserve previous install names as notices.
+Fourteen packs, 26 current skills. Each pack has its own npm release, CLI, plugin manifests and self-contained references. Two additional LP directories preserve previous install names as notices.
 
 | Pack | npm release | Coverage |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ Fourteen packs, 25 current skills. Each pack has its own npm release, CLI, plugi
 | [Routing](packages/routing) | [`galleon-defi-routing-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.1.0) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
 | [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.1`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.1) | GMX, Derive, Drift and Pendle Boros trading lifecycles |
 | [Portfolio](packages/portfolio) | [`galleon-defi-portfolio-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-portfolio-skills/v/0.1.0) | Positions, liabilities, net exposure, cash flows and performance |
-| [Security](packages/security) | [`galleon-defi-security-skills@0.1.1`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.1.1) | Transaction decoding, permissions, simulation and receipt review |
+| [Security](packages/security) | [`galleon-defi-security-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.2.0) | Token diligence, transaction decoding, permissions and simulation review |
 | [Payments](packages/payments) | [`galleon-defi-payments-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-payments-skills/v/0.1.0) | Stablecoin transfers, x402, Sablier and Superfluid |
 | [Governance](packages/governance) | [`galleon-defi-governance-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-governance-skills/v/0.1.0) | Snapshot, Cactus, Governor, voting and Safe execution |
 
@@ -89,6 +89,8 @@ Keep Hermes as the runtime. Load the relevant skill and then its references on d
 
 > Use galleon-defi-portfolio to reconcile these wallet positions, separating debt, queued withdrawals and assets without reliable prices.
 
+> Use galleon-defi-security-token-diligence to investigate [token address] on [chain ID] and compare its controls, exit depth and evidence with a prior review.
+
 > Use galleon-defi-security to decode this unsigned transaction and compare its permissions and simulated effects with my intended action.
 
 Supply actual addresses and amounts for position-specific tasks. Provider credentials belong in the harness's private environment or secret settings.
@@ -128,7 +130,7 @@ Use Bun 1.3.14 for repository development. After skill edits, also run `validate
 
 Add a pack under `packages/`, register its plugin and discovery grouping, and follow [CONTRIBUTING.md](CONTRIBUTING.md). Content-only packs share build-time tooling that is bundled into their standalone CLIs; installed packages never need the monorepo.
 
-The private root workspace is not published to npm. [RELEASING.md](RELEASING.md) publishes one selected pack from a clean commit. Tags use `<npm-name>@<version>`. Separate `agent-skills-<commit>` releases provide 27 individual skill archives, including the two LP notices, with SHA-256 digests. Their source is the exact committed tree.
+The private root workspace is not published to npm. [RELEASING.md](RELEASING.md) publishes one selected pack from a clean commit. Tags use `<npm-name>@<version>`. Separate `agent-skills-<commit>` releases provide 28 individual skill archives, including the two LP notices, with SHA-256 digests. Their source is the exact committed tree.
 
 For older LP installation names and repository URLs, see [migration notes](MIGRATION.md). Existing npm and CLI names remain supported.
 

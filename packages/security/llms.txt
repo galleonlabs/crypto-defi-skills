@@ -1,7 +1,8 @@
 # Galleon DeFi Security Skills
 
-Review transaction intent, permissions and simulation evidence.
+Investigate exact EVM tokens and review transaction intent, permissions and simulation evidence.
 
 - [Workflow](skills/galleon-defi-security/SKILL.md)
 - [Providers](skills/galleon-defi-security/references/providers.md)
 - [Sources](SOURCES.md)
+- [Token diligence](skills/galleon-defi-security-token-diligence/SKILL.md)

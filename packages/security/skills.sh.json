@@ -4,9 +4,10 @@
   "groupings": [
     {
       "title": "DeFi security",
-      "description": "Review transaction intent, permissions and simulation evidence.",
+      "description": "Investigate token economics and review transaction effects and authority.",
       "skills": [
-        "galleon-defi-security"
+        "galleon-defi-security",
+        "galleon-defi-security-token-diligence"
       ]
     }
   ]

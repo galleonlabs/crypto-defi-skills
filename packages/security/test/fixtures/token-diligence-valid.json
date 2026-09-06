@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "requested": {
+    "chainId": "1",
+    "address": "0x1111111111111111111111111111111111111111"
+  },
+  "observed": {
+    "chainId": "1",
+    "address": "0x1111111111111111111111111111111111111111"
+  },
+  "reported": {
+    "chainId": "1",
+    "address": "0x1111111111111111111111111111111111111111"
+  },
+  "pin": {
+    "number": "0x1",
+    "hash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+    "timestamp": "1970-01-01T00:00:00.000Z",
+    "header": {
+      "number": "0x1",
+      "hash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+      "timestamp": "0x0"
+    }
+  },
+  "evidence": [
+    {
+      "id": "chain-id",
+      "status": "observed",
+      "source": "synthetic fixture, not live evidence",
+      "query": "eth_chainId",
+      "artifact": null,
+      "target": {
+        "chainId": "1",
+        "address": "0x1111111111111111111111111111111111111111"
+      },
+      "blockHash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+      "value": "0x1"
+    },
+    {
+      "id": "block-header",
+      "status": "observed",
+      "source": "synthetic fixture, not live evidence",
+      "query": "eth_getBlockByNumber",
+      "artifact": null,
+      "target": {
+        "chainId": "1",
+        "address": "0x1111111111111111111111111111111111111111"
+      },
+      "blockHash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+      "value": {
+        "number": "0x1",
+        "hash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+        "timestamp": "0x0"
+      }
+    },
+    {
+      "id": "runtime-code",
+      "status": "observed",
+      "source": "synthetic fixture, not live evidence",
+      "query": "eth_getCode 0x1111111111111111111111111111111111111111",
+      "artifact": null,
+      "target": {
+        "chainId": "1",
+        "address": "0x1111111111111111111111111111111111111111"
+      },
+      "blockHash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+      "value": "0x6000"
+    },
+    {
+      "id": "metadata-name",
+      "status": "observed",
+      "source": "synthetic fixture, not live evidence",
+      "query": "eth_call 0x1111111111111111111111111111111111111111 0x06fdde03",
+      "artifact": null,
+      "target": {
+        "chainId": "1",
+        "address": "0x1111111111111111111111111111111111111111"
+      },
+      "blockHash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000953796e7468657469630000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "metadata-symbol",
+      "status": "observed",
+      "source": "synthetic fixture, not live evidence",
+      "query": "eth_call 0x1111111111111111111111111111111111111111 0x95d89b41",
+      "artifact": null,
+      "target": {
+        "chainId": "1",
+        "address": "0x1111111111111111111111111111111111111111"
+      },
+      "blockHash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000353594e0000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "metadata-decimals",
+      "status": "observed",
+      "source": "synthetic fixture, not live evidence",
+      "query": "eth_call 0x1111111111111111111111111111111111111111 0x313ce567",
+      "artifact": null,
+      "target": {
+        "chainId": "1",
+        "address": "0x1111111111111111111111111111111111111111"
+      },
+      "blockHash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+      "value": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    },
+    {
+      "id": "metadata-totalsupply",
+      "status": "observed",
+      "source": "synthetic fixture, not live evidence",
+      "query": "eth_call 0x1111111111111111111111111111111111111111 0x18160ddd",
+      "artifact": null,
+      "target": {
+        "chainId": "1",
+        "address": "0x1111111111111111111111111111111111111111"
+      },
+      "blockHash": "0x82c01d744c39be00c71059f038c1b450472f937c7bc16ce15891668a6a7d0b0f",
+      "value": "0x00000000000000000000000000000000000000000000000000000000000003e8"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "target-token",
+      "address": "0x1111111111111111111111111111111111111111",
+      "role": "token",
+      "status": "observed",
+      "evidence": [
+        "runtime-code"
+      ]
+    }
+  ],
+  "metadata": {
+    "name": {
+      "status": "observed",
+      "value": "Synthetic",
+      "reason": "Synthetic ABI getter fixture; not an onchain observation.",
+      "evidence": [
+        "metadata-name"
+      ]
+    },
+    "symbol": {
+      "status": "observed",
+      "value": "SYN",
+      "reason": "Synthetic ABI getter fixture; not an onchain observation.",
+      "evidence": [
+        "metadata-symbol"
+      ]
+    },
+    "decimals": {
+      "status": "observed",
+      "value": "18",
+      "reason": "Synthetic ABI getter fixture; not an onchain observation.",
+      "evidence": [
+        "metadata-decimals"
+      ]
+    },
+    "totalSupply": {
+      "status": "observed",
+      "value": "1000",
+      "reason": "Synthetic ABI getter fixture; not an onchain observation.",
+      "evidence": [
+        "metadata-totalsupply"
+      ]
+    }
+  },
+  "coverage": [
+    {
+      "id": "controls",
+      "status": "unknown",
+      "note": "Synthetic test scope only.",
+      "evidence": []
+    },
+    {
+      "id": "launch",
+      "status": "unknown",
+      "note": "Synthetic test scope only.",
+      "evidence": []
+    },
+    {
+      "id": "liquidity",
+      "status": "unknown",
+      "note": "Synthetic test scope only.",
+      "evidence": []
+    },
+    {
+      "id": "exits",
+      "status": "unknown",
+      "note": "Synthetic test scope only.",
+      "evidence": []
+    },
+    {
+      "id": "fees",
+      "status": "unknown",
+      "note": "Synthetic test scope only.",
+      "evidence": []
+    },
+    {
+      "id": "treasury",
+      "status": "unknown",
+      "note": "Synthetic test scope only.",
+      "evidence": []
+    },
+    {
+      "id": "metadata",
+      "status": "complete",
+      "note": "Synthetic test scope only.",
+      "evidence": [
+        "metadata-name",
+        "metadata-symbol",
+        "metadata-decimals",
+        "metadata-totalsupply"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "bounded-snapshot",
+      "area": "controls",
+      "status": "unknown",
+      "summary": "Synthetic fixture; controls and economics unresolved.",
+      "evidence": [
+        "runtime-code"
+      ]
+    }
+  ],
+  "execution": {
+    "realSigning": false,
+    "broadcast": false,
+    "simulation": "none"
+  },
+  "historicalPins": []
+}

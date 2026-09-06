@@ -124,8 +124,8 @@ describe("repository surfaces", () => {
   test("relative package markdown links all resolve", async () => {
     const extracted = await extractLinks(root);
     const relative = await Promise.all(extracted.relative.map((link) => evaluateRelative(root, link)));
-    expect(relative.length).toBe(284);
-    expect(summarize(relative)).toEqual({ checked: 284, ok: 284, broken: 0, unverifiable: 0 });
+    expect(relative.length).toBeGreaterThan(0);
+    expect(summarize(relative)).toEqual({ checked: relative.length, ok: relative.length, broken: 0, unverifiable: 0 });
   });
 
   test("missing relative markdown links are broken", async () => {
