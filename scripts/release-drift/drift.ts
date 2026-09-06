@@ -7,6 +7,7 @@ export type PackIdentity = {
   directory: string;
   name: string;
   version: string;
+  files: readonly string[];
 };
 
 export type PackDrift = {
@@ -16,6 +17,7 @@ export type PackDrift = {
   tag: string;
   state: PackState;
   changed: string[];
+  unpublished: string[];
 };
 
 export type DriftReport = {
@@ -26,10 +28,27 @@ export type DriftReport = {
 };
 
 export const packageVersionTag = /^[^/]+@\d+\.\d+\.\d+$/;
+export const unpublishedDirectories = ["evals", "test"] as const;
 export const missingTagsCause = "no package-qualified version tags in this clone; fetch tags before running the release-drift gate";
 
 export function isPackageVersionTag(tag: string): boolean {
   return packageVersionTag.test(tag);
+}
+
+export function publishedRoots(files: readonly string[]): Set<string> {
+  return new Set(files.map((entry) => entry.replace(/^\.\//, "").replace(/\/+$/, "").split("/")[0] ?? ""));
+}
+
+export function unpublishedPrefixes(directory: string, files: readonly string[]): string[] {
+  const published = publishedRoots(files);
+  return unpublishedDirectories.filter((name) => !published.has(name)).map((name) => `${directory}/${name}/`);
+}
+
+export function partitionChanges(changed: readonly string[], prefixes: readonly string[]): { published: string[]; unpublished: string[] } {
+  const published: string[] = [];
+  const unpublished: string[] = [];
+  for (const path of changed) (prefixes.some((prefix) => path.startsWith(prefix)) ? unpublished : published).push(path);
+  return { published, unpublished };
 }
 
 export function classifyPack(tags: ReadonlySet<string>, name: string, version: string, changed: readonly string[]): PackState {
@@ -75,24 +94,29 @@ export function inspectPacks(cwd: string, packs: readonly PackIdentity[]): Drift
   const tagSet = new Set(tags);
   const inspected = packs.map((pack) => {
     const tag = `${pack.name}@${pack.version}`;
-    const changed = tagSet.has(tag) ? changedPaths(cwd, tag, pack.directory) : [];
+    const diffed = tagSet.has(tag) ? changedPaths(cwd, tag, pack.directory) : [];
+    const { published, unpublished } = partitionChanges(diffed, unpublishedPrefixes(pack.directory, pack.files));
     return {
       id: pack.id,
       name: pack.name,
       version: pack.version,
       tag,
-      state: classifyPack(tagSet, pack.name, pack.version, changed),
-      changed,
+      state: classifyPack(tagSet, pack.name, pack.version, published),
+      changed: published,
+      unpublished,
     };
   });
   return { packs: inspected, ...countStates(inspected) };
 }
 
 export function formatReport(report: DriftReport): string {
-  const lines = [`release-drift: ${report.drift} drift, ${report.clean} clean, ${report.unreleased} unreleased`];
+  const carrying = report.packs.filter((pack) => pack.unpublished.length > 0).length;
+  const summary = `release-drift: ${report.drift} drift, ${report.clean} clean, ${report.unreleased} unreleased`;
+  const lines = [carrying === 0 ? summary : `${summary} (${carrying} carrying unpublished-only changes)`];
   for (const pack of report.packs) {
     lines.push(`  ${pack.state.padEnd(11)} ${pack.tag}`);
     if (pack.state === "drift") for (const file of pack.changed) lines.push(`    ${file}`);
+    for (const file of pack.unpublished) lines.push(`    unpublished ${file}`);
   }
   return `${lines.join("\n")}\n`;
 }

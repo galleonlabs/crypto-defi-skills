@@ -1,0 +1,54 @@
+[
+  {
+    "prompt": "Compare routes for moving this USDC amount from Base to Arbitrum, including destination gas and refund behavior.",
+    "expected": "galleon-defi-routing",
+    "mustNotInvoke": [
+      "galleon-defi-payments",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Cross-chain route comparison is the routing pack; a payment obligation and a holdings report are different tasks."
+  },
+  {
+    "prompt": "My source bridge receipt succeeded but nothing has arrived at the destination.",
+    "expected": "galleon-defi-routing",
+    "mustNotInvoke": [
+      "galleon-defi-payments",
+      "galleon-defi-security"
+    ],
+    "reason": "Route stage recovery across source and destination is routing, not payment settlement or payload review."
+  },
+  {
+    "prompt": "LI.FI reports DONE with substatus PARTIAL. Did I receive full value?",
+    "expected": "galleon-defi-routing",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Reading provider status and substatus into an actual outcome is routing, not portfolio accounting."
+  },
+  {
+    "prompt": "My CCTP burn completed but the destination mint failed. Should I burn again?",
+    "expected": "galleon-defi-routing",
+    "mustNotInvoke": [
+      "galleon-defi-payments",
+      "galleon-defi-security"
+    ],
+    "reason": "Attestation and mint recovery is routing recovery; repeating a completed burn is never the repair."
+  },
+  {
+    "prompt": "Compare a CoW signed order with a 1inch swap for this pair and tell me what the signature can move.",
+    "expected": "galleon-defi-routing",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-derivatives"
+    ],
+    "reason": "Venue comparison and intent semantics are routing; the security pack reviews a specific payload once one exists."
+  },
+  {
+    "prompt": "My Jupiter order returned a signature but the token balances did not change.",
+    "expected": "galleon-defi-routing",
+    "mustNotInvoke": [
+      "galleon-defi-data"
+    ],
+    "reason": "Resolving Solana signature status against actual token deltas is routing reconciliation, not a price lookup."
+  }
+]

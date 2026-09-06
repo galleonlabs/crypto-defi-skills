@@ -8,7 +8,12 @@ import {
   inspectPacks,
   isPackageVersionTag,
   missingTagsCause,
+  partitionChanges,
+  publishedRoots,
+  unpublishedDirectories,
+  unpublishedPrefixes,
 } from "./drift.ts";
+import { packages } from "../workspaces.ts";
 
 const roots: string[] = [];
 
@@ -35,6 +40,38 @@ describe("classification", () => {
     const tags = new Set(["galleon-defi-yield-skills@0.1.0"]);
     expect(classifyPack(tags, "galleon-defi-yield-skills", "0.1.0", ["packages/yield/package.json"])).toBe("drift");
     expect(classifyPack(tags, "galleon-defi-yield-skills", "0.1.0", [])).toBe("clean");
+  });
+});
+
+describe("published surface", () => {
+  test("treats evals and test as unpublished unless the pack lists them in files", () => {
+    expect(unpublishedPrefixes("packages/yield", ["dist", "skills", "llms.txt"])).toEqual([
+      "packages/yield/evals/",
+      "packages/yield/test/",
+    ]);
+    expect(unpublishedPrefixes("packages/yield", ["dist", "skills", "evals/"])).toEqual(["packages/yield/test/"]);
+    expect(unpublishedPrefixes("packages/yield", ["dist", "./evals/**", "test/*.json"])).toEqual([]);
+  });
+
+  test("splits a diff into published and unpublished paths", () => {
+    const split = partitionChanges(
+      [
+        "packages/yield/evals/routing.json",
+        "packages/yield/skills/galleon-defi-yield/SKILL.md",
+        "packages/yield/test/evals.test.ts",
+        "packages/yield/package.json",
+      ],
+      unpublishedPrefixes("packages/yield", ["dist", "skills"]),
+    );
+    expect(split.published).toEqual(["packages/yield/skills/galleon-defi-yield/SKILL.md", "packages/yield/package.json"]);
+    expect(split.unpublished).toEqual(["packages/yield/evals/routing.json", "packages/yield/test/evals.test.ts"]);
+  });
+
+  test("no pack publishes a directory this gate treats as unpublished", async () => {
+    for (const pack of await packages()) {
+      const roots = publishedRoots(pack.manifest.files ?? []);
+      for (const name of unpublishedDirectories) expect([...roots], pack.id).not.toContain(name);
+    }
   });
 });
 
@@ -70,10 +107,42 @@ describe("git inspection", () => {
     ]);
     expect(report.packs[1]?.changed).toContain("packages/drift/package.json");
   });
+
+  test("source-only eval and test changes stay clean and are reported separately", async () => {
+    const root = await repo();
+    await writePack(root, "quiet", "quiet-skills", "0.1.0", "stable");
+    commitAll(root, "release");
+    tag(root, "quiet-skills@0.1.0");
+    await writeFileIn(root, "packages/quiet/evals/routing.json", "[]\n");
+    await writeFileIn(root, "packages/quiet/test/evals.test.ts", "// coverage\n");
+    commitAll(root, "add routing coverage");
+    const report = inspectPacks(root, [pack("quiet", "quiet-skills", "0.1.0")]);
+    expect(report).toMatchObject({ drift: 0, clean: 1, unreleased: 0 });
+    expect(report.packs[0]?.changed).toEqual([]);
+    expect(report.packs[0]?.unpublished).toEqual([
+      "packages/quiet/evals/routing.json",
+      "packages/quiet/test/evals.test.ts",
+    ]);
+  });
+
+  test("still reports drift when a published skill file changes alongside an eval file", async () => {
+    const root = await repo();
+    await writePack(root, "loud", "loud-skills", "0.1.0", "stable");
+    await writeFileIn(root, "packages/loud/skills/demo/SKILL.md", "# demo\n");
+    commitAll(root, "release");
+    tag(root, "loud-skills@0.1.0");
+    await writeFileIn(root, "packages/loud/evals/routing.json", "[]\n");
+    await writeFileIn(root, "packages/loud/skills/demo/SKILL.md", "# demo revised\n");
+    commitAll(root, "revise skill and add coverage");
+    const report = inspectPacks(root, [pack("loud", "loud-skills", "0.1.0")]);
+    expect(report).toMatchObject({ drift: 1 });
+    expect(report.packs[0]?.changed).toEqual(["packages/loud/skills/demo/SKILL.md"]);
+    expect(report.packs[0]?.unpublished).toEqual(["packages/loud/evals/routing.json"]);
+  });
 });
 
 function pack(id: string, name: string, version: string) {
-  return { id, directory: `packages/${id}`, name, version };
+  return { id, directory: `packages/${id}`, name, version, files: ["dist", "skills"] };
 }
 
 async function repo(): Promise<string> {
@@ -88,7 +157,13 @@ async function repo(): Promise<string> {
 async function writePack(root: string, id: string, name: string, version: string, keywords: string): Promise<void> {
   const directory = resolve(root, "packages", id);
   await mkdir(directory, { recursive: true });
-  await writeFile(resolve(directory, "package.json"), `${JSON.stringify({ name, version, keywords: [keywords] }, null, 2)}\n`);
+  await writeFile(resolve(directory, "package.json"), `${JSON.stringify({ name, version, keywords: [keywords], files: ["dist", "skills"] }, null, 2)}\n`);
+}
+
+async function writeFileIn(root: string, file: string, body: string): Promise<void> {
+  const path = resolve(root, file);
+  await mkdir(resolve(path, ".."), { recursive: true });
+  await writeFile(path, body);
 }
 
 async function commit(root: string, file: string, value: unknown, message: string): Promise<void> {

@@ -15,12 +15,15 @@ Use the user's existing provider tools and authority. In this corpus, setup, dis
 | `bun run check` | Package checks plus a common standalone corpus validator for all 14 packs: metadata, directory names, line budget, local reference boundaries, symlinks and discovery metadata |
 | `validate-agent-skills packages/<pack>/skills` | Independent contributor validation of skill structure |
 | `bun run pack` and `bun run smoke` | Packaging boundaries, fresh independent installs, ESM imports and actual Node CLI behavior |
+| `packages/*/evals/routing.json` | Structure and coverage of the routing prompt sets: every skill carries at least five cases and names at least one skill that must not load. Structure only, never a pass rate |
 | Installed output-quality cases | Whether an agent follows the workflow and reaches the promised decision on realistic inputs |
 | Native Hermes smoke in Boomkin | Runtime profile, skill discovery and on-demand loading, MCP configuration and filtering |
 
-The first three rows do not establish model quality. Start output evaluation with a few varied tasks including a failure or routing boundary. Compare the installed skill with the previous version in separate clean contexts. Record prompt, model/client, tool trace, answer and assertion evidence. Report unrun cases as unrun; do not publish a score from fixture shape or keyword matching. The data skill includes three credential-free synthetic cases inside its archive.
+The first four rows do not establish model quality. Start output evaluation with a few varied tasks including a failure or routing boundary. Compare the installed skill with the previous version in separate clean contexts. Record prompt, model/client, tool trace, answer and assertion evidence. Report unrun cases as unrun; do not publish a score from fixture shape or keyword matching. The data skill includes three credential-free synthetic cases inside its archive.
 
 ## 2026-09-06 review
+
+Routing coverage was levelled across the collection. Ten content packs previously carried no routing dataset, leaving eleven skills with one or two assertions against the six to eleven the LP, Hyperliquid, data and infrastructure skills already had; each now ships at least five cases with named negative boundaries. The release-drift gate was scoped to each pack's published surface at the same time, because source-only `evals/` and `test/` changes cannot reach an npm consumer and should never require a republish.
 
 All 28 installed directories, including two functional LP rename notices, were checked for portability. The infrastructure pack was missing its optional Codex presentation file; it now follows the same discovery contract as the others. Data now supplies worked freshness, shared-feed and missing-yield examples plus standalone evaluation fixtures and diagnostic help.
 

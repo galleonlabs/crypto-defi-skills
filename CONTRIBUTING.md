@@ -34,11 +34,13 @@ After editing skills, run the skill-format validator for the affected pack:
 validate-agent-skills packages/<pack>/skills
 ```
 
-`validate-agent-skills` is a separate contributor tool, not an npm runtime dependency. The repository's `bun run check` also runs each package's bundled corpus validation and an offline release-drift gate against package-qualified git tags, so clones used for `check` need those tags fetched. Run `bun run smoke` when changing package contents, exports, CLIs or installation behavior to verify clean consumer installs. `bun run link-health` probes skill reference URLs; it is scheduled and advisory, not part of `bun run check`.
+`validate-agent-skills` is a separate contributor tool, not an npm runtime dependency. The repository's `bun run check` also runs each package's bundled corpus validation and an offline release-drift gate against package-qualified git tags, so clones used for `check` need those tags fetched. The drift gate compares each pack's published surface: a change under `evals/` or `test/` cannot reach an npm consumer, so it is reported as an unpublished change rather than drift and needs no version bump. Run `bun run smoke` when changing package contents, exports, CLIs or installation behavior to verify clean consumer installs. `bun run link-health` probes skill reference URLs; it is scheduled and advisory, not part of `bun run check`.
 
 See [skill quality and verification](docs/SKILL-QUALITY.md) for the authoring contract and the distinction between structural checks and output evaluations.
 
 ## Keep skills portable
+
+Every pack carries `evals/routing.json`: at least five prompts per skill naming the expected skill and the neighbouring skills that must not load. Add cases when you add a skill or move a boundary. `bun run check` validates their structure and coverage only; a passing dataset is not a model score.
 
 Each skill must work when installed on its own. Keep required references and scripts inside its directory; use links to sibling skills only as optional next steps. Put the main decision loop in `SKILL.md`, with detailed mechanics in `references/` and repeatable diagnostics in `scripts/`.
 

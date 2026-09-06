@@ -1,0 +1,55 @@
+[
+  {
+    "prompt": "Summarize this Snapshot proposal, its quorum method and my voting power, and recommend a vote without casting it.",
+    "expected": "galleon-defi-governance",
+    "mustNotInvoke": [
+      "galleon-defi-data",
+      "galleon-defi-security"
+    ],
+    "reason": "Proposal analysis and voting power methodology are the governance pack, not a data feed or a payload review."
+  },
+  {
+    "prompt": "The proposal text says increase incentives but the calldata upgrades a treasury module.",
+    "expected": "galleon-defi-governance",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Comparing decoded governance actions with their prose is the governance decision brief."
+  },
+  {
+    "prompt": "I hold the token now but the interface says my voting power is zero.",
+    "expected": "galleon-defi-governance",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "galleon-defi-staking"
+    ],
+    "reason": "Snapshot and delegation timing is governance mechanics, not a balance report or a delegation exit."
+  },
+  {
+    "prompt": "The proposal passed with a 48-hour timelock. Has the treasury transfer happened?",
+    "expected": "galleon-defi-governance",
+    "mustNotInvoke": [
+      "galleon-defi-payments",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Queued versus executed governance status is the governance pack, not a payment reconciliation."
+  },
+  {
+    "prompt": "Our Safe has enough signatures on the treasury proposal. Report it as executed.",
+    "expected": "galleon-defi-governance",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-payments"
+    ],
+    "reason": "Governance execution evidence requires onchain effects; collected signatures are not an executed transfer."
+  },
+  {
+    "prompt": "This governor uses timestamps rather than block numbers. When does voting actually close?",
+    "expected": "galleon-defi-governance",
+    "mustNotInvoke": [
+      "galleon-defi-data"
+    ],
+    "reason": "Reading the governor clock mode into a real deadline is governance mechanics."
+  }
+]

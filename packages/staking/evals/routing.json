@@ -1,0 +1,56 @@
+[
+  {
+    "prompt": "My Lido withdrawal request is finalized. Has my ETH come back yet?",
+    "expected": "galleon-defi-staking",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "galleon-defi-yield"
+    ],
+    "reason": "Queue state versus a completed claim is the staking lifecycle, not a portfolio balance or a vault exit."
+  },
+  {
+    "prompt": "I transferred my unstETH NFT after requesting. Who can claim it now?",
+    "expected": "galleon-defi-staking",
+    "mustNotInvoke": [
+      "galleon-defi-payments",
+      "galleon-defi-security"
+    ],
+    "reason": "Claim ownership after a request transfer is staking lifecycle state, not a transfer reconciliation or a signature review."
+  },
+  {
+    "prompt": "My wstETH balance has not moved all week. Is this position actually earning?",
+    "expected": "galleon-defi-staking",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "galleon-defi-yield"
+    ],
+    "reason": "Share-rate accrual on a wrapped LST is staking accounting, not portfolio reporting or vault yield."
+  },
+  {
+    "prompt": "Protocol liquidity is below the rETH amount I want to burn. What are my exit options?",
+    "expected": "galleon-defi-staking",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "galleon-defi-yield"
+    ],
+    "reason": "Comparing protocol redemption with a market exit starts in staking, which then hands off the swap if chosen."
+  },
+  {
+    "prompt": "My Symbiotic withdrawal request landed just after the epoch started. When can I claim and when do I stop being slashable?",
+    "expected": "galleon-defi-staking",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Epoch timing and slashing exposure are staking parameters, not derivative margin or a holdings snapshot."
+  },
+  {
+    "prompt": "I authorized LST restaking but the suggested flow now wants to change validator withdrawal credentials.",
+    "expected": "galleon-defi-staking",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-governance"
+    ],
+    "reason": "A restaking scope change is a staking decision; it is not a transaction decode or a governance action."
+  }
+]

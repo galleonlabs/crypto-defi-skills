@@ -1,0 +1,109 @@
+[
+  {
+    "prompt": "Review this unsigned swap proposal. It grants an unlimited allowance to a spender I do not recognize.",
+    "expected": "galleon-defi-security",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "galleon-defi-security-token-diligence"
+    ],
+    "reason": "Reviewing a specific payload and its granted authority is the transaction review skill, not route selection or token diligence."
+  },
+  {
+    "prompt": "This typed data is labelled login. Decode what I would actually be signing.",
+    "expected": "galleon-defi-security",
+    "mustNotInvoke": [
+      "galleon-defi-governance",
+      "galleon-defi-payments"
+    ],
+    "reason": "Decoding typed data and its domain against the displayed label is transaction review."
+  },
+  {
+    "prompt": "The provider says simulation succeeded using balance overrides at a week-old block.",
+    "expected": "galleon-defi-security",
+    "mustNotInvoke": [
+      "galleon-defi-data",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Judging simulation validity and its prerequisites is transaction review, not a data freshness report."
+  },
+  {
+    "prompt": "Our Safe shows three signatures meeting threshold, but the nonce was already consumed.",
+    "expected": "galleon-defi-security",
+    "mustNotInvoke": [
+      "galleon-defi-governance",
+      "galleon-defi-payments"
+    ],
+    "reason": "Reconciling Safe owners, nonce and onchain effects before calling an action ready is transaction review."
+  },
+  {
+    "prompt": "The recipient matches my contact's first and last characters and simulation passes. Send it.",
+    "expected": "galleon-defi-security",
+    "mustNotInvoke": [
+      "galleon-defi-payments",
+      "galleon-defi-routing"
+    ],
+    "reason": "Address provenance and full-address comparison are review controls that precede any transfer."
+  },
+  {
+    "prompt": "Check every approval this account has granted across chains and confirm none are dangerous.",
+    "expected": "galleon-defi-security",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "galleon-defi-security-token-diligence"
+    ],
+    "reason": "Allowance exposure review, including incomplete coverage, is transaction review rather than a holdings report."
+  },
+  {
+    "prompt": "Investigate the controls and launch allocations of this exact token at this address and chain.",
+    "expected": "galleon-defi-security-token-diligence",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-data"
+    ],
+    "reason": "Token-level control and allocation investigation is the diligence skill, not payload review or a market feed."
+  },
+  {
+    "prompt": "Compare this token with yesterday's diligence report and say what we could not refresh.",
+    "expected": "galleon-defi-security-token-diligence",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Comparing review runs and preserving lost coverage is the diligence skill's own workflow."
+  },
+  {
+    "prompt": "The canonical pool is locked, so the liquidity is safe. Confirm that for me.",
+    "expected": "galleon-defi-security-token-diligence",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-routing"
+    ],
+    "reason": "Discovering other withdrawable creator-owned positions is diligence scope, not a route or payload question."
+  },
+  {
+    "prompt": "A small sell quotes fine but my full position quotes far worse. Is this token sellable?",
+    "expected": "galleon-defi-security-token-diligence",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "galleon-defi-data"
+    ],
+    "reason": "Size-dependent exit depth as a token risk is diligence; routing would treat it as a trade to execute."
+  },
+  {
+    "prompt": "The token code is immutable, so nobody can change my rewards.",
+    "expected": "galleon-defi-security-token-diligence",
+    "mustNotInvoke": [
+      "galleon-defi-security",
+      "galleon-defi-yield"
+    ],
+    "reason": "Authority held in a separate upgradeable rewards contract is a diligence finding, not a vault question."
+  },
+  {
+    "prompt": "The same runtime bytecode appears behind two proxies with different admins. Reuse the earlier verdict.",
+    "expected": "galleon-defi-security-token-diligence",
+    "mustNotInvoke": [
+      "galleon-defi-security"
+    ],
+    "reason": "Reusing code analysis while inspecting authority separately is the diligence skill's rule."
+  }
+]

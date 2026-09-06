@@ -1,0 +1,55 @@
+[
+  {
+    "prompt": "Prepare a USDC payment to this supplier wallet with a finite approval and a reference for reconciliation.",
+    "expected": "galleon-defi-payments",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "galleon-defi-security"
+    ],
+    "reason": "A same-asset payment obligation is the payments pack, not a swap route or a standalone payload review."
+  },
+  {
+    "prompt": "This free lookup returned HTTP 402 with a quoted price. Should the agent pay it?",
+    "expected": "galleon-defi-payments",
+    "mustNotInvoke": [
+      "galleon-defi-infra",
+      "galleon-defi-routing"
+    ],
+    "reason": "x402 quoting and budget authority is payments, not provider wiring or route selection."
+  },
+  {
+    "prompt": "My paid API request timed out after the payment signature. Was I charged, and did I get the work?",
+    "expected": "galleon-defi-payments",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "Separating settlement evidence from resource delivery is payments recovery, not an infrastructure connection fault."
+  },
+  {
+    "prompt": "Set up a Sablier stream paying 500 USDC a month and show when the funding runs out.",
+    "expected": "galleon-defi-payments",
+    "mustNotInvoke": [
+      "galleon-defi-yield",
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Stream rate arithmetic and funding exhaustion are payments, not a yield product or a portfolio projection."
+  },
+  {
+    "prompt": "My Superfluid stream owes 100 but only 20 is funded. What has the recipient actually received?",
+    "expected": "galleon-defi-payments",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "galleon-defi-lending"
+    ],
+    "reason": "Owed versus funded stream balances are payments accounting, and uncovered flow is not a lending debt."
+  },
+  {
+    "prompt": "I asked to pause a stream and the tool only offers void. Are those the same thing?",
+    "expected": "galleon-defi-payments",
+    "mustNotInvoke": [
+      "galleon-defi-governance",
+      "galleon-defi-security"
+    ],
+    "reason": "Stream lifecycle operations and their irreversibility are payments guidance."
+  }
+]

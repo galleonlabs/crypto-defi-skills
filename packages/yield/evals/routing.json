@@ -1,0 +1,54 @@
+[
+  {
+    "prompt": "Compare holding this Yearn vault against a Pendle PT to maturity in the same denomination.",
+    "expected": "galleon-defi-yield",
+    "mustNotInvoke": [
+      "galleon-defi-lending",
+      "galleon-defi-data"
+    ],
+    "reason": "Vault and principal-token comparison over a holding period is the yield pack, not a borrow market or a raw APY feed."
+  },
+  {
+    "prompt": "Plan a zero-loss exit from this Yearn vault instead of accepting the default redeem loss.",
+    "expected": "galleon-defi-yield",
+    "mustNotInvoke": [
+      "galleon-defi-lending",
+      "galleon-defi-routing"
+    ],
+    "reason": "Vault exit semantics and loss bounds are yield workflow, not lending repayment or a swap route."
+  },
+  {
+    "prompt": "Spark V2 reports ten million total assets but only ten thousand idle. How much can I withdraw now?",
+    "expected": "galleon-defi-yield",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Withdrawal limits against vault liquidity are yield mechanics, not a holdings valuation."
+  },
+  {
+    "prompt": "My YT matured with rewards still unclaimed. What is it worth now?",
+    "expected": "galleon-defi-yield",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "galleon-defi-derivatives"
+    ],
+    "reason": "Expiring yield-token accounting is the yield pack; it is not a portfolio total and not a derivatives payoff."
+  },
+  {
+    "prompt": "The sUSDe APY the provider shows does not match the latest annualized distribution.",
+    "expected": "galleon-defi-yield",
+    "mustNotInvoke": [
+      "galleon-defi-data",
+      "galleon-defi-staking"
+    ],
+    "reason": "Reconciling vault rate windows and accounting is yield methodology, not a data feed defect or a staking exit."
+  },
+  {
+    "prompt": "The ERC-4626 conversion succeeds but the deposit cap is zero. Is this quote executable?",
+    "expected": "galleon-defi-yield",
+    "mustNotInvoke": [
+      "galleon-defi-security"
+    ],
+    "reason": "Separating a conversion estimate from an accepted deposit is yield workflow, not payload review."
+  }
+]
