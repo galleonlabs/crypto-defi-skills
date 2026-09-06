@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs official venue data and optional user-authorized wallet tooling. No signer, provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # DeFi derivatives

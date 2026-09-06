@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-payments-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Plan stablecoin payments, x402 purchases and token streams.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/payments#readme",
   "license": "MIT",

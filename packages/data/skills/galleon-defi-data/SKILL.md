@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable agent instructions; optional price diagnostic requires Node.js 20+ and public network access. MCP setup requires a compatible client; paid providers require the user's own access.
 metadata:
   author: Galleon Labs
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # DeFi data

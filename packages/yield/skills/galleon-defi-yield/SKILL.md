@@ -3,7 +3,7 @@ name: galleon-defi-yield
 description: "Use when comparing savings and strategy vaults, planning deposits or exits, or evaluating principal/yield tokens and maturity across Pendle, Yearn, Spark, Morpho, Euler and Ethena."
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

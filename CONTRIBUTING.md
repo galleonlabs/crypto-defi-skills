@@ -34,7 +34,7 @@ After editing skills, run the skill-format validator for the affected pack:
 validate-agent-skills packages/<pack>/skills
 ```
 
-`validate-agent-skills` is a separate contributor tool, not an npm runtime dependency. The repository's `bun run check` also runs each package's bundled corpus validation. Run `bun run smoke` when changing package contents, exports, CLIs or installation behavior to verify clean consumer installs. `bun run link-health` probes skill reference URLs; it is scheduled and advisory, not part of `bun run check`.
+`validate-agent-skills` is a separate contributor tool, not an npm runtime dependency. The repository's `bun run check` also runs each package's bundled corpus validation and an offline release-drift gate against package-qualified git tags, so clones used for `check` need those tags fetched. Run `bun run smoke` when changing package contents, exports, CLIs or installation behavior to verify clean consumer installs. `bun run link-health` probes skill reference URLs; it is scheduled and advisory, not part of `bun run check`.
 
 ## Keep skills portable
 

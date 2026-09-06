@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 - 2026-09-06
+
+Replace internal keywords with named protocol terms from this pack's own skill guidance.
+
 ## 0.3.0 - 2026-09-05
 
 Add cross-primitive evidence, vault standards and portfolio accounting while preserving AIXBT research. Preserve standalone MIT and attribution notices in every package and skill archive.

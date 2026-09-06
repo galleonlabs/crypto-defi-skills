@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-data-skills",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Portable DeFi data skills for CoinGecko, DefiLlama, AIXBT, and source-aware research.",
   "author": {
     "name": "Galleon Labs"

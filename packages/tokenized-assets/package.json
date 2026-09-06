@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-tokenized-assets-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Research tokenized assets, eligibility and issuer settlement.",
   "type": "module",
   "license": "MIT",
