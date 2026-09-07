@@ -14,11 +14,15 @@ A CoinGecko aggregate price combines markets according to its [methodology](http
 
 For actionable comparisons, inspect pool reserves/active liquidity, recent swaps, price impact, gas, fees and slippage using the protocol's maintained tooling. Corroborate token identity and onchain state at a recorded block. Do not treat two aggregators as independent merely because their domains differ: DefiLlama's `coingecko:` namespace can share CoinGecko input with the other observation.
 
+A DEX pair search can return a token on another chain or an unrelated token sharing the name. Validate chain ID and contract before using a result, select pools by token address rather than assuming a search hit is the requested pool, and treat the deepest priced pool as a mark, not as all-market coverage.
+
 ## TVL, fees and revenue
 
 TVL is a provider-defined valuation of included locked assets, not deposits attributable to a particular user or available withdrawal liquidity. Inspect the protocol adapter and category treatment for borrowed assets, staking, pool2, double-counting, bridged assets and chain aggregation. A USD TVL move can be repricing without net deposits; measure token flows separately when the question is about inflows.
 
 Protocol fees, protocol revenue and holder revenue are not interchangeable. Compare the same accounting definition and trailing period. Do not annualize one exceptional day without labeling the extrapolation. Historical revisions and adapter changes can alter the time series.
+
+A protocol's total TVL and its per-chain breakdown are different numbers; filtering by chain does not turn the total into a single-chain figure. Venue presence on a chain is not evidence of user growth or an adoption catalyst, and an unhydrated website counter is missing data, not zero.
 
 ## Yield
 
@@ -27,6 +31,14 @@ Protocol fees, protocol revenue and holder revenue are not interchangeable. Comp
 Compare the same capital basis and time horizon. Separate reward-token price exposure, compounding assumptions, out-of-range time, impermanent loss, lending utilization, debt/liquidation exposure and incentive expiry. Subtract expected gas, swaps, automation/provider charges, borrowing and exit costs without double-counting charges already netted in the source. Highest displayed APY can reflect temporary incentives, thin capacity or a failed/empty-data assumption; validate before ranking it as best.
 
 For product assessments, extend these metric checks with [yield, collateral, oracle and exit diligence](diligence.md). Preserve canonical block hashes and finality when conclusions depend on chain state.
+
+## Research queue and re-entry triggers
+
+Keep a decision queue for screened candidates: rejection reason, supporting evidence, next review time and a specific re-entry trigger. Do not re-fetch an unchanged reject without its trigger changing. Screen a new lead on mechanism, independent observable confirmation, signal age, horizon and invalidation before spending a full cycle on deeper diligence; park it with the missing evidence when it fails, and do not invent a thesis to fill a research slot. When repeated cycles only advance controls or attribution without a current thesis, rotate the next slot to discovery. Record each learning delta with the question, prior belief, new evidence with source, block and time, conclusion or explicit unknown, changed decision and next smallest probe. Provider outages and failed fallbacks are gaps, not discoveries.
+
+## Social and trader signals
+
+A profile's displayed address is a provider claim about identity, not proof of trading custody; promote it only after a transaction receipt and token-flow evidence match. A social verified flag is not cryptographic control, and the same address across chains does not prove activity on each. A zero-to-positive balance at a receipt block supports new inventory at that destination, not lifetime first entry, origin funding or person control. Alert values that embed realized profit are not sale proceeds; bought and received positions need actual swap legs and cost basis. Follow edges indicate attention, and simultaneous posts from one network or shared source count as one source. Mixed-venue portfolio returns are not evidence of edge at one venue, and copying a trader's next buy does not reproduce their book, inventory or reach.
 
 ## Evidence record
 

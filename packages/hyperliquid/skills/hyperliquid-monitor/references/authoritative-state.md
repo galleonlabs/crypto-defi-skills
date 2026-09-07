@@ -26,7 +26,7 @@ Time-ranged responses are bounded. Paginate from the last returned timestamp and
 
 Standard mode isolates spot and each perp DEX balance. Unified and portfolio modes use spot clearinghouse balances across products, so a single DEX state is incomplete. Portfolio mode also needs current borrow/lend state and its combined liquidation ratio.
 
-Query every DEX with an open position or order. A default-DEX-only check can miss HIP-3 exposure.
+Query every DEX with an open position or order. A default-DEX-only check can miss HIP-3 exposure. Report which scope each read covered: default-DEX perp equity is not unified-account value, and an account-value denominator observed today does not establish historical percentage returns.
 
 ## Reconciliation
 

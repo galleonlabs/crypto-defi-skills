@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 - 2026-09-07
+
+Treat capital on another supported chain as deployable through a quoted bridge, add bridge fee accounting and bridge-verify-trade sequencing, and compare executable routes rather than preferred quote currencies.
+
 ## 0.1.1 - 2026-09-06
 
 Replace internal keywords with named protocol terms from this pack's own skill guidance.

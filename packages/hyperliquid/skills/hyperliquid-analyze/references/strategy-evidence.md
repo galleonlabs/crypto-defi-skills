@@ -30,4 +30,6 @@ Use `PASS`, `WEAK`, or `REJECTED`. A profitable in-sample curve with reused hold
 
 ## Forward test
 
-Paper signals may create unsigned plans. They must not submit orders. Agree the duration and sample size before the first signal, then compare forward fills and costs with the backtest without changing the rules mid-test.
+Unsigned plans can forward-test signals when the user wants a simulation stage. They must not submit orders. Agree the duration and sample size before the first signal, then compare forward fills and costs with the backtest without changing the rules mid-test.
+
+Only receipt-verified live fills validate a strategy for live sizing. Keep simulated and live results separate and never blend them, and never declare a variant validated from a handful of selected winners. When the user has authorized live trading, a small risk-sized live starter with its own qualified evidence is a legitimate test; it does not require claiming the broad strategy is proven.

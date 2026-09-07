@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 - 2026-09-07
+
+Add DEX search identity checks, chain TVL and adoption-claim caveats, a research queue with re-entry triggers and learning deltas, social and trader attribution rules, and AIXBT detection-versus-event timing.
+
 ## 0.3.1 - 2026-09-06
 
 Add a clear first-price workflow, worked evidence examples, portable offline evaluation cases and credential-free diagnostic help. Preserve the existing observation JSON and one-request behavior.

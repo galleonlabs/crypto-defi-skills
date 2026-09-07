@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs the selected provider's HTTP, MCP or SDK tools; signing stays in the user's trusted wallet. No provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # DeFi routing
@@ -22,7 +22,9 @@ Reuse a suitable connected official tool. Inspect actual schemas and version bef
 
 Resolve source and destination chain, network, token contract or mint, decimals, amount and exact-in/exact-out mode, sender and final recipient. Tickers and native-token sentinels differ by provider; bridged USDC, native USDC and wrapped assets are separate identities. Confirm the user's slippage, total fee budget, deadline and preferred execution route when those choices affect the result. Preserve already approved unchanged terms.
 
-For comparisons, use the same amount, recipient, route constraints and near-contemporaneous observations. Compare conservative output and all-in costs: approvals, source/destination gas, bridge or solver fees, price impact, protocol/integrator fees and refund costs. An estimated duration is not a finality guarantee. State inaccessible routes instead of silently ranking an incomplete set as the entire market.
+For comparisons, use the same amount, recipient, route constraints and near-contemporaneous observations. Compare conservative output and all-in costs: approvals, source/destination gas, bridge or solver fees, price impact, protocol/integrator fees and refund costs. An estimated duration is not a finality guarantee. State inaccessible routes instead of silently ranking an incomplete set as the entire market. Compare executable routes rather than preferred quote currencies: any supported quote asset can form a valid leg, including multihop, and an unavailable route is a concrete blocker where a quote symbol is not.
+
+Capital location is not a route constraint. Holdings on another supported chain are deployable through a quoted bridge; count the quote's cost, delivery time and settlement risk as part of the economics instead of treating the holding chain as a blocker. When the destination action needs native gas, quote an owned source asset into the destination native currency delivered to the same account and make that delivery a separately verified prerequisite. A bridge cannot create gas from nothing: the source leg still needs source native gas, so an account with no native gas on any funded chain needs a supported gasless route or a small native deposit, not another quote.
 
 ## Prepare and hand off
 

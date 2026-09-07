@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions. Optional evidence helpers require Bun 1.3.14 or later; collection needs an existing EVM RPC endpoint. No signer or paid service is bundled.
 metadata:
   author: Galleon Labs
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Token diligence

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 - 2026-09-07
+
+Require receipt-verified live fills to validate a strategy, keep simulated and live results separate, and state read scope and bounded fill windows in monitoring and review.
+
 ## 0.3.1 - 2026-09-05
 
 Reconcile active automation and shared account writers before manual execution; document authorized handoff and outstanding-order recovery.

@@ -12,3 +12,5 @@ Run these as reasoning exercises with supplied fixtures. Do not connect wallets,
 | Across tools-list includes `swap_with_wallet` without annotations. | Do not enable all tools as read-only; inspect schema and retain a narrow read allowlist. |
 | Jupiter REST401; trading MCP docs describe optional key. | Explain separate auth contracts; do not assume REST became keyless or enroll in a paid plan. |
 | CoW order is partially filled; cancellation response is lost. | Reconcile original UID and fills before replacement; size from remaining exposure. |
+| Funds sit on one chain; the requested opportunity is on another supported chain. | Treat the account as funded: quote a bridge of the sized amount plus destination gas, include its cost and time, and sequence bridge, verify delivery, then trade. |
+| Bridge quote lists a relayer total with gas and service sub-components beside a conservative output. | Treat the sub-components as parts of one total already reflected in the output; add only source network gas. |

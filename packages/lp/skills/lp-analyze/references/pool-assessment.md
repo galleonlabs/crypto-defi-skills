@@ -21,6 +21,7 @@ Test both assets for transfer restrictions, taxes, rebases, blacklists, pausing,
 - Pool age and observation history
 - Total liquidity and active liquidity near the current price
 - Depth at the user's entry and exit size, not headline TVL
+- Executable depth at the current tick rather than a scanner's share of total LP; concentrated positions supply depth only inside their ranges
 - Volume by consistent windows, unique flow where available, and wash or self-trade signs
 - Fee switches, dynamic fee control, hook permissions, gauge state, reward budget, and epoch end
 - Oracle or TWAP availability and manipulation cost
@@ -48,6 +49,10 @@ For Aerodrome and Slipstream, prove whether a position receives fees, emissions,
 ## Exit gate
 
 Quote the full unwind at the user's size. Verify unstake delays, reward claims, liquidity removal, collect semantics, token taxes, price impact, native wrapping, bridges, approval cleanup, and whether the position remains manageable if a pool leaves the curated list.
+
+## Fee tiers and quote assets
+
+ETH or WETH quote pairs are valid venues; wrapping or a native-input router path is an execution step, not a blocker, and a thin stablecoin pool does not veto a deeper WETH route. Treat a fee tier as a measured cost: two 1% legs lose about 1.99% to pool fees before impact, gas or taxes. Compare size-specific quotes over the viable routes, including multihop through any supported quote asset, and remember those quotes already embed pool fees and impact. An unavailable route is a concrete blocker; a quote symbol, fee tier or protocol version by itself is not.
 
 ## Ranking
 

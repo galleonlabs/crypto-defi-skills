@@ -28,6 +28,8 @@ Provider-specific checks:
 - **Relay:** `submitted` is destination submission, `success` a successful destination fill; `delayed` remains processing. `refund` and `failure` are distinct. Reconcile returned hashes and account state. [Relay status v3](https://docs.relay.link/references/api/get-intents-status-v3), accessed 2026-09-05.
 - **Across:** track deposit through destination fill using the current API. For embedded actions, confirm final recipient position/token state, not just relayer delivery to a handler. Read supported chain/token/action combinations live. [Across workflows](https://docs.across.to/ai-agents/agent-examples), accessed 2026-09-05.
 
+Fee accounting: a quote's conservative output already reflects the provider's conversion charges, so do not subtract displayed fee components again. A fee breakdown often lists parts of one total, for example relayer gas and relayer service inside a relayer total, rather than additive charges; only source network gas is additional. Sequence a cross-chain entry as bridge the sized amount plus destination gas reserve, verify destination delivery, then trade. Never trade on the destination before delivery is verified, and never obtain a fresh quote to escape an unresolved deposit.
+
 ## CCTP V2
 
 Verify supported source/destination domains and version-specific contracts. The stages are burn → adequate source finality → attestation → destination mint transaction → verified receipt and recipient balance. Threshold 1000 requests fast confirmation; 2000 requests finalized confirmation. Fast capacity and costs must be checked live. Finality varies by chain; an L2 source may depend on L1 batches. Never promise a universal transfer time.

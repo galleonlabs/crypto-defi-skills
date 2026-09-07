@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1 - 2026-09-07
+
+Assess executable depth at the current tick rather than a scanner's share of total LP, and treat fee tiers and quote assets as measured costs with size-specific quotes over viable routes.
+
 ## 0.5.0 - 2026-09-05
 
 Expand official Curve and Balancer guidance, VFAT custody and fees, and Revert planner/confirmation boundaries. Preserve standalone MIT and attribution notices in every package and skill archive.

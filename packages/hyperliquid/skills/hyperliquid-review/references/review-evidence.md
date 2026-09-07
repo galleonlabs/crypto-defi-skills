@@ -28,3 +28,5 @@ Portfolio history is sampled. Use it for broad account context, not exact per-tr
 ## Gaps
 
 State the bounded API windows and any missing interval. If historical detailed order state cannot prove continuous protection, grade protection as unknown for that interval rather than present.
+
+Fill and funding reads return one bounded page per request across a limited window; a busy account can have later activity omitted, so they are not a complete ledger and cannot support a claim of total historical PnL. Portfolio history is sampled provider history, not cash-flow-adjusted accounting. A leaderboard or profile PnL is a provider claim until fills reconstruct it.
