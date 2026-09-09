@@ -4,7 +4,7 @@ description: "Journal and review Hyperliquid orders, fills, positions, funding, 
 license: MIT
 compatibility: "Requires read-only account history and the relevant ticket or intent record. The bundled review script needs Node.js 20 or newer."
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
   protocol: "hyperliquid"
 ---
 
@@ -25,6 +25,8 @@ Reconstruct one completed trade from fills, fees and funding; use the bundled ar
 ## Task handling
 
 Use the existing ticket and conversation to scope the review. Ask only for missing identity or history that affects the result; complete supported accounting while marking gaps unknown. Lead with the process finding and evidence. A follow-up question does not reset the review or authorize an exchange action.
+
+Keep the user's strategy ID/revision and separate historical simulation, forward paper records and verified live fills in summaries. Do not mix their performance series. Reuse the requested base currency and review window, explaining valuation sources. If the original risk budget is unknown, report R as unknown while completing supported cash accounting; a zero gross PnL denominator makes cost ratios undefined, not zero.
 
 ## Workflow
 

@@ -39,3 +39,22 @@ If the available history cannot cover the gap, report the interval as unknown.
 - Callbacks may alert or persist evidence. They must not invoke an exchange write.
 
 Respect current connection, subscription, message, in-flight, IP, and address limits from the official rate-limit page. Back off on rate limits instead of increasing concurrency.
+
+## User-defined watches
+
+For a requested watch, retain exact account/market, condition and units, evaluation
+cadence or event source, freshness limit, end time or stop rule, notification policy,
+and last delivered event ID. Reuse an existing suitable scheduler or stream exposed
+by the harness; a new daemon, trading provider or LLM call for every tick is optional.
+Use deterministic comparisons for simple thresholds and reserve model interpretation
+for the resulting evidence or ambiguous conditions.
+
+Create or update a watch only through a real supported scheduling capability. Record
+its returned identifier and active state before claiming it is running. If no such
+tool exists, complete a one-time observation and return the unscheduled watch spec.
+An open conversation or a proposed script is not a running monitor.
+
+Unless the user requests periodic reports, notify on meaningful state changes,
+incidents or required input. Deduplicate repeated alerts and record recovery from
+unavailable state. Stop or expiry ends notifications, not exchange protection or
+positions. No watch condition authorizes a trading action.

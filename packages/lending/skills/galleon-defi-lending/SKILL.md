@@ -3,7 +3,7 @@ name: galleon-defi-lending
 description: "Use when researching lending markets, planning supply, borrow, repay or withdrawals, or monitoring liquidation risk across Aave, Morpho, Compound, Euler and Spark."
 license: MIT
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -13,6 +13,10 @@ metadata:
 Use the provider's maintained SDK, API, contracts or documented MCP for the selected deployment. This skill supplies operational judgment; it does not supply a wallet, signer, runtime adapter or authority to transact.
 
 Read [providers](references/providers.md) for the chosen protocol and version. Read [workflows](references/workflows.md) for position planning, monitoring and evaluation cases. Keep unrelated provider manuals out of context.
+
+## Start with the requested task
+
+Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
 
 ## Workflow
 

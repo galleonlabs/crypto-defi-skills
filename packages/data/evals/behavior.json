@@ -1,0 +1,32 @@
+[
+  {
+    "id": "data-useful-result",
+    "skill": "galleon-defi-data",
+    "prompt": "Compare base APR only with my existing custom tool. Keep it short.",
+    "context": "Synthetic fresh aligned observations: A total APR10%, split base6% rewards4%; B base APR5%, rewards unavailable. Same asset/simple annual APR units; provenance/methodology provided.",
+    "expected": [
+      "A base6% exceeds B5% by1 percentage point. B missing rewards irrelevant to base-only request; no wallet required.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  },
+  {
+    "id": "data-changed-evidence",
+    "skill": "galleon-defi-data",
+    "prompt": "Compare base APR only with my existing custom tool. Keep it short. Updated observations supersede the earlier evidence.",
+    "context": "Synthetic fresh aligned observations: A total APR10%, split base6% rewards4%; B base APR5%, rewards unavailable. Same asset/simple annual APR units; provenance/methodology provided. UPDATE: B instead supplies total APY7%, no reward decomposition or compounding convention.",
+    "expected": [
+      "A base APR6% known; B comparable base APR unavailable. Request decomposition/convention or equivalent existing source; do not rank7% total APY against6% base APR.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  }
+]

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3 - 2026-09-09
+
+Add task-specific intake, configurable provider and user preferences, calculated successful examples and recovery paths. Preserve standalone installation and existing authorization boundaries.
+
 ## 0.3.2 - 2026-09-07
 
 Add DEX search identity checks, chain TVL and adoption-claim caveats, a research queue with re-entry triggers and learning deltas, social and trader attribution rules, and AIXBT detection-versus-event timing.

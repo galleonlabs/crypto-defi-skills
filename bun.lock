@@ -12,7 +12,7 @@
     },
     "packages/data": {
       "name": "galleon-defi-data-skills",
-      "version": "0.2.0",
+      "version": "0.3.3",
       "bin": {
         "defi-data-skills": "dist/cli.js",
       },
@@ -25,21 +25,21 @@
     },
     "packages/derivatives": {
       "name": "galleon-defi-derivatives-skills",
-      "version": "0.1.0",
+      "version": "0.1.3",
       "bin": {
         "defi-derivatives-skills": "dist/cli.js",
       },
     },
     "packages/governance": {
       "name": "galleon-defi-governance-skills",
-      "version": "0.1.0",
+      "version": "0.1.2",
       "bin": {
         "defi-governance-skills": "dist/cli.js",
       },
     },
     "packages/hyperliquid": {
       "name": "galleon-hyperliquid-skills",
-      "version": "0.2.1",
+      "version": "0.3.3",
       "bin": {
         "hyperliquid-skills": "dist/cli.js",
         "hl-skills": "dist/cli.js",
@@ -53,7 +53,7 @@
     },
     "packages/infra": {
       "name": "galleon-defi-infra-skills",
-      "version": "0.1.0",
+      "version": "0.2.3",
       "bin": {
         "defi-infra-skills": "dist/cli.js",
       },
@@ -66,14 +66,14 @@
     },
     "packages/lending": {
       "name": "galleon-defi-lending-skills",
-      "version": "0.1.0",
+      "version": "0.1.2",
       "bin": {
         "defi-lending-skills": "dist/cli.js",
       },
     },
     "packages/lp": {
       "name": "galleon-lp-skills",
-      "version": "0.4.2",
+      "version": "0.5.2",
       "bin": {
         "lp-skills": "dist/cli.js",
       },
@@ -86,49 +86,49 @@
     },
     "packages/payments": {
       "name": "galleon-defi-payments-skills",
-      "version": "0.1.0",
+      "version": "0.1.2",
       "bin": {
         "defi-payments-skills": "dist/cli.js",
       },
     },
     "packages/portfolio": {
       "name": "galleon-defi-portfolio-skills",
-      "version": "0.1.0",
+      "version": "0.1.3",
       "bin": {
         "defi-portfolio-skills": "dist/cli.js",
       },
     },
     "packages/routing": {
       "name": "galleon-defi-routing-skills",
-      "version": "0.1.0",
+      "version": "0.1.3",
       "bin": {
         "defi-routing-skills": "dist/cli.js",
       },
     },
     "packages/security": {
       "name": "galleon-defi-security-skills",
-      "version": "0.1.0",
+      "version": "0.2.2",
       "bin": {
         "defi-security-skills": "dist/cli.js",
       },
     },
     "packages/staking": {
       "name": "galleon-defi-staking-skills",
-      "version": "0.1.0",
+      "version": "0.1.2",
       "bin": {
         "defi-staking-skills": "dist/cli.js",
       },
     },
     "packages/tokenized-assets": {
       "name": "galleon-defi-tokenized-assets-skills",
-      "version": "0.1.0",
+      "version": "0.1.2",
       "bin": {
         "defi-tokenized-assets-skills": "dist/cli.js",
       },
     },
     "packages/yield": {
       "name": "galleon-defi-yield-skills",
-      "version": "0.1.0",
+      "version": "0.1.2",
       "bin": {
         "defi-yield-skills": "dist/cli.js",
       },

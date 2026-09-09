@@ -19,3 +19,18 @@ A last-good value can preserve charts and explain changes. It cannot authorize a
 - On RPC disagreement, record both blocks and stop action recommendations until reconciled.
 
 When the position cannot be measured safely, return `state unknown`, preserve the last-good record as history, and list the exact read needed.
+
+## Repeat observations
+
+For a requested recurring check, retain position lineage, condition and units,
+frequency, freshness limit, stop rule, notification preference and last delivered
+observation. Discover actual scheduler capabilities in the harness. Only claim a
+monitor is active after a successful scheduling result supplies an identifier and
+state. Without that capability, finish the current check and return an unscheduled
+specification; never imply the conversation will keep running by itself.
+
+Prefer deterministic range, freshness and cost checks for routine observations.
+Unless requested otherwise, send notifications on material changes, unavailable
+state or required action, rather than repeating unchanged snapshots. Returning to
+healthy reads is a distinct event. A stopped monitor does not withdraw liquidity,
+disable a separate keeper or revoke existing operator permissions.

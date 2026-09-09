@@ -5,12 +5,16 @@ license: MIT
 compatibility: Portable agent instructions. Optional Zerion, DeBank, CoinGecko, DefiLlama and protocol reads require supported coverage and the user's own access. No custody, transaction execution or recurring scheduler is bundled.
 metadata:
   author: Galleon Labs
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # DeFi portfolio and treasury
 
 Answer what the selected accounts own, owe and can access, what changed, and what evidence is missing. A portfolio report or target allocation is not authorization to move funds.
+
+## Start with the requested task
+
+Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
 
 ## Define the scope
 

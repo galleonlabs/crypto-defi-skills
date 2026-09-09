@@ -44,8 +44,9 @@
 - unknown-result deadline and stop condition
 - orphan cleanup path
 
-## Approval
-Approve exactly with: `approve HL-YYYYMMDD-NN`
+## Authorization state
+Unsigned; no execution requested or authorized by this document.
+Execution, when explicitly requested, requires approval for this exact ticket ID through the execution workflow.
 ```
 
 Hash or otherwise freeze the action section before approval. Any material edit requires a new risk sign-off, identifier or revision, and approval.

@@ -30,3 +30,13 @@ All 28 installed directories, including two functional LP rename notices, were c
 Boomkin verifies copied supporting files before recording success and records file digests for subsequent local drift checks. This catches missing references and edited scripts without treating a version header as complete installation evidence. Local digests are an installation diagnostic, not a signature or a defense against someone replacing both files and the local record.
 
 Release checks compare npm contents, source pins and clean consumer installs. Provider endpoints can change after review; a mock, configuration or handshake must never be described as a successful authenticated read or financial outcome.
+
+## Configurable task completion
+
+Every active skill has at least two synthetic behavioral cases in its owning pack's `evals/behavior.json`: useful completion and changed or incomplete evidence. Run `bun run eval:behavior` to validate all case contracts. Run `bun run eval:behavior -- <case-id>` to export a neutral agent exercise with the user request, observations and skill path, excluding expected and forbidden grading criteria. These are source contributor tools; users install only the skill packs they choose.
+
+Run the exported packet in a clean agent context, read references progressively, and record the response and observed tool reads. Synthetic observations stand in for provider results; this exercise does not establish actual API compatibility, financial execution or live performance. Have a separate reviewer compare the response with every expected and forbidden criterion, recording evidence and unresolved assertions. Fixture validation is neither model grading nor proof of balanced outcomes. A matched before/after model run is needed to measure improvement.
+
+The 2026-09-09 review compared Minara's actual skill source and benchmark, rather than assuming its documented platform capabilities ship in its public skill. We adopted concrete task completion and worked outputs while preserving independently installable packs, compatible user-selected providers and exact authorization boundaries. Public research needs only its own inputs; preparation, execution and monitoring are separate user intents. Examples use synthetic arithmetic and avoid inventing provider API commands.
+
+See the [9 September evidence record](evaluations/2026-09-09/README.md) for source pins, exercise responses, independent review and validation limits.

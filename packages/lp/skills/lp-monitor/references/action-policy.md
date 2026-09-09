@@ -1,6 +1,6 @@
 # Action policy
 
-Default to HOLD when evidence is incomplete or an action does not clear its full cost and risk hurdle.
+Return `state unknown` when required evidence is incomplete, stale, or contradictory. With sufficient current evidence, recommend HOLD when no action clears its full cost and risk hurdle. Unknown state is not a healthy HOLD verdict.
 
 ## Collect
 

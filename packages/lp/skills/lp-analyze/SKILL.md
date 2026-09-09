@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires web or read-only chain access for current claims. Works without wallet access."
 metadata:
   author: "Galleon Labs"
-  version: "0.5.1"
+  version: "0.5.2"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -32,6 +32,8 @@ Resolve script and reference paths from this installed skill directory, not the 
 ## Task handling
 
 Use the conversation to resolve the question and routine presentation choices. Ask only for inputs that would change the assessment, and continue independent public research while awaiting them. If one source or candidate fails, mark that result unavailable and finish the supported comparisons. Lead with the verdict, evidence, and material uncertainty; retain the required output fields.
+
+Use the user's chosen objective and comparison method: fee quality, passive inventory conversion, maintenance effort, incentives, or exit liquidity. Reuse supplied horizon, base currency and provider preferences. For a narrow factual question, answer it first without requiring a complete investment profile; apply the full assessment only when making a pool-choice verdict. Never turn a qualitative preference into an invented capital or loss limit.
 
 ## Workflow
 

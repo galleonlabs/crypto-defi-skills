@@ -5,12 +5,16 @@ license: MIT
 compatibility: Portable agent instructions. Optional Tenderly, Safe, Blockaid and GoPlus tools require their supported networks and the user's own access; no signer or service is bundled.
 metadata:
   author: Galleon Labs
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # DeFi transaction review
 
 Explain what a proposed action can change, who receives assets or authority, and which facts remain unverified. A simulation or risk score cannot prove a transaction, contract or token safe.
+
+## Start with the requested task
+
+Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
 
 ## Establish the proposal
 

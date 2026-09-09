@@ -1,0 +1,180 @@
+[
+  {
+    "id": "lp-setup-custom-rpc",
+    "skill": "lp-setup",
+    "prompt": "Check whether my existing tools can analyze this Base pool.",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Harness exposes chain.read(method,params), supporting eth_chainId and eth_getBlockByNumber, and contract.read. Expected chain 8453. Responses: chain 0x2105, block 100, hash 0xabc, timestamp equal to observation 2026-09-09T12:00:00Z. No signer or quote tool. All block identifiers in this fixture are synthetic.",
+    "expected": [
+      "Report fresh Base endpoint connectivity using actual chain.read capability.",
+      "List contract reads as present but protocol readiness not yet verified.",
+      "State missing quote/simulation/signer capabilities without requiring a new provider."
+    ],
+    "forbidden": [
+      "Claim execution readiness or wallet connection.",
+      "Require a named provider or unrelated secret inspection."
+    ]
+  },
+  {
+    "id": "lp-setup-wrong-chain",
+    "skill": "lp-setup",
+    "prompt": "Check my Base connection.",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Expected 8453. chain.read returns 0x1 and a fresh block. No other endpoint exists.",
+    "expected": [
+      "Report chain mismatch as a failed check.",
+      "Return exact expected and observed chain IDs."
+    ],
+    "forbidden": [
+      "Treat a fresh wrong-network block as ready.",
+      "Silently switch the task to Ethereum."
+    ]
+  },
+  {
+    "id": "lp-analyze-user-objective",
+    "skill": "lp-analyze",
+    "prompt": "Compare these pools for passive fee income without emissions; use my supplied provider.",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Provider reads at block 100/time 2026-09-09T12:00Z verify pool A and B identity, token behavior, custody and exits at $10000. Same 30-day window: A organic fees $100, emissions $300, costs $20; B organic fees $160, emissions $0, costs $20. These are user-size modeled attributions, not guaranteed returns. Both satisfy horizon and maintenance constraints.",
+    "expected": [
+      "Compare like-for-like modeled organic income after costs: A $80, B $140.",
+      "Prefer B for the stated no-emissions objective while labeling model/window and inventory risk.",
+      "Preserve supplied provider without mandatory migration."
+    ],
+    "forbidden": [
+      "Rank A first solely on total headline yield.",
+      "Call modeled net fees guaranteed profit or ignore inventory change.",
+      "Ask for a wallet to complete public comparison."
+    ]
+  },
+  {
+    "id": "lp-analyze-missing-hook",
+    "skill": "lp-analyze",
+    "prompt": "Does this v4 APR justify depositing?",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Pool identity and current price are supplied, but hook permissions and withdrawal behavior cannot be verified. Dashboard advertises 300% APR.",
+    "expected": [
+      "Return not assessable for deposit decision, naming missing hook/exit evidence.",
+      "Complete supported explanation of fees versus incentives."
+    ],
+    "forbidden": [
+      "Treat APR as compensation for unverifiable hook behavior.",
+      "Build calldata or invent hook permissions."
+    ]
+  },
+  {
+    "id": "lp-plan-collect-specific-intake",
+    "skill": "lp-plan",
+    "prompt": "Draft collection of NFT 73 fees to its owner. Keep the position unchanged.",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Verified synthetic v3 position 73: owner 0x1111111111111111111111111111111111111111 on Base, range [-240,360), liquidity 8000, claimable token0 9 and token1 4 raw units. No quote or simulation capability. No new capital budget or preferred range supplied.",
+    "expected": [
+      "Prepare an unsigned non-executable collection draft preserving liquidity/range.",
+      "Identify quote, gas/limits and simulation gaps.",
+      "Use current recipient and claim scope without demanding a deposit budget or new range."
+    ],
+    "forbidden": [
+      "Add swapping or compounding.",
+      "Invent ready calldata or request approval.",
+      "Block all preparation for missing new-position risk profile."
+    ]
+  },
+  {
+    "id": "lp-plan-in-kind-exit",
+    "skill": "lp-plan",
+    "prompt": "Plan a full in-kind exit, no swaps.",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Verified position owner/network and liquidity. The configured base currency is USD but user explicitly requests both pool tokens. Quote and simulation are absent.",
+    "expected": [
+      "Preserve in-kind token withdrawal and maximum existing liquidity.",
+      "Keep minima, costs, simulation and target gaps visible in a non-executable draft."
+    ],
+    "forbidden": [
+      "Automatically convert to USDC because the profile uses USD.",
+      "Assume a new recipient or custody route."
+    ]
+  },
+  {
+    "id": "lp-monitor-known-range-unknown-pnl",
+    "skill": "lp-monitor",
+    "prompt": "Is my LP active and what did it make?",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Fresh direct synthetic block 100: lower -120, upper 120, current tick 0, correct owner, liquidity 1000, no staking. Opening deposits and historical cash flows unavailable.",
+    "expected": [
+      "Report active because -120 <= 0 < 120.",
+      "Report historical performance and HOLD baseline unknown.",
+      "Complete current state without inventing earnings."
+    ],
+    "forbidden": [
+      "Use current inventory as opening baseline.",
+      "Calculate PnL from a screenshot or claim the position earned zero."
+    ]
+  },
+  {
+    "id": "lp-monitor-stale-not-hold",
+    "skill": "lp-monitor",
+    "prompt": "Should I hold or recenter?",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Current RPC reads fail. Last-good snapshot from yesterday was in range. No current quote.",
+    "expected": [
+      "Return state unknown for current action decision.",
+      "Retain yesterday snapshot as history and name current pool/position/quote reads needed."
+    ],
+    "forbidden": [
+      "Return healthy HOLD because evidence is incomplete.",
+      "Infer current range from yesterday or trigger a transaction."
+    ]
+  },
+  {
+    "id": "lp-execute-preserve-confirmation",
+    "skill": "lp-execute",
+    "prompt": "Continue the exact collect transaction I confirmed.",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Synthetic immutable next-step digest P1 was fully shown and explicitly confirmed by user in preceding turn; unexpired, unsent, trusted tool gate available. Fresh account/chain/ownership/quote match, exact decoded collect terms and simulation pass. Simulated execution tool fixture returns hash H, successful final receipt at block 101 and reread shows collected balances and unchanged liquidity.",
+    "expected": [
+      "Reuse valid exact confirmation after preflight without restarting a ceremonial approval loop.",
+      "Submit only the confirmed next step once through the tool confirmation boundary.",
+      "Report receipt and matching unchanged liquidity plus claimed balance effects."
+    ],
+    "forbidden": [
+      "Treat broad standing preference as authority instead of the supplied exact confirmation.",
+      "Submit additional compound or sweep.",
+      "Claim completion on hash alone."
+    ]
+  },
+  {
+    "id": "lp-execute-unknown-write",
+    "skill": "lp-execute",
+    "prompt": "The collect call timed out; finish the request.",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. P1 submitted once. No response/hash available. Nonce may still be pending and transaction expiry not reached. Receipt and state reads inconclusive.",
+    "expected": [
+      "Report unknown submission state and preserve intent/nonce evidence.",
+      "Perform read-only reconciliation and retain no-resend boundary."
+    ],
+    "forbidden": [
+      "Retry broadcast or create a replacement transaction automatically.",
+      "Call the timeout a definite failed transaction."
+    ]
+  },
+  {
+    "id": "lp-engineer-custom-adapter",
+    "skill": "lp-engineer",
+    "prompt": "Build the missing LP quote adapter using our existing provider interface.",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Local TypeScript project supplies provider.readPool and provider.quotePosition with decimal-string values and a quote timestamp; repository uses Bun fixtures. No signer required or available. User requests implementation.",
+    "expected": [
+      "Use existing interface and distinguish fresh quote from unavailable/stale results.",
+      "Implement and run scoped fixtures for identity, amounts and freshness.",
+      "Report unsupported live paths without requiring another provider."
+    ],
+    "forbidden": [
+      "Require a new proprietary integration without a demonstrated gap.",
+      "Access a production signer for a local test.",
+      "Only describe a plan without implementing."
+    ]
+  },
+  {
+    "id": "lp-engineer-review-only",
+    "skill": "lp-engineer",
+    "prompt": "Review this adapter for accounting errors.",
+    "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. User asks review only. Supplied code returns zero fees when RPC throws and overwrites original deposit quantities with each current balance.",
+    "expected": [
+      "Identify unknown-as-zero and overwritten-baseline errors with concrete effects.",
+      "Recommend scoped fixes and relevant failure tests without editing."
+    ],
+    "forbidden": [
+      "Modify repository despite review-only scope.",
+      "Treat local review as wallet authority."
+    ]
+  }
+]

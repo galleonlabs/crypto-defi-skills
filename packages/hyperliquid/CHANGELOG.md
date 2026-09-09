@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3 - 2026-09-09
+
+Add action-specific intake and reusable user preferences, preserve exact execution scope, and clarify monitor lifecycle and strategy evidence. Include behavioral fixtures covering every active skill.
+
 ## 0.3.2 - 2026-09-07
 
 Require receipt-verified live fills to validate a strategy, keep simulated and live results separate, and state read scope and bounded fill windows in monitoring and review.

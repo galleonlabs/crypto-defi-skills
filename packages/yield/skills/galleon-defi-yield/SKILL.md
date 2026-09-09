@@ -3,7 +3,7 @@ name: galleon-defi-yield
 description: "Use when comparing savings and strategy vaults, planning deposits or exits, or evaluating principal/yield tokens and maturity across Pendle, Yearn, Spark, Morpho, Euler and Ethena."
 license: MIT
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -13,6 +13,10 @@ metadata:
 Use official builders and data sources. This skill adds a common decision process for vault shares, savings tokens and tokenized yield; it is not a yield optimizer with trading authority.
 
 Read [providers](references/providers.md) for the chosen product and version. Read [workflows](references/workflows.md) for vault mechanics, maturity/exit plans and evaluation cases.
+
+## Start with the requested task
+
+Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
 
 ## Workflow
 

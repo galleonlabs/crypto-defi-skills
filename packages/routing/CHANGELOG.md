@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 - 2026-09-09
+
+Add task-specific intake, configurable provider and user preferences, calculated successful examples and recovery paths. Preserve standalone installation and existing authorization boundaries.
+
 ## 0.1.2 - 2026-09-07
 
 Treat capital on another supported chain as deployable through a quoted bridge, add bridge fee accounting and bridge-verify-trade sequencing, and compare executable routes rather than preferred quote currencies.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3 - 2026-09-09
+
+Add task-specific intake, configurable provider and user preferences, calculated successful examples and recovery paths. Preserve standalone installation and existing authorization boundaries.
+
 ## 0.2.2 - 2026-09-06
 
 Add Codex discovery metadata, a more precise routing description and a concrete read-only readiness example.

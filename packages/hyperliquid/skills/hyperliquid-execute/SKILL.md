@@ -4,7 +4,7 @@ description: "Safely carry out a user-requested Hyperliquid trading action throu
 license: MIT
 compatibility: "Requires current read access, a trusted signer or official SDK boundary, and an approved API wallet. Never imports or stores a private key."
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
   protocol: "hyperliquid"
 ---
 

@@ -18,7 +18,7 @@ Show original quantities or `unknown`, current inventory, HOLD value, claimable 
 
 ## Action economics
 
-Show full action cost, expected incremental benefit, break-even assumption, invalidation, and skipped gates. If no action clears the hurdle, say HOLD.
+Show full action cost, expected incremental benefit, break-even assumption, invalidation, and skipped gates. If current evidence is sufficient and no action clears the hurdle, say HOLD. If required state or cost evidence is missing, say state unknown for the affected decision and identify the missing read.
 
 ## Next read
 

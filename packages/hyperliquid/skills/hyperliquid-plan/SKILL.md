@@ -4,7 +4,7 @@ description: "Build an exact unsigned Hyperliquid ticket for an entry, exit, red
 license: MIT
 compatibility: "Requires read-only market and account access for executable plans. The bundled risk script needs Node.js 20 or newer."
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
   protocol: "hyperliquid"
 ---
 
@@ -28,13 +28,15 @@ Reuse the user's stated intent and constraints across turns. Ask only for missin
 
 ## Inputs
 
-Require the network, user account address, target market and DEX, side, action, order type, entry or limit, invalidation or stop, risk budget, slippage policy, time horizon, and account-mode assumptions. Missing risk inputs stop an exposure-increasing plan.
+Start with network, public user account, target market/DEX and action. Use [intent and user preferences](references/intent-and-preferences.md) to require only the fields that action needs. An entry needs its loss and exposure limits; a cancel needs the exact existing order and protection impact, not a new entry thesis. Missing risk inputs stop an exposure-increasing plan, but do not prevent a clearly labeled hypothetical calculation or independent read-only preparation.
 
 ## Workflow
 
+Apply each step to the selected action. Mark irrelevant fields not applicable with a reason; retain all identity, state, risk, recovery and expiry checks that can affect that action.
+
 1. Rebind live identity and state: network, account, account abstraction mode, DEX, coin name, asset ID, `szDecimals`, price rules, margin table, mark, oracle, mid, depth, effective fees, positions, open orders, balances, available-to-trade, and current leverage.
 2. Read [account modes](references/account-modes.md). Standard, unified, and portfolio-margin accounts expose balances and liquidation risk differently.
-3. Size with [risk sizing](references/risk-sizing.md). Use `node scripts/risk.mjs --help` for deterministic arithmetic. The stop fill must include adverse slippage and both entry and exit fees.
+3. For exposure-increasing orders, size with [risk sizing](references/risk-sizing.md). For other actions, apply the action-specific checks in [intent and user preferences](references/intent-and-preferences.md); mark inapplicable entry-sizing fields as such with a reason. Use `node scripts/risk.mjs --help` for deterministic arithmetic. The stop fill must include adverse slippage and both entry and exit fees.
 4. Construct the action with [order semantics](references/order-semantics.md). Resolve all IDs and precision from the target network now.
 5. Model the full result set: rejection, resting, full fill, partial fill, trigger wait, margin cancel, unknown response, and account-state mismatch.
 6. Assign one fresh 128-bit client order ID per order leg. Add `expiresAfter` when the signing scheme supports it. Record both before execution.

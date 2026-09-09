@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 - 2026-09-09
+
+Add task-specific intake, configurable provider and user preferences, calculated successful examples and recovery paths. Preserve standalone installation and existing authorization boundaries.
+
 ## 0.2.1 - 2026-09-07
 
 Separate scanner labels from verified liquidity custody and withdrawal rights, distinguish an owner address from its reachable powers including EIP-7702 delegation and upgradeable factory dependencies, treat fee tiers and quote assets as measured costs rather than vetoes, and keep receipt-level fee splits leg-specific. Lessons recorded from a live autonomous operator.

@@ -3,7 +3,7 @@ name: galleon-defi-staking
 description: "Use when planning liquid staking, wrapping, restaking, delegation or queued exit claims for Lido, Rocket Pool, EigenLayer and Symbiotic."
 license: MIT
 metadata:
-  version: "0.1.1"
+  version: "0.1.2"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -13,6 +13,10 @@ metadata:
 Use maintained official interfaces for the selected deployment. This skill guides liquid-staking and restaking positions, not validator installation or custody. It includes no signer or automatic transaction runner.
 
 Read the selected protocol in [providers](references/providers.md); use [workflows](references/workflows.md) for exits, accounting and evaluation cases.
+
+## Start with the requested task
+
+Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
 
 ## Workflow
 

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "tokenized-assets-useful-result",
+    "skill": "galleon-defi-tokenized-assets",
+    "prompt": "Compare redeeming 20,000 USD. I can wait until next Tuesday and want maximum net proceeds; eligibility confirmed.",
+    "context": "Synthetic issuer terms: A total fee30 USD settles Wednesday; B fee8 USD settles following Monday, before next Tuesday. Same valuation, current terms and cutoff eligibility confirmed.",
+    "expected": [
+      "A19970 USD Wednesday, B19992 USD Monday. Both meet deadline; prefer B for22 USD more. Expected settlement not received funds.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  },
+  {
+    "id": "tokenized-assets-changed-evidence",
+    "skill": "galleon-defi-tokenized-assets",
+    "prompt": "Compare redeeming 20,000 USD. I can wait until next Tuesday and want maximum net proceeds; eligibility confirmed. Updated observations supersede the earlier evidence.",
+    "context": "Synthetic issuer terms: A total fee30 USD settles Wednesday; B fee8 USD settles following Monday, before next Tuesday. Same valuation, current terms and cutoff eligibility confirmed. UPDATE: B settlement is suspended with no replacement date; A Wednesday remains available.",
+    "expected": [
+      "B timing unknown; A remains evidenced before deadline. Explain 22 USD price tradeoff and request B revised date if still comparing.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  }
+]

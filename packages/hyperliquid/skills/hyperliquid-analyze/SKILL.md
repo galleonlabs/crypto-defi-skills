@@ -4,7 +4,7 @@ description: "Assess Hyperliquid markets, funding, liquidity, catalysts, venue m
 license: MIT
 compatibility: "Requires web or read-only Hyperliquid API access for current claims. Works without a wallet or account address."
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
   protocol: "hyperliquid"
 ---
 
@@ -27,6 +27,8 @@ Analyze one named market using current evidence; return dated facts, risks and a
 ## Task handling
 
 Use the conversation to resolve the question and routine presentation choices. Ask only for inputs that would change the assessment, and continue independent public research while awaiting them. If one source or candidate fails, mark that result unavailable and finish the supported comparisons. Lead with the verdict, evidence, and material uncertainty; retain the required output fields.
+
+Start from the user's chosen market question or strategy rules. Reuse their horizon, preferred data tools, benchmark and reporting format; do not substitute a house strategy or require a provider account for public research. A narrow funding or market-mechanics question needs only relevant evidence, while an opportunity verdict needs the full applicable risk assessment. Missing sizing preferences need not stop public research.
 
 ## Workflow
 

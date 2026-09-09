@@ -5,12 +5,16 @@ license: MIT
 compatibility: Portable Agent Skills instructions; provider access and wallet permissions are configured separately.
 metadata:
   author: Galleon Labs
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # DeFi payments
 
 Turn a payment request into a bounded obligation and a verifiable outcome. Use maintained wallet, x402 and streaming tools. This skill grants no spending authority and never treats a payment challenge as permission to pay.
+
+## Start with the requested task
+
+Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
 
 ## Choose the payment model
 

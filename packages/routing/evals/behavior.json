@@ -1,0 +1,32 @@
+[
+  {
+    "id": "routing-useful-result",
+    "skill": "galleon-defi-routing",
+    "prompt": "Choose among same-intent bridge quotes for 2,000 USDC, maximum loss 15 USDC.",
+    "context": "Synthetic fresh quotes: A minimum net 1988 USDC, includes 8 bridge fee plus 4 gas from input. B minimum net 1990 USDC including all fees. Both meet deadline, destination gas funded.",
+    "expected": [
+      "A total loss 12, B 10 USDC; both meet budget, choose B minimum 1990. Do not subtract included fees again.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  },
+  {
+    "id": "routing-changed-evidence",
+    "skill": "galleon-defi-routing",
+    "prompt": "Choose among same-intent bridge quotes for 2,000 USDC, maximum loss 15 USDC. Updated observations supersede the earlier evidence.",
+    "context": "Synthetic fresh quotes: A minimum net 1988 USDC, includes 8 bridge fee plus 4 gas from input. B minimum net 1990 USDC including all fees. Both meet deadline, destination gas funded. UPDATE: B source transaction confirmed, destination not received, route status pending. User asks to retry.",
+    "expected": [
+      "Report source confirmed/destination pending, reconcile the same route/message and destination before considering resubmission.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  }
+]

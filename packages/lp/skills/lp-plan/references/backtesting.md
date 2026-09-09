@@ -47,3 +47,17 @@ Run sensitivity across range width, start time, observation interval, execution 
 ## Output
 
 Include method version, data coverage, missing intervals, assumptions, time in range, earned fees, incentives, inventory divergence, net result versus HOLD, drawdown, turnover, action count, and total costs. Separate exact reconstruction from modeled values.
+
+## Reusable experiment
+
+Keep a stable user-owned strategy ID and rule revision, supplied preferences,
+provider/tool and dataset identity, benchmark, costs, result class and next test.
+Use the user's chosen artifact format and storage; no particular service is
+required. Compare static, wide-range or actively managed variants only when they
+answer the user's objective, and record each trial rather than selecting only the
+best run. A changed rule starts a new revision.
+
+Distinguish historical simulation, forward paper observations and receipt-verified
+live performance. A range crossing is a signal, not a simulated or live remint.
+Without historical fee and liquidity coverage, return the available range/inventory
+sensitivity and exact data gaps instead of an invented APR or backtest result.

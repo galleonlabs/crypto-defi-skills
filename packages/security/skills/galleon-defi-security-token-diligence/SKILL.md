@@ -5,12 +5,16 @@ license: MIT
 compatibility: Portable instructions. Optional evidence helpers require Bun 1.3.14 or later; collection needs an existing EVM RPC endpoint. No signer or paid service is bundled.
 metadata:
   author: Galleon Labs
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # Token diligence
 
 Answer the user's decision about a specific chain and token, with evidence tied to observed state. Explain what holders can lose access to, which actors can change the rules, how an exit would work at the relevant size, and what remains unresolved. A narrow fee-origin question should stay narrow; a broad review checks every material risk surface.
+
+## Start with the requested task
+
+Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
 
 ## Establish the target and scope
 

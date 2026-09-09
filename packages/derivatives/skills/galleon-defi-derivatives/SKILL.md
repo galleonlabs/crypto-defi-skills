@@ -5,12 +5,16 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs official venue data and optional user-authorized wallet tooling. No signer, provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # DeFi derivatives
 
 Translate a market or hedge request into explicit exposure, collateral requirements and venue-specific order evidence. Reuse official tooling; keep research, planning and authorized execution distinct.
+
+## Start with the requested task
+
+Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
 
 ## Select the product and tools
 

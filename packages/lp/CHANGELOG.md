@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.2 - 2026-09-09
+
+Add action-specific intake and reusable user preferences, preserve exact execution scope, and clarify monitor lifecycle and strategy evidence. Include behavioral fixtures covering every active skill.
+
 ## 0.5.1 - 2026-09-07
 
 Assess executable depth at the current tick rather than a scanner's share of total LP, and treat fee tiers and quote assets as measured costs with size-specific quotes over viable routes.

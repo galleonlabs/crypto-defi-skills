@@ -14,7 +14,8 @@
     "release-drift": "bun scripts/release-drift.ts",
     "discovery": "bun scripts/build-discovery-index.ts",
     "release": "bun scripts/release.ts",
-    "smoke": "bun scripts/smoke.ts"
+    "smoke": "bun scripts/smoke.ts",
+    "eval:behavior": "bun scripts/behavior-evals.ts"
   },
   "devDependencies": {
     "@types/bun": "^1.4.1",

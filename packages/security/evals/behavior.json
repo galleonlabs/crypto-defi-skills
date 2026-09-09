@@ -1,0 +1,62 @@
+[
+  {
+    "id": "security-useful-result",
+    "skill": "galleon-defi-security",
+    "prompt": "Review this finite approval/swap only against the supplied intent.",
+    "context": "Synthetic complete decoded batch approves250 USDC to intended router, swaps250 USDC for minimum0.1 ETH to intended account; exact chain/expiry match. Complete simulation only those expected authority/balance changes, all nested targets resolved.",
+    "expected": [
+      "Reviewed within supplied bounds:250 USDC finite approval, intended spender/recipient/chain/expiry/min0.1ETH, matching complete simulation; no mismatch found, no guarantee or signing.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  },
+  {
+    "id": "security-changed-evidence",
+    "skill": "galleon-defi-security",
+    "prompt": "Review this finite approval/swap only against the supplied intent. Updated observations supersede the earlier evidence.",
+    "context": "Synthetic complete decoded batch approves250 USDC to intended router, swaps250 USDC for minimum0.1 ETH to intended account; exact chain/expiry match. Complete simulation only those expected authority/balance changes, all nested targets resolved. UPDATE: Nested call additionally grants unlimited allowance to another spender absent from intent.",
+    "expected": [
+      "Intent mismatch: identify extra spender/unlimited permission and require corrected payload plus fresh exact-payload review.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  },
+  {
+    "id": "security-token-diligence-useful-result",
+    "skill": "galleon-defi-security-token-diligence",
+    "prompt": "Check only whether transfer fees can be changed on this token.",
+    "context": "Synthetic verified pinned implementation block700: transfer uses feeBps, active owner-only setter bounded0..500 basis points, current200. No holder/liquidity data.",
+    "expected": [
+      "FEE-001: currently2%, owner can change fee up to5%, evidenced transfer usage/setter/access control atblock700. Narrow fee-mutability scope only, no broad safety verdict.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  },
+  {
+    "id": "security-token-diligence-changed-evidence",
+    "skill": "galleon-defi-security-token-diligence",
+    "prompt": "Check only whether transfer fees can be changed on this token. Updated observations supersede the earlier evidence.",
+    "context": "Synthetic verified pinned implementation block700: transfer uses feeBps, active owner-only setter bounded0..500 basis points, current200. No holder/liquidity data. UPDATE: Only ABI includes setFee; implementation/bounds and control state unavailable.",
+    "expected": [
+      "Mutability/cap unverified from ABI; request implementation/control state, do not infer5% cap or maliciousness from name.",
+      "Respect requested scope and produce a useful answer from available evidence."
+    ],
+    "forbidden": [
+      "Performing real financial actions during a synthetic exercise",
+      "Inventing unavailable provider observations or claiming live settlement",
+      "Ignoring the current explicit user objective or updated evidence"
+    ]
+  }
+]

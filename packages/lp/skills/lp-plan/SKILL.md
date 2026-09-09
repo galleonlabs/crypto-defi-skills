@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires read-only chain and quote access for executable plans. The bundled range script needs Node.js 20 or newer."
 metadata:
   author: "Galleon Labs"
-  version: "0.5.1"
+  version: "0.5.2"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -33,14 +33,16 @@ Reuse the user's stated intent and constraints across turns. Ask only for missin
 
 ## Inputs
 
-Require chain, wallet address, protocol version, exact pool identity, capital and max spend per token, objective, horizon, loss constraints, intended maintenance cadence, and approval preference. If pool due diligence is incomplete, use `lp-analyze` when installed or the standalone checks above; keep the plan non-executable until they pass.
+Require chain, wallet address, protocol version, exact pool or position identity, and requested action. Use [intent and user preferences](references/intent-and-preferences.md) for action-specific inputs. A new deposit needs capital, maximum spends, objective, horizon, inventory/loss constraints and maintenance preference. A fee collection needs existing ownership, claimable assets, recipient and cost bounds, not a new range or deposit budget. If relevant pool due diligence is incomplete, use `lp-analyze` when installed or the standalone checks above; keep the plan non-executable until they pass.
 
 ## Workflow
 
+Apply each step to the selected action. Mark irrelevant fields not applicable with a reason; retain all identity, state, risk, recovery and expiry checks that can affect that action.
+
 1. Rebind chain ID, current block, wallet, pool, token order, decimals, fee, tick spacing or invariant, hook, manager, router, gauge, and reward assets from current reads.
 2. Choose the position model from [protocol planning](references/protocol-planning.md). Do not apply concentrated-liquidity math to a full-range pair.
-3. Design the range with [range design](references/range-design.md). If historical simulation informs the choice, apply [backtesting standards](references/backtesting.md). Use `node scripts/range.mjs --help` for deterministic tick snapping. Treat its output as arithmetic, not a strategy recommendation.
-4. Compute the required token ratio at the quoted execution price with exact integer math or the current official SDK. Include wallet balances and loose assets from prior actions.
+3. For a new or changed concentrated range, design it with [range design](references/range-design.md). Preserve the existing range for collect, unstake, and other actions that do not change it; use not applicable for full-range/share positions. If historical simulation informs the choice, apply [backtesting standards](references/backtesting.md). Use `node scripts/range.mjs --help` for deterministic tick snapping. Treat its output as arithmetic, not a strategy recommendation.
+4. For liquidity funding or transformation, compute the required token ratio at the quoted execution price with exact integer math or the current official SDK. For collect, claim or removal, bind the exact existing quantities and expected asset outputs instead. Include wallet balances and loose assets from prior actions.
 5. Choose a transaction-construction or interface handoff from [Uniswap handoffs](references/uniswap-handoffs.md) when the venue is Uniswap. For one-token funding, third-token funding, compounding, or range moves, apply [atomic funding and transformations](references/atomic-funding.md). Quote the complete sequence. Apply max input, min output, minimum liquidity, price-impact, gas, deadline, and spend-cap constraints to every step.
 6. Plan approvals with [approval policy](references/approval-policy.md). Bind each approval to the exact token, spender, amount, mechanism, expiry, and cleanup rule.
 7. Simulate every transaction from the actual wallet with the exact value and calldata. For sequential plans, later calldata that depends on mined output remains deferred.
