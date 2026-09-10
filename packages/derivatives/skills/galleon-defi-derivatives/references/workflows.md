@@ -12,7 +12,7 @@ For a hedge, show current exposure, proposed offset and residual basis risk. Inc
 | Option | Underlying, expiry/timezone, strike, call/put, premium and settlement currency, multiplier, exercise/settlement model, margin method, short-option tail loss and liquidity. |
 | Funding-rate derivative | Reference rate and its sampling/settlement interval, maturity, fixed/floating direction, collateral and margin, rate units and underlying hedge basis. Boros rate exposure is not a token-price perpetual. |
 
-Derive supports options and perps; Boros supports funding-rate derivatives. Use provider instrument metadata for the actual payoff and maturity. Do not infer a recommendation from historical yield or use a default maximum leverage as the user's risk budget. [Derive protocol overview](https://docs.derive.xyz/docs/overview-2), [Boros official plugin](https://github.com/pendle-finance/pendle-ai/blob/main/packages/plugins/pendle-boros/README.md), accessed 2026-09-05.
+Derive supports options and perps; Boros supports funding-rate derivatives. Use provider instrument metadata for the actual payoff and maturity. Do not infer a recommendation from historical yield or use a default maximum leverage as the user's risk budget. [Derive protocol overview](https://docs.derive.xyz/), [Boros official plugin](https://github.com/pendle-finance/pendle-ai/blob/main/packages/plugins/pendle-boros/README.md), accessed 2026-09-05.
 
 ## Reviewable order ticket
 

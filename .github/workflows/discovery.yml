@@ -1,58 +1,97 @@
+# Trusted repository jobs use the dappnode runner and its installed tools.
+# Native git avoids shared-IP action-download throttling; fork PRs never run here.
 name: Agent Skills Discovery
-
 on:
-  workflow_dispatch:
+  workflow_dispatch: null
   pull_request:
-    branches: [main]
+    branches:
+      - main
     paths:
-      - "packages/**"
-      - "package.json"
-      - "bun.lock"
-      - "scripts/check-attribution.ts"
-      - "scripts/workspaces.ts"
-      - "scripts/build-discovery-index.ts"
-      - ".github/workflows/discovery.yml"
+      - packages/**
+      - package.json
+      - bun.lock
+      - scripts/check-attribution.ts
+      - scripts/workspaces.ts
+      - scripts/build-discovery-index.ts
+      - .github/workflows/discovery.yml
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
-      - "packages/**"
-      - "package.json"
-      - "bun.lock"
-      - "scripts/check-attribution.ts"
-      - "scripts/workspaces.ts"
-      - "scripts/build-discovery-index.ts"
-      - ".github/workflows/discovery.yml"
-
+      - packages/**
+      - package.json
+      - bun.lock
+      - scripts/check-attribution.ts
+      - scripts/workspaces.ts
+      - scripts/build-discovery-index.ts
+      - .github/workflows/discovery.yml
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on:
+      - self-hosted
+      - linux
+      - x64
+      - dappnode
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v7
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: 1.3.14
+      - name: Checkout with runner git
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |-
+          set -euo pipefail
+          export GIT_TERMINAL_PROMPT=0
+          if [[ ! -d .git ]]; then
+            git init
+            git remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+          fi
+          git remote set-url origin "https://github.com/$GITHUB_REPOSITORY.git"
+          git config --local --unset-all "http.https://github.com/.extraheader" || true
+          header=$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 | tr -d '\n')
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $header" fetch --force --prune --tags origin "+refs/heads/*:refs/remotes/origin/*" "$GITHUB_SHA"
+          unset header
+          git checkout --force --detach "$GITHUB_SHA"
+          git clean -ffdx -e 'node_modules/' -e '**/node_modules/'
+          git log -1 --oneline
       - run: bun install --frozen-lockfile
       - run: bun scripts/build-discovery-index.ts https://example.com/skills
-
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    timeout-minutes: 15
   publish:
-    if: github.event_name != 'pull_request'
+    if: (github.event_name != 'pull_request') && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
     needs: validate
     concurrency:
       group: agent-skills-discovery-publish
       cancel-in-progress: true
-    runs-on: ubuntu-latest
+    runs-on:
+      - self-hosted
+      - linux
+      - x64
+      - dappnode
     permissions:
       contents: write
     env:
       GH_TOKEN: ${{ github.token }}
       RELEASE_TAG: agent-skills-${{ github.sha }}
     steps:
-      - uses: actions/checkout@v7
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: 1.3.14
+      - name: Checkout with runner git
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |-
+          set -euo pipefail
+          export GIT_TERMINAL_PROMPT=0
+          if [[ ! -d .git ]]; then
+            git init
+            git remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+          fi
+          git remote set-url origin "https://github.com/$GITHUB_REPOSITORY.git"
+          git config --local --unset-all "http.https://github.com/.extraheader" || true
+          header=$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 | tr -d '\n')
+          git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $header" fetch --force --prune --tags origin "+refs/heads/*:refs/remotes/origin/*" "$GITHUB_SHA"
+          unset header
+          git checkout --force --detach "$GITHUB_SHA"
+          git clean -ffdx -e 'node_modules/' -e '**/node_modules/'
+          git log -1 --oneline
       - run: bun install --frozen-lockfile
       - run: bun scripts/build-discovery-index.ts "https://github.com/${{ github.repository }}/releases/download/${RELEASE_TAG}"
       - run: |
@@ -60,3 +99,7 @@ jobs:
             gh release create "$RELEASE_TAG" --draft --target "$GITHUB_SHA" --title "Agent Skills $GITHUB_SHA" --notes "Immutable discovery artifacts for $GITHUB_SHA."
           gh release upload "$RELEASE_TAG" artifacts/* --clobber
           gh release edit "$RELEASE_TAG" --draft=false --latest=false
+    timeout-minutes: 15
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
