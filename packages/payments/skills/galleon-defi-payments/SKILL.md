@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions; provider access and wallet permissions are configured separately.
 metadata:
   author: Galleon Labs
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # DeFi payments
@@ -26,6 +26,8 @@ Read [provider access](references/providers.md) for Coinbase/x402, Sablier and S
 4. Prepare with the official tool. Show recipient, asset, amount, chain, fee cap, expiry and every approval or typed message. For streams include rate, time unit, start/end, maximum funded or accrued obligation, cancellation/transfer rights and who can withdraw. Reject an unexpected recipient, unlimited allowance or unstated perpetual stream.
 5. Apply existing explicit authorization only within its approved limits. If a required limit or recipient is missing, obtain that input before signing. Any material change to economic terms needs renewed authorization. Keep signatures and wallet secrets outside chat and artifacts.
 6. Submit through the approved wallet workflow, then reconcile transaction or payment identifier, final chain status, actual transferred amount and recipient state. For x402 also verify service delivery. An accepted signature or HTTP 200 does not alone prove final settlement; an onchain payment does not prove the purchased work was delivered.
+
+For paid HTTP resources, load [x402 v2 verification and recovery](references/x402-v2.md) before configuring a paying client. Match the advertised protocol version, scheme and network; preserve one payment identity across recovery and report deferred settlement separately from delivery.
 
 ## Bounded autonomy
 

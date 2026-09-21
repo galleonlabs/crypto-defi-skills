@@ -11,6 +11,8 @@ Primary sources accessed 2026-09-05. These interfaces were researched from docum
 
 ## x402 access and evidence
 
+For the current protocol contract, use [x402 v2 verification and recovery](x402-v2.md), reviewed 2026-09-21. The older provider-specific SDK examples below do not establish a universal default network or protocol version.
+
 Do not run a generic payment-wrapped fetch merely to inspect a URL: the wrapper can sign/pay automatically. First establish an allowed HTTPS origin/resource, selected network/token, advertised amount or maximum, facilitator and payer. Reject changed terms, unsupported schemes and unexpected redirects. Use the official client's supported policy hooks and wallet controls; do not invent options that merely look plausible.
 
 A CDP wallet secret is signing authority. Agentic Accounts, Agentic Wallets, Coinbase exchange portfolios and embedded wallets are different custody/access models. Use the existing account with its documented capabilities and isolate secrets using the host's native secret mechanism. Seller integration is a separate task: endpoint ownership, settlement destination, pricing and facilitator configuration need their own scope.
