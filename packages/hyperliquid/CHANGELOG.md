@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.4 - 2026-09-23
+
+Document dated Hyperliquid account-mode action caps, builder-code limits, nonce rules and asset-ID formulas. Add planning fixtures for action and builder-approval limits. Clarify task continuity and proportionate verification in agent instructions.
+
 ## 0.3.3 - 2026-09-09
 
 Add action-specific intake and reusable user preferences, preserve exact execution scope, and clarify monitor lifecycle and strategy evidence. Include behavioral fixtures covering every active skill.
@@ -28,10 +32,6 @@ Refresh account modes, dynamic asset namespaces, nonce lifecycle and explicit bu
 - Connect every skill with concrete first tasks, standalone references and handoff contracts.
 - Verify fixture failures, freshness checks, and independently copied skill payloads.
 - Keep signing and exchange actions outside the package; execution requires external trusted tools.
-
-## Unreleased
-
-- Audit agent and skill instructions against [OpenAI's GPT-6 Astra guidance](https://developers.openai.com/api/docs/guides/latest-model): clarify task continuity, material questions, blocker explanations, and proportionate verification while preserving financial authorization and evidence gates.
 
 ## 0.1.0 - 2026-09-04
 
