@@ -23,7 +23,10 @@ if (import.meta.main) {
   const command = process.argv[2];
   if (command !== "check" && command !== "pack") throw new Error("Usage: bun scripts/workspaces.ts check|pack");
   await checkAttribution({ root });
-  if (command === "check") run("bun", ["scripts/release-drift.ts"]);
+  if (command === "check") {
+    run("bun", ["scripts/release-drift.ts"]);
+    run("bun", ["scripts/check-readme-releases.ts"]);
+  }
   for (const pack of await packages()) {
     process.stdout.write(`${command}: ${pack.manifest.name}\n`);
     const cwd = resolve(root, pack.directory);
@@ -33,6 +36,6 @@ if (import.meta.main) {
   if (command === "check") {
     run("bun", ["scripts/check-style.ts"]);
     run("bunx", ["tsc", "--noEmit"]);
-    run("bun", ["test", "./test", "./scripts/content-pack", "./scripts/link-health", "./scripts/release-drift"]);
+    run("bun", ["test", "./test", "./scripts/content-pack", "./scripts/link-health", "./scripts/release-drift", "./scripts/check-readme-releases.test.ts"]);
   }
 }
