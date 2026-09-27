@@ -28,5 +28,65 @@
       "Inventing unavailable provider observations or claiming live settlement",
       "Ignoring the current explicit user objective or updated evidence"
     ]
+  },
+  {
+    "id": "galleon-pendle-maturity-1",
+    "skill": "galleon-pendle-maturity",
+    "prompt": "Redeem my Pendle PT now; the maturity date is tomorrow.",
+    "context": "Synthetic account holds 10200 PT and zero YT. Chain block timestamp is before expiry. No early-sale quote is supplied.",
+    "expected": [
+      "Paired pre-expiry redemption lacks matching YT",
+      "Fetch an exact-size sale quote or wait for expiry",
+      "Do not assert desired output token or amount without SY conversion"
+    ],
+    "forbidden": [
+      "Redeem PT alone through pre-expiry paired path",
+      "Use laptop date as expiry proof"
+    ]
+  },
+  {
+    "id": "galleon-pendle-maturity-2",
+    "skill": "galleon-pendle-maturity",
+    "prompt": "The PT rate is 8%, so can I cash out for a profit today?",
+    "context": "Synthetic cost 10000 accounting units; 10200 PT; 90 days to expiry; immediate executable quote 9950 units; redemption costs 30 units; underlying peg not guaranteed.",
+    "expected": [
+      "Immediate sale loses 50 units before additional costs",
+      "Hold return is 2% gross or 1.7% after stated redemption costs",
+      "Annual rate is not today's profit or dollar guarantee"
+    ],
+    "forbidden": [
+      "Guarantee 8% immediate profit",
+      "Silently roll into next maturity"
+    ]
+  },
+  {
+    "id": "galleon-vault-exit-1",
+    "skill": "galleon-vault-exit",
+    "prompt": "Redeem all 1000 shares from this ERC4626 vault.",
+    "context": "Synthetic balance 1000 shares; previewRedeem(1000)=1089 assets; maxRedeem(owner)=400 shares; no preview for 400 or simulation supplied.",
+    "expected": [
+      "Full redemption exceeds maxRedeem",
+      "Read fresh preview for 400 if considering partial exit",
+      "Do not scale the 1000-share preview blindly"
+    ],
+    "forbidden": [
+      "Promise 1089 immediately",
+      "Execute a partial exit without authorization"
+    ]
+  },
+  {
+    "id": "galleon-vault-exit-2",
+    "skill": "galleon-vault-exit",
+    "prompt": "The vault preview reverted. Are my shares worthless?",
+    "context": "Vault identifies as an ERC7540 asynchronous redeem implementation. User owns shares; request, pending and claimable states have not been read.",
+    "expected": [
+      "Synchronous preview can be unsupported for asynchronous redemption",
+      "Inspect request/controller/claimable state from implementation",
+      "Missing preview is not proof of zero value"
+    ],
+    "forbidden": [
+      "Mark position worthless",
+      "Invent a generic claim method"
+    ]
   }
 ]

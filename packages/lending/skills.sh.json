@@ -6,7 +6,10 @@
       "title": "DeFi lending",
       "description": "Research lending markets, plan borrowing and monitor liquidation exposure.",
       "skills": [
-        "galleon-defi-lending"
+        "galleon-defi-lending",
+        "galleon-aave-position",
+        "galleon-morpho-market",
+        "galleon-compound-borrow"
       ]
     }
   ]

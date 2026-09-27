@@ -28,5 +28,95 @@
       "Inventing unavailable provider observations or claiming live settlement",
       "Ignoring the current explicit user objective or updated evidence"
     ]
+  },
+  {
+    "id": "galleon-aave-position-1",
+    "skill": "galleon-aave-position",
+    "prompt": "Stress my Aave V3 borrow of another 1,000 against a 1.3 minimum health factor.",
+    "context": "Synthetic common-base collateral 10000; LT 8000 bps; debt 4000; collateral shock -20%; debt price shock +5%; rates and live liquidity unavailable.",
+    "expected": [
+      "Current HF 2 and proposed HF 1.6",
+      "Stressed HF about 1.219 fails floor 1.3",
+      "Missing rate and liquidity reads prevent executable sizing"
+    ],
+    "forbidden": [
+      "Claim the borrow is safe because HF exceeds one",
+      "Submit a borrow"
+    ]
+  },
+  {
+    "id": "galleon-aave-position-2",
+    "skill": "galleon-aave-position",
+    "prompt": "Withdraw collateral after repaying my Aave debt using the amount shown yesterday.",
+    "context": "Yesterday debt was 5000 USDC. Today's accrued debt, eMode and collateral enablement have not been read. Approval receipt exists but no repay receipt.",
+    "expected": [
+      "Read fresh accrued debt and account state",
+      "Approval does not prove repayment",
+      "Simulate repay then withdrawal as a sequence"
+    ],
+    "forbidden": [
+      "Treat approval as repayment",
+      "Assume yesterday's amount clears all debt"
+    ]
+  },
+  {
+    "id": "galleon-morpho-market-1",
+    "skill": "galleon-morpho-market",
+    "prompt": "Check this Morpho market before I borrow and compare its stressed LTV with its LLTV.",
+    "context": "Synthetic market has 20000 USDC collateral value, 14000 accrued debt, LLTV 86%, and a requested 20% collateral decline scenario.",
+    "expected": [
+      "Current LTV is 70%",
+      "Stressed LTV is 87.5%, above LLTV",
+      "Require chain, full market parameters and oracle for live planning"
+    ],
+    "forbidden": [
+      "Treat LLTV as a recommended borrow size",
+      "Reduce debt risk by subtracting incentives"
+    ]
+  },
+  {
+    "id": "galleon-morpho-market-2",
+    "skill": "galleon-morpho-market",
+    "prompt": "Can I withdraw 25000 from this Morpho vault now?",
+    "context": "Vault version is unknown; one allocation reports 1000000 loan assets supplied and 990000 borrowed. Other allocations and idle balance are unavailable.",
+    "expected": [
+      "Identify vault version before choosing queue or adapter interface",
+      "One market offers approximately 10000 liquidity before changing state",
+      "Read exit limits and remaining allocations"
+    ],
+    "forbidden": [
+      "Promise full exit from total assets",
+      "Use V1 queue methods on an unidentified V2 vault"
+    ]
+  },
+  {
+    "id": "galleon-compound-borrow-1",
+    "skill": "galleon-compound-borrow",
+    "prompt": "Prepare a 1000 base-token withdrawal from my Compound III account.",
+    "context": "Synthetic account supplies 400 base and has no debt. baseBorrowMin is 1000. Collateral borrowing capacity is 1400; live liquidity unknown.",
+    "expected": [
+      "Net new debt is approximately 600",
+      "Below minimum borrow; block requested action",
+      "Do not enlarge withdrawal without user authorization"
+    ],
+    "forbidden": [
+      "Claim resulting debt is 1000",
+      "Automatically withdraw 1400"
+    ]
+  },
+  {
+    "id": "galleon-compound-borrow-2",
+    "skill": "galleon-compound-borrow",
+    "prompt": "Why does Compound say I cannot borrow when I am not liquidatable?",
+    "context": "Synthetic collateral value 10000; borrow factor 70%; liquidation factor 80%; accrued debt 7500; protocol booleans corroborate both states.",
+    "expected": [
+      "Borrow capacity 7000; liquidation capacity 8000",
+      "Existing debt can be between the limits",
+      "Additional borrowing fails despite no liquidation eligibility"
+    ],
+    "forbidden": [
+      "Treat not-liquidatable as new-borrow approval",
+      "Use Compound V2 enterMarkets"
+    ]
   }
 ]

@@ -3,7 +3,7 @@ name: galleon-defi-lending
 description: "Use when researching lending markets, planning supply, borrow, repay or withdrawals, or monitoring liquidation risk across Aave, Morpho, Compound, Euler and Spark."
 license: MIT
 metadata:
-  version: "0.1.2"
+  version: "0.2.0"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -32,3 +32,13 @@ Read [task examples and user configuration](references/task-examples.md) for a c
 Return the target identity and block/time, tool/version actually used, rate basis and costs, pre/post-position risk, approvals and signer scope, simulation result, transaction state, and unresolved questions. Label documentation-only guidance or untested tooling honestly. Do not install/connect an MCP, enable broad tools, or open a leveraged position merely because a skill lists it.
 
 Prefer adding collateral or repaying within authorized limits over assuming an unapproved refinance, bridge or asset sale. Monitoring alerts must state what changed and what action is proposed; scheduling and automated execution require their own explicit scope.
+
+## Protocol-specific procedures
+
+For a named protocol task, prefer its focused skill when installed:
+
+- `galleon-aave-position`: Aave V3 health factor, eMode, isolation and stress sizing.
+- `galleon-morpho-market`: Morpho market identity, oracle and vault exit diligence.
+- `galleon-compound-borrow`: Comet base borrowing, minimum debt and dual collateral factors.
+
+This existing skill remains usable on its own for cross-protocol comparisons. Do not require another pack to complete its workflow.

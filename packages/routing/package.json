@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-routing-skills",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Compare swaps and bridges and track cross-chain settlement.",
   "type": "module",
   "license": "MIT",
@@ -23,7 +23,8 @@
     "cow-protocol",
     "lifi",
     "across",
-    "cctp"
+    "cctp",
+    "uniswap"
   ],
   "bin": {
     "defi-routing-skills": "dist/cli.js"
@@ -54,9 +55,10 @@
   },
   "scripts": {
     "build": "bun ../../scripts/build-content-pack.ts",
-    "check": "bun run style && bun ../../scripts/check-content-pack.ts",
+    "check": "bun run style && bun test && bun ../../scripts/check-content-pack.ts",
     "prepack": "bun run check",
     "validate": "bun ../../scripts/check-content-pack.ts --validate-only",
-    "style": "bun ../../scripts/check-style.ts"
+    "style": "bun ../../scripts/check-style.ts",
+    "test": "bun test"
   }
 }

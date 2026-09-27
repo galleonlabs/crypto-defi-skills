@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires read-only chain and quote access for executable plans. The bundled range script needs Node.js 20 or newer."
 metadata:
   author: "Galleon Labs"
-  version: "0.5.2"
+  version: "0.6.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
@@ -14,6 +14,9 @@ metadata:
 Turn a chosen pool and capital budget into an unsigned, simulation-backed plan.
 
 If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+
+
+For a Uniswap v3 NFT task, prefer `uniswap-v3-liquidity` when installed. For Slipstream gauge lifecycle tasks, prefer `aerodrome-slipstream`. Discover by exact skill name; no sibling path is required. If unavailable, continue this standalone generic procedure.
 
 ## Tool selection
 

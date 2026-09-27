@@ -5,12 +5,15 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs the selected provider's HTTP, MCP or SDK tools; signing stays in the user's trusted wallet. No provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.1.3"
+  version: "0.2.0"
 ---
 
 # DeFi routing
 
 Move from an exact asset intent to a comparable quote and, when authorized, a reconciled outcome. A quote, signature, source receipt and destination delivery are different facts.
+
+
+For Uniswap quote/Permit2/AMM/order tasks, prefer `uniswap-swap` when installed. For LI.FI quoting and transfer reconciliation, prefer `lifi-cross-chain`. Discover by exact skill name without assuming sibling files. Otherwise continue this standalone multi-provider procedure.
 
 ## Start with the requested task
 

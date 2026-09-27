@@ -3,6 +3,25 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "Protocol tasks",
+      "description": "Concrete position reads, calculations, route checks and exit workflows.",
+      "skills": [
+        "galleon-aave-position",
+        "galleon-morpho-market",
+        "galleon-compound-borrow",
+        "galleon-lido-withdrawals",
+        "galleon-pendle-maturity",
+        "galleon-vault-exit",
+        "uniswap-v3-liquidity",
+        "aerodrome-slipstream",
+        "uniswap-swap",
+        "lifi-cross-chain",
+        "galleon-coingecko-token-research",
+        "galleon-defillama-yield-screen",
+        "galleon-coinbase-agentkit-readiness"
+      ]
+    },
+    {
       "title": "DeFi foundations",
       "description": "Connect the agent infrastructure and establish reliable market data before protocol workflows.",
       "skills": [

@@ -3,6 +3,14 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "Protocol workflows",
+      "description": "Concrete protocol procedures with executable read recipes and outcome fixtures.",
+      "skills": [
+        "uniswap-v3-liquidity",
+        "aerodrome-slipstream"
+      ]
+    },
+    {
       "title": "LP onboarding",
       "description": "Verify read access and map missing tools before the first task.",
       "skills": [

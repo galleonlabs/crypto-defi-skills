@@ -4,7 +4,7 @@ description: Set up and diagnose DeFi agent infrastructure, RPC access, managed 
 license: MIT
 compatibility: Portable instructions; optional diagnostics require Node.js 20+ and public network access.
 metadata:
-  version: "0.2.3"
+  version: "0.3.0"
   author: Galleon Labs
 ---
 
@@ -38,3 +38,7 @@ Record the runtime/profile, provider, chain ID, tool or CLI version, authenticat
 A missing dependency or expired session should produce the exact relevant setup step. Authentication that creates an account, wallet, signer session or new spending permission requires the user's authorization for that action; installing a skill does not provide it. Preserve existing authorization when its scope still matches.
 
 After onboarding, hand the verified chain/account/capabilities to the requested protocol, portfolio, payments, governance or data workflow if present. This pack supplies infrastructure procedures and diagnostics; it does not execute a trade, fund a wallet or implement a signer.
+
+## Named provider procedures
+
+For Coinbase AgentKit readiness, use `galleon-coinbase-agentkit-readiness` when installed. This generic skill remains independently usable for setup and cross-provider work.

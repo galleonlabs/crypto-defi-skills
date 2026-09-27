@@ -429,5 +429,85 @@
       "lp-analyze"
     ],
     "reason": "Requires exact authority, full route decoding, simulation, one send and receipt/state reconciliation; no hidden wrapper substitution."
+  },
+  {
+    "prompt": "Manage v3 NFT inventory, usable ticks, fee collection and range changes.",
+    "expected": "uniswap-v3-liquidity",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Select the installed protocol-specific operational recipe."
+  },
+  {
+    "prompt": "Resolve Slipstream gauge custody, emissions, staking and exits.",
+    "expected": "aerodrome-slipstream",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Select the installed protocol-specific operational recipe."
+  },
+  {
+    "prompt": "Move my Uniswap v3 NFT to a new tick range.",
+    "expected": "uniswap-v3-liquidity",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Protocol-specific position and custody task."
+  },
+  {
+    "prompt": "Why did decreaseLiquidity not pay my tokens back on Uniswap v3?",
+    "expected": "uniswap-v3-liquidity",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Protocol-specific position and custody task."
+  },
+  {
+    "prompt": "Collect fees from this Uniswap v3 NFT without changing the range.",
+    "expected": "uniswap-v3-liquidity",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Protocol-specific position and custody task."
+  },
+  {
+    "prompt": "Calculate usable negative ticks for my Uniswap v3 position.",
+    "expected": "uniswap-v3-liquidity",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Protocol-specific position and custody task."
+  },
+  {
+    "prompt": "My Slipstream NFT is owned by the gauge. Where is it?",
+    "expected": "aerodrome-slipstream",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Protocol-specific position and custody task."
+  },
+  {
+    "prompt": "Claim AERO from this staked Slipstream NFT.",
+    "expected": "aerodrome-slipstream",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Protocol-specific position and custody task."
+  },
+  {
+    "prompt": "Withdraw my Slipstream stake then remove principal.",
+    "expected": "aerodrome-slipstream",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Protocol-specific position and custody task."
+  },
+  {
+    "prompt": "Check early withdrawal penalties on my deployed Aerodrome gauge.",
+    "expected": "aerodrome-slipstream",
+    "mustNotInvoke": [
+      "lp-engineer"
+    ],
+    "reason": "Protocol-specific position and custody task."
   }
 ]

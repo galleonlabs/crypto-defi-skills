@@ -1,5 +1,13 @@
 # Galleon DeFi Routing Skills
 
+## Protocol workflows
+
+- [uniswap-swap](skills/uniswap-swap/SKILL.md): Quote Uniswap swaps, inspect Permit2 and reconcile AMM or order execution.
+- [lifi-cross-chain](skills/lifi-cross-chain/SKILL.md): Compare LI.FI quotes and reconcile destination delivery, partial fills and refunds.
+
+These independently installable skills include current primary-source recipes, worked outcomes and behavioral fixtures. Read-only helpers perform offline arithmetic; they do not supply wallet authority.
+
+
 [![npm](https://img.shields.io/npm/v/galleon-defi-routing-skills)](https://www.npmjs.com/package/galleon-defi-routing-skills)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 

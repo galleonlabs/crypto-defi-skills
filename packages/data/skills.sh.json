@@ -6,7 +6,9 @@
       "title": "DeFi data",
       "description": "Connect official data tools and reconcile market and protocol evidence.",
       "skills": [
-        "galleon-defi-data"
+        "galleon-defi-data",
+        "galleon-coingecko-token-research",
+        "galleon-defillama-yield-screen"
       ]
     }
   ]

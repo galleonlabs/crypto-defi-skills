@@ -23,6 +23,8 @@ export const SKILL_CATALOG = [
     name: "lp-engineer",
     purpose: "Build and review protocol adapters, automation, and tests.",
   },
+  { name: "uniswap-v3-liquidity", purpose: "Manage v3 NFT inventory, usable ticks, fee collection and range changes." },
+  { name: "aerodrome-slipstream", purpose: "Resolve Slipstream gauge custody, emissions, staking and exits." },
 ] as const;
 
 export type SkillName = (typeof SKILL_CATALOG)[number]["name"];

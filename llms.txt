@@ -1,6 +1,6 @@
 # Crypto DeFi Skills
 
-Fourteen independent DeFi skill packs; 26 current skills. Official tools, portable instructions and source-backed workflows.
+Fourteen independent DeFi skill packs; 39 current skills. Official tools, portable instructions and source-backed workflows.
 
 - [infra](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/infra): RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration
 - [data](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/data): CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence
@@ -22,3 +22,20 @@ Fourteen independent DeFi skill packs; 26 current skills. Official tools, portab
 - [Independent releases](RELEASING.md)
 
 Install one skill or any selected packs. No signer, subscription or financial authority is supplied by installation.
+
+## Protocol tasks
+
+- [galleon-aave-position](packages/lending/skills/galleon-aave-position/SKILL.md): Stress-test an Aave V3 position
+- [galleon-morpho-market](packages/lending/skills/galleon-morpho-market/SKILL.md): Inspect a Morpho market or vault
+- [galleon-compound-borrow](packages/lending/skills/galleon-compound-borrow/SKILL.md): Check Compound III borrowing capacity
+- [galleon-lido-withdrawals](packages/staking/skills/galleon-lido-withdrawals/SKILL.md): Track a Lido withdrawal to claimability
+- [galleon-pendle-maturity](packages/yield/skills/galleon-pendle-maturity/SKILL.md): Compare holding PT to maturity with exiting
+- [galleon-vault-exit](packages/yield/skills/galleon-vault-exit/SKILL.md): Check what a vault withdrawal can return now
+- [uniswap-v3-liquidity](packages/lp/skills/uniswap-v3-liquidity/SKILL.md): Inspect a Uniswap V3 liquidity position
+- [aerodrome-slipstream](packages/lp/skills/aerodrome-slipstream/SKILL.md): Inspect Slipstream liquidity and gauge rewards
+- [uniswap-swap](packages/routing/skills/uniswap-swap/SKILL.md): Prepare a Uniswap quote for review
+- [lifi-cross-chain](packages/routing/skills/lifi-cross-chain/SKILL.md): Compare a bridge route and reconcile arrival
+- [galleon-coingecko-token-research](packages/data/skills/galleon-coingecko-token-research/SKILL.md): Resolve a token before trusting its price
+- [galleon-defillama-yield-screen](packages/data/skills/galleon-defillama-yield-screen/SKILL.md): Screen yields without mistaking emissions for income
+- [galleon-coinbase-agentkit-readiness](packages/infra/skills/galleon-coinbase-agentkit-readiness/SKILL.md): Check AgentKit wallet capabilities
+- [hyperliquid-analyze](packages/hyperliquid/skills/hyperliquid-analyze/SKILL.md): Review a Hyperliquid account before trading

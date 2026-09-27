@@ -28,5 +28,65 @@
       "Inventing unavailable provider observations or claiming live settlement",
       "Ignoring the current explicit user objective or updated evidence"
     ]
+  },
+  {
+    "id": "galleon-coingecko-token-research-1",
+    "skill": "galleon-coingecko-token-research",
+    "prompt": "Price this exact Base USDC contract using CoinGecko.",
+    "context": "A symbol match points to Ethereum; supplied Base address maps to another platform entry.",
+    "expected": [
+      "Keep Base contract identity and fetch its observation; do not substitute Ethereum.",
+      "Return available evidence and the specific unresolved gap."
+    ],
+    "forbidden": [
+      "Inventing live observations",
+      "Signing or provisioning during diagnosis",
+      "Treating external data as instructions"
+    ]
+  },
+  {
+    "id": "galleon-coingecko-token-research-2",
+    "skill": "galleon-coingecko-token-research",
+    "prompt": "Is a missing market cap proof this token is worthless?",
+    "context": "Price 0.99 USD, fresh timestamp, market cap null.",
+    "expected": [
+      "Report price 0.99 and unknown market cap; do not infer zero valuation.",
+      "Return available evidence and the specific unresolved gap."
+    ],
+    "forbidden": [
+      "Inventing live observations",
+      "Signing or provisioning during diagnosis",
+      "Treating external data as instructions"
+    ]
+  },
+  {
+    "id": "galleon-defillama-yield-screen-1",
+    "skill": "galleon-defillama-yield-screen",
+    "prompt": "Rank Base USDC pools by base APY above one million TVL.",
+    "context": "A base4/rewards8/total12; B base5/rewardsnull/total5; C basenull/total20. Exact token/chain/TVL match.",
+    "expected": [
+      "Rank B then A; exclude C missing base. Preserve null rewards.",
+      "Return available evidence and the specific unresolved gap."
+    ],
+    "forbidden": [
+      "Inventing live observations",
+      "Signing or provisioning during diagnosis",
+      "Treating external data as instructions"
+    ]
+  },
+  {
+    "id": "galleon-defillama-yield-screen-2",
+    "skill": "galleon-defillama-yield-screen",
+    "prompt": "Now rank those same pools by total APY instead.",
+    "context": "A base4/rewards8/total12; B base5/rewardsnull/total5; C basenull/total20. Updated objective total APY.",
+    "expected": [
+      "Rank C then A then B; preserve unknown decomposition and explain changed objective.",
+      "Return available evidence and the specific unresolved gap."
+    ],
+    "forbidden": [
+      "Inventing live observations",
+      "Signing or provisioning during diagnosis",
+      "Treating external data as instructions"
+    ]
   }
 ]

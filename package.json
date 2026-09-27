@@ -15,6 +15,7 @@
     "discovery": "bun scripts/build-discovery-index.ts",
     "release": "bun scripts/release.ts",
     "smoke": "bun scripts/smoke.ts",
+    "smoke:registry": "bun scripts/registry-smoke.ts",
     "eval:behavior": "bun scripts/behavior-evals.ts"
   },
   "devDependencies": {

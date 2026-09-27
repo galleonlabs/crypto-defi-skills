@@ -1,3 +1,8 @@
+# 0.4.0 - 2026-09-27
+
+- Add `galleon-coingecko-token-research` with official provider recipes, evidence outputs and failure cases.
+- Add `galleon-defillama-yield-screen` with official provider recipes, evidence outputs and failure cases.
+
 # Changelog
 
 ## 0.3.3 - 2026-09-09

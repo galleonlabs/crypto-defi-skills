@@ -50,5 +50,85 @@
       "galleon-defi-data"
     ],
     "reason": "Resolving Solana signature status against actual token deltas is routing reconciliation, not a price lookup."
+  },
+  {
+    "prompt": "Quote Uniswap swaps, inspect Permit2 and reconcile AMM or order execution.",
+    "expected": "uniswap-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "Select the installed protocol-specific operational recipe."
+  },
+  {
+    "prompt": "Compare LI.FI quotes and reconcile destination delivery, partial fills and refunds.",
+    "expected": "lifi-cross-chain",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "Select the installed protocol-specific operational recipe."
+  },
+  {
+    "prompt": "The Uniswap quote refreshed after I changed the amount. Can the old Permit2 signature still be used?",
+    "expected": "uniswap-swap",
+    "mustNotInvoke": [
+      "lifi-cross-chain"
+    ],
+    "reason": "Quote-bound Permit2 authorization belongs to the Uniswap swap lifecycle."
+  },
+  {
+    "prompt": "Uniswap returned DUTCH_V3 instead of CLASSIC. Which submission and fill status path should I use?",
+    "expected": "uniswap-swap",
+    "mustNotInvoke": [
+      "lifi-cross-chain"
+    ],
+    "reason": "UniswapX order routing requires the Uniswap-specific discriminator and order lifecycle."
+  },
+  {
+    "prompt": "Prepare a V3-only Uniswap quote for exactly 100 USDC on Base and show minimum output and approval requirements.",
+    "expected": "uniswap-swap",
+    "mustNotInvoke": [
+      "lifi-cross-chain"
+    ],
+    "reason": "Exact Uniswap protocol selection, quote units and Permit2 checks use this workflow."
+  },
+  {
+    "prompt": "My Uniswap AMM swap send timed out but I have its transaction hash. Check whether it executed before retrying.",
+    "expected": "uniswap-swap",
+    "mustNotInvoke": [
+      "lifi-cross-chain"
+    ],
+    "reason": "Reconcile the original AMM transaction, receipt and token deltas without a duplicate send."
+  },
+  {
+    "prompt": "LI.FI says DONE with PARTIAL, and WETH arrived when I requested USDC. Did my transfer complete?",
+    "expected": "lifi-cross-chain",
+    "mustNotInvoke": [
+      "uniswap-swap"
+    ],
+    "reason": "LI.FI partial settlement must reconcile the actual destination asset and intended obligation."
+  },
+  {
+    "prompt": "Compare two LI.FI Base-to-Arbitrum USDC quotes by minimum destination amount including extra gas.",
+    "expected": "lifi-cross-chain",
+    "mustNotInvoke": [
+      "uniswap-swap"
+    ],
+    "reason": "LI.FI quote-specific minimum output and separately paid gas determine a comparable route."
+  },
+  {
+    "prompt": "My LI.FI source receipt succeeded but destination status is PENDING. Should I bridge the same amount again?",
+    "expected": "lifi-cross-chain",
+    "mustNotInvoke": [
+      "uniswap-swap"
+    ],
+    "reason": "Track the existing LI.FI transfer identity and destination evidence before any repeat transfer."
+  },
+  {
+    "prompt": "LI.FI returned DONE REFUNDED. Show where the refund went and whether the intended recipient was paid.",
+    "expected": "lifi-cross-chain",
+    "mustNotInvoke": [
+      "uniswap-swap"
+    ],
+    "reason": "Refund chain, asset, recipient and net amount are a distinct LI.FI terminal outcome."
   }
 ]

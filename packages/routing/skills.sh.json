@@ -3,6 +3,14 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "Protocol workflows",
+      "description": "Concrete protocol procedures with executable read recipes and outcome fixtures.",
+      "skills": [
+        "uniswap-swap",
+        "lifi-cross-chain"
+      ]
+    },
+    {
       "title": "DeFi routing",
       "description": "Compare swaps and bridges and track cross-chain settlement.",
       "skills": [

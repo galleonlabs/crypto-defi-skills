@@ -3,7 +3,7 @@ name: galleon-defi-staking
 description: "Use when planning liquid staking, wrapping, restaking, delegation or queued exit claims for Lido, Rocket Pool, EigenLayer and Symbiotic."
 license: MIT
 metadata:
-  version: "0.1.2"
+  version: "0.2.0"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -32,3 +32,11 @@ Read [task examples and user configuration](references/task-examples.md) for a c
 Return chain/version and source time, underlying versus receipt units, available liquidity, current queue state and ownership, operator/curator/slashing exposure where relevant, unsigned plan and approval scope, and the verified lifecycle stage. Report a delay as an estimate unless a current contract condition proves eligibility.
 
 Do not auto-install/connect tools, import wallet secrets, select an operator, extend authority, or schedule claims merely because these capabilities are documented. Use native harness scheduling only when monitoring is requested, with explicit targets and actionable alerts.
+
+## Protocol-specific procedures
+
+For a named protocol task, prefer its focused skill when installed:
+
+- `galleon-lido-withdrawals`: Lido request IDs, NFT ownership, finalization and ETH claims.
+
+This existing skill remains usable on its own for cross-protocol comparisons. Do not require another pack to complete its workflow.

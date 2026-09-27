@@ -1,21 +1,21 @@
 [
   {
-    "prompt": "My Lido withdrawal request is finalized. Has my ETH come back yet?",
+    "prompt": "Compare withdrawal delays and claim stages across Lido, Rocket Pool and Symbiotic.",
     "expected": "galleon-defi-staking",
     "mustNotInvoke": [
       "galleon-defi-portfolio",
       "galleon-defi-yield"
     ],
-    "reason": "Queue state versus a completed claim is the staking lifecycle, not a portfolio balance or a vault exit."
+    "reason": "Cross-protocol exit lifecycle comparison uses the portable staking overview."
   },
   {
-    "prompt": "I transferred my unstETH NFT after requesting. Who can claim it now?",
+    "prompt": "Compare who controls claims across transferable withdrawal NFTs and account-bound staking queues.",
     "expected": "galleon-defi-staking",
     "mustNotInvoke": [
       "galleon-defi-payments",
       "galleon-defi-security"
     ],
-    "reason": "Claim ownership after a request transfer is staking lifecycle state, not a transfer reconciliation or a signature review."
+    "reason": "Cross-protocol ownership comparison is broader than a specific Lido request."
   },
   {
     "prompt": "My wstETH balance has not moved all week. Is this position actually earning?",
@@ -52,5 +52,45 @@
       "galleon-defi-governance"
     ],
     "reason": "A restaking scope change is a staking decision; it is not a transaction decode or a governance action."
+  },
+  {
+    "prompt": "Claim the ETH from my two Lido withdrawal requests.",
+    "expected": "galleon-lido-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The selected protocol and operation have a dedicated procedure."
+  },
+  {
+    "prompt": "My Lido request finalized but ETH has not arrived; identify the remaining claim step.",
+    "expected": "galleon-lido-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Lido queue finalization is distinct from the ETH claim and balance reconciliation."
+  },
+  {
+    "prompt": "I transferred my unstETH NFT after requesting withdrawal; determine who can claim.",
+    "expected": "galleon-lido-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Current NFT ownership controls Lido queue claim authority."
+  },
+  {
+    "prompt": "My Lido request status is claimed and ownerOf now reverts; should I repeat the withdrawal?",
+    "expected": "galleon-lido-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-security"
+    ],
+    "reason": "Burned claim NFTs require request and receipt reconciliation, not a new request."
+  },
+  {
+    "prompt": "Compare exiting wstETH through the Ethereum Lido queue with a same-size swap quote.",
+    "expected": "galleon-lido-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "Native queue sizing and waiting risk belong to the dedicated Lido exit comparison."
   }
 ]

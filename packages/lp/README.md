@@ -1,5 +1,13 @@
 # LP Skills
 
+## Protocol workflows
+
+- [uniswap-v3-liquidity](skills/uniswap-v3-liquidity/SKILL.md): Manage v3 NFT inventory, usable ticks, fee collection and range changes.
+- [aerodrome-slipstream](skills/aerodrome-slipstream/SKILL.md): Resolve Slipstream gauge custody, emissions, staking and exits.
+
+These independently installable skills include current primary-source recipes, worked outcomes and behavioral fixtures. Read-only helpers perform offline arithmetic; they do not supply wallet authority.
+
+
 [![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/galleon-lp-skills)](https://www.npmjs.com/package/galleon-lp-skills)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)

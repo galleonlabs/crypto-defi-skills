@@ -12,7 +12,7 @@
     },
     "packages/data": {
       "name": "galleon-defi-data-skills",
-      "version": "0.3.3",
+      "version": "0.4.0",
       "bin": {
         "defi-data-skills": "dist/cli.js",
       },
@@ -39,7 +39,7 @@
     },
     "packages/hyperliquid": {
       "name": "galleon-hyperliquid-skills",
-      "version": "0.3.3",
+      "version": "0.3.4",
       "bin": {
         "hyperliquid-skills": "dist/cli.js",
         "hl-skills": "dist/cli.js",
@@ -53,7 +53,7 @@
     },
     "packages/infra": {
       "name": "galleon-defi-infra-skills",
-      "version": "0.2.3",
+      "version": "0.3.0",
       "bin": {
         "defi-infra-skills": "dist/cli.js",
       },
@@ -66,14 +66,14 @@
     },
     "packages/lending": {
       "name": "galleon-defi-lending-skills",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "bin": {
         "defi-lending-skills": "dist/cli.js",
       },
     },
     "packages/lp": {
       "name": "galleon-lp-skills",
-      "version": "0.5.2",
+      "version": "0.6.0",
       "bin": {
         "lp-skills": "dist/cli.js",
       },
@@ -100,7 +100,7 @@
     },
     "packages/routing": {
       "name": "galleon-defi-routing-skills",
-      "version": "0.1.3",
+      "version": "0.2.0",
       "bin": {
         "defi-routing-skills": "dist/cli.js",
       },
@@ -114,7 +114,7 @@
     },
     "packages/staking": {
       "name": "galleon-defi-staking-skills",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "bin": {
         "defi-staking-skills": "dist/cli.js",
       },
@@ -128,7 +128,7 @@
     },
     "packages/yield": {
       "name": "galleon-defi-yield-skills",
-      "version": "0.1.2",
+      "version": "0.2.0",
       "bin": {
         "defi-yield-skills": "dist/cli.js",
       },

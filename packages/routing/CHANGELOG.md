@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 - 2026-09-27
+
+- Add `uniswap-swap`: Quote Uniswap swaps, inspect Permit2 and reconcile AMM or order execution.
+- Add `lifi-cross-chain`: Compare LI.FI quotes and reconcile destination delivery, partial fills and refunds.
+- Add standalone read recipes, offline helper tests, worked outputs and protocol behavioral fixtures.
+
+
 ## 0.1.3 - 2026-09-09
 
 Add task-specific intake, configurable provider and user preferences, calculated successful examples and recovery paths. Preserve standalone installation and existing authorization boundaries.

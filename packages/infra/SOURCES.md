@@ -46,3 +46,17 @@ Expand official DeFi tool selection, Hermes progressive disclosure and EVM/Solan
 ## Minara workflow review
 
 Reviewed [Minara skills at b93aba1](https://github.com/Minara-AI/minara-skills/tree/b93aba1029827c37cf5ad82b19bfa8c289912091) on 2026-09-05 as research input. Add scoped CLI/session recovery, lazy authentication and explicit vendor-wallet isolation checks. These are independently authored procedures, with primary references inside each affected skill. No Minara CLI, hosted service, code or installer is bundled.
+
+## galleon-coinbase-agentkit-readiness
+
+Reviewed 2026-09-27. Recipes target CDP SDK v2 account APIs and the current AgentKit EVM provider interface. Record the installed exact versions at use time; no unpinned dependency is installed by this skill.
+
+- [Coinbase AgentKit repository](https://github.com/coinbase/agentkit): framework integration and wallet/action provider separation; Node.js 22+ for current TypeScript quickstart.
+- [EVM provider implementation](https://github.com/coinbase/agentkit/blob/main/typescript/agentkit/src/wallet-providers/cdpEvmWalletProvider.ts): environment names and initialization lifecycle. Inspect the installed revision before calling it.
+- [CDP SDK](https://github.com/coinbase/cdp-sdk): installed types and existing-account retrieval.
+- [API Key Wallet quickstart](https://docs.cdp.coinbase.com/wallet-api/v2/introduction/quickstart): separate creation, funding and transaction operations; none is a readiness test.
+- [Agentic Wallet CLI](https://docs.cdp.coinbase.com/agentic-wallet/cli/quickstart): separate email authentication and read commands; current prerequisites specify Node.js 24+.
+
+## Release verification 2026-09-27
+
+AgentKit upstream EVM provider source was inspected: `configureWithWallet` retrieves an account when an address is supplied and creates one otherwise. The readiness procedure avoids calling it as a generic probe. Package checks, CLI catalog/show tests and canonical skill validation passed. No authenticated CDP account, wallet creation, signing, funding or paid capability was exercised.

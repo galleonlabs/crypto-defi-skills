@@ -40,3 +40,9 @@ Run the exported packet in a clean agent context, read references progressively,
 The 2026-09-09 review compared Minara's actual skill source and benchmark, rather than assuming its documented platform capabilities ship in its public skill. We adopted concrete task completion and worked outputs while preserving independently installable packs, compatible user-selected providers and exact authorization boundaries. Public research needs only its own inputs; preparation, execution and monitoring are separate user intents. Examples use synthetic arithmetic and avoid inventing provider API commands.
 
 See the [9 September evidence record](evaluations/2026-09-09/README.md) for source pins, exercise responses, independent review and validation limits.
+
+## Protocol procedures, 2026-09-27
+
+Thirteen protocol skills now carry direct task triggers, concrete official reads, worked results and version-specific failure handling across lending, LPs, routing, staking, yields, market data and CDP readiness. Broad primitive skills remain available for cross-protocol work; their presence is no longer the only discovery path for a named protocol.
+
+The [forward-check record](evaluations/2026-09-27/README.md) records five independent synthetic requests and their actual responses. Offline helpers cover Aave stress arithmetic, Uniswap ticks, LI.FI settlement classification and DefiLlama filtering. Use `bun run smoke:registry <pack>` after publication to verify the exact public package and every skill resource against source. These checks are distinct from financial execution and from a measured model benchmark.

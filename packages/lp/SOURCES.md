@@ -61,3 +61,8 @@ All additions are independently written guidance. No VFAT code, contract address
 ## Primitive expansion - 2026-09-05
 
 Expand official Curve and Balancer guidance, VFAT custody and fees, and Revert planner/confirmation boundaries. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
+
+## Protocol workflow sources, checked 2026-09-27
+
+- [uniswap-v3-liquidity primary sources](skills/uniswap-v3-liquidity/references/recipes.md)
+- [aerodrome-slipstream primary sources](skills/aerodrome-slipstream/references/recipes.md)

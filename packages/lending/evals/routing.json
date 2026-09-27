@@ -9,22 +9,22 @@
     "reason": "Borrow cost and liquidation terms across lending deployments are the lending pack, not vault comparison or generic market data."
   },
   {
-    "prompt": "My Compound III account has a positive base balance, so why is the WBTC I supplied earning nothing?",
+    "prompt": "Compare how interest on collateral differs across Compound III, Aave and Morpho.",
     "expected": "galleon-defi-lending",
     "mustNotInvoke": [
       "galleon-defi-yield",
       "galleon-defi-portfolio"
     ],
-    "reason": "Collateral versus base supply mechanics belong to the lending pack, not a yield product or a holdings report."
+    "reason": "A cross-protocol lending comparison uses the portable lending overview."
   },
   {
-    "prompt": "Prepare a Morpho repay and collateral withdrawal, showing each approval and leg before I sign anything.",
+    "prompt": "Compare the repay and withdrawal sequence across two different lending protocols before choosing one.",
     "expected": "galleon-defi-lending",
     "mustNotInvoke": [
       "galleon-defi-security",
       "galleon-defi-routing"
     ],
-    "reason": "Building the unsigned lending plan is the lending pack; payload review and swap routing are separate later steps."
+    "reason": "Cross-protocol planning precedes a dedicated single-deployment procedure."
   },
   {
     "prompt": "An indexer reports my health factor at 1.03 from an old block and fresh oracle data is unavailable.",
@@ -45,11 +45,132 @@
     "reason": "Partial lending completion is reconciled by the lending pack against the borrow hash and nonce."
   },
   {
-    "prompt": "Spark's interface shows this as an isolated Morpho market. Which liquidation rules actually apply to my loan?",
+    "prompt": "Compare lending risks across Spark frontends, Euler vaults and isolated markets before choosing a deployment.",
     "expected": "galleon-defi-lending",
     "mustNotInvoke": [
       "galleon-defi-yield"
     ],
-    "reason": "Resolving the real market identity behind a frontend is lending mechanics, not a savings product comparison."
+    "reason": "Cross-protocol market discovery belongs to the portable lending overview."
+  },
+  {
+    "prompt": "Stress my Aave V3 borrow of another 1,000 against a 1.3 minimum health factor.",
+    "expected": "galleon-aave-position",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The selected protocol and operation have a dedicated procedure."
+  },
+  {
+    "prompt": "Check this Morpho market before I borrow and compare its stressed LTV with its LLTV.",
+    "expected": "galleon-morpho-market",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The selected protocol and operation have a dedicated procedure."
+  },
+  {
+    "prompt": "Prepare a 1000 base-token withdrawal from my Compound III account.",
+    "expected": "galleon-compound-borrow",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The selected protocol and operation have a dedicated procedure."
+  },
+  {
+    "prompt": "My Aave V3 health factor is 1.03 in an old indexer snapshot; can I withdraw WETH now?",
+    "expected": "galleon-aave-position",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "galleon-defi-data"
+    ],
+    "reason": "Fresh pool risk and withdrawal post-state belong to Aave position planning."
+  },
+  {
+    "prompt": "I enabled Aave V3 eMode yesterday; calculate whether a new USDC debt fits the actual category.",
+    "expected": "galleon-aave-position",
+    "mustNotInvoke": [
+      "galleon-morpho-market"
+    ],
+    "reason": "Aave eMode eligibility differs from Morpho isolated-market LLTV."
+  },
+  {
+    "prompt": "The Aave V3 repay approval succeeded, but the repay hash is still pending; release my collateral.",
+    "expected": "galleon-aave-position",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "Repay receipt and sequential collateral risk must be resolved before withdrawal."
+  },
+  {
+    "prompt": "Check Aave V3 isolation debt ceiling before preparing my borrow.",
+    "expected": "galleon-aave-position",
+    "mustNotInvoke": [
+      "galleon-compound-borrow"
+    ],
+    "reason": "Isolation mode is an Aave reserve constraint, not Comet minimum borrowing."
+  },
+  {
+    "prompt": "These two Morpho markets share tickers but use different oracles; identify their risks and market IDs.",
+    "expected": "galleon-morpho-market",
+    "mustNotInvoke": [
+      "galleon-aave-position"
+    ],
+    "reason": "Permissionless market parameter identity and oracle composition are Morpho-specific."
+  },
+  {
+    "prompt": "My Morpho Blue position shows borrow shares; calculate accrued loan debt without treating shares as tokens.",
+    "expected": "galleon-morpho-market",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Morpho accrual and share-conversion mechanics are required before portfolio valuation."
+  },
+  {
+    "prompt": "This Morpho vault is V2; inspect its adapters before telling me how exits work.",
+    "expected": "galleon-morpho-market",
+    "mustNotInvoke": [
+      "galleon-vault-exit"
+    ],
+    "reason": "Morpho version and adapter allocation diligence precedes generic vault exit preparation."
+  },
+  {
+    "prompt": "Compare the withdrawal queue of this legacy MetaMorpho V1 vault against available liquidity in its markets.",
+    "expected": "galleon-morpho-market",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "Legacy Morpho queue and downstream market liquidity need the dedicated procedure."
+  },
+  {
+    "prompt": "My Comet account supplies 400 USDC; withdrawing 1000 would leave what debt against baseBorrowMin?",
+    "expected": "galleon-compound-borrow",
+    "mustNotInvoke": [
+      "galleon-aave-position"
+    ],
+    "reason": "Comet withdraw offsets positive base supply before creating debt."
+  },
+  {
+    "prompt": "Compound III isLiquidatable is false but isBorrowCollateralized is false too; explain my borrowing limit.",
+    "expected": "galleon-compound-borrow",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The Comet two-factor distinction requires its dedicated borrowing procedure."
+  },
+  {
+    "prompt": "Why does WBTC collateral on Compound III not earn the base asset supply rate?",
+    "expected": "galleon-compound-borrow",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "Comet base interest differs from non-base collateral mechanics."
+  },
+  {
+    "prompt": "Prepare a Compound III base-asset repayment and verify whether excess becomes supply.",
+    "expected": "galleon-compound-borrow",
+    "mustNotInvoke": [
+      "galleon-morpho-market"
+    ],
+    "reason": "Comet supply repays base debt and has different accounting from Morpho repay."
   }
 ]

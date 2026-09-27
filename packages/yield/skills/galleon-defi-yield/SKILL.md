@@ -3,7 +3,7 @@ name: galleon-defi-yield
 description: "Use when comparing savings and strategy vaults, planning deposits or exits, or evaluating principal/yield tokens and maturity across Pendle, Yearn, Spark, Morpho, Euler and Ethena."
 license: MIT
 metadata:
-  version: "0.1.2"
+  version: "0.2.0"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -32,3 +32,12 @@ Read [task examples and user configuration](references/task-examples.md) for a c
 Show asset identity, observation block/time, APY methodology, underlying/strategy and governance exposure, net horizon comparison, liquidity and exit route, explicit transaction limits and approval scope, and what was actually verified. Label official documentation separately from tooling tested in the current environment.
 
 Do not connect/install services or enable broad tools automatically. Use official provider skills when building an integration instead of copying their SDK logic. Borrowing against a vault or PT introduces lending risk and requires a separate position analysis; Boros margin trades are derivatives, not passive vault deposits.
+
+## Protocol-specific procedures
+
+For a named protocol task, prefer its focused skill when installed:
+
+- `galleon-pendle-maturity`: PT/YT maturity, accounting assets and exit comparisons.
+- `galleon-vault-exit`: ERC4626 previews versus limits and asynchronous redemption.
+
+This existing skill remains usable on its own for cross-protocol comparisons. Do not require another pack to complete its workflow.

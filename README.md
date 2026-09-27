@@ -3,27 +3,50 @@
 [![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-**Portable skills for the full DeFi workflow: research, plan, act with permission, and verify.** Built around maintained official tools, with independent packages you can mix and match.
+**Protocol-specific procedures your agent can use to finish a DeFi task.** Inspect Aave debt, assess a Uniswap position, check Aerodrome gauge custody, claim a Lido withdrawal, screen yields or reconcile a bridge. Concrete reads, local calculations and verifiable outcomes, packaged independently.
 
 Start with [Boomkin](https://github.com/galleonlabs/boomkin) for a complete Hermes agent, or install only the skills your existing agent needs.
 
 [Explore packs](#independent-packs) · [Install](#install-only-what-you-need) · [Research](docs/research/report-source.md) · [Quality](docs/SKILL-QUALITY.md) · [Contribute](CONTRIBUTING.md)
 
+## Choose a protocol task
+
+Install a skill that names the job. Each new workflow includes the concrete reads or official tool recipe, protocol-specific accounting and failure handling, a worked decision, and an explicit completion condition. Local helpers handle repeatable calculations; they never sign or submit transactions.
+
+| Job | Skill | Result |
+| --- | --- | --- |
+| Stress-test an Aave V3 position | [`galleon-aave-position`](packages/lending/skills/galleon-aave-position/SKILL.md) | Current and stressed health factor, debt capacity, reserve restrictions and an unsigned action plan. |
+| Inspect a Morpho market or vault | [`galleon-morpho-market`](packages/lending/skills/galleon-morpho-market/SKILL.md) | Market identity, oracle/IRM/LLTV, liquidity and vault allocation or exit constraints. |
+| Check Compound III borrowing capacity | [`galleon-compound-borrow`](packages/lending/skills/galleon-compound-borrow/SKILL.md) | Base debt, collateral limits, interest exposure and an unsigned borrow or repay plan. |
+| Track a Lido withdrawal to claimability | [`galleon-lido-withdrawals`](packages/staking/skills/galleon-lido-withdrawals/SKILL.md) | Request ownership, finalized/claimed status, claimable ETH and the next supported step. |
+| Compare holding PT to maturity with exiting | [`galleon-pendle-maturity`](packages/yield/skills/galleon-pendle-maturity/SKILL.md) | Maturity terms, underlying accounting unit, executable exit comparison and post-expiry route. |
+| Check what a vault withdrawal can return now | [`galleon-vault-exit`](packages/yield/skills/galleon-vault-exit/SKILL.md) | Preview versus owner limits, rounding, liquidity and asynchronous exit constraints. |
+| Inspect a Uniswap V3 liquidity position | [`uniswap-v3-liquidity`](packages/lp/skills/uniswap-v3-liquidity/SKILL.md) | Position composition, tick bounds, fee state and a bounded liquidity plan. |
+| Inspect Slipstream liquidity and gauge rewards | [`aerodrome-slipstream`](packages/lp/skills/aerodrome-slipstream/SKILL.md) | Range status, gauge custody, fees versus emissions, and exit constraints. |
+| Prepare a Uniswap quote for review | [`uniswap-swap`](packages/routing/skills/uniswap-swap/SKILL.md) | Quote identity, route type, approval/Permit2 requirements and unsigned transaction review. |
+| Compare a bridge route and reconcile arrival | [`lifi-cross-chain`](packages/routing/skills/lifi-cross-chain/SKILL.md) | Net destination amount, gas needs, route limits and destination settlement evidence. |
+| Resolve a token before trusting its price | [`galleon-coingecko-token-research`](packages/data/skills/galleon-coingecko-token-research/SKILL.md) | Resolved token identity, timestamped market evidence and unsupported or stale fields. |
+| Screen yields without mistaking emissions for income | [`galleon-defillama-yield-screen`](packages/data/skills/galleon-defillama-yield-screen/SKILL.md) | A reproducible shortlist separating base yield, rewards, missing fields and exit diligence. |
+| Check AgentKit wallet capabilities | [`galleon-coinbase-agentkit-readiness`](packages/infra/skills/galleon-coinbase-agentkit-readiness/SKILL.md) | Capability and policy gaps, tested read access and the next required setup step. |
+| Review a Hyperliquid account before trading | [`hyperliquid-analyze`](packages/hyperliquid/skills/hyperliquid-analyze/SKILL.md) | Account mode, margin exposure, funding and market evidence for a trade decision. |
+
+These skills are independently installable. Protocol identities, market parameters and deployments are resolved at use time. The existing primitive skills remain available for cross-protocol research and venues without a dedicated procedure.
+
 ## Independent packs
 
-Fourteen packs, 26 current skills. Each pack has its own npm release, CLI, plugin manifests and self-contained references. Two additional LP directories preserve previous install names as notices.
+Fourteen packs, 39 current skills. Each pack has its own npm release, CLI, plugin manifests and self-contained references. Two additional LP directories preserve previous install names as notices.
 
 | Pack | npm release | Coverage |
 | --- | --- | --- |
-| [Infra](packages/infra) | [`galleon-defi-infra-skills@0.2.3`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.2.3) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
-| [Data](packages/data) | [`galleon-defi-data-skills@0.3.3`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.3.3) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
-| [Lp](packages/lp) | [`galleon-lp-skills@0.5.2`](https://www.npmjs.com/package/galleon-lp-skills/v/0.5.2) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
+| [Infra](packages/infra) | [`galleon-defi-infra-skills@0.3.0`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.3.0) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
+| [Data](packages/data) | [`galleon-defi-data-skills@0.4.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.4.0) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
+| [Lp](packages/lp) | [`galleon-lp-skills@0.6.0`](https://www.npmjs.com/package/galleon-lp-skills/v/0.6.0) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
 | [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.3.4`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.3.4) | Spot, perps, HIP-3, account modes, execution and review |
-| [Lending](packages/lending) | [`galleon-defi-lending-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.1.2) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
-| [Staking](packages/staking) | [`galleon-defi-staking-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-staking-skills/v/0.1.2) | Lido, Rocket Pool, EigenLayer and Symbiotic staking and exits |
-| [Yield](packages/yield) | [`galleon-defi-yield-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.1.2) | Vaults, Pendle PT/YT, Yearn, Spark savings and Ethena |
+| [Lending](packages/lending) | [`galleon-defi-lending-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.2.0) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
+| [Staking](packages/staking) | [`galleon-defi-staking-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-staking-skills/v/0.2.0) | Lido, Rocket Pool, EigenLayer and Symbiotic staking and exits |
+| [Yield](packages/yield) | [`galleon-defi-yield-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.2.0) | Vaults, Pendle PT/YT, Yearn, Spark savings and Ethena |
 | [Tokenized Assets](packages/tokenized-assets) | [`galleon-defi-tokenized-assets-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-tokenized-assets-skills/v/0.1.2) | Ondo and OpenEden eligibility, issuer risk and settlement |
-| [Routing](packages/routing) | [`galleon-defi-routing-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.1.3) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
+| [Routing](packages/routing) | [`galleon-defi-routing-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.2.0) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
 | [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.4`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.4) | GMX, Derive, Drift and Pendle Boros trading lifecycles |
 | [Portfolio](packages/portfolio) | [`galleon-defi-portfolio-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-portfolio-skills/v/0.1.3) | Positions, liabilities, net exposure, cash flows and performance |
 | [Security](packages/security) | [`galleon-defi-security-skills@0.2.2`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.2.2) | Token diligence, transaction decoding, permissions and simulation review |
@@ -37,9 +60,9 @@ Coverage means operational guidance and reviewed official interfaces. It does no
 Choose a single skill with the upstream [Agent Skills installer](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-lending
-npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-portfolio
-npx skills add galleonlabs/crypto-defi-skills --skill lp-monitor
+npx skills add galleonlabs/crypto-defi-skills --skill galleon-aave-position
+npx skills add galleonlabs/crypto-defi-skills --skill galleon-defillama-yield-screen
+npx skills add galleonlabs/crypto-defi-skills --skill aerodrome-slipstream
 ```
 
 Or select a complete pack:
@@ -56,9 +79,9 @@ Append `--list` to inspect available skills. The installer lets you choose the r
 Every package supplies a local corpus CLI and an ESM `SKILL_CATALOG` export:
 
 ```bash
-npx --package galleon-defi-lending-skills@0.1.2 defi-lending-skills catalog --json
-npx --package galleon-defi-lending-skills@0.1.2 defi-lending-skills show galleon-defi-lending
-npx --package galleon-defi-lending-skills@0.1.2 defi-lending-skills validate --json
+npx --package galleon-defi-lending-skills@0.2.0 defi-lending-skills catalog --json
+npx --package galleon-defi-lending-skills@0.2.0 defi-lending-skills show galleon-aave-position
+npx --package galleon-defi-lending-skills@0.2.0 defi-lending-skills validate --json
 ```
 
 Node 20+ is sufficient for the published CLIs. Provider tools may require newer runtimes; check their reference before installation. npm supplies the CLI and corpus; the skills installer or Boomkin places the corpus in your agent's discovery directory. The CLIs never sign or submit transactions. LP and Hyperliquid also include local calculations, while infrastructure and data include bounded read-only diagnostics.
@@ -83,9 +106,9 @@ Keep Hermes as the runtime. Load the relevant skill and then its references on d
 
 ## Try a workflow
 
-> Use galleon-defi-lending to compare these Aave and Morpho markets, including oracle, liquidation and exit risks. Produce a plan without signing.
+> Use galleon-aave-position to inspect this Aave V3 wallet and show health factor after a 20% collateral-price fall and 30 days of debt interest. Keep the plan unsigned.
 
-> Use galleon-defi-routing to compare moving this USDC amount from Base to Arbitrum. Include destination gas, fees and refund behavior.
+> Use lifi-cross-chain to check whether this Base-to-Arbitrum USDC transfer arrived. Verify the recipient, destination asset and actual amount rather than relying on the source receipt.
 
 > Use galleon-defi-portfolio to reconcile these wallet positions, separating debt, queued withdrawals and assets without reliable prices.
 

@@ -1,10 +1,18 @@
 import { expect, test } from "bun:test";
 import { corpus, neutralPrompt, validateCases, type BehaviorCase } from "../scripts/behavior-evals.ts";
+import { packages, root } from "../scripts/workspaces.ts";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 const example: BehaviorCase = { id: "sample-case", skill: "example", prompt: "Compare these supplied observations.", context: "Synthetic current observations only.", expected: ["Private success criterion"], forbidden: ["Private failure criterion"] };
 test("every active skill has at least two behavioral exercise inputs", async () => {
   const cases = await corpus();
-  expect(new Set(cases.map(({ item }) => item.skill)).size).toBe(26);
-  expect(cases.length).toBeGreaterThanOrEqual(52);
+  const expected: string[] = [];
+  for (const pack of await packages()) {
+    const { SKILL_CATALOG } = await import(pathToFileURL(resolve(root, pack.directory, "src/index.ts")).href);
+    expected.push(...SKILL_CATALOG.map((skill: { name: string }) => skill.name));
+  }
+  expect([...new Set(cases.map(({ item }) => item.skill))].sort()).toEqual(expected.sort());
+  expect(cases.length).toBeGreaterThanOrEqual(expected.length * 2);
 });
 test("rejects malformed, duplicate and unknown behavioral fixtures", () => {
   expect(validateCases(null, []).length).toBeGreaterThan(0);

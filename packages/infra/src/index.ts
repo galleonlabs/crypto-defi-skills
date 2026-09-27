@@ -1,2 +1,2 @@
 export { diagnoseRpc, credentialPresence, type ReadinessInput, type ReadinessReport, type Transport } from "../skills/galleon-defi-infra/scripts/readiness.js";
-export const SKILL_CATALOG = [{ name: "galleon-defi-infra", purpose: "Wire RPC, managed wallets and Hermes; verify read access and scoped permissions." }] as const;
+export const SKILL_CATALOG = [{ name: "galleon-defi-infra", purpose: "Wire RPC, managed wallets and Hermes; verify read access and scoped permissions." }, { name: "galleon-coinbase-agentkit-readiness", purpose: "Audit CDP accounts and agent action exposure." }] as const;

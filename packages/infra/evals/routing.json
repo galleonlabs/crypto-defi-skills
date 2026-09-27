@@ -28,5 +28,45 @@
     "expected": "galleon-defi-infra",
     "mustNotInvoke": [],
     "reason": "First-touch connection failures are an infrastructure diagnosis."
+  },
+  {
+    "prompt": "Check my existing Base wallet balance without creating anything.",
+    "expected": "galleon-coinbase-agentkit-readiness",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "The existing CDP provider and action inventory need the dedicated readiness recipe rather than general provider provisioning."
+  },
+  {
+    "prompt": "Audit whether CDP is authenticated; all keys show as set.",
+    "expected": "galleon-coinbase-agentkit-readiness",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "The existing CDP provider and action inventory need the dedicated readiness recipe rather than general provider provisioning."
+  },
+  {
+    "prompt": "Inspect AgentKit action providers without invoking them.",
+    "expected": "galleon-coinbase-agentkit-readiness",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "The existing CDP provider and action inventory need the dedicated readiness recipe rather than general provider provisioning."
+  },
+  {
+    "prompt": "Diagnose CDP existing-account lookup failure.",
+    "expected": "galleon-coinbase-agentkit-readiness",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "The existing CDP provider and action inventory need the dedicated readiness recipe rather than general provider provisioning."
+  },
+  {
+    "prompt": "Find why AgentKit reports the wrong Base wallet balance.",
+    "expected": "galleon-coinbase-agentkit-readiness",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "The existing CDP provider and action inventory need the dedicated readiness recipe rather than general provider provisioning."
   }
 ]

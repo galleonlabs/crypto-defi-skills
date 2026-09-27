@@ -6,7 +6,9 @@
       "title": "DeFi yield",
       "description": "Evaluate vaults and yield tokens, including liquidity and maturity.",
       "skills": [
-        "galleon-defi-yield"
+        "galleon-defi-yield",
+        "galleon-pendle-maturity",
+        "galleon-vault-exit"
       ]
     }
   ]

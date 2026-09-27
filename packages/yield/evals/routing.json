@@ -9,30 +9,30 @@
     "reason": "Vault and principal-token comparison over a holding period is the yield pack, not a borrow market or a raw APY feed."
   },
   {
-    "prompt": "Plan a zero-loss exit from this Yearn vault instead of accepting the default redeem loss.",
+    "prompt": "Compare Yearn vault loss controls with Ethena cooldown costs before choosing a yield product.",
     "expected": "galleon-defi-yield",
     "mustNotInvoke": [
       "galleon-defi-lending",
       "galleon-defi-routing"
     ],
-    "reason": "Vault exit semantics and loss bounds are yield workflow, not lending repayment or a swap route."
+    "reason": "Cross-protocol yield product comparison precedes a specific exit procedure."
   },
   {
-    "prompt": "Spark V2 reports ten million total assets but only ten thousand idle. How much can I withdraw now?",
+    "prompt": "Compare yield and liquidity reporting across Spark savings and Yearn strategies.",
     "expected": "galleon-defi-yield",
     "mustNotInvoke": [
       "galleon-defi-portfolio"
     ],
-    "reason": "Withdrawal limits against vault liquidity are yield mechanics, not a holdings valuation."
+    "reason": "Cross-provider savings analysis uses the portable yield workflow."
   },
   {
-    "prompt": "My YT matured with rewards still unclaimed. What is it worth now?",
+    "prompt": "Compare time-limited yield-token incentives with open-ended vault rewards for a three-month holding period.",
     "expected": "galleon-defi-yield",
     "mustNotInvoke": [
       "galleon-defi-portfolio",
       "galleon-defi-derivatives"
     ],
-    "reason": "Expiring yield-token accounting is the yield pack; it is not a portfolio total and not a derivatives payoff."
+    "reason": "A cross-product holding-period comparison belongs to the portable yield workflow."
   },
   {
     "prompt": "The sUSDe APY the provider shows does not match the latest annualized distribution.",
@@ -50,5 +50,85 @@
       "galleon-defi-security"
     ],
     "reason": "Separating a conversion estimate from an accepted deposit is yield workflow, not payload review."
+  },
+  {
+    "prompt": "Redeem my Pendle PT now; the maturity date is tomorrow.",
+    "expected": "galleon-pendle-maturity",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The selected protocol and operation have a dedicated procedure."
+  },
+  {
+    "prompt": "Redeem all 1000 shares from this ERC4626 vault.",
+    "expected": "galleon-vault-exit",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The selected protocol and operation have a dedicated procedure."
+  },
+  {
+    "prompt": "I hold only PT before Pendle expiry; explain why the paired redemption asks for YT.",
+    "expected": "galleon-pendle-maturity",
+    "mustNotInvoke": [
+      "galleon-vault-exit"
+    ],
+    "reason": "Pre-expiry principal/yield pairing is not an ERC4626 share redemption."
+  },
+  {
+    "prompt": "Pendle displays 8% fixed APY but my exact-size sale quote is below entry; compare exit and maturity.",
+    "expected": "galleon-pendle-maturity",
+    "mustNotInvoke": [
+      "galleon-defi-data"
+    ],
+    "reason": "Realized PT exit versus hold return requires maturity and route accounting."
+  },
+  {
+    "prompt": "My Pendle PT matured; identify the SY accounting asset before promising a token amount.",
+    "expected": "galleon-pendle-maturity",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio"
+    ],
+    "reason": "PT denomination and SY exchange rate determine redemption rather than nominal holdings."
+  },
+  {
+    "prompt": "Pendle YT has expired but accrued rewards remain; separate future yield from claimable rewards.",
+    "expected": "galleon-pendle-maturity",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "YT maturity and reward accounting need the focused Pendle procedure."
+  },
+  {
+    "prompt": "ERC4626 previewRedeem returns assets but maxRedeem is zero; can I exit now?",
+    "expected": "galleon-vault-exit",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "Dedicated exit feasibility separates conversion preview from owner-specific limits."
+  },
+  {
+    "prompt": "I need exactly 500 underlying assets from this ERC4626 vault; choose withdraw or redeem.",
+    "expected": "galleon-vault-exit",
+    "mustNotInvoke": [
+      "galleon-pendle-maturity"
+    ],
+    "reason": "Exact-asset versus exact-share exits use vault methods, not PT maturity."
+  },
+  {
+    "prompt": "This ERC7540 vault rejects previewRedeem; inspect pending and claimable redemption requests.",
+    "expected": "galleon-vault-exit",
+    "mustNotInvoke": [
+      "galleon-lido-withdrawals"
+    ],
+    "reason": "ERC7540 controller/request semantics differ from Lido unstETH NFTs."
+  },
+  {
+    "prompt": "Prepare an ERC4626 redemption with a minimum received amount without inventing extra redeem arguments.",
+    "expected": "galleon-vault-exit",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "Vault slippage bounds require supported router semantics, not a generic swap quote."
   }
 ]

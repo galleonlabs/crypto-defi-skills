@@ -28,5 +28,35 @@
       "Inventing unavailable provider observations or claiming live settlement",
       "Ignoring the current explicit user objective or updated evidence"
     ]
+  },
+  {
+    "id": "galleon-lido-withdrawals-1",
+    "skill": "galleon-lido-withdrawals",
+    "prompt": "Claim the ETH from my two Lido withdrawal requests.",
+    "context": "Synthetic ID 101 is finalized and unclaimed with 1.998 ETH claimable and user-owned NFT. ID 102 requests 3 stETH but is not finalized. No claim simulation exists.",
+    "expected": [
+      "Only 101 is currently claimable",
+      "Refresh hints, ownership and simulate claim",
+      "102 remains pending with no guaranteed ETA"
+    ],
+    "forbidden": [
+      "Claim all 5 ETH now",
+      "Call request transaction a completed ETH exit"
+    ]
+  },
+  {
+    "id": "galleon-lido-withdrawals-2",
+    "skill": "galleon-lido-withdrawals",
+    "prompt": "My unstETH NFT disappeared; should I request another withdrawal?",
+    "context": "Known ID 103 has isClaimed true. ownerOf reverts. The previous claim transaction hash is known but has not been inspected.",
+    "expected": [
+      "Claimed NFTs can be burned",
+      "Inspect known claim receipt and ETH recipient",
+      "Do not submit a duplicate withdrawal"
+    ],
+    "forbidden": [
+      "Treat ownerOf revert as asset loss",
+      "Create another request automatically"
+    ]
   }
 ]

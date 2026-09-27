@@ -53,3 +53,8 @@ Report security issues through [private vulnerability reporting](https://github.
 [MIT licensed](LICENSE). Preserve the copyright and permission notice when reusing copies or substantial portions. See [attribution guidance](ATTRIBUTION.md) for an optional credit line naming Andrew Wilkinson and Galleon Labs.
 
 See [SOURCES.md](SOURCES.md) for provenance and dated verification.
+
+## Protocol workflows
+
+- [CoinGecko token research](skills/galleon-coingecko-token-research/SKILL.md): Resolve token contracts and dated market evidence. Install individually with `npx skills add galleonlabs/crypto-defi-skills --skill galleon-coingecko-token-research`.
+- [DefiLlama yield screen](skills/galleon-defillama-yield-screen/SKILL.md): Screen yields by token, chain and base return. Install individually with `npx skills add galleonlabs/crypto-defi-skills --skill galleon-defillama-yield-screen`.

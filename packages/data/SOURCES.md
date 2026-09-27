@@ -33,3 +33,28 @@ For AIXBT v0.2.0, public documentation and the live v3 OpenAPI contract were ret
 ## Primitive expansion - 2026-09-05
 
 Add cross-primitive evidence, vault standards and portfolio accounting while preserving AIXBT research. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
+
+## galleon-coingecko-token-research
+
+Reviewed 2026-09-27; REST API v3. Documentation review does not prove an authenticated plan or all live endpoints.
+
+- [Demo contract identity](https://docs.coingecko.com/demo/reference/coins-contract-address): platform and contract lookup.
+- [Demo token price](https://docs.coingecko.com/demo/reference/simple-token-price): address-keyed prices and requested timestamps.
+- [Pro token price](https://docs.coingecko.com/reference/simple-token-price): separate host and credential header.
+- [Top pools](https://docs.coingecko.com/reference/top-pools-contract-address): onchain network and pool evidence.
+- [API changelog](https://docs.coingecko.com/changelog/10122018): check schema changes before relying on nullable rank or ticker trust fields.
+
+## galleon-defillama-yield-screen
+
+Reviewed 2026-09-27. Public yields REST has no pinned semantic API version; retain observed schemas and fail clearly on changes.
+
+- [DefiLlama API index](https://api-docs.defillama.com/): free and Pro endpoint separation, pools and history.
+- [Yield adapter schema and methodology](https://github.com/DefiLlama/yield-server): APY units, optional decomposition, underlying tokens and lending TVL.
+- [Provider update cadence](https://docs.llama.fi/faqs/frequently-asked-questions): nominal frequency, not per-row freshness proof.
+- [Public yields API](https://yields.llama.fi/pools): live snapshot surface used by the recipe.
+
+## Release verification 2026-09-27
+
+- Keyless CoinGecko Ethereum USDC token-price GET succeeded with address-keyed USD price and provider UNIX timestamp. This tested public response shape, not authenticated Demo/Pro access or arbitrary token coverage.
+- Public DefiLlama yields snapshot GET succeeded; the offline helper processed 17,143 rows and selected one `aave-v3` Base native-USDC pool above $1m TVL. The snapshot supplied no per-row observation time, retained as unknown. This was a data workflow probe, not yield diligence or a deposit test.
+- Package check, offline failure tests, build and canonical skill validator passed. Automated tests do not make network calls.

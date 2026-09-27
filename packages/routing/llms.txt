@@ -5,3 +5,6 @@ Compare swaps and bridges and track cross-chain settlement.
 - [Workflow](skills/galleon-defi-routing/SKILL.md)
 - [Providers](skills/galleon-defi-routing/references/providers.md)
 - [Sources](SOURCES.md)
+
+- [uniswap-swap](skills/uniswap-swap/SKILL.md): Quote Uniswap swaps, inspect Permit2 and reconcile AMM or order execution.
+- [lifi-cross-chain](skills/lifi-cross-chain/SKILL.md): Compare LI.FI quotes and reconcile destination delivery, partial fills and refunds.

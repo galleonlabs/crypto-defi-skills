@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0 - 2026-09-27
+
+Add focused protocol procedures: galleon-aave-position, galleon-morpho-market, galleon-compound-borrow. Include exact read recipes, worked decisions, protocol failure recovery, dated primary sources and behavioral fixtures. Preserve the original portable comparison skill and add protocol routing.
+
 ## 0.1.2 - 2026-09-09
 
 Add task-specific intake, configurable provider and user preferences, calculated successful examples and recovery paths. Preserve standalone installation and existing authorization boundaries.

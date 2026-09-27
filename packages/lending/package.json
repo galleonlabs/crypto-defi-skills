@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-lending-skills",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Research lending markets, plan borrowing and monitor liquidation exposure.",
   "type": "module",
   "license": "MIT",
@@ -53,9 +53,10 @@
   },
   "scripts": {
     "build": "bun ../../scripts/build-content-pack.ts",
-    "check": "bun run style && bun ../../scripts/check-content-pack.ts",
+    "check": "bun run style && bun run test && bun ../../scripts/check-content-pack.ts",
     "prepack": "bun run check",
     "validate": "bun ../../scripts/check-content-pack.ts --validate-only",
-    "style": "bun ../../scripts/check-style.ts"
+    "style": "bun ../../scripts/check-style.ts",
+    "test": "bun test skills/galleon-aave-position/scripts/stress.test.ts"
   }
 }

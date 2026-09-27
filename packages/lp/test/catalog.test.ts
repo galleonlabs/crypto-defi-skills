@@ -12,7 +12,7 @@ function run(args: string[]) {
 
 test("canonical catalog excludes renamed install names", () => {
   const names = SKILL_CATALOG.map((skill) => skill.name);
-  expect(names).toEqual(["lp-setup", "lp-analyze", "lp-plan", "lp-monitor", "lp-execute", "lp-engineer"]);
+  expect(names).toEqual(["lp-setup", "lp-analyze", "lp-plan", "lp-monitor", "lp-execute", "lp-engineer", "uniswap-v3-liquidity", "aerodrome-slipstream"]);
   expect(RENAMED_SKILLS).toEqual({ "lp-research": "lp-analyze", "lp-operate": "lp-execute" });
   expect(canonicalSkillName("lp-research")).toBe("lp-analyze");
   expect(canonicalSkillName("lp-operate")).toBe("lp-execute");
@@ -55,4 +55,14 @@ test("CLI show maps renamed install names to the current skill", () => {
   expect(operate.status).toBe(0);
   expect(operate.stderr).toContain("lp-operate was renamed to lp-execute in 0.4.0");
   expect(operate.stdout).toContain("name: lp-execute");
+});
+
+test("CLI version and help match the release manifest", async () => {
+  const manifest = JSON.parse(await readFile(resolve(import.meta.dirname, "../package.json"), "utf8"));
+  const version = run(["--version"]);
+  expect(version.status).toBe(0);
+  expect(version.stdout.trim()).toBe(manifest.version);
+  const help = run(["help"]);
+  expect(help.status).toBe(0);
+  expect(help.stdout).toContain(`lp-skills ${manifest.version}`);
 });

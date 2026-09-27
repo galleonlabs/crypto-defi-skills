@@ -6,7 +6,8 @@
       "title": "DeFi staking",
       "description": "Plan liquid staking, restaking and queued withdrawals.",
       "skills": [
-        "galleon-defi-staking"
+        "galleon-defi-staking",
+        "galleon-lido-withdrawals"
       ]
     }
   ]

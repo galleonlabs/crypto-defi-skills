@@ -1,3 +1,7 @@
+# 0.3.0 - 2026-09-27
+
+- Add `galleon-coinbase-agentkit-readiness` with official provider recipes, evidence outputs and failure cases.
+
 # Changelog
 
 ## 0.2.3 - 2026-09-09

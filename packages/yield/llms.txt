@@ -5,3 +5,6 @@ Evaluate vaults and yield tokens, including liquidity and maturity.
 - [Workflow](skills/galleon-defi-yield/SKILL.md)
 - [Providers](skills/galleon-defi-yield/references/providers.md)
 - [Sources](SOURCES.md)
+
+- [galleon-pendle-maturity](skills/galleon-pendle-maturity/SKILL.md)
+- [galleon-vault-exit](skills/galleon-vault-exit/SKILL.md)

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0 - 2026-09-27
+
+- Add `uniswap-v3-liquidity`: Manage v3 NFT inventory, usable ticks, fee collection and range changes.
+- Add `aerodrome-slipstream`: Resolve Slipstream gauge custody, emissions, staking and exits.
+- Add standalone read recipes, offline helper tests, worked outputs and protocol behavioral fixtures.
+
+
 ## 0.5.2 - 2026-09-09
 
 Add action-specific intake and reusable user preferences, preserve exact execution scope, and clarify monitor lifecycle and strategy evidence. Include behavioral fixtures covering every active skill.

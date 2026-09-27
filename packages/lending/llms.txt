@@ -5,3 +5,7 @@ Research lending markets, plan borrowing and monitor liquidation exposure.
 - [Workflow](skills/galleon-defi-lending/SKILL.md)
 - [Providers](skills/galleon-defi-lending/references/providers.md)
 - [Sources](SOURCES.md)
+
+- [galleon-aave-position](skills/galleon-aave-position/SKILL.md)
+- [galleon-morpho-market](skills/galleon-morpho-market/SKILL.md)
+- [galleon-compound-borrow](skills/galleon-compound-borrow/SKILL.md)

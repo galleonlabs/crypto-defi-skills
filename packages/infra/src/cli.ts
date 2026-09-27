@@ -1,11 +1,13 @@
 #!/usr/bin/env node
+import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { credentialPresence, diagnoseRpc, SKILL_CATALOG } from "./index.js";
 import { validate } from "./validate.js";
-const VERSION = "0.2.3";
+const VERSION = "0.3.0";
 const HELP = `defi-infra-skills ${VERSION}
   catalog [--json]
+  show <skill-name>
   validate [directory] [--json]
   doctor --chain-id <decimal> [--rpc-env DEFI_RPC_URL] [--max-age-seconds 120] [--json]
   presence [--json]
@@ -28,6 +30,10 @@ async function main() {
     else positionals.push(arg);
   }
   if (command !== "doctor" && [...flags.keys()].some((key) => key !== "--json")) throw new Error();
+  if (command === "show" && positionals.length === 1 && flags.size === 0 && SKILL_CATALOG.some(skill => skill.name === positionals[0])) {
+    process.stdout.write(await readFile(fileURLToPath(new URL(`../skills/${positionals[0]}/SKILL.md`, import.meta.url)), "utf8"));
+    return;
+  }
   let result: unknown;
   if (command === "catalog" && !positionals.length) result = { ok: true, skills: SKILL_CATALOG };
   else if (command === "presence" && !positionals.length) result = { ok: true, configured: credentialPresence(process.env), meaning: "Presence only; not authentication or live readiness" };

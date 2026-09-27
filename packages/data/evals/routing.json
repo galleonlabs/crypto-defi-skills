@@ -28,5 +28,85 @@
     "expected": "galleon-defi-data",
     "mustNotInvoke": [],
     "reason": "Protocol-level yield evidence is data work until a specific LP pool is chosen."
+  },
+  {
+    "prompt": "Price this exact Base USDC contract using CoinGecko.",
+    "expected": "galleon-coingecko-token-research",
+    "mustNotInvoke": [
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Token identity and timestamped prices require CoinGecko evidence; pool yield screening would not answer this request."
+  },
+  {
+    "prompt": "Is a missing market cap proof this token is worthless?",
+    "expected": "galleon-coingecko-token-research",
+    "mustNotInvoke": [
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Token identity and timestamped prices require CoinGecko evidence; pool yield screening would not answer this request."
+  },
+  {
+    "prompt": "Resolve these two same-symbol tokens by contract.",
+    "expected": "galleon-coingecko-token-research",
+    "mustNotInvoke": [
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Token identity and timestamped prices require CoinGecko evidence; pool yield screening would not answer this request."
+  },
+  {
+    "prompt": "Get a dated CoinGecko token price for this address.",
+    "expected": "galleon-coingecko-token-research",
+    "mustNotInvoke": [
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Token identity and timestamped prices require CoinGecko evidence; pool yield screening would not answer this request."
+  },
+  {
+    "prompt": "Explain CoinGecko aggregate price versus this pool quote.",
+    "expected": "galleon-coingecko-token-research",
+    "mustNotInvoke": [
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Token identity and timestamped prices require CoinGecko evidence; pool yield screening would not answer this request."
+  },
+  {
+    "prompt": "Rank Base USDC pools by base APY above one million TVL.",
+    "expected": "galleon-defillama-yield-screen",
+    "mustNotInvoke": [
+      "galleon-coingecko-token-research"
+    ],
+    "reason": "The task compares pool yields and exposure, not a token spot-price lookup."
+  },
+  {
+    "prompt": "Now rank those same pools by total APY instead.",
+    "expected": "galleon-defillama-yield-screen",
+    "mustNotInvoke": [
+      "galleon-coingecko-token-research"
+    ],
+    "reason": "The task compares pool yields and exposure, not a token spot-price lookup."
+  },
+  {
+    "prompt": "Screen DefiLlama lending pools for native USDC only.",
+    "expected": "galleon-defillama-yield-screen",
+    "mustNotInvoke": [
+      "galleon-coingecko-token-research"
+    ],
+    "reason": "The task compares pool yields and exposure, not a token spot-price lookup."
+  },
+  {
+    "prompt": "Exclude incentive yields and sort DefiLlama base returns.",
+    "expected": "galleon-defillama-yield-screen",
+    "mustNotInvoke": [
+      "galleon-coingecko-token-research"
+    ],
+    "reason": "The task compares pool yields and exposure, not a token spot-price lookup."
+  },
+  {
+    "prompt": "Compare TVL and yield history for these DefiLlama pool IDs.",
+    "expected": "galleon-defillama-yield-screen",
+    "mustNotInvoke": [
+      "galleon-coingecko-token-research"
+    ],
+    "reason": "The task compares pool yields and exposure, not a token spot-price lookup."
   }
 ]

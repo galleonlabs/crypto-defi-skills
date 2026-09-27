@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable agent instructions; optional price diagnostic requires Node.js 20+ and public network access. MCP setup requires a compatible client; paid providers require the user's own access.
 metadata:
   author: Galleon Labs
-  version: "0.3.3"
+  version: "0.4.0"
 ---
 
 # DeFi data
@@ -50,3 +50,8 @@ If data freshness, identity or methodology cannot support the requested decision
 Return the answer with a compact provenance record and material limitations. A readiness report should identify each provider's access tier, transport, observed tool set, tested read and remaining account/coverage gaps. Never call a configured URL or successful handshake fully working until the requested bounded read succeeds.
 
 For conflicting, stale or incomplete observations, use [worked evidence examples](references/worked-examples.md) to check the decision and output before returning it. The [offline evaluation cases](evals/evals.json) exercise these boundaries with synthetic inputs; they require no provider account.
+
+## Named provider procedures
+
+For CoinGecko token research, use `galleon-coingecko-token-research` when installed. This generic skill remains independently usable for setup and cross-provider work.
+For DefiLlama yield screen, use `galleon-defillama-yield-screen` when installed. This generic skill remains independently usable for setup and cross-provider work.

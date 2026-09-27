@@ -6,7 +6,8 @@
       "title": "DeFi infrastructure",
       "description": "Connect RPC, managed wallets and Hermes with verified permissions.",
       "skills": [
-        "galleon-defi-infra"
+        "galleon-defi-infra",
+        "galleon-coinbase-agentkit-readiness"
       ]
     }
   ]

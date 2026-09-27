@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Designed for TypeScript integrations with RPC, indexer, simulation, and wallet boundaries. Protocol concepts apply in other languages."
 metadata:
   author: "Galleon Labs"
-  version: "0.5.2"
+  version: "0.6.0"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 

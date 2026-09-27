@@ -33,3 +33,6 @@ npm install --global galleon-lp-skills
 Public yield screening: https://vfat.io/yield
 Official sources: https://github.com/vfat-io
 Role-specific VFAT references live inside each canonical skill. They cover APR definitions, Sickle custody, automation, fee bases and verified access limits. No provider is installed or required.
+
+- [uniswap-v3-liquidity](skills/uniswap-v3-liquidity/SKILL.md): Manage v3 NFT inventory, usable ticks, fee collection and range changes.
+- [aerodrome-slipstream](skills/aerodrome-slipstream/SKILL.md): Resolve Slipstream gauge custody, emissions, staking and exits.
