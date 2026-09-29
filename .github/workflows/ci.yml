@@ -38,7 +38,8 @@ jobs:
           git log -1 --oneline
       - run: bun install --frozen-lockfile
       - run: bun run check
-      - run: bun run pack
+      # Smoke packs every workspace and checks the installed tarballs; a separate
+      # dry-run pack repeats the same npm packaging pass without extra coverage.
       - run: bun run smoke
     if: github.event_name != 'pull_request_target' || github.event.pull_request.head.repo.full_name == github.repository
     timeout-minutes: 15
