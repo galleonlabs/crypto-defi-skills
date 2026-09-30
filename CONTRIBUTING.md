@@ -38,6 +38,54 @@ validate-agent-skills packages/<pack>/skills
 
 See [skill quality and verification](docs/SKILL-QUALITY.md) for the authoring contract and the distinction between structural checks and output evaluations.
 
+### Reusable cloud development setup
+
+Use the existing isolated checkout; do not create a Git worktree unless requested. Record `git rev-parse HEAD` and compare it with `git ls-remote origin refs/heads/main` before claiming current-main validation. The procedure below was verified against `6d63df087600c40e39bbf71b9bff0eeb4941f058`; later tasks must record their own exact revision. Preserve local changes, released plugin source pins and Boomkin consumer selections.
+
+Use Git, Bun 1.3.14, Node.js 20+ for installed CLIs, Python 3.11+ and `uv` for independent format validation. Install tools outside the checkout using the environment's supported tool/cache locations; machine-specific paths are not repository requirements. From the repository root:
+
+```bash
+git fetch origin --tags
+bun install --frozen-lockfile
+bun run check
+bun run pack
+bun run smoke
+```
+
+No service startup is needed. `check` includes package tests, type checks, corpus validation and builds. `smoke` creates clean consumers for all 14 packs and verifies standalone installs, Node CLIs and ESM exports. For independent verification of the existing public releases, also run `bun run smoke:registry`: it checks exact registry versions and integrity metadata, installed catalogs, exports and every skill resource against the checkout. It reads the registry and does not publish. Run it before modifying published package content; a difference after editing is not a setup failure.
+
+For a reproducible independent Agent Skills format check, use the official [skills-ref](https://github.com/agentskills/agentskills/tree/69ef37e9424c0a7ea9dd2293b559e43ec8176379/skills-ref) reference implementation pinned to `69ef37e9424c0a7ea9dd2293b559e43ec8176379`. It is a contributor validation tool, not a runtime dependency or the separately named `validate-agent-skills` executable. This example creates a temporary tools directory and leaves repository dependencies unchanged:
+
+```bash
+validator_dir=$(mktemp -d)
+git clone https://github.com/agentskills/agentskills.git "$validator_dir/agentskills"
+git -C "$validator_dir/agentskills" checkout --detach 69ef37e9424c0a7ea9dd2293b559e43ec8176379
+uv sync --frozen --project "$validator_dir/agentskills/skills-ref"
+for skill in packages/*/skills/*; do
+  [ -f "$skill/SKILL.md" ] || continue
+  "$validator_dir/agentskills/skills-ref/.venv/bin/skills-ref" validate "$skill" || exit 1
+done
+uv run --frozen --project "$validator_dir/agentskills/skills-ref" pytest "$validator_dir/agentskills/skills-ref/tests" -q
+```
+
+`skills-ref validate` takes one individual skill directory, not a pack parent. All 41 source skill directories and the same resources in clean installations of all 14 released packs passed this validator at the recorded revision; its own 40 tests passed. These checks establish format and installation integrity, not provider access or model performance.
+
+### Public provider readiness and network constraints
+
+After building, exercise the native read-only diagnostic from the repository root:
+
+```bash
+node packages/data/dist/cli.js price-check --provider coingecko --id bitcoin --max-age 300
+```
+
+This performs one public keyless GET, reads no provider credentials and does not retry or use paid routes. Preserve `provider`, `source`, `identity`, `observedAt` (provider time), `retrievedAt` (local retrieval time), `ageSeconds`, `maxAgeSeconds` and limitations from its JSON. Never substitute retrieval time for a missing provider timestamp or treat an aggregate price as an executable quote. The existing offline diagnostic regression is `bun test packages/data/test/diagnostic.test.ts`; live reads are separate from automated tests.
+
+Restricted cloud environments need `api.coingecko.com` for this REST check and `api.github.com` for GitHub API/PR operations, in addition to existing Git and package-manager destinations. Add required hosts without replacing unrelated allowlist entries. Saving network configuration is not proof it is active: retry the affected operation after applying it. Git access through platform authentication does not prove API or push access; test the required operation before requesting credentials.
+
+Use the environment's supported HTTPS proxy and trust configuration. On Node.js 24.5+ (verified here with Node.js 24.19.0), `NODE_USE_ENV_PROXY=1 node packages/data/dist/cli.js price-check --provider coingecko --id bitcoin --max-age 300` enables native environment-proxy support when required. Preserve configured CA bindings; never disable TLS, signature or checksum verification. A proxy `CONNECT 403`, timeout or authentication/payment error remains a failed check, with provider time unknown if no observation arrived. Keep optional paid/authenticated providers and their existing secret bindings unchanged; do not copy credentials into docs or logs. No transactions, package publication or deployments belong to onboarding.
+
+The separate research plugin release and ZIP installation entrypoint are documented in [RELEASING.md](RELEASING.md#research-plugin-release-and-installation). Development checks, public REST readiness, plugin ZIP integrity, host installation acceptance and connected MCP execution are separate milestones.
+
 ## Keep skills portable
 
 Every pack carries `evals/routing.json`: at least five prompts per skill naming the expected skill and the neighbouring skills that must not load. Add cases when you add a skill or move a boundary. `bun run check` validates their structure and coverage only; a passing dataset is not a model score.
