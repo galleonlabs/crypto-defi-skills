@@ -28,6 +28,19 @@ await writeFile(join(directory, "integrity.json"), JSON.stringify({ schemaVersio
 const archive = join(root, "artifacts", `${manifest.name}-${manifest.version}.zip`);
 await mkdir(join(root, "artifacts"), { recursive: true });
 await rm(archive, { force: true });
-const zip = spawnSync("zip", ["-q", "-r", archive, "."], { cwd: directory });
+const zip = spawnSync("python3", ["-c", `
+import os, sys, zipfile
+root, archive = sys.argv[1:]
+with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as output:
+    for directory, folders, filenames in os.walk(root):
+        folders.sort()
+        for filename in sorted(filenames):
+            path = os.path.join(directory, filename)
+            info = zipfile.ZipInfo(os.path.relpath(path, root), (2000, 1, 1, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o100644 << 16
+            with open(path, "rb") as source:
+                output.writestr(info, source.read(), compresslevel=9)
+`, directory, archive], { cwd: root });
 if (zip.status !== 0) throw new Error("Plugin ZIP failed");
 console.log(JSON.stringify({ archive, sha256: createHash("sha256").update(new Uint8Array(await readFile(archive))).digest("hex"), resources: Object.keys(files).length, revision }, null, 2));
