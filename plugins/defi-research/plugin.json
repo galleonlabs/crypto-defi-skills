@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "galleon-defi-research",
+  "version": "0.1.0",
+  "description": "Read-only token research and yield screening with official public data and timestamped evidence.",
+  "author": { "name": "Galleon Labs", "url": "https://galleonlabs.io" },
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/plugins/defi-research",
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "license": "MIT",
+  "keywords": ["defi", "research", "read-only"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Galleon DeFi Research",
+        "shortDescription": "Research tokens and yields with dated evidence.",
+        "longDescription": "Resolve token identity, inspect public prices and screen yields using reviewed Galleon skills. Public CoinGecko data needs no wallet or subscription. No signing, trades or transfers. Optional paid providers are never provisioned automatically.",
+        "developerName": "Galleon Labs",
+        "websiteURL": "https://galleonlabs.io",
+        "privacyPolicyURL": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/plugins/defi-research/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/plugins/defi-research/TERMS.md",
+        "defaultPrompt": "Research Bitcoin's current USD price and report provider time, retrieval time and limitations."
+      }
+    }
+  }
+}

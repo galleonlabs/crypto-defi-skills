@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - packages/**
+      - plugins/**
+      - scripts/build-research-plugin.ts
       - package.json
       - bun.lock
       - scripts/check-attribution.ts
@@ -17,6 +19,8 @@ on:
       - main
     paths:
       - packages/**
+      - plugins/**
+      - scripts/build-research-plugin.ts
       - package.json
       - bun.lock
       - scripts/check-attribution.ts
@@ -54,6 +58,7 @@ jobs:
           git log -1 --oneline
       - run: bun install --frozen-lockfile
       - run: bun scripts/build-discovery-index.ts https://example.com/skills
+      - run: bun run plugin:pack
     if: github.event_name != 'pull_request_target' || github.event.pull_request.head.repo.full_name == github.repository
     timeout-minutes: 15
   publish:
@@ -94,6 +99,7 @@ jobs:
           git log -1 --oneline
       - run: bun install --frozen-lockfile
       - run: bun scripts/build-discovery-index.ts "https://github.com/${{ github.repository }}/releases/download/${RELEASE_TAG}"
+      - run: bun run plugin:pack
       - run: |
           gh release view "$RELEASE_TAG" >/dev/null 2>&1 ||
             gh release create "$RELEASE_TAG" --draft --target "$GITHUB_SHA" --title "Agent Skills $GITHUB_SHA" --notes "Immutable discovery artifacts for $GITHUB_SHA."

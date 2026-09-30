@@ -16,7 +16,8 @@
     "release": "bun scripts/release.ts",
     "smoke": "bun scripts/smoke.ts",
     "smoke:registry": "bun scripts/registry-smoke.ts",
-    "eval:behavior": "bun scripts/behavior-evals.ts"
+    "eval:behavior": "bun scripts/behavior-evals.ts",
+    "plugin:pack": "bun scripts/build-research-plugin.ts"
   },
   "devDependencies": {
     "@types/bun": "^1.4.1",
