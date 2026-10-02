@@ -3,6 +3,22 @@
 This Bun workspace publishes independent agent skill packs from `packages/*`.
 Read the selected package's `AGENTS.md` before changing it.
 
+## Find the owning source
+
+| Task | Start here |
+| --- | --- |
+| Select a protocol workflow or pack | `README.md#choose-a-protocol-task`, then `packages/<pack>/AGENTS.md` |
+| Skill procedure, provider reference or local helper | The selected `packages/<pack>/skills/<skill>/` directory; resources ship with that skill |
+| Shared content-pack CLI and corpus validation | `scripts/content-pack/`, `scripts/build-content-pack.ts`, `scripts/check-content-pack.ts` |
+| Root checks, package enumeration and release drift | `scripts/workspaces.ts`, `scripts/release-drift.ts`; `package.json` owns commands |
+| Plugin and discovery registration | `.claude-plugin/marketplace.json`, `skills.sh.json`, `scripts/build-discovery-index.ts` |
+| npm pack release or research plugin ZIP | `RELEASING.md`; `plugins/defi-research/README.md` for the separate plugin |
+| Routing fixtures and recorded output evaluations | `packages/<pack>/evals/`, `test/evals/`, `docs/SKILL-QUALITY.md` |
+
+Package names and current versions come from each `packages/<pack>/package.json`; release tags record published surfaces. Build outputs and release archives are generated. Development setup and validation are in `CONTRIBUTING.md#work-locally`.
+
+## Constraints
+
 - Keep packages independently installable, versioned and published. Do not add a required all-packs dependency.
 - Prefer maintained official tools to copied runtimes or custom protocol adapters.
 - Skills are procedures, not permission to sign, trade, transfer, or expose credentials.
