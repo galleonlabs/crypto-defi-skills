@@ -26,7 +26,8 @@
       "description": "Connect the agent infrastructure and establish reliable market data before protocol workflows.",
       "skills": [
         "galleon-defi-infra",
-        "galleon-defi-data"
+        "galleon-defi-data",
+        "galleon-defi-market-snapshot"
       ]
     },
     {
@@ -155,6 +156,13 @@
       "description": "Research proposals, prepare votes and track governance execution.",
       "skills": [
         "galleon-defi-governance"
+      ]
+    },
+    {
+      "title": "Strategy testing",
+      "description": "Test daily long-only rules with dated inputs, costs, drawdown and a benchmark.",
+      "skills": [
+        "galleon-defi-strategy-backtest"
       ]
     }
   ]

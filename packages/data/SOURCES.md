@@ -58,3 +58,11 @@ Reviewed 2026-09-27. Public yields REST has no pinned semantic API version; reta
 - Keyless CoinGecko Ethereum USDC token-price GET succeeded with address-keyed USD price and provider UNIX timestamp. This tested public response shape, not authenticated Demo/Pro access or arbitrary token coverage.
 - Public DefiLlama yields snapshot GET succeeded; the offline helper processed 17,143 rows and selected one `aave-v3` Base native-USDC pool above $1m TVL. The snapshot supplied no per-row observation time, retained as unknown. This was a data workflow probe, not yield diligence or a deposit test.
 - Package check, offline failure tests, build and canonical skill validator passed. Automated tests do not make network calls.
+
+## Market evidence and history - 2026-10-02
+
+- [Current CoinGecko Demo market chart](https://docs.coingecko.com/demo/reference/coins-id-market-chart): daily UTC automatic granularity for more than 90 days, current 365-day Demo limit, documented Demo key requirement and completed-day timing. The helper makes a separate unauthenticated public probe; no account entitlement is inferred.
+- [DefiLlama free API reference](https://api-docs.defillama.com/llms-free.txt): public current-price host and namespaces. CoinGecko-ID agreement may share upstream data.
+- New offline tests cover bounded snapshots, raw-response hashes, partial/malformed/stale observations, time alignment, safe transport failures, daily sampling, gaps/range/freshness and compatibility with the independent strategy engine. No network calls run in tests.
+
+At 06:43:24–25 UTC on 2026-10-02, the new keyless snapshot completed CoinGecko and DefiLlama Bitcoin/Ethereum reads with four valid observations aged 84–104 seconds. Their observation times aligned within the declared 120-second skew. The new Bitcoin 180-day history read produced 180 consecutive UTC-midnight aggregate observations from 2026-04-06 through 2026-10-02 and explicitly excluded the trailing current-day point. This verifies those bounded public reads only; no account entitlement, wallet action or provider-wide coverage is claimed. Volatile marks and response bodies are retained as local verification artifacts rather than packaged data.

@@ -11,3 +11,5 @@
 - [Sources](SOURCES.md): Primary sources and dated verification limits.
 - [CoinGecko token research](skills/galleon-coingecko-token-research/SKILL.md): Resolve token contracts and dated market evidence.
 - [DefiLlama yield screen](skills/galleon-defillama-yield-screen/SKILL.md): Screen yields by token, chain and base return.
+
+- [Market snapshot and history](skills/galleon-defi-market-snapshot/SKILL.md): Bounded public evidence, timestamp alignment and daily strategy inputs.

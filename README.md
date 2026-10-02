@@ -27,6 +27,8 @@ Install a skill that names the job. Each new workflow includes the concrete read
 | Compare a bridge route and reconcile arrival | [`lifi-cross-chain`](packages/routing/skills/lifi-cross-chain/SKILL.md) | Net destination amount, gas needs, route limits and destination settlement evidence. |
 | Resolve a token before trusting its price | [`galleon-coingecko-token-research`](packages/data/skills/galleon-coingecko-token-research/SKILL.md) | Resolved token identity, timestamped market evidence and unsupported or stale fields. |
 | Screen yields without mistaking emissions for income | [`galleon-defillama-yield-screen`](packages/data/skills/galleon-defillama-yield-screen/SKILL.md) | A reproducible shortlist separating base yield, rewards, missing fields and exit diligence. |
+| Collect a source-backed market snapshot | [`galleon-defi-market-snapshot`](packages/data/skills/galleon-defi-market-snapshot/SKILL.md) | Bounded price observations, timestamp alignment, discrepancies and compatible daily history. |
+| Test a daily strategy before discussing deployment | [`galleon-defi-strategy-backtest`](packages/strategy/skills/galleon-defi-strategy-backtest/SKILL.md) | Next-observation replay, modeled costs, flow-neutral return/drawdown and a same-cost benchmark. |
 | Check AgentKit wallet capabilities | [`galleon-coinbase-agentkit-readiness`](packages/infra/skills/galleon-coinbase-agentkit-readiness/SKILL.md) | Capability and policy gaps, tested read access and the next required setup step. |
 | Review a Hyperliquid account before trading | [`hyperliquid-analyze`](packages/hyperliquid/skills/hyperliquid-analyze/SKILL.md) | Account mode, margin exposure, funding and market evidence for a trade decision. |
 
@@ -34,12 +36,12 @@ These skills are independently installable. Protocol identities, market paramete
 
 ## Independent packs
 
-Fourteen packs, 39 current skills. Each pack has its own npm release, CLI, plugin manifests and self-contained references. Two additional LP directories preserve previous install names as notices.
+Fifteen packs, 41 current skills. Each pack has its own npm release, CLI, plugin manifests and self-contained references. Two additional LP directories preserve previous install names as notices.
 
 | Pack | npm release | Coverage |
 | --- | --- | --- |
 | [Infra](packages/infra) | [`galleon-defi-infra-skills@0.3.0`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.3.0) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
-| [Data](packages/data) | [`galleon-defi-data-skills@0.4.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.4.0) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
+| [Data](packages/data) | [`galleon-defi-data-skills@0.5.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.5.0) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
 | [Lp](packages/lp) | [`galleon-lp-skills@0.6.0`](https://www.npmjs.com/package/galleon-lp-skills/v/0.6.0) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
 | [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.3.4`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.3.4) | Spot, perps, HIP-3, account modes, execution and review |
 | [Lending](packages/lending) | [`galleon-defi-lending-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.2.0) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
@@ -48,6 +50,7 @@ Fourteen packs, 39 current skills. Each pack has its own npm release, CLI, plugi
 | [Tokenized Assets](packages/tokenized-assets) | [`galleon-defi-tokenized-assets-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-tokenized-assets-skills/v/0.1.2) | Ondo and OpenEden eligibility, issuer risk and settlement |
 | [Routing](packages/routing) | [`galleon-defi-routing-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.2.0) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
 | [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.4`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.4) | GMX, Derive, Drift and Pendle Boros trading lifecycles |
+| [Strategy](packages/strategy) | [`galleon-defi-strategy-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-strategy-skills/v/0.1.0) | Daily spot backtests, costs, cash flows, drawdown and reproducible benchmarks |
 | [Portfolio](packages/portfolio) | [`galleon-defi-portfolio-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-portfolio-skills/v/0.1.3) | Positions, liabilities, net exposure, cash flows and performance |
 | [Security](packages/security) | [`galleon-defi-security-skills@0.2.2`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.2.2) | Token diligence, transaction decoding, permissions and simulation review |
 | [Payments](packages/payments) | [`galleon-defi-payments-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-payments-skills/v/0.1.3) | Stablecoin transfers, x402, Sablier and Superfluid |
@@ -153,7 +156,7 @@ Use Bun 1.3.14 for repository development. After skill edits, also run `validate
 
 Add a pack under `packages/`, register its plugin and discovery grouping, and follow [CONTRIBUTING.md](CONTRIBUTING.md). Content-only packs share build-time tooling that is bundled into their standalone CLIs; installed packages never need the monorepo.
 
-The private root workspace is not published to npm. [RELEASING.md](RELEASING.md) publishes one selected pack from a clean commit. Tags use `<npm-name>@<version>`. Separate `agent-skills-<commit>` releases provide 28 individual skill archives, including the two LP notices, with SHA-256 digests. Their source is the exact committed tree.
+The private root workspace is not published to npm. [RELEASING.md](RELEASING.md) publishes one selected pack from a clean commit. Tags use `<npm-name>@<version>`. Separate `agent-skills-<commit>` releases provide individual skill archives, including the two LP notices, with SHA-256 digests. Their source is the exact committed tree.
 
 For older LP installation names and repository URLs, see [migration notes](MIGRATION.md). Existing npm and CLI names remain supported.
 

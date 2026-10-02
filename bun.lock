@@ -12,7 +12,7 @@
     },
     "packages/data": {
       "name": "galleon-defi-data-skills",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "bin": {
         "defi-data-skills": "dist/cli.js",
       },
@@ -119,6 +119,13 @@
         "defi-staking-skills": "dist/cli.js",
       },
     },
+    "packages/strategy": {
+      "name": "galleon-defi-strategy-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-strategy-skills": "dist/cli.js",
+      },
+    },
     "packages/tokenized-assets": {
       "name": "galleon-defi-tokenized-assets-skills",
       "version": "0.1.2",
@@ -160,6 +167,8 @@
     "galleon-defi-security-skills": ["galleon-defi-security-skills@workspace:packages/security"],
 
     "galleon-defi-staking-skills": ["galleon-defi-staking-skills@workspace:packages/staking"],
+
+    "galleon-defi-strategy-skills": ["galleon-defi-strategy-skills@workspace:packages/strategy"],
 
     "galleon-defi-tokenized-assets-skills": ["galleon-defi-tokenized-assets-skills@workspace:packages/tokenized-assets"],
 

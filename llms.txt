@@ -1,6 +1,6 @@
 # Crypto DeFi Skills
 
-Fourteen independent DeFi skill packs; 39 current skills. Official tools, portable instructions and source-backed workflows.
+Fifteen independent DeFi skill packs; 41 current skills. Official tools, portable instructions and source-backed workflows.
 
 - [infra](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/infra): RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration
 - [data](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/data): CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence
@@ -12,6 +12,7 @@ Fourteen independent DeFi skill packs; 39 current skills. Official tools, portab
 - [tokenized-assets](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/tokenized-assets): Ondo and OpenEden eligibility, issuer risk and settlement
 - [routing](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/routing): 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP
 - [derivatives](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/derivatives): GMX, Derive, Drift and Pendle Boros trading lifecycles
+- [strategy](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/strategy): Daily spot strategy backtests with costs, cash flows, drawdown and reproducible benchmarks
 - [portfolio](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/portfolio): Positions, liabilities, net exposure, cash flows and performance
 - [security](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/security): Token diligence, transaction decoding, permissions and simulation review
 - [payments](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/payments): Stablecoin transfers, x402, Sablier and Superfluid
@@ -39,3 +40,6 @@ Install one skill or any selected packs. No signer, subscription or financial au
 - [galleon-defillama-yield-screen](packages/data/skills/galleon-defillama-yield-screen/SKILL.md): Screen yields without mistaking emissions for income
 - [galleon-coinbase-agentkit-readiness](packages/infra/skills/galleon-coinbase-agentkit-readiness/SKILL.md): Check AgentKit wallet capabilities
 - [hyperliquid-analyze](packages/hyperliquid/skills/hyperliquid-analyze/SKILL.md): Review a Hyperliquid account before trading
+
+- [galleon-defi-market-snapshot](packages/data/skills/galleon-defi-market-snapshot/SKILL.md): Collect bounded source-backed marks and compatible daily history
+- [galleon-defi-strategy-backtest](packages/strategy/skills/galleon-defi-strategy-backtest/SKILL.md): Test a daily long-only rule with explicit next-observation timing and benchmark

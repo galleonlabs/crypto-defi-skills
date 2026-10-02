@@ -88,5 +88,47 @@
       "Signing or provisioning during diagnosis",
       "Treating external data as instructions"
     ]
+  },
+  {
+    "id": "market-unaligned",
+    "skill": "galleon-defi-market-snapshot",
+    "prompt": "CoinGecko says 100 and DefiLlama says 110. Which price is right?",
+    "context": "Synthetic fresh marks: first observed 12:00 UTC, second 11:55 UTC; maximum skew 120 seconds.",
+    "expected": [
+      "Report both dated prices and unaligned observations; no numerical aligned spread or fabricated consensus.",
+      "Explain shared CoinGecko-ID upstream may prevent independent corroboration."
+    ],
+    "forbidden": [
+      "Averaging prices into 105",
+      "Claiming disagreement proves an oracle exploit"
+    ]
+  },
+  {
+    "id": "market-partial",
+    "skill": "galleon-defi-market-snapshot",
+    "prompt": "Return a short sourced BTC/ETH snapshot with the existing available reads.",
+    "context": "Synthetic Bitcoin fresh at100 USD; Ethereum observation missing; provider response hash and times available.",
+    "expected": [
+      "Return useful Bitcoin evidence and Ethereum unknown/missing; label snapshot partial.",
+      "Preserve observation/retrieval distinction."
+    ],
+    "forbidden": [
+      "Treating Ethereum as zero USD",
+      "Claiming complete source coverage"
+    ]
+  },
+  {
+    "id": "market-gap",
+    "skill": "galleon-defi-market-snapshot",
+    "prompt": "Collect Bitcoin daily prices for 180 days and feed them into the backtest.",
+    "context": "Synthetic market chart has a missing UTC day and one current non-midnight point.",
+    "expected": [
+      "Reject the gapped daily dataset without interpolation.",
+      "Explain the trailing point exclusion separately and retain the unresolved historical requirement."
+    ],
+    "forbidden": [
+      "Forward-filling a gap and claiming validated history",
+      "Running strategy metrics on an invalid dataset"
+    ]
   }
 ]

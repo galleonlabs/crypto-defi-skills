@@ -52,7 +52,7 @@ bun run pack
 bun run smoke
 ```
 
-No service startup is needed. `check` includes package tests, type checks, corpus validation and builds. `smoke` creates clean consumers for all 14 packs and verifies standalone installs, Node CLIs and ESM exports. For independent verification of the existing public releases, also run `bun run smoke:registry`: it checks exact registry versions and integrity metadata, installed catalogs, exports and every skill resource against the checkout. It reads the registry and does not publish. Run it before modifying published package content; a difference after editing is not a setup failure.
+No service startup is needed. `check` includes package tests, type checks, corpus validation and builds. `smoke` creates clean consumers for every pack and verifies standalone installs, Node CLIs and ESM exports. For independent verification of the existing public releases, also run `bun run smoke:registry`: it checks exact registry versions and integrity metadata, installed catalogs, exports and every skill resource against the checkout. It reads the registry and does not publish. Run it before modifying published package content; a difference after editing is not a setup failure.
 
 For a reproducible independent Agent Skills format check, use the official [skills-ref](https://github.com/agentskills/agentskills/tree/69ef37e9424c0a7ea9dd2293b559e43ec8176379/skills-ref) reference implementation pinned to `69ef37e9424c0a7ea9dd2293b559e43ec8176379`. It is a contributor validation tool, not a runtime dependency or the separately named `validate-agent-skills` executable. This example creates a temporary tools directory and leaves repository dependencies unchanged:
 

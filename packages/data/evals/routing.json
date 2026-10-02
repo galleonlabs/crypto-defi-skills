@@ -108,5 +108,50 @@
       "galleon-coingecko-token-research"
     ],
     "reason": "The task compares pool yields and exposure, not a token spot-price lookup."
+  },
+  {
+    "prompt": "Collect a timestamped public Bitcoin and Ethereum price snapshot and show aligned source discrepancies.",
+    "expected": "galleon-defi-market-snapshot",
+    "mustNotInvoke": [
+      "galleon-defi-data",
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Bounded market snapshots and compatible history use the specific evidence collector, not generic provider setup or a yield shortlist."
+  },
+  {
+    "prompt": "Retrieve 180 days of consecutive daily aggregate Bitcoin prices for a local strategy experiment.",
+    "expected": "galleon-defi-market-snapshot",
+    "mustNotInvoke": [
+      "galleon-defi-data",
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Bounded market snapshots and compatible history use the specific evidence collector, not generic provider setup or a yield shortlist."
+  },
+  {
+    "prompt": "One market-data provider is stale and another is current. Return the usable evidence without averaging a price.",
+    "expected": "galleon-defi-market-snapshot",
+    "mustNotInvoke": [
+      "galleon-defi-data",
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Bounded market snapshots and compatible history use the specific evidence collector, not generic provider setup or a yield shortlist."
+  },
+  {
+    "prompt": "Prepare a source-backed market brief with exact CoinGecko IDs, provider times and raw response hashes.",
+    "expected": "galleon-defi-market-snapshot",
+    "mustNotInvoke": [
+      "galleon-defi-data",
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Bounded market snapshots and compatible history use the specific evidence collector, not generic provider setup or a yield shortlist."
+  },
+  {
+    "prompt": "Write the evidence standard and meaningful-change notification rule for my Bitcoin thesis, then run the first market snapshot.",
+    "expected": "galleon-defi-market-snapshot",
+    "mustNotInvoke": [
+      "galleon-defi-data",
+      "galleon-defillama-yield-screen"
+    ],
+    "reason": "Bounded market snapshots and compatible history use the specific evidence collector, not generic provider setup or a yield shortlist."
   }
 ]

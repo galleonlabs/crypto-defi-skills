@@ -76,6 +76,11 @@
       "name": "galleon-defi-governance-skills",
       "source": "./packages/governance",
       "description": "Research proposals, prepare votes and track governance execution."
+    },
+    {
+      "name": "galleon-defi-strategy-skills",
+      "source": "./packages/strategy",
+      "description": "Reproducible daily strategy research with costs, cash flows and benchmark evidence."
     }
   ]
 }

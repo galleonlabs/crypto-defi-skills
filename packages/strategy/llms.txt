@@ -1,0 +1,8 @@
+# Galleon DeFi Strategy Skills
+
+Local daily strategy research with explicit assumptions and reproducible evidence.
+
+- [Strategy backtest](skills/galleon-defi-strategy-backtest/SKILL.md)
+- [Model and input contract](skills/galleon-defi-strategy-backtest/references/model.md)
+- [Research workflow](skills/galleon-defi-strategy-backtest/references/research.md)
+- [Sources](SOURCES.md)

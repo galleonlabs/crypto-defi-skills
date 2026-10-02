@@ -1,9 +1,16 @@
-# 0.4.0 - 2026-09-27
+# Changelog
+
+## 0.5.0 - 2026-10-02
+
+- Add a standalone market snapshot workflow with fixed public CoinGecko/DefiLlama reads, bounded IDs, provider timestamps, raw response hashes and explicit partial failures.
+- Compare marks only within declared timestamp skew and preserve shared-upstream limitations; no consensus price is fabricated.
+- Add a bounded public CoinGecko daily-history collector with UTC sampling, gap/range/freshness validation and an input format usable by the local strategy pack.
+- Expose snapshot/history through the independently installed Node CLI and test transport, stale evidence, alignment, history and secret-safe failures offline.
+
+## 0.4.0 - 2026-09-27
 
 - Add `galleon-coingecko-token-research` with official provider recipes, evidence outputs and failure cases.
 - Add `galleon-defillama-yield-screen` with official provider recipes, evidence outputs and failure cases.
-
-# Changelog
 
 ## 0.3.3 - 2026-09-09
 

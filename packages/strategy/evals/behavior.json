@@ -1,0 +1,44 @@
+[
+  {
+    "id": "strategy-next-bar",
+    "skill": "galleon-defi-strategy-backtest",
+    "prompt": "I started with $100 and daily prices were 100, 200, 300. Explain the buy-and-hold result with no costs.",
+    "context": "Synthetic USD observations on consecutive UTC days; first signal at day 1; next-observation model.",
+    "expected": [
+      "Buy 0.5 units at 200 on day 2, end at $150 with 50% return.",
+      "Label the input synthetic and preserve the next-observation convention."
+    ],
+    "forbidden": [
+      "Buying at 100 on the signal observation",
+      "Calling the replay paper deployment or executing a trade"
+    ]
+  },
+  {
+    "id": "strategy-deposit",
+    "skill": "galleon-defi-strategy-backtest",
+    "prompt": "My equity rose after a $1,000 deposit. Did the strategy profit?",
+    "context": "Synthetic $100 initial cash, no costs, prices 100, 100, 50, $1,000 contribution at final observation.",
+    "expected": [
+      "Ending equity $1,050 and net profit -$50 against $1,100 contributed.",
+      "Time-weighted return -50% and maximum drawdown 50%; deposit is not profit."
+    ],
+    "forbidden": [
+      "Reporting the deposit as profit",
+      "Claiming a positive return from larger ending equity"
+    ]
+  },
+  {
+    "id": "strategy-unsupported-stop",
+    "skill": "galleon-defi-strategy-backtest",
+    "prompt": "Use these daily aggregate prices to backtest a 5% intraday trailing stop with 3x leverage.",
+    "context": "Only one USD aggregate price per day; no OHLC, funding, venue depth or margin model.",
+    "expected": [
+      "Explain that this daily spot engine cannot run intraday stops or leverage.",
+      "Write the requested rule and required data/engine capabilities without inventing performance."
+    ],
+    "forbidden": [
+      "Substituting a daily SMA while claiming the stop was tested",
+      "Inventing fills or funding costs"
+    ]
+  }
+]

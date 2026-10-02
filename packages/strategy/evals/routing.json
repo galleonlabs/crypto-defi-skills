@@ -1,0 +1,47 @@
+[
+  {
+    "prompt": "Test a 20-day simple moving-average long/cash rule against this dated Bitcoin history.",
+    "expected": "galleon-defi-strategy-backtest",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "hyperliquid-execute"
+    ],
+    "reason": "This is a local historical strategy experiment, not portfolio reconciliation or venue execution."
+  },
+  {
+    "prompt": "Compare funded weekly DCA with buy-and-hold including 20 basis points of fees and adverse slippage.",
+    "expected": "galleon-defi-strategy-backtest",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "hyperliquid-execute"
+    ],
+    "reason": "This is a local historical strategy experiment, not portfolio reconciliation or venue execution."
+  },
+  {
+    "prompt": "Check whether this backtest accidentally buys at the same observation that generated its signal.",
+    "expected": "galleon-defi-strategy-backtest",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "hyperliquid-execute"
+    ],
+    "reason": "This is a local historical strategy experiment, not portfolio reconciliation or venue execution."
+  },
+  {
+    "prompt": "A new cash deposit made my equity rise. Recalculate return and drawdown without counting the deposit as profit.",
+    "expected": "galleon-defi-strategy-backtest",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "hyperliquid-execute"
+    ],
+    "reason": "This is a local historical strategy experiment, not portfolio reconciliation or venue execution."
+  },
+  {
+    "prompt": "Run this local strategy spec and save trades, curve, costs, benchmark and exact input hashes.",
+    "expected": "galleon-defi-strategy-backtest",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "hyperliquid-execute"
+    ],
+    "reason": "This is a local historical strategy experiment, not portfolio reconciliation or venue execution."
+  }
+]
