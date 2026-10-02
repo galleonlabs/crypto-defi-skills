@@ -12,7 +12,7 @@ Use the user's existing provider tools and authority. In this corpus, setup, dis
 
 | Check | Evidence it supplies |
 | --- | --- |
-| `bun run check` | Package checks plus a common standalone corpus validator for all 14 packs: metadata, directory names, line budget, local reference boundaries, symlinks and discovery metadata |
+| `bun run check` | Package checks plus a common standalone corpus validator for all 15 packs: metadata, directory names, line budget, local reference boundaries, symlinks and discovery metadata |
 | `validate-agent-skills packages/<pack>/skills` | Independent contributor validation of skill structure |
 | `bun run pack` and `bun run smoke` | Packaging boundaries, fresh independent installs, ESM imports and actual Node CLI behavior |
 | `packages/*/evals/routing.json` | Structure and coverage of the routing prompt sets: every skill carries at least five cases and names at least one skill that must not load. Structure only, never a pass rate |
