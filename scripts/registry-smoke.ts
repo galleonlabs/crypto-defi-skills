@@ -3,6 +3,7 @@ import { mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { packages, root } from "./workspaces.ts";
+import { registryMetadata } from "./registry-smoke/metadata.ts";
 
 // Explicit post-release check. Normal automated tests never access the registry.
 const ids = process.argv.slice(2);
@@ -32,10 +33,10 @@ const temporary = await mkdtemp(resolve(tmpdir(), "galleon-registry-"));
 try {
   for (const pack of selected) {
     const release = `${pack.manifest.name}@${pack.manifest.version}`;
-    const metadata = JSON.parse(capture("npm", ["view", release, "--json", "--registry=https://registry.npmjs.org"], temporary));
-    if (metadata.name !== pack.manifest.name || metadata.version !== pack.manifest.version || metadata.repository?.directory !== pack.directory || metadata.repository?.url !== pack.manifest.repository.url || !metadata.dist?.integrity) {
-      throw new Error(`Registry identity mismatch: ${release}`);
-    }
+    const metadata = registryMetadata(
+      JSON.parse(capture("npm", ["view", release, "--json", "--registry=https://registry.npmjs.org"], temporary)),
+      { name: pack.manifest.name, version: pack.manifest.version, repository: { directory: pack.directory, url: pack.manifest.repository.url } },
+    );
     const consumer = await mkdtemp(resolve(temporary, `${pack.id}-`));
     await writeFile(resolve(consumer, "package.json"), JSON.stringify({ name: `verify-${pack.id}`, private: true }));
     capture("npm", ["install", "--ignore-scripts", "--no-audit", "--no-fund", "--package-lock=false", "--registry=https://registry.npmjs.org", release], consumer);
