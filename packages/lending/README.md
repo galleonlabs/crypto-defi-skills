@@ -9,7 +9,7 @@ Research lending markets, plan borrowing and monitor liquidation exposure. Proto
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-lending
-npx --package galleon-defi-lending-skills@0.2.0 defi-lending-skills catalog
+npx --package galleon-defi-lending-skills@0.3.0 defi-lending-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-lending/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
@@ -35,3 +35,7 @@ Source-backed corrections and reproducible workflow improvements are welcome. Se
 - [galleon-compound-borrow](skills/galleon-compound-borrow/SKILL.md)
 
 Each procedure includes concrete read calls, protocol-specific failure branches, a synthetic worked decision and dated official sources. No signer or all-packs dependency is included. Behavioral fixtures are review rubrics, not evidence of executed transactions.
+
+## Protocol procedures
+
+- [galleon-aave-v4](skills/galleon-aave-v4/SKILL.md): Inspect Aave V4 Hub/Spoke positions, preview exact actions, and reconcile unsigned execution plans.

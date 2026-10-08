@@ -9,3 +9,5 @@ Research lending markets, plan borrowing and monitor liquidation exposure.
 - [galleon-aave-position](skills/galleon-aave-position/SKILL.md)
 - [galleon-morpho-market](skills/galleon-morpho-market/SKILL.md)
 - [galleon-compound-borrow](skills/galleon-compound-borrow/SKILL.md)
+
+- [galleon-aave-v4](skills/galleon-aave-v4/SKILL.md)

@@ -1,0 +1,82 @@
+[
+  {
+    "prompt": "Build unsigned Aave calldata with my existing builder; do not connect a wallet.",
+    "expected": "galleon-defi-agent-plan",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "Bounded unsigned plan."
+  },
+  {
+    "prompt": "My playbook has a supply action, but is it deployed on Base?",
+    "expected": "galleon-defi-agent-plan",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "Verify action and deployment."
+  },
+  {
+    "prompt": "Prepare a swap and deposit only the token acquired, without sweeping pre-existing holdings.",
+    "expected": "galleon-defi-agent-plan",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "Respect dependent amount."
+  },
+  {
+    "prompt": "Builder returned approval reset plus approve plus action. Show exact order.",
+    "expected": "galleon-defi-agent-plan",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "Preserve prerequisite sequence."
+  },
+  {
+    "prompt": "Wallet send command would auto-bridge gas; I only asked to prepare a transfer.",
+    "expected": "galleon-defi-agent-plan",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "Avoid implicit financial scope."
+  },
+  {
+    "prompt": "Simulate this approval and deposit as a stateful bundle, without signing.",
+    "expected": "galleon-defi-agent-simulate",
+    "mustNotInvoke": [
+      "galleon-defi-security"
+    ],
+    "reason": "Exact stateful preflight."
+  },
+  {
+    "prompt": "A Foresight response injected balances and bypassed signatures. Does it prove readiness?",
+    "expected": "galleon-defi-agent-simulate",
+    "mustNotInvoke": [
+      "galleon-defi-security"
+    ],
+    "reason": "Counterfactual evidence."
+  },
+  {
+    "prompt": "Replay this reverted transaction at its original block to diagnose it.",
+    "expected": "galleon-defi-agent-simulate",
+    "mustNotInvoke": [
+      "galleon-defi-security"
+    ],
+    "reason": "Historical replay."
+  },
+  {
+    "prompt": "Both independent simulations succeeded; check whether this proves the ordered batch.",
+    "expected": "galleon-defi-agent-simulate",
+    "mustNotInvoke": [
+      "galleon-defi-security"
+    ],
+    "reason": "State dependency."
+  },
+  {
+    "prompt": "Source bridge simulation passed; did the destination call execute?",
+    "expected": "galleon-defi-agent-simulate",
+    "mustNotInvoke": [
+      "galleon-defi-security"
+    ],
+    "reason": "Asynchronous boundary."
+  }
+]

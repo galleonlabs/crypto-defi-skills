@@ -6,7 +6,9 @@
       "title": "DeFi payments",
       "description": "Plan stablecoin payments, x402 purchases and token streams.",
       "skills": [
-        "galleon-defi-payments"
+        "galleon-defi-payments",
+        "galleon-sablier-streams",
+        "galleon-superfluid-streams"
       ]
     }
   ]

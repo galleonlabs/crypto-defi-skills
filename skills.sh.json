@@ -91,7 +91,8 @@
       "title": "Lending",
       "description": "Research lending markets, plan borrowing and monitor liquidation exposure.",
       "skills": [
-        "galleon-defi-lending"
+        "galleon-defi-lending",
+        "galleon-aave-v4"
       ]
     },
     {
@@ -148,7 +149,9 @@
       "title": "Payments",
       "description": "Plan stablecoin payments, x402 purchases and token streams.",
       "skills": [
-        "galleon-defi-payments"
+        "galleon-defi-payments",
+        "galleon-sablier-streams",
+        "galleon-superfluid-streams"
       ]
     },
     {
@@ -163,6 +166,22 @@
       "description": "Test daily long-only rules with dated inputs, costs, drawdown and a benchmark.",
       "skills": [
         "galleon-defi-strategy-backtest"
+      ]
+    },
+    {
+      "title": "Agent planning and simulation",
+      "description": "Official unsigned action plans and stateful transaction simulation.",
+      "skills": [
+        "galleon-defi-agent-plan",
+        "galleon-defi-agent-simulate"
+      ]
+    },
+    {
+      "title": "Prediction markets",
+      "description": "Polymarket market research and versioned resolution reconciliation.",
+      "skills": [
+        "galleon-prediction-market-research",
+        "galleon-prediction-market-resolution"
       ]
     }
   ]

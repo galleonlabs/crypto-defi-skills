@@ -60,3 +60,7 @@ Reviewed 2026-09-27. Recipes target CDP SDK v2 account APIs and the current Agen
 ## Release verification 2026-09-27
 
 AgentKit upstream EVM provider source was inspected: `configureWithWallet` retrieves an account when an address is supplied and creates one otherwise. The readiness procedure avoids calling it as a generic probe. Package checks, CLI catalog/show tests and canonical skill validation passed. No authenticated CDP account, wallet creation, signing, funding or paid capability was exercised.
+
+## Wallet and simulation surface review, 2026-10-08
+
+Current [wallet models](skills/galleon-defi-infra/references/wallets.md) and [primitive tool wiring](skills/galleon-defi-infra/references/primitive-tools.md) record migrated Coinbase Wallet MCP, WalletConnect implicit funding/session behavior, Alchemy write-method boundaries and Tenderly context/coverage limits. Official documentation/source was reviewed; no wallet or paid provider was connected for this update.

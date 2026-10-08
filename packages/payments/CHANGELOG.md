@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 - 2026-10-08
+
+- Add Sablier and Superfluid stream skills with token/rate scale, funding and permission checks.
+- Separate accrued, covered, claimable and received payment evidence.
+
 ## 0.1.3 - 2026-09-21
 
 Add x402 v2 header and network checks, per-obligation payment identifiers, bounded retry recovery and deferred-settlement reporting. Include synthetic cases for network mismatch, expired deduplication and delivered-but-unsettled requests.

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 - 2026-10-08
+
+- Add Octav, GoldRush and explorer references with explicit sync, coverage and quota boundaries.
+- Keep indexing/aggregation distinct from canonical balances and final receipts.
+
 ## 0.1.3 - 2026-09-09
 
 Add task-specific intake, configurable provider and user preferences, calculated successful examples and recovery paths. Preserve standalone installation and existing authorization boundaries.

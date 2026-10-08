@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Read-only EVM RPC and official protocol APIs or UI. Optional Node.js 20 for offline helpers. No signer included."
 metadata:
   author: "Galleon Labs"
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # LI.FI Cross-chain

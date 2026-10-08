@@ -51,5 +51,85 @@
       "galleon-defi-security"
     ],
     "reason": "Stream lifecycle operations and their irreversibility are payments guidance."
+  },
+  {
+    "prompt": "Plan Sablier Flow at one six-decimal USDC per day without creating it.",
+    "expected": "galleon-sablier-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Separate UD21x18 rate and token scales."
+  },
+  {
+    "prompt": "My Flow stream owes 100 but only 20 is funded; how much has arrived?",
+    "expected": "galleon-sablier-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Covered debt differs from received cash."
+  },
+  {
+    "prompt": "Pause only this Sablier stream; upstream cancel example defaults to refund plus void.",
+    "expected": "galleon-sablier-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Preserve precise action and stream scope."
+  },
+  {
+    "prompt": "Sablier recipient NFT moved after the indexer snapshot; can old recipient withdraw?",
+    "expected": "galleon-sablier-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Read current rights."
+  },
+  {
+    "prompt": "Cancel my cancelable Lockup and show remaining vested entitlement.",
+    "expected": "galleon-sablier-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Lockup rights and refund."
+  },
+  {
+    "prompt": "Recalculate Superfluid funding horizon if incoming flow stops.",
+    "expected": "galleon-superfluid-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Time-dependent funding."
+  },
+  {
+    "prompt": "CFA operator has no create permission but ERC20 wrapper approval exists.",
+    "expected": "galleon-superfluid-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Distinct authority types."
+  },
+  {
+    "prompt": "Our Superfluid stop scheduler deadline passed but current flow is positive.",
+    "expected": "galleon-superfluid-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Verify actual scheduler execution."
+  },
+  {
+    "prompt": "Prepare a GDA pool distribution and inspect member units.",
+    "expected": "galleon-superfluid-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "GDA distribution semantics."
+  },
+  {
+    "prompt": "Clear macro names one recipient but nested Superfluid flow targets another.",
+    "expected": "galleon-superfluid-streams",
+    "mustNotInvoke": [
+      "galleon-defi-payments"
+    ],
+    "reason": "Exact macro effects."
   }
 ]

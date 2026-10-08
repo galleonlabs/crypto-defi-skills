@@ -10,7 +10,7 @@ Four portable skills for connecting official market and DeFi data tools and turn
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-data
-npx --package galleon-defi-data-skills@0.5.0 defi-data-skills catalog
+npx --package galleon-defi-data-skills@0.6.0 defi-data-skills catalog
 ```
 
 The `galleon-defi-data` name avoids colliding with DefiLlama's own `defi-data` skill. Do not overwrite upstream skills when adding its optional research workflows. This pack does not install or authenticate MCP servers just by being installed.
@@ -30,8 +30,8 @@ Read [the skill](skills/galleon-defi-data/SKILL.md) or its [provider setup](skil
 ## Verify public data
 
 ```bash
-npx --package galleon-defi-data-skills@0.5.0 defi-data-skills price-check --provider coingecko --id bitcoin
-npx --package galleon-defi-data-skills@0.5.0 defi-data-skills price-check --provider defillama --id bitcoin
+npx --package galleon-defi-data-skills@0.6.0 defi-data-skills price-check --provider coingecko --id bitcoin
+npx --package galleon-defi-data-skills@0.6.0 defi-data-skills price-check --provider defillama --id bitcoin
 ```
 
 Node 20+; one keyless public GET per invocation, no environment credentials, no redirects, a 10-second deadline and a 64 KiB response limit. A failed or stale response exits nonzero without exposing provider error bodies. This is a connectivity/freshness check, not an executable quote or production price oracle. The DefiLlama route uses its CoinGecko-ID namespace, so agreement is not necessarily independent corroboration.
@@ -62,8 +62,8 @@ See [SOURCES.md](SOURCES.md) for provenance and dated verification.
 ## Source-backed market evidence
 
 ```bash
-npx --package galleon-defi-data-skills@0.5.0 defi-data-skills snapshot --ids bitcoin,ethereum
-npx --package galleon-defi-data-skills@0.5.0 defi-data-skills history --id bitcoin --days 180
+npx --package galleon-defi-data-skills@0.6.0 defi-data-skills snapshot --ids bitcoin,ethereum
+npx --package galleon-defi-data-skills@0.6.0 defi-data-skills history --id bitcoin --days 180
 ```
 
 The [market snapshot skill](skills/galleon-defi-market-snapshot/SKILL.md) collects at most ten resolved CoinGecko IDs through one fixed public GET per selected provider, with source hashes, observation/retrieval times and explicit partial failures. Cross-provider comparisons require fresh, aligned observations and preserve the possibility of shared upstream data. History returns a dated daily dataset compatible with the independent strategy backtest pack; it excludes a current partial-day observation and rejects gaps rather than interpolating them. No account, wallet, API key, paid fallback or scheduler is needed.

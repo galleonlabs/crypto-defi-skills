@@ -4,7 +4,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { credentialPresence, diagnoseRpc, SKILL_CATALOG } from "./index.js";
 import { validate } from "./validate.js";
-const VERSION = "0.3.0";
+const VERSION = "0.4.0";
 const HELP = `defi-infra-skills ${VERSION}
   catalog [--json]
   show <skill-name>

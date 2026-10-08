@@ -87,3 +87,7 @@ For the optional local CoinGecko MCP, native Hermes supports `command`, `args` a
 ## Readiness states
 
 Report each capability as working (bounded read returned valid data), configured but unverified, authentication required, subscription/credit unavailable, rate-limited, or unsupported. A fallback provider needs its own identity and methodology check. An HTTP 200 with malformed, missing or stale data is not a working capability.
+
+## Explorer, analytics and portfolio agent tools
+
+For Etherscan/Blockscout transaction or contract evidence, Dune SQL/query results, GoldRush indexed/streaming data and Octav portfolio/sync evidence, load [onchain agent sources](onchain-agents.md). This 2026-10-08 review covers capability, cost, pagination and freshness boundaries. It does not enable any provider or authorize paid queries.

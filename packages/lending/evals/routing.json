@@ -172,5 +172,45 @@
       "galleon-morpho-market"
     ],
     "reason": "Comet supply repays base debt and has different accounting from Morpho repay."
+  },
+  {
+    "prompt": "Prepare a 0.1 USDC borrow from my Aave V4 Spoke through the official MCP.",
+    "expected": "galleon-aave-v4",
+    "mustNotInvoke": [
+      "galleon-aave-position"
+    ],
+    "reason": "Use V4 deployment selectors and human units."
+  },
+  {
+    "prompt": "My V4 reserveId looks like the Spoke ID; can I construct it myself?",
+    "expected": "galleon-aave-v4",
+    "mustNotInvoke": [
+      "galleon-aave-position"
+    ],
+    "reason": "Preserve opaque typed identity."
+  },
+  {
+    "prompt": "A V4 health preview passed but prepare_action returned Erc20ApprovalRequired.",
+    "expected": "galleon-aave-v4",
+    "mustNotInvoke": [
+      "galleon-aave-position"
+    ],
+    "reason": "Health preview differs from allowance readiness."
+  },
+  {
+    "prompt": "My V4 repay confirmed; verify index processing using the original operations.",
+    "expected": "galleon-aave-v4",
+    "mustNotInvoke": [
+      "galleon-aave-position"
+    ],
+    "reason": "Operations-aware V4 indexing."
+  },
+  {
+    "prompt": "Can I withdraw withdrawableIgnoringDebt from my Aave V4 position with an open borrow?",
+    "expected": "galleon-aave-v4",
+    "mustNotInvoke": [
+      "galleon-aave-position"
+    ],
+    "reason": "Separate liquidity and collateral constraints."
   }
 ]

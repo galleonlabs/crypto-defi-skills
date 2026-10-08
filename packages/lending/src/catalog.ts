@@ -15,6 +15,7 @@ export const SKILL_CATALOG = [
     name: "galleon-compound-borrow",
     purpose: "Use when planning a Compound III Comet base-asset borrow, repayment or collateral withdrawal and checking baseBorrowMin and collateral factors.",
   },
+  { name: "galleon-aave-v4", purpose: "Inspect Aave V4 Hub/Spoke positions, preview exact actions, and reconcile unsigned execution plans." },
 ] as const;
 
 export type SkillName = (typeof SKILL_CATALOG)[number]["name"];

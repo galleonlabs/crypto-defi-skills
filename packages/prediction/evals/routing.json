@@ -1,0 +1,92 @@
+[
+  {
+    "prompt": "Research this Polymarket question and its rules.",
+    "expected": "galleon-prediction-market-research",
+    "mustNotInvoke": [
+      "galleon-prediction-market-resolution",
+      "hyperliquid-plan"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  },
+  {
+    "prompt": "What is the depth for five Yes shares?",
+    "expected": "galleon-prediction-market-research",
+    "mustNotInvoke": [
+      "galleon-prediction-market-resolution",
+      "hyperliquid-plan"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  },
+  {
+    "prompt": "Resolve the correct V2 outcome identifier.",
+    "expected": "galleon-prediction-market-research",
+    "mustNotInvoke": [
+      "galleon-prediction-market-resolution",
+      "hyperliquid-plan"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  },
+  {
+    "prompt": "Is the midpoint an executable price?",
+    "expected": "galleon-prediction-market-research",
+    "mustNotInvoke": [
+      "galleon-prediction-market-resolution",
+      "hyperliquid-plan"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  },
+  {
+    "prompt": "Interpret an old unsorted Polymarket book.",
+    "expected": "galleon-prediction-market-research",
+    "mustNotInvoke": [
+      "galleon-prediction-market-resolution",
+      "hyperliquid-plan"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  },
+  {
+    "prompt": "Is this closed market payout finalized?",
+    "expected": "galleon-prediction-market-resolution",
+    "mustNotInvoke": [
+      "galleon-prediction-market-research",
+      "galleon-defi-payments"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  },
+  {
+    "prompt": "Is a disputed UMA proposal claimable?",
+    "expected": "galleon-prediction-market-resolution",
+    "mustNotInvoke": [
+      "galleon-prediction-market-research",
+      "galleon-defi-payments"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  },
+  {
+    "prompt": "Did the existing redemption reach my proxy wallet?",
+    "expected": "galleon-prediction-market-resolution",
+    "mustNotInvoke": [
+      "galleon-prediction-market-research",
+      "galleon-defi-payments"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  },
+  {
+    "prompt": "Explain my 50/50 payout.",
+    "expected": "galleon-prediction-market-resolution",
+    "mustNotInvoke": [
+      "galleon-prediction-market-research",
+      "galleon-defi-payments"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  },
+  {
+    "prompt": "Which ledger proves my V2 redemption?",
+    "expected": "galleon-prediction-market-resolution",
+    "mustNotInvoke": [
+      "galleon-prediction-market-research",
+      "galleon-defi-payments"
+    ],
+    "reason": "Route by research intent and the versioned evidence lifecycle."
+  }
+]

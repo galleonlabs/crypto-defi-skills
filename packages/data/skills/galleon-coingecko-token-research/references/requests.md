@@ -24,3 +24,9 @@ This is Ethereum USDC, chain 1, and does not identify an arbitrary user token. P
 For unlisted assets use the official onchain token/pool endpoints only after resolving the separate network ID via `/onchain/networks`. Inspect contract identity, reserve USD, per-pool volume and observation timestamps. Record whether price comes from an aggregate or a particular pool; a token with one thin pool cannot support a large exit estimate.
 
 Freshness: compute retrieval UNIX seconds minus `last_updated_at`. A missing, non-finite, future or overly old timestamp fails a strict freshness request; don't silently substitute retrieval time. CoinGecko historical chart sampling also differs by range and plan, so a sampled point is not an exact transaction-time valuation.
+
+## Schema and entitlement changes, checked 2026-10-08
+
+[Official changelog](https://docs.coingecko.com/changelog) documents removed optional `community_data` and `developer_data` fields. Do not dereference missing fields, substitute zero scores or claim absent development/community activity from the removal. Keep the public/default request scope and report unsupported observations explicitly.
+
+Wallet balances/PnL are plan-scoped Analyst+ features; selected multi-network token and minute-interval history features have Enterprise access boundaries. An aggregate token/market read does not establish wallet holdings or those entitlements. Discover current API method/plan support and use existing approved access; do not upgrade plans, invoke paid wallet methods or replace unsupported precision with fabricated data.

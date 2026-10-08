@@ -4,7 +4,7 @@ description: "Use when checking an Aave V3 health factor, sizing a borrow, or pl
 license: MIT
 compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -12,6 +12,8 @@ metadata:
 # Aave V3 position risk
 
 Produce a borrow/repay decision for one **EVM Aave V3 pool**. First identify chain, PoolAddressesProvider, Pool, account, requested debt asset and action. V4 hubs/spokes and Aptos require their own interfaces; stop this recipe if the deployment is not V3.
+
+For official MCP use, load [current MCP procedure](references/mcp.md) first. Its human-unit amounts differ from the raw contract calls below.
 
 ## Read and reconcile
 
@@ -34,4 +36,4 @@ Return the requested decision, exact deployment and chain, block/time, raw-unit 
 
 For a requested write, prepare the complete unsigned sequence and simulate with the actual sender, amount, recipient and allowance state. Preserve authorization already supplied; research does not grant debt, spending or signing authority. Never request keys. After an authorized transaction, verify its receipt and the relevant balance or position change. On an ambiguous timeout, reconcile its hash and nonce before retrying.
 
-Read [protocol references and worked record](references/recipe.md) only for the selected operation. Documentation checked 2026-09-27; refresh deployments and current parameters at use time. This directory is independently installable.
+Read [protocol references and worked record](references/recipe.md) only for the selected operation. Documentation checked 2026-10-08; refresh deployments and current parameters at use time. This directory is independently installable.

@@ -27,3 +27,8 @@ Source-backed corrections and reproducible workflow improvements are welcome. Se
 ## License and credit
 
 [MIT](LICENSE), copyright Galleon Labs. Preserve the copyright and permission notice in reused copies or substantial portions. [Attribution](ATTRIBUTION.md) includes an optional credit line naming Andrew Wilkinson and Galleon Labs.
+
+## Protocol procedures
+
+- [galleon-sablier-streams](skills/galleon-sablier-streams/SKILL.md): Plan and reconcile Sablier Flow debt, Lockup vesting and current withdrawal/cancellation rights.
+- [galleon-superfluid-streams](skills/galleon-superfluid-streams/SKILL.md): Plan and reconcile Superfluid CFA flows, GDA pools, funding buffers and operator permissions.

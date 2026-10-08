@@ -3,7 +3,7 @@ name: galleon-defi-lending
 description: "Use when researching lending markets, planning supply, borrow, repay or withdrawals, or monitoring liquidation risk across Aave, Morpho, Compound, Euler and Spark."
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -42,3 +42,5 @@ For a named protocol task, prefer its focused skill when installed:
 - `galleon-compound-borrow`: Comet base borrowing, minimum debt and dual collateral factors.
 
 This existing skill remains usable on its own for cross-protocol comparisons. Do not require another pack to complete its workflow.
+
+For an identified Aave V4 Hub/Spoke operation, prefer `galleon-aave-v4` when installed. V3 Pool operations continue to use `galleon-aave-position`. Each remains independently usable.

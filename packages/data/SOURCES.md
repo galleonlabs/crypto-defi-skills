@@ -42,7 +42,7 @@ Reviewed 2026-09-27; REST API v3. Documentation review does not prove an authent
 - [Demo token price](https://docs.coingecko.com/demo/reference/simple-token-price): address-keyed prices and requested timestamps.
 - [Pro token price](https://docs.coingecko.com/reference/simple-token-price): separate host and credential header.
 - [Top pools](https://docs.coingecko.com/reference/top-pools-contract-address): onchain network and pool evidence.
-- [API changelog](https://docs.coingecko.com/changelog/10122018): check schema changes before relying on nullable rank or ticker trust fields.
+- [API changelog](https://docs.coingecko.com/changelog): check schema changes before relying on nullable rank or ticker trust fields.
 
 ## galleon-defillama-yield-screen
 
@@ -66,3 +66,7 @@ Reviewed 2026-09-27. Public yields REST has no pinned semantic API version; reta
 - New offline tests cover bounded snapshots, raw-response hashes, partial/malformed/stale observations, time alignment, safe transport failures, daily sampling, gaps/range/freshness and compatibility with the independent strategy engine. No network calls run in tests.
 
 At 06:43:24–25 UTC on 2026-10-02, the new keyless snapshot completed CoinGecko and DefiLlama Bitcoin/Ethereum reads with four valid observations aged 84–104 seconds. Their observation times aligned within the declared 120-second skew. The new Bitcoin 180-day history read produced 180 consecutive UTC-midnight aggregate observations from 2026-04-06 through 2026-10-02 and explicitly excluded the trailing current-day point. This verifies those bounded public reads only; no account entitlement, wallet action or provider-wide coverage is claimed. Volatile marks and response bodies are retained as local verification artifacts rather than packaged data.
+
+## Ethereum agent tool review, 2026-10-08
+
+[Onchain agent evidence sources](skills/galleon-defi-data/references/onchain-agents.md) document current primary Etherscan, Blockscout, Dune, GoldRush and Octav access, pagination, billing and freshness boundaries. Documentation was checked; this package did not authenticate to those services or perform paid queries.

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Prediction market research",
+      "description": "Research prediction market order books and reconcile resolution without signing or trading.",
+      "skills": [
+        "galleon-prediction-market-research",
+        "galleon-prediction-market-resolution"
+      ]
+    }
+  ]
+}

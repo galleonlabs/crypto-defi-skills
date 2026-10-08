@@ -1,0 +1,2080 @@
+[
+  {
+    "catalogId": 1,
+    "id": "polymarket-cli",
+    "name": "Polymarket CLI",
+    "provider": "Polymarket",
+    "sources": [
+      "https://github.com/Polymarket/polymarket-cli"
+    ],
+    "listedInterfaces": [
+      "CLI"
+    ],
+    "listedCategories": [
+      "Trading",
+      "Data"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Public markets/books/positions work without wallet; orders/approvals/redemption require signer. JSON errors also use nonzero exit status. Never import a trading key for research."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Public markets/books/positions work without wallet; orders/approvals/redemption require signer. JSON errors also use nonzero exit status. Never import a trading key for research."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "prediction"
+    ],
+    "recommendation": "Research versioned Polymarket outcome identity, book depth, rules and resolution evidence without signing."
+  },
+  {
+    "catalogId": 2,
+    "id": "hyperliquid-cli",
+    "name": "Hyperliquid CLI",
+    "provider": "hypurrclaw",
+    "sources": [
+      "https://github.com/hypurrclaw/hyperliquid-cli"
+    ],
+    "listedInterfaces": [
+      "CLI",
+      "Wallet"
+    ],
+    "listedCategories": [
+      "Trading",
+      "Wallet"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "hypurrclaw is independent of Hyperliquid. OWS encrypted keystore, schemas, dry-run, agent mode; setup can persist builder fee/referral defaults. No default adoption of fees or master signer."
+    },
+    "provenance": "third-party",
+    "access": {
+      "kind": "mixed",
+      "requirements": "hypurrclaw is independent of Hyperliquid. OWS encrypted keystore, schemas, dry-run, agent mode; setup can persist builder fee/referral defaults. No default adoption of fees or master signer."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "hyperliquid"
+    ],
+    "recommendation": "Keep official SDK preferred; document optional version-pinned CLI plus schema and API-wallet boundary."
+  },
+  {
+    "catalogId": 3,
+    "id": "walletchan-mcp",
+    "name": "WalletChan MCP",
+    "provider": "WalletChan",
+    "sources": [
+      "https://www.npmjs.com/package/@walletchan/mcp",
+      "https://walletchan.com/"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "Wallet"
+    ],
+    "listedCategories": [
+      "Wallet",
+      "DeFi"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "WalletChan popup path differs from ERC-7710 delegated agent and raw agent-eoa profiles. Scope covers targets/selectors/caps/expiry; paired popup is not universal for agent profiles."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "WalletChan popup path differs from ERC-7710 delegated agent and raw agent-eoa profiles. Scope covers targets/selectors/caps/expiry; paired popup is not universal for agent profiles."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "agent"
+    ],
+    "recommendation": "Opt-in wallet/delegation profile review; explicitly distinguish main delegator and unfunded agent address."
+  },
+  {
+    "catalogId": 4,
+    "id": "phantom-mcp",
+    "name": "Phantom MCP",
+    "provider": "Phantom",
+    "sources": [
+      "https://docs.phantom.com/phantom-mcp-server",
+      "https://www.npmjs.com/package/@phantom/mcp-server",
+      "https://x.com/phantom/status/2023866789860675625"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "Wallet"
+    ],
+    "listedCategories": [
+      "Wallet",
+      "Trading",
+      "Cross-chain"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Phantom login creates dedicated new agent wallet, not existing personal account. send_* simulates/signs/broadcasts; simulate_transaction is a separate read. Typed-message signing still grants authority."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "credentials",
+      "requirements": "Phantom login creates dedicated new agent wallet, not existing personal account. send_* simulates/signs/broadcasts; simulate_transaction is a separate read. Typed-message signing still grants authority."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "agent"
+    ],
+    "recommendation": "Opt-in Phantom onboarding, fund only under explicit authority, simulation then terminal receipt/positions."
+  },
+  {
+    "catalogId": 5,
+    "id": "aave-for-agents",
+    "name": "Aave for Agents",
+    "provider": "Aave",
+    "sources": [
+      "https://aave.com/agents",
+      "https://aave.com/docs/mcp/getting-started",
+      "https://github.com/aave/skills"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "Skill"
+    ],
+    "listedCategories": [
+      "DeFi"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Aave MCP is public keyless and unsigned; exact selectors from live schemas, main-unit amounts, V4 operations-array confirmation, scoped coverage and warning levels."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "keyless",
+      "requirements": "Aave MCP is public keyless and unsigned; exact selectors from live schemas, main-unit amounts, V4 operations-array confirmation, scoped coverage and warning levels."
+    },
+    "cost": "free-limited",
+    "authority": "unsigned",
+    "packs": [
+      "lending",
+      "agent"
+    ],
+    "recommendation": "Deepen Aave V3/V4 operational workflow; never use get_transaction_processed as an arbitrary receipt lookup."
+  },
+  {
+    "catalogId": 6,
+    "id": "base-mcp",
+    "name": "Base MCP",
+    "provider": "Base",
+    "sources": [
+      "https://docs.base.org/agents/quickstart",
+      "https://docs.cdp.coinbase.com/ai-agents/coinbase-for-agents/wallet-mcp"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "Skill",
+      "Wallet"
+    ],
+    "listedCategories": [
+      "Wallet",
+      "DeFi",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Base docs migrated to Coinbase Wallet MCP. Current endpoint wallet-mcp.coinbase.com uses OAuth and every write approval. Own/in-session wallet history only. Skill remains base/skills base-mcp."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "credentials",
+      "requirements": "Base docs migrated to Coinbase Wallet MCP. Current endpoint wallet-mcp.coinbase.com uses OAuth and every write approval. Own/in-session wallet history only. Skill remains base/skills base-mcp."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "agent",
+      "payments"
+    ],
+    "recommendation": "Use migrated name/endpoint, preserve explicit wallet connection and signing boundaries."
+  },
+  {
+    "catalogId": 7,
+    "id": "uniswap-ai",
+    "name": "Uniswap AI",
+    "provider": "Uniswap",
+    "sources": [
+      "https://github.com/Uniswap/uniswap-ai"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "Plugin"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Trading",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Official Uniswap developer skills include swaps, v4 hook engineering, viem/wagmi and trading bots; these are developer procedures, not approved trading strategies."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Official Uniswap developer skills include swaps, v4 hook engineering, viem/wagmi and trading bots; these are developer procedures, not approved trading strategies."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "routing",
+      "lp",
+      "security",
+      "strategy"
+    ],
+    "recommendation": "Route builder tasks to official skills; isolate bot runtime and validate hooks/pool key/permission bits."
+  },
+  {
+    "catalogId": 8,
+    "id": "0x-ai",
+    "name": "0x AI",
+    "provider": "0x",
+    "sources": [
+      "https://0x.org/post/0x-agent-skills",
+      "https://github.com/0xProject/0x-ai"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP",
+      "API"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Trading",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "0x API v2 API-key path vs x402/MPP paid gateway. Docs MCP serves docs, not swaps. AllowanceHolder/Permit2 flow selection; Never approve Settler. Keyless HTTP402 requests spend stablecoins."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "0x API v2 API-key path vs x402/MPP paid gateway. Docs MCP serves docs, not swaps. AllowanceHolder/Permit2 flow selection; Never approve Settler. Keyless HTTP402 requests spend stablecoins."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "routing",
+      "payments"
+    ],
+    "recommendation": "Preserve quote chain/taker/spender/expiry and money limits; no automatic paid-keyless fallback."
+  },
+  {
+    "catalogId": 9,
+    "id": "aerodrome-sugar",
+    "name": "Aerodrome Sugar",
+    "provider": "Aerodrome",
+    "sources": [
+      "https://aerodrome-finance.github.io/agents/",
+      "https://github.com/velodrome-finance/sugar-sdk",
+      "https://github.com/velodrome-finance/sugar-sdk/tree/v0.4.2/.claude/skills/sugar"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "CLI"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Trading",
+      "Cross-chain"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Sugar CLI rejects private keys and yields approvals plus unsigned calls; pool/position raw balances use token base units. Linked v0.4.2 differs from existing v0.4.1 pin. Crosschain superswap may need relayer orchestration."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Sugar CLI rejects private keys and yields approvals plus unsigned calls; pool/position raw balances use token base units. Linked v0.4.2 differs from existing v0.4.1 pin. Crosschain superswap may need relayer orchestration."
+    },
+    "cost": "mixed",
+    "authority": "unsigned",
+    "packs": [
+      "lp",
+      "routing"
+    ],
+    "recommendation": "Review pinned release, inspect bounded pagination and errors; source receipt alone cannot confirm superswap destination."
+  },
+  {
+    "catalogId": 10,
+    "id": "doppler-skills",
+    "name": "Doppler Skills",
+    "provider": "Whetstone Research",
+    "sources": [
+      "https://github.com/whetstoneresearch/doppler-skills"
+    ],
+    "listedInterfaces": [
+      "Skill"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Whetstone canonical Doppler skills cover EVM/Solana auction launch, migration and fee accounting; actual deployments and module generation select behavior."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Whetstone canonical Doppler skills cover EVM/Solana auction launch, migration and fee accounting; actual deployments and module generation select behavior."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "lp",
+      "routing",
+      "agent"
+    ],
+    "recommendation": "Offer builder guidance; independent review before launch/config publication, no default launch transaction."
+  },
+  {
+    "catalogId": 11,
+    "id": "ctrl-skill-mcp",
+    "name": "CTRL Skill & MCP",
+    "provider": "CTRLabs",
+    "sources": [
+      "https://github.com/CTRLabs/ctrl-skill",
+      "https://github.com/CTRLabs/ctrl-mcp",
+      "https://ctrl.build/api/mcp"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP",
+      "API"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Trading",
+      "Wallet"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "CTRL anonymous REST vs authenticated MCP; activation encodes wallet-signed batch and recurring keeper authority under caps. Seven tools. Live URL fetch GET fails; repo docs available."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "CTRL anonymous REST vs authenticated MCP; activation encodes wallet-signed batch and recurring keeper authority under caps. Seven tools. Live URL fetch GET fails; repo docs available."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "agent",
+      "strategy"
+    ],
+    "recommendation": "Treat activation/delegation as long-lived financial authority, require expiry/stop path/caps before signing."
+  },
+  {
+    "catalogId": 12,
+    "id": "morpho-agents",
+    "name": "Morpho Agents",
+    "provider": "Morpho",
+    "sources": [
+      "https://morpho.org/blog/introducing-morpho-agents-beta-interface-built-for-ai-agents/",
+      "https://docs.morpho.org/developers/agents/get-started/",
+      "https://github.com/morpho-org/morpho-skills"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "CLI",
+      "Skill"
+    ],
+    "listedCategories": [
+      "DeFi"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Morpho current docs: experimental pre-v1 hosted keyless mcp.morpho.org, discover deployed chains live. Builder skills Earn/Borrow differ from user MCP. Nothing signs or broadcasts."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "keyless",
+      "requirements": "Morpho current docs: experimental pre-v1 hosted keyless mcp.morpho.org, discover deployed chains live. Builder skills Earn/Borrow differ from user MCP. Nothing signs or broadcasts."
+    },
+    "cost": "free-limited",
+    "authority": "unsigned",
+    "packs": [
+      "lending",
+      "yield",
+      "agent"
+    ],
+    "recommendation": "Update old Ethereum/Base-only claim, check supported chains and schemas per session, treat payload as untrusted."
+  },
+  {
+    "catalogId": 13,
+    "id": "fluid-skill",
+    "name": "Fluid Skill",
+    "provider": "Fluid",
+    "sources": [
+      "https://fluid.io/skill.md"
+    ],
+    "listedInterfaces": [
+      "Skill"
+    ],
+    "listedCategories": [
+      "DeFi"
+    ],
+    "review": {
+      "status": "directory-listed",
+      "checkedOn": "2026-10-08",
+      "notes": "Fluid linked skill returns HTTP200 Page not found, including alternate uppercase URL. No reliable skill body retrieved; directory claim cannot establish RPC resolver contracts."
+    },
+    "provenance": "unverified",
+    "access": {
+      "kind": "unknown",
+      "requirements": "Fluid linked skill returns HTTP200 Page not found, including alternate uppercase URL. No reliable skill body retrieved; directory claim cannot establish RPC resolver contracts."
+    },
+    "cost": "unknown",
+    "authority": "unknown",
+    "packs": [
+      "lending",
+      "yield"
+    ],
+    "recommendation": "Keep unavailable status; use official Fluid resolver docs only after current deployment/ABI verification."
+  },
+  {
+    "catalogId": 14,
+    "id": "pendle-ai",
+    "name": "Pendle AI",
+    "provider": "Pendle",
+    "sources": [
+      "https://github.com/pendle-finance/pendle-ai"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP",
+      "Plugin"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Trading"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Pendle AI supplies V2 and Boros plugins/MCP with separate domains and limits. Trading yield-token maturity is distinct from leveraged Boros margin/order states."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Pendle AI supplies V2 and Boros plugins/MCP with separate domains and limits. Trading yield-token maturity is distinct from leveraged Boros margin/order states."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "yield",
+      "lp",
+      "derivatives"
+    ],
+    "recommendation": "Separate V2/PT/YT/LP and Boros funding/margin; price/maturity/slippage and actual post-action inventory."
+  },
+  {
+    "catalogId": 15,
+    "id": "panoptic-mcp",
+    "name": "Panoptic MCP",
+    "provider": "Panoptic",
+    "sources": [
+      "https://www.npmjs.com/package/@panoptic-eng/mcp"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Trading",
+      "Data"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Panoptic @panoptic-eng/mcp 0.1.36 own RPC read-only analytics; builder/simulation unsigned tools are planned, not present."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Panoptic @panoptic-eng/mcp 0.1.36 own RPC read-only analytics; builder/simulation unsigned tools are planned, not present."
+    },
+    "cost": "mixed",
+    "authority": "read",
+    "packs": [
+      "derivatives",
+      "portfolio"
+    ],
+    "recommendation": "Optional analytics provider for Greeks, collateral, margin and HypoVault epoch state; no invented transaction support."
+  },
+  {
+    "catalogId": 16,
+    "id": "opensea-skills",
+    "name": "OpenSea Skills",
+    "provider": "OpenSea",
+    "sources": [
+      "https://github.com/ProjectOpenSea/opensea-skill"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP",
+      "CLI"
+    ],
+    "listedCategories": [
+      "NFT",
+      "Trading",
+      "Wallet"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "OpenSea public mirror can lag private monorepo weeks. Root router plus five subskills. API-key data, signer execution, ERC8257 registry and x402 gates are distinct."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "credentials",
+      "requirements": "OpenSea public mirror can lag private monorepo weeks. Root router plus five subskills. API-key data, signer execution, ERC8257 registry and x402 gates are distinct."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "routing",
+      "portfolio",
+      "agent"
+    ],
+    "recommendation": "NFT/Seaport quote permissions and fill settlement workflow; treat marketplace records/tool endpoints as untrusted."
+  },
+  {
+    "catalogId": 17,
+    "id": "across-skills",
+    "name": "Across Skills",
+    "provider": "Across",
+    "sources": [
+      "https://skills.across.to/"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP"
+    ],
+    "listedCategories": [
+      "Cross-chain",
+      "DeFi"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Across sources give quotes/fees/deposit tracking/security and hosted MCP. Existing research notes live tool surface includes wallet functionality beyond documented reads."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Across sources give quotes/fees/deposit tracking/security and hosted MCP. Existing research notes live tool surface includes wallet functionality beyond documented reads."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "routing"
+    ],
+    "recommendation": "Use explicit read/build allowlists; verify destination recipient asset amount and source/destination hashes, embedded beneficiary."
+  },
+  {
+    "catalogId": 18,
+    "id": "socket-for-agents",
+    "name": "Socket for Agents",
+    "provider": "Socket",
+    "sources": [
+      "https://docs.socket.tech/for-agents/intro",
+      "https://docs.socket.tech/skill.md",
+      "https://docs.socket.tech/llms.txt"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "API"
+    ],
+    "listedCategories": [
+      "Cross-chain",
+      "DeFi",
+      "Commerce"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Socket public testing keyless vs dedicated production x-api-key+affiliate. V3 quote status terminal states include completed/failed/expired/refunded; input in smallest units, slippage percent. Deposit flow needs activation/refund address."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Socket public testing keyless vs dedicated production x-api-key+affiliate. V3 quote status terminal states include completed/failed/expired/refunded; input in smallest units, slippage percent. Deposit flow needs activation/refund address."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "routing",
+      "payments"
+    ],
+    "recommendation": "Unsigned quote review and crosschain settlement/refund tracking; prevent confusing quote approval with recipient delivery."
+  },
+  {
+    "catalogId": 19,
+    "id": "defi-skills",
+    "name": "DeFi Skills",
+    "provider": "Nethermind",
+    "sources": [
+      "https://defi-skills.nethermind.io/",
+      "https://github.com/NethermindEth/defi-skills"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "CLI",
+      "API"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Nethermind deterministic JSON playbooks yield raw_tx chain_id/to/value/data. Never signs/broadcasts; signer owns gas/nonce. Resolver API keys optional by feature, hosted API bearer/free limits."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Nethermind deterministic JSON playbooks yield raw_tx chain_id/to/value/data. Never signs/broadcasts; signer owns gas/nonce. Resolver API keys optional by feature, hosted API bearer/free limits."
+    },
+    "cost": "mixed",
+    "authority": "unsigned",
+    "packs": [
+      "agent",
+      "lending",
+      "routing"
+    ],
+    "recommendation": "Prefer official builder to adapter; ABI/deployment/playbook provenance plus exact approval ordering and external simulation."
+  },
+  {
+    "catalogId": 20,
+    "id": "sablier-agent-skills",
+    "name": "Sablier Agent Skills",
+    "provider": "Sablier",
+    "sources": [
+      "https://blog.sablier.com/sablier-agent-skills-onchain-token-vesting-powered-by-ai"
+    ],
+    "listedInterfaces": [
+      "Skill"
+    ],
+    "listedCategories": [
+      "DeFi"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Sablier fixed Lockup vesting, open-ended Flow and Merkle airdrops are distinct modules. Airdrop helper uploads campaign artifact to Pinata, so artifact creation is not wholly local."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Sablier fixed Lockup vesting, open-ended Flow and Merkle airdrops are distinct modules. Airdrop helper uploads campaign artifact to Pinata, so artifact creation is not wholly local."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "payments"
+    ],
+    "recommendation": "Module-specific vesting debt/cancel/cliff/schedule/payload review and independent contract-state confirmation."
+  },
+  {
+    "catalogId": 21,
+    "id": "superfluid-skills",
+    "name": "Superfluid Skills",
+    "provider": "Superfluid",
+    "sources": [
+      "https://skills.superfluid.org/",
+      "https://github.com/superfluid-org/skills",
+      "https://x.com/Superfluid_HQ/status/2034332276797161806"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "Plugin"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Superfluid CFA/GDA/schedulers/AutoWrap differ. Flow rate is signed int96 per-second; continuous balance runway and liquidation deposit need explicit review; legacy IDA distinguished."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Superfluid CFA/GDA/schedulers/AutoWrap differ. Flow rate is signed int96 per-second; continuous balance runway and liquidation deposit need explicit review; legacy IDA distinguished."
+    },
+    "cost": "mixed",
+    "authority": "unsigned",
+    "packs": [
+      "payments"
+    ],
+    "recommendation": "Flow-specific permissions, decimals, upfront buffer, funded runway and actual onchain flow state."
+  },
+  {
+    "catalogId": 22,
+    "id": "yo-protocol-skills",
+    "name": "YO Protocol Skills",
+    "provider": "YO Protocol",
+    "sources": [
+      "https://github.com/yoprotocol/yo-protocol-skills",
+      "https://www.yo.xyz/",
+      "https://www.npmjs.com/package/@yo-protocol/cli"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "CLI",
+      "MCP",
+      "API"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "YO CLI prepares unsigned Gateway payloads; Base plugin sends via wallet send_calls. Risk Graph is paid x402, not free keyless. Vault epoch/async redemption differ from wallet-held shares."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "YO CLI prepares unsigned Gateway payloads; Base plugin sends via wallet send_calls. Risk Graph is paid x402, not free keyless. Vault epoch/async redemption differ from wallet-held shares."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "yield",
+      "agent"
+    ],
+    "recommendation": "Add YO-specific read/prepare/redeem/reward workflow using live SDK schemas and honest queued redemption evidence."
+  },
+  {
+    "catalogId": 23,
+    "id": "octav-api",
+    "name": "Octav API",
+    "provider": "Octav",
+    "sources": [
+      "https://docs.octav.fi/api/ai-development/overview",
+      "https://docs.octav.fi/api/ai-development/mcp-server",
+      "https://docs.octav.fi/api/ai-development/cli",
+      "https://github.com/Octav-Labs/octav-api-skill"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP",
+      "CLI",
+      "API"
+    ],
+    "listedCategories": [
+      "Data",
+      "DeFi",
+      "Wallet"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Octav API/MCP reads consume credits, subscription creation costs credits; default API key. x402 covers wallet/portfolio/nav/status/chains, not transaction history; no automatic wallet-spending fallback."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Octav API/MCP reads consume credits, subscription creation costs credits; default API key. x402 covers wallet/portfolio/nav/status/chains, not transaction history; no automatic wallet-spending fallback."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "portfolio",
+      "data"
+    ],
+    "recommendation": "Provider records must expose freshness/sync coverage and quota; reconcile portfolio snapshots against debt/queues."
+  },
+  {
+    "catalogId": 24,
+    "id": "defillama-skills",
+    "name": "DefiLlama Skills",
+    "provider": "DefiLlama",
+    "sources": [
+      "https://github.com/DefiLlama/defillama-skills"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP"
+    ],
+    "listedCategories": [
+      "Data",
+      "DeFi"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "DefiLlama MCP OAuth no manual key but API subscription/credits; 23-tool skill workflows. Public REST is separate from subscribed MCP."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "credentials",
+      "requirements": "DefiLlama MCP OAuth no manual key but API subscription/credits; 23-tool skill workflows. Public REST is separate from subscribed MCP."
+    },
+    "cost": "metered",
+    "authority": "read",
+    "packs": [
+      "data",
+      "yield",
+      "portfolio"
+    ],
+    "recommendation": "Keep public keyless API defaults; scope/provenance/APY conventions and bounded credit-consuming reads."
+  },
+  {
+    "catalogId": 25,
+    "id": "ethereum-research-mcp",
+    "name": "Ethereum Research MCP",
+    "provider": "Ethereum Community Foundation",
+    "sources": [
+      "https://github.com/ETHCF/ethereum-mcp"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "Data",
+      "DeFi",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "ETHCF research aggregator requires Etherscan API key, optional other services/RPC. Community Foundation is not an official Ethereum protocol-wide API authority."
+    },
+    "provenance": "third-party",
+    "access": {
+      "kind": "credentials",
+      "requirements": "ETHCF research aggregator requires Etherscan API key, optional other services/RPC. Community Foundation is not an official Ethereum protocol-wide API authority."
+    },
+    "cost": "mixed",
+    "authority": "read",
+    "packs": [
+      "data",
+      "infra"
+    ],
+    "recommendation": "Reference only unless required; prefer direct official keyless sources and document each upstream quota."
+  },
+  {
+    "catalogId": 26,
+    "id": "dune",
+    "name": "Dune",
+    "provider": "Dune",
+    "sources": [
+      "https://dune.com/agents",
+      "https://docs.dune.com/api-reference/agents/mcp",
+      "https://docs.dune.com/api-reference/agents/cli-and-skills",
+      "https://github.com/duneanalytics/skills"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "CLI",
+      "Skill",
+      "API"
+    ],
+    "listedCategories": [
+      "Data",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Dune MCP/CLI OAuth and credits; SQL execution/persisted queries/dashboard writes differ. HTTP402 Tempo agent queries are paid without signup."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Dune MCP/CLI OAuth and credits; SQL execution/persisted queries/dashboard writes differ. HTTP402 Tempo agent queries are paid without signup."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "data"
+    ],
+    "recommendation": "Bound SQL scans/query cost; provenance execution id/timestamp/schema/coverage and parameterized wallet input."
+  },
+  {
+    "catalogId": 27,
+    "id": "coingecko-mcp",
+    "name": "CoinGecko MCP",
+    "provider": "CoinGecko",
+    "sources": [
+      "https://mcp.api.coingecko.com/"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "Data"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "CoinGecko shared MCP is keyless; rate-limited market/onchain data. Current Boomkin reviewed execute/search_docs discovery is narrow by name but generic operation semantics require research boundaries."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "keyless",
+      "requirements": "CoinGecko shared MCP is keyless; rate-limited market/onchain data. Current Boomkin reviewed execute/search_docs discovery is narrow by name but generic operation semantics require research boundaries."
+    },
+    "cost": "free-limited",
+    "authority": "read",
+    "packs": [
+      "data"
+    ],
+    "recommendation": "Retain keyless default with stale-data/backoff/schema drift detection; distinguish connection from successful market read."
+  },
+  {
+    "catalogId": 28,
+    "id": "blockscout-mcp",
+    "name": "Blockscout MCP",
+    "provider": "Blockscout",
+    "sources": [
+      "https://mcp.blockscout.com/",
+      "https://docs.blockscout.com/devs/mcp-server",
+      "https://github.com/blockscout/mcp-server"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "Skill"
+    ],
+    "listedCategories": [
+      "Data",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Blockscout shared MCP gateway has limits; repo includes development skills, not a consumer security audit pack. Typed read tools plus generic direct_api_call need separate review."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "keyless",
+      "requirements": "Blockscout shared MCP gateway has limits; repo includes development skills, not a consumer security audit pack. Typed read tools plus generic direct_api_call need separate review."
+    },
+    "cost": "free-limited",
+    "authority": "read",
+    "packs": [
+      "data",
+      "infra",
+      "security"
+    ],
+    "recommendation": "Optional keyless read provider, chain discovery and explorer receipt/source evidence; exclude generic API tool by default."
+  },
+  {
+    "catalogId": 29,
+    "id": "etherscan-ai-tools",
+    "name": "Etherscan AI Tools",
+    "provider": "Etherscan",
+    "sources": [
+      "https://docs.etherscan.io/build-with-ai/introduction",
+      "https://docs.etherscan.io/build-with-ai/mcp",
+      "https://docs.etherscan.io/build-with-ai/skills"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "CLI",
+      "Skill",
+      "API"
+    ],
+    "listedCategories": [
+      "Data",
+      "Developer",
+      "Security"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Official Etherscan authenticated 21 tools vs keyless 16, omitting PRO holdings/info/top-holders/labels/funder. Both read-only. Use exact official domains, not similarly named third-party MCP."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Official Etherscan authenticated 21 tools vs keyless 16, omitting PRO holdings/info/top-holders/labels/funder. Both read-only. Use exact official domains, not similarly named third-party MCP."
+    },
+    "cost": "mixed",
+    "authority": "read",
+    "packs": [
+      "data",
+      "security"
+    ],
+    "recommendation": "Keyless receipt/source/ABI/debug workflow; never present PRO-only completeness through keyless data."
+  },
+  {
+    "catalogId": 30,
+    "id": "tenderly-mcp",
+    "name": "Tenderly MCP",
+    "provider": "Tenderly",
+    "sources": [
+      "https://docs.tenderly.co/ai-tools/quickstart"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "Developer",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Tenderly paid-plan OAuth MCP requires active project/VNet; 403 insufficient_scope/quota may cause login loop that reauth cannot fix. Trace/events response caps require navigation tools."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "credentials",
+      "requirements": "Tenderly paid-plan OAuth MCP requires active project/VNet; 403 insufficient_scope/quota may cause login loop that reauth cannot fix. Trace/events response caps require navigation tools."
+    },
+    "cost": "metered",
+    "authority": "mixed",
+    "packs": [
+      "security",
+      "agent"
+    ],
+    "recommendation": "Simulation artifact provenance/project privacy; verify active context and simulated state overrides, no receipt equivalence."
+  },
+  {
+    "catalogId": 31,
+    "id": "alchemy-cli",
+    "name": "Alchemy CLI",
+    "provider": "Alchemy",
+    "sources": [
+      "https://www.alchemy.com/docs/alchemy-cli"
+    ],
+    "listedInterfaces": [
+      "CLI",
+      "Wallet",
+      "API"
+    ],
+    "listedCategories": [
+      "Data",
+      "Wallet",
+      "Cross-chain",
+      "Developer",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Alchemy CLI JSON/no-interactive and agent-prompt schema; evm contract call mutates. Session signer can win over local. App/webhook commands are external admin writes; x402 estimate free then max-payment required."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "credentials",
+      "requirements": "Alchemy CLI JSON/no-interactive and agent-prompt schema; evm contract call mutates. Session signer can win over local. App/webhook commands are external admin writes; x402 estimate free then max-payment required."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "infra",
+      "agent"
+    ],
+    "recommendation": "Schema-driven provider routing, explicit signer/payer selection, simulation/smart-wallet call-id-to-hash status verification."
+  },
+  {
+    "catalogId": 32,
+    "id": "portals-foresight",
+    "name": "Portals Foresight",
+    "provider": "Portals.fi",
+    "sources": [
+      "https://foresight.portals.fi/docs/skill/",
+      "https://foresight.portals.fi/docs/",
+      "https://foresight.portals.fi/docs/skill/SKILL.md"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "API"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Portals actual SKILL.md /docs/skill/SKILL.md. All simulation HTTP200 including revert; success bool required. Funding/allowance/signature bypasses reported; top-level batch sender executes, account tracks only."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Portals actual SKILL.md /docs/skill/SKILL.md. All simulation HTTP200 including revert; success bool required. Funding/allowance/signature bypasses reported; top-level batch sender executes, account tracks only."
+    },
+    "cost": "mixed",
+    "authority": "unsigned",
+    "packs": [
+      "security",
+      "agent"
+    ],
+    "recommendation": "Record override/bypassedChecks and incomplete readiness; exact payload hash/block, decode beneficiary and permissions."
+  },
+  {
+    "catalogId": 33,
+    "id": "herd",
+    "name": "Herd",
+    "provider": "Herd",
+    "sources": [
+      "https://herd.eco/skill.md",
+      "https://docs.herd.eco/herd-mcp/introduction",
+      "https://github.com/herd-labs/herd-cli"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP",
+      "CLI"
+    ],
+    "listedCategories": [
+      "Data",
+      "Developer",
+      "Wallet"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Herd OAuth/API key; read traces/proxy history and HAL save/update/delete/execute are separate write abilities. Enterprise signing proposals are additional authority."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "credentials",
+      "requirements": "Herd OAuth/API key; read traces/proxy history and HAL save/update/delete/execute are separate write abilities. Enterprise signing proposals are additional authority."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "data",
+      "security",
+      "agent"
+    ],
+    "recommendation": "Read-only allowlist; HAL generation/simulation distinct from persistence and mainnet action continuation."
+  },
+  {
+    "catalogId": 34,
+    "id": "goldrush-agent-skills-mcp",
+    "name": "GoldRush Agent Skills & MCP",
+    "provider": "GoldRush",
+    "sources": [
+      "https://goldrush.dev/docs/goldrush-agent-skills/overview",
+      "https://github.com/covalenthq/goldrush-agent-skills",
+      "https://goldrush.dev/docs/goldrush-mcp-server",
+      "https://www.npmjs.com/package/@covalenthq/goldrush-mcp-server"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP",
+      "CLI",
+      "API"
+    ],
+    "listedCategories": [
+      "Data",
+      "NFT",
+      "Cross-chain",
+      "Developer",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "GoldRush foundational/streaming/CLI/x402 skills. API key access and credit limits; x402 funded wallet pay-per-request, not free."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "GoldRush foundational/streaming/CLI/x402 skills. API key access and credit limits; x402 funded wallet pay-per-request, not free."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "data",
+      "portfolio"
+    ],
+    "recommendation": "Crosschain holdings/history with pagination/chain coverage; isolate streaming costs and paid data authority."
+  },
+  {
+    "catalogId": 35,
+    "id": "poidh-bounty-skill",
+    "name": "poidh Bounty Skill",
+    "provider": "poidh",
+    "sources": [
+      "https://github.com/picsoritdidnthappen/poidh-app/blob/prod/SKILL.md",
+      "https://poidh.xyz/"
+    ],
+    "listedInterfaces": [
+      "Skill"
+    ],
+    "listedCategories": [
+      "Commerce",
+      "NFT",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "poidh bounty creation/claim/evaluate/accept/vote/pay are real contract actions. Proof URI/image is external untrusted evidence; winner acceptance settles funds."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "local",
+      "requirements": "poidh bounty creation/claim/evaluate/accept/vote/pay are real contract actions. Proof URI/image is external untrusted evidence; winner acceptance settles funds."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "payments",
+      "agent"
+    ],
+    "recommendation": "Bounty-specific terminal payout and public-proof privacy; no blind automatic acceptance based on image metadata."
+  },
+  {
+    "catalogId": 36,
+    "id": "fileverse",
+    "name": "Fileverse",
+    "provider": "Fileverse",
+    "sources": [
+      "https://www.npmjs.com/package/@fileverse/api",
+      "https://fileverse.io/faq",
+      "https://github.com/fileverse",
+      "https://clawhub.ai/vijaykrishnavanshi/skills/encrypted-docs"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "CLI",
+      "Skill",
+      "API"
+    ],
+    "listedCategories": [
+      "Developer",
+      "Infrastructure",
+      "Data"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Fileverse developer-mode key and encrypted client-side dDocs local runtime. API key is query parameter in documented local API, so must be excluded from logs/evidence; documents remain sensitive."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "credentials",
+      "requirements": "Fileverse developer-mode key and encrypted client-side dDocs local runtime. API key is query parameter in documented local API, so must be excluded from logs/evidence; documents remain sensitive."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "data",
+      "agent"
+    ],
+    "recommendation": "Opt-in document integration; never sync/export private wallet/personal context in public research artifacts."
+  },
+  {
+    "catalogId": 37,
+    "id": "veil-cash-mcp",
+    "name": "Veil Cash MCP",
+    "provider": "Veil Cash",
+    "sources": [
+      "https://www.npmjs.com/package/@veil-cash/mcp",
+      "https://github.com/veildotcash/veil-mcp",
+      "https://www.veil.cash/"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "Wallet",
+      "Commerce",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Veil 0.2.1 read-only defaults; VEIL_KEY adds private relay fund moves with explicit confirmation. Public register/deposit calldata separate wallet execution. Deposit queued before private balance, fees apply."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Veil 0.2.1 read-only defaults; VEIL_KEY adds private relay fund moves with explicit confirmation. Public register/deposit calldata separate wallet execution. Deposit queued before private balance, fees apply."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "agent",
+      "payments"
+    ],
+    "recommendation": "Distinguish queue nonce/pending deposit from settled private UTXO; verify amount/fee and avoid privacy leakage to shared logs."
+  },
+  {
+    "catalogId": 38,
+    "id": "walletconnect-agent-sdk",
+    "name": "WalletConnect Agent SDK",
+    "provider": "WalletConnect",
+    "sources": [
+      "https://github.com/WalletConnect/agent-sdk",
+      "https://www.npmjs.com/package/@walletconnect/cli-sdk",
+      "https://www.npmjs.com/package/@walletconnect/staking-cli",
+      "https://www.npmjs.com/package/@walletconnect/pay-cli",
+      "https://walletconnect.network/"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "CLI",
+      "Wallet"
+    ],
+    "listedCategories": [
+      "Wallet",
+      "Commerce",
+      "Cross-chain",
+      "Developer",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "WalletConnect project ID; Beta tooling. send-transaction auto-bridges low ETH in pipe/agent mode, so send authority cannot imply bridge authority. Pay may require personal compliance data."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "WalletConnect project ID; Beta tooling. send-transaction auto-bridges low ETH in pipe/agent mode, so send authority cannot imply bridge authority. Pay may require personal compliance data."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "agent",
+      "payments",
+      "routing"
+    ],
+    "recommendation": "Opt-in native wallet handoff; avoid secret CLI args, preflight gas/no-autobridge contract and terminal bridge/payment status."
+  },
+  {
+    "catalogId": 39,
+    "id": "safe-cli",
+    "name": "Safe CLI",
+    "provider": "Safe",
+    "sources": [
+      "https://github.com/safe-global/safe-cli"
+    ],
+    "listedInterfaces": [
+      "CLI",
+      "Wallet"
+    ],
+    "listedCategories": [
+      "Wallet",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Safe CLI uses direct RPC even without Safe services; unattended signing/execution exists. Safe owner threshold, chain, nonce, Safe hash and transaction hash differ."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Safe CLI uses direct RPC even without Safe services; unattended signing/execution exists. Safe owner threshold, chain, nonce, Safe hash and transaction hash differ."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "governance",
+      "agent"
+    ],
+    "recommendation": "Preserve transaction-builder unsigned export and distinct proposal/signature/execution/receipt states."
+  },
+  {
+    "catalogId": 40,
+    "id": "jaw-skill",
+    "name": "JAW Skill",
+    "provider": "JAW.id",
+    "sources": [
+      "https://jaw.id/",
+      "https://docs.jaw.id",
+      "https://github.com/JustaName-id/jaw-mono",
+      "https://github.com/JustaName-id/jaw-skills"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "Wallet"
+    ],
+    "listedCategories": [
+      "Wallet",
+      "Developer",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "JAW canonical org now JustaLab-co, old org redirects. Passkey smart account, EIP7702 upgrades, ERC7715 grant/revoke permissions and session keys are separate authorities."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "JAW canonical org now JustaLab-co, old org redirects. Passkey smart account, EIP7702 upgrades, ERC7715 grant/revoke permissions and session keys are separate authorities."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "agent"
+    ],
+    "recommendation": "Opt-in delegation grant audit with selectors/value limits/expiry/revoke, no default account upgrade."
+  },
+  {
+    "catalogId": 41,
+    "id": "steer-cli",
+    "name": "Steer CLI",
+    "provider": "Steer Protocol",
+    "sources": [
+      "https://www.npmjs.com/package/@steerprotocol/cli",
+      "https://registry.npmjs.org/@steerprotocol/cli"
+    ],
+    "listedInterfaces": [
+      "CLI",
+      "MCP",
+      "Skill"
+    ],
+    "listedCategories": [
+      "DeFi",
+      "Data"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Directory read-only claim is stale: @steerprotocol/cli latest 4.7.3 adds IPFS publication, unsigned pool/strategy/vault prepare and --web signer handoff. markets remains read-only."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Directory read-only claim is stale: @steerprotocol/cli latest 4.7.3 adds IPFS publication, unsigned pool/strategy/vault prepare and --web signer handoff. markets remains read-only."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "lp",
+      "yield",
+      "agent"
+    ],
+    "recommendation": "Split read/prepare/publish/wallet handoff; live command manifest and block-pinned unsigned session expiry."
+  },
+  {
+    "catalogId": 42,
+    "id": "bankr-skills",
+    "name": "Bankr Skills",
+    "provider": "BankrBot",
+    "sources": [
+      "https://skills.bankr.bot/",
+      "https://github.com/BankrBot/skills"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "CLI",
+      "Wallet",
+      "API"
+    ],
+    "listedCategories": [
+      "Wallet",
+      "Trading",
+      "DeFi",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Bankr catalog contains 154 skill documents from many vendors/community contributors, not uniformly official Bankr protocols. Bankr API wallet/job actions and x402/model gateway spend balance."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "credentials",
+      "requirements": "Bankr catalog contains 154 skill documents from many vendors/community contributors, not uniformly official Bankr protocols. Bankr API wallet/job actions and x402/model gateway spend balance."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "agent",
+      "routing",
+      "payments"
+    ],
+    "recommendation": "Curated per-provider capability references, not wholesale corpus install; job IDs and settled balances vs natural-language job completion."
+  },
+  {
+    "catalogId": 43,
+    "id": "bitrefill-skill",
+    "name": "Bitrefill Skill",
+    "provider": "Bitrefill",
+    "sources": [
+      "https://www.bitrefill.com/agents/SKILL.md",
+      "https://github.com/bitrefill/agents",
+      "https://docs.bitrefill.com"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP",
+      "CLI",
+      "API"
+    ],
+    "listedCategories": [
+      "Commerce",
+      "Wallet",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Bitrefill browse vs nonrefundable goods purchasing, OAuth/key/pre-funded balance/x402. Skill favors autonomy but purchase authority stays user-scoped. Codes are cash-like private artifacts."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Bitrefill browse vs nonrefundable goods purchasing, OAuth/key/pre-funded balance/x402. Skill favors autonomy but purchase authority stays user-scoped. Codes are cash-like private artifacts."
+    },
+    "cost": "mixed",
+    "authority": "signing",
+    "packs": [
+      "payments"
+    ],
+    "recommendation": "No commerce by onboarding; exact invoice/payment/delivery id and wallet debit separate from HTTP success."
+  },
+  {
+    "catalogId": 44,
+    "id": "pashov-skills",
+    "name": "Pashov Skills",
+    "provider": "Pashov Audit Group",
+    "sources": [
+      "https://github.com/pashov/skills"
+    ],
+    "listedInterfaces": [
+      "Skill"
+    ],
+    "listedCategories": [
+      "Security",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Pashov x-ray threat models, solidity-auditor findings and Fizz Echidna/Medusa tests; actual source and executable proof determine finding status."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Pashov x-ray threat models, solidity-auditor findings and Fizz Echidna/Medusa tests; actual source and executable proof determine finding status."
+    },
+    "cost": "local",
+    "authority": "read",
+    "packs": [
+      "security"
+    ],
+    "recommendation": "Route contract audit/fuzz builders upstream; preserve evidence and avoid treating model review as certified audit."
+  },
+  {
+    "catalogId": 45,
+    "id": "trail-of-bits-skills",
+    "name": "Trail of Bits Skills",
+    "provider": "Trail of Bits",
+    "sources": [
+      "https://github.com/trailofbits/skills"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "Plugin"
+    ],
+    "listedCategories": [
+      "Security",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Trail of Bits marketplace includes smart-contract tooling plus generic skills, test fixtures/templates. Entry-point, differential review, token integration, static analysis/property testing are relevant."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "local",
+      "requirements": "Trail of Bits marketplace includes smart-contract tooling plus generic skills, test fixtures/templates. Entry-point, differential review, token integration, static analysis/property testing are relevant."
+    },
+    "cost": "local",
+    "authority": "read",
+    "packs": [
+      "security"
+    ],
+    "recommendation": "Integrate focused audit references and proof expectations; don't count every repo SKILL.md as consumer Solidity audit skill."
+  },
+  {
+    "catalogId": 46,
+    "id": "quillshield-security-skills",
+    "name": "QuillShield Security Skills",
+    "provider": "QuillShield",
+    "sources": [
+      "https://github.com/quillai-network/quillshield_skills",
+      "https://quillai.network/"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "Plugin"
+    ],
+    "listedCategories": [
+      "Security",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "QuillShield 11 methods cover intent, invariants, reentrancy, oracle/flashloan, proxy, arithmetic, calls, signature replay and DoS. Claimed coverage is methodology, not run evidence."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "local",
+      "requirements": "QuillShield 11 methods cover intent, invariants, reentrancy, oracle/flashloan, proxy, arithmetic, calls, signature replay and DoS. Claimed coverage is methodology, not run evidence."
+    },
+    "cost": "local",
+    "authority": "read",
+    "packs": [
+      "security"
+    ],
+    "recommendation": "Add domain-specific audit checklist routing and executable findings, no automatic confidence from generic scoring."
+  },
+  {
+    "catalogId": 47,
+    "id": "ethskills",
+    "name": "ETHSkills",
+    "provider": "ETHSkills",
+    "sources": [
+      "https://ethskills.com/"
+    ],
+    "listedInterfaces": [
+      "Skill"
+    ],
+    "listedCategories": [
+      "Developer",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "ETHSkills modules contain useful drift/address/testing guidance but hardcoded dated gas/prices/status and opinionated architecture assertions; audit skill can post issues/feedback externally."
+    },
+    "provenance": "community",
+    "access": {
+      "kind": "keyless",
+      "requirements": "ETHSkills modules contain useful drift/address/testing guidance but hardcoded dated gas/prices/status and opinionated architecture assertions; audit skill can post issues/feedback externally."
+    },
+    "cost": "free-limited",
+    "authority": "mixed",
+    "packs": [
+      "security",
+      "infra",
+      "agent"
+    ],
+    "recommendation": "Revalidate factual claims against primary chain/docs; use focused references, never inherit external publication instructions."
+  },
+  {
+    "catalogId": 48,
+    "id": "openzeppelin-mcp",
+    "name": "OpenZeppelin MCP",
+    "provider": "OpenZeppelin",
+    "sources": [
+      "https://mcp.openzeppelin.com/",
+      "https://github.com/OpenZeppelin/openzeppelin-mcp"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "Developer",
+      "Security"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "OpenZeppelin template generation servers are separate products. Generated code is an artifact, not deployed/audited contract; hosted/local surfaces differ."
+    },
+    "provenance": "protocol-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "OpenZeppelin template generation servers are separate products. Generated code is an artifact, not deployed/audited contract; hosted/local surfaces differ."
+    },
+    "cost": "mixed",
+    "authority": "unsigned",
+    "packs": [
+      "security",
+      "agent"
+    ],
+    "recommendation": "Use exact product endpoint and reviewed template version; compile/fuzz/invariant and independent deployment proof."
+  },
+  {
+    "catalogId": 49,
+    "id": "foundry-mcp-server",
+    "name": "Foundry MCP Server",
+    "provider": "PraneshASP",
+    "sources": [
+      "https://github.com/PraneshASP/foundry-mcp-server",
+      "https://www.npmjs.com/package/@pranesh.asp/foundry-mcp-server"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "Developer",
+      "Infrastructure",
+      "Data"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "PraneshASP Foundry MCP exposes wallet generation, cast sends, deployment, local Forge/Anvil plus inspect utilities; full server is not read-only."
+    },
+    "provenance": "third-party",
+    "access": {
+      "kind": "local",
+      "requirements": "PraneshASP Foundry MCP exposes wallet generation, cast sends, deployment, local Forge/Anvil plus inspect utilities; full server is not read-only."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "infra",
+      "security"
+    ],
+    "recommendation": "Reference only by default, narrow inspect tools; no arbitrary Forge/script execution from untrusted contract docs."
+  },
+  {
+    "catalogId": 50,
+    "id": "ethereum-developer-mcp",
+    "name": "Ethereum Developer MCP",
+    "provider": "gskril",
+    "sources": [
+      "https://github.com/gskril/ethereum-mcp"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "Developer",
+      "Data"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "gskril Ethereum developer utility MCP ABI/ENS/hash/read-only calls; independent maintainer, not Ethereum Foundation service."
+    },
+    "provenance": "third-party",
+    "access": {
+      "kind": "keyless",
+      "requirements": "gskril Ethereum developer utility MCP ABI/ENS/hash/read-only calls; independent maintainer, not Ethereum Foundation service."
+    },
+    "cost": "free-limited",
+    "authority": "read",
+    "packs": [
+      "infra",
+      "data"
+    ],
+    "recommendation": "Optional reference-only ABI encode/decode; compare verified official ABI and resolved address before payload construction."
+  },
+  {
+    "catalogId": 51,
+    "id": "cryo-mcp",
+    "name": "Cryo MCP",
+    "provider": "z80dev",
+    "sources": [
+      "https://github.com/z80dev/cryo-mcp",
+      "https://x.com/0xz80/status/1898554788150682028"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "Data",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "z80dev Cryo MCP extraction writes local Parquet files and SQL can access filesystem. Public chain reads still incur RPC/disk costs; not all tools purely side-effect-free."
+    },
+    "provenance": "third-party",
+    "access": {
+      "kind": "local",
+      "requirements": "z80dev Cryo MCP extraction writes local Parquet files and SQL can access filesystem. Public chain reads still incur RPC/disk costs; not all tools purely side-effect-free."
+    },
+    "cost": "mixed",
+    "authority": "read",
+    "packs": [
+      "data",
+      "infra"
+    ],
+    "recommendation": "Sandbox bounded block ranges/data directory/SQL, no cross-workspace reads or unbounded RPC extraction."
+  },
+  {
+    "catalogId": 52,
+    "id": "eip-7702-rescue",
+    "name": "EIP-7702 Rescue",
+    "provider": "trustless-ai",
+    "sources": [
+      "https://github.com/trustless-ai/eip7702-rescue",
+      "https://github.com/trustless-ai/eip7702-rescue/blob/main/SPEC.md",
+      "https://github.com/trustless-ai/eip7702-rescue/blob/main/CASE.md"
+    ],
+    "listedInterfaces": [
+      "MCP"
+    ],
+    "listedCategories": [
+      "Security",
+      "Wallet",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Trustless forensic key-free diagnosis/scan/simulate rescue on disposable Anvil; real delegation/signing is separate human step. Simulated rescue doesn't prove mined rescue."
+    },
+    "provenance": "third-party",
+    "access": {
+      "kind": "local",
+      "requirements": "Trustless forensic key-free diagnosis/scan/simulate rescue on disposable Anvil; real delegation/signing is separate human step. Simulated rescue doesn't prove mined rescue."
+    },
+    "cost": "mixed",
+    "authority": "unsigned",
+    "packs": [
+      "security",
+      "agent"
+    ],
+    "recommendation": "Document forensic workflow with bytecode/delegate/safe destination validation and actual receipt/ownership if execution authorized."
+  },
+  {
+    "catalogId": 53,
+    "id": "nani-qwen-3-5-2b",
+    "name": "Nani Qwen 3.5 2B",
+    "provider": "NaniDAO",
+    "sources": [
+      "https://huggingface.co/NaniDAO/nani-qwen-3.5-2B-gguf-q4km",
+      "https://x.com/nani__ooo/status/2034285434701050162"
+    ],
+    "listedInterfaces": [
+      "Model"
+    ],
+    "listedCategories": [
+      "Model",
+      "Wallet"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Nani open weights crypto tool-calling model. Provider reports imperfect tool-name/parameter accuracy and uncovered tools; no audited custody authority from local inference."
+    },
+    "provenance": "community",
+    "access": {
+      "kind": "local",
+      "requirements": "Nani open weights crypto tool-calling model. Provider reports imperfect tool-name/parameter accuracy and uncovered tools; no audited custody authority from local inference."
+    },
+    "cost": "local",
+    "authority": "runtime",
+    "packs": [
+      "agent"
+    ],
+    "recommendation": "Optional model research only, pinned weights/runtime and offline routing tests; never replace default financial safeguards."
+  },
+  {
+    "catalogId": 54,
+    "id": "venice-mcp",
+    "name": "Venice MCP",
+    "provider": "Venice AI",
+    "sources": [
+      "https://github.com/veniceai/venice-mcp-server"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "API"
+    ],
+    "listedCategories": [
+      "Model",
+      "Developer"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Venice API-key or wallet x402; tools include media/LLM/crypto-RPC. Optional data egress and generation charges; privacy claims don't prove absence of provider handling."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Venice API-key or wallet x402; tools include media/LLM/crypto-RPC. Optional data egress and generation charges; privacy claims don't prove absence of provider handling."
+    },
+    "cost": "metered",
+    "authority": "runtime",
+    "packs": [
+      "agent"
+    ],
+    "recommendation": "Keep native Hermes model auth; never auto-connect media/cost tools or infer financial execution from model generation."
+  },
+  {
+    "catalogId": 55,
+    "id": "trustless-ai-agent-sdk",
+    "name": "Trustless AI Agent SDK",
+    "provider": "trustless-ai",
+    "sources": [
+      "https://github.com/trustless-ai/agent-sdk",
+      "https://www.npmjs.com/package/@trustless-ai/agent-sdk"
+    ],
+    "listedInterfaces": [
+      "API"
+    ],
+    "listedCategories": [
+      "Security",
+      "Developer",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Trustless SDK AI-generated clients and pure recompute functions. ERC-number naming from project is not standards approval proof; clients can invoke contracts."
+    },
+    "provenance": "third-party",
+    "access": {
+      "kind": "local",
+      "requirements": "Trustless SDK AI-generated clients and pure recompute functions. ERC-number naming from project is not standards approval proof; clients can invoke contracts."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "agent",
+      "security"
+    ],
+    "recommendation": "Use deterministic vectors/reference provenance; no automatic registration/reputation/settlement calls, verify canonical standards status."
+  },
+  {
+    "catalogId": 56,
+    "id": "recompute-kit",
+    "name": "Recompute Kit",
+    "provider": "trustless-ai",
+    "sources": [
+      "https://github.com/trustless-ai/recompute-kit",
+      "https://github.com/trustless-ai/recompute-kit/blob/main/RECOMPUTE.md"
+    ],
+    "listedInterfaces": [
+      "MCP",
+      "CLI"
+    ],
+    "listedCategories": [
+      "Security",
+      "Developer",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Recompute toolkit tri-state verified-good/verified-bad/unverifiable against pinned public artifacts; local repo/CI/source/proof tools can expose host files if broadly enabled."
+    },
+    "provenance": "third-party",
+    "access": {
+      "kind": "local",
+      "requirements": "Recompute toolkit tri-state verified-good/verified-bad/unverifiable against pinned public artifacts; local repo/CI/source/proof tools can expose host files if broadly enabled."
+    },
+    "cost": "mixed",
+    "authority": "read",
+    "packs": [
+      "security",
+      "data"
+    ],
+    "recommendation": "Adopt evidence model/proof objects, not framework; sandbox paths and give unverifiable honest status."
+  },
+  {
+    "catalogId": 57,
+    "id": "aeon",
+    "name": "Aeon",
+    "provider": "Aeon",
+    "sources": [
+      "https://github.com/aeonfun/aeon",
+      "https://github.com/aeonfun/aeon/tree/main/skills/sc-audit",
+      "https://github.com/aeonfun/aeon/tree/main/skills/deploy-uni-hook",
+      "https://www.aeon.fun/hooks",
+      "https://www.aeon.fun/connect/mcp"
+    ],
+    "listedInterfaces": [
+      "Skill",
+      "MCP",
+      "Plugin"
+    ],
+    "listedCategories": [
+      "Security",
+      "Developer",
+      "DeFi"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Aeon autonomous GitHub Actions agent has 85 consumer skill paths plus examples and malicious test fixtures. Deployed hooks include mandatory AeonFee buyback, so adoption adds economic assumptions."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Aeon autonomous GitHub Actions agent has 85 consumer skill paths plus examples and malicious test fixtures. Deployed hooks include mandatory AeonFee buyback, so adoption adds economic assumptions."
+    },
+    "cost": "mixed",
+    "authority": "runtime",
+    "packs": [
+      "security",
+      "agent"
+    ],
+    "recommendation": "Route narrow audit/tx decode references; no new runtime/scheduler or fee-bearing hook deployment by setup."
+  },
+  {
+    "catalogId": 58,
+    "id": "cult-os-cli",
+    "name": "Cult OS CLI",
+    "provider": "Cult OS",
+    "sources": [
+      "https://www.npmjs.com/package/@cultos/cli",
+      "https://github.com/thesmithdao/cultos"
+    ],
+    "listedInterfaces": [
+      "CLI",
+      "API"
+    ],
+    "listedCategories": [
+      "Developer",
+      "Commerce",
+      "Data",
+      "Infrastructure"
+    ],
+    "review": {
+      "status": "primary-source-reviewed",
+      "checkedOn": "2026-10-08",
+      "notes": "Cult OS builds x402/machine APIs, free checks and capped paid handshake, ACP agent hiring/settlement. No private key custody claim doesn't imply no funds/admin authority."
+    },
+    "provenance": "tool-provider-official",
+    "access": {
+      "kind": "mixed",
+      "requirements": "Cult OS builds x402/machine APIs, free checks and capped paid handshake, ACP agent hiring/settlement. No private key custody claim doesn't imply no funds/admin authority."
+    },
+    "cost": "mixed",
+    "authority": "mixed",
+    "packs": [
+      "payments",
+      "agent"
+    ],
+    "recommendation": "Prefer free readiness inspection; explicit buy/hire/publish scope and separate payment receipt from service response."
+  }
+]

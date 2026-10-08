@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions; provider access and wallet permissions are configured separately.
 metadata:
   author: Galleon Labs
-  version: "0.1.3"
+  version: "0.2.0"
 ---
 
 # DeFi payments
@@ -34,3 +34,5 @@ For paid HTTP resources, load [x402 v2 verification and recovery](references/x40
 Recurring payments need enforceable wallet/session limits, a finite budget or review interval, allowed origins/contracts and a stop/revoke path. A prose budget is not a wallet control. Schedule monitoring only when requested; do not create permanent jobs as part of setup. On ambiguous submission, inspect the existing payment/nonce and receipts before any retry. Never create a second payment merely because an API response timed out.
 
 Return a plan or receipt with obligation identity, authorized limits, observed state, fees, delivered resource or stream rights, and unresolved next step. Describe queued, accruing, funded, claimed, cancelled and settled states separately.
+
+For Sablier-specific Flow/Lockup lifecycle, prefer `galleon-sablier-streams` when installed; for Superfluid CFA/GDA/operator/scheduler work, prefer `galleon-superfluid-streams`. These are optional handoffs, not required sibling files.

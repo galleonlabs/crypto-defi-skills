@@ -1,0 +1,2515 @@
+{
+  "access": [
+    {
+      "url": "https://0x.org/post/0x-agent-skills",
+      "finalUrl": "https://0x.org/post/0x-agent-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e1b92db2a14b126f9651373a980923fd4d5521ccdb36390f9bdd0076bdf05112",
+      "bytes": 72073,
+      "error": null
+    },
+    {
+      "url": "https://aave.com/agents",
+      "finalUrl": "https://aave.com/agents",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "18a90b0dcaf57ae583a966e4f59ab7800f83b12f966b0e721745d6cbf04655e6",
+      "bytes": 227341,
+      "error": null
+    },
+    {
+      "url": "https://aave.com/docs/mcp/getting-started",
+      "finalUrl": "https://aave.com/docs/mcp/getting-started",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5077af6d042d2b590029cae1cb2e4bb72937472554fe1c3e96aaa34f9c457e7d",
+      "bytes": 91710,
+      "error": null
+    },
+    {
+      "url": "https://aerodrome-finance.github.io/agents/",
+      "finalUrl": "https://aerodrome-finance.github.io/agents/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2eaf4c3210c87c8dfb9adcbf0a5853f84646ac8ba763873a73b8458595d1eeed",
+      "bytes": 13668,
+      "error": null
+    },
+    {
+      "url": "https://blog.sablier.com/sablier-agent-skills-onchain-token-vesting-powered-by-ai",
+      "finalUrl": "https://blog.sablier.com/sablier-agent-skills-onchain-token-vesting-powered-by-ai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0041be7ed4253871b79416dd55f515016d78f0d521928237290df937f2b5f1d0",
+      "bytes": 67783,
+      "error": null
+    },
+    {
+      "url": "https://clawhub.ai/vijaykrishnavanshi/skills/encrypted-docs",
+      "finalUrl": "https://clawhub.ai/vijaykrishnavanshi/skills/encrypted-docs",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "7edb5975415786bf62f9772ca42062cc2595f1460042ecaf2fec3e7f2996fbfc",
+      "bytes": 128503,
+      "error": null
+    },
+    {
+      "url": "https://ctrl.build/api/mcp",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 402: Payment Required"
+    },
+    {
+      "url": "https://defi-skills.nethermind.io/",
+      "finalUrl": "https://defi-skills.nethermind.io/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "eb23dbeddf58efb7d35f397437cd08c6155f774abdcceb0141a404543f41c985",
+      "bytes": 29772,
+      "error": null
+    },
+    {
+      "url": "https://docs.aave.com",
+      "finalUrl": "https://aave.com/docs",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "9672f141d4976fcee5aa6a1fce521e59b5cc294dfeeab610d793604852e0f532",
+      "bytes": 170054,
+      "error": null
+    },
+    {
+      "url": "https://docs.base.org/agents/quickstart",
+      "finalUrl": "https://docs.base.org/sdks/migrated-products",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0b23687f52b12c7ff707199a7454aac3d71a327c5f85e686d16b6d43b16d450d",
+      "bytes": 307610,
+      "error": null
+    },
+    {
+      "url": "https://docs.bitrefill.com",
+      "finalUrl": "https://docs.bitrefill.com/docs/api-overview",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b8703a5a7ab3d32f1ae3abc0ce3d7d6bf42755300d1732e9c6061d132e3c67ab",
+      "bytes": 150358,
+      "error": null
+    },
+    {
+      "url": "https://docs.blockscout.com/devs/mcp-server",
+      "finalUrl": "https://docs.blockscout.com/devs/mcp-server",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d50a839b0caefe6221c7b5ba1baee17c9ce2a6a47fdb8b631a398f2d26736935",
+      "bytes": 366250,
+      "error": null
+    },
+    {
+      "url": "https://docs.dune.com/api-reference/agents/cli-and-skills",
+      "finalUrl": "https://docs.dune.com/docs/agents/cli-and-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "21b824aca6266e9bac50e29bd70a77f9354dd82bbe150d3dcd8360eeacb90ace",
+      "bytes": 373865,
+      "error": null
+    },
+    {
+      "url": "https://docs.dune.com/api-reference/agents/mcp",
+      "finalUrl": "https://docs.dune.com/docs/agents/mcp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b2fd9dc3113a5c86e0ed07f023f72776bd7e3e99fbf628229877de52c4bb9fcf",
+      "bytes": 450731,
+      "error": null
+    },
+    {
+      "url": "https://docs.etherscan.io/build-with-ai/introduction",
+      "finalUrl": "https://docs.etherscan.io/build-with-ai/introduction",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "84773efb5ce3ce3df24b73f7e4489eb37dce7600f631fef8ddc160cc3d675571",
+      "bytes": 246557,
+      "error": null
+    },
+    {
+      "url": "https://docs.etherscan.io/build-with-ai/mcp",
+      "finalUrl": "https://docs.etherscan.io/build-with-ai/mcp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e4dd2cf8ebb0b380ad956de945f9a834a984bc40b3c8156406602f86d4694c51",
+      "bytes": 433847,
+      "error": null
+    },
+    {
+      "url": "https://docs.etherscan.io/build-with-ai/skills",
+      "finalUrl": "https://docs.etherscan.io/build-with-ai/skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ca10b2dadea7403991543f1fe9fcc6b8798f39ae23fafa2e245fe4bd4b2e8765",
+      "bytes": 237389,
+      "error": null
+    },
+    {
+      "url": "https://docs.herd.eco/herd-mcp/introduction",
+      "finalUrl": "https://docs.herd.eco/herd-mcp/introduction",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ba56db15bf87178180d90b62373c5394dba019c0e70b5d65f95111855c18c82f",
+      "bytes": 269432,
+      "error": null
+    },
+    {
+      "url": "https://docs.jaw.id",
+      "finalUrl": "https://docs.jaw.id",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "062e4b6463213d02eddf38a1a0e9eb792d1032ae10861b3d7547de61a54bd554",
+      "bytes": 198758,
+      "error": null
+    },
+    {
+      "url": "https://docs.jaw.id/llms",
+      "finalUrl": "https://docs.jaw.id/llms",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5f151e1b843a4e82f62e92fad9b13635cd72573c2496a7ef087976d65d8f208d",
+      "bytes": 97214,
+      "error": null
+    },
+    {
+      "url": "https://docs.morpho.org/developers/agents/skills/",
+      "finalUrl": "https://docs.morpho.org/developers/agents/skills/",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "ac9769146fac6d509b0aa1ddf70dfb983bea1e1aa73aee19d088a078ed6cd0ba",
+      "bytes": 3587,
+      "error": null
+    },
+    {
+      "url": "https://docs.octav.fi/api/ai-development/cli",
+      "finalUrl": "https://docs.octav.fi/api/ai-development/cli",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1dcadc0c6259b3f345204baa9ac5f3dc71555d390041cfd2fc51c72fee36c6dc",
+      "bytes": 600641,
+      "error": null
+    },
+    {
+      "url": "https://docs.octav.fi/api/ai-development/mcp-server",
+      "finalUrl": "https://docs.octav.fi/api/ai-development/mcp-server",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "01de8a65e25bf7c89cba35f905559168ea57e23f1ae570294aa4dc04b5f829b9",
+      "bytes": 627356,
+      "error": null
+    },
+    {
+      "url": "https://docs.octav.fi/api/ai-development/overview",
+      "finalUrl": "https://docs.octav.fi/api/ai-development/overview",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "854d9dd11aff9e7f7af21519e5da19202b403bcf418fca2db86c5977bf31a9b2",
+      "bytes": 586504,
+      "error": null
+    },
+    {
+      "url": "https://docs.phantom.com/phantom-mcp-server",
+      "finalUrl": "https://docs.phantom.com/phantom-mcp-server",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2b91cfd7644fd0c38105ccb5d3ac62a71271fb475e942191e0d0153a3dd5e035",
+      "bytes": 309605,
+      "error": null
+    },
+    {
+      "url": "https://docs.socket.tech/for-agents/intro",
+      "finalUrl": "https://docs.socket.tech/for-agents/intro",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d3b83bd5d9ed886b29a5d3689cbdce7b0f8f63609385aadf90abada346dd296d",
+      "bytes": 272960,
+      "error": null
+    },
+    {
+      "url": "https://docs.socket.tech/llms.txt",
+      "finalUrl": "https://docs.socket.tech/llms.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "f52ec77d3ee2849ed498d6f78bc2c44a78b5ed5a3ebfa68507ca3d3ee481d2d4",
+      "bytes": 6224,
+      "error": null
+    },
+    {
+      "url": "https://docs.socket.tech/skill.md",
+      "finalUrl": "https://docs.socket.tech/skill.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "246b3bf62f767ec8f4207105c813b7c9adb0bf3b6e56d05d9b6029e08382b036",
+      "bytes": 12488,
+      "error": null
+    },
+    {
+      "url": "https://docs.tenderly.co/ai-tools/quickstart",
+      "finalUrl": "https://docs.tenderly.co/ai-tools/quickstart",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "54ab36de4f71d2aec83d48700e14b122603d042f3707dd63eb5e0f70c06178a1",
+      "bytes": 547628,
+      "error": null
+    },
+    {
+      "url": "https://dune.com/agents",
+      "finalUrl": "https://dune.com/agents",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "39cdec67a2c141d2d4ca4cb59a0d8b2e8c8d227f204eb655a96fd184c4d37864",
+      "bytes": 251631,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/",
+      "finalUrl": "https://ethskills.com/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6f7d8d447e1e4fa149cb80c29ceac63b552f3f1f2371389c3ce030a5910b5899",
+      "bytes": 36755,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/SKILL.md",
+      "finalUrl": "https://ethskills.com/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "1e8e47ac73930fdc24d83cbcc60bd2b02dfe9fe4ce5aad6dd462491f95322689",
+      "bytes": 12067,
+      "error": null
+    },
+    {
+      "url": "https://fileverse.io/faq",
+      "finalUrl": "https://fileverse.io/faq",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "358e1afcb93a251cb423b1c7a08dc3946a09821d7adc62108c1e545b13c1f362",
+      "bytes": 59741,
+      "error": null
+    },
+    {
+      "url": "https://fluid.io/skill.md",
+      "finalUrl": "https://fluid.io/skill.md",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "838ecbae7242a5d64a73f6249fff8d2cb73c0d8eb874c21446e6dc8ba24fc17f",
+      "bytes": 9802,
+      "error": null
+    },
+    {
+      "url": "https://foresight.portals.fi/docs/",
+      "finalUrl": "https://foresight.portals.fi/docs/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "05a2938b9f7a0c38708bf52d39ecdb4f41d80dfd0959d867626c93671bcde7a5",
+      "bytes": 170536,
+      "error": null
+    },
+    {
+      "url": "https://foresight.portals.fi/docs/skill/",
+      "finalUrl": "https://foresight.portals.fi/docs/skill/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "91a6203f634d13105baf6f58605a23d7ae34c8f131a58263f70c4c54c588658c",
+      "bytes": 19920,
+      "error": null
+    },
+    {
+      "url": "https://github.com/0xProject/0x-ai",
+      "finalUrl": "https://github.com/0xProject/0x-ai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "06456bd131919dd349012375a2b5362f6ee01484b86a940e905a431651eb848a",
+      "bytes": 271953,
+      "error": null
+    },
+    {
+      "url": "https://github.com/BankrBot/skills",
+      "finalUrl": "https://github.com/BankrBot/skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "06bab7e200b16d4ca954324fd1eb098cc62fe408b6be3f415e86ab5c03b0ba7e",
+      "bytes": 570001,
+      "error": null
+    },
+    {
+      "url": "https://github.com/CTRLabs/ctrl-mcp",
+      "finalUrl": "https://github.com/CTRLabs/ctrl-mcp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f151016058bb70fdd696aca85f2b322a1823c67e1c3e7621a5ea9b7ad7e00305",
+      "bytes": 282088,
+      "error": null
+    },
+    {
+      "url": "https://github.com/CTRLabs/ctrl-skill",
+      "finalUrl": "https://github.com/CTRLabs/ctrl-skill",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "80416bfcac6d16b92e85164cef6e2a966cf85a68032246eac8850b89dc9d5e14",
+      "bytes": 267451,
+      "error": null
+    },
+    {
+      "url": "https://github.com/DefiLlama/defillama-skills",
+      "finalUrl": "https://github.com/DefiLlama/defillama-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c9c8614afed619b1941881a1d660a89769045ec625fd99ea48f6c994a9709e64",
+      "bytes": 294900,
+      "error": null
+    },
+    {
+      "url": "https://github.com/ETHCF/ethereum-mcp",
+      "finalUrl": "https://github.com/ETHCF/ethereum-mcp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ce8a3db2eeadc4328629e5fea9b4171251fc26ccc1427d7676cff3d8a4a04959",
+      "bytes": 392027,
+      "error": null
+    },
+    {
+      "url": "https://github.com/JustaName-id/jaw-mono",
+      "finalUrl": "https://github.com/JustaLab-co/jaw-mono",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "342bc41a724577bb1a05dd9d29de6847432c655b83851c29d04f561e394c8ad8",
+      "bytes": 325594,
+      "error": null
+    },
+    {
+      "url": "https://github.com/JustaName-id/jaw-skills",
+      "finalUrl": "https://github.com/JustaLab-co/jaw-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "11464486536540da7872cc1077f39d079f609a70a087fe09c1aec25a4e5421bf",
+      "bytes": 246789,
+      "error": null
+    },
+    {
+      "url": "https://github.com/NethermindEth/defi-skills",
+      "finalUrl": "https://github.com/NethermindEth/defi-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ce230bd35d2830f59052e52624ead4088ff1c3a8609053a0feac9cd02bd28f6b",
+      "bytes": 355367,
+      "error": null
+    },
+    {
+      "url": "https://github.com/Octav-Labs/octav-api-skill",
+      "finalUrl": "https://github.com/Octav-Labs/octav-api-skill",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c12da6c14e61b623fe30e8fbc663a62312a6908c05c2a385d2eaa2dca57345f8",
+      "bytes": 253623,
+      "error": null
+    },
+    {
+      "url": "https://github.com/OpenZeppelin/openzeppelin-mcp",
+      "finalUrl": "https://github.com/OpenZeppelin/openzeppelin-mcp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ae44e1cfe198f2ea930e3e7bf3252ffacda4e9bc71e6235d5a6562b9bf7182d0",
+      "bytes": 310108,
+      "error": null
+    },
+    {
+      "url": "https://github.com/Polymarket/polymarket-cli",
+      "finalUrl": "https://github.com/Polymarket/polymarket-cli",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "fb121d0ec28648dc6cf6ba0e6f0d96ff56d57349ae4f3841bdac0be1d7206722",
+      "bytes": 400592,
+      "error": null
+    },
+    {
+      "url": "https://github.com/PraneshASP/foundry-mcp-server",
+      "finalUrl": "https://github.com/PraneshASP/foundry-mcp-server",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "40ce46501bcc4a44270fc390981f5cb372e50f3cd73572304887fbb68f45bc89",
+      "bytes": 352014,
+      "error": null
+    },
+    {
+      "url": "https://github.com/ProjectOpenSea/opensea-skill",
+      "finalUrl": "https://github.com/ProjectOpenSea/opensea-skill",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d82d84edc57de8b18bbbee6a486541d42478b7ddadd294b00db08eadca209036",
+      "bytes": 358134,
+      "error": null
+    },
+    {
+      "url": "https://github.com/Uniswap/uniswap-ai",
+      "finalUrl": "https://github.com/Uniswap/uniswap-ai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "71c4fe5e2714c5cfd12e94ac8010b00e51306c57c3ea2ec708127aeb78c80c77",
+      "bytes": 327038,
+      "error": null
+    },
+    {
+      "url": "https://github.com/WalletConnect/agent-sdk",
+      "finalUrl": "https://github.com/WalletConnect/agent-sdk",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "14afd545ae2265ccc6c98546f9ae0cfa880957d264d6a49623ad62565f8c6ec9",
+      "bytes": 392982,
+      "error": null
+    },
+    {
+      "url": "https://github.com/aave/skills",
+      "finalUrl": "https://github.com/aave/skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "9a39c6c4e272ffee683ca09c5d95696af2e0fc2a52759cb1b163c6ca2060a16f",
+      "bytes": 296231,
+      "error": null
+    },
+    {
+      "url": "https://github.com/across-protocol/skills",
+      "finalUrl": "https://github.com/across-protocol/skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5d27fde2d0b1a117b85c606519d27aa056c055aef22343a38f1af0c606147465",
+      "bytes": 306629,
+      "error": null
+    },
+    {
+      "url": "https://github.com/aeonfun/aeon",
+      "finalUrl": "https://github.com/aeonfun/aeon",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "fa006a9bf981bd7b26433e6cc9d3d2926ba3265cbb77d2f5083b372fea0a22d5",
+      "bytes": 419399,
+      "error": null
+    },
+    {
+      "url": "https://github.com/aeonfun/aeon/tree/main/skills/deploy-uni-hook",
+      "finalUrl": "https://github.com/aeonfun/aeon/tree/main/skills/deploy-uni-hook",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "583bc6807cde59c2da0be2c398e671019be2694e6fd56567ef15328483f35c2e",
+      "bytes": 225113,
+      "error": null
+    },
+    {
+      "url": "https://github.com/aeonfun/aeon/tree/main/skills/sc-audit",
+      "finalUrl": "https://github.com/aeonfun/aeon/tree/main/skills/sc-audit",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "04a77d2a090f52597e5ba74ece35a71f54f7d001fca0c059a385f401adb383c6",
+      "bytes": 224510,
+      "error": null
+    },
+    {
+      "url": "https://github.com/bitrefill/agents",
+      "finalUrl": "https://github.com/bitrefill/agents",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2c94f5423f0956877a0cdb1027accb4c680a3e61281f9df51b47a8d2a3527d2b",
+      "bytes": 296468,
+      "error": null
+    },
+    {
+      "url": "https://github.com/blockscout/mcp-server",
+      "finalUrl": "https://github.com/blockscout/mcp-server",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "7a28e83079064554749a15062d1163f8f4cd77c7c855c05a5be3fa3eb9e17b21",
+      "bytes": 462047,
+      "error": null
+    },
+    {
+      "url": "https://github.com/covalenthq/goldrush-agent-skills",
+      "finalUrl": "https://github.com/covalenthq/goldrush-agent-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "60845a676713248c9f471333f0b85573a721b3a1341bed506d9abf0446d2759e",
+      "bytes": 286985,
+      "error": null
+    },
+    {
+      "url": "https://github.com/duneanalytics/skills",
+      "finalUrl": "https://github.com/duneanalytics/skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "4f38a460b2ff38a05b441248884ea39d6a1476efa7bf41043db2e39d86ca0132",
+      "bytes": 276015,
+      "error": null
+    },
+    {
+      "url": "https://github.com/fileverse",
+      "finalUrl": "https://github.com/fileverse",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f013e0601330dd200bf71f0aff9e2d6e0775ae3907199e03ea81d40b9480e7ca",
+      "bytes": 296335,
+      "error": null
+    },
+    {
+      "url": "https://github.com/gskril/ethereum-mcp",
+      "finalUrl": "https://github.com/gskril/ethereum-mcp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "7b4182e41d093fbc2742189054e285fcde3d688be7910cb7b301d9e5569dabef",
+      "bytes": 262252,
+      "error": null
+    },
+    {
+      "url": "https://github.com/herd-labs/herd-cli",
+      "finalUrl": "https://github.com/herd-labs/herd-cli",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a6676cd10d7932c58ff771422bd73fada26dde318ea23af881cff2311f58b66d",
+      "bytes": 272545,
+      "error": null
+    },
+    {
+      "url": "https://github.com/hypurrclaw/hyperliquid-cli",
+      "finalUrl": "https://github.com/hypurrclaw/hyperliquid-cli",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "fc83129786057beca0c07a0c925e9776f94ab2ec48b33f5d91580b18d5ab4bb4",
+      "bytes": 498937,
+      "error": null
+    },
+    {
+      "url": "https://github.com/morpho-org/morpho-skills",
+      "finalUrl": "https://github.com/morpho-org/morpho-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d6e39abfd673d43003046e8a6b3d030e26a6dc6ad46f4315fb2cd1b8f37a0cf7",
+      "bytes": 267525,
+      "error": null
+    },
+    {
+      "url": "https://github.com/pashov/skills",
+      "finalUrl": "https://github.com/pashov/skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "09c9a7f395b21f032fb858b0578f530b0059cde7e07fd258fbd1aac68d4ad0f5",
+      "bytes": 311379,
+      "error": null
+    },
+    {
+      "url": "https://github.com/pendle-finance/pendle-ai",
+      "finalUrl": "https://github.com/pendle-finance/pendle-ai",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "351fdaa301e09fa5e23562a4d564dfc73197addb208624d3e504b599482dfc01",
+      "bytes": 344602,
+      "error": null
+    },
+    {
+      "url": "https://github.com/picsoritdidnthappen/poidh-app/blob/prod/SKILL.md",
+      "finalUrl": "https://github.com/picsoritdidnthappen/poidh-app/blob/prod/SKILL.md",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a63a1ad81e7d3b3e282d983dd223f876395a02c831e74f733bad39f81d0c46e0",
+      "bytes": 826412,
+      "error": null
+    },
+    {
+      "url": "https://github.com/quillai-network/quillshield_skills",
+      "finalUrl": "https://github.com/quillai-network/quillshield_skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "4a57502733488c9ecd926ed789b4df6cb06213aa9a761079c42eaf56a52e0192",
+      "bytes": 375263,
+      "error": null
+    },
+    {
+      "url": "https://github.com/sablier-labs/sablier-skills",
+      "finalUrl": "https://github.com/sablier-labs/sablier-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "4b8b749790dab313ba58b4f8e573d97d34c87c3d9eff7c722a0bb53db27d62d2",
+      "bytes": 287683,
+      "error": null
+    },
+    {
+      "url": "https://github.com/safe-global/safe-cli",
+      "finalUrl": "https://github.com/safe-global/safe-cli",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "54eea72d9e9be7ff2c872ea67a5a5129fcd29ac9f7f953d691c79a6069e6b123",
+      "bytes": 350336,
+      "error": null
+    },
+    {
+      "url": "https://github.com/superfluid-org/skills",
+      "finalUrl": "https://github.com/superfluid-org/skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "3a395922fcb58cf68d2034cdd4f8762cb33783273a2d1c0a0bf91f5362844b8e",
+      "bytes": 284272,
+      "error": null
+    },
+    {
+      "url": "https://github.com/thesmithdao/cultos",
+      "finalUrl": "https://github.com/thesmithdao/cultos",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "3b4a74c3a771b4134c685a400022fc0f7c7fd976a12a9db6c76bf07a9f56c1c8",
+      "bytes": 341367,
+      "error": null
+    },
+    {
+      "url": "https://github.com/trailofbits/skills",
+      "finalUrl": "https://github.com/trailofbits/skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0868e7db79fad0b1e1bda330a6225b0f3ef1926c3573ab1f0d4c84508f56a4b2",
+      "bytes": 343475,
+      "error": null
+    },
+    {
+      "url": "https://github.com/trustless-ai/agent-sdk",
+      "finalUrl": "https://github.com/trustless-ai/agent-sdk",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1d69e21483ada785dce81b7ec1ffb594df084e909fbde6fcd0846086fe008ff7",
+      "bytes": 336223,
+      "error": null
+    },
+    {
+      "url": "https://github.com/trustless-ai/eip7702-rescue",
+      "finalUrl": "https://github.com/trustless-ai/eip7702-rescue",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c1e2510c5c652765cb2f7fda025e9b2ce69887502a5e059e39d7544e40b34546",
+      "bytes": 275731,
+      "error": null
+    },
+    {
+      "url": "https://github.com/trustless-ai/eip7702-rescue/blob/main/CASE.md",
+      "finalUrl": "https://github.com/trustless-ai/eip7702-rescue/blob/main/CASE.md",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "70a1ac31683f0ec549cc57d053029990ee7ad275c541775d1cb4c77131ef5dcd",
+      "bytes": 241294,
+      "error": null
+    },
+    {
+      "url": "https://github.com/trustless-ai/eip7702-rescue/blob/main/SPEC.md",
+      "finalUrl": "https://github.com/trustless-ai/eip7702-rescue/blob/main/SPEC.md",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2f9ca36ba588e3f43b5b865e6dbb9175cbd79d6d04fe5eb1089f50d2add38017",
+      "bytes": 274603,
+      "error": null
+    },
+    {
+      "url": "https://github.com/trustless-ai/recompute-kit",
+      "finalUrl": "https://github.com/trustless-ai/recompute-kit",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "585e650058a1fbae886dd06380b786df0aec2e7121ad67cf9d527a5a194d7e95",
+      "bytes": 342351,
+      "error": null
+    },
+    {
+      "url": "https://github.com/trustless-ai/recompute-kit/blob/main/RECOMPUTE.md",
+      "finalUrl": "https://github.com/trustless-ai/recompute-kit/blob/main/RECOMPUTE.md",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "483bf15db78f68a76ff98b74a78650cfdb96ffee0fbce2cc4851f13d5dc7e613",
+      "bytes": 248124,
+      "error": null
+    },
+    {
+      "url": "https://github.com/veildotcash/veil-mcp",
+      "finalUrl": "https://github.com/veildotcash/veil-mcp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d2b251ca0b1170c31d3239bd4ae0e93b3ae57b011aec9db7873e55e7f31ec3e4",
+      "bytes": 326307,
+      "error": null
+    },
+    {
+      "url": "https://github.com/velodrome-finance/sugar-sdk",
+      "finalUrl": "https://github.com/velodrome-finance/sugar-sdk",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "52830ea72f773159b5ac18777960ba247c7745e112c282e7757c1231922a84fe",
+      "bytes": 437440,
+      "error": null
+    },
+    {
+      "url": "https://github.com/velodrome-finance/sugar-sdk/tree/v0.4.2/.claude/skills/sugar",
+      "finalUrl": "https://github.com/velodrome-finance/sugar-sdk/tree/v0.4.2/.claude/skills/sugar",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "71df5fc9d3a72592b283f922f445f5042efc5bcb6123c8e6112c4cb323bdf437",
+      "bytes": 218143,
+      "error": null
+    },
+    {
+      "url": "https://github.com/veniceai/venice-mcp-server",
+      "finalUrl": "https://github.com/veniceai/venice-mcp-server",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ab5c2c9405b75585f7e2c78e2adc2e85bde3d7f27b3277aacecb45a25382b32e",
+      "bytes": 444104,
+      "error": null
+    },
+    {
+      "url": "https://github.com/whetstoneresearch/doppler-skills",
+      "finalUrl": "https://github.com/whetstoneresearch/doppler-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "9067381cfab5539810c5aa1b53fe7d595e031a36b27080dc4f1f34afbee89a36",
+      "bytes": 322600,
+      "error": null
+    },
+    {
+      "url": "https://github.com/yoprotocol/yo-protocol-skills",
+      "finalUrl": "https://github.com/yoprotocol/yo-protocol-skills",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2b805c00bc3d54f5883e08dd636cad524c39b17bd4ecbaf0c1b57e3cf7791486",
+      "bytes": 273556,
+      "error": null
+    },
+    {
+      "url": "https://github.com/z80dev/cryo-mcp",
+      "finalUrl": "https://github.com/z80dev/cryo-mcp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "adbe36d368b5aac6f78d967db15b3336b4489218b248edc2bc3bc1585ebbd803",
+      "bytes": 396916,
+      "error": null
+    },
+    {
+      "url": "https://goldrush.dev/docs/goldrush-agent-skills/overview",
+      "finalUrl": "https://goldrush.dev/docs/goldrush-agent-skills/overview",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "972891bbea26eed19799dff43c37f32e0389b4078a54041e84908b2a0ce983b2",
+      "bytes": 262101,
+      "error": null
+    },
+    {
+      "url": "https://goldrush.dev/docs/goldrush-mcp-server",
+      "finalUrl": "https://goldrush.dev/docs/goldrush-mcp-server",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6035030a29406922cabc636529bcbca60d82df9fde5bb4e1ca91cd3d58d5ac3e",
+      "bytes": 346283,
+      "error": null
+    },
+    {
+      "url": "https://herd.eco/skill.md",
+      "finalUrl": "https://herd.eco/skill.md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "6fc72b238fa911c351a1d2d3356dd67115057eba5b914ee9db76e722c0ceeb30",
+      "bytes": 7336,
+      "error": null
+    },
+    {
+      "url": "https://huggingface.co/NaniDAO/nani-qwen-3.5-2B-gguf-q4km",
+      "finalUrl": "https://huggingface.co/NaniDAO/nani-qwen-3.5-2B-gguf-q4km",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "8774ee34f54013c0be380ed3cb38060689f206f84b27dca90fc11c7f9d7a2ff0",
+      "bytes": 297620,
+      "error": null
+    },
+    {
+      "url": "https://jaw.id/",
+      "finalUrl": "https://jaw.id/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d7294b07300d909a3c3ddc166f95b23588e5e7c357c7201f813d62540a7e4d13",
+      "bytes": 251504,
+      "error": null
+    },
+    {
+      "url": "https://mcp.api.coingecko.com/",
+      "finalUrl": "https://mcp.api.coingecko.com/",
+      "status": 200,
+      "contentType": "text/html",
+      "sha256": "2a01afaa35b05f6e9b44ceef76dda841b3fa1e82d93d5e93e2fd428307daf35f",
+      "bytes": 76008,
+      "error": null
+    },
+    {
+      "url": "https://mcp.blockscout.com/",
+      "finalUrl": "https://mcp.blockscout.com/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ca29ae2e7c1c4d21fa6d183383285beebbab2f1adde1f6cebd5ad64b9c2a399f",
+      "bytes": 11465,
+      "error": null
+    },
+    {
+      "url": "https://mcp.blockscout.com/llms.txt",
+      "finalUrl": "https://mcp.blockscout.com/llms.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "c19f450ae5f9a8abd7d1943cee6dd3b7d2c924947a5126526e15a6256d6220c1",
+      "bytes": 7283,
+      "error": null
+    },
+    {
+      "url": "https://mcp.openzeppelin.com/",
+      "finalUrl": "https://mcp.openzeppelin.com/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2a207111e592939f00294f63513a422ba21cf59be0a404f718eb1abac3f816d4",
+      "bytes": 41009,
+      "error": null
+    },
+    {
+      "url": "https://morpho.org/blog/introducing-morpho-agents-beta-interface-built-for-ai-agents/",
+      "finalUrl": "https://morpho.org/blog/introducing-morpho-agents-beta-interface-built-for-ai-agents/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "17e77d6ebb283104fd53b769ede6c42c7c18699f46f18d918d1252d86f78f35b",
+      "bytes": 217773,
+      "error": null
+    },
+    {
+      "url": "https://poidh.xyz/",
+      "finalUrl": "https://poidh.xyz/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ea75629f4d84d7b30613b0b4a29d6320c07b76758be2cfa7b168b7ed402c6f68",
+      "bytes": 156968,
+      "error": null
+    },
+    {
+      "url": "https://quillai.network/",
+      "finalUrl": "https://quillai.network/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a1a2765b782295ebcc7f0a1efcd074eda4feb0418a5df512bebbc5793925d194",
+      "bytes": 76624,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@covalenthq/goldrush-mcp-server",
+      "finalUrl": "https://registry.npmjs.org/@covalenthq/goldrush-mcp-server",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "c62a6e3a1f329464e433078652278dfde6f167cd65453f93ec7d85b74ce2e2e8",
+      "bytes": 42023,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@cultos/cli",
+      "finalUrl": "https://registry.npmjs.org/@cultos/cli",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "4ff23690317991e1b75b27a293afcb1b6e18870fcd8e8babc6af7a3551983065",
+      "bytes": 41215,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@fileverse/api",
+      "finalUrl": "https://registry.npmjs.org/@fileverse/api",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "ed0705ac8261d655d6b15f8d8f5cd317c459cd991a779eb55134b425db628e1c",
+      "bytes": 130493,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@panoptic-eng/mcp",
+      "finalUrl": "https://registry.npmjs.org/@panoptic-eng/mcp",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "f099677d9372f2bbcaf92393a7e961db4eb45aaa3e01146a0758a73ef7eeb242",
+      "bytes": 91894,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@phantom/mcp-server",
+      "finalUrl": "https://registry.npmjs.org/@phantom/mcp-server",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "27285a9deffe18471a0609f21a12c9efdf119f67c6741f39efb287895e25471e",
+      "bytes": 96260,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@pranesh.asp/foundry-mcp-server",
+      "finalUrl": "https://registry.npmjs.org/@pranesh.asp/foundry-mcp-server",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "9d291f9c2278c8f2ca3d115efc5f612b3a713495aaa6241c6f6faa4d06852f3b",
+      "bytes": 20759,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@steerprotocol/cli",
+      "finalUrl": "https://registry.npmjs.org/@steerprotocol/cli",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "e95e563dddb40a0eb10121ef22920f8768ddcb808008bcc882a574cac6a6a222",
+      "bytes": 214416,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@trustless-ai/agent-sdk",
+      "finalUrl": "https://registry.npmjs.org/@trustless-ai/agent-sdk",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "5d7fec6540bc5516c79e6a41468f989a266fc5927335f8a7ae0395970945496e",
+      "bytes": 5353,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@veil-cash/mcp",
+      "finalUrl": "https://registry.npmjs.org/@veil-cash/mcp",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "a5579b6bf23e732b14f11b17604c42398af6399c73d695cfaedc573f1401477f",
+      "bytes": 18461,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@walletchan/mcp",
+      "finalUrl": "https://registry.npmjs.org/@walletchan/mcp",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "0a5a8661512845d555658884c1b9e24a2cfb8bbbb7584f3b63f6ed04f282683b",
+      "bytes": 40222,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@walletconnect/cli-sdk",
+      "finalUrl": "https://registry.npmjs.org/@walletconnect/cli-sdk",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "2790beb6e54ea28575209e8db873c1fbba5f0462397f19019ac566f36e75eb90",
+      "bytes": 42094,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@walletconnect/pay-cli",
+      "finalUrl": "https://registry.npmjs.org/@walletconnect/pay-cli",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "b3d0f0de1ba43a97a0f637b27bcd419fe68f1e1be80c9637f67b2df806c38cde",
+      "bytes": 17007,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@walletconnect/staking-cli",
+      "finalUrl": "https://registry.npmjs.org/@walletconnect/staking-cli",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "a0157b06b80e8f9f3e5bc4e79c3e7cc6b3f5a3720375dac1f90e83b55e57b69d",
+      "bytes": 35042,
+      "error": null
+    },
+    {
+      "url": "https://registry.npmjs.org/@yo-protocol/cli",
+      "finalUrl": "https://registry.npmjs.org/@yo-protocol/cli",
+      "status": 200,
+      "contentType": "application/json",
+      "sha256": "ac10bc4875d6c8f1b4f1ec1c91ea7e3ff571c4a45ffe849a892111c695a6259a",
+      "bytes": 16861,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/",
+      "finalUrl": "https://skills.across.to/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1ca6526d30f4edafbeaab6684087ee9e7c68833943ab996aabe3a39d79ef8f48",
+      "bytes": 47843,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/llms.txt",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://skills.bankr.bot/",
+      "finalUrl": "https://bankr.bot/skills",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "a7efab398dedece03e561d8dbbeed4fc145fe43500103f7e05fe177406784cfd",
+      "bytes": 7755,
+      "error": null
+    },
+    {
+      "url": "https://skills.superfluid.org/",
+      "finalUrl": "https://skills.superfluid.org/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "6777823de29294469c76522a8aca2dee7e985f47c63554a8a08756b3dda5cd5d",
+      "bytes": 44123,
+      "error": null
+    },
+    {
+      "url": "https://walletchan.com/",
+      "finalUrl": "https://walletchan.com/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a6a4d416770fc22e4c2816bfdc182171174426a2e51091f0f123ddb60e8fe738",
+      "bytes": 541361,
+      "error": null
+    },
+    {
+      "url": "https://walletconnect.network/",
+      "finalUrl": "https://walletconnect.com/network",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "32e01ea763a10b183a71db747e175b7503c0f1792e5473d1ac52519804bde6d7",
+      "bytes": 283082,
+      "error": null
+    },
+    {
+      "url": "https://www.aeon.fun",
+      "finalUrl": "https://www.aeon.fun",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "8ed7c4233ce1ee280f69dacdc7cc440fa7f7d1a6fbc25815da6f970367e047b5",
+      "bytes": 383365,
+      "error": null
+    },
+    {
+      "url": "https://www.aeon.fun/connect/mcp",
+      "finalUrl": "https://www.aeon.fun/connect/?chat=1",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "86d1df998acf1960714aaab20ffc74e83571e9f4e5d0983c8a2ab8779150599b",
+      "bytes": 39951,
+      "error": null
+    },
+    {
+      "url": "https://www.aeon.fun/hooks",
+      "finalUrl": "https://www.aeon.fun/hooks",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e23498b977a1034b39cda3a3814739da0c4ea49a30cdd04e552cc4cfc895185c",
+      "bytes": 234261,
+      "error": null
+    },
+    {
+      "url": "https://www.alchemy.com/docs/alchemy-cli",
+      "finalUrl": "https://www.alchemy.com/docs/alchemy-cli",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "bf1420951e9f2bf4345b4d7ac99c6230257d85344ea63e28ee526fda35148789",
+      "bytes": 341894,
+      "error": null
+    },
+    {
+      "url": "https://www.bitrefill.com/agents/SKILL.md",
+      "finalUrl": "https://www.bitrefill.com/agents/SKILL.md",
+      "status": 200,
+      "contentType": "",
+      "sha256": "2f101b99e78e0169a4091274cca507d95731dd434f624f0ad491fef3b3f5dc53",
+      "bytes": 9303,
+      "error": null
+    },
+    {
+      "url": "https://www.npmjs.com/package/@covalenthq/goldrush-mcp-server",
+      "finalUrl": "https://www.npmjs.com/package/@covalenthq/goldrush-mcp-server",
+      "status": 200,
+      "contentType": "text/html",
+      "sha256": "90a4e2d85e1c5e6a82678cf60af371284ff4d1b9f2e9d5d83fa1114663243148",
+      "bytes": 61645,
+      "error": null
+    },
+    {
+      "url": "https://www.npmjs.com/package/@cultos/cli",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@fileverse/api",
+      "finalUrl": "https://www.npmjs.com/package/@fileverse/api",
+      "status": 200,
+      "contentType": "text/html",
+      "sha256": "a70b6f9a951d560fe00c737f8c38da2f99679e37d8a1b85dca9ffcf4b367554e",
+      "bytes": 74072,
+      "error": null
+    },
+    {
+      "url": "https://www.npmjs.com/package/@panoptic-eng/mcp",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@phantom/mcp-server",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@pranesh.asp/foundry-mcp-server",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@steerprotocol/cli",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@trustless-ai/agent-sdk",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@veil-cash/mcp",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@walletchan/mcp",
+      "finalUrl": "https://www.npmjs.com/package/@walletchan/mcp",
+      "status": 200,
+      "contentType": "text/html",
+      "sha256": "3cc47e9b7a933910ed1940ab48fcde5d137ec3b1934b1e8a376d1474d4e73815",
+      "bytes": 93633,
+      "error": null
+    },
+    {
+      "url": "https://www.npmjs.com/package/@walletconnect/cli-sdk",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@walletconnect/pay-cli",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@walletconnect/staking-cli",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/package/@yo-protocol/cli",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.veil.cash/",
+      "finalUrl": "https://www.veil.cash/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "54955b7cb491aba27b4c5fdcbbd9f83f994fbb8448d849892f16c93e77532ffd",
+      "bytes": 28543,
+      "error": null
+    },
+    {
+      "url": "https://www.yo.xyz/",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "url": "https://x.com/0xz80/status/1898554788150682028",
+      "finalUrl": "https://x.com/0xz80/status/1898554788150682028",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "88e3cbcf4d4e2a4498510ae196ca38d72f2870af7a11e22b72b1c6208a3cea5a",
+      "bytes": 127625,
+      "error": null
+    },
+    {
+      "url": "https://x.com/Superfluid_HQ/status/2034332276797161806",
+      "finalUrl": "https://x.com/Superfluid_HQ/status/2034332276797161806",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "bac08ab1c887687975c84886b8a2430ce37e44279def0fc91d1e78ef5438ec21",
+      "bytes": 163396,
+      "error": null
+    },
+    {
+      "url": "https://x.com/nani__ooo/status/2034285434701050162",
+      "finalUrl": "https://x.com/nani__ooo/status/2034285434701050162",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "4c9252d217991c063e9a0c5ea051b5518f1425f1bf5af5ece342b417b8e33cdc",
+      "bytes": 224905,
+      "error": null
+    },
+    {
+      "url": "https://x.com/phantom/status/2023866789860675625",
+      "finalUrl": "https://x.com/phantom/status/2023866789860675625",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "sha256": "cd1acd70d745e0ca495d324140571c4d436564d498d0d73da119d88a2ccb3ffd",
+      "bytes": 120235,
+      "error": null
+    }
+  ],
+  "followup-access": [
+    {
+      "url": "https://aave.com/docs/mcp/safety.md",
+      "finalUrl": "https://aave.com/docs/mcp/safety.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "339ea4d2dfd8cb85b464bb87151457a817d7329727b3f7df3dc9bf90d8b0ab40",
+      "bytes": 4753,
+      "error": null
+    },
+    {
+      "url": "https://aave.com/docs/mcp/tools.md",
+      "finalUrl": "https://aave.com/docs/mcp/tools.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "d5943033015875a4b5de64ad41dd01a2833ff456407946e620f2405edc7db3aa",
+      "bytes": 17769,
+      "error": null
+    },
+    {
+      "url": "https://agents.morpho.org",
+      "finalUrl": "https://docs.morpho.org/developers/agents/get-started/",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "f08e84c7daca7aecd0d8e5ac0019631c09387f2f4a063f49f8b16acd4c954bbe",
+      "bytes": 4050,
+      "error": null
+    },
+    {
+      "url": "https://docs.cdp.coinbase.com/ai-agents/coinbase-for-agents/wallet-mcp",
+      "finalUrl": "https://docs.cdp.coinbase.com/ai-agents/coinbase-for-agents/wallet-mcp",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "db8a651b595f0f274ed804db5005987402a5a80ad6a1ee71893752594e9ac704",
+      "bytes": 2602655,
+      "error": null
+    },
+    {
+      "url": "https://docs.jaw.id/llms-account.txt",
+      "finalUrl": "https://docs.jaw.id/llms-account.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "2d90d1fc80163b571d02ed8eb0385312efa4ab569906ee49b650261899bf9ba3",
+      "bytes": 77795,
+      "error": null
+    },
+    {
+      "url": "https://docs.jaw.id/llms-cli.txt",
+      "finalUrl": "https://docs.jaw.id/llms-cli.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "3a929d928aad594034b06b0df19c7167504114b3641b8c982c123ea4453bba45",
+      "bytes": 64581,
+      "error": null
+    },
+    {
+      "url": "https://docs.phantom.com/phantom-mcp-server.md",
+      "finalUrl": "https://docs.phantom.com/phantom-mcp-server.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "e1f2769ac5accf19515bd835dba880eb1717d5555aaf6fe5947fe59af33346bc",
+      "bytes": 6014,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/<skill>/SKILL.md",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://ethskills.com/addresses/SKILL.md",
+      "finalUrl": "https://ethskills.com/addresses/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "918fea949f9e48dcbb1c937301ae6e79920c564365bf25444a5fdab1a91b0911",
+      "bytes": 28792,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/audit/SKILL.md",
+      "finalUrl": "https://ethskills.com/audit/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "f7e2a649a07393707826f3e4352b30b418b00cfe690b40a4b1caf0a5eea627a1",
+      "bytes": 3325,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/building-blocks/SKILL.md",
+      "finalUrl": "https://ethskills.com/building-blocks/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "c6f670ccf1024e3f268269c42e447f28461ee65c08b1263c0f788337fcfbff26",
+      "bytes": 11635,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/concepts/SKILL.md",
+      "finalUrl": "https://ethskills.com/concepts/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "d50f2d1432c87ccf6c7617fb4d08038c13d3e797be338f26b2d31060500f5a0b",
+      "bytes": 12419,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/crops/SKILL.md",
+      "finalUrl": "https://ethskills.com/crops/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "15129e449001fcc581b8e1f884566f323fe8c8aa895f81508b0e49f8818723b2",
+      "bytes": 22277,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/feedback/SKILL.md",
+      "finalUrl": "https://ethskills.com/feedback/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "b1f56ce532cdc5c2c6d82db82978cec93cdd64a94c9fe04d5bac408b735d7e19",
+      "bytes": 3653,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/frontend-playbook/SKILL.md",
+      "finalUrl": "https://ethskills.com/frontend-playbook/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "c00a0bedc1b8954fc026566fe032d7a8e5dd1bb46b4de6622cad933884f9e5f0",
+      "bytes": 13713,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/frontend-ux/SKILL.md",
+      "finalUrl": "https://ethskills.com/frontend-ux/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "8cf0d4e051acd4a8b5c86b62ef440d2afd685be519ad99ceff4410cd83ec0648",
+      "bytes": 5993,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/gas/SKILL.md",
+      "finalUrl": "https://ethskills.com/gas/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "78d4934247aed38c735c2425ece5af8877b10dac495706c5b821e5000358bbc6",
+      "bytes": 5382,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/indexing/SKILL.md",
+      "finalUrl": "https://ethskills.com/indexing/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "ee8fd23dc448782d317492717e39190fa25f7fcf02b9fd64154e5954f208979e",
+      "bytes": 10313,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/l2s/SKILL.md",
+      "finalUrl": "https://ethskills.com/l2s/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "d26cb4b816b646e59c864345c2c67cb1a96f92fe2cd396e44de005f22c607332",
+      "bytes": 14901,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/noir/SKILL.md",
+      "finalUrl": "https://ethskills.com/noir/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "a966954e3ad43b27fe853911e001ce95de0ff3ccb7fd0747bddbde1b5b70a414",
+      "bytes": 29480,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/orchestration/SKILL.md",
+      "finalUrl": "https://ethskills.com/orchestration/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "524ef0810e780eba56d6310c44e6e07346149843878f6dc3c388ae5f2b099a73",
+      "bytes": 8938,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/protocol/SKILL.md",
+      "finalUrl": "https://ethskills.com/protocol/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "100b87c78a9ef86ecf8af09574b2ec91fd06e83a12ec868ca1cc0820d34ef824",
+      "bytes": 12705,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/qa/SKILL.md",
+      "finalUrl": "https://ethskills.com/qa/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "9221fcf69faf39f0bf6c83f543aca4595d12cee7f0c7c7aba5978ddf83107b25",
+      "bytes": 21303,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/security/SKILL.md",
+      "finalUrl": "https://ethskills.com/security/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "dd988d2f417226f02bfec777264edd6c85666515976c28e8c11aa4eb73ca7a65",
+      "bytes": 20013,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/ship/SKILL.md",
+      "finalUrl": "https://ethskills.com/ship/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "87070dd6f620826b5461f01941f0724ed3de5db06b102c04118cb2917af6b1bc",
+      "bytes": 17131,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/standards/SKILL.md",
+      "finalUrl": "https://ethskills.com/standards/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "734a0bae863ea339b84f57d4e954847f0d19372ca65f214c03e5662eee7e0c6c",
+      "bytes": 15508,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/testing/SKILL.md",
+      "finalUrl": "https://ethskills.com/testing/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "684eab6b127f83f5a7ae4b8d93993b3d07c2c59587b7a49e8fd569007e58411a",
+      "bytes": 12356,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/tools/SKILL.md",
+      "finalUrl": "https://ethskills.com/tools/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "6591556f1b4bc5f7b76401b9391a5b761db7ce13d5d8084649c5f4dc2e99ae15",
+      "bytes": 6340,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/wallets/SKILL.md",
+      "finalUrl": "https://ethskills.com/wallets/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "ae147e09a230f8c1bccf06eb444adeaa63957841752cb08449e0c7e4f7fb9f0a",
+      "bytes": 7775,
+      "error": null
+    },
+    {
+      "url": "https://ethskills.com/why/SKILL.md",
+      "finalUrl": "https://ethskills.com/why/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "0ed14f2f7f7c23b9c07651b67fbaad4cbe420c5a4f9db45fa36f4dd53c279b88",
+      "bytes": 4270,
+      "error": null
+    },
+    {
+      "url": "https://fluid.io/SKILL.md",
+      "finalUrl": "https://fluid.io/SKILL.md",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e9038f2f3fa19f14c32cdff1533cfc38b52a701cf72af467a9f80aa88369612f",
+      "bytes": 9802,
+      "error": null
+    },
+    {
+      "url": "https://fluid.io/llms.txt",
+      "finalUrl": "https://fluid.io/llms.txt",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "8a6e5f7c9bd17ed8a608cbbf69a616f34e08862ddfc0dff377147eff9d080efa",
+      "bytes": 9802,
+      "error": null
+    },
+    {
+      "url": "https://foresight.portals.fi/docs/SKILL.md",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://foresight.portals.fi/docs/skill/SKILL.md",
+      "finalUrl": "https://foresight.portals.fi/docs/skill/SKILL.md",
+      "status": 200,
+      "contentType": "text/markdown; charset=UTF-8",
+      "sha256": "a39ff347481e8eab2a6a8ba13388b11cdfeb7d3679abc21922eae164c7c10746",
+      "bytes": 38089,
+      "error": null
+    },
+    {
+      "url": "https://foresight.portals.fi/skill.md",
+      "finalUrl": null,
+      "status": "unavailable",
+      "contentType": null,
+      "sha256": null,
+      "bytes": null,
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://skills.across.to/skills/bridge",
+      "finalUrl": "https://skills.across.to/skills/bridge",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "8e6590f6551274023183daf1e99495f4b404b117cf26a9f9045063d73d798be0",
+      "bytes": 73417,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/skills/embedded-crosschain-actions",
+      "finalUrl": "https://skills.across.to/skills/embedded-crosschain-actions",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5a212956997120c96ad1b5d851010f1bb83a006f7a661428e180de38740b13f1",
+      "bytes": 47634,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/skills/fetch-chains-tokens",
+      "finalUrl": "https://skills.across.to/skills/fetch-chains-tokens",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1ad9fc52a40169ec5be19c83e973f0094873fbdb60a24a4347a70b37c7ce2d84",
+      "bytes": 66594,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/skills/master",
+      "finalUrl": "https://skills.across.to/skills/master",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "1ea1415cc2ae5e64799dd41a01c2ab03a193952053dc8fc91ccc35938169137d",
+      "bytes": 65960,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/skills/mcp-server",
+      "finalUrl": "https://skills.across.to/skills/mcp-server",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "913b745417f9c7f592b5714a9c3f9303f8a992c8ef26e2faae67b6fa6d07837e",
+      "bytes": 18637,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/skills/resources",
+      "finalUrl": "https://skills.across.to/skills/resources",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "bbd4bb26656e4fe7d63862011ab1d6625e7526df336c49d6a80c451c2283b670",
+      "bytes": 38265,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/skills/security",
+      "finalUrl": "https://skills.across.to/skills/security",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "0f0c2e4bb5382e85067aef2e9f951a307092a737b822c7f00a6286e4ba7f8567",
+      "bytes": 52933,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/skills/swap",
+      "finalUrl": "https://skills.across.to/skills/swap",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "8dc9f29390e8e4ff9ccf1ae0c83d3a57b679265f245be57b868e43f7bbab5d1e",
+      "bytes": 92047,
+      "error": null
+    },
+    {
+      "url": "https://skills.across.to/skills/tracking-transactions",
+      "finalUrl": "https://skills.across.to/skills/tracking-transactions",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2e684065f19e47a683e04992e044c167ecefb7102ad3906592f74927fcc283b8",
+      "bytes": 61327,
+      "error": null
+    }
+  ],
+  "extra-access": [
+    {
+      "url": "https://raw.githubusercontent.com/velodrome-finance/sugar-sdk/v0.4.2/.claude/skills/sugar/SKILL.md",
+      "finalUrl": "https://raw.githubusercontent.com/velodrome-finance/sugar-sdk/v0.4.2/.claude/skills/sugar/SKILL.md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "7525b590bc2242652339b28c1e94444922b739d781cd2c95c09cf1f665fec80a",
+      "bytes": 5318,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/velodrome-finance/sugar-sdk/v0.4.2/pyproject.toml",
+      "finalUrl": "https://raw.githubusercontent.com/velodrome-finance/sugar-sdk/v0.4.2/pyproject.toml",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "feda93e0ae1f7c6c8684f76b281bc958f44f32ea7da5f34814146dd19c336e55",
+      "bytes": 925,
+      "error": null
+    },
+    {
+      "url": "https://docs.morpho.org/developers/agents/mcp/",
+      "finalUrl": "https://docs.morpho.org/developers/agents/mcp/",
+      "status": 200,
+      "contentType": "text/markdown; charset=utf-8",
+      "sha256": "7d7bccade31ffc132154e7eea0bc85f40a1fad6de05973a89982c14df2186333",
+      "bytes": 8968,
+      "error": null
+    },
+    {
+      "url": "https://raw.githubusercontent.com/base/skills/master/skills/base-mcp/SKILL.md",
+      "finalUrl": "https://raw.githubusercontent.com/base/skills/master/skills/base-mcp/SKILL.md",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "00cbe81ab98848874dfb3559a5666784852eaad4a3e0a8bd58d19f316bcf9fb1",
+      "bytes": 13863,
+      "error": null
+    }
+  ],
+  "archives": [
+    {
+      "repo": "0xProject/0x-ai",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/0xProject/0x-ai/zip/refs/heads/main",
+      "archiveSha256": "8e109f8817f0ce3203f194130c6d4803db0507b8ff6226195506a76d5dd574f3",
+      "bytes": 12126,
+      "status": "fetched"
+    },
+    {
+      "repo": "BankrBot/skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/BankrBot/skills/zip/refs/heads/main",
+      "archiveSha256": "21456608f3df720b6a5466b5154fa09f9f962321da232916b996c41655c70ce4",
+      "bytes": 5203007,
+      "status": "fetched"
+    },
+    {
+      "repo": "CTRLabs/ctrl-mcp",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/CTRLabs/ctrl-mcp/zip/refs/heads/main",
+      "archiveSha256": "4361791d6a3921b8ae65859f1fe327d89cc0172ba1341ef7f18749173a922fec",
+      "bytes": 246075,
+      "status": "fetched"
+    },
+    {
+      "repo": "CTRLabs/ctrl-skill",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/CTRLabs/ctrl-skill/zip/refs/heads/main",
+      "archiveSha256": "97786b178c7f66998be9d21512ed14780e5f6dd6ba3bb5835bd86c1e412fd545",
+      "bytes": 279137,
+      "status": "fetched"
+    },
+    {
+      "repo": "DefiLlama/defillama-skills",
+      "branch": "master",
+      "archiveUrl": "https://codeload.github.com/DefiLlama/defillama-skills/zip/refs/heads/master",
+      "archiveSha256": "0de397e7408394c9877a95d55a5e2978cf57993b00810e455e47888571cad2c7",
+      "bytes": 26164,
+      "status": "fetched"
+    },
+    {
+      "repo": "ETHCF/ethereum-mcp",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/ETHCF/ethereum-mcp/zip/refs/heads/main",
+      "archiveSha256": "3f69a0ae5dfa523829e4d6b2cecf14e0eecba8b99f1914fcf7f6f25308529093",
+      "bytes": 904517,
+      "status": "fetched"
+    },
+    {
+      "repo": "JustaName-id/jaw-skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/JustaName-id/jaw-skills/zip/refs/heads/main",
+      "archiveSha256": "88212deff6a9d12272fc772f04887eefe40affa82972566e0434c731104a8d23",
+      "bytes": 109449,
+      "status": "fetched"
+    },
+    {
+      "repo": "NethermindEth/defi-skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/NethermindEth/defi-skills/zip/refs/heads/main",
+      "archiveSha256": "f02ba9fdef4673eb7244c65f545cf26bd1d8406cf310e079268eb219c85efaf0",
+      "bytes": 361411,
+      "status": "fetched"
+    },
+    {
+      "repo": "Octav-Labs/octav-api-skill",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/Octav-Labs/octav-api-skill/zip/refs/heads/main",
+      "archiveSha256": "9b294b792913205052fd7354b563c31c630040077916d79f5d7cdad3c04079d4",
+      "bytes": 7323,
+      "status": "fetched"
+    },
+    {
+      "repo": "OpenZeppelin/openzeppelin-mcp",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/OpenZeppelin/openzeppelin-mcp/zip/refs/heads/main",
+      "archiveSha256": "638ef69973baaf046c8f6d3d3defd3dae0b52739c2619cbb913c4576970bec0a",
+      "bytes": 1082347,
+      "status": "fetched"
+    },
+    {
+      "repo": "Polymarket/polymarket-cli",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/Polymarket/polymarket-cli/zip/refs/heads/main",
+      "archiveSha256": "347c9a504e8730744d7e57dc41cfaf6024e2cbaf441f8e524c7e947023a0f2c8",
+      "bytes": 109726,
+      "status": "fetched"
+    },
+    {
+      "repo": "PraneshASP/foundry-mcp-server",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/PraneshASP/foundry-mcp-server/zip/refs/heads/main",
+      "archiveSha256": "9fadf5055e9f89b820bd07c1bb0f5fdd6e1acab22379c55c6d8e11b2a4440946",
+      "bytes": 7198341,
+      "status": "fetched"
+    },
+    {
+      "repo": "ProjectOpenSea/opensea-skill",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/ProjectOpenSea/opensea-skill/zip/refs/heads/main",
+      "archiveSha256": "77313beecdeb0cda98065e8b7f93a0b00f4fbf5a7b8094022026d92a94aa9ff4",
+      "bytes": 151534,
+      "status": "fetched"
+    },
+    {
+      "repo": "Uniswap/uniswap-ai",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/Uniswap/uniswap-ai/zip/refs/heads/main",
+      "archiveSha256": "d8ac409af8b308a53013a7980423c24a3b2fd45504514aea9ced84afaa5114ab",
+      "bytes": 1144713,
+      "status": "fetched"
+    },
+    {
+      "repo": "WalletConnect/agent-sdk",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/WalletConnect/agent-sdk/zip/refs/heads/main",
+      "archiveSha256": "cc11eb1da9879e5732878df98a767514f78acecbfdb3ac55a4657e6fdca9cc55",
+      "bytes": 247010,
+      "status": "fetched"
+    },
+    {
+      "repo": "aave/skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/aave/skills/zip/refs/heads/main",
+      "archiveSha256": "4d2ed144ac3010e1edf65aa378fa78b442bd03a080513b4f8f658fdc5fadd60f",
+      "bytes": 50203,
+      "status": "fetched"
+    },
+    {
+      "repo": "across-protocol/skills",
+      "branch": "master",
+      "archiveUrl": "https://codeload.github.com/across-protocol/skills/zip/refs/heads/master",
+      "archiveSha256": "6edba14670f42a9287a148ef80b761eaf8664cc00629a3ff5627006be65532cc",
+      "bytes": 21110,
+      "status": "fetched"
+    },
+    {
+      "repo": "aeonfun/aeon",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/aeonfun/aeon/zip/refs/heads/main",
+      "archiveSha256": "9fee1a1a2fafdf907e1389f7d91225dce7448d605fd1d54d2058afe8d0dbebcb",
+      "bytes": 15377406,
+      "status": "fetched"
+    },
+    {
+      "repo": "bitrefill/agents",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/bitrefill/agents/zip/refs/heads/main",
+      "archiveSha256": "32c0581f4b8f268758a32a21cf2c6e33f30f74a6c738962898fcae52d215050c",
+      "bytes": 68876,
+      "status": "fetched"
+    },
+    {
+      "repo": "blockscout/mcp-server",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/blockscout/mcp-server/zip/refs/heads/main",
+      "archiveSha256": "feee99a5e8bec719bc0af667ae1b96bf1ac08c73cb5ab0bbf840d9064ce50129",
+      "bytes": 752216,
+      "status": "fetched"
+    },
+    {
+      "repo": "covalenthq/goldrush-agent-skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/covalenthq/goldrush-agent-skills/zip/refs/heads/main",
+      "archiveSha256": "efa595e3a77341f8feee9a51674e0c008d01ba40616816d6770d12a527604cf1",
+      "bytes": 77996,
+      "status": "fetched"
+    },
+    {
+      "repo": "duneanalytics/skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/duneanalytics/skills/zip/refs/heads/main",
+      "archiveSha256": "0414e66a34478209065d617315468d17eaaba805b65e63732b5b0a1a83f52a4a",
+      "bytes": 33865,
+      "status": "fetched"
+    },
+    {
+      "repo": "gskril/ethereum-mcp",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/gskril/ethereum-mcp/zip/refs/heads/main",
+      "archiveSha256": "d413fe4779c460c35ed58296a80941506cf634dc430c9fb063b9034679c10ffa",
+      "bytes": 154256,
+      "status": "fetched"
+    },
+    {
+      "repo": "herd-labs/herd-cli",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/herd-labs/herd-cli/zip/refs/heads/main",
+      "archiveSha256": "f2e730f086f77a9a35f71a37cd84edb2d10b12ced2a9d9a788aa7c8947a06849",
+      "bytes": 4899,
+      "status": "fetched"
+    },
+    {
+      "repo": "hypurrclaw/hyperliquid-cli",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/hypurrclaw/hyperliquid-cli/zip/refs/heads/main",
+      "archiveSha256": "409ebfc4d92de1d44df7b8188768f77d07cbba1e8c6b2c3499815a23ad003669",
+      "bytes": 676476,
+      "status": "fetched"
+    },
+    {
+      "repo": "morpho-org/morpho-skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/morpho-org/morpho-skills/zip/refs/heads/main",
+      "archiveSha256": "ef8f925a8203ef33f12e0a97040a7d2b934fb65540c46ea50046293b4dbc5f88",
+      "bytes": 58425,
+      "status": "fetched"
+    },
+    {
+      "repo": "pashov/skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/pashov/skills/zip/refs/heads/main",
+      "archiveSha256": "d60e89092face0ad50a7d62ea9021d579865f6f1afd9137eea117362031342b4",
+      "bytes": 8857774,
+      "status": "fetched"
+    },
+    {
+      "repo": "pendle-finance/pendle-ai",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/pendle-finance/pendle-ai/zip/refs/heads/main",
+      "archiveSha256": "bf9e6e2513fa2a439478e6bd1451de5027e3013af5e51e2bae50458990d6148f",
+      "bytes": 276386,
+      "status": "fetched"
+    },
+    {
+      "repo": "picsoritdidnthappen/poidh-app",
+      "branch": "prod",
+      "archiveUrl": "https://codeload.github.com/picsoritdidnthappen/poidh-app/zip/refs/heads/prod",
+      "archiveSha256": "29b3348cec6490be5e1922e54ca149e11125a0d5066dc6725421babee7153e96",
+      "bytes": 1814112,
+      "status": "fetched"
+    },
+    {
+      "repo": "quillai-network/quillshield_skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/quillai-network/quillshield_skills/zip/refs/heads/main",
+      "archiveSha256": "608ebe8f459170ad007d8d9d95f79420b9ded91c0c2bd71722d2f558ca18b46d",
+      "bytes": 175733,
+      "status": "fetched"
+    },
+    {
+      "repo": "sablier-labs/sablier-skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/sablier-labs/sablier-skills/zip/refs/heads/main",
+      "archiveSha256": "453e0aeaaddc1b41ea7dfc77f65fe770c6365e7fac066a01833dbf520a8966b0",
+      "bytes": 204215,
+      "status": "fetched"
+    },
+    {
+      "repo": "safe-global/safe-cli",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/safe-global/safe-cli/zip/refs/heads/main",
+      "archiveSha256": "769309cd5a91eda2cc096f622bfcfec3dd540279f30019ede54ddfb4542329a2",
+      "bytes": 331020,
+      "status": "fetched"
+    },
+    {
+      "repo": "superfluid-org/skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/superfluid-org/skills/zip/refs/heads/main",
+      "archiveSha256": "3d75a25563da82db6a17ffd559729f861ce8718ea418a89b82b557bb06978ae3",
+      "bytes": 2463530,
+      "status": "fetched"
+    },
+    {
+      "repo": "thesmithdao/cultos",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/thesmithdao/cultos/zip/refs/heads/main",
+      "archiveSha256": "c5d416d1e34b16946e830cda45dc54080d8fe2e0e5e4b0c818adab38ac02b605",
+      "bytes": 134232,
+      "status": "fetched"
+    },
+    {
+      "repo": "trailofbits/skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/trailofbits/skills/zip/refs/heads/main",
+      "archiveSha256": "bf752881f066f646cbe7fed07896b2efb8d817afc9f4ab0327df89ba8d00b786",
+      "bytes": 3643655,
+      "status": "fetched"
+    },
+    {
+      "repo": "trustless-ai/agent-sdk",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/trustless-ai/agent-sdk/zip/refs/heads/main",
+      "archiveSha256": "3a5ebfa122f1b5a3b1fa2fb6fd79920d6deac5a024cce23a50285caf83cdaecd",
+      "bytes": 585749,
+      "status": "fetched"
+    },
+    {
+      "repo": "trustless-ai/eip7702-rescue",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/trustless-ai/eip7702-rescue/zip/refs/heads/main",
+      "archiveSha256": "7b3a2ad6a5ad3a4eb660fd0b2ff62203673089617a92260fde59e69338b80c1c",
+      "bytes": 12338,
+      "status": "fetched"
+    },
+    {
+      "repo": "trustless-ai/recompute-kit",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/trustless-ai/recompute-kit/zip/refs/heads/main",
+      "archiveSha256": "720546f77fc5ed3f1ddef141d2d5d9065a95cd53a4bffbccda00ec11891fdc50",
+      "bytes": 595001,
+      "status": "fetched"
+    },
+    {
+      "repo": "veildotcash/veil-mcp",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/veildotcash/veil-mcp/zip/refs/heads/main",
+      "archiveSha256": "b9e844456381d0a1bc318a7b0c25bd0dacc17ac048852b02251929db50dc5519",
+      "bytes": 129908,
+      "status": "fetched"
+    },
+    {
+      "repo": "velodrome-finance/sugar-sdk",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/velodrome-finance/sugar-sdk/zip/refs/heads/main",
+      "archiveSha256": "5e33fc04d38f4324fc41bbea038220c28e8ed843479aae64ee9108b9315fe2d7",
+      "bytes": 1474709,
+      "status": "fetched"
+    },
+    {
+      "repo": "veniceai/venice-mcp-server",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/veniceai/venice-mcp-server/zip/refs/heads/main",
+      "archiveSha256": "8afebec6862a6ee6fce600f890844eff4ebd85aed67bfe92d145b6e1f19a3c6c",
+      "bytes": 121934,
+      "status": "fetched"
+    },
+    {
+      "repo": "whetstoneresearch/doppler-skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/whetstoneresearch/doppler-skills/zip/refs/heads/main",
+      "archiveSha256": "18c2cbff1636cace44427f32cb2ddb9633a29755bf23c46519ebb23891ed670f",
+      "bytes": 149160,
+      "status": "fetched"
+    },
+    {
+      "repo": "yoprotocol/yo-protocol-skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/yoprotocol/yo-protocol-skills/zip/refs/heads/main",
+      "archiveSha256": "a8a5fc7f64acfa8705f4f769b83faa170aff36f2eec3f8e48f99bdbda4dcb962",
+      "bytes": 55690,
+      "status": "fetched"
+    },
+    {
+      "repo": "z80dev/cryo-mcp",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/z80dev/cryo-mcp/zip/refs/heads/main",
+      "archiveSha256": "17e93d243775b6d900dce776d0cdac0598e1beebed0ff70632bb252f45ced247",
+      "bytes": 111707,
+      "status": "fetched"
+    }
+  ],
+  "extra-archives": [
+    {
+      "repo": "base/skills",
+      "branch": "master",
+      "archiveUrl": "https://codeload.github.com/base/skills/zip/refs/heads/master",
+      "archiveSha256": "0b5bf0a7d3b071d03e468c5f0d04d9160ffee76f6117a175bdd1d3160a704fb3",
+      "bytes": 321280,
+      "status": "fetched"
+    },
+    {
+      "repo": "JustaLab-co/jaw-skills",
+      "branch": "main",
+      "archiveUrl": "https://codeload.github.com/JustaLab-co/jaw-skills/zip/refs/heads/main",
+      "archiveSha256": "88212deff6a9d12272fc772f04887eefe40affa82972566e0434c731104a8d23",
+      "bytes": 109449,
+      "status": "fetched"
+    }
+  ],
+  "observedRepositoryRevisions": [
+    {
+      "repo": "0xProject/0x-ai",
+      "branch": "main",
+      "pageObservedHead": "0167bbb411cc972b966127d23c23de801061fa99",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "8e109f8817f0ce3203f194130c6d4803db0507b8ff6226195506a76d5dd574f3",
+      "skillBodies": 2,
+      "source": "https://github.com/0xProject/0x-ai"
+    },
+    {
+      "repo": "BankrBot/skills",
+      "branch": "main",
+      "pageObservedHead": "dc47eed427ae79a7629b0ddb2f66c95df991b1d3",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "21456608f3df720b6a5466b5154fa09f9f962321da232916b996c41655c70ce4",
+      "skillBodies": 154,
+      "source": "https://github.com/BankrBot/skills"
+    },
+    {
+      "repo": "CTRLabs/ctrl-mcp",
+      "branch": "main",
+      "pageObservedHead": "bb02678407dc1b3bdf60b8e2a14ea834c1ae4092",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "4361791d6a3921b8ae65859f1fe327d89cc0172ba1341ef7f18749173a922fec",
+      "skillBodies": 0,
+      "source": "https://github.com/CTRLabs/ctrl-mcp"
+    },
+    {
+      "repo": "CTRLabs/ctrl-skill",
+      "branch": "main",
+      "pageObservedHead": "aa85d0b216dacce426c6803f7426f93ebf42038e",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "97786b178c7f66998be9d21512ed14780e5f6dd6ba3bb5835bd86c1e412fd545",
+      "skillBodies": 1,
+      "source": "https://github.com/CTRLabs/ctrl-skill"
+    },
+    {
+      "repo": "DefiLlama/defillama-skills",
+      "branch": "master",
+      "pageObservedHead": "f286bda4498ec8da4eb57bfba8ab40c188860e8e",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "0de397e7408394c9877a95d55a5e2978cf57993b00810e455e47888571cad2c7",
+      "skillBodies": 11,
+      "source": "https://github.com/DefiLlama/defillama-skills"
+    },
+    {
+      "repo": "ETHCF/ethereum-mcp",
+      "branch": "main",
+      "pageObservedHead": "2a4300f5a63160f89d6b23198433f79cda7a2c5d",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "3f69a0ae5dfa523829e4d6b2cecf14e0eecba8b99f1914fcf7f6f25308529093",
+      "skillBodies": 0,
+      "source": "https://github.com/ETHCF/ethereum-mcp"
+    },
+    {
+      "repo": "JustaName-id/jaw-skills",
+      "branch": "main",
+      "pageObservedHead": "3794f1d6ac7e81650078249dd339807a90fecd1a",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "88212deff6a9d12272fc772f04887eefe40affa82972566e0434c731104a8d23",
+      "skillBodies": 3,
+      "source": "https://github.com/JustaName-id/jaw-skills"
+    },
+    {
+      "repo": "NethermindEth/defi-skills",
+      "branch": "main",
+      "pageObservedHead": "d586d80ef7e9e8ee32021b6d81ee7730102ce41b",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "f02ba9fdef4673eb7244c65f545cf26bd1d8406cf310e079268eb219c85efaf0",
+      "skillBodies": 2,
+      "source": "https://github.com/NethermindEth/defi-skills"
+    },
+    {
+      "repo": "Octav-Labs/octav-api-skill",
+      "branch": "main",
+      "pageObservedHead": "0c1a8632543a31dc36f82df1d93f6b2bba640d21",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "9b294b792913205052fd7354b563c31c630040077916d79f5d7cdad3c04079d4",
+      "skillBodies": 1,
+      "source": "https://github.com/Octav-Labs/octav-api-skill"
+    },
+    {
+      "repo": "OpenZeppelin/openzeppelin-mcp",
+      "branch": "main",
+      "pageObservedHead": "10e51d99b5317550fb70c715d016665485699679",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "638ef69973baaf046c8f6d3d3defd3dae0b52739c2619cbb913c4576970bec0a",
+      "skillBodies": 0,
+      "source": "https://github.com/OpenZeppelin/openzeppelin-mcp"
+    },
+    {
+      "repo": "Polymarket/polymarket-cli",
+      "branch": "main",
+      "pageObservedHead": "9b18b5faf5493b945c48ca22efaf9645f0c69ab8",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "347c9a504e8730744d7e57dc41cfaf6024e2cbaf441f8e524c7e947023a0f2c8",
+      "skillBodies": 0,
+      "source": "https://github.com/Polymarket/polymarket-cli"
+    },
+    {
+      "repo": "PraneshASP/foundry-mcp-server",
+      "branch": "main",
+      "pageObservedHead": "3627242fa6c4dfff65322224bf6cdd29f42a92aa",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "9fadf5055e9f89b820bd07c1bb0f5fdd6e1acab22379c55c6d8e11b2a4440946",
+      "skillBodies": 0,
+      "source": "https://github.com/PraneshASP/foundry-mcp-server"
+    },
+    {
+      "repo": "ProjectOpenSea/opensea-skill",
+      "branch": "main",
+      "pageObservedHead": "42418c8dc305784bd67bb19e39796d37eb3bafc4",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "77313beecdeb0cda98065e8b7f93a0b00f4fbf5a7b8094022026d92a94aa9ff4",
+      "skillBodies": 6,
+      "source": "https://github.com/ProjectOpenSea/opensea-skill"
+    },
+    {
+      "repo": "Uniswap/uniswap-ai",
+      "branch": "main",
+      "pageObservedHead": "1a43e968a39537d5a73aeca20dd1ed9d96f502fa",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "d8ac409af8b308a53013a7980423c24a3b2fd45504514aea9ced84afaa5114ab",
+      "skillBodies": 18,
+      "source": "https://github.com/Uniswap/uniswap-ai"
+    },
+    {
+      "repo": "WalletConnect/agent-sdk",
+      "branch": "main",
+      "pageObservedHead": "e58abc8c9248d6f61fa681e7b91c420621177f19",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "cc11eb1da9879e5732878df98a767514f78acecbfdb3ac55a4657e6fdca9cc55",
+      "skillBodies": 3,
+      "source": "https://github.com/WalletConnect/agent-sdk"
+    },
+    {
+      "repo": "aave/skills",
+      "branch": "main",
+      "pageObservedHead": "24d1e2f96c83d30e9470d7492fe350284a36d517",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "4d2ed144ac3010e1edf65aa378fa78b442bd03a080513b4f8f658fdc5fadd60f",
+      "skillBodies": 5,
+      "source": "https://github.com/aave/skills"
+    },
+    {
+      "repo": "across-protocol/skills",
+      "branch": "master",
+      "pageObservedHead": "2b0ffd11824e3c97682ddb491c4ad141c4e0f5d0",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "6edba14670f42a9287a148ef80b761eaf8664cc00629a3ff5627006be65532cc",
+      "skillBodies": 8,
+      "source": "https://github.com/across-protocol/skills"
+    },
+    {
+      "repo": "aeonfun/aeon",
+      "branch": "main",
+      "pageObservedHead": "c0cb7c47a262c767ea1579c437139bbc026df056",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "9fee1a1a2fafdf907e1389f7d91225dce7448d605fd1d54d2058afe8d0dbebcb",
+      "skillBodies": 110,
+      "source": "https://github.com/aeonfun/aeon"
+    },
+    {
+      "repo": "bitrefill/agents",
+      "branch": "main",
+      "pageObservedHead": "faa3d31a954fdb96bfd52e74dba8094a57d00d64",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "32c0581f4b8f268758a32a21cf2c6e33f30f74a6c738962898fcae52d215050c",
+      "skillBodies": 1,
+      "source": "https://github.com/bitrefill/agents"
+    },
+    {
+      "repo": "blockscout/mcp-server",
+      "branch": "main",
+      "pageObservedHead": "095ef2c03f1aa3325da0baa41c8bf29aa1bbb6e6",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "feee99a5e8bec719bc0af667ae1b96bf1ac08c73cb5ab0bbf840d9064ce50129",
+      "skillBodies": 18,
+      "source": "https://github.com/blockscout/mcp-server"
+    },
+    {
+      "repo": "covalenthq/goldrush-agent-skills",
+      "branch": "main",
+      "pageObservedHead": "f5ead024b00bf58b20fc2a01ab269bb434fc66c1",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "efa595e3a77341f8feee9a51674e0c008d01ba40616816d6770d12a527604cf1",
+      "skillBodies": 4,
+      "source": "https://github.com/covalenthq/goldrush-agent-skills"
+    },
+    {
+      "repo": "duneanalytics/skills",
+      "branch": "main",
+      "pageObservedHead": "cf5c7fae42b03ed653bd49ae44d775f5c803ce72",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "0414e66a34478209065d617315468d17eaaba805b65e63732b5b0a1a83f52a4a",
+      "skillBodies": 1,
+      "source": "https://github.com/duneanalytics/skills"
+    },
+    {
+      "repo": "gskril/ethereum-mcp",
+      "branch": "main",
+      "pageObservedHead": "f7d0d6b4caaf49387a2607f8264add735544a130",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "d413fe4779c460c35ed58296a80941506cf634dc430c9fb063b9034679c10ffa",
+      "skillBodies": 0,
+      "source": "https://github.com/gskril/ethereum-mcp"
+    },
+    {
+      "repo": "herd-labs/herd-cli",
+      "branch": "main",
+      "pageObservedHead": "8785e8ece8d1125b67d5c144f4a7546af51ba9ec",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "f2e730f086f77a9a35f71a37cd84edb2d10b12ced2a9d9a788aa7c8947a06849",
+      "skillBodies": 0,
+      "source": "https://github.com/herd-labs/herd-cli"
+    },
+    {
+      "repo": "hypurrclaw/hyperliquid-cli",
+      "branch": "main",
+      "pageObservedHead": "5d950fff8b8c1fcd9792132614fec103476f666f",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "409ebfc4d92de1d44df7b8188768f77d07cbba1e8c6b2c3499815a23ad003669",
+      "skillBodies": 1,
+      "source": "https://github.com/hypurrclaw/hyperliquid-cli"
+    },
+    {
+      "repo": "morpho-org/morpho-skills",
+      "branch": "main",
+      "pageObservedHead": "bfd08b2f13def64ccf14013225fe8205c83747be",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "ef8f925a8203ef33f12e0a97040a7d2b934fb65540c46ea50046293b4dbc5f88",
+      "skillBodies": 2,
+      "source": "https://github.com/morpho-org/morpho-skills"
+    },
+    {
+      "repo": "pashov/skills",
+      "branch": "main",
+      "pageObservedHead": "92b0ea6786e6c210bc9a839e4813d50876c1c550",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "d60e89092face0ad50a7d62ea9021d579865f6f1afd9137eea117362031342b4",
+      "skillBodies": 5,
+      "source": "https://github.com/pashov/skills"
+    },
+    {
+      "repo": "pendle-finance/pendle-ai",
+      "branch": "main",
+      "pageObservedHead": "bac6d3c1e0f202982324459a011b37bc5246a25f",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "bf9e6e2513fa2a439478e6bd1451de5027e3013af5e51e2bae50458990d6148f",
+      "skillBodies": 7,
+      "source": "https://github.com/pendle-finance/pendle-ai"
+    },
+    {
+      "repo": "picsoritdidnthappen/poidh-app",
+      "branch": "prod",
+      "pageObservedHead": null,
+      "observedOn": "2026-10-08",
+      "archiveSha256": "29b3348cec6490be5e1922e54ca149e11125a0d5066dc6725421babee7153e96",
+      "skillBodies": 1,
+      "source": "https://github.com/picsoritdidnthappen/poidh-app"
+    },
+    {
+      "repo": "quillai-network/quillshield_skills",
+      "branch": "main",
+      "pageObservedHead": "8bdd3c058704cd855ce29b8e2385708b59152606",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "608ebe8f459170ad007d8d9d95f79420b9ded91c0c2bd71722d2f558ca18b46d",
+      "skillBodies": 11,
+      "source": "https://github.com/quillai-network/quillshield_skills"
+    },
+    {
+      "repo": "sablier-labs/sablier-skills",
+      "branch": "main",
+      "pageObservedHead": "68fb1b6f8f4ca09e3d0730da77fb5188d3509cc9",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "453e0aeaaddc1b41ea7dfc77f65fe770c6365e7fac066a01833dbf520a8966b0",
+      "skillBodies": 8,
+      "source": "https://github.com/sablier-labs/sablier-skills"
+    },
+    {
+      "repo": "safe-global/safe-cli",
+      "branch": "main",
+      "pageObservedHead": "bf13e64696c00dfffde4f2b99260c06f19354b0c",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "769309cd5a91eda2cc096f622bfcfec3dd540279f30019ede54ddfb4542329a2",
+      "skillBodies": 0,
+      "source": "https://github.com/safe-global/safe-cli"
+    },
+    {
+      "repo": "superfluid-org/skills",
+      "branch": "main",
+      "pageObservedHead": "e481f8a741b4810275f2d4908e0ca9bbdfe5a1b1",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "3d75a25563da82db6a17ffd559729f861ce8718ea418a89b82b557bb06978ae3",
+      "skillBodies": 1,
+      "source": "https://github.com/superfluid-org/skills"
+    },
+    {
+      "repo": "thesmithdao/cultos",
+      "branch": "main",
+      "pageObservedHead": "70cf687c2d088c4e9a3d100bb51bff13c672a844",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "c5d416d1e34b16946e830cda45dc54080d8fe2e0e5e4b0c818adab38ac02b605",
+      "skillBodies": 0,
+      "source": "https://github.com/thesmithdao/cultos"
+    },
+    {
+      "repo": "trailofbits/skills",
+      "branch": "main",
+      "pageObservedHead": "82fe8226252622fa807643bdca1710901198553a",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "bf752881f066f646cbe7fed07896b2efb8d817afc9f4ab0327df89ba8d00b786",
+      "skillBodies": 92,
+      "source": "https://github.com/trailofbits/skills"
+    },
+    {
+      "repo": "trustless-ai/agent-sdk",
+      "branch": "main",
+      "pageObservedHead": "e41b117893fb56bc869922de378daf91aad63def",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "3a5ebfa122f1b5a3b1fa2fb6fd79920d6deac5a024cce23a50285caf83cdaecd",
+      "skillBodies": 3,
+      "source": "https://github.com/trustless-ai/agent-sdk"
+    },
+    {
+      "repo": "trustless-ai/eip7702-rescue",
+      "branch": "main",
+      "pageObservedHead": "31133de1ca5428947580f53a486d97aae461e33e",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "7b3a2ad6a5ad3a4eb660fd0b2ff62203673089617a92260fde59e69338b80c1c",
+      "skillBodies": 0,
+      "source": "https://github.com/trustless-ai/eip7702-rescue"
+    },
+    {
+      "repo": "trustless-ai/recompute-kit",
+      "branch": "main",
+      "pageObservedHead": "560455688a32a0d49cdbded021ed565f83fe751c",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "720546f77fc5ed3f1ddef141d2d5d9065a95cd53a4bffbccda00ec11891fdc50",
+      "skillBodies": 0,
+      "source": "https://github.com/trustless-ai/recompute-kit"
+    },
+    {
+      "repo": "veildotcash/veil-mcp",
+      "branch": "main",
+      "pageObservedHead": "be6daaad82fd5e424eb0aefef499438f0d8bc69c",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "b9e844456381d0a1bc318a7b0c25bd0dacc17ac048852b02251929db50dc5519",
+      "skillBodies": 1,
+      "source": "https://github.com/veildotcash/veil-mcp"
+    },
+    {
+      "repo": "velodrome-finance/sugar-sdk",
+      "branch": "main",
+      "pageObservedHead": "e8f7c6a8c069aa23376837fb4eafc53b1377bfdd",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "5e33fc04d38f4324fc41bbea038220c28e8ed843479aae64ee9108b9315fe2d7",
+      "skillBodies": 1,
+      "source": "https://github.com/velodrome-finance/sugar-sdk"
+    },
+    {
+      "repo": "veniceai/venice-mcp-server",
+      "branch": "main",
+      "pageObservedHead": "a1aa5e566e4274fa928664e3028aea2a057359a4",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "8afebec6862a6ee6fce600f890844eff4ebd85aed67bfe92d145b6e1f19a3c6c",
+      "skillBodies": 0,
+      "source": "https://github.com/veniceai/venice-mcp-server"
+    },
+    {
+      "repo": "whetstoneresearch/doppler-skills",
+      "branch": "main",
+      "pageObservedHead": "4f654fea1f8966249480b256d682337cdd952e02",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "18c2cbff1636cace44427f32cb2ddb9633a29755bf23c46519ebb23891ed670f",
+      "skillBodies": 22,
+      "source": "https://github.com/whetstoneresearch/doppler-skills"
+    },
+    {
+      "repo": "yoprotocol/yo-protocol-skills",
+      "branch": "main",
+      "pageObservedHead": "85ca86ba6f1e897b87386540895633537cd0567a",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "a8a5fc7f64acfa8705f4f769b83faa170aff36f2eec3f8e48f99bdbda4dcb962",
+      "skillBodies": 7,
+      "source": "https://github.com/yoprotocol/yo-protocol-skills"
+    },
+    {
+      "repo": "z80dev/cryo-mcp",
+      "branch": "main",
+      "pageObservedHead": "5c831d9af138d73d8345d2c994536fb4ce22c184",
+      "observedOn": "2026-10-08",
+      "archiveSha256": "17e93d243775b6d900dce776d0cdac0598e1beebed0ff70632bb252f45ced247",
+      "skillBodies": 0,
+      "source": "https://github.com/z80dev/cryo-mcp"
+    }
+  ]
+}

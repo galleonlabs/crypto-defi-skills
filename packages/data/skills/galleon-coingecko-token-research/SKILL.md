@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions; optional offline helper uses Bun. Live recipes require an existing official provider or public HTTPS access.
 metadata:
   author: Galleon Labs
-  version: "0.5.0"
+  version: "0.6.0"
 ---
 
 # CoinGecko token research

@@ -4,6 +4,11 @@
 
 # Changelog
 
+## 0.4.0 - 2026-10-08
+
+- Document the Coinbase Wallet MCP migration and native wallet/session authority boundaries.
+- Flag WalletConnect implicit bridging and Alchemy state-changing contract calls.
+
 ## 0.2.3 - 2026-09-09
 
 Add task-specific intake, configurable provider and user preferences, calculated successful examples and recovery paths. Preserve standalone installation and existing authorization boundaries.

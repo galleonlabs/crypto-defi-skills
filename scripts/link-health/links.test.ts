@@ -14,6 +14,7 @@ import {
 } from "./links.ts";
 
 const mcpAlive = [
+  "https://wallet-mcp.coinbase.com",
   "https://api-v2.pendle.finance/core/mcp",
   "https://mcp.api.coingecko.com/mcp",
   "https://mcp.jup.ag",
@@ -33,6 +34,9 @@ const mcpAlive = [
 ];
 
 const apiAlive = [
+  "https://li.quest/v1",
+  "https://trade-api.gateway.uniswap.org/v1/quote",
+  "https://api-v2.pendle.finance/core",
   "https://api.hyperliquid.xyz",
   "https://liquidity.api.uniswap.org",
   "https://api.coingecko.com/api/v3/simple/price",
@@ -79,6 +83,10 @@ describe("link classification", () => {
 });
 
 describe("probe evaluation", () => {
+  test("an inaccessible social credit remains unverified rather than declared dead", () => {
+    expect(classifyHref("https://x.com/AgentChud/status/2096259218835718273")).toBe("social");
+    expect(evaluateProbe("social", { statusCode: 404 }).status).toBe("unverifiable");
+  });
   test("only documentation 404/410 is broken", () => {
     expect(evaluateProbe("documentation", { statusCode: 404 }).status).toBe("broken");
     expect(evaluateProbe("documentation", { statusCode: 410 }).status).toBe("broken");
@@ -162,4 +170,3 @@ describe("MCP probing", () => {
     expect(calls[0]?.method ?? "GET").toBe("GET");
   });
 });
-

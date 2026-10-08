@@ -1,0 +1,16 @@
+{
+  "name": "galleon-defi-prediction-skills",
+  "version": "0.1.0",
+  "description": "Research prediction market order books and reconcile resolution without signing or trading.",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/prediction#readme",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "polymarket"
+  ],
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills"
+}

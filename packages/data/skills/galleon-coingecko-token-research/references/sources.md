@@ -6,4 +6,4 @@ Reviewed 2026-09-27; REST API v3. Documentation review does not prove an authent
 - [Demo token price](https://docs.coingecko.com/demo/reference/simple-token-price): address-keyed prices and requested timestamps.
 - [Pro token price](https://docs.coingecko.com/reference/simple-token-price): separate host and credential header.
 - [Top pools](https://docs.coingecko.com/reference/top-pools-contract-address): onchain network and pool evidence.
-- [API changelog](https://docs.coingecko.com/changelog/10122018): check schema changes before relying on nullable rank or ticker trust fields.
+- [API changelog](https://docs.coingecko.com/changelog): check schema changes before relying on nullable rank or ticker trust fields.

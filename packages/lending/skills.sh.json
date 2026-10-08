@@ -9,7 +9,8 @@
         "galleon-defi-lending",
         "galleon-aave-position",
         "galleon-morpho-market",
-        "galleon-compound-borrow"
+        "galleon-compound-borrow",
+        "galleon-aave-v4"
       ]
     }
   ]

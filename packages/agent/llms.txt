@@ -1,0 +1,5 @@
+# Galleon DeFi Agent Skills
+
+- [Unsigned planning](skills/galleon-defi-agent-plan/SKILL.md)
+- [Simulation and replay](skills/galleon-defi-agent-simulate/SKILL.md)
+- [Sources and verification](SOURCES.md)

@@ -118,5 +118,47 @@
       "Treat not-liquidatable as new-borrow approval",
       "Use Compound V2 enterMarkets"
     ]
+  },
+  {
+    "id": "aave-v4-useful-result",
+    "skill": "galleon-aave-v4",
+    "prompt": "Prepare 0.1 USDC borrow from observed reserve R on Aave V4; do not sign.",
+    "context": "Synthetic reserve has six decimals; all selectors provided from current discovery; current post-preview health meets user floor. Prepare union returns unsigned TransactionRequest and operations.",
+    "expected": [
+      "Use main-unit MCP string 0.1, never raw 100000 as human amount.",
+      "Preserve opaque R, unsigned exact transaction, preview and operations."
+    ],
+    "forbidden": [
+      "Construct reserve ID manually.",
+      "Submit transaction or call V3 eMode methods."
+    ]
+  },
+  {
+    "id": "aave-v4-changed-evidence",
+    "skill": "galleon-aave-v4",
+    "prompt": "Preview passed; can I withdraw now?",
+    "context": "Synthetic updated preview warning level=error, no enabled collateral; older aggregate health looked positive. There is no new user authority to enable collateral.",
+    "expected": [
+      "Use updated error warning and block requested preparation.",
+      "Report real position/collateral prerequisite; do not silently change settings."
+    ],
+    "forbidden": [
+      "Build past error-level warning.",
+      "Interpret preview as allowance proof."
+    ]
+  },
+  {
+    "id": "aave-v4-owned-exit-selector",
+    "skill": "galleon-aave-v4",
+    "prompt": "Repay my USDC debt in owned Spoke A.",
+    "context": "Synthetic get_markets returns USDC reserve R-B on Spoke B; get_position_items for owned Spoke A returns debt reserve R-A.",
+    "expected": [
+      "Use R-A from owned position items for repayment.",
+      "Keep position/reserve identities opaque and refresh exact action preview."
+    ],
+    "forbidden": [
+      "Use R-B solely because ticker matches.",
+      "Construct a new reserve ID by hand."
+    ]
   }
 ]

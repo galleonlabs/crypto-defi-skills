@@ -81,6 +81,16 @@
       "name": "galleon-defi-strategy-skills",
       "source": "./packages/strategy",
       "description": "Reproducible daily strategy research with costs, cash flows and benchmark evidence."
+    },
+    {
+      "name": "galleon-defi-agent-skills",
+      "source": "./packages/agent",
+      "description": "Official unsigned action plans and stateful transaction simulation."
+    },
+    {
+      "name": "galleon-defi-prediction-skills",
+      "source": "./packages/prediction",
+      "description": "Polymarket market research and versioned resolution reconciliation."
     }
   ]
 }

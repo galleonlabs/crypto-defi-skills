@@ -1,0 +1,5 @@
+# Galleon DeFi Prediction Skills
+
+- [Research market identity, rules and bounded order-book depth](skills/galleon-prediction-market-research/SKILL.md)
+- [Reconcile oracle resolution, payout and wallet balance evidence](skills/galleon-prediction-market-resolution/SKILL.md)
+- [Sources](SOURCES.md)

@@ -11,3 +11,9 @@ These are independently authored operational procedures. Upstream code and docum
 - `galleon-compound-borrow`: source URLs, read recipes and synthetic evidence in `skills/galleon-compound-borrow/references/recipe.md`.
 
 Docs were researched; no real lending, redemption or staking transactions were executed. Deployment addresses, risk parameters, live balances and API versions must be read at use time.
+
+## Ethereum agent tool review, 2026-10-08
+
+- [galleon-aave-v4 sources](skills/galleon-aave-v4/references/operations.md): version-specific official procedures, exact amount scales, rights, prerequisites and recovery.
+
+Documentation was researched and synthetic cases were added; no financial operation or connected-provider simulation was performed.

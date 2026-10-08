@@ -21,6 +21,10 @@ const GENERIC_KEYWORDS = new Set([
   "rpc",
   "routing",
   "security",
+  "simulation",
+  "unsigned-transactions",
+  "playbooks",
+  "prediction-markets",
   "staking",
   "tokenized-assets",
   "trading",
@@ -29,6 +33,9 @@ const GENERIC_KEYWORDS = new Set([
 ]);
 
 const PROTOCOL_TERMS: { keyword: string; pattern: RegExp }[] = [
+  { keyword: "polymarket", pattern: /\bPolymarket\b/i },
+  { keyword: "nethermind", pattern: /\bNethermind\b/i },
+  { keyword: "portals", pattern: /\bPortals\b/i },
   { keyword: "1inch", pattern: /\b1inch\b/i },
   { keyword: "aave", pattern: /\baave\b/i },
   { keyword: "across", pattern: /\bAcross\b/ },

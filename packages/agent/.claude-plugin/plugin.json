@@ -1,0 +1,21 @@
+{
+  "name": "galleon-defi-agent-skills",
+  "version": "0.1.0",
+  "description": "Construct unsigned DeFi plans and verify exact transaction simulation evidence.",
+  "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/agent#readme",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "defi",
+    "unsigned-transactions",
+    "simulation",
+    "tenderly",
+    "alchemy",
+    "nethermind",
+    "playbooks"
+  ],
+  "author": {
+    "name": "Galleon Labs"
+  },
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills"
+}

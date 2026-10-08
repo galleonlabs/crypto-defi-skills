@@ -28,3 +28,13 @@ EVM chain IDs, CCTP domain IDs, protocol market IDs and Solana cluster identitie
 For [Solana transactions](https://solana.com/docs/core/transactions), inspect fee payer, signer set, instructions and account permissions. Resolve address lookup tables before reviewing a versioned transaction; check recent blockhash/expiry or durable nonce semantics. Preserve the provider's block/slot commitment. Refresh expired transactions through the official builder and re-review economic terms before signing. A returned signature is not a successful transaction; reconcile error status and resulting accounts. Do not transplant EVM nonce or allowance assumptions into Solana.
 
 For multi-step EVM operations, reconcile each approval receipt before rebuilding dependent calls. Keep quoted state/block, gas payer, spender, token limits, typed-data domain and deadline. A prepared plan is not immutable if a quote, route, state or recipient changes.
+
+## 2026-10-08 platform update
+
+[Base migration notice](https://docs.base.org/sdks/migrated-products) redirects former agent documentation to Coinbase Wallet MCP. Use the current [wallet models](wallets.md), preserving account/session distinctions and existing authority. Do not rewrite private profiles or reconnect an account as a documentation maintenance step.
+
+[Alchemy CLI](https://www.alchemy.com/docs/alchemy-cli) includes data, simulation, wallets and administration. `alchemy evm contract call` is state-changing; generic `evm rpc` can invoke write methods. Classify the exact operation from its schema and method, not its familiar verb or JSON output flag. Paid request estimation and an automatically paying x402 request are separate capabilities.
+
+[Tenderly MCP](https://docs.tenderly.co/ai-tools/tools) needs explicit active project/network/virtual context. Entitlement or quota failures are not cured by repeatedly reauthenticating. Traces/events have bounded output; use documented detail navigation or report coverage gaps. Simulation may inject state or bypass checks, so successful output does not prove a real wallet has funds or signing permission.
+
+For unsigned intent construction or reproducible simulation, use installed `galleon-defi-agent-plan`/`galleon-defi-agent-simulate` when available. Infra remains independently usable for connection and permission readiness; the separate procedures are optional.

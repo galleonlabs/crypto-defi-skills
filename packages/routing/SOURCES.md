@@ -8,3 +8,7 @@ These are independently authored operational procedures. Upstream code and docum
 
 - [uniswap-swap primary sources](skills/uniswap-swap/references/recipes.md)
 - [lifi-cross-chain primary sources](skills/lifi-cross-chain/references/recipes.md)
+
+## Ethereum agent tool review, 2026-10-08
+
+[Agent route lifecycles](skills/galleon-defi-routing/references/agent-lifecycles.md) records Across amounts/embedded-action recovery, Socket deposit-address boundaries and Aave signed-order stages from current primary sources. No financial actions, paid quotes or signing were performed for this update.

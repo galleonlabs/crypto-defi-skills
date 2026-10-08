@@ -5,3 +5,6 @@ Plan stablecoin payments, x402 purchases and token streams.
 - [Workflow](skills/galleon-defi-payments/SKILL.md)
 - [Providers](skills/galleon-defi-payments/references/providers.md)
 - [Sources](SOURCES.md)
+
+- [galleon-sablier-streams](skills/galleon-sablier-streams/SKILL.md)
+- [galleon-superfluid-streams](skills/galleon-superfluid-streams/SKILL.md)

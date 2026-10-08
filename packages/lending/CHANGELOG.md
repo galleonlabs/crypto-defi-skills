@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0 - 2026-10-08
+
+- Add a dedicated Aave V4 skill with owned-position reserve selectors and operation-aware confirmation.
+- Clarify V3 MCP main-unit inputs, preview/build identity and approval evidence.
+
 ## 0.2.0 - 2026-09-27
 
 Add focused protocol procedures: galleon-aave-position, galleon-morpho-market, galleon-compound-borrow. Include exact read recipes, worked decisions, protocol failure recovery, dated primary sources and behavioral fixtures. Preserve the original portable comparison skill and add protocol routing.

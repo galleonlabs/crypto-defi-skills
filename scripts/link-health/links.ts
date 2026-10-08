@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import { lstat, readdir, readFile } from "node:fs/promises";
 import { dirname, relative, resolve } from "node:path";
 
-export type LinkKind = "documentation" | "mcp" | "api" | "install-spec";
+export type LinkKind = "documentation" | "mcp" | "api" | "social" | "install-spec";
 export type LinkStatus = "ok" | "broken" | "unverifiable";
 export type LinkSurface = "external" | "relative";
 
@@ -47,16 +47,21 @@ export function classifyHref(href: string): LinkKind {
   }
   const host = url.hostname.toLowerCase();
   const path = url.pathname.toLowerCase();
+  if (host === "x.com" || host === "twitter.com") return "social";
+  if (host === "wallet-mcp.coinbase.com") return "mcp";
   if (host.startsWith("mcp.") || host.includes(".mcp.") || /(?:^|\/)mcp(?:\/|$)/.test(path)) return "mcp";
+  if (host === "api-v2.pendle.finance" && path === "/core/docs") return "documentation";
   if (isDocsHost(host)) return "documentation";
   if (
     /\{[^}]+\}/.test(value) ||
     host.startsWith("api.") ||
+    /^api-v\d+\./.test(host) ||
     host.includes(".api.") ||
     host.startsWith("pro-api.") ||
     host.startsWith("pro-openapi.") ||
     host === "kong.yearn.fi" ||
     host === "agents.coinbase.com"
+    || host === "li.quest" || host === "trade-api.gateway.uniswap.org"
   ) {
     return "api";
   }
@@ -82,6 +87,9 @@ export function evaluateProbe(kind: LinkKind, probe: ProbeResult): { status: Lin
     return { status: "unverifiable", reason: probe.error === "timeout" ? "timeout" : probe.message };
   }
   const code = probe.statusCode;
+  if (kind === "social") return code >= 200 && code < 400
+    ? { status: "ok", reason: `HTTP ${code}` }
+    : { status: "unverifiable", reason: `HTTP ${code}; social post access and existence are unverified` };
   if (kind === "documentation") {
     if (code >= 200 && code < 400) return { status: "ok", reason: `HTTP ${code}` };
     if (code === 404 || code === 410) return { status: "broken", reason: `HTTP ${code}` };

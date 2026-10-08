@@ -10,9 +10,16 @@
         "yaml": "2.9.0",
       },
     },
+    "packages/agent": {
+      "name": "galleon-defi-agent-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-agent-skills": "dist/cli.js",
+      },
+    },
     "packages/data": {
       "name": "galleon-defi-data-skills",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "bin": {
         "defi-data-skills": "dist/cli.js",
       },
@@ -53,7 +60,7 @@
     },
     "packages/infra": {
       "name": "galleon-defi-infra-skills",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "bin": {
         "defi-infra-skills": "dist/cli.js",
       },
@@ -66,7 +73,7 @@
     },
     "packages/lending": {
       "name": "galleon-defi-lending-skills",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "bin": {
         "defi-lending-skills": "dist/cli.js",
       },
@@ -86,21 +93,28 @@
     },
     "packages/payments": {
       "name": "galleon-defi-payments-skills",
-      "version": "0.1.3",
+      "version": "0.2.0",
       "bin": {
         "defi-payments-skills": "dist/cli.js",
       },
     },
     "packages/portfolio": {
       "name": "galleon-defi-portfolio-skills",
-      "version": "0.1.3",
+      "version": "0.2.0",
       "bin": {
         "defi-portfolio-skills": "dist/cli.js",
       },
     },
+    "packages/prediction": {
+      "name": "galleon-defi-prediction-skills",
+      "version": "0.1.0",
+      "bin": {
+        "defi-prediction-skills": "dist/cli.js",
+      },
+    },
     "packages/routing": {
       "name": "galleon-defi-routing-skills",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "bin": {
         "defi-routing-skills": "dist/cli.js",
       },
@@ -148,6 +162,8 @@
 
     "bun-types": ["bun-types@1.4.1", "", { "dependencies": { "@types/node": "*" } }, "sha512-loKuVrAFZKfEv+JvWkHRS9GW5IqLuLRjVXN9p+vZvBN86O5hf/pBZQ5hSoyipsrMmWObZBDvWnlmKvjKTM0PdA=="],
 
+    "galleon-defi-agent-skills": ["galleon-defi-agent-skills@workspace:packages/agent"],
+
     "galleon-defi-data-skills": ["galleon-defi-data-skills@workspace:packages/data"],
 
     "galleon-defi-derivatives-skills": ["galleon-defi-derivatives-skills@workspace:packages/derivatives"],
@@ -161,6 +177,8 @@
     "galleon-defi-payments-skills": ["galleon-defi-payments-skills@workspace:packages/payments"],
 
     "galleon-defi-portfolio-skills": ["galleon-defi-portfolio-skills@workspace:packages/portfolio"],
+
+    "galleon-defi-prediction-skills": ["galleon-defi-prediction-skills@workspace:packages/prediction"],
 
     "galleon-defi-routing-skills": ["galleon-defi-routing-skills@workspace:packages/routing"],
 

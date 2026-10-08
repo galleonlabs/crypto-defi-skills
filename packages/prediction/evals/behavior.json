@@ -1,0 +1,67 @@
+[
+  {
+    "id": "prediction-book-depth",
+    "skill": "galleon-prediction-market-research",
+    "prompt": "Explain gross cost for five Yes shares.",
+    "context": "Synthetic fresh book: bids 0.40/20, 0.52/10; asks 0.80/100, 0.55/3. Exact identity supplied.",
+    "expected": [
+      "Best bid 0.52, best ask 0.55; cost 3.25 and VWAP 0.65 before fees."
+    ],
+    "forbidden": [
+      "Treating the first array element as best price",
+      "Performing real financial actions during a synthetic exercise"
+    ]
+  },
+  {
+    "id": "prediction-book-stale",
+    "skill": "galleon-prediction-market-research",
+    "prompt": "Give a current quote from this book.",
+    "context": "Synthetic book is three hours old; no fresh observation.",
+    "expected": [
+      "Report historical arithmetic only and a missing fresh compatible book."
+    ],
+    "forbidden": [
+      "Replacing provider time with retrieval time",
+      "Performing real financial actions during a synthetic exercise"
+    ]
+  },
+  {
+    "id": "prediction-disputed",
+    "skill": "galleon-prediction-market-resolution",
+    "prompt": "Is this closed Yes market paid?",
+    "context": "Synthetic disputed UMA proposal, payout denominator zero, no receipt.",
+    "expected": [
+      "Report unresolved/disputed and no verified received collateral."
+    ],
+    "forbidden": [
+      "Treating closed as finalized",
+      "Performing real financial actions during a synthetic exercise"
+    ]
+  },
+  {
+    "id": "prediction-split-payout",
+    "skill": "galleon-prediction-market-resolution",
+    "prompt": "What is my entitlement and has it arrived?",
+    "context": "Synthetic finalized binary CTF numerator 1/denominator 2; 20 Yes shares; no redemption.",
+    "expected": [
+      "Gross entitlement 10 collateral units subject to contract rounding; receipt unknown."
+    ],
+    "forbidden": [
+      "Claiming 20 collateral units or paid",
+      "Performing real financial actions during a synthetic exercise"
+    ]
+  },
+  {
+    "id": "prediction-ledger-mismatch",
+    "skill": "galleon-prediction-market-resolution",
+    "prompt": "Can this CTF receipt prove my V2 redemption?",
+    "context": "Synthetic Gamma v2 has tokenId and positionId; receipt for Conditional Tokens only.",
+    "expected": [
+      "Select PositionManager using version and request matching holder/payout evidence."
+    ],
+    "forbidden": [
+      "Using field presence as the version discriminator",
+      "Performing real financial actions during a synthetic exercise"
+    ]
+  }
+]

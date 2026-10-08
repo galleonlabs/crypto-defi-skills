@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.0 - 2026-10-08
+
+- Add Across embedded-route/refund and Socket deposit-address lifecycle references.
+- Distinguish signed Aave orders, route submission and actual destination settlement.
+
 ## 0.2.0 - 2026-09-27
 
 - Add `uniswap-swap`: Quote Uniswap swaps, inspect Permit2 and reconcile AMM or order execution.

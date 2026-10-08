@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.0 - 2026-10-08
+
+- Add official onchain data references with access, timestamp, quota and coverage boundaries.
+- Repair CoinGecko changelog guidance for removed fields and current paid-plan limits.
+
 ## 0.5.0 - 2026-10-02
 
 - Add a standalone market snapshot workflow with fixed public CoinGecko/DefiLlama reads, bounded IDs, provider timestamps, raw response hashes and explicit partial failures.
