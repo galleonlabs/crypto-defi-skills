@@ -2,7 +2,7 @@
 
 Help make DeFi workflows easier to use, verify and maintain. Documentation fixes, clearer examples, reproducible bugs and new provider coverage are all welcome.
 
-[Browse the packs](README.md#independent-packs) · [Report an issue](https://github.com/galleonlabs/crypto-defi-skills/issues/new) · [Release a pack](RELEASING.md)
+[Find a workflow](docs/AGENT-INDEX.md#skill-routing) · [Browse the packs](README.md#independent-packs) · [Report an issue](https://github.com/galleonlabs/crypto-defi-skills/issues/new) · [Release a pack](RELEASING.md)
 
 ## Choose a starting point
 
@@ -68,7 +68,7 @@ done
 uv run --frozen --project "$validator_dir/agentskills/skills-ref" pytest "$validator_dir/agentskills/skills-ref/tests" -q
 ```
 
-`skills-ref validate` takes one individual skill directory, not a pack parent. All 41 source skill directories and the same resources in clean installations of all 14 released packs passed this validator at the recorded revision; its own 40 tests passed. These checks establish format and installation integrity, not provider access or model performance.
+`skills-ref validate` takes one individual skill directory, not a pack parent. The recorded revision's format checks, clean installed resources and validator tests passed. Rerun against the current checkout and report the actual pack/skill counts; the collection now contains 17 packs, 48 active skills and 2 retired LP notices. These checks establish format and installation integrity at the tested revision, not provider access or model performance.
 
 ### Public provider readiness and network constraints
 
@@ -88,6 +88,8 @@ The separate research plugin release and ZIP installation entrypoint are documen
 
 ## Keep skills portable
 
+The [agent index](docs/AGENT-INDEX.md) is the complete routing map. Select a distinct user task, preserve neighbouring skill boundaries and supply a first prompt with a verifiable result. The README serves readers; the procedure and its resources supply the actual contract.
+
 Every pack carries `evals/routing.json`: at least five prompts per skill naming the expected skill and the neighbouring skills that must not load. Add cases when you add a skill or move a boundary. `bun run check` validates their structure and coverage only; a passing dataset is not a model score.
 
 Each skill must work when installed on its own. Keep required references and scripts inside its directory; use links to sibling skills only as optional next steps. Put the main decision loop in `SKILL.md`, with detailed mechanics in `references/` and repeatable diagnostics in `scripts/`.
@@ -105,7 +107,7 @@ Create `packages/<name>` with:
 - Check and build scripts, plus tests appropriate to any executable behavior.
 - Claude and Codex plugin manifests.
 
-Register the pack in [the Claude marketplace](.claude-plugin/marketplace.json) and [skill discovery groupings](skills.sh.json). Workspace checks and discovery find package directories automatically. Add it to the root README's pack and workflow tables. Do not introduce a required all-packs dependency.
+Register the pack in [the Claude marketplace](.claude-plugin/marketplace.json) and [skill discovery groupings](skills.sh.json). Workspace checks and discovery find package directories automatically. Update the root README's exact release table, [agent routing index](docs/AGENT-INDEX.md), `llms.txt` and the [getting-started task guide](docs/GETTING-STARTED.md#find-your-next-task). Keep counts and replacement names accurate. Do not introduce a required all-packs dependency.
 
 ## Open a pull request
 

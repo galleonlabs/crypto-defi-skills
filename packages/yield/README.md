@@ -1,15 +1,33 @@
 # Galleon DeFi Yield Skills
 
-[![npm](https://img.shields.io/npm/v/galleon-defi-yield-skills)](https://www.npmjs.com/package/galleon-defi-yield-skills)
+[![npm](https://img.shields.io/npm/v/galleon-defi-yield-skills?color=0f766e)](https://www.npmjs.com/package/galleon-defi-yield-skills)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-Evaluate vaults and yield tokens, including liquidity and maturity. Protocol-specific procedures, independently installable in Hermes, Codex, Claude Code and other Agent Skills clients.
+**Understand what the yield pays and how you exit.**
+
+Inspect vault share accounting, Pendle maturity terms, underlying assets and actual withdrawal constraints before comparing returns.
+
+[Install one skill](#install-one-skill) · [Try a first task](#try-a-first-task) · [Sources](SOURCES.md) · [All packs](https://github.com/galleonlabs/crypto-defi-skills#independent-packs)
+
+## Install one skill
+
+```bash
+npx skills add galleonlabs/crypto-defi-skills --skill galleon-vault-exit
+```
+
+Choose the receiving agent in the installer. Keep the skill's references and scripts with its `SKILL.md`. Each pack works on its own. For a complete native Hermes desk, use [Boomkin](https://github.com/galleonlabs/boomkin).
+
+## Try a first task
+
+> Use galleon-vault-exit to inspect [vault address] on [chain] for [owner]. Compare redeem previews with owner limits, liquidity, rounding and any asynchronous exit steps.
+
+Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
 
 ## Install
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-yield
-npx --package galleon-defi-yield-skills@0.2.0 defi-yield-skills catalog
+npx --package galleon-defi-yield-skills@0.2.1 defi-yield-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-yield/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

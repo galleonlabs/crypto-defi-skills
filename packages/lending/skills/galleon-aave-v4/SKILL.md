@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions for public official Aave MCP or version-compatible AaveKit and read-only EVM tools. No signer included.
 metadata:
   author: Andrew Wilkinson and Galleon Labs
-  version: "0.3.0"
+  version: "0.3.1"
 ---
 
 # Aave V4 positions and execution plans

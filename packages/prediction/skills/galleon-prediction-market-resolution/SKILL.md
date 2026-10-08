@@ -5,7 +5,7 @@ license: MIT
 compatibility: Official public market data and read-only chain/explorer access. No signer or funded wallet required.
 metadata:
   author: Galleon Labs
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Reconcile prediction resolution

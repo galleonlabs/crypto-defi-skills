@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-lending-skills",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Research lending markets, plan borrowing and monitor liquidation exposure.",
   "type": "module",
   "license": "MIT",

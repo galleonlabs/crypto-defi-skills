@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-prediction-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Research prediction market order books and reconcile resolution without signing or trading.",
   "type": "module",
   "license": "MIT",

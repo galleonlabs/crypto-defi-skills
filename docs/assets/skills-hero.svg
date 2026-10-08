@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">Crypto DeFi Skills — give your agent a concrete DeFi job</title><desc id="desc">17 independent skill packs with protocol procedures and verifiable outcomes.</desc>
+<rect width="1200" height="440" rx="12" fill="#111214"/>
+<path d="M64 96h1072M64 350h1072" stroke="#36383c"/>
+<g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+<text x="64" y="64" font-size="27" font-weight="600" letter-spacing="-1" fill="#f6f7f2">galleon / crypto-defi-skills</text>
+<rect x="966" y="39" width="170" height="32" rx="16" fill="#a6efc4"/>
+<text x="1051" y="61" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="1" fill="#111214">GALLEON LABS</text>
+<text x="64" y="155" font-size="19" font-weight="600" letter-spacing="3" fill="#a6efc4">17 INDEPENDENT PACKS</text>
+<text x="64" y="234" font-size="68" font-weight="650" letter-spacing="-3" fill="#f6f7f2">Give your agent</text>
+<text x="64" y="314" font-size="68" font-weight="650" letter-spacing="-3" fill="#a6efc4">a concrete DeFi job.</text>
+<text x="64" y="400" font-size="24" fill="#c5c8c5">48 active skills. Official tools. Open source.</text>
+<text x="1136" y="400" text-anchor="end" font-size="17" font-weight="600" letter-spacing="2" fill="#a6efc4">READ  /  PLAN  /  VERIFY</text>
+</g></svg>

@@ -1,10 +1,33 @@
 # Galleon DeFi Strategy Skills
 
-Test a simple investment rule against a dated daily price series and inspect every modeled trade, cost and drawdown. The same pure JavaScript engine runs in Node or a browser. This is a research tool for daily long-only spot rules.
+[![npm](https://img.shields.io/npm/v/galleon-defi-strategy-skills?color=0f766e)](https://www.npmjs.com/package/galleon-defi-strategy-skills)
+[![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
+
+**Put an investment rule through its paces.**
+
+Run daily spot simulations with explicit costs, next-observation execution, cash-flow-neutral returns and a same-cost buy-and-hold benchmark.
+
+[Install one skill](#install-one-skill) · [Try a first task](#try-a-first-task) · [Sources](SOURCES.md) · [All packs](https://github.com/galleonlabs/crypto-defi-skills#independent-packs)
+
+## Install one skill
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-strategy-backtest
-npx --package galleon-defi-strategy-skills@0.1.0 defi-strategy-skills catalog --json
+```
+
+Choose the receiving agent in the installer. Keep the skill's references and scripts with its `SKILL.md`. Each pack works on its own. For a complete native Hermes desk, use [Boomkin](https://github.com/galleonlabs/boomkin).
+
+## Try a first task
+
+> Use galleon-defi-strategy-backtest to compare a moving-average rule with buy-and-hold on [dated daily dataset]. State fees and slippage, inspect every modeled trade and explain the limits of the result.
+
+Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
+
+## Browse the npm corpus
+
+```bash
+npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-strategy-backtest
+npx --package galleon-defi-strategy-skills@0.1.1 defi-strategy-skills catalog --json
 ```
 
 The [skill](skills/galleon-defi-strategy-backtest/SKILL.md) turns an idea into a supported strategy specification, validates evidence and reports the limitations of the result. It includes a deterministic executable and a clearly labeled synthetic example.

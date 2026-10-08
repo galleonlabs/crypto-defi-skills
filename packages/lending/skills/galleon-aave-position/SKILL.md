@@ -4,7 +4,7 @@ description: "Use when checking an Aave V3 health factor, sizing a borrow, or pl
 license: MIT
 compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

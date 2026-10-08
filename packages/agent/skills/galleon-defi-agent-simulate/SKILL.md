@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions for official Tenderly, Alchemy, Portals Foresight or existing EVM tools. Optional offline record diagnostic uses Bun; no provider client or signer is bundled.
 metadata:
   author: Andrew Wilkinson and Galleon Labs
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # DeFi transaction simulation

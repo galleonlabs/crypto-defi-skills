@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.5 · 2026-10-08
+
+- Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.
+- Align current npm examples and discovery metadata with this release; preserve protocol procedures and standalone package interfaces.
+
 ## 0.3.4 - 2026-09-23
 
 Document dated Hyperliquid account-mode action caps, builder-code limits, nonce rules and asset-ID formulas. Add planning fixtures for action and builder-approval limits. Clarify task continuity and proportionate verification in agent instructions.

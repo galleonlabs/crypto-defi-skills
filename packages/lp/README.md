@@ -1,18 +1,34 @@
 # LP Skills
 
+[![npm](https://img.shields.io/npm/v/galleon-lp-skills?color=0f766e)](https://www.npmjs.com/package/galleon-lp-skills)
+[![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
+
+**Know what your liquidity position holds.**
+
+Inspect Uniswap and Aerodrome positions, ranges, fees, gauge custody and exits. Local helpers make the repeatable arithmetic inspectable.
+
+[Install one skill](#install-one-skill) · [Try a first task](#try-a-first-task) · [Sources](SOURCES.md) · [All packs](https://github.com/galleonlabs/crypto-defi-skills#independent-packs)
+
+## Install one skill
+
+```bash
+npx skills add galleonlabs/crypto-defi-skills --skill uniswap-v3-liquidity
+```
+
+Choose the receiving agent in the installer. Keep the skill's references and scripts with its `SKILL.md`. Each pack works on its own. For a complete native Hermes desk, use [Boomkin](https://github.com/galleonlabs/boomkin).
+
+## Try a first task
+
+> Use uniswap-v3-liquidity to inspect Uniswap V3 position [token ID] on [chain]. Show token composition, tick bounds, range status, fees and the reads needed before changing liquidity.
+
+Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
+
 ## Protocol workflows
 
 - [uniswap-v3-liquidity](skills/uniswap-v3-liquidity/SKILL.md): Manage v3 NFT inventory, usable ticks, fee collection and range changes.
 - [aerodrome-slipstream](skills/aerodrome-slipstream/SKILL.md): Resolve Slipstream gauge custody, emissions, staking and exits.
 
 These independently installable skills include current primary-source recipes, worked outcomes and behavioral fixtures. Read-only helpers perform offline arithmetic; they do not supply wallet authority.
-
-
-[![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/galleon-lp-skills)](https://www.npmjs.com/package/galleon-lp-skills)
-[![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
-
-Portable agent workflows for liquidity analysis, planning, execution and monitoring on Uniswap and Aerodrome. Start with verified read access and progress to a reviewed plan; execution requires your own trusted wallet tools.
 
 ## Install
 
@@ -71,7 +87,7 @@ Re-run the install command to install current names. Update saved prompts/config
 
 `lp-research` and `lp-operate` remain as install-compatible rename notices so marketplace listings and saved `npx skills add ... --skill lp-research` or `--skill lp-operate` commands still resolve. They are not a second analysis or execution workflow. Canonical names stay `lp-analyze` and `lp-execute`.
 
-For reproducible npm use, install `galleon-lp-skills@0.5.0`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
+For reproducible npm use, install `galleon-lp-skills@0.6.1`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
 
 ## CLI
 

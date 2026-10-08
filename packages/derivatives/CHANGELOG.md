@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.5 · 2026-10-08
+
+- Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.
+- Align current npm examples and discovery metadata with this release; preserve protocol procedures and standalone package interfaces.
+
 ## 0.1.4 - 2026-09-10
 
 - Repair Derive references after the official v3 documentation moved to docs.derive.xyz.

@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-yield-skills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Evaluate vaults and yield tokens, including liquidity and maturity.",
   "type": "module",
   "license": "MIT",

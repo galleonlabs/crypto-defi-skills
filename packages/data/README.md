@@ -1,16 +1,33 @@
 # Galleon DeFi Data Skills
 
-[![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/galleon-defi-data-skills)](https://www.npmjs.com/package/galleon-defi-data-skills)
+[![npm](https://img.shields.io/npm/v/galleon-defi-data-skills?color=0f766e)](https://www.npmjs.com/package/galleon-defi-data-skills)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-Four portable skills for connecting official market and DeFi data tools and turning their responses into evidence with known identity, age, units and coverage. It complements the LP, Hyperliquid and infra packs without requiring them.
+**Know what the market data actually says.**
+
+Resolve token identity, compare timestamped market observations and screen yields while keeping missing coverage and source disagreements visible.
+
+[Install one skill](#install-one-skill) · [Try a first task](#try-a-first-task) · [Sources](SOURCES.md) · [All packs](https://github.com/galleonlabs/crypto-defi-skills#independent-packs)
+
+## Install one skill
+
+```bash
+npx skills add galleonlabs/crypto-defi-skills --skill galleon-defillama-yield-screen
+```
+
+Choose the receiving agent in the installer. Keep the skill's references and scripts with its `SKILL.md`. Each pack works on its own. For a complete native Hermes desk, use [Boomkin](https://github.com/galleonlabs/boomkin).
+
+## Try a first task
+
+> Use galleon-defillama-yield-screen to screen Ethereum USDC yields above $10m TVL. Separate base yield from rewards, show source timestamps and explain the exit checks still needed.
+
+Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
 
 ## Install
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-data
-npx --package galleon-defi-data-skills@0.6.0 defi-data-skills catalog
+npx --package galleon-defi-data-skills@0.6.1 defi-data-skills catalog
 ```
 
 The `galleon-defi-data` name avoids colliding with DefiLlama's own `defi-data` skill. Do not overwrite upstream skills when adding its optional research workflows. This pack does not install or authenticate MCP servers just by being installed.
@@ -30,8 +47,8 @@ Read [the skill](skills/galleon-defi-data/SKILL.md) or its [provider setup](skil
 ## Verify public data
 
 ```bash
-npx --package galleon-defi-data-skills@0.6.0 defi-data-skills price-check --provider coingecko --id bitcoin
-npx --package galleon-defi-data-skills@0.6.0 defi-data-skills price-check --provider defillama --id bitcoin
+npx --package galleon-defi-data-skills@0.6.1 defi-data-skills price-check --provider coingecko --id bitcoin
+npx --package galleon-defi-data-skills@0.6.1 defi-data-skills price-check --provider defillama --id bitcoin
 ```
 
 Node 20+; one keyless public GET per invocation, no environment credentials, no redirects, a 10-second deadline and a 64 KiB response limit. A failed or stale response exits nonzero without exposing provider error bodies. This is a connectivity/freshness check, not an executable quote or production price oracle. The DefiLlama route uses its CoinGecko-ID namespace, so agreement is not necessarily independent corroboration.
@@ -62,8 +79,8 @@ See [SOURCES.md](SOURCES.md) for provenance and dated verification.
 ## Source-backed market evidence
 
 ```bash
-npx --package galleon-defi-data-skills@0.6.0 defi-data-skills snapshot --ids bitcoin,ethereum
-npx --package galleon-defi-data-skills@0.6.0 defi-data-skills history --id bitcoin --days 180
+npx --package galleon-defi-data-skills@0.6.1 defi-data-skills snapshot --ids bitcoin,ethereum
+npx --package galleon-defi-data-skills@0.6.1 defi-data-skills history --id bitcoin --days 180
 ```
 
 The [market snapshot skill](skills/galleon-defi-market-snapshot/SKILL.md) collects at most ten resolved CoinGecko IDs through one fixed public GET per selected provider, with source hashes, observation/retrieval times and explicit partial failures. Cross-provider comparisons require fresh, aligned observations and preserve the possibility of shared upstream data. History returns a dated daily dataset compatible with the independent strategy backtest pack; it excludes a current partial-day observation and rejects gaps rather than interpolating them. No account, wallet, API key, paid fallback or scheduler is needed.

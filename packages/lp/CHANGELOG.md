@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.1 · 2026-10-08
+
+- Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.
+- Align current npm examples and discovery metadata with this release; preserve protocol procedures and standalone package interfaces.
+
 ## 0.6.0 - 2026-09-27
 
 - Add `uniswap-v3-liquidity`: Manage v3 NFT inventory, usable ticks, fee collection and range changes.

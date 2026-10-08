@@ -7,7 +7,9 @@ Read the selected package's `AGENTS.md` before changing it.
 
 | Task | Start here |
 | --- | --- |
-| Select a protocol workflow or pack | `README.md#choose-a-protocol-task`, then `packages/<pack>/AGENTS.md` |
+| Select a protocol workflow or pack | `docs/AGENT-INDEX.md#skill-routing`, or `README.md#choose-a-protocol-task`; then the exact installed skill. For source edits, read `packages/<pack>/AGENTS.md` |
+| Install and reach a first useful result | `docs/GETTING-STARTED.md`; `README.md#independent-packs` owns the exact release table |
+| Human/agent discovery documentation | `README.md`, `llms.txt`, `docs/AGENT-INDEX.md`; keep active versus retired counts accurate |
 | Skill procedure, provider reference or local helper | The selected `packages/<pack>/skills/<skill>/` directory; resources ship with that skill |
 | Shared content-pack CLI and corpus validation | `scripts/content-pack/`, `scripts/build-content-pack.ts`, `scripts/check-content-pack.ts` |
 | Root checks, package enumeration and release drift | `scripts/workspaces.ts`, `scripts/release-drift.ts`; `package.json` owns commands |
@@ -15,7 +17,7 @@ Read the selected package's `AGENTS.md` before changing it.
 | npm pack release or research plugin ZIP | `RELEASING.md`; `plugins/defi-research/README.md` for the separate plugin |
 | Routing fixtures and recorded output evaluations | `packages/<pack>/evals/`, `test/evals/`, `docs/SKILL-QUALITY.md` |
 
-Package names and current versions come from each `packages/<pack>/package.json`; release tags record published surfaces. Build outputs and release archives are generated. Development setup and validation are in `CONTRIBUTING.md#work-locally`.
+Package names and current versions come from each `packages/<pack>/package.json`; release tags record published surfaces. Preserve the root README's `## Independent packs` heading and machine-checked release row format (`scripts/check-readme-releases.ts`). Build outputs and release archives are generated. Development setup and validation are in `CONTRIBUTING.md#work-locally`.
 
 ## Constraints
 

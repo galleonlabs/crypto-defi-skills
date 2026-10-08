@@ -4,7 +4,7 @@ description: "Use when planning a Compound III Comet base-asset borrow, repaymen
 license: MIT
 compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

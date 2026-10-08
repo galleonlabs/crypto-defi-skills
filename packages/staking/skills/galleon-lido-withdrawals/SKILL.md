@@ -4,7 +4,7 @@ description: "Use when requesting or claiming Lido stETH or wstETH withdrawals, 
 license: MIT
 compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

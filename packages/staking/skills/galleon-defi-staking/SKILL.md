@@ -3,7 +3,7 @@ name: galleon-defi-staking
 description: "Use when planning liquid staking, wrapping, restaking, delegation or queued exit claims for Lido, Rocket Pool, EigenLayer and Symbiotic."
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

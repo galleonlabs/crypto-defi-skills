@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1 · 2026-10-08
+
+- Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.
+- Align current npm examples and discovery metadata with this release; preserve protocol procedures and standalone package interfaces.
+
 ## 0.2.0 - 2026-09-27
 
 Add focused protocol procedures: galleon-pendle-maturity, galleon-vault-exit. Include exact read recipes, worked decisions, protocol failure recovery, dated primary sources and behavioral fixtures. Preserve the original portable comparison skill and add protocol routing.

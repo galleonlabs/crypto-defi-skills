@@ -1,5 +1,10 @@
 # 0.3.0 - 2026-09-27
 
+## 0.4.1 · 2026-10-08
+
+- Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.
+- Align current npm examples and discovery metadata with this release; preserve protocol procedures and standalone package interfaces.
+
 - Add `galleon-coinbase-agentkit-readiness` with official provider recipes, evidence outputs and failure cases.
 
 # Changelog

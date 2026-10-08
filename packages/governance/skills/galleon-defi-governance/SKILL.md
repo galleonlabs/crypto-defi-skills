@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions; provider access and wallet permissions are configured separately.
 metadata:
   author: Galleon Labs
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # DeFi governance

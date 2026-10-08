@@ -1,10 +1,27 @@
 # Hyperliquid Skills
 
-[![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/galleon-hyperliquid-skills)](https://www.npmjs.com/package/galleon-hyperliquid-skills)
+[![npm](https://img.shields.io/npm/v/galleon-hyperliquid-skills?color=0f766e)](https://www.npmjs.com/package/galleon-hyperliquid-skills)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-Agent workflows for Hyperliquid market analysis, trade planning and execution, position monitoring, and performance review. Start with public data; connect your own trusted tools for account work and execution.
+**See the account before taking a position.**
+
+Inspect spot, perpetuals and HIP-3 exposure with explicit account modes, margin and funding. Separate research, plans, authorized execution and review.
+
+[Install one skill](#install-one-skill) · [Try a first task](#try-a-first-task) · [Sources](SOURCES.md) · [All packs](https://github.com/galleonlabs/crypto-defi-skills#independent-packs)
+
+## Install one skill
+
+```bash
+npx skills add galleonlabs/crypto-defi-skills --skill hyperliquid-monitor
+```
+
+Choose the receiving agent in the installer. Keep the skill's references and scripts with its `SKILL.md`. Each pack works on its own. For a complete native Hermes desk, use [Boomkin](https://github.com/galleonlabs/boomkin).
+
+## Try a first task
+
+> Use hyperliquid-monitor to inspect [account address] on Hyperliquid. Identify its account mode, positions, margin exposure and funding. Return a source-backed risk review before proposing a trade.
+
+Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
 
 ## Install
 
@@ -64,7 +81,7 @@ Version 0.2.0 renames `hyperliquid-research` to `hyperliquid-analyze` and `hyper
 
 Reinstall to get the current names. Update saved prompts and harness configuration, then remove the old installed directories only after checking for local edits. No alias skills are retained. Other skills and credentials are unaffected by the repository rename.
 
-Pin `galleon-hyperliquid-skills@0.3.1` for a reproducible npm release, or use `@latest` for the current published package. Skill installers and deployers should pin a reviewed source revision and inspect changes before upgrading.
+Pin `galleon-hyperliquid-skills@0.3.5` for a reproducible npm release, or use `@latest` for the current published package. Skill installers and deployers should pin a reviewed source revision and inspect changes before upgrading.
 
 ## CLI
 

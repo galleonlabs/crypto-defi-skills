@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions for official Superfluid contracts, @sfpro/sdk, metadata and existing read-only EVM tools. No signer or adapter runtime is included.
 metadata:
   author: Andrew Wilkinson and Galleon Labs
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Superfluid flows and distribution

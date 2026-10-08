@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable agent instructions. Bundled offline backtest requires Node.js 20+ and local JSON files. The pure ESM engine also runs in browsers. No provider account, wallet, signer, trading engine or scheduler is bundled.
 metadata:
   author: Galleon Labs
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Daily strategy research

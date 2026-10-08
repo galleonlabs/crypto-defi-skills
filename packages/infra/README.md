@@ -1,15 +1,32 @@
 # Galleon DeFi Infrastructure Skills
 
-[![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/galleon-defi-infra-skills)](https://www.npmjs.com/package/galleon-defi-infra-skills)
+[![npm](https://img.shields.io/npm/v/galleon-defi-infra-skills?color=0f766e)](https://www.npmjs.com/package/galleon-defi-infra-skills)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-A standalone skill pack for wiring a DeFi agent's RPC, managed wallets, paid APIs and Hermes runtime. Prefer official Alchemy and Coinbase tooling; keep account authentication and transaction authority explicit.
+**Give your agent the right tools for the job.**
+
+Check RPC freshness, official Alchemy and Coinbase access, wallet capabilities and native Hermes configuration with bounded read-only diagnostics.
+
+[Install one skill](#install-one-skill) · [Try a first task](#try-a-first-task) · [Sources](SOURCES.md) · [All packs](https://github.com/galleonlabs/crypto-defi-skills#independent-packs)
+
+## Install one skill
+
+```bash
+npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-infra
+```
+
+Choose the receiving agent in the installer. Keep the skill's references and scripts with its `SKILL.md`. Each pack works on its own. For a complete native Hermes desk, use [Boomkin](https://github.com/galleonlabs/boomkin).
+
+## Try a first task
+
+> Use galleon-defi-infra to check my existing DeFi tool setup for Base reads. Identify missing capabilities, runtime requirements and the smallest next setup step. Keep credentials private.
+
+Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
 
 ## Install
 
 ```bash
-npm install -g galleon-defi-infra-skills@0.2.1
+npm install -g galleon-defi-infra-skills@0.4.1
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-infra
 ```
 

@@ -1,12 +1,33 @@
 # Galleon DeFi Agent Skills
 
-Build unsigned DeFi plans and verify exact simulation evidence before a wallet handoff. Two portable skills, independently installable; no signer, protocol adapter or hosted service is bundled.
+[![npm](https://img.shields.io/npm/v/galleon-defi-agent-skills?color=0f766e)](https://www.npmjs.com/package/galleon-defi-agent-skills)
+[![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
+
+**Turn a DeFi intent into a plan you can review.**
+
+Build an unsigned action plan with official tools, then inspect the exact payload and simulation evidence before a wallet handoff.
+
+[Install one skill](#install-one-skill) · [Try a first task](#try-a-first-task) · [Sources](SOURCES.md) · [All packs](https://github.com/galleonlabs/crypto-defi-skills#independent-packs)
+
+## Install one skill
+
+```bash
+npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-agent-plan
+```
+
+Choose the receiving agent in the installer. Keep the skill's references and scripts with its `SKILL.md`. Each pack works on its own. For a complete native Hermes desk, use [Boomkin](https://github.com/galleonlabs/boomkin).
+
+## Try a first task
+
+> Use galleon-defi-agent-plan to prepare an unsigned plan for [action] on [chain]. Show the official builder, exact asset and amount, permissions, simulation requirements and what still needs review.
+
+Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
 
 ## Install
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-agent-plan --skill galleon-defi-agent-simulate
-npx --package galleon-defi-agent-skills@0.1.0 defi-agent-skills catalog --json
+npx --package galleon-defi-agent-skills@0.1.1 defi-agent-skills catalog --json
 ```
 
 - [Unsigned planning](skills/galleon-defi-agent-plan/SKILL.md) resolves bounded intent to maintained builders, including Nethermind playbooks and Aave's official MCP.

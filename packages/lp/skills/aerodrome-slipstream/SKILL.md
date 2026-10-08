@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Read-only EVM RPC and official protocol APIs or UI. Optional Node.js 20 for offline helpers. No signer included."
 metadata:
   author: "Galleon Labs"
-  version: "0.6.0"
+  version: "0.6.1"
 ---
 
 # Aerodrome Slipstream

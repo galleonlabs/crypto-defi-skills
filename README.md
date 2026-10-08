@@ -1,155 +1,110 @@
+[![Crypto DeFi Skills: practical workflows from research to verified outcomes](docs/assets/skills-hero.svg)](#start-with-one-skill)
+
 # Crypto DeFi Skills
 
 [![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
+[![48 active skills](https://img.shields.io/badge/active_skills-48-0f766e)](docs/AGENT-INDEX.md)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-**Protocol-specific procedures your agent can use to finish a DeFi task.** Inspect Aave debt, assess a Uniswap position, check Aerodrome gauge custody, claim a Lido withdrawal, screen yields or reconcile a bridge. Concrete reads, local calculations and verifiable outcomes, packaged independently.
+**Give your agent a concrete way to investigate, plan and verify DeFi work.** Stress-test an Aave position, review a swap, compare vault exits or trace a bridge to its destination. **48 active skills across 17 independent packs**, with official tool recipes, worked decisions and evidence for the next step.
 
-Start with [Boomkin](https://github.com/galleonlabs/boomkin) for a complete Hermes agent, or install only the skills your existing agent needs.
+## Start with one skill
 
-[Explore packs](#independent-packs) · [Install](#install-only-what-you-need) · [Research](docs/research/eth-skills-2026-10-08/README.md) · [Quality](docs/SKILL-QUALITY.md) · [Contribute](CONTRIBUTING.md)
-
-## Choose a protocol task
-
-Install a skill that names the job. Each new workflow includes the concrete reads or official tool recipe, protocol-specific accounting and failure handling, a worked decision, and an explicit completion condition. Local helpers handle repeatable calculations; they never sign or submit transactions.
-
-| Job | Skill | Result |
-| --- | --- | --- |
-| Build an unsigned protocol action | [`galleon-defi-agent-plan`](packages/agent/skills/galleon-defi-agent-plan/SKILL.md) | Official builder or playbook selection, exact action identity and unsigned payload review. |
-| Inspect a stateful transaction simulation | [`galleon-defi-agent-simulate`](packages/agent/skills/galleon-defi-agent-simulate/SKILL.md) | Payload, sender and state coverage with asset and permission delta evidence. |
-| Research a prediction market | [`galleon-prediction-market-research`](packages/prediction/skills/galleon-prediction-market-research/SKILL.md) | Versioned outcome identity, resolution rules and bounded book depth. |
-| Reconcile a prediction payout | [`galleon-prediction-market-resolution`](packages/prediction/skills/galleon-prediction-market-resolution/SKILL.md) | Oracle stage, payout fraction, claimable amount and received collateral evidence. |
-| Stress-test an Aave V3 position | [`galleon-aave-position`](packages/lending/skills/galleon-aave-position/SKILL.md) | Current and stressed health factor, debt capacity, reserve restrictions and an unsigned action plan. |
-| Inspect a Morpho market or vault | [`galleon-morpho-market`](packages/lending/skills/galleon-morpho-market/SKILL.md) | Market identity, oracle/IRM/LLTV, liquidity and vault allocation or exit constraints. |
-| Check Compound III borrowing capacity | [`galleon-compound-borrow`](packages/lending/skills/galleon-compound-borrow/SKILL.md) | Base debt, collateral limits, interest exposure and an unsigned borrow or repay plan. |
-| Track a Lido withdrawal to claimability | [`galleon-lido-withdrawals`](packages/staking/skills/galleon-lido-withdrawals/SKILL.md) | Request ownership, finalized/claimed status, claimable ETH and the next supported step. |
-| Compare holding PT to maturity with exiting | [`galleon-pendle-maturity`](packages/yield/skills/galleon-pendle-maturity/SKILL.md) | Maturity terms, underlying accounting unit, executable exit comparison and post-expiry route. |
-| Check what a vault withdrawal can return now | [`galleon-vault-exit`](packages/yield/skills/galleon-vault-exit/SKILL.md) | Preview versus owner limits, rounding, liquidity and asynchronous exit constraints. |
-| Inspect a Uniswap V3 liquidity position | [`uniswap-v3-liquidity`](packages/lp/skills/uniswap-v3-liquidity/SKILL.md) | Position composition, tick bounds, fee state and a bounded liquidity plan. |
-| Inspect Slipstream liquidity and gauge rewards | [`aerodrome-slipstream`](packages/lp/skills/aerodrome-slipstream/SKILL.md) | Range status, gauge custody, fees versus emissions, and exit constraints. |
-| Prepare a Uniswap quote for review | [`uniswap-swap`](packages/routing/skills/uniswap-swap/SKILL.md) | Quote identity, route type, approval/Permit2 requirements and unsigned transaction review. |
-| Compare a bridge route and reconcile arrival | [`lifi-cross-chain`](packages/routing/skills/lifi-cross-chain/SKILL.md) | Net destination amount, gas needs, route limits and destination settlement evidence. |
-| Resolve a token before trusting its price | [`galleon-coingecko-token-research`](packages/data/skills/galleon-coingecko-token-research/SKILL.md) | Resolved token identity, timestamped market evidence and unsupported or stale fields. |
-| Screen yields without mistaking emissions for income | [`galleon-defillama-yield-screen`](packages/data/skills/galleon-defillama-yield-screen/SKILL.md) | A reproducible shortlist separating base yield, rewards, missing fields and exit diligence. |
-| Collect a source-backed market snapshot | [`galleon-defi-market-snapshot`](packages/data/skills/galleon-defi-market-snapshot/SKILL.md) | Bounded price observations, timestamp alignment, discrepancies and compatible daily history. |
-| Test a daily strategy before discussing deployment | [`galleon-defi-strategy-backtest`](packages/strategy/skills/galleon-defi-strategy-backtest/SKILL.md) | Next-observation replay, modeled costs, flow-neutral return/drawdown and a same-cost benchmark. |
-| Check AgentKit wallet capabilities | [`galleon-coinbase-agentkit-readiness`](packages/infra/skills/galleon-coinbase-agentkit-readiness/SKILL.md) | Capability and policy gaps, tested read access and the next required setup step. |
-| Review a Hyperliquid account before trading | [`hyperliquid-analyze`](packages/hyperliquid/skills/hyperliquid-analyze/SKILL.md) | Account mode, margin exposure, funding and market evidence for a trade decision. |
-
-These skills are independently installable. Protocol identities, market parameters and deployments are resolved at use time. The existing primitive skills remain available for cross-protocol research and venues without a dedicated procedure.
-
-## Independent packs
-
-Seventeen independently released packs. Each pack has its own npm release, CLI, plugin manifests and self-contained references. Two additional LP directories preserve previous install names as notices.
-
-| Pack | npm release | Coverage |
-| --- | --- | --- |
-| [Agent](packages/agent) | [`galleon-defi-agent-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-agent-skills/v/0.1.0) | Official unsigned builders, playbooks and stateful simulation evidence |
-| [Prediction](packages/prediction) | [`galleon-defi-prediction-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-prediction-skills/v/0.1.0) | Polymarket rules, order-book depth, versioned ledgers and resolution evidence |
-| [Infra](packages/infra) | [`galleon-defi-infra-skills@0.4.0`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.4.0) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
-| [Data](packages/data) | [`galleon-defi-data-skills@0.6.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.6.0) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
-| [Lp](packages/lp) | [`galleon-lp-skills@0.6.0`](https://www.npmjs.com/package/galleon-lp-skills/v/0.6.0) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
-| [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.3.4`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.3.4) | Spot, perps, HIP-3, account modes, execution and review |
-| [Lending](packages/lending) | [`galleon-defi-lending-skills@0.3.0`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.3.0) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
-| [Staking](packages/staking) | [`galleon-defi-staking-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-staking-skills/v/0.2.0) | Lido, Rocket Pool, EigenLayer and Symbiotic staking and exits |
-| [Yield](packages/yield) | [`galleon-defi-yield-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.2.0) | Vaults, Pendle PT/YT, Yearn, Spark savings and Ethena |
-| [Tokenized Assets](packages/tokenized-assets) | [`galleon-defi-tokenized-assets-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-tokenized-assets-skills/v/0.1.2) | Ondo and OpenEden eligibility, issuer risk and settlement |
-| [Routing](packages/routing) | [`galleon-defi-routing-skills@0.3.0`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.3.0) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
-| [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.4`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.4) | GMX, Derive, Drift and Pendle Boros trading lifecycles |
-| [Strategy](packages/strategy) | [`galleon-defi-strategy-skills@0.1.0`](https://www.npmjs.com/package/galleon-defi-strategy-skills/v/0.1.0) | Daily spot backtests, costs, cash flows, drawdown and reproducible benchmarks |
-| [Portfolio](packages/portfolio) | [`galleon-defi-portfolio-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-portfolio-skills/v/0.2.0) | Positions, liabilities, net exposure, cash flows and performance |
-| [Security](packages/security) | [`galleon-defi-security-skills@0.2.2`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.2.2) | Token diligence, transaction decoding, permissions and simulation review |
-| [Payments](packages/payments) | [`galleon-defi-payments-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-payments-skills/v/0.2.0) | Stablecoin transfers, x402, Sablier and Superfluid |
-| [Governance](packages/governance) | [`galleon-defi-governance-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-governance-skills/v/0.1.2) | Snapshot, Cactus, Governor, voting and Safe execution |
-
-The [8 October ETH.sh review](docs/research/eth-skills-2026-10-08/README.md) maps all 58 directory resources and records changed interfaces, retrieved documents and access limitations.
-
-Coverage means operational guidance and reviewed official interfaces. It does not imply that every provider has an MCP server, every account can access it, or every action was executed in testing. [The research report](docs/research/report-source.md) records those distinctions and the remaining gaps. The [Minara workflow review](docs/research/minara-review.md) documents subsequent CLI recovery, automation ownership and recipient-verification improvements.
-
-## Install only what you need
-
-Choose a single skill with the upstream [Agent Skills installer](https://github.com/vercel-labs/skills):
+Install one workflow into your existing agent:
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-aave-position
-npx skills add galleonlabs/crypto-defi-skills --skill galleon-defillama-yield-screen
-npx skills add galleonlabs/crypto-defi-skills --skill aerodrome-slipstream
 ```
 
-Or select a complete pack:
+[Find your task](#choose-a-protocol-task) · [Install and run your first prompt](docs/GETTING-STARTED.md) · [Agent index](docs/AGENT-INDEX.md)
 
-```bash
-npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lp
-npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/routing
-```
+Want a complete Hermes setup? **[Start with Boomkin](https://github.com/galleonlabs/boomkin)** for an isolated DeFi profile, pinned pack selection and provider setup.
 
-Append `--list` to inspect available skills. The installer lets you choose the receiving harness. Keep each skill's references and scripts with its `SKILL.md`; no pack requires another Galleon pack at runtime. Source commands follow `main`; use a reviewed revision or Boomkin's pinned catalog for reproducibility.
+## Choose a protocol task
 
-### npm
+Choose the skill that names the job. Each procedure includes the inputs to read, the decisions to make, failure handling and what counts as completion.
 
-Every package supplies a local corpus CLI and an ESM `SKILL_CATALOG` export:
+| I want to… | Start here |
+| --- | --- |
+| Understand an Aave position and its liquidation buffer | [`galleon-aave-position`](packages/lending/skills/galleon-aave-position/SKILL.md) for V3 · [`galleon-aave-v4`](packages/lending/skills/galleon-aave-v4/SKILL.md) for V4 |
+| Check whether a vault can return my assets now | [`galleon-vault-exit`](packages/yield/skills/galleon-vault-exit/SKILL.md) |
+| Compare a bridge route or investigate a missing arrival | [`lifi-cross-chain`](packages/routing/skills/lifi-cross-chain/SKILL.md) |
+| Prepare unsigned calls or inspect simulation evidence | [`galleon-defi-agent-plan`](packages/agent/skills/galleon-defi-agent-plan/SKILL.md) · [`galleon-defi-agent-simulate`](packages/agent/skills/galleon-defi-agent-simulate/SKILL.md) |
+| Understand a stream's funding, debt or cancellation | [`galleon-sablier-streams`](packages/payments/skills/galleon-sablier-streams/SKILL.md) · [`galleon-superfluid-streams`](packages/payments/skills/galleon-superfluid-streams/SKILL.md) |
+| Research a prediction market's rules and book depth | [`galleon-prediction-market-research`](packages/prediction/skills/galleon-prediction-market-research/SKILL.md) |
 
-```bash
-npx --package galleon-defi-lending-skills@0.3.0 defi-lending-skills catalog --json
-npx --package galleon-defi-lending-skills@0.3.0 defi-lending-skills show galleon-aave-position
-npx --package galleon-defi-lending-skills@0.3.0 defi-lending-skills validate --json
-```
-
-Node 20+ is sufficient for the published CLIs. Provider tools may require newer runtimes; check their reference before installation. npm supplies the CLI and corpus; the skills installer or Boomkin places the corpus in your agent's discovery directory. The CLIs never sign or submit transactions. LP and Hyperliquid also include local calculations, while infrastructure and data include bounded read-only diagnostics.
-
-### Plugins
-
-Claude Code users can select individual plugins:
-
-```text
-/plugin marketplace add galleonlabs/crypto-defi-skills
-/plugin install galleon-defi-lending-skills@galleon-defi
-/plugin install galleon-lp-skills@galleon-defi
-```
-
-Every pack also contains its own Codex plugin manifest. Neither plugin installation nor skill installation authenticates a provider or provisions a wallet.
-
-### Boomkin and Hermes
-
-[Boomkin](https://github.com/galleonlabs/boomkin) onboards native Hermes with an isolated DeFi profile and independently pinned skill packs. Fresh onboarding includes the current collection; use `--pack defi-lending-skills` or another pack ID to select a subset. Updates preserve existing selections; adding future packs is explicit.
-
-Keep Hermes as the runtime. Load the relevant skill and then its references on demand. Connect only the providers needed for the task, using native MCP/CLI configuration and narrow tool exposure. A working connection, authenticated read, unsigned plan, signature and confirmed outcome are separate milestones.
+The [task guide](docs/GETTING-STARTED.md#find-your-next-task) covers liquidity, market data, staking, yields, payments and portfolio work. The [agent index](docs/AGENT-INDEX.md#skill-routing) lists every active skill and its routing boundary. Two retired LP install names remain as compatibility notices.
 
 ## Try a workflow
 
-> Use galleon-aave-position to inspect this Aave V3 wallet and show health factor after a 20% collateral-price fall and 30 days of debt interest. Keep the plan unsigned.
+Replace the placeholders with your actual task inputs, then ask your agent:
 
-> Use lifi-cross-chain to check whether this Base-to-Arbitrum USDC transfer arrived. Verify the recipient, destination asset and actual amount rather than relying on the source receipt.
+> Use galleon-aave-position to inspect [Ethereum wallet address]. Show the current health factor and a scenario with a 20% collateral-price fall and 30 days of debt interest. Keep the plan unsigned.
 
-> Use galleon-defi-portfolio to reconcile these wallet positions, separating debt, queued withdrawals and assets without reliable prices.
+> Use lifi-cross-chain to reconcile [source transaction hash] from Base to Arbitrum. Check [recipient address], the destination token and the amount actually received.
 
-> Use galleon-defi-security-token-diligence to investigate [token address] on [chain ID] and compare its controls, exit depth and evidence with a prior review.
+> Use galleon-prediction-market-research to examine [Polymarket market URL]. Explain the exact resolution rules, outcome identities and available order-book depth. Keep this research-only.
 
-> Use galleon-defi-security to decode this unsigned transaction and compare its permissions and simulated effects with my intended action.
+For more examples, open a pack's README from the directory below and use its first prompt. Provider credentials stay in your agent's private environment or secret settings.
 
-Supply actual addresses and amounts for position-specific tasks. Provider credentials belong in the harness's private environment or secret settings.
+## Independent packs
 
-LP and Hyperliquid have separate skills for each stage:
+Install only the packs you need. Each has its own npm version, CLI, plugin manifests and self-contained skill resources; no pack requires another Galleon pack at runtime.
 
-| Stage | LP | Hyperliquid |
+| Pack | npm release | Coverage |
 | --- | --- | --- |
-| Tool access | `lp-setup` | `hyperliquid-setup` |
-| Research | `lp-analyze` | `hyperliquid-analyze` |
-| Plan | `lp-plan` | `hyperliquid-plan` |
-| Authorized action | `lp-execute` | `hyperliquid-execute` |
-| Monitor | `lp-monitor` | `hyperliquid-monitor` |
-| Review | Included in monitoring | `hyperliquid-review` |
-| Integrate | `lp-engineer` | `hyperliquid-engineer` |
+| [Agent](packages/agent) | [`galleon-defi-agent-skills@0.1.1`](https://www.npmjs.com/package/galleon-defi-agent-skills/v/0.1.1) | Official unsigned builders, playbooks and stateful simulation evidence |
+| [Prediction](packages/prediction) | [`galleon-defi-prediction-skills@0.1.1`](https://www.npmjs.com/package/galleon-defi-prediction-skills/v/0.1.1) | Polymarket rules, order-book depth, versioned ledgers and resolution evidence |
+| [Infra](packages/infra) | [`galleon-defi-infra-skills@0.4.1`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.4.1) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
+| [Data](packages/data) | [`galleon-defi-data-skills@0.6.1`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.6.1) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
+| [LP](packages/lp) | [`galleon-lp-skills@0.6.1`](https://www.npmjs.com/package/galleon-lp-skills/v/0.6.1) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
+| [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.3.5`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.3.5) | Spot, perps, HIP-3, account modes, execution and review |
+| [Lending](packages/lending) | [`galleon-defi-lending-skills@0.3.1`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.3.1) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
+| [Staking](packages/staking) | [`galleon-defi-staking-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-staking-skills/v/0.2.1) | Lido, Rocket Pool, EigenLayer and Symbiotic staking and exits |
+| [Yield](packages/yield) | [`galleon-defi-yield-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.2.1) | Vaults, Pendle PT/YT, Yearn, Spark savings and Ethena |
+| [Tokenized Assets](packages/tokenized-assets) | [`galleon-defi-tokenized-assets-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-tokenized-assets-skills/v/0.1.3) | Ondo and OpenEden eligibility, issuer risk and settlement |
+| [Routing](packages/routing) | [`galleon-defi-routing-skills@0.3.1`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.3.1) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
+| [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.5`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.5) | GMX, Derive, Drift and Pendle Boros trading lifecycles |
+| [Strategy](packages/strategy) | [`galleon-defi-strategy-skills@0.1.1`](https://www.npmjs.com/package/galleon-defi-strategy-skills/v/0.1.1) | Daily spot backtests, costs, cash flows, drawdown and reproducible benchmarks |
+| [Portfolio](packages/portfolio) | [`galleon-defi-portfolio-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-portfolio-skills/v/0.2.1) | Positions, liabilities, net exposure, cash flows and performance |
+| [Security](packages/security) | [`galleon-defi-security-skills@0.2.3`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.2.3) | Token diligence, transaction decoding, permissions and simulation review |
+| [Payments](packages/payments) | [`galleon-defi-payments-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-payments-skills/v/0.2.1) | Stablecoin transfers, x402, Sablier and Superfluid |
+| [Governance](packages/governance) | [`galleon-defi-governance-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-governance-skills/v/0.1.3) | Snapshot, Cactus, Governor, voting and Safe execution |
 
-The other packs each provide one `galleon-defi-<pack>` workflow with provider and operation references. Their Galleon prefix avoids collisions with upstream skills.
+## Install only what you need
 
-## Official tools, explicit evidence
+The [Agent Skills installer](https://github.com/vercel-labs/skills) lets you select the receiving agent. List available skills or install a complete pack:
 
-We reuse official SDKs, APIs, CLIs, agent skills and MCP servers. The packs add operational judgment: identity, units, access, economic terms, permissions, failure recovery and receipts. They do not introduce a custom signer or required partner route.
+```bash
+npx skills add galleonlabs/crypto-defi-skills --list
+npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/lending
+```
 
-The [2026-09-05 research](docs/research/report-source.md) covers major providers across these primitives and highlights changes such as Aave V4, Morpho's experimental MCP, current Yearn data, new official agent surfaces and mismatches between advertised and discovered tools. Every provider reference identifies primary sources and review limits.
+Source commands follow `main`. For reproducible use, select a reviewed source revision or use an exact npm release. Published packages include a local corpus CLI and an ESM `SKILL_CATALOG` export:
 
-A skill is guidance, not financial authority. Preserve the user's existing authorization within its scope; obtain missing terms before signing, paying, voting or changing permissions. There are no hidden builder fees or mandatory referral routes. An unsigned plan or successful simulation is not a settlement receipt.
+```bash
+npx --package galleon-defi-lending-skills@0.3.1 defi-lending-skills catalog --json
+```
+
+Node 20+ runs the published corpus CLIs. The CLI reads the bundled skills; the installer or Boomkin places them in your agent's discovery directory. Provider tools and optional helpers have their own runtime and access requirements.
+
+Claude Code can install packs through `/plugin marketplace add galleonlabs/crypto-defi-skills`, then `/plugin install galleon-defi-lending-skills@galleon-defi`. Each pack also carries a Codex plugin manifest. The separate [research plugin](plugins/defi-research/README.md) has its own ZIP installation path.
+
+See [the getting-started guide](docs/GETTING-STARTED.md#installation-options) for pack selection, plugins, pinned versions and first-use checks. Installation adds procedures; it does not authenticate a provider or grant wallet authority.
+
+## What the skills give you
+
+- **A usable procedure.** Concrete reads, amount units, calculations, decision branches and worked examples for the task.
+- **Official tools in context.** Maintained SDK, API, CLI and MCP recipes with access, cost and deployment limits. Broad primitive workflows complement the named protocol procedures.
+- **Evidence you can inspect.** Freshness and coverage limits, payload and permission review, transaction or order identity, and the balance or position evidence needed to finish.
+
+Local helpers perform calculations or bounded diagnostics. The package CLIs do not sign or submit transactions. Research, unsigned planning, wallet execution and settlement stay distinct; preserve the user's authorization and resolve missing terms before consequential actions.
+
+## Sources and verification
+
+The [8 October ETH.sh review](docs/research/eth-skills-2026-10-08/README.md) maps **58 directory resources**, records fetched source documents and distinguishes discovered interfaces from unavailable or unverified ones. It informed the agent, prediction, Aave V4 and streaming workflows, plus provider updates across the collection.
+
+[Skill quality](docs/SKILL-QUALITY.md) explains structural checks, clean installs and recorded output evaluations. [Research records](docs/research/report-source.md) retain primary sources and capability limits. Passing a format check, loading a skill or running a simulation does not establish a security audit, provider access or a financial outcome.
 
 ## Develop and release
 
@@ -157,19 +112,14 @@ A skill is guidance, not financial authority. Preserve the user's existing autho
 bun install --frozen-lockfile
 bun run check
 bun run pack
-bun run smoke
 ```
 
-Use Bun 1.3.14 for repository development. After skill edits, also run `validate-agent-skills packages/<pack>/skills`. Root checks enforce metadata, independent packaging and MIT/attribution retention. Clean consumer tests exercise each published-format CLI and corpus.
+Use Bun 1.3.14 for development. Run clean consumer smoke tests when package contents or installation change. Start with [CONTRIBUTING.md](CONTRIBUTING.md); agents editing the repository should read [AGENTS.md](AGENTS.md).
 
-Add a pack under `packages/`, register its plugin and discovery grouping, and follow [CONTRIBUTING.md](CONTRIBUTING.md). Content-only packs share build-time tooling that is bundled into their standalone CLIs; installed packages never need the monorepo.
-
-The private root workspace is not published to npm. [RELEASING.md](RELEASING.md) publishes one selected pack from a clean commit. Tags use `<npm-name>@<version>`. Separate `agent-skills-<commit>` releases provide individual skill archives, including the two LP notices, with SHA-256 digests. Their source is the exact committed tree.
-
-For older LP installation names and repository URLs, see [migration notes](MIGRATION.md). Existing npm and CLI names remain supported.
+The root workspace is private. Packs publish independently under `<npm-name>@<version>` tags using [RELEASING.md](RELEASING.md). Discovery releases supply individual skill archives from an exact committed tree. [Migration notes](MIGRATION.md) preserve older LP names and repository paths.
 
 ## Contribute and reuse
 
-Source-backed corrections, reproducible integration failures and new self-contained workflows are welcome. Start with the [contributor guide](CONTRIBUTING.md). Report security issues through [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new).
+Clearer examples, source-backed corrections and reproducible integration failures are welcome. Read the [contributor guide](CONTRIBUTING.md), or use [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new) for a security issue.
 
-[MIT licensed](LICENSE), created by [Andrew Wilkinson](https://andrewwilkinson.io) and [Galleon Labs](https://github.com/galleonlabs). Preserve the copyright and permission notice when reusing copies or substantial portions. [Attribution guidance](ATTRIBUTION.md) includes an optional public credit line. A [GitHub star](https://github.com/galleonlabs/crypto-defi-skills) is appreciated and entirely optional.
+[MIT licensed](LICENSE), created by [Andrew Wilkinson](https://andrewwilkinson.io) and [Galleon Labs](https://github.com/galleonlabs). Retain the copyright and permission notice when reusing copies or substantial portions; [ATTRIBUTION.md](ATTRIBUTION.md) explains credit and third-party notices.

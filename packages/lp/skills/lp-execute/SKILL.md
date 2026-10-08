@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Requires a trusted wallet or transaction tool, simulation, receipt lookup, and read-only chain access. Never imports private keys."
 metadata:
   author: "Galleon Labs"
-  version: "0.6.0"
+  version: "0.6.1"
   protocols: "uniswap-v2,uniswap-v3,uniswap-v4,aerodrome,slipstream"
 ---
 
