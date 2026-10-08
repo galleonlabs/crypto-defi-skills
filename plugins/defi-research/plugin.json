@@ -1,13 +1,20 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "galleon-defi-research",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Read-only token research and yield screening with official public data and timestamped evidence.",
-  "author": { "name": "Galleon Labs", "url": "https://galleonlabs.io" },
+  "author": {
+    "name": "Galleon Labs",
+    "url": "https://galleonlabs.io"
+  },
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/plugins/defi-research",
   "repository": "https://github.com/galleonlabs/crypto-defi-skills",
   "license": "MIT",
-  "keywords": ["defi", "research", "read-only"],
+  "keywords": [
+    "defi",
+    "research",
+    "read-only"
+  ],
   "extensions": {
     "com.openai": {
       "interface": {
