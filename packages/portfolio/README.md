@@ -32,6 +32,10 @@ npx --package galleon-defi-portfolio-skills@0.2.1 defi-portfolio-skills catalog
 
 Start with [the workflow](skills/galleon-defi-portfolio/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
 
+## External services
+
+Portfolio reads go directly from your agent to the services you choose: the Zerion API (`api.zerion.io`) and DeBank Pro API (`pro-openapi.debank.com`) with your own keys, plus public RPC endpoints and explorers. Nothing is sent to Galleon Labs; see the [privacy policy](https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md).
+
 ## Package interface
 
 `defi-portfolio-skills` provides `catalog --json`, `show galleon-defi-portfolio`, `validate [path] --json`, and `--version`. It reads the packaged corpus and performs no network or wallet operations. The ESM export supplies `SKILL_CATALOG` and the skill document is available through `galleon-defi-portfolio-skills/skills/galleon-defi-portfolio`.

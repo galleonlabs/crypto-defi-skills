@@ -82,6 +82,10 @@ The independently installed skill exposes the same exports from `scripts/engine.
 
 Daily aggregate prices do not support intraday stops, venue liquidity, derivatives funding, leverage or realistic execution claims. A positive backtest is historical behavior under stated assumptions. The pack does not deploy strategies or trade.
 
+## External services
+
+Fresh price history comes from the CoinGecko API (`api.coingecko.com`); backtests otherwise run locally on the data you supply. Nothing is sent to Galleon Labs; see the [privacy policy](https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md).
+
 ## Development and provenance
 
 Run `bun run check` in this directory, then the repository's check, pack and consumer smoke. Math fixtures test next-bar timing, leakage, costs, budget exhaustion, cash flows, drawdown, split accounting, independent warmup, sensitivity and malformed evidence. Routing/behavior datasets are review cases, not measured model scores. See [SOURCES.md](SOURCES.md) and [CHANGELOG.md](CHANGELOG.md).
