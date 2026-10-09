@@ -32,10 +32,6 @@ npx --package galleon-defi-yield-skills@0.2.1 defi-yield-skills catalog
 
 Start with [the workflow](skills/galleon-defi-yield/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
 
-## External services
-
-Pendle research reads the Pendle API (`api-v2.pendle.finance`), and vault checks use public RPC reads of the contracts you name. Nothing is sent to Galleon Labs; see the [privacy policy](https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md).
-
 ## Package interface
 
 `defi-yield-skills` provides `catalog --json`, `show galleon-defi-yield`, `validate [path] --json`, and `--version`. It reads the packaged corpus and performs no network or wallet operations. The ESM export supplies `SKILL_CATALOG` and the skill document is available through `galleon-defi-yield-skills/skills/galleon-defi-yield`.
