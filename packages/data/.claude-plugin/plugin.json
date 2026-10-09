@@ -1,5 +1,6 @@
 {
   "name": "galleon-defi-data-skills",
+  "displayName": "Galleon DeFi Data",
   "version": "0.6.1",
   "description": "Portable DeFi data skills for CoinGecko, DefiLlama, AIXBT, and source-aware research.",
   "author": {
@@ -14,5 +15,9 @@
     "coingecko",
     "defillama",
     "aixbt"
-  ]
+  ],
+  "documentationUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/data/README.md",
+  "supportUrl": "https://github.com/galleonlabs/crypto-defi-skills/issues",
+  "privacyPolicyUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/LICENSE"
 }

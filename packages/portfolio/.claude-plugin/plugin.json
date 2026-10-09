@@ -1,5 +1,6 @@
 {
   "name": "galleon-defi-portfolio-skills",
+  "displayName": "Galleon DeFi Portfolio",
   "version": "0.2.1",
   "description": "Reconcile DeFi assets, liabilities, cash flows and exposure.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/portfolio#readme",
@@ -16,5 +17,9 @@
   "author": {
     "name": "Galleon Labs"
   },
-  "repository": "https://github.com/galleonlabs/crypto-defi-skills"
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "documentationUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/portfolio/README.md",
+  "supportUrl": "https://github.com/galleonlabs/crypto-defi-skills/issues",
+  "privacyPolicyUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/LICENSE"
 }

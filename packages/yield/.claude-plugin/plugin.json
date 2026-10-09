@@ -1,5 +1,6 @@
 {
   "name": "galleon-defi-yield-skills",
+  "displayName": "Galleon DeFi Yield",
   "version": "0.2.1",
   "description": "Evaluate vaults and yield tokens, including liquidity and maturity.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/yield#readme",
@@ -16,5 +17,9 @@
   "author": {
     "name": "Galleon Labs"
   },
-  "repository": "https://github.com/galleonlabs/crypto-defi-skills"
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "documentationUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/yield/README.md",
+  "supportUrl": "https://github.com/galleonlabs/crypto-defi-skills/issues",
+  "privacyPolicyUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/LICENSE"
 }

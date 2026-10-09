@@ -1,5 +1,6 @@
 {
   "name": "galleon-defi-security-skills",
+  "displayName": "Galleon DeFi Security",
   "version": "0.2.3",
   "description": "Token due diligence, transaction review, permissions and simulation evidence.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/security#readme",
@@ -17,5 +18,9 @@
   "author": {
     "name": "Galleon Labs"
   },
-  "repository": "https://github.com/galleonlabs/crypto-defi-skills"
+  "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "documentationUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/security/README.md",
+  "supportUrl": "https://github.com/galleonlabs/crypto-defi-skills/issues",
+  "privacyPolicyUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/LICENSE"
 }
