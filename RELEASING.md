@@ -20,3 +20,9 @@ Download the exact [galleon-defi-research-0.2.1.zip release asset](https://githu
 To verify the packaging locally without publishing, run `bun run plugin:pack` from the repository root. It produces `artifacts/galleon-defi-research-0.2.1.zip` with per-resource SHA-256 provenance. Compare it with the release asset only at the exact released source revision. Validate each generated skill directory with the pinned `skills-ref` procedure in [CONTRIBUTING.md](CONTRIBUTING.md#reusable-cloud-development-setup) and run `bun test test/research-plugin.test.ts` for the public-only connection contract. Previous immutable plugin releases remain available; never overwrite their assets.
 
 A successful build or verified ZIP does not prove host installation acceptance or a connected MCP read. The plugin's CoinGecko MCP destination is `mcp.api.coingecko.com`, separate from the REST diagnostic's `api.coingecko.com`; permit it only when testing that host workflow. Follow the [plugin README](plugins/defi-research/README.md) for installation and publication boundaries.
+
+## Claude plugin directory listings
+
+The Claude plugin directory reads each listed pack from its folder (`packages/<pack>`). It takes the listing icon from `.claude-plugin/icon.png` (512–2048 px PNG) only at the first portal save, and the icon cannot change afterwards. The `claude-directory` branch is `main` plus that icon in every pack, and the directory submissions track it. Its CI reports `release-drift` because the icons are unreleased published files; that is expected on this branch only.
+
+When a normal pack release first ships `.claude-plugin/icon.png` (cherry-pick the icons commit from `claude-directory` into the release), switch each submission's tracked branch to `main` under the plugin's Settings → Tracked branch or tag in the developer portal, then delete `claude-directory`. Until then, merge `main` into `claude-directory` after each release so listings pick up new versions.
