@@ -42,10 +42,6 @@ npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-security-toke
 
 Ask about an exact chain/address, a specific economic claim, or changes since a previous review. The [diligence workflow](skills/galleon-defi-security-token-diligence/SKILL.md) covers launch allocations, liquidity custody, holder-sized exits, authority and treasury flows. Optional Bun helpers collect a bounded RPC snapshot, validate structured evidence and compare reviews. They do not execute transactions or certify safety. See [the helper contract](skills/galleon-defi-security-token-diligence/references/evidence-format.md) for commands and limitations.
 
-## External services
-
-Token diligence can query the GoPlus Security API (`api.gopluslabs.io`), Tenderly simulation (`mcp.tenderly.co`) and public RPC endpoints for the exact contracts you name. Nothing is sent to Galleon Labs; see the [privacy policy](https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md).
-
 ## Package interface
 
 `defi-security-skills` provides `catalog --json`, `show <skill-name>`, `validate [path] --json`, and `--version`. It reads the packaged corpus and performs no network or wallet operations. The ESM export supplies `SKILL_CATALOG` and skill documents are available through `galleon-defi-security-skills/skills/<skill-name>`.
