@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
 import { readFile } from "node:fs/promises";
+import { spawn } from "node:child_process";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SKILL_CATALOG } from "./catalog.js";
 import { liquidationDistance, normalizeFunding, reviewTrade, sizeRisk, type PositionSide } from "./math.js";
 import { validateCorpus } from "./validation.js";
 
-const VERSION = "0.3.5";
+const VERSION = "0.4.0";
 type Flags = Map<string, string | true>;
 
 interface ParsedArgs {
@@ -89,17 +90,29 @@ Usage:
   hl-skills catalog [--json]
   hl-skills show <skill>
   hl-skills validate [path] [--json]
+  hl-skills audit capture --address <account> --network <mainnet|testnet> --start <ISO|epoch-ms> --end <ISO|epoch-ms> --out <new-directory> [--max-pages <n>] [--json]
+  hl-skills audit analyze --input <capture.json> --out <new-directory> [--json]
+  hl-skills audit example --out <new-directory> [--json]
   hl-skills risk --side <long|short> --equity <usd> --risk-percent <pct> --entry <price> --stop <price> --stop-slippage-bps <bps> --entry-fee-bps <bps> --exit-fee-bps <bps> --size-decimals <n> [--leverage <n>] [--json]
   hl-skills funding --side <long|short> --notional <usd> --rate <decimal> --interval-hours <n> --hours <n> [--json]
   hl-skills liquidation --side <long|short> --mark <price> --liquidation <price> [--json]
   hl-skills review --side <long|short> --size <n> --entry <price> --exit <price> --entry-fee <usd> --exit-fee <usd> --funding <signed-usd> [--risk-usd <usd>] [--json]
 
-All calculations are local and read-only. Resolve current market metadata, fees, account mode, and exchange state before using an output.
+Arithmetic and offline audit analysis are local and read-only. Audit capture reads the official public Info API without keys. Resolve current market metadata, fees, account mode, and exchange state before using an output.
 `);
 }
 
 async function main(): Promise<void> {
   const [command = "help", ...rest] = process.argv.slice(2);
+  if (command === "audit") {
+    const script = resolve(packageRoot(), "skills/hyperliquid-wallet-audit/scripts/wallet-audit.mjs");
+    process.exitCode = await new Promise<number>((resolveExit, reject) => {
+      const child = spawn(process.execPath, [script, ...rest], { stdio: "inherit" });
+      child.on("error", reject);
+      child.on("exit", (code) => resolveExit(code ?? 1));
+    });
+    return;
+  }
   const parsed = parseArgs(rest);
   const json = parsed.flags.has("json");
 

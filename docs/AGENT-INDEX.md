@@ -1,6 +1,6 @@
 # Agent index
 
-Route the user’s task to one primary skill, then load its conditional resources as needed. This index covers **17 packs, 48 active skills and 2 retired LP compatibility notices**. The broad primitive workflows and named protocol procedures serve different triggers; installing the collection is optional.
+Route the user’s task to one primary skill, then load its conditional resources as needed. This index covers **17 packs, 49 active skills and 2 retired LP compatibility notices**. The broad primitive workflows and named protocol procedures serve different triggers; installing the collection is optional.
 
 [Human getting-started guide](GETTING-STARTED.md) · [Exact release table](../README.md#independent-packs) · [Repository contributor instructions](../AGENTS.md)
 
@@ -187,6 +187,7 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | [`hyperliquid-plan`](../packages/hyperliquid/skills/hyperliquid-plan/SKILL.md) | Prepare an exact unsigned order or account-action ticket | Sizing, limits, risk checks, expiry and action identity; no submission |
 | [`hyperliquid-execute`](../packages/hyperliquid/skills/hyperliquid-execute/SKILL.md) | Submit an explicitly requested, reviewed Hyperliquid action | Trusted signer and fresh approval by exact ticket ID; reconcile the exchange record |
 | [`hyperliquid-monitor`](../packages/hyperliquid/skills/hyperliquid-monitor/SKILL.md) | Reconcile current account, positions, orders, fills or a requested watch | Read-only current state; installing does not start a watcher or place/cancel orders |
+| [`hyperliquid-wallet-audit`](../packages/hyperliquid/skills/hyperliquid-wallet-audit/SKILL.md) | Audit a public wallet’s realized activity, fees, funding and current exposure | Bounded public capture, exact source hashes and partial history; no investment return or copy ranking |
 | [`hyperliquid-review`](../packages/hyperliquid/skills/hyperliquid-review/SKILL.md) | Journal completed trading actions, costs or incidents | Read the exchange record; separate from new market selection and execution |
 | [`hyperliquid-engineer`](../packages/hyperliquid/skills/hyperliquid-engineer/SKILL.md) | Build/review market, account, order, signing or automation software | Engineering work; not a user’s trade decision or account execution |
 

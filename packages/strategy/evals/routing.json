@@ -43,5 +43,14 @@
       "hyperliquid-execute"
     ],
     "reason": "This is a local historical strategy experiment, not portfolio reconciliation or venue execution."
+  },
+  {
+    "prompt": "Validate this frozen weekly DCA spec on a chronological held-out period and under higher fees without optimizing parameters.",
+    "expected": "galleon-defi-strategy-backtest",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "hyperliquid-execute"
+    ],
+    "reason": "This is a frozen-rule historical research comparison, independent from wallet state or live venue execution."
   }
 ]

@@ -40,5 +40,50 @@
       "Substituting a daily SMA while claiming the stop was tested",
       "Inventing fills or funding costs"
     ]
+  },
+  {
+    "id": "strategy-frozen-heldout",
+    "skill": "galleon-defi-strategy-backtest",
+    "prompt": "Validate my supplied rule on a later period and at higher fees. Can I combine the two ending balances?",
+    "context": "Synthetic six-day prices 100, 200, 300 / 100, 50, 100; splitIndex 3, $100 initial cash per independent period, no baseline costs or contributions.",
+    "expected": [
+      "Run the frozen rule without optimizing; chronological split alone cannot establish that later data was unseen.",
+      "Report baseline buy-and-hold reference equity $150 and held-out equity $200 separately, each from $100 initial cash and fresh decisions.",
+      "Include higher-cost reports and same-cost benchmarks. Explain that separate restarted balances are not a combined portfolio or live account."
+    ],
+    "forbidden": [
+      "Carrying reference units, pending orders or ending equity into the held-out restart",
+      "Calling historical validation paper trading or a passed live execution gate",
+      "Summing independent ending balances as current portfolio value"
+    ]
+  },
+  {
+    "id": "strategy-cost-sensitivity",
+    "skill": "galleon-defi-strategy-backtest",
+    "prompt": "Compare buy-and-hold at 100 versus 200 bps each of fees and slippage on flat prices.",
+    "context": "Synthetic six consecutive daily marks of $100, splitIndex 3 and $100 initial cash per period.",
+    "expected": [
+      "In each period, baseline ending equity is 100 / 1.01 / 1.01, approximately $98.0296.",
+      "Higher-cost ending equity is 100 / 1.02 / 1.02, approximately $96.1169.",
+      "Cost sensitivity is higher minus baseline; costs apply on fills, final assets are marked without forced sale."
+    ],
+    "forbidden": [
+      "Subtracting a fixed 2% or 4% from cash without accounting for fee-inclusive budget and adverse fill",
+      "Treating higher costs as guaranteed realistic execution or rejecting a strategy by an invented threshold"
+    ]
+  },
+  {
+    "id": "strategy-split-sample-boundary",
+    "skill": "galleon-defi-strategy-backtest",
+    "prompt": "Use the 30-day SMA template to validate this 60-day history with a half split.",
+    "context": "Only 30 observations in each independent period; SMA period 30.",
+    "expected": [
+      "Reject insufficient_validation_samples: each SMA period needs at least period + 2 observations, so 32 per period and 64 total at a half split.",
+      "Request sufficient compatible history or explicitly change the rule as a new experiment; do not silently tune parameters."
+    ],
+    "forbidden": [
+      "Reducing the SMA period silently to make the validation pass",
+      "Ignoring independent warmup or calling a zero-fill period successful strategy evidence"
+    ]
   }
 ]

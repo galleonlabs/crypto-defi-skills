@@ -2,8 +2,7 @@ import { expect, test } from 'bun:test';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 // The same host-independent engine is usable in the CLI and browser.
-// @ts-expect-error JavaScript skill resource deliberately ships without TypeScript.
-import { runBacktest, BacktestError } from '../skills/galleon-defi-strategy-backtest/scripts/engine.mjs';
+import { runBacktest, BacktestError, type StrategySpec } from '../skills/galleon-defi-strategy-backtest/scripts/engine.mjs';
 const examples = resolve(import.meta.dirname, '../skills/galleon-defi-strategy-backtest/examples');
 const load = (name: string) => JSON.parse(readFileSync(resolve(examples, name + '.json'), 'utf8'));
 function series(prices: number[]) {
@@ -11,7 +10,7 @@ function series(prices: number[]) {
   dataset.candles = dataset.candles.slice(0, prices.length).map((row: { timestamp: string }, i: number) => ({ ...row, close: prices[i] }));
   return dataset;
 }
-const spec = (strategy = { type: 'buy-and-hold' }) => ({ schemaVersion: 1, initialCashUsd: 100, feeBps: 0, slippageBps: 0, strategy });
+const spec = (strategy: StrategySpec['strategy'] = { type: 'buy-and-hold' }): StrategySpec => ({ schemaVersion: 1, initialCashUsd: 100, feeBps: 0, slippageBps: 0, strategy });
 test('buy and hold executes on next observation, not signal price', () => {
   const report = runBacktest(series([100, 200, 300]), spec());
   expect(report.trades).toHaveLength(1);

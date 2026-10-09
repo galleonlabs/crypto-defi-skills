@@ -100,7 +100,6 @@ test('history rejects gaps, duplicates, wrong granularity, short series, stale r
   ]) { const data = history(); mutate(data); expect(() => normalizeHistory(data, 'bitcoin', now, 91, digest)).toThrow(MarketDataError); }
 });
 test('collector dataset is accepted by independently installable strategy engine', async () => {
-  // @ts-expect-error Pure portable JavaScript skill resource.
   const { runBacktest } = await import('../../strategy/skills/galleon-defi-strategy-backtest/scripts/engine.mjs');
   const report = await collectHistory({ days: 91 }, dependencies(async () => json(history())));
   const result = runBacktest(report.dataset, { schemaVersion: 1, initialCashUsd: 100, feeBps: 10, slippageBps: 20, strategy: { type: 'sma', period: 20 } });

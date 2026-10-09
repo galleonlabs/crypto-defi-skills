@@ -4,6 +4,8 @@ Portable Agent Skills for Hyperliquid research, planning, monitoring, execution,
 
 ## Skills
 
+- [Wallet audit](skills/hyperliquid-wallet-audit/SKILL.md): Public account diagnostics with reproducible evidence, signed cost accounting and explicit coverage gaps.
+
 - [Analyze](skills/hyperliquid-analyze/SKILL.md)
 - [Plan](skills/hyperliquid-plan/SKILL.md)
 - [Monitor](skills/hyperliquid-monitor/SKILL.md)

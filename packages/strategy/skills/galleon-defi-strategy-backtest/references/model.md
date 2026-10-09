@@ -76,3 +76,19 @@ With $100 cash, prices 100 → 100 → 50 and a $1,000 contribution at the final
 With a flat $100 mark, a $100 buy budget and 100 bps each of fee and adverse slippage, marked asset value is `100 / 1.01 / 1.01`, approximately $98.0296. The cost difference is accounted for by recorded fees and slippage.
 
 All final assets remain open and marked. Exit fees/slippage require an actual modeled sale; the report does not imply the displayed equity could be withdrawn immediately. Floating-point calculations are research estimates and are unsuitable for constructing token amounts or transactions.
+
+## Frozen-rule validation contract
+
+`runStrategyValidation(dataset, spec, {splitIndex?, stressFeeBps?, stressSlippageBps?})` lives in the same pure ESM engine as `runBacktest`. It accepts the unchanged dataset/spec schemas. Its standalone wrapper is `node scripts/validate-strategy.mjs --data <dataset.json> --spec <spec.json> [--split <index>] [--stress-fee-bps <bps>] [--stress-slippage-bps <bps>]`. Unknown options fail. The wrapper hashes the exact data/spec bytes, including a supported history envelope; the report itself records the split and stress options.
+
+`splitIndex` is an integer zero-based first held-out observation, default `floor(observations / 2)`. The reference period is `[0, splitIndex)` and the held-out period `[splitIndex, observations)`. They are disjoint and cover the full dataset. Each must contain at least 3 observations for buy-and-hold, `max(3, everyBars + 2)` for DCA or `period + 2` for SMA. The latter permits warmup, a possible next-observation fill and a later mark; DCA permits two scheduled purchase opportunities. Funding or price paths can still produce fewer actual trades. These minimums are mechanical, not evidence of statistical adequacy.
+
+Each period starts from `initialCashUsd`, zero units and no pending order. Contributions belong to their own dates only, including a contribution on the first held-out date. DCA cadence and SMA warmup restart at each period's first observation. The reference final decision has no next observation within that experiment and does not execute in the held-out period. No prehistory or asset/cash balance crosses the split. Original provider identity/provenance remain attached to both subsets.
+
+For each period, `baseline` and `higherCosts` are full backtest reports with the same-flow/same-cost benchmark. Each stress component defaults to `min(1000, max(2 × baseline, baseline + 10))` basis points. Explicit stresses must be finite, at least their baseline and no more than 1000; their sum must be strictly larger. A baseline already at 1000 bps for both costs cannot be stressed within this model and fails. Costs are applied on actual fills; there is no forced exit.
+
+`costSensitivity` subtracts baseline from higher-cost ending equity, time-weighted return, maximum drawdown and summed modeled fees/slippage. Do not assume every difference is adverse on every strategy/path: cost changes can alter the invested unit amounts or later cost totals. Inspect the underlying reports.
+
+Top-level fields include `frozenSpec`, `partition`, `costScenarios`, `accounting`, `periods.reference` and `periods.heldOut`, assumptions and limitations. There is no combined performance or account balance. The result is tagged `evidence: historical-simulation`. `ok: true` confirms valid execution only. It does not attest that the held-out period was unseen, validate profitability, represent a live paper account or authorize a trade.
+
+With prices 100 → 200 → 300 / 100 → 50 → 100 and $100 initial cash per period, no costs or contributions, reference ending equity is $150 and held-out ending equity is $200. The held-out buy executes at 50 after a new decision at its initial 100 mark; it does not reuse the reference units or $150 equity. These balances describe independent experiments and cannot be summed into a portfolio balance.

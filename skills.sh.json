@@ -75,7 +75,8 @@
       "skills": [
         "hyperliquid-analyze",
         "hyperliquid-plan",
-        "hyperliquid-monitor"
+        "hyperliquid-monitor",
+        "hyperliquid-wallet-audit"
       ]
     },
     {

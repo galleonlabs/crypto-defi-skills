@@ -1,7 +1,7 @@
 {
   "name": "galleon-defi-strategy-skills",
-  "version": "0.1.1",
-  "description": "Reproducible daily strategy backtests with costs, cash flows and buy-and-hold comparison.",
+  "version": "0.2.0",
+  "description": "Frozen daily strategy validation with cost sensitivity, held-out periods and a reproducible benchmark.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/strategy#readme",
   "license": "MIT",
   "keywords": [

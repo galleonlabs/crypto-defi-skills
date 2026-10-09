@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 · 2026-10-09
+
+- Add independently funded buy-and-hold, weekly DCA and 10/30-day SMA starting templates with explicit daily data and horizon requirements.
+- Validate one frozen supplied rule and its same-cost benchmark on chronological reference/held-out periods under baseline/higher-cost assumptions. Retain separate restarted balances, contributions, warmup, trades and equity curves without parameter optimization or live performance claims.
+- Ship `validate-strategy`, a standalone Node 20+ script, browser-safe exports at `galleon-defi-strategy-skills/engine` and type declarations. Report exact input hashes, split/cost assumptions and short/no-fill limitations.
+- Add hand-calculated cost sensitivity, split/contribution/cadence/warmup accounting, leakage and invalid-input tests; read CLI help/version from current package metadata.
+
 ## 0.1.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

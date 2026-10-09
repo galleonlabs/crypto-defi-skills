@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.0 - 2026-10-09
+
+- Add the independently installable `hyperliquid-wallet-audit` skill and dependency-free Node helper for public account diagnostics.
+- Add `hyperliquid-skills audit capture|analyze|example`, retaining existing CLI interfaces. Capture bounded sequential official API reads, raw evidence and SHA256; reproduce the analysis offline.
+- Attribute observed default-perp closed PnL, signed fees/rebates, included builder fees, funding, maker/taker activity, market cost concentration and current exposure. Preserve foreign fee currencies, unknown opening inventory, excluded spot/HIP-3 activity and history-retention gaps.
+- Add exact hand-computed fixtures, malformed/duplicate/coverage tests and a copied-skill Node smoke test. No signer, ranking score, complete portfolio return or stop-protection verdict is introduced.
+
 ## 0.3.5 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

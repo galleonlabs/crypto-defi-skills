@@ -147,3 +147,88 @@ export function runBacktest(dataset, spec) {
     ],
   };
 }
+
+const template = (id, label, strategy, minimumObservationsPerPeriod, requiredParameters = []) => Object.freeze({
+  id, label, strategy: Object.freeze(strategy), requiredParameters: Object.freeze(requiredParameters),
+  horizon: Object.freeze({ intervalSeconds: 86400, minimumObservationsPerPeriod, minimumValidationObservations: minimumObservationsPerPeriod * 2, recommendedValidationObservations: 180 }),
+  requiredData: Object.freeze(['One resolved asset identity and USD prices.', 'Consecutive daily UTC observations with provider, source, retrieval time and price type.', 'Explicit positive contributions for new funding; no assumed deposits.']),
+});
+/** Fixed research starting points, not optimized parameters or recommendations. */
+export const STRATEGY_TEMPLATES = Object.freeze([
+  template('buy-and-hold', 'Buy and hold', { type: 'buy-and-hold' }, 3),
+  template('weekly-dca', 'Funded weekly DCA', { type: 'dca', everyBars: 7 }, 9, ['amountUsd']),
+  template('sma-10', '10-day moving average', { type: 'sma', period: 10 }, 12),
+  template('sma-30', '30-day moving average', { type: 'sma', period: 30 }, 32),
+]);
+export function createStrategySpec(templateId, parameters) {
+  const selected = STRATEGY_TEMPLATES.find(value => value.id === templateId);
+  if (!selected) fail('unknown_template');
+  keys(parameters, ['initialCashUsd', 'feeBps', 'slippageBps', 'amountUsd', 'contributions'], 'invalid_template_parameters');
+  if (!finite(parameters.initialCashUsd, 0.01, 1e12) || !finite(parameters.feeBps, 0, 1000) || !finite(parameters.slippageBps, 0, 1000)) fail('invalid_template_parameters');
+  if (selected.strategy.type === 'dca' ? !finite(parameters.amountUsd, 0.01, 1e12) : parameters.amountUsd !== undefined) fail('invalid_template_parameters');
+  if (parameters.contributions !== undefined && !Array.isArray(parameters.contributions)) fail('invalid_template_parameters');
+  const spec = { schemaVersion: 1, initialCashUsd: parameters.initialCashUsd, feeBps: parameters.feeBps, slippageBps: parameters.slippageBps,
+    strategy: { ...selected.strategy, ...(selected.strategy.type === 'dca' ? { amountUsd: parameters.amountUsd } : {}) },
+    ...(parameters.contributions !== undefined ? { contributions: parameters.contributions.map(row => ({ ...row })) } : {}) };
+  // Date membership is checked against the supplied dataset by the runner.
+  for (const row of spec.contributions ?? []) {
+    keys(row, ['timestamp', 'amountUsd'], 'invalid_contributions'); timestamp(row.timestamp);
+    if (!finite(row.amountUsd, 0.01, 1e12)) fail('invalid_contributions');
+  }
+  return spec;
+}
+function minimumValidationSamples(strategy) {
+  if (strategy.type === 'sma') return strategy.period + 2; // Warmup, a possible fill, then a later mark.
+  if (strategy.type === 'dca') return Math.max(3, strategy.everyBars + 2); // Two possible scheduled fills.
+  return 3;
+}
+/** Chronological frozen-rule comparison. Each period starts independently in cash. */
+export function runStrategyValidation(dataset, spec, options = {}) {
+  validateDataset(dataset); validateSpec(spec, dataset);
+  keys(options, ['splitIndex', 'stressFeeBps', 'stressSlippageBps'], 'invalid_validation_options');
+  const splitIndex = options.splitIndex === undefined ? Math.floor(dataset.candles.length / 2) : options.splitIndex;
+  if (!Number.isSafeInteger(splitIndex) || splitIndex <= 0 || splitIndex >= dataset.candles.length) fail('invalid_split');
+  const minimumObservationsPerPeriod = minimumValidationSamples(spec.strategy);
+  if (splitIndex < minimumObservationsPerPeriod || dataset.candles.length - splitIndex < minimumObservationsPerPeriod) fail('insufficient_validation_samples');
+  const stressFeeBps = options.stressFeeBps === undefined ? Math.min(1000, Math.max(spec.feeBps * 2, spec.feeBps + 10)) : options.stressFeeBps;
+  const stressSlippageBps = options.stressSlippageBps === undefined ? Math.min(1000, Math.max(spec.slippageBps * 2, spec.slippageBps + 10)) : options.stressSlippageBps;
+  if (!finite(stressFeeBps, spec.feeBps, 1000) || !finite(stressSlippageBps, spec.slippageBps, 1000) || stressFeeBps + stressSlippageBps <= spec.feeBps + spec.slippageBps) fail('invalid_stress_costs');
+  function evaluate(candles) {
+    const periodDataset = { ...dataset, candles };
+    const dates = new Set(candles.map(row => row.timestamp));
+    const periodSpec = { ...spec, contributions: (spec.contributions ?? []).filter(row => dates.has(row.timestamp)) };
+    const baseline = runBacktest(periodDataset, periodSpec);
+    const higherCosts = runBacktest(periodDataset, { ...periodSpec, feeBps: stressFeeBps, slippageBps: stressSlippageBps });
+    return { period: baseline.period, baseline, higherCosts, costSensitivity: {
+      endingEquityDifferenceUsd: higherCosts.metrics.endingEquityUsd - baseline.metrics.endingEquityUsd,
+      timeWeightedReturnDifferencePct: higherCosts.metrics.timeWeightedReturnPct - baseline.metrics.timeWeightedReturnPct,
+      maxDrawdownDifferencePct: higherCosts.metrics.maxDrawdownPct - baseline.metrics.maxDrawdownPct,
+      modeledCostDifferenceUsd: higherCosts.metrics.totalFeesUsd + higherCosts.metrics.totalSlippageUsd - baseline.metrics.totalFeesUsd - baseline.metrics.totalSlippageUsd,
+    } };
+  }
+  const reference = evaluate(dataset.candles.slice(0, splitIndex));
+  const heldOut = evaluate(dataset.candles.slice(splitIndex));
+  return {
+    ok: true, schemaVersion: 1, model: 'daily-frozen-rule-validation-v1', evidence: 'historical-simulation',
+    identity: { ...dataset.identity }, provenance: { ...dataset.provenance }, frozenSpec: JSON.parse(JSON.stringify(spec)),
+    partition: { splitIndex, firstHeldOutObservation: dataset.candles[splitIndex].timestamp, inputObservations: dataset.candles.length, minimumObservationsPerPeriod },
+    costScenarios: { baseline: { feeBps: spec.feeBps, slippageBps: spec.slippageBps }, higherCosts: { feeBps: stressFeeBps, slippageBps: stressSlippageBps } },
+    accounting: { mode: 'independent-restarts', initialCashUsdPerPeriod: spec.initialCashUsd,
+      convention: 'Each period starts with zero asset units, declared initial cash, its own dated contributions, fresh indicator warmup and no pending order. Final reference positions and decisions do not carry into held-out balances.' },
+    periods: { reference, heldOut },
+    assumptions: [
+      'One supplied rule is frozen for both periods and both cost scenarios; no parameter search, ranking or optimization occurs.',
+      'The split is chronological. This runner cannot prove that the user had not inspected or tuned on held-out observations before supplying the rule.',
+      'Higher costs apply to both the rule and its same-flow buy-and-hold benchmark; fixed cost assumptions are not measured venue fills.',
+      'Balances and returns are per-period independent experiments; they are not combined into a continuous account or live performance.',
+    ],
+    limitations: [
+      ...(dataset.provenance.synthetic ? ['Synthetic fixture: no real asset performance evidence.'] : []),
+      ...(Math.min(splitIndex, dataset.candles.length - splitIndex) < 90 ? ['At least one period has fewer than 90 daily observations; short samples limit inference.'] : []),
+      ...(reference.baseline.metrics.tradeCount === 0 || heldOut.baseline.metrics.tradeCount === 0 ? ['At least one period has no modeled strategy fills; cash-only performance cannot establish trading behavior.'] : []),
+      'Sample minimums permit accounting checks; they do not establish statistical significance, profitability or future performance.',
+      'A historical replay is separate from live paper observation, execution readiness, wallet balances and permission to trade.',
+      'The daily spot engine excludes intraday stops, leverage, funding, liquidity, venue depth and partial fills.',
+    ],
+  };
+}

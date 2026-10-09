@@ -2,7 +2,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, statSync, realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { runBacktest, BacktestError } from './engine.mjs';
+import { runBacktest, runStrategyValidation, BacktestError } from './engine.mjs';
 const MAX_BYTES = 4000000;
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
 function readJson(path) {
@@ -18,6 +18,11 @@ export function backtestFiles(datasetPath, specPath) {
   const dataset = readJson(datasetPath), spec = readJson(specPath);
   const input = dataset.value?.ok === true && dataset.value?.dataset ? dataset.value.dataset : dataset.value;
   return { ...runBacktest(input, spec.value), integrity: { datasetSha256: dataset.hash, specSha256: spec.hash, algorithm: 'sha256' } };
+}
+export function strategyValidationFiles(datasetPath, specPath, options = {}) {
+  const dataset = readJson(datasetPath), spec = readJson(specPath);
+  const input = dataset.value?.ok === true && dataset.value?.dataset ? dataset.value.dataset : dataset.value;
+  return { ...runStrategyValidation(input, spec.value, options), integrity: { datasetSha256: dataset.hash, specSha256: spec.hash, algorithm: 'sha256' } };
 }
 function isMain() {
   try { return Boolean(process.argv[1]) && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url); }

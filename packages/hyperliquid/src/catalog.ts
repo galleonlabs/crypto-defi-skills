@@ -1,5 +1,6 @@
 export const SKILL_CATALOG = [
   { name: "hyperliquid-setup", purpose: "Discover tools, verify a public market read, and map workflow readiness." },
+  { name: "hyperliquid-wallet-audit", purpose: "Capture a public wallet's bounded activity and explain costs, realized outcomes and exposure with evidence." },
   {
     name: "hyperliquid-analyze",
     purpose: "Assess markets, funding, liquidity, catalysts, and strategy evidence.",

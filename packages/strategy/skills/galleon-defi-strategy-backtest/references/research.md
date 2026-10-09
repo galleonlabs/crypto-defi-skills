@@ -18,13 +18,15 @@ A useful initial experiment changes one factor at a time. For example: test whet
 
 ## Compare a held-out period
 
-Freeze the chosen rule before opening later observations. Keep training and held-out date ranges distinct. The bundled engine starts each run with its declared funded cash and indicator warmup; slicing history creates a separate experiment, not a continuous strategy or automatic walk-forward test. State this startup convention. If continuity across the split matters, use a venue-grade engine with explicit state carry and indicator prehistory rather than pretending a fresh run continued the previous position.
+Freeze the chosen rule before opening later observations. Keep reference and held-out date ranges distinct. Run the bundled `validate-strategy` command with an explicit zero-based split when dates are predetermined; it runs both periods and both cost assumptions without optimizing the rule. Its full [contract](model.md#frozen-rule-validation-contract) specifies sample minimums, costs and independent balances. A chronological partition labels an evaluation design; the runner cannot establish that the user had not already read the later prices.
+
+The bundled engine starts each period with declared funded cash, no position or pending order and fresh indicator warmup. Only contributions dated within each subset enter it. This creates independent experiments, not a continuous strategy or automatic walk-forward test. State this startup convention. If continuity across the split matters, use an engine with explicit state carry and indicator prehistory rather than pretending a fresh run continued the previous position.
 
 Report the number of observations, held-out dates, parameter variants attempted, both benchmark metrics and losses. A positive result on a short period or one surviving asset can reflect a regime or selection bias. Broad-market claims require an ex ante universe that includes delisted and unsuccessful assets, with available data and selection rules.
 
 ## Make costs visible
 
-Repeat a small declared range of fees, adverse slippage and nearby SMA periods or DCA cadences. Describe the number of tested variants and avoid presenting the best one as a prior thesis. Fixed basis points are assumptions, not a measured liquidity curve. Confirm any future venue's fees, spread, depth, minimum order, funding, borrow, latency and gas independently.
+The validator reports baseline costs and a declared higher-cost scenario in each period; default stress is `max(2 × baseline, baseline + 10 bps)` capped at 1000 for each cost component. Both the rule and benchmark receive the same stress. Inspect dollar costs and the return/drawdown differences without inventing a pass threshold. You can repeat a small declared range of fees, adverse slippage and nearby SMA periods or DCA cadences separately. Describe the number of tested variants and avoid presenting the best one as a prior thesis. Fixed basis points are assumptions, not a measured liquidity curve. Confirm any future venue's fees, spread, depth, minimum order, funding, borrow, latency and gas independently.
 
 The daily model cannot test intraday stops, limit-order queue position, partial fills or minute-level tactics. Its next observation prevents use of the signal mark as its own fill, but it does not prove that next aggregate price was tradeable. No Sharpe, Sortino, annualized return, win rate or profit factor is calculated; do not invent those metrics from this report.
 

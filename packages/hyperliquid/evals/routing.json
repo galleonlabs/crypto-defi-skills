@@ -357,5 +357,50 @@
       "hyperliquid-execute"
     ],
     "reason": "Verify provenance; use no-key official public Info reads and never supply a private key."
+  },
+  {
+    "prompt": "Audit this public Hyperliquid wallet over the last week, without connecting it.",
+    "expected": "hyperliquid-wallet-audit",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "Public wallet diagnostic capture is a bounded read-only result, independent of market research and execution."
+  },
+  {
+    "prompt": "Explain my Hyperliquid realized PnL, signed fees and funding from this capture file.",
+    "expected": "hyperliquid-wallet-audit",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "Offline deterministic wallet accounting uses captured evidence and preserves coverage gaps."
+  },
+  {
+    "prompt": "How much taker activity and which markets generated most fees for this wallet?",
+    "expected": "hyperliquid-wallet-audit",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "Wallet diagnostics attributes observed activity and costs without recommending trades."
+  },
+  {
+    "prompt": "Generate a reproducible public-wallet report with raw requests and SHA256 evidence.",
+    "expected": "hyperliquid-wallet-audit",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "Capture public exchange reads and verify local evidence with no keys or writes."
+  },
+  {
+    "prompt": "Compare this wallet's current positions with its observed recent trading costs.",
+    "expected": "hyperliquid-wallet-audit",
+    "mustNotInvoke": [
+      "hyperliquid-execute",
+      "hyperliquid-plan"
+    ],
+    "reason": "A bounded wallet audit separates current exposure, historical activity and unknown initial inventory."
   }
 ]

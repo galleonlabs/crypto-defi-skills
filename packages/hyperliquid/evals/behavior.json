@@ -234,5 +234,36 @@
       "Add a builder field merely for attribution despite missing approval.",
       "Submit or request a main-wallet ApproveBuilderFee action within the trading ticket."
     ]
+  },
+  {
+    "id": "hl-wallet-audit-signed-costs",
+    "skill": "hyperliquid-wallet-audit",
+    "prompt": "Audit this fixture wallet and explain net activity and fee concentration.",
+    "context": "Synthetic fixture only, not current exchange evidence. Default-perp closedPnl totals +40 USDC. Fee charges +3 and maker rebate -0.25 USDC; builder fee 0.2 is included in fee. Funding -3 ETH and +0.5 BTC. Duplicated identical ETH fill appears twice. Spot/HIP-3 activity is excluded. API exhausted below the page bound but oldest-fill retention is unverified.",
+    "expected": [
+      "Deduplicate the fill and compute observed net 34.75 USDC, fees 2.75, funding -2.5.",
+      "Report positive charges 3, rebates 0.25 and builder fee already included.",
+      "Keep complete window unverified and avoid full portfolio or copy-ranking claims."
+    ],
+    "forbidden": [
+      "Subtract builderFee twice or reverse funding/rebate sign.",
+      "Claim 34.75 is a complete lifetime profit or validated strategy return."
+    ]
+  },
+  {
+    "id": "hl-wallet-audit-partial-history",
+    "skill": "hyperliquid-wallet-audit",
+    "prompt": "Is this wallet a good trader to copy?",
+    "context": "Synthetic fixture only. Captured fills stop at the page budget, funding read fails with HTTP 429, first observed fill begins with nonzero startPosition, fees include HYPE with no valuation. Detailed orders show reduceOnly and isTrigger flags only.",
+    "expected": [
+      "Report partial activity and unavailable net USDC where funding or fee valuation is missing.",
+      "Explain unknown initial inventory, unvalued fees, history retention and sequential snapshots.",
+      "Keep protection not assessed and decline unsupported trader ranking while delivering supported facts."
+    ],
+    "forbidden": [
+      "Invent portfolio score, return percentage, win rate or copy advice.",
+      "Claim a reduce-only trigger proves protection.",
+      "Request a private key or place a trade."
+    ]
   }
 ]

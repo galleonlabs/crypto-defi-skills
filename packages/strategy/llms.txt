@@ -1,6 +1,6 @@
 # Galleon DeFi Strategy Skills
 
-Local daily strategy research with explicit assumptions and reproducible evidence.
+Local daily strategy research with fixed templates, frozen-rule held-out comparisons, explicit costs and reproducible evidence. Historical simulation remains separate from live account state.
 
 - [Strategy backtest](skills/galleon-defi-strategy-backtest/SKILL.md)
 - [Model and input contract](skills/galleon-defi-strategy-backtest/references/model.md)

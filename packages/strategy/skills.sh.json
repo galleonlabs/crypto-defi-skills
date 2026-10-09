@@ -4,7 +4,7 @@
   "groupings": [
     {
       "title": "Strategy testing",
-      "description": "Reproducible daily strategy backtests with costs, cash flows and buy-and-hold comparison.",
+      "description": "Frozen daily strategy validation with cost sensitivity, held-out periods and a reproducible benchmark.",
       "skills": [
         "galleon-defi-strategy-backtest"
       ]

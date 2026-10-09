@@ -1,7 +1,7 @@
 {
   "name": "galleon-hyperliquid-skills",
-  "version": "0.3.5",
-  "description": "Agent skills for Hyperliquid setup, market analysis, trade planning and execution, monitoring, and performance review.",
+  "version": "0.4.0",
+  "description": "Agent skills for Hyperliquid public wallet diagnostics, setup, market analysis, trade planning and execution, monitoring, and performance review.",
   "type": "module",
   "license": "MIT",
   "author": "Galleon Labs",

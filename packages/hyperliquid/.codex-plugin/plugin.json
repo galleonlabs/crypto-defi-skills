@@ -1,7 +1,7 @@
 {
   "name": "galleon-hyperliquid-skills",
-  "version": "0.3.5",
-  "description": "Agent skills for Hyperliquid setup, market analysis, trade planning and execution, monitoring, and performance review.",
+  "version": "0.4.0",
+  "description": "Agent skills for Hyperliquid public wallet diagnostics, setup, market analysis, trade planning and execution, monitoring, and performance review.",
   "author": {
     "name": "Galleon Labs"
   },
@@ -19,7 +19,7 @@
   "interface": {
     "displayName": "Galleon Hyperliquid Skills",
     "shortDescription": "Work with Hyperliquid safely and precisely",
-    "longDescription": "Research markets, size exact tickets, monitor live risk, execute explicit actions, review fills, and build Hyperliquid integrations.",
+    "longDescription": "Audit public wallets with reproducible evidence, research markets, size exact tickets, monitor live risk, execute explicit actions, review fills, and build Hyperliquid integrations.",
     "developerName": "Galleon Labs",
     "category": "Developer Tools",
     "capabilities": [
@@ -28,6 +28,7 @@
     ],
     "websiteURL": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid",
     "defaultPrompt": [
+      "Audit this public Hyperliquid wallet and explain its realized outcome and trading costs",
       "Assess this Hyperliquid market with current funding and depth",
       "Build an exact unsigned Hyperliquid order ticket",
       "Reconcile this account and flag any unprotected position"

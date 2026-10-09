@@ -12,14 +12,14 @@ Inspect spot, perpetuals and HIP-3 exposure with explicit account modes, margin 
 ## Install one skill
 
 ```bash
-npx skills add galleonlabs/crypto-defi-skills --skill hyperliquid-monitor
+npx skills add galleonlabs/crypto-defi-skills --skill hyperliquid-wallet-audit
 ```
 
 Choose the receiving agent in the installer. Keep the skill's references and scripts with its `SKILL.md`. Each pack works on its own. For a complete native Hermes desk, use [Boomkin](https://github.com/galleonlabs/boomkin).
 
 ## Try a first task
 
-> Use hyperliquid-monitor to inspect [account address] on Hyperliquid. Identify its account mode, positions, margin exposure and funding. Return a source-backed risk review before proposing a trade.
+> Use hyperliquid-wallet-audit to inspect [public account address] on mainnet for [start] through [end]. Capture raw evidence and explain observed realized PnL, signed fees, funding, maker/taker activity, current default-perp exposure and completeness gaps.
 
 Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
 
@@ -50,6 +50,7 @@ The repository also ships Codex and Claude Code plugin manifests. Cursor discove
 | Skill | Use it for | Output |
 | --- | --- | --- |
 | [hyperliquid-setup](skills/hyperliquid-setup/SKILL.md) | Discover tools and verify a first public read | Capability report, dated market snapshot, next task |
+| [hyperliquid-wallet-audit](skills/hyperliquid-wallet-audit/SKILL.md) | Audit a public account without wallet connection | Reproducible capture, signed cost accounting, current default-perp exposure and coverage gaps |
 | [hyperliquid-analyze](skills/hyperliquid-analyze/SKILL.md) | Assess markets, funding, liquidity, catalysts, and strategies | Dated evidence, risks, testable verdict |
 | [hyperliquid-plan](skills/hyperliquid-plan/SKILL.md) | Size and specify an order or position change | Exact unsigned ticket and preflight |
 | [hyperliquid-monitor](skills/hyperliquid-monitor/SKILL.md) | Inspect accounts, positions, orders, fills, and live risk | Reconciled state and alert verdict |
@@ -75,26 +76,35 @@ Follow `setup → analyze → plan → execute → monitor → review`. Use `hyp
 
 Installing the pack does not create a signer, account connection, strategy service or trading bot. The [connection guide](skills/hyperliquid-setup/references/connections.md) maps actual harness tools to each capability. Missing execution tools leave execution unavailable while public analysis can continue.
 
+## Public wallet diagnostics
+
+Try `hl-skills audit example --out ./wallet-audit-example --json` after installing the CLI. The synthetic fixture produces an observed net of 34.75 USDC: 40 closed PnL minus 2.75 signed fees plus -2.5 funding. A copied `hyperliquid-wallet-audit` skill can run the same workflow with `node scripts/wallet-audit.mjs`, without installing this package or another skill.
+
+Live capture needs only a public account, network and inclusive window. Read `report.md` alongside `coverage` in `report.json`: an exhausted API page does not establish complete history, and a finite budget or failed read stays partial. Snapshots describe sequential capture time, not historical state at window end.
+
 ## Updates and migration
 
 Version 0.2.0 renames `hyperliquid-research` to `hyperliquid-analyze` and `hyperliquid-operate` to `hyperliquid-execute`, and adds `hyperliquid-setup`. `hyperliquid-review` specifically means performance and process analysis after activity; `hyperliquid-analyze` handles markets and strategies beforehand.
 
 Reinstall to get the current names. Update saved prompts and harness configuration, then remove the old installed directories only after checking for local edits. No alias skills are retained. Other skills and credentials are unaffected by the repository rename.
 
-Pin `galleon-hyperliquid-skills@0.3.5` for a reproducible npm release, or use `@latest` for the current published package. Skill installers and deployers should pin a reviewed source revision and inspect changes before upgrading.
+Pin `galleon-hyperliquid-skills@0.4.0` for a reproducible npm release, or use `@latest` for the current published package. Skill installers and deployers should pin a reviewed source revision and inspect changes before upgrading.
 
 ## CLI
 
 ```bash
 hl-skills catalog
 hl-skills validate .
+hl-skills audit example --out ./wallet-audit-example --json
+hl-skills audit capture --address <public-account> --network mainnet --start 2026-10-01T00:00:00Z --end 2026-10-02T00:00:00Z --out ./wallet-audit-live --json
+hl-skills audit analyze --input ./wallet-audit-live/capture.json --out ./wallet-audit-reproduced --json
 hl-skills risk --side long --equity 10000 --risk-percent 0.5 --entry 3000 --stop 2900 --stop-slippage-bps 10 --entry-fee-bps 1.5 --exit-fee-bps 4.5 --size-decimals 4 --json
 hl-skills funding --side short --notional 25000 --rate 0.0000125 --interval-hours 1 --hours 24 --json
 hl-skills liquidation --side long --mark 3000 --liquidation 2500 --json
 hl-skills review --side long --size 0.5 --entry 3000 --exit 3090 --entry-fee 0.25 --exit-fee 1.2 --funding -0.4 --risk-usd 50 --json
 ```
 
-The package CLI performs local arithmetic and corpus validation. The separate setup helper performs narrow public market reads. Neither provides key handling, signing, or trading submission.
+The package CLI performs local arithmetic, corpus validation and public-wallet audits. `audit example` and `audit analyze` are offline; `audit capture` uses bounded sequential public Info reads without keys. It writes a human report, decimal-string JSON accounting and raw evidence with SHA256. The wallet audit covers validator-operated perpetual accounting and current exposure, reports spot balances separately, and excludes spot/HIP-3 activity from its outcome. It preserves pagination, history-retention, initial-inventory and denomination gaps; it does not produce a complete portfolio return, copy ranking or stop-protection verdict. See the [wallet-audit contract](skills/hyperliquid-wallet-audit/references/output-contract.md). The separate setup helper performs narrow public market reads. Neither provides key handling, signing or trading submission.
 
 ## Operating rules
 

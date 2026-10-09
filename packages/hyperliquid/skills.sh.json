@@ -4,9 +4,10 @@
   "groupings": [
     {
       "title": "Start here",
-      "description": "Connect tools and verify the first public read.",
+      "description": "Connect tools, verify a public read, or audit a public wallet without keys.",
       "skills": [
-        "hyperliquid-setup"
+        "hyperliquid-setup",
+        "hyperliquid-wallet-audit"
       ]
     },
     {

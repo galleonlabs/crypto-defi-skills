@@ -24,7 +24,7 @@ For Aave V4, use [`galleon-aave-v4`](../packages/lending/skills/galleon-aave-v4/
 
 ## Find your next task
 
-Use a named procedure when it fits. Broader primitive skills cover cross-protocol questions and providers without a dedicated workflow; [the agent index](AGENT-INDEX.md#skill-routing) lists all 48 active skills.
+Use a named procedure when it fits. Broader primitive skills cover cross-protocol questions and providers without a dedicated workflow; [the agent index](AGENT-INDEX.md#skill-routing) lists all 49 active skills.
 
 ### Positions, liquidity and exits
 

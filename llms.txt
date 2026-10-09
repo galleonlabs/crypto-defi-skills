@@ -1,6 +1,6 @@
 # Crypto DeFi Skills
 
-> Portable DeFi procedures for existing agents: 17 independent packs, 48 active skills and 2 retired LP compatibility notices. Official tool recipes, self-contained resources and explicit completion evidence.
+> Portable DeFi procedures for existing agents: 17 independent packs, 49 active skills and 2 retired LP compatibility notices. Official tool recipes, self-contained resources and explicit completion evidence.
 
 ## Start here
 
@@ -35,7 +35,7 @@
 - [derivatives](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/derivatives): `galleon-defi-derivatives-skills`; GMX, Derive, Drift and Pendle Boros lifecycle/margin/funding. [Version manifest](https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/derivatives/package.json).
 - [tokenized-assets](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/tokenized-assets): `galleon-defi-tokenized-assets-skills`; Tokenized Treasury/security eligibility, custody and settlement. [Version manifest](https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/tokenized-assets/package.json).
 - [governance](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/governance): `galleon-defi-governance-skills`; Proposal research, voting preparation and governance execution evidence. [Version manifest](https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/governance/package.json).
-- [hyperliquid](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid): `galleon-hyperliquid-skills`; Seven distinct stages: setup, analyze, plan, execute, monitor, review and engineer. [Version manifest](https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/hyperliquid/package.json).
+- [hyperliquid](https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/hyperliquid): `galleon-hyperliquid-skills`; Eight independently installable procedures, including public wallet cost audits, setup, analyze, plan, execute, monitor, review and engineer. [Version manifest](https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/hyperliquid/package.json).
 
 ## Task routing
 
@@ -73,3 +73,5 @@ Retain exact chain/account/deployment/asset identity, amount units, provider/ret
 - [Contributing](https://github.com/galleonlabs/crypto-defi-skills/blob/main/CONTRIBUTING.md): Native checks, portable resources, source evidence and pull request requirements
 - [Migration](https://github.com/galleonlabs/crypto-defi-skills/blob/main/MIGRATION.md): Retired lp-research → lp-analyze and lp-operate → lp-execute names
 - [License and attribution](https://github.com/galleonlabs/crypto-defi-skills/blob/main/ATTRIBUTION.md): MIT notice retention and third-party credit
+
+- [hyperliquid-wallet-audit](https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/hyperliquid/skills/hyperliquid-wallet-audit/SKILL.md): Capture and audit a public account with bounded official reads, exact raw hashes, signed fees/funding, activity costs and current exposure. Partial history remains explicit.
