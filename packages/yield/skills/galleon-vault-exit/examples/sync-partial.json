@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "snapshot": {
+    "chainId": "1",
+    "vault": "0x1111111111111111111111111111111111111111",
+    "asset": "0x2222222222222222222222222222222222222222",
+    "shareToken": "0x1111111111111111111111111111111111111111",
+    "owner": "0x4444444444444444444444444444444444444444",
+    "controller": "0x4444444444444444444444444444444444444444",
+    "receiver": "0x6666666666666666666666666666666666666666",
+    "caller": "0x4444444444444444444444444444444444444444",
+    "blockNumber": "24000000",
+    "blockHash": "0xabababababababababababababababababababababababababababababababab",
+    "assetDecimals": 6,
+    "shareDecimals": 18
+  },
+  "mode": "erc4626",
+  "intent": {
+    "unit": "shares",
+    "amountRaw": "1000000000000000000000"
+  },
+  "reads": {
+    "shareBalance": {
+      "raw": "1000000000000000000000",
+      "blockHash": "0xabababababababababababababababababababababababababababababababab"
+    },
+    "maxWithdraw": {
+      "raw": "435600000",
+      "blockHash": "0xabababababababababababababababababababababababababababababababab"
+    },
+    "maxRedeem": {
+      "raw": "400000000000000000000",
+      "blockHash": "0xabababababababababababababababababababababababababababababababab"
+    }
+  },
+  "preview": {
+    "method": "previewRedeem",
+    "amountRaw": "400000000000000000000",
+    "resultRaw": "435600000",
+    "blockHash": "0xabababababababababababababababababababababababababababababababab"
+  }
+}

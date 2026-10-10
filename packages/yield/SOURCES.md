@@ -10,3 +10,9 @@ These are independently authored operational procedures. Upstream code and docum
 - `galleon-vault-exit`: source URLs, read recipes and synthetic evidence in `skills/galleon-vault-exit/references/recipe.md`.
 
 Docs were researched; no real lending, redemption or staking transactions were executed. Deployment addresses, risk parameters, live balances and API versions must be read at use time.
+
+## Exit assessment, checked 2026-10-10
+
+The vault-exit skill now includes a same-block observation contract, offline helper and synthetic snapshots. [Protocol recipes](skills/galleon-vault-exit/references/recipe.md) cite ERC4626, ERC7540, ERC7575 and current Centrifuge documentation. They distinguish synchronous limits/previews from asynchronous controller claims and external share tokens.
+
+The helper computes from supplied observations; no provider access, deployment compatibility, simulation or financial outcome is inferred from a passing test. Official tools remain responsible for collection and any separately authorized transaction preparation.

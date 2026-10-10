@@ -1,25 +1,73 @@
-# ERC4626 read recipe and worked exit
+# Vault read recipes
 
-With verified `VAULT`, `OWNER`, `RPC_URL`, numeric `BLOCK` and raw requested `SHARES`:
+Use verified `VAULT`, `OWNER`, `CONTROLLER`, `CALLER`, `RPC_URL`, numeric `BLOCK` and raw amounts. Resolve the network and block hash through the selected official RPC tool first; record the hash and recheck it after reads to detect reorganization. These are read-only calls. Cast is optional; an existing official SDK or provider tool with equivalent block-pinned calls is sufficient.
+
+## Interface and token identity
 
 ```sh
-cast call "$VAULT" 'asset()(address)' --rpc-url "$RPC_URL" --block "$BLOCK"
-cast call "$VAULT" 'maxWithdraw(address)(uint256)' "$OWNER" --rpc-url "$RPC_URL" --block "$BLOCK"
-cast call "$VAULT" 'maxRedeem(address)(uint256)' "$OWNER" --rpc-url "$RPC_URL" --block "$BLOCK"
-cast call "$VAULT" 'previewRedeem(uint256)(uint256)' "$SHARES" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'asset()(address)' --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'supportsInterface(bytes4)(bool)' 0x01ffc9a7 --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'supportsInterface(bytes4)(bool)' 0xffffffff --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'supportsInterface(bytes4)(bool)' 0x620ee8e4 --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'supportsInterface(bytes4)(bool)' 0x2f0a18c5 --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
 ```
 
-For asynchronous vaults, inspect the implementation and ERC7540 support before choosing request/claim reads. Unsupported synchronous previews are not evidence of zero share value. For an ERC7540 redeem implementation, read `pendingRedeemRequest(requestId, controller)` and `claimableRedeemRequest(requestId, controller)`. Preparation uses `requestRedeem(shares, controller, owner)`; the eventual claim uses `redeem` or `withdraw` with the controller role, not an invented universal `claim()` method. Request ID zero aggregates requests by controller.
+ERC165 support should identify its own interface and reject the invalid ID. The redemption ID is `0x620ee8e4`; `0x2f0a18c5` is ERC7575. These claims still require implementation verification. Legacy ERC4626 vaults need not implement ERC165; failure is not automatic proof of either mode.
 
-## Synthetic worked record
+For verified ERC7575/ERC7540, resolve `SHARE` from `share()`. For ordinary ERC4626, use the vault address as `SHARE`. Resolve `ASSET` from `asset()`; do not use a symbol as identity.
 
-Owner has 1,000 shares. `convertToAssets(1000)` gives 1,100 asset units, `previewRedeem(1000)` gives 1,089, and `maxRedeem(owner)` is 400. A 1,000-share redemption is blocked despite a valid preview. Request a fresh preview for 400 shares; do not multiply the 1,000-share preview by 0.4 because fees can be nonlinear. If the actual 400-share preview returns 435.6, that is the observed partial-exit estimate. The remaining 600 shares retain exposure to the vault and its exit restrictions.
+```sh
+cast call "$VAULT" 'share()(address)' --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$SHARE" 'decimals()(uint8)' --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$ASSET" 'decimals()(uint8)' --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$SHARE" 'balanceOf(address)(uint256)' "$OWNER" --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+```
 
-For a request to receive exactly 500 assets with `maxWithdraw=435.6`, report that the requested amount exceeds the current limit by 64.4. Ask only for a decision about a partial exit if no such authorization exists; a read-only report can already return both numbers.
+## Synchronous exit
 
-## Primary sources checked 2026-09-27
+Use the intended vault caller as `CALLER` and record it in `snapshot.caller`. Previews may depend on `msg.sender`, including caller-specific fees. If an authorized route calls the vault through a router, inspect that route and use the router as the vault caller; a direct EOA preview is not its quote. Preserve the user wallet identity separately for the complete route simulation.
 
-- [ERC4626 standard](https://eips.ethereum.org/EIPS/eip-4626): limits, previews, rounding and exit methods.
-- [OpenZeppelin ERC4626 implementation guidance](https://docs.openzeppelin.com/contracts/5.x/erc4626): conversion and implementation risks.
-- [ERC7540 asynchronous vaults](https://eips.ethereum.org/EIPS/eip-7540): request/claim lifecycle.
+```sh
+cast call "$VAULT" 'maxWithdraw(address)(uint256)' "$OWNER" --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'maxRedeem(address)(uint256)' "$OWNER" --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+```
 
+Choose the smaller supported portion in the requested unit. Then use exactly one corresponding preview with raw `ASSETS` or `SHARES` for that portion:
+
+```sh
+cast call "$VAULT" 'previewWithdraw(uint256)(uint256)' "$ASSETS" --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'previewRedeem(uint256)(uint256)' "$SHARES" --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+```
+
+For example, a 1,000-share request with a 400-share limit leaves 600 shares outside the supported portion. A full-size preview of 1,089 assets cannot price the partial exit. A separate `previewRedeem(400)` returning 435.6 assets supports that estimate, subject to the recorded block, simulation and any required slippage guard.
+
+## Asynchronous claim state
+
+Read the actual controller, which may differ from the owner whose shares were requested:
+
+```sh
+cast call "$VAULT" 'maxWithdraw(address)(uint256)' "$CONTROLLER" --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'maxRedeem(address)(uint256)' "$CONTROLLER" --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'pendingRedeemRequest(uint256,address)(uint256)' "$REQUEST_ID" "$CONTROLLER" --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+cast call "$VAULT" 'claimableRedeemRequest(uint256,address)(uint256)' "$REQUEST_ID" "$CONTROLLER" --from "$CALLER" --rpc-url "$RPC_URL" --block "$BLOCK"
+```
+
+Record raw share units for both request reads. Read ID zero once for aggregate implementations. For nonzero IDs, enumerate the verified inventory and state whether it covers the full controller history. There is no standard request enumeration or generic claim-by-ID signature. A scan of only recent events is partial coverage.
+
+Do not use redemption previews on this branch. Controller-wide maximum assets are a directly observed bound, not a conversion of pending shares. Controller-wide maximum shares are claimable share capacity; wallet balance may be zero because the earlier request removed custody.
+
+For a delegated claim, check the implementation's operator rules; an ERC20 share allowance does not substitute for controller operator approval. ERC7540 supplies `isOperator(controller, caller)` for this read. Request submission from an owner is a distinct authorization path. Keep all transaction preparation unsigned unless actual user authority covers the write.
+
+## Provider-specific limits
+
+Centrifuge documents both fully asynchronous and instant-deposit vaults with request-based redemptions. Follow its current official integration guide for the specific deployment, eligibility and request processing. Other vault queues, cooldowns and cancellation extensions need their own verified interface. Do not label every delayed ERC4626 exit ERC7540.
+
+## Primary sources checked 2026-10-10
+
+- [ERC4626](https://eips.ethereum.org/EIPS/eip-4626): synchronous limits, previews and rounding.
+- [ERC7540](https://eips.ethereum.org/EIPS/eip-7540): requests, controllers and asynchronous claims.
+- [ERC7575](https://eips.ethereum.org/EIPS/eip-7575): external share token and vault identity.
+- [Centrifuge vaults](https://docs.centrifuge.io/user/concepts/vaults/): deposit versus redemption modes.
+- [Centrifuge integration](https://docs.centrifuge.io/build/): documented request and withdrawal procedure.
+
+These recipes were reviewed against documentation. No live deployment, authenticated provider, simulation or financial execution is claimed.

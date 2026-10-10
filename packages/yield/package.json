@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-yield-skills",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Evaluate vaults and yield tokens, including liquidity and maturity.",
   "type": "module",
   "license": "MIT",
@@ -52,9 +52,10 @@
   },
   "scripts": {
     "build": "bun ../../scripts/build-content-pack.ts",
-    "check": "bun run style && bun ../../scripts/check-content-pack.ts",
+    "check": "bun run style && bun run test && bun ../../scripts/check-content-pack.ts",
     "prepack": "bun run check",
     "validate": "bun ../../scripts/check-content-pack.ts --validate-only",
-    "style": "bun ../../scripts/check-style.ts"
+    "style": "bun ../../scripts/check-style.ts",
+    "test": "bun test ./test"
   }
 }
