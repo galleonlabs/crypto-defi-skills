@@ -1,6 +1,6 @@
 # PR definitions come from the trusted base; the job guard rejects fork heads
 # before runner admission. Trusted PRs check their exact head SHA.
-# Runner-native git avoids shared-IP action-download throttling.
+# GitHub-hosted runners keep this public repository's CI off dappnode.
 name: CI
 on:
   push:
@@ -11,11 +11,7 @@ permissions:
   contents: read
 jobs:
   check:
-    runs-on:
-      - self-hosted
-      - linux
-      - x64
-      - dappnode
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout with runner git
         env:
@@ -36,6 +32,9 @@ jobs:
           git checkout --force --detach "$CHECKOUT_SHA"
           git clean -ffdx -e 'node_modules/' -e '**/node_modules/'
           git log -1 --oneline
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
       - run: bun install --frozen-lockfile
       - run: bun run check
       # Smoke packs every workspace and checks the installed tarballs; a separate
