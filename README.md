@@ -71,8 +71,6 @@ Install only the packs you need. Each has its own npm version, CLI, plugin manif
 | [Payments](packages/payments) | [`galleon-defi-payments-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-payments-skills/v/0.2.1) | Stablecoin transfers, x402, Sablier and Superfluid |
 | [Governance](packages/governance) | [`galleon-defi-governance-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-governance-skills/v/0.1.3) | Snapshot, Cactus, Governor, voting and Safe execution |
 
-Yield 0.3.0 is an unpublished draft version on this branch. Its new exit helper is available from source; the current registry release remains 0.2.1 until a separate authorized release.
-
 ## Install only what you need
 
 The [Agent Skills installer](https://github.com/vercel-labs/skills) lets you select the receiving agent. List available skills or install a complete pack:

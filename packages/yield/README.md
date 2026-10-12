@@ -25,7 +25,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ## Reproduce an exit assessment
 
-The source version 0.3.0 adds an offline helper and bundled synthetic snapshots. It is an unpublished draft; the npm example below remains pinned to the existing 0.2.1 release. From an individually installed copy of `galleon-vault-exit` at this source revision:
+Version 0.3.0 adds an offline helper and bundled synthetic snapshots. From an individually installed copy of `galleon-vault-exit`:
 
 ```bash
 node scripts/assess-exit.mjs examples/async-partial.json
@@ -37,7 +37,7 @@ The example separates zero wallet shares, 600 pending shares and 400 claimable s
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-yield
-npx --package galleon-defi-yield-skills@0.2.1 defi-yield-skills catalog
+npx --package galleon-defi-yield-skills@0.3.0 defi-yield-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-yield/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
