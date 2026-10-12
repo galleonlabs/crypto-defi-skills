@@ -1,40 +1,73 @@
 ---
 name: galleon-vault-exit
-description: "Use when checking how much can leave an ERC4626 vault now, choosing withdraw versus redeem, or diagnosing preview, liquidity, fees and asynchronous exit constraints."
+description: "Use when checking how much can leave an ERC4626 vault, reconciling pending and claimable ERC7540 redemptions, or choosing withdraw versus redeem under liquidity and fee constraints."
 license: MIT
-compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
+compatibility: "Read-only EVM RPC or official provider tools; Node.js 20+ for the optional offline assessment. No signer required."
 metadata:
-  version: "0.2.1"
+  version: "0.3.0"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
 
-# ERC4626 vault exit
+# Vault exit assessment
 
-Produce an **exit feasibility record**, not an APY ranking. Resolve chain, vault, implementation, asset, owner, receiver and requested amount. Explicitly distinguish assets from shares and preserve each token's decimals.
+Answer how much of the requested exit fits the observed limit, what remains, and which read would resolve an uncertainty. Produce an exit feasibility record with amounts and units. A snapshot is historical evidence; refresh it before calling any amount available now.
 
-## Read at one block
+## Resolve the exit interface and identities
 
-Collect `asset()`, vault and asset `decimals()`, `balanceOf(owner)`, `totalAssets()`, `totalSupply()`, `maxWithdraw(owner)` and `maxRedeem(owner)`. Determine whether the contract really implements synchronous ERC4626 exits, or an asynchronous extension such as ERC7540. A familiar vault brand does not establish interface semantics.
+Resolve chain, vault entry point, implementation, underlying asset, share token, owner, controller, receiver and caller. Keep token addresses and decimals separate. For ordinary ERC4626 the vault is the share token; for ERC7575 and ERC7540 read `share()` and query the returned token for balance and decimals. A zero balance at the vault address is not proof that external shares are missing.
 
-For an exact-asset request, call `previewWithdraw(assets)` to estimate shares burned, then compare assets with `maxWithdraw(owner)` and required shares with ownership. For an exact-share request, call `previewRedeem(shares)` to estimate assets received, then compare shares with `maxRedeem(owner)`. Previews describe conversion including exit fees but deliberately ignore withdrawal limits. `convertToAssets` is an idealized conversion, not an executable quote.
+Identify the **redemption** interface from verified implementation documentation and interface reads. An instant deposit can still have an asynchronous redemption. ERC7540 redemption support uses `supportsInterface(0x620ee8e4)`; inspect ERC165 and ERC7575 support too. A false or reverted interface call does not prove synchronous ERC4626 behavior. If unresolved, return the missing implementation/interface evidence before choosing a method.
 
-Read implementation-specific pause, cooldown, queue, withdrawal fee and strategy-liquidity state. For asynchronous redemption, identify request/controller/owner roles and the request-to-claim transition from that vault's interface; do not force a synchronous preview or pretend a request receipt is liquid assets. Unknown interface means report the missing method/source, not invent `claim()`.
+Read [protocol recipes](references/recipe.md) for the selected interface. Use one block number and hash for all observations, including previews and request state. Collect previews with the intended vault caller; caller-dependent fees can change their result, and a router may be that caller. Identify whose account each limit describes: the owner for synchronous exits, the controller for asynchronous claims.
 
-## Build a bounded exit
+## Synchronous redemption
 
-Choose `withdraw(assets, receiver, owner)` when the user needs a specific underlying amount, or `redeem(shares, receiver, owner)` when disposing a specific share amount. A third-party caller may need share allowance. A direct owner redemption does not generally require approving the underlying asset. Verify actual implementation rules and do not approve a random router to repair an unexplained revert.
+Collect `asset()`, share and asset decimals, `balanceOf(owner)`, `maxWithdraw(owner)` and `maxRedeem(owner)`. Read total assets/supply, pause state, fees and strategy liquidity when needed to explain the limit. Total assets or a token balance alone cannot replace the owner-specific limit.
 
-Standard ERC4626 methods do not include maxShares/minAssets slippage arguments. If the user requires a bound, use a documented router with that bound or another explicitly supported mechanism; never invent extra arguments. Simulation uses actual sender/receiver and current allowance. Slippage bounds, preview freshness and short submission windows all matter; a past preview is not a promise.
+- For exact assets, compare the request with `maxWithdraw`, then call `previewWithdraw` for the candidate amount and compare required shares with ownership.
+- For exact shares, compare the request with `maxRedeem` and ownership, then call `previewRedeem` for the candidate amount.
+- If a partial amount is the only supported portion, obtain a preview for that exact partial amount. Never scale a full-exit preview: fees and rounding can be nonlinear.
 
-If the request exceeds liquidity, return the available portion and remaining amount, plus the specific documented queue/wait route. Do not split or submit a partial exit without authorization for that outcome. A token balance held by the vault is not the full strategy-withdrawable liquidity.
+Previews include exit fees but ignore withdrawal limits. `convertToAssets` is an idealized conversion, not an executable quote. Keep a missing or reverted preview unknown; preserve the observed limit and explain the exact next read.
 
-After authorized execution, reconcile burned shares, received underlying, receipt events and fees. Reread remaining shares. Preserve losses in the record; a higher share price can coexist with withdrawal fees or insufficient liquidity.
+## Asynchronous redemption and reconciliation
 
-## Evidence and completion
+Resolve the request controller separately from the original share owner. Read controller-wide `maxWithdraw(controller)` and `maxRedeem(controller)`. Obtain request IDs from verified receipts/events or the official implementation's request inventory, then read `pendingRedeemRequest(requestId, controller)` and `claimableRedeemRequest(requestId, controller)`.
 
-Return the requested decision, exact deployment and chain, block/time, raw-unit observations, calculation assumptions, and the next missing read. Distinguish an indexed estimate, an onchain read, a simulated call and a confirmed transaction. Research ends with an actionable decision record; it does not require connecting a wallet.
+Keep three observations separate: **wallet shares**, **pending shares**, and **claimable shares**. Requested shares may already be escrowed or burned, so wallet balance does not cap a controller's claim. Do not convert pending shares to guaranteed assets or assume an ETA or yield accrual. Asynchronous redemption previews are specified to revert; do not call them to price a claim or label the shares worthless.
 
-For a requested write, prepare the complete unsigned sequence and simulate with the actual sender, amount, recipient and allowance state. Preserve authorization already supplied; research does not grant debt, spending or signing authority. Never request keys. After an authorized transaction, verify its receipt and the relevant balance or position change. On an ambiguous timeout, reconcile its hash and nonce before retrying.
+Request identity includes chain, vault, controller and request ID. ID zero is an aggregate: read it once, not once per historical request transaction. Distinct nonzero IDs may fulfill at different rates and times. State whether the inventory is complete, partial or unknown. Controller-wide exit limits cannot be attributed to one selected request. Partial inventory does not erase a supplied controller limit, but it cannot establish all outstanding requests.
 
-Read [protocol references and worked record](references/recipe.md) only for the selected operation. Documentation checked 2026-09-27; refresh deployments and current parameters at use time. This directory is independently installable.
+Choose the next step from the evidence:
+
+| Observation | Useful result and next step |
+| --- | --- |
+| Positive controller limit | Report the supported claim portion in the requested unit; prepare a simulation of `withdraw` or `redeem` using the actual controller/caller/receiver. Asset proceeds for an exact-share claim need implementation-specific evidence or simulation. |
+| Pending shares, zero claim limit | Report the pending share amount; re-read fulfillment state according to the vault's documented process. A successful request is not delivery. |
+| Zero pending and claimable | Reconcile request inventory, controller, receipts and receiver balance before inferring anything was claimed. Zero state alone does not prove settlement. |
+| Request exceeds current claim limit | Report the remainder in the original unit. Reconcile existing requests before proposing another `requestRedeem`; do not duplicate a pending request. |
+| Unrequested wallet shares remain | A new `requestRedeem(shares, controller, owner)` is a separate operation requiring its own bounds, authority and simulation. No generic `requestWithdraw(assets)` or universal `claim()` exists. |
+
+## Optional reproducible assessment
+
+Use the dependency-free [offline helper](scripts/assess-exit.mjs) when exact arithmetic, incomplete request coverage or repeated observations make the decision harder to inspect. Read the [observation contract and examples](references/assessment.md), then run from this skill directory:
+
+```sh
+node scripts/assess-exit.mjs examples/async-partial.json
+node scripts/assess-exit.mjs examples/sync-partial.json
+```
+
+Replace the synthetic inputs with actual same-block reads to assess a real snapshot. The helper only compares supplied values, uses raw integer strings, and has no provider, credential or signing access. It returns an observed limit, partial remainder, indicative method, request coverage and next reads. It does not prove current liquidity, authorize a partial exit or simulate a call. Conflicting block evidence produces no candidate.
+
+## Preparation and completion
+
+For an authorized write, prepare the complete unsigned sequence using maintained official tools and simulate with actual sender, receiver, account roles, allowances and amount. Direct owner ERC4626 redemption generally needs no underlying-token approval; delegated share spending and ERC7540 operator permissions are different contracts. Verify the deployed rules. Never add a broad approval to repair an unexplained revert.
+
+Standard exit calls have no `maxShares` or `minAssets` arguments. Use a documented router or supported guard when a user requires slippage protection. Do not invent signature arguments, cancellation support or request-ID claim selection. Preserve existing authorization; a read-only assessment grants no signing or spending authority, and a partial amount is not approval to execute it.
+
+Return an answer-first record: requested amount, supported portion and remainder with units; chain/vault/asset/share identities; owner/controller/receiver; block number/hash; request inventory coverage; gaps and next read. Separate observations, estimates, simulation and confirmed receipt evidence.
+
+After authorized execution, reconcile the transaction identity, receipt/events, share or request-state change, and the receiver's actual underlying balance change. A request-to-claim transition alone is not a received balance. On an ambiguous timeout, reconcile hash/nonce and request state before retrying. Preserve fees, losses and remaining exposure.
+
+Sources checked 2026-10-10. This directory, including references, examples and helper, is independently installable.

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "snapshot": {
+    "chainId": "1",
+    "vault": "0x1111111111111111111111111111111111111111",
+    "asset": "0x2222222222222222222222222222222222222222",
+    "shareToken": "0x3333333333333333333333333333333333333333",
+    "owner": "0x4444444444444444444444444444444444444444",
+    "controller": "0x5555555555555555555555555555555555555555",
+    "receiver": "0x6666666666666666666666666666666666666666",
+    "caller": "0x5555555555555555555555555555555555555555",
+    "blockNumber": "24000000",
+    "blockHash": "0xabababababababababababababababababababababababababababababababab",
+    "assetDecimals": 6,
+    "shareDecimals": 18
+  },
+  "mode": "erc7540",
+  "intent": {
+    "unit": "assets",
+    "amountRaw": "500000000"
+  },
+  "reads": {
+    "shareBalance": {
+      "raw": "0",
+      "blockHash": "0xabababababababababababababababababababababababababababababababab"
+    },
+    "maxWithdraw": {
+      "raw": "420000000",
+      "blockHash": "0xabababababababababababababababababababababababababababababababab"
+    },
+    "maxRedeem": {
+      "raw": "400000000000000000000",
+      "blockHash": "0xabababababababababababababababababababababababababababababababab"
+    }
+  },
+  "requests": {
+    "coverage": "complete",
+    "items": [
+      {
+        "requestId": "0",
+        "pendingSharesRaw": "600000000000000000000",
+        "claimableSharesRaw": "400000000000000000000",
+        "blockHash": "0xabababababababababababababababababababababababababababababababab"
+      }
+    ]
+  }
+}

@@ -61,7 +61,7 @@ Install only the packs you need. Each has its own npm version, CLI, plugin manif
 | [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.4.0`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.4.0) | Public wallet cost audits, spot, perps, HIP-3, account modes and review |
 | [Lending](packages/lending) | [`galleon-defi-lending-skills@0.3.1`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.3.1) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
 | [Staking](packages/staking) | [`galleon-defi-staking-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-staking-skills/v/0.2.1) | Lido, Rocket Pool, EigenLayer and Symbiotic staking and exits |
-| [Yield](packages/yield) | [`galleon-defi-yield-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.2.1) | Vaults, Pendle PT/YT, Yearn, Spark savings and Ethena |
+| [Yield](packages/yield) | [`galleon-defi-yield-skills@0.3.0`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.3.0) | Vault exit evidence, pending/claimable redemptions, Pendle PT/YT and savings |
 | [Tokenized Assets](packages/tokenized-assets) | [`galleon-defi-tokenized-assets-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-tokenized-assets-skills/v/0.1.3) | Ondo and OpenEden eligibility, issuer risk and settlement |
 | [Routing](packages/routing) | [`galleon-defi-routing-skills@0.3.1`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.3.1) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
 | [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.5`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.5) | GMX, Derive, Drift and Pendle Boros trading lifecycles |

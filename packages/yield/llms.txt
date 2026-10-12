@@ -8,3 +8,5 @@ Evaluate vaults and yield tokens, including liquidity and maturity.
 
 - [galleon-pendle-maturity](skills/galleon-pendle-maturity/SKILL.md)
 - [galleon-vault-exit](skills/galleon-vault-exit/SKILL.md)
+
+- [Offline exit assessment](skills/galleon-vault-exit/references/assessment.md): supplied block evidence, partial exits, pending/claimable requests and unknown coverage.

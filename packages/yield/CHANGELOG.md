@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0 · 2026-10-12
+
+- Add an offline, dependency-free vault exit assessment with exact raw-unit arithmetic and block-bound observations.
+- Separate synchronous previews from ERC7540 controller limits, pending requests and claimable shares, including external ERC7575 share tokens.
+- Bundle worked snapshots, read recipes, behavioral exercises and executable regression coverage; preserve independent installation and financial authority boundaries.
+
 ## 0.2.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

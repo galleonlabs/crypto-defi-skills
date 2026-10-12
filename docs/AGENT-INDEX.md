@@ -96,7 +96,7 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | --- | --- | --- |
 | [`galleon-defi-yield`](../packages/yield/skills/galleon-defi-yield/SKILL.md) | Compare vaults, savings and yield-token strategies | Cross-protocol terms, liquidity, fees and maturity; use exact exit/maturity tasks below |
 | [`galleon-pendle-maturity`](../packages/yield/skills/galleon-pendle-maturity/SKILL.md) | Compare Pendle PT/YT maturity with early exit | V2 lifecycle and underlying accounting; Boros margin belongs in derivatives |
-| [`galleon-vault-exit`](../packages/yield/skills/galleon-vault-exit/SKILL.md) | Check an ERC4626 withdrawal/redemption or asynchronous exit | Owner limits versus preview, rounding, fees and actually available liquidity |
+| [`galleon-vault-exit`](../packages/yield/skills/galleon-vault-exit/SKILL.md) | Check an ERC4626 withdrawal/redemption or asynchronous exit | Block-pinned exit assessment, exact partial previews, controller limits and pending/claimable request coverage |
 
 ### Swaps and bridges
 

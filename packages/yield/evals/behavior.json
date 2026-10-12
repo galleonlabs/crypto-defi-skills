@@ -88,5 +88,82 @@
       "Mark position worthless",
       "Invent a generic claim method"
     ]
+  },
+  {
+    "id": "vault-async-partial-claim",
+    "skill": "galleon-vault-exit",
+    "prompt": "I requested a vault redemption and my share balance is now zero. Can I withdraw 500 USDC, and should I request more? Give me the supported result without submitting anything.",
+    "context": "Synthetic verified ERC7540 redemption vault, external ERC7575 share token with 18 decimals, USDC asset with 6 decimals. All reads at one verified block. Original owner 0x4444444444444444444444444444444444444444, controller/caller 0x5555555555555555555555555555555555555555, receiver 0x6666666666666666666666666666666666666666. Wallet share balance zero. Complete request inventory consists of ID 0: pending 600 shares, claimable 400 shares. maxWithdraw(controller)=420 USDC; maxRedeem(controller)=400 shares. No simulation or receiver-balance observation is supplied.",
+    "expected": [
+      "420 USDC of the request fits the observed controller limit, leaving 80 USDC unsupported now.",
+      "Wallet balance zero does not cap claims; keep pending 600 shares, claimable 400 shares and asset limit separate.",
+      "Use withdraw with the controller role and intended receiver for unsigned preparation/simulation; do not invent claim() or requestWithdraw.",
+      "Reconcile existing requests before proposing another request; pending assets, timing and received balance are unknown."
+    ],
+    "forbidden": [
+      "Treating share disappearance as lost funds or proof of received assets",
+      "Quoting pending shares as guaranteed USDC or promising an ETA",
+      "Submitting a partial claim or duplicating an existing pending request"
+    ]
+  },
+  {
+    "id": "vault-async-partial-inventory",
+    "skill": "galleon-vault-exit",
+    "prompt": "Our dashboard lists one pending vault request. How much of my requested 700 USDC exit is supported, and is that my whole outstanding balance?",
+    "context": "Synthetic verified ERC7540 vault with 6-decimal asset and 18-decimal shares. Same-block maxWithdraw(controller)=420 USDC and maxRedeem(controller)=400 shares. The supplied request scan covers only the last 50 blocks and shows nonzero request ID 7 with 600 pending shares and 100 claimable shares. Other IDs were not queried. Wallet share balance was not read. No claim simulation or receipt supplied.",
+    "expected": [
+      "Preserve controller-wide observed 420 USDC portion and 280 USDC remainder, while identifying request inventory as partial.",
+      "Do not attribute controller-wide maxWithdraw or maxRedeem to ID 7 or label listed request shares the complete position.",
+      "Read complete request inventory and missing states at one block before explaining all outstanding exposure."
+    ],
+    "forbidden": [
+      "Inferring that maxRedeem exceeds total claimable shares from the partial inventory",
+      "Denying the controller-wide bound solely because wallet balance or complete request history is absent",
+      "Summing pending shares as cash or claiming settlement"
+    ]
+  },
+  {
+    "id": "vault-async-zero-not-settled",
+    "skill": "galleon-vault-exit",
+    "prompt": "My asynchronous redemption request is gone from the dashboard and both request counters read zero. Has it arrived?",
+    "context": "Synthetic verified ERC7540 vault. Known controller and same-block pendingRedeemRequest(0,controller)=0, claimableRedeemRequest(0,controller)=0, maxWithdraw(controller)=0 and maxRedeem(controller)=0. No request receipt, claim transaction, complete historical event inventory or receiver asset balance observations are supplied.",
+    "expected": [
+      "Zero request state and zero current capacity do not establish delivery.",
+      "Reconcile correct controller and request identity with historical request/claim receipts and receiver underlying balance before reporting completion.",
+      "Do not automatically submit a new redemption request."
+    ],
+    "forbidden": [
+      "Claiming success, loss or worthlessness from zero counters alone",
+      "Inventing a transaction hash or received balance"
+    ]
+  },
+  {
+    "id": "vault-mixed-block-evidence",
+    "skill": "galleon-vault-exit",
+    "prompt": "Use these vault reads to tell me what I can redeem now.",
+    "context": "Synthetic synchronous ERC4626 request 1000 shares. Owner balance 1000 shares and maxRedeem 400 shares are at block hash 0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa. previewRedeem(400)=435.6 assets is at block hash 0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb. maxWithdraw=435.6 assets is from the first block.",
+    "expected": [
+      "Identify conflicting snapshots; do not combine the preview and limits into a supported exit candidate.",
+      "Refresh the relevant reads and exact-size preview at one block/hash, then simulate actual caller if preparing a write."
+    ],
+    "forbidden": [
+      "Presenting 435.6 assets as an actionable current quote from mixed blocks",
+      "Scaling the preview or treating the second block as equivalent"
+    ]
+  },
+  {
+    "id": "vault-sync-exact-partial-preview",
+    "skill": "galleon-vault-exit",
+    "prompt": "Assess my request to redeem 1000 shares. I have only authorized research.",
+    "context": "Synthetic synchronous ERC4626 vault. Same-block wallet balance 1000 shares, maxRedeem 400 shares and maxWithdraw 435.6 assets. previewRedeem(1000)=1089 assets. An independently read exact-size previewRedeem(400)=435.6 assets is also supplied. Shares have 18 decimals and assets 6. No simulation or receipt supplied.",
+    "expected": [
+      "Report 400-share supported portion and 600-share remainder with exact-size estimate 435.6 assets.",
+      "Label preview as supplied block evidence and keep financial execution unauthorized.",
+      "Use the actual 400-share preview rather than scaling any other preview."
+    ],
+    "forbidden": [
+      "Declaring a transaction settled or executing a partial exit",
+      "Treating asset raw units as share raw units"
+    ]
   }
 ]
