@@ -130,5 +130,23 @@
       "galleon-defi-routing"
     ],
     "reason": "Vault slippage bounds require supported router semantics, not a generic swap quote."
+  },
+  {
+    "prompt": "My ERC7540 wallet shares are zero after requesting redemption; separate pending shares, claimable shares and the controller withdrawal limit.",
+    "expected": "galleon-vault-exit",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio",
+      "galleon-lido-withdrawals"
+    ],
+    "reason": "Vault-specific request reconciliation uses controller and ERC7540 semantics, not generic portfolio aggregation or Lido NFTs."
+  },
+  {
+    "prompt": "This vault accepts instant deposits but queues redemptions. Assess a partial claim from my ERC7540 controller at one block.",
+    "expected": "galleon-vault-exit",
+    "mustNotInvoke": [
+      "galleon-defi-yield",
+      "galleon-defi-routing"
+    ],
+    "reason": "Exit interface and request state determine the answer, independently of deposit behavior or swaps."
   }
 ]

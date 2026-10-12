@@ -19,15 +19,25 @@ Choose the receiving agent in the installer. Keep the skill's references and scr
 
 ## Try a first task
 
-> Use galleon-vault-exit to inspect [vault address] on [chain] for [owner]. Compare redeem previews with owner limits, liquidity, rounding and any asynchronous exit steps.
+> Use galleon-vault-exit to assess an exit of [amount and asset/share unit] from [vault address] on [chain]. Separate wallet shares, pending requests and the controller's claimable amount; return the supported portion, remainder and missing reads.
 
 Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
+
+## Reproduce an exit assessment
+
+Version 0.3.0 adds an offline helper and bundled synthetic snapshots. From an individually installed copy of `galleon-vault-exit`:
+
+```bash
+node scripts/assess-exit.mjs examples/async-partial.json
+```
+
+The example separates zero wallet shares, 600 pending shares and 400 claimable shares. An observed controller limit of 420 assets supports only 420 of a 500-asset request, leaving 80. It does not value pending shares or claim a transaction succeeded. Read the [observation contract](skills/galleon-vault-exit/references/assessment.md) to supply real same-block evidence. Node.js 20+ is sufficient, with no network calls or dependencies.
 
 ## Install
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-yield
-npx --package galleon-defi-yield-skills@0.2.1 defi-yield-skills catalog
+npx --package galleon-defi-yield-skills@0.3.0 defi-yield-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-yield/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

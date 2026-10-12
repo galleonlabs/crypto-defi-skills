@@ -1,4 +1,4 @@
 interface:
-  display_name: "ERC4626 vault exit"
-  short_description: "ERC4626 vault exit workflow and evidence"
-  default_prompt: "Use $galleon-vault-exit to perform the requested protocol workflow and return its decision record."
+  display_name: "Vault exit assessment"
+  short_description: "ERC4626 exits and pending or claimable ERC7540 requests"
+  default_prompt: "Use $galleon-vault-exit to assess the requested vault exit, separate pending from claimable shares, and return the supported amount with evidence gaps."

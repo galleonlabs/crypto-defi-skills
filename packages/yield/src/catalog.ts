@@ -9,7 +9,7 @@ export const SKILL_CATALOG = [
   },
   {
     name: "galleon-vault-exit",
-    purpose: "Use when checking how much can leave an ERC4626 vault now, choosing withdraw versus redeem, or diagnosing preview, liquidity, fees and asynchronous exit constraints.",
+    purpose: "Use when checking how much can leave an ERC4626 vault, reconciling pending and claimable ERC7540 redemptions, or choosing withdraw versus redeem under liquidity and fee constraints.",
   },
 ] as const;
 
