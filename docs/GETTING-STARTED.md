@@ -78,7 +78,7 @@ npx skills add galleonlabs/crypto-defi-skills --list
 npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/payments
 ```
 
-The installer supports clients including Codex, Claude Code and Cursor. These repository URLs follow `main`. For reproducibility, select a reviewed Git revision using the installer's supported source formats, or use a version-pinned package and preserve its resource files. [Boomkin](https://github.com/galleonlabs/boomkin) maintains reviewed source pins for Hermes users.
+The installer supports clients including Claude Code, Codex, Cursor, Gemini CLI, Hermes Agent and OpenClaw. These repository URLs follow `main`. For reproducibility, select a reviewed Git revision using the installer's supported source formats, or use a version-pinned package and preserve its resource files. [Boomkin](https://github.com/galleonlabs/boomkin) maintains reviewed source pins for Hermes users.
 
 ### npm: inspect a packaged corpus
 
@@ -102,6 +102,14 @@ npm provides the corpus and CLI. It does not install the corpus into your agent'
 ```
 
 Each pack contains its own Codex plugin manifest. Follow your client's plugin workflow and select the relevant pack. The separate [research plugin](../plugins/defi-research/README.md) uses a release ZIP, with source pins and checksums described in [RELEASING.md](../RELEASING.md#research-plugin-release-and-installation).
+
+### Gemini CLI: native skill install
+
+```bash
+gemini skills install https://github.com/galleonlabs/crypto-defi-skills.git --path packages/lending/skills
+```
+
+Gemini CLI copies every skill in the selected pack directory into its user skills folder; run `gemini skills list` to confirm them. Replace `lending` with another pack directory, or add `--scope workspace` to keep the skills in the current project. Like the other source commands, this follows `main`.
 
 ### Hermes: a complete profile through Boomkin
 
