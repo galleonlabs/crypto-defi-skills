@@ -1,0 +1,14 @@
+{
+  "name": "crypto-defi-skills-benchmark-2026-10",
+  "private": true,
+  "type": "module",
+  "description": "With/without skill benchmark harness for crypto-defi-skills. Source contributor tool; not part of any published pack.",
+  "scripts": {
+    "bench": "bun src/cli.ts",
+    "test": "bun test ./test",
+    "typecheck": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.133.0"
+  }
+}

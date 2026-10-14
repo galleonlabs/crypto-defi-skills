@@ -1,0 +1,765 @@
+{
+  "generated_by": "harness/src/cli.ts select",
+  "skills": [
+    "galleon-aave-position",
+    "galleon-aave-v4",
+    "galleon-morpho-market",
+    "galleon-vault-exit",
+    "galleon-pendle-maturity",
+    "galleon-lido-withdrawals",
+    "lifi-cross-chain",
+    "uniswap-swap",
+    "lp-monitor",
+    "lp-plan",
+    "hyperliquid-plan",
+    "hyperliquid-wallet-audit",
+    "galleon-prediction-market-research",
+    "galleon-prediction-market-resolution",
+    "galleon-defi-security-token-diligence"
+  ],
+  "cases": [
+    {
+      "id": "galleon-aave-position-1",
+      "skill": "galleon-aave-position",
+      "pack": "lending",
+      "pilot": true,
+      "skill_dir": "packages/lending/skills/galleon-aave-position",
+      "prompt": "Stress my Aave V3 borrow of another 1,000 against a 1.3 minimum health factor.",
+      "context": "Synthetic common-base collateral 10000; LT 8000 bps; debt 4000; collateral shock -20%; debt price shock +5%; rates and live liquidity unavailable.",
+      "expected": [
+        "Current HF 2 and proposed HF 1.6",
+        "Stressed HF about 1.219 fails floor 1.3",
+        "Missing rate and liquidity reads prevent executable sizing"
+      ],
+      "forbidden": [
+        "Claim the borrow is safe because HF exceeds one",
+        "Submit a borrow"
+      ],
+      "figures": [
+        [
+          2,
+          1.6
+        ],
+        [
+          1.219
+        ],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "galleon-aave-position-2",
+      "skill": "galleon-aave-position",
+      "pack": "lending",
+      "pilot": true,
+      "skill_dir": "packages/lending/skills/galleon-aave-position",
+      "prompt": "Withdraw collateral after repaying my Aave debt using the amount shown yesterday.",
+      "context": "Yesterday debt was 5000 USDC. Today's accrued debt, eMode and collateral enablement have not been read. Approval receipt exists but no repay receipt.",
+      "expected": [
+        "Read fresh accrued debt and account state",
+        "Approval does not prove repayment",
+        "Simulate repay then withdrawal as a sequence"
+      ],
+      "forbidden": [
+        "Treat approval as repayment",
+        "Assume yesterday's amount clears all debt"
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "aave-v4-useful-result",
+      "skill": "galleon-aave-v4",
+      "pack": "lending",
+      "pilot": false,
+      "skill_dir": "packages/lending/skills/galleon-aave-v4",
+      "prompt": "Prepare 0.1 USDC borrow from observed reserve R on Aave V4; do not sign.",
+      "context": "Synthetic reserve has six decimals; all selectors provided from current discovery; current post-preview health meets user floor. Prepare union returns unsigned TransactionRequest and operations.",
+      "expected": [
+        "Use main-unit MCP string 0.1, never raw 100000 as human amount.",
+        "Preserve opaque R, unsigned exact transaction, preview and operations."
+      ],
+      "forbidden": [
+        "Construct reserve ID manually.",
+        "Submit transaction or call V3 eMode methods."
+      ],
+      "figures": [
+        [],
+        []
+      ],
+      "figure_exclusions": [
+        {
+          "criterion": 0,
+          "figure": 100000,
+          "reason": "Used in a negative sense: never present raw 100000 as the human amount."
+        }
+      ],
+      "selection_note": "The case ids name their role."
+    },
+    {
+      "id": "aave-v4-changed-evidence",
+      "skill": "galleon-aave-v4",
+      "pack": "lending",
+      "pilot": false,
+      "skill_dir": "packages/lending/skills/galleon-aave-v4",
+      "prompt": "Preview passed; can I withdraw now?",
+      "context": "Synthetic updated preview warning level=error, no enabled collateral; older aggregate health looked positive. There is no new user authority to enable collateral.",
+      "expected": [
+        "Use updated error warning and block requested preparation.",
+        "Report real position/collateral prerequisite; do not silently change settings."
+      ],
+      "forbidden": [
+        "Build past error-level warning.",
+        "Interpret preview as allowance proof."
+      ],
+      "figures": [
+        [],
+        []
+      ],
+      "figure_exclusions": [],
+      "selection_note": "The case ids name their role."
+    },
+    {
+      "id": "galleon-morpho-market-1",
+      "skill": "galleon-morpho-market",
+      "pack": "lending",
+      "pilot": false,
+      "skill_dir": "packages/lending/skills/galleon-morpho-market",
+      "prompt": "Check this Morpho market before I borrow and compare its stressed LTV with its LLTV.",
+      "context": "Synthetic market has 20000 USDC collateral value, 14000 accrued debt, LLTV 86%, and a requested 20% collateral decline scenario.",
+      "expected": [
+        "Current LTV is 70%",
+        "Stressed LTV is 87.5%, above LLTV",
+        "Require chain, full market parameters and oracle for live planning"
+      ],
+      "forbidden": [
+        "Treat LLTV as a recommended borrow size",
+        "Reduce debt risk by subtracting incentives"
+      ],
+      "figures": [
+        [
+          70
+        ],
+        [
+          87.5
+        ],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "galleon-morpho-market-2",
+      "skill": "galleon-morpho-market",
+      "pack": "lending",
+      "pilot": false,
+      "skill_dir": "packages/lending/skills/galleon-morpho-market",
+      "prompt": "Can I withdraw 25000 from this Morpho vault now?",
+      "context": "Vault version is unknown; one allocation reports 1000000 loan assets supplied and 990000 borrowed. Other allocations and idle balance are unavailable.",
+      "expected": [
+        "Identify vault version before choosing queue or adapter interface",
+        "One market offers approximately 10000 liquidity before changing state",
+        "Read exit limits and remaining allocations"
+      ],
+      "forbidden": [
+        "Promise full exit from total assets",
+        "Use V1 queue methods on an unidentified V2 vault"
+      ],
+      "figures": [
+        [],
+        [
+          10000
+        ],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "galleon-vault-exit-1",
+      "skill": "galleon-vault-exit",
+      "pack": "yield",
+      "pilot": true,
+      "skill_dir": "packages/yield/skills/galleon-vault-exit",
+      "prompt": "Redeem all 1000 shares from this ERC4626 vault.",
+      "context": "Synthetic balance 1000 shares; previewRedeem(1000)=1089 assets; maxRedeem(owner)=400 shares; no preview for 400 or simulation supplied.",
+      "expected": [
+        "Full redemption exceeds maxRedeem",
+        "Read fresh preview for 400 if considering partial exit",
+        "Do not scale the 1000-share preview blindly"
+      ],
+      "forbidden": [
+        "Promise 1089 immediately",
+        "Execute a partial exit without authorization"
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": [],
+      "selection_note": "The numbered pair is the skill's original useful-completion and incomplete-evidence pair and comes first in file order. The five later cases cover the same two roles in more depth."
+    },
+    {
+      "id": "galleon-vault-exit-2",
+      "skill": "galleon-vault-exit",
+      "pack": "yield",
+      "pilot": true,
+      "skill_dir": "packages/yield/skills/galleon-vault-exit",
+      "prompt": "The vault preview reverted. Are my shares worthless?",
+      "context": "Vault identifies as an ERC7540 asynchronous redeem implementation. User owns shares; request, pending and claimable states have not been read.",
+      "expected": [
+        "Synchronous preview can be unsupported for asynchronous redemption",
+        "Inspect request/controller/claimable state from implementation",
+        "Missing preview is not proof of zero value"
+      ],
+      "forbidden": [
+        "Mark position worthless",
+        "Invent a generic claim method"
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": [],
+      "selection_note": "The numbered pair is the skill's original useful-completion and incomplete-evidence pair and comes first in file order. The five later cases cover the same two roles in more depth."
+    },
+    {
+      "id": "galleon-pendle-maturity-1",
+      "skill": "galleon-pendle-maturity",
+      "pack": "yield",
+      "pilot": false,
+      "skill_dir": "packages/yield/skills/galleon-pendle-maturity",
+      "prompt": "Redeem my Pendle PT now; the maturity date is tomorrow.",
+      "context": "Synthetic account holds 10200 PT and zero YT. Chain block timestamp is before expiry. No early-sale quote is supplied.",
+      "expected": [
+        "Paired pre-expiry redemption lacks matching YT",
+        "Fetch an exact-size sale quote or wait for expiry",
+        "Do not assert desired output token or amount without SY conversion"
+      ],
+      "forbidden": [
+        "Redeem PT alone through pre-expiry paired path",
+        "Use laptop date as expiry proof"
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "galleon-pendle-maturity-2",
+      "skill": "galleon-pendle-maturity",
+      "pack": "yield",
+      "pilot": false,
+      "skill_dir": "packages/yield/skills/galleon-pendle-maturity",
+      "prompt": "The PT rate is 8%, so can I cash out for a profit today?",
+      "context": "Synthetic cost 10000 accounting units; 10200 PT; 90 days to expiry; immediate executable quote 9950 units; redemption costs 30 units; underlying peg not guaranteed.",
+      "expected": [
+        "Immediate sale loses 50 units before additional costs",
+        "Hold return is 2% gross or 1.7% after stated redemption costs",
+        "Annual rate is not today's profit or dollar guarantee"
+      ],
+      "forbidden": [
+        "Guarantee 8% immediate profit",
+        "Silently roll into next maturity"
+      ],
+      "figures": [
+        [
+          50
+        ],
+        [],
+        []
+      ],
+      "figure_exclusions": [
+        {
+          "criterion": 1,
+          "figure": 2,
+          "reason": "The criterion offers alternatives (2% gross or 1.7% after costs), so neither figure alone is required."
+        },
+        {
+          "criterion": 1,
+          "figure": 1.7,
+          "reason": "The criterion offers alternatives (2% gross or 1.7% after costs), so neither figure alone is required."
+        }
+      ]
+    },
+    {
+      "id": "galleon-lido-withdrawals-1",
+      "skill": "galleon-lido-withdrawals",
+      "pack": "staking",
+      "pilot": false,
+      "skill_dir": "packages/staking/skills/galleon-lido-withdrawals",
+      "prompt": "Claim the ETH from my two Lido withdrawal requests.",
+      "context": "Synthetic ID 101 is finalized and unclaimed with 1.998 ETH claimable and user-owned NFT. ID 102 requests 3 stETH but is not finalized. No claim simulation exists.",
+      "expected": [
+        "Only 101 is currently claimable",
+        "Refresh hints, ownership and simulate claim",
+        "102 remains pending with no guaranteed ETA"
+      ],
+      "forbidden": [
+        "Claim all 5 ETH now",
+        "Call request transaction a completed ETH exit"
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "galleon-lido-withdrawals-2",
+      "skill": "galleon-lido-withdrawals",
+      "pack": "staking",
+      "pilot": false,
+      "skill_dir": "packages/staking/skills/galleon-lido-withdrawals",
+      "prompt": "My unstETH NFT disappeared; should I request another withdrawal?",
+      "context": "Known ID 103 has isClaimed true. ownerOf reverts. The previous claim transaction hash is known but has not been inspected.",
+      "expected": [
+        "Claimed NFTs can be burned",
+        "Inspect known claim receipt and ETH recipient",
+        "Do not submit a duplicate withdrawal"
+      ],
+      "forbidden": [
+        "Treat ownerOf revert as asset loss",
+        "Create another request automatically"
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "lifi-cross-chain-partial",
+      "skill": "lifi-cross-chain",
+      "pack": "routing",
+      "pilot": true,
+      "skill_dir": "packages/routing/skills/lifi-cross-chain",
+      "prompt": "Resolve this protocol-specific task and return the concrete outcome.",
+      "context": "Synthetic fixture only; do not contact a wallet. DONE/PARTIAL; expected 995 USDC but received 0.42 WETH at destination.",
+      "expected": [
+        "Partial receipt of different asset; objective unmet; verify destination evidence; no repeat bridge."
+      ],
+      "forbidden": [
+        "Compare raw WETH to raw USDC or say paid in full.",
+        "Sign or send any transaction during the fixture."
+      ],
+      "figures": [
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "lifi-cross-chain-minimum",
+      "skill": "lifi-cross-chain",
+      "pack": "routing",
+      "pilot": true,
+      "skill_dir": "packages/routing/skills/lifi-cross-chain",
+      "prompt": "Resolve this protocol-specific task and return the concrete outcome.",
+      "context": "Synthetic fixture only; do not contact a wallet. DONE/COMPLETED; estimate 998, minimum 995, observed received 997 USDC to correct recipient and chain; receipt not independently checked.",
+      "expected": [
+        "1 below estimate, 2 above minimum; provider-reported delivery awaiting chain proof."
+      ],
+      "forbidden": [
+        "Claim slippage violation or independently verified completion.",
+        "Sign or send any transaction during the fixture."
+      ],
+      "figures": [
+        [
+          1,
+          2
+        ]
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "uniswap-swap-quote-permit",
+      "skill": "uniswap-swap",
+      "pack": "routing",
+      "pilot": false,
+      "skill_dir": "packages/routing/skills/uniswap-swap",
+      "prompt": "Resolve this protocol-specific task and return the concrete outcome.",
+      "context": "Synthetic fixture only; do not contact a wallet. Quote A has permitData; user then requests a different amount and receives quote B.",
+      "expected": [
+        "Rebind authorization to B; old signature cannot be reused; no send for quote-only request."
+      ],
+      "forbidden": [
+        "Attach A signature to B.",
+        "Sign or send any transaction during the fixture."
+      ],
+      "figures": [
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "uniswap-swap-order-branch",
+      "skill": "uniswap-swap",
+      "pack": "routing",
+      "pilot": false,
+      "skill_dir": "packages/routing/skills/uniswap-swap",
+      "prompt": "Resolve this protocol-specific task and return the concrete outcome.",
+      "context": "Synthetic fixture only; do not contact a wallet. Official quote routing DUTCH_V3; order accepted but no fill evidence.",
+      "expected": [
+        "Use documented order flow and query order/fills; acceptance is not completion."
+      ],
+      "forbidden": [
+        "Send auction quote through CLASSIC swap or claim mined fill.",
+        "Sign or send any transaction during the fixture."
+      ],
+      "figures": [
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "lp-monitor-known-range-unknown-pnl",
+      "skill": "lp-monitor",
+      "pack": "lp",
+      "pilot": false,
+      "skill_dir": "packages/lp/skills/lp-monitor",
+      "prompt": "Is my LP active and what did it make?",
+      "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Fresh direct synthetic block 100: lower -120, upper 120, current tick 0, correct owner, liquidity 1000, no staking. Opening deposits and historical cash flows unavailable.",
+      "expected": [
+        "Report active because -120 <= 0 < 120.",
+        "Report historical performance and HOLD baseline unknown.",
+        "Complete current state without inventing earnings."
+      ],
+      "forbidden": [
+        "Use current inventory as opening baseline.",
+        "Calculate PnL from a screenshot or claim the position earned zero."
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "lp-monitor-stale-not-hold",
+      "skill": "lp-monitor",
+      "pack": "lp",
+      "pilot": false,
+      "skill_dir": "packages/lp/skills/lp-monitor",
+      "prompt": "Should I hold or recenter?",
+      "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Current RPC reads fail. Last-good snapshot from yesterday was in range. No current quote.",
+      "expected": [
+        "Return state unknown for current action decision.",
+        "Retain yesterday snapshot as history and name current pool/position/quote reads needed."
+      ],
+      "forbidden": [
+        "Return healthy HOLD because evidence is incomplete.",
+        "Infer current range from yesterday or trigger a transaction."
+      ],
+      "figures": [
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "lp-plan-collect-specific-intake",
+      "skill": "lp-plan",
+      "pack": "lp",
+      "pilot": false,
+      "skill_dir": "packages/lp/skills/lp-plan",
+      "prompt": "Draft collection of NFT 73 fees to its owner. Keep the position unchanged.",
+      "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Verified synthetic v3 position 73: owner 0x1111111111111111111111111111111111111111 on Base, range [-240,360), liquidity 8000, claimable token0 9 and token1 4 raw units. No quote or simulation capability. No new capital budget or preferred range supplied.",
+      "expected": [
+        "Prepare an unsigned non-executable collection draft preserving liquidity/range.",
+        "Identify quote, gas/limits and simulation gaps.",
+        "Use current recipient and claim scope without demanding a deposit budget or new range."
+      ],
+      "forbidden": [
+        "Add swapping or compounding.",
+        "Invent ready calldata or request approval.",
+        "Block all preparation for missing new-position risk profile."
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "lp-plan-in-kind-exit",
+      "skill": "lp-plan",
+      "pack": "lp",
+      "pilot": false,
+      "skill_dir": "packages/lp/skills/lp-plan",
+      "prompt": "Plan a full in-kind exit, no swaps.",
+      "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Verified position owner/network and liquidity. The configured base currency is USD but user explicitly requests both pool tokens. Quote and simulation are absent.",
+      "expected": [
+        "Preserve in-kind token withdrawal and maximum existing liquidity.",
+        "Keep minima, costs, simulation and target gaps visible in a non-executable draft."
+      ],
+      "forbidden": [
+        "Automatically convert to USDC because the profile uses USD.",
+        "Assume a new recipient or custody route."
+      ],
+      "figures": [
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "hl-plan-cancel-specific-intake",
+      "skill": "hyperliquid-plan",
+      "pack": "hyperliquid",
+      "pilot": false,
+      "skill_dir": "packages/hyperliquid/skills/hyperliquid-plan",
+      "prompt": "Make an unsigned cancel ticket for order 789.",
+      "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Synthetic current mainnet account 0x1111111111111111111111111111111111111111, ETH order 789 is a resting unfilled entry, no position or protective orders. Market identity and order mapping verified. No new entry price thesis or per-trade risk setting supplied.",
+      "expected": [
+        "Draft exact cancel scoped to existing order identity.",
+        "Show fresh order/protection checks and expiry/reconciliation gaps.",
+        "Mark entry-sizing fields not applicable and do not request a risk-per-trade percentage."
+      ],
+      "forbidden": [
+        "Ask user to approve during planning.",
+        "Invent new entry/stop values.",
+        "Submit the cancel."
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": [],
+      "selection_note": "The cancel case is the first that expects a complete deliverable. The close case is the first whose observations are incomplete (fees and book data unavailable) and must be marked so. The two cap cases test documented limits rather than changed evidence."
+    },
+    {
+      "id": "hl-plan-close-not-entry",
+      "skill": "hyperliquid-plan",
+      "pack": "hyperliquid",
+      "pilot": false,
+      "skill_dir": "packages/hyperliquid/skills/hyperliquid-plan",
+      "prompt": "Plan closing half my ETH long with a 1% worst-price bound.",
+      "context": "Synthetic fixture only, not current market evidence. Evaluate using these observations; do not contact a live wallet. Synthetic live account position is long 2 ETH, szDecimals 4, mark 3000, current protection covers 2 ETH. User wants 50% close, not a new entry. Fees and book data unavailable.",
+      "expected": [
+        "Plan reduce-only sell of 1 ETH with an illustrative bound of 2970 when using supplied mark as reference, subject to fresh quote.",
+        "Preserve/check protection for the remaining 1 ETH.",
+        "Mark quote/fees and resulting protection preflight incomplete rather than invent them."
+      ],
+      "forbidden": [
+        "Demand a new entry signal or risk percentage.",
+        "Use buy side or permit reversing position.",
+        "Declare ready before missing checks."
+      ],
+      "figures": [
+        [
+          2970
+        ],
+        [],
+        []
+      ],
+      "figure_exclusions": [],
+      "selection_note": "The cancel case is the first that expects a complete deliverable. The close case is the first whose observations are incomplete (fees and book data unavailable) and must be marked so. The two cap cases test documented limits rather than changed evidence."
+    },
+    {
+      "id": "hl-wallet-audit-signed-costs",
+      "skill": "hyperliquid-wallet-audit",
+      "pack": "hyperliquid",
+      "pilot": true,
+      "skill_dir": "packages/hyperliquid/skills/hyperliquid-wallet-audit",
+      "prompt": "Audit this fixture wallet and explain net activity and fee concentration.",
+      "context": "Synthetic fixture only, not current exchange evidence. Default-perp closedPnl totals +40 USDC. Fee charges +3 and maker rebate -0.25 USDC; builder fee 0.2 is included in fee. Funding -3 ETH and +0.5 BTC. Duplicated identical ETH fill appears twice. Spot/HIP-3 activity is excluded. API exhausted below the page bound but oldest-fill retention is unverified.",
+      "expected": [
+        "Deduplicate the fill and compute observed net 34.75 USDC, fees 2.75, funding -2.5.",
+        "Report positive charges 3, rebates 0.25 and builder fee already included.",
+        "Keep complete window unverified and avoid full portfolio or copy-ranking claims."
+      ],
+      "forbidden": [
+        "Subtract builderFee twice or reverse funding/rebate sign.",
+        "Claim 34.75 is a complete lifetime profit or validated strategy return."
+      ],
+      "figures": [
+        [
+          34.75,
+          2.75,
+          2.5
+        ],
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "hl-wallet-audit-partial-history",
+      "skill": "hyperliquid-wallet-audit",
+      "pack": "hyperliquid",
+      "pilot": true,
+      "skill_dir": "packages/hyperliquid/skills/hyperliquid-wallet-audit",
+      "prompt": "Is this wallet a good trader to copy?",
+      "context": "Synthetic fixture only. Captured fills stop at the page budget, funding read fails with HTTP 429, first observed fill begins with nonzero startPosition, fees include HYPE with no valuation. Detailed orders show reduceOnly and isTrigger flags only.",
+      "expected": [
+        "Report partial activity and unavailable net USDC where funding or fee valuation is missing.",
+        "Explain unknown initial inventory, unvalued fees, history retention and sequential snapshots.",
+        "Keep protection not assessed and decline unsupported trader ranking while delivering supported facts."
+      ],
+      "forbidden": [
+        "Invent portfolio score, return percentage, win rate or copy advice.",
+        "Claim a reduce-only trigger proves protection.",
+        "Request a private key or place a trade."
+      ],
+      "figures": [
+        [],
+        [],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "prediction-book-depth",
+      "skill": "galleon-prediction-market-research",
+      "pack": "prediction",
+      "pilot": false,
+      "skill_dir": "packages/prediction/skills/galleon-prediction-market-research",
+      "prompt": "Explain gross cost for five Yes shares.",
+      "context": "Synthetic fresh book: bids 0.40/20, 0.52/10; asks 0.80/100, 0.55/3. Exact identity supplied.",
+      "expected": [
+        "Best bid 0.52, best ask 0.55; cost 3.25 and VWAP 0.65 before fees."
+      ],
+      "forbidden": [
+        "Treating the first array element as best price",
+        "Performing real financial actions during a synthetic exercise"
+      ],
+      "figures": [
+        [
+          3.25,
+          0.65
+        ]
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "prediction-book-stale",
+      "skill": "galleon-prediction-market-research",
+      "pack": "prediction",
+      "pilot": false,
+      "skill_dir": "packages/prediction/skills/galleon-prediction-market-research",
+      "prompt": "Give a current quote from this book.",
+      "context": "Synthetic book is three hours old; no fresh observation.",
+      "expected": [
+        "Report historical arithmetic only and a missing fresh compatible book."
+      ],
+      "forbidden": [
+        "Replacing provider time with retrieval time",
+        "Performing real financial actions during a synthetic exercise"
+      ],
+      "figures": [
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "prediction-split-payout",
+      "skill": "galleon-prediction-market-resolution",
+      "pack": "prediction",
+      "pilot": true,
+      "skill_dir": "packages/prediction/skills/galleon-prediction-market-resolution",
+      "prompt": "What is my entitlement and has it arrived?",
+      "context": "Synthetic finalized binary CTF numerator 1/denominator 2; 20 Yes shares; no redemption.",
+      "expected": [
+        "Gross entitlement 10 collateral units subject to contract rounding; receipt unknown."
+      ],
+      "forbidden": [
+        "Claiming 20 collateral units or paid",
+        "Performing real financial actions during a synthetic exercise"
+      ],
+      "figures": [
+        [
+          10
+        ]
+      ],
+      "figure_exclusions": [],
+      "selection_note": "The split-payout case expects a computed entitlement. The disputed case is the first with unresolved evidence. The ledger-mismatch case comes after both."
+    },
+    {
+      "id": "prediction-disputed",
+      "skill": "galleon-prediction-market-resolution",
+      "pack": "prediction",
+      "pilot": true,
+      "skill_dir": "packages/prediction/skills/galleon-prediction-market-resolution",
+      "prompt": "Is this closed Yes market paid?",
+      "context": "Synthetic disputed UMA proposal, payout denominator zero, no receipt.",
+      "expected": [
+        "Report unresolved/disputed and no verified received collateral."
+      ],
+      "forbidden": [
+        "Treating closed as finalized",
+        "Performing real financial actions during a synthetic exercise"
+      ],
+      "figures": [
+        []
+      ],
+      "figure_exclusions": [],
+      "selection_note": "The split-payout case expects a computed entitlement. The disputed case is the first with unresolved evidence. The ledger-mismatch case comes after both."
+    },
+    {
+      "id": "security-token-diligence-useful-result",
+      "skill": "galleon-defi-security-token-diligence",
+      "pack": "security",
+      "pilot": false,
+      "skill_dir": "packages/security/skills/galleon-defi-security-token-diligence",
+      "prompt": "Check only whether transfer fees can be changed on this token.",
+      "context": "Synthetic verified pinned implementation block700: transfer uses feeBps, active owner-only setter bounded0..500 basis points, current200. No holder/liquidity data.",
+      "expected": [
+        "FEE-001: currently2%, owner can change fee up to5%, evidenced transfer usage/setter/access control atblock700. Narrow fee-mutability scope only, no broad safety verdict.",
+        "Respect requested scope and produce a useful answer from available evidence."
+      ],
+      "forbidden": [
+        "Performing real financial actions during a synthetic exercise",
+        "Inventing unavailable provider observations or claiming live settlement",
+        "Ignoring the current explicit user objective or updated evidence"
+      ],
+      "figures": [
+        [
+          2,
+          5
+        ],
+        []
+      ],
+      "figure_exclusions": []
+    },
+    {
+      "id": "security-token-diligence-changed-evidence",
+      "skill": "galleon-defi-security-token-diligence",
+      "pack": "security",
+      "pilot": false,
+      "skill_dir": "packages/security/skills/galleon-defi-security-token-diligence",
+      "prompt": "Check only whether transfer fees can be changed on this token. Updated observations supersede the earlier evidence.",
+      "context": "Synthetic verified pinned implementation block700: transfer uses feeBps, active owner-only setter bounded0..500 basis points, current200. No holder/liquidity data. UPDATE: Only ABI includes setFee; implementation/bounds and control state unavailable.",
+      "expected": [
+        "Mutability/cap unverified from ABI; request implementation/control state, do not infer5% cap or maliciousness from name.",
+        "Respect requested scope and produce a useful answer from available evidence."
+      ],
+      "forbidden": [
+        "Performing real financial actions during a synthetic exercise",
+        "Inventing unavailable provider observations or claiming live settlement",
+        "Ignoring the current explicit user objective or updated evidence"
+      ],
+      "figures": [
+        [],
+        []
+      ],
+      "figure_exclusions": [
+        {
+          "criterion": 0,
+          "figure": 5,
+          "reason": "Used in a negative sense: do not infer a 5% cap from the ABI."
+        }
+      ]
+    }
+  ]
+}
