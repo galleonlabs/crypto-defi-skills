@@ -6,7 +6,7 @@
 [![49 active skills](https://img.shields.io/badge/active_skills-49-0f766e)](docs/AGENT-INDEX.md)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-**Give your agent a concrete way to investigate, plan and verify DeFi work.** Stress-test an Aave position, review a swap, compare vault exits or trace a bridge to its destination. **49 active skills across 17 independent packs**, with official tool recipes, worked decisions and evidence for the next step.
+**Open-source DeFi skills for the agent you already use.** If you work in Claude Code, Codex, Cursor, Gemini CLI, Hermes or OpenClaw, these packs give your agent a concrete procedure to investigate, plan and verify DeFi work: stress-test an Aave position, review a swap, check whether a vault can return your assets or trace a bridge transfer to its destination. **49 active skills across 17 independent packs**, with official tool recipes, worked decisions and evidence for the next step.
 
 ## Start with one skill
 
@@ -18,7 +18,7 @@ npx skills add galleonlabs/crypto-defi-skills --skill galleon-aave-position
 
 [Find your task](#choose-a-protocol-task) · [Install and run your first prompt](docs/GETTING-STARTED.md) · [Agent index](docs/AGENT-INDEX.md)
 
-Want a complete Hermes setup? **[Start with Boomkin](https://github.com/galleonlabs/boomkin)** for an isolated DeFi profile, pinned pack selection and provider setup.
+Prefer a ready-made research desk to wiring skills into an agent? [Boomkin](https://github.com/galleonlabs/boomkin) is a local browser desk and installer built on these packs.
 
 ## Choose a protocol task
 
@@ -88,7 +88,7 @@ npx --package galleon-defi-lending-skills@0.3.1 defi-lending-skills catalog --js
 
 Node 20+ runs the published corpus CLIs. The CLI reads the bundled skills; the installer or Boomkin places them in your agent's discovery directory. Provider tools and optional helpers have their own runtime and access requirements.
 
-Claude Code can install packs through `/plugin marketplace add galleonlabs/crypto-defi-skills`, then `/plugin install galleon-defi-lending-skills@galleon-defi`. Each pack also carries a Codex plugin manifest. The separate [research plugin](plugins/defi-research/README.md) has its own ZIP installation path.
+Claude Code can install packs through `/plugin marketplace add galleonlabs/crypto-defi-skills`, then `/plugin install galleon-defi-lending-skills@galleon-defi`. Gemini CLI installs a pack natively with `gemini skills install https://github.com/galleonlabs/crypto-defi-skills.git --path packages/lending/skills`. Each pack also carries a Codex plugin manifest. The separate [research plugin](plugins/defi-research/README.md) has its own ZIP installation path.
 
 See [the getting-started guide](docs/GETTING-STARTED.md#installation-options) for pack selection, plugins, pinned versions and first-use checks. Installation adds procedures; it does not authenticate a provider or grant wallet authority.
 
