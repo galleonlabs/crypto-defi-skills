@@ -36,6 +36,14 @@ function liveModel(): CallModel {
   return (params) => client.messages.stream(params).finalMessage();
 }
 
+/** Published runs live in runs/<phase> with the shared ledger; --out DIR keeps a rerun and its own ledger apart. */
+function locations(phase: Phase): { outDir: string; ledgerPath: string; published: boolean } {
+  const out = flag("out");
+  if (!out) return { outDir: resolve(RUNS_DIR, phase), ledgerPath: LEDGER_PATH, published: true };
+  mkdirSync(out, { recursive: true });
+  return { outDir: resolve(out, phase), ledgerPath: resolve(out, "ledger.jsonl"), published: false };
+}
+
 function writeCharts(report: ReturnType<typeof buildReport>, dir: string) {
   const answers = report.per_skill[0]?.with_skill.answers ?? 0;
   const title = `Strict pass rate by skill, ${answers} answers per skill per arm`;
@@ -46,9 +54,10 @@ const usage = `Usage: bun src/cli.ts <command>
   select                      write cases.json from the plan's selection rule
   packets --phase P           print both packets for every case in a phase
   dry-run --phase P --out DIR run the whole pipeline offline with a stub model
-  run --phase P [--concurrency N]    answer every case in both arms (spends money)
-  grade --phase P [--concurrency N]  grade every answer blind (spends money)
-  report --phase P            write results JSON and tables for a phase
+  run --phase P [--out DIR] [--key-file F] [--concurrency N]    answer every case in both arms (spends money)
+  grade --phase P [--out DIR] [--key-file F] [--concurrency N]  grade every answer blind (spends money)
+  report --phase P [--out DIR]  write results JSON, tables and charts for a phase
+  Without --out, runs use the published runs/ folder and ledger.jsonl.
   spot --phase P              export a blind 10% grading sample
   spend                       print recorded spend from the ledger`;
 
@@ -87,17 +96,17 @@ switch (command) {
   case "run":
   case "grade": {
     const phase = phaseArg();
-    const outDir = resolve(RUNS_DIR, phase);
+    const { outDir, ledgerPath } = locations(phase);
     const concurrency = Number(flag("concurrency", "4"));
-    const options = { phase, call: liveModel(), outDir, ledgerPath: LEDGER_PATH, concurrency };
+    const options = { phase, call: liveModel(), outDir, ledgerPath, concurrency };
     if (command === "run") await runAnswers(options);
     else await runGrades(options);
     break;
   }
   case "report": {
     const phase = phaseArg();
-    const outDir = resolve(RUNS_DIR, phase);
-    const report = buildReport(phase, outDir, LEDGER_PATH);
+    const { outDir, ledgerPath, published } = locations(phase);
+    const report = buildReport(phase, outDir, ledgerPath);
     writeFileSync(resolve(outDir, "results.json"), `${JSON.stringify(report, null, 2)}\n`);
     const tables = renderTables(report);
     writeFileSync(resolve(outDir, "tables.md"), `${tables}\n`);
@@ -105,7 +114,7 @@ switch (command) {
     const page = resolve(REPO, "docs/BENCHMARK.md");
     const start = `<!-- results:${phase}:start -->`;
     const end = `<!-- results:${phase}:end -->`;
-    if (existsSync(page)) {
+    if (published && existsSync(page)) {
       const text = readFileSync(page, "utf8");
       if (text.includes(start) && text.includes(end)) {
         writeFileSync(page, `${text.slice(0, text.indexOf(start) + start.length)}\n\n${tables}\n\n${text.slice(text.indexOf(end))}`);
@@ -126,7 +135,8 @@ switch (command) {
       answer: answers.get(grade.answer_id)!.final_text,
       criteria: grade.criteria.map((entry) => ({ id: entry.id, text: entry.text, final_verdict: entry.final_verdict, evidence: entry.evidence })),
     }));
-    writeFileSync(resolve(outDir, "spot-sample.json"), `${JSON.stringify(blind, null, 2)}\n`);
+    // JSONL: answer text is stored verbatim and the repository style check does not scan .jsonl files.
+    writeFileSync(resolve(outDir, "spot-sample.jsonl"), blind.map((entry) => JSON.stringify(entry)).join("\n") + "\n");
     process.stdout.write(`${blind.length} of ${grades.length} gradings exported without arm labels\n`);
     break;
   }

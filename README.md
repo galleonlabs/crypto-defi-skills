@@ -20,6 +20,8 @@ npx skills add galleonlabs/crypto-defi-skills --skill galleon-aave-position
 
 Prefer a ready-made research desk to wiring skills into an agent? [Boomkin](https://github.com/galleonlabs/boomkin) is a local browser desk and installer built on these packs.
 
+Do the skills change the answer? See the [with/without benchmark](docs/BENCHMARK.md): on 30 synthetic cases, 86 of 90 Claude Opus 5.5 answers with the skill and 66 of 90 without it were graded as meeting every expected criterion and avoiding every forbidden one.
+
 ## Choose a protocol task
 
 Choose the skill that names the job. Each procedure includes the inputs to read, the decisions to make, failure handling and what counts as completion.

@@ -1,6 +1,6 @@
 {
   "phase": "pilot",
-  "generated_at": "2026-10-14T10:35:50.010Z",
+  "generated_at": "2026-10-14T10:52:55.789Z",
   "statuses": {
     "without_skill:ok": 10,
     "with_skill:ok": 10
@@ -693,10 +693,12 @@
   "spend": {
     "by_phase_kind": {
       "pilot:answer": 0.7863428000000001,
-      "pilot:grade": 0.392648
+      "pilot:grade": 0.392648,
+      "phase2:answer": 6.172612199999997,
+      "phase2:grade": 3.3782239999999994
     },
-    "total_usd": 1.1789908,
-    "ledger_requests": 60,
+    "total_usd": 10.729826999999991,
+    "ledger_requests": 607,
     "failed_requests": 0
   }
 }
