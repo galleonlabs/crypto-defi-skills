@@ -44,7 +44,7 @@ The required order and fee ownership vary by deployed model. Verify router, pool
 ```text
 approve or permit tokens -> mint concentrated NFT
 keep unstaked for verified fee rights
-or approve and deposit or stake in gauge for verified emissions
+or approve and deposit or stake in gauge for verified emissions (not into an Aerodrome or Velodrome gauge after the 2026-10-22 00:00 UTC Aero launch, when they are deactivated)
 unstake when required -> decrease -> collect -> burn when empty
 ```
 

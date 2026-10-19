@@ -25,6 +25,6 @@ Classify stable versus volatile invariant. Plan add liquidity, LP receipt, optio
 Plan the concentrated NFT first. Then choose one route based on verified contracts:
 
 - keep the NFT unstaked and retain its fee rights
-- stake or deposit it into the gauge and earn emissions under current epoch rules
+- stake or deposit it into the gauge and earn emissions under current epoch rules (Aerodrome and Velodrome gauges stop paying emissions at the 2026-10-22 00:00 UTC Aero launch)
 
 Do not project fees plus emissions when staking forfeits fees. Check whether a position must be unstaked before increasing, decreasing, collecting, transferring, or burning. Reward claims and fee collection are distinct actions.

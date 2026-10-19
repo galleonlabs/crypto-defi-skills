@@ -51,7 +51,7 @@ The first command only inspects installed help; the second reads Base pools. Con
 
 `pools`, `positions` and `quote` provide reads; `deposit`, `withdraw`, `stake`, `unstake`, `claim_fees` and `claim_emissions` construct unsigned calls. The `--wallet` argument is a public sender address. Keep stdout transaction JSON separate from stderr diagnostics and preserve exact integer `value` amounts when normalizing. Never pipe its output directly to a signer. Inspect approval scope, spender, recipient, deadline, slippage and every call before handing the reviewed plan to the user's existing execution boundary. Upstream defaults are not user-approved limits.
 
-Resolve the pool's factory and position manager from current [Aerodrome deployments](https://github.com/aerodrome-finance/slipstream#deployments), then verify bytecode and live state. Deployment generations coexist; a latest-address list does not identify an older position. Check the actual gauge's stake duration, withdrawal penalties, emissions and fee distribution. SDK support for basic/CL positions does not establish support for vault or ALM custody. Direct contract fallback should reuse official ABI artifacts and [Sugar's onchain datasets](https://github.com/velodrome-finance/sugar), with bounded pagination.
+Resolve the pool's factory and position manager from current [Aerodrome deployments](https://github.com/aerodrome-finance/slipstream#deployments), then verify bytecode and live state. Deployment generations coexist; a latest-address list does not identify an older position. Check the actual gauge's stake duration, withdrawal penalties, emissions and fee distribution. From 2026-10-22 00:00 UTC all Aerodrome and Velodrome gauges are deactivated and pay no emissions; pools stay live for fees, positions do not migrate automatically, and new Aero gauges must be resolved from [official Aero sources](https://aero.xyz/aero-upgrade/). SDK support for basic/CL positions does not establish support for vault or ALM custody. Direct contract fallback should reuse official ABI artifacts and [Sugar's onchain datasets](https://github.com/velodrome-finance/sugar), with bounded pagination.
 
 ## Revert, explicitly optional
 
@@ -67,7 +67,7 @@ The service constructs unsigned data; wallet authorization remains outside it. R
 
 ## VFAT access and Sickle
 
-Use [VFAT guidance](vfat.md) for public yield discovery, APR interpretation, Sickle ownership, automation, route costs and upstream integration limits. The public browser path works without connecting a wallet. SDK source exists, but a publicly installable distribution and supported MCP/API contract were not verified; do not invent them. VFAT is optional and is never registered or called by this package.
+Use [VFAT guidance](vfat.md) for public yield discovery, APR interpretation, Sickle ownership, automation, route costs and upstream integration limits. The public browser path works without connecting a wallet. `@vfat-io/sickle-sdk` 0.1.0 is on npm without a repository field, but the wrapper SDK distribution and a supported MCP/API contract were not verified; do not invent them. VFAT is optional and is never registered or called by this package.
 
 ## Engineering decision and fallback
 

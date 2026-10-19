@@ -27,7 +27,7 @@ export function validateScope(scope) {
   if (scope.startTime >= scope.endTime) throw new Error("startTime must be before endTime");
   return scope;
 }
-function isDefaultPerp(coin) { return !coin.startsWith("@") && !coin.includes("/") && !coin.includes(":"); }
+function isDefaultPerp(coin) { return !coin.startsWith("@") && !coin.startsWith("#") && !coin.includes("/") && !coin.includes(":"); }
 function canonical(value) {
   if (Array.isArray(value)) return `[${value.map(canonical).join(",")}]`;
   if (value && typeof value === "object") return `{${Object.keys(value).sort().map((k) => `${JSON.stringify(k)}:${canonical(value[k])}`).join(",")}}`;
