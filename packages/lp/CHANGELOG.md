@@ -3,6 +3,7 @@
 ## 0.6.2 · 2026-10-19
 
 - Record that `@vfat-io/sickle-sdk` 0.1.0 is now on npm without a repository field while `@vfat-io/sickle-wrapper-sdk` is still unpublished.
+- Add the 2026-10-22 Aero upgrade, which deactivates all Aerodrome and Velodrome gauges, to the Slipstream, planning, execution and official-tools references.
 
 ## 0.6.1 · 2026-10-08
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 · 2026-10-19
+
+- Correct the CCTP API limit to 40 requests per second and the Uniswap quote field to `txFailureReasons`.
+
 ## 0.3.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

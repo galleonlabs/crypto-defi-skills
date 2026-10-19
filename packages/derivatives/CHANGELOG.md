@@ -3,6 +3,7 @@
 ## 0.1.6 · 2026-10-19
 
 - Record that the Drift program is paused and its successor is Velocity, a new program deployment with new PDAs and the renamed `@velocity-exchange/sdk`; treat Drift SDK and accounts as legacy context.
+- Note that GMX SDK v1 is being sunset in favor of SDK v2.
 
 ## 0.1.5 · 2026-10-08
 

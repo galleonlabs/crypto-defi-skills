@@ -34,7 +34,7 @@ These independently installable skills include current primary-source recipes, w
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-routing
-npx --package galleon-defi-routing-skills@0.3.1 defi-routing-skills catalog
+npx --package galleon-defi-routing-skills@0.3.2 defi-routing-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-routing/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

@@ -9,6 +9,10 @@
 
 # Changelog
 
+## 0.4.2 · 2026-10-19
+
+- Record that Coinbase for Agents now documents x402 payments from the retail USDC balance on Base.
+
 ## 0.4.0 - 2026-10-08
 
 - Document the Coinbase Wallet MCP migration and native wallet/session authority boundaries.
