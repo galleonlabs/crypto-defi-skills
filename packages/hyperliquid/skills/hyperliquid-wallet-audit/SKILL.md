@@ -4,7 +4,7 @@ description: "Capture and audit a public Hyperliquid wallet's bounded fills, fee
 license: MIT
 compatibility: "Requires Node.js 20 or newer for bundled dependency-free scripts. Live capture uses the public Hyperliquid Info API and a public user-account address; offline analysis needs only a capture file."
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
   protocol: "hyperliquid"
 ---
 

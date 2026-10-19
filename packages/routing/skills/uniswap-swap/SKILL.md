@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Read-only EVM RPC and official protocol APIs or UI. Optional Node.js 20 for offline helpers. No signer included."
 metadata:
   author: "Galleon Labs"
-  version: "0.3.1"
+  version: "0.3.2"
 ---
 
 # Uniswap Swap
@@ -20,7 +20,7 @@ Require chain IDs, exact input/output token addresses, raw integer amount, exact
 
 Use [API recipes](references/recipes.md). Obtain an API key through the user's existing secret mechanism; never print it. Missing key means use a connected official tool/UI or produce a parameter-complete request marked unqueried, not a fabricated quote. Pin one supported `x-universal-router-version` consistently through the journey. For an AMM-only task request `protocols: ["V2","V3","V4"]` only if the user accepts those protocols; narrow to the approved subset when required.
 
-Interpret the actual `routing` discriminator, `quoteId`, quoted input/output and minimum/maximum amounts. Preserve returned quote JSON rather than reconstructing it. Check `txFailureReason`, gas, recipient, chain, token identities and quote time. A successful quote endpoint does not prove allowance, affordability or a submitted swap.
+Interpret the actual `routing` discriminator, `quoteId`, quoted input/output and minimum/maximum amounts. Preserve returned quote JSON rather than reconstructing it. Check `txFailureReasons`, gas, recipient, chain, token identities and quote time. A successful quote endpoint does not prove allowance, affordability or a submitted swap.
 
 ## Approval and route lifecycle
 

@@ -4,7 +4,7 @@ description: "Use when checking how much can leave an ERC4626 vault, reconciling
 license: MIT
 compatibility: "Read-only EVM RPC or official provider tools; Node.js 20+ for the optional offline assessment. No signer required."
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

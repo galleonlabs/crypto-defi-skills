@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 · 2026-10-19
+
+- Replace redirected Alchemy simulation citations with Alchemy's replacement guide for the deprecated methods.
+
 ## 0.1.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

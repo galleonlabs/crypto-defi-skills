@@ -31,7 +31,7 @@ The helper never increments the boundary by one millisecond to escape a saturate
 
 ## Market and state scope
 
-`dex: ""` selects validator-operated perpetuals. Snapshot positions and outcome accounting cover that DEX only. Fills/funding can include other markets: spot names begin with `@` or contain `/`, while HIP-3 names contain `:`. These are captured and counted as excluded activity, not mixed into default-perp accounting. Other DEX exposure, subaccounts, vaults, staking and lending are not enumerated.
+`dex: ""` selects validator-operated perpetuals. Snapshot positions and outcome accounting cover that DEX only. Fills/funding can include other markets: spot names begin with `@` or contain `/`, outcome coins begin with `#`, and HIP-3 names contain `:`. These are captured and counted as excluded activity, not mixed into default-perp accounting. Other DEX exposure, subaccounts, vaults, staking and lending are not enumerated.
 
 Account abstraction mode is read independently. Under unified/portfolio-margin modes, spot token balances are the authoritative trading-balance endpoint; perpetual margin summary must not be added to them. The helper reports observed balances by token, without a USD conversion or portfolio-equity estimate.
 

@@ -10,5 +10,5 @@ Use fixture-only reasoning. No wallet, paid API, signature or order is required.
 | Boros MCP is installed and user asks for funding data only. | Select read methods; do not call setup_agent, pay_gas, deposit or order tools. |
 | “Hedge ETH funding with Boros”; only ETH token spot price is supplied. | Require reference rate, duration/maturity, notional convention, collateral and basis evidence; do not model it as an ETH-price short. |
 | Jupiter trading MCP lists swaps but no Perps tools. | Mark Perps unsupported by that surface and inspect official Perps CLI/API path; never invent a tool. |
-| Drift subscription reconnects but account slot is old. | Mark account/margin view stale and refresh before personalized sizing. |
+| Velocity subscription reconnects but account slot is old. | Mark account/margin view stale and refresh before personalized sizing. |
 | Cancel request times out after half an order filled. | Reconcile remaining live order and fills before replacement; avoid doubling the original size. |

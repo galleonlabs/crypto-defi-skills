@@ -158,7 +158,7 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 
 | Skill | Use when | Routing / authority boundary |
 | --- | --- | --- |
-| [`galleon-defi-derivatives`](../packages/derivatives/skills/galleon-defi-derivatives/SKILL.md) | Inspect derivatives positions or plan/reconcile venue actions | GMX, Derive, Drift and Boros lifecycle/margin/funding; preserve venue-specific mechanics |
+| [`galleon-defi-derivatives`](../packages/derivatives/skills/galleon-defi-derivatives/SKILL.md) | Inspect derivatives positions or plan/reconcile venue actions | GMX, Derive, Velocity (formerly Drift) and Boros lifecycle/margin/funding; preserve venue-specific mechanics |
 
 ### Tokenized assets
 

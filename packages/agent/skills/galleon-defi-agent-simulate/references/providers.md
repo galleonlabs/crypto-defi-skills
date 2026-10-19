@@ -10,7 +10,7 @@ Reviewed 2026-10-08; provider documentation, entitlement and observed execution 
 
 ## Alchemy: deprecated API and unverified CLI capability
 
-[Transaction Simulation notice](https://www.alchemy.com/docs/reference/simulation) says the APIs were deprecated on **2026-09-30**, before this review. The [asset-changes endpoint](https://www.alchemy.com/docs/data/simulation-apis/transaction-simulation-endpoints/alchemy-simulate-asset-changes) repeats that notice. Treat these API recipes as historical; do not recommend them as a supported live service or silently retry a deprecated route.
+Alchemy's simulation APIs were deprecated on **2026-09-30**, and their reference pages now redirect to a generic data page. Alchemy's [replacement guide](https://support.alchemy.com/articles/8324617353-what-to-use-instead-of-the-deprecated-alchemy-simulate-methods) says there is no 1:1 replacement and points to `eth_call`, `eth_simulateV1` and `debug_traceCall`. Treat these API recipes as historical; do not recommend them as a supported live service or silently retry a deprecated route.
 
 [CLI documentation](https://www.alchemy.com/docs/alchemy-cli) still advertises simulation alongside wallet and administration commands. That disagrees with the API lifecycle notice and does not establish a replacement backend. Inspect the installed version, exact non-signing command/schema, backend, chain support and current provider statement before a bounded read-only test within existing access. Until those agree and a suitable operation is observed, report the simulation capability unverified and use another user-approved supported provider. Do not invent flags or assume `--json` makes a command non-writing.
 

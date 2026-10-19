@@ -55,6 +55,14 @@ test("hand-computed signed accounting, liquidity shares, fees and exposure", () 
   expect(r.outcome.byCoin.find((c: any) => c.coin === "BTC").initialObservedPosition.size).toBe("-3");
 });
 
+test("outcome fills are excluded from default-perp accounting", () => {
+  const c = copy();
+  change(c, "userFillsByTime", (rows) => { rows.push({ ...rows[0], coin: "#10", tid: 999001, oid: 999002, hash: `0x${"9".repeat(64)}` }); });
+  const r = analyzeCapture(c);
+  expect(r.outcome.fillCount).toBe(3);
+  expect(r.coverage.excluded.fillCount).toBe(3);
+});
+
 test("fees in another token block net USDC instead of inventing valuation", () => {
   const c = copy(); change(c, "userFillsByTime", (rows) => { rows[0].feeToken = "HYPE"; });
   const r = analyzeCapture(c);

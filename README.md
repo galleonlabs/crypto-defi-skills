@@ -55,23 +55,23 @@ Install only the packs you need. Each has its own npm version, CLI, plugin manif
 
 | Pack | npm release | Coverage |
 | --- | --- | --- |
-| [Agent](packages/agent) | [`galleon-defi-agent-skills@0.1.1`](https://www.npmjs.com/package/galleon-defi-agent-skills/v/0.1.1) | Official unsigned builders, playbooks and stateful simulation evidence |
+| [Agent](packages/agent) | [`galleon-defi-agent-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-agent-skills/v/0.1.2) | Official unsigned builders, playbooks and stateful simulation evidence |
 | [Prediction](packages/prediction) | [`galleon-defi-prediction-skills@0.1.1`](https://www.npmjs.com/package/galleon-defi-prediction-skills/v/0.1.1) | Polymarket rules, order-book depth, versioned ledgers and resolution evidence |
-| [Infra](packages/infra) | [`galleon-defi-infra-skills@0.4.1`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.4.1) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
+| [Infra](packages/infra) | [`galleon-defi-infra-skills@0.4.2`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.4.2) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
 | [Data](packages/data) | [`galleon-defi-data-skills@0.6.1`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.6.1) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
-| [LP](packages/lp) | [`galleon-lp-skills@0.6.1`](https://www.npmjs.com/package/galleon-lp-skills/v/0.6.1) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
-| [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.4.0`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.4.0) | Public wallet cost audits, spot, perps, HIP-3, account modes and review |
-| [Lending](packages/lending) | [`galleon-defi-lending-skills@0.3.1`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.3.1) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
+| [LP](packages/lp) | [`galleon-lp-skills@0.6.2`](https://www.npmjs.com/package/galleon-lp-skills/v/0.6.2) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
+| [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.4.1`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.4.1) | Public wallet cost audits, spot, perps, HIP-3, account modes and review |
+| [Lending](packages/lending) | [`galleon-defi-lending-skills@0.3.2`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.3.2) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
 | [Staking](packages/staking) | [`galleon-defi-staking-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-staking-skills/v/0.2.1) | Lido, Rocket Pool, EigenLayer and Symbiotic staking and exits |
-| [Yield](packages/yield) | [`galleon-defi-yield-skills@0.3.0`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.3.0) | Vault exit evidence, pending/claimable redemptions, Pendle PT/YT and savings |
+| [Yield](packages/yield) | [`galleon-defi-yield-skills@0.3.1`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.3.1) | Vault exit evidence, pending/claimable redemptions, Pendle PT/YT and savings |
 | [Tokenized Assets](packages/tokenized-assets) | [`galleon-defi-tokenized-assets-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-tokenized-assets-skills/v/0.1.3) | Ondo and OpenEden eligibility, issuer risk and settlement |
-| [Routing](packages/routing) | [`galleon-defi-routing-skills@0.3.1`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.3.1) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
-| [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.5`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.5) | GMX, Derive, Drift and Pendle Boros trading lifecycles |
+| [Routing](packages/routing) | [`galleon-defi-routing-skills@0.3.2`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.3.2) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
+| [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.1.6`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.1.6) | GMX, Derive, Velocity (formerly Drift) and Pendle Boros trading lifecycles |
 | [Strategy](packages/strategy) | [`galleon-defi-strategy-skills@0.2.0`](https://www.npmjs.com/package/galleon-defi-strategy-skills/v/0.2.0) | Frozen-rule templates, held-out validation, higher-cost tests and reproducible benchmarks |
 | [Portfolio](packages/portfolio) | [`galleon-defi-portfolio-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-portfolio-skills/v/0.2.1) | Positions, liabilities, net exposure, cash flows and performance |
-| [Security](packages/security) | [`galleon-defi-security-skills@0.2.3`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.2.3) | Token diligence, transaction decoding, permissions and simulation review |
+| [Security](packages/security) | [`galleon-defi-security-skills@0.2.4`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.2.4) | Token diligence, transaction decoding, permissions and simulation review |
 | [Payments](packages/payments) | [`galleon-defi-payments-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-payments-skills/v/0.2.1) | Stablecoin transfers, x402, Sablier and Superfluid |
-| [Governance](packages/governance) | [`galleon-defi-governance-skills@0.1.3`](https://www.npmjs.com/package/galleon-defi-governance-skills/v/0.1.3) | Snapshot, Cactus, Governor, voting and Safe execution |
+| [Governance](packages/governance) | [`galleon-defi-governance-skills@0.1.4`](https://www.npmjs.com/package/galleon-defi-governance-skills/v/0.1.4) | Snapshot, Cactus, Governor, voting and Safe execution |
 
 ## Install only what you need
 
@@ -85,7 +85,7 @@ npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packa
 Source commands follow `main`. For reproducible use, select a reviewed source revision or use an exact npm release. Published packages include a local corpus CLI and an ESM `SKILL_CATALOG` export:
 
 ```bash
-npx --package galleon-defi-lending-skills@0.3.1 defi-lending-skills catalog --json
+npx --package galleon-defi-lending-skills@0.3.2 defi-lending-skills catalog --json
 ```
 
 Node 20+ runs the published corpus CLIs. The CLI reads the bundled skills; the installer or Boomkin places them in your agent's discovery directory. Provider tools and optional helpers have their own runtime and access requirements.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 · 2026-10-19
+
+- Pin Aave clients by explicit version: npm `latest` for `@aave/client` is now the V4 client 6.x, `next` is a stale prerelease and V3 uses the 0.x line.
+
 ## 0.3.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

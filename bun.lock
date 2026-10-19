@@ -12,7 +12,7 @@
     },
     "packages/agent": {
       "name": "galleon-defi-agent-skills",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "bin": {
         "defi-agent-skills": "dist/cli.js",
       },
@@ -32,21 +32,21 @@
     },
     "packages/derivatives": {
       "name": "galleon-defi-derivatives-skills",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "bin": {
         "defi-derivatives-skills": "dist/cli.js",
       },
     },
     "packages/governance": {
       "name": "galleon-defi-governance-skills",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "bin": {
         "defi-governance-skills": "dist/cli.js",
       },
     },
     "packages/hyperliquid": {
       "name": "galleon-hyperliquid-skills",
-      "version": "0.4.0",
+      "version": "0.4.1",
       "bin": {
         "hyperliquid-skills": "dist/cli.js",
         "hl-skills": "dist/cli.js",
@@ -60,7 +60,7 @@
     },
     "packages/infra": {
       "name": "galleon-defi-infra-skills",
-      "version": "0.4.1",
+      "version": "0.4.2",
       "bin": {
         "defi-infra-skills": "dist/cli.js",
       },
@@ -73,14 +73,14 @@
     },
     "packages/lending": {
       "name": "galleon-defi-lending-skills",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "bin": {
         "defi-lending-skills": "dist/cli.js",
       },
     },
     "packages/lp": {
       "name": "galleon-lp-skills",
-      "version": "0.6.1",
+      "version": "0.6.2",
       "bin": {
         "lp-skills": "dist/cli.js",
       },
@@ -114,14 +114,14 @@
     },
     "packages/routing": {
       "name": "galleon-defi-routing-skills",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "bin": {
         "defi-routing-skills": "dist/cli.js",
       },
     },
     "packages/security": {
       "name": "galleon-defi-security-skills",
-      "version": "0.2.3",
+      "version": "0.2.4",
       "bin": {
         "defi-security-skills": "dist/cli.js",
       },
@@ -149,7 +149,7 @@
     },
     "packages/yield": {
       "name": "galleon-defi-yield-skills",
-      "version": "0.2.1",
+      "version": "0.3.1",
       "bin": {
         "defi-yield-skills": "dist/cli.js",
       },
