@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1 · 2026-10-19
+
+- Exclude outcome fills (coins beginning with `#`) from default-perp wallet audit accounting, with a regression test.
+
 ## 0.4.0 - 2026-10-09
 
 - Add the independently installable `hyperliquid-wallet-audit` skill and dependency-free Node helper for public account diagnostics.

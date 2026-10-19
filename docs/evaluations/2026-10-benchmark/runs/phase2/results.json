@@ -1,0 +1,1682 @@
+{
+  "phase": "phase2",
+  "generated_at": "2026-10-14T10:53:29.529Z",
+  "statuses": {
+    "without_skill:ok": 90,
+    "with_skill:ok": 90
+  },
+  "overall": {
+    "with_skill": {
+      "answers": 90,
+      "strict": 86,
+      "strict_rate": 0.9555555555555556,
+      "expected_share": 0.9777777777777777,
+      "forbidden_hits": 0,
+      "strict_min": 0,
+      "strict_max": 1,
+      "expected_min": 0,
+      "expected_max": 1,
+      "case_mean_strict_rate": 0.9555555555555556,
+      "case_mean_expected_share": 0.9777777777777779
+    },
+    "without_skill": {
+      "answers": 90,
+      "strict": 66,
+      "strict_rate": 0.7333333333333333,
+      "expected_share": 0.8629629629629628,
+      "forbidden_hits": 0.011111111111111112,
+      "strict_min": 0,
+      "strict_max": 1,
+      "expected_min": 0,
+      "expected_max": 1,
+      "case_mean_strict_rate": 0.7333333333333333,
+      "case_mean_expected_share": 0.862962962962963
+    }
+  },
+  "paired": {
+    "cases": 30,
+    "strict_diff": 0.22222222222222227,
+    "strict_ci": [
+      0.10000000000000002,
+      0.3555555555555555
+    ],
+    "expected_diff": 0.11481481481481484,
+    "expected_ci": [
+      0.05185185185185186,
+      0.18888888888888886
+    ],
+    "forbidden_diff": -0.01111111111111111,
+    "forbidden_ci": [
+      -0.03333333333333333,
+      0
+    ],
+    "strict_tally": {
+      "win": 10,
+      "tie": 20,
+      "loss": 0
+    },
+    "expected_tally": {
+      "win": 11,
+      "tie": 19,
+      "loss": 0
+    }
+  },
+  "per_case": [
+    {
+      "id": "galleon-aave-position-1",
+      "skill": "galleon-aave-position",
+      "pack": "lending",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "galleon-aave-position-2",
+      "skill": "galleon-aave-position",
+      "pack": "lending",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 0,
+        "strict_rate": 0,
+        "expected_share": 0.6666666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 0,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 0.6666666666666666
+      },
+      "strict_diff": 1,
+      "expected_diff": 0.33333333333333337,
+      "forbidden_diff": 0,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "aave-v4-useful-result",
+      "skill": "galleon-aave-v4",
+      "pack": "lending",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 1,
+        "strict_rate": 0.3333333333333333,
+        "expected_share": 0.6666666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.5,
+        "expected_max": 1
+      },
+      "strict_diff": 0.6666666666666667,
+      "expected_diff": 0.33333333333333337,
+      "forbidden_diff": 0,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "aave-v4-changed-evidence",
+      "skill": "galleon-aave-v4",
+      "pack": "lending",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "galleon-morpho-market-1",
+      "skill": "galleon-morpho-market",
+      "pack": "lending",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 0,
+        "strict_rate": 0,
+        "expected_share": 0.6666666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 0,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 0.6666666666666666
+      },
+      "strict_diff": 1,
+      "expected_diff": 0.33333333333333337,
+      "forbidden_diff": 0,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "galleon-morpho-market-2",
+      "skill": "galleon-morpho-market",
+      "pack": "lending",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "galleon-vault-exit-1",
+      "skill": "galleon-vault-exit",
+      "pack": "yield",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "galleon-vault-exit-2",
+      "skill": "galleon-vault-exit",
+      "pack": "yield",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "galleon-pendle-maturity-1",
+      "skill": "galleon-pendle-maturity",
+      "pack": "yield",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "galleon-pendle-maturity-2",
+      "skill": "galleon-pendle-maturity",
+      "pack": "yield",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "galleon-lido-withdrawals-1",
+      "skill": "galleon-lido-withdrawals",
+      "pack": "staking",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 2,
+        "strict_rate": 0.6666666666666666,
+        "expected_share": 0.8888888888888888,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      },
+      "strict_diff": 0.33333333333333337,
+      "expected_diff": 0.11111111111111116,
+      "forbidden_diff": 0,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "galleon-lido-withdrawals-2",
+      "skill": "galleon-lido-withdrawals",
+      "pack": "staking",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "lifi-cross-chain-partial",
+      "skill": "lifi-cross-chain",
+      "pack": "routing",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "lifi-cross-chain-minimum",
+      "skill": "lifi-cross-chain",
+      "pack": "routing",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "uniswap-swap-quote-permit",
+      "skill": "uniswap-swap",
+      "pack": "routing",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 2,
+        "strict_rate": 0.6666666666666666,
+        "expected_share": 0.6666666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      },
+      "strict_diff": 0.33333333333333337,
+      "expected_diff": 0.33333333333333337,
+      "forbidden_diff": 0,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "uniswap-swap-order-branch",
+      "skill": "uniswap-swap",
+      "pack": "routing",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "lp-monitor-known-range-unknown-pnl",
+      "skill": "lp-monitor",
+      "pack": "lp",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "lp-monitor-stale-not-hold",
+      "skill": "lp-monitor",
+      "pack": "lp",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "lp-plan-collect-specific-intake",
+      "skill": "lp-plan",
+      "pack": "lp",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 1,
+        "strict_rate": 0.3333333333333333,
+        "expected_share": 0.8888888888888888,
+        "forbidden_hits": 0.3333333333333333,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      },
+      "strict_diff": 0.6666666666666667,
+      "expected_diff": 0.11111111111111116,
+      "forbidden_diff": -0.3333333333333333,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "lp-plan-in-kind-exit",
+      "skill": "lp-plan",
+      "pack": "lp",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "hl-plan-cancel-specific-intake",
+      "skill": "hyperliquid-plan",
+      "pack": "hyperliquid",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 2,
+        "strict_rate": 0.6666666666666666,
+        "expected_share": 0.8888888888888888,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      },
+      "strict_diff": 0.33333333333333337,
+      "expected_diff": 0.11111111111111116,
+      "forbidden_diff": 0,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "hl-plan-close-not-entry",
+      "skill": "hyperliquid-plan",
+      "pack": "hyperliquid",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "hl-wallet-audit-signed-costs",
+      "skill": "hyperliquid-wallet-audit",
+      "pack": "hyperliquid",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 0,
+        "strict_rate": 0,
+        "expected_share": 0.6666666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 0,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 0.6666666666666666
+      },
+      "strict_diff": 1,
+      "expected_diff": 0.33333333333333337,
+      "forbidden_diff": 0,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "hl-wallet-audit-partial-history",
+      "skill": "hyperliquid-wallet-audit",
+      "pack": "hyperliquid",
+      "with_skill": {
+        "answers": 3,
+        "strict": 0,
+        "strict_rate": 0,
+        "expected_share": 0.6666666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 0,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 0.6666666666666666
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 0,
+        "strict_rate": 0,
+        "expected_share": 0.5555555555555555,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 0,
+        "expected_min": 0.3333333333333333,
+        "expected_max": 0.6666666666666666
+      },
+      "strict_diff": 0,
+      "expected_diff": 0.11111111111111116,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "prediction-book-depth",
+      "skill": "galleon-prediction-market-research",
+      "pack": "prediction",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 1,
+        "strict_rate": 0.3333333333333333,
+        "expected_share": 0.3333333333333333,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      },
+      "strict_diff": 0.6666666666666667,
+      "expected_diff": 0.6666666666666667,
+      "forbidden_diff": 0,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "prediction-book-stale",
+      "skill": "galleon-prediction-market-research",
+      "pack": "prediction",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "prediction-split-payout",
+      "skill": "galleon-prediction-market-resolution",
+      "pack": "prediction",
+      "with_skill": {
+        "answers": 3,
+        "strict": 2,
+        "strict_rate": 0.6666666666666666,
+        "expected_share": 0.6666666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 0,
+        "strict_rate": 0,
+        "expected_share": 0,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 0,
+        "expected_min": 0,
+        "expected_max": 0
+      },
+      "strict_diff": 0.6666666666666666,
+      "expected_diff": 0.6666666666666666,
+      "forbidden_diff": 0,
+      "strict_outcome": "win",
+      "expected_outcome": "win"
+    },
+    {
+      "id": "prediction-disputed",
+      "skill": "galleon-prediction-market-resolution",
+      "pack": "prediction",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "security-token-diligence-useful-result",
+      "skill": "galleon-defi-security-token-diligence",
+      "pack": "security",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    },
+    {
+      "id": "security-token-diligence-changed-evidence",
+      "skill": "galleon-defi-security-token-diligence",
+      "pack": "security",
+      "with_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 3,
+        "strict": 3,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "strict_diff": 0,
+      "expected_diff": 0,
+      "forbidden_diff": 0,
+      "strict_outcome": "tie",
+      "expected_outcome": "tie"
+    }
+  ],
+  "per_skill": [
+    {
+      "name": "galleon-aave-position",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 3,
+        "strict_rate": 0.5,
+        "expected_share": 0.8333333333333334,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "galleon-aave-v4",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 4,
+        "strict_rate": 0.6666666666666666,
+        "expected_share": 0.8333333333333334,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.5,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "galleon-morpho-market",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 3,
+        "strict_rate": 0.5,
+        "expected_share": 0.8333333333333334,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "galleon-vault-exit",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "galleon-pendle-maturity",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "galleon-lido-withdrawals",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 5,
+        "strict_rate": 0.8333333333333334,
+        "expected_share": 0.9444444444444443,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "lifi-cross-chain",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "uniswap-swap",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 5,
+        "strict_rate": 0.8333333333333334,
+        "expected_share": 0.8333333333333334,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "lp-monitor",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "lp-plan",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 4,
+        "strict_rate": 0.6666666666666666,
+        "expected_share": 0.9444444444444445,
+        "forbidden_hits": 0.16666666666666666,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "hyperliquid-plan",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 5,
+        "strict_rate": 0.8333333333333334,
+        "expected_share": 0.9444444444444445,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "hyperliquid-wallet-audit",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 3,
+        "strict_rate": 0.5,
+        "expected_share": 0.8333333333333334,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 0,
+        "strict_rate": 0,
+        "expected_share": 0.611111111111111,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 0,
+        "expected_min": 0.3333333333333333,
+        "expected_max": 0.6666666666666666
+      }
+    },
+    {
+      "name": "galleon-prediction-market-research",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 4,
+        "strict_rate": 0.6666666666666666,
+        "expected_share": 0.6666666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "galleon-prediction-market-resolution",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 5,
+        "strict_rate": 0.8333333333333334,
+        "expected_share": 0.8333333333333334,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 3,
+        "strict_rate": 0.5,
+        "expected_share": 0.5,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "galleon-defi-security-token-diligence",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      }
+    }
+  ],
+  "per_pack": [
+    {
+      "name": "lending",
+      "cases": 6,
+      "with_skill": {
+        "answers": 18,
+        "strict": 18,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 18,
+        "strict": 10,
+        "strict_rate": 0.5555555555555556,
+        "expected_share": 0.8333333333333333,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.5,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "yield",
+      "cases": 4,
+      "with_skill": {
+        "answers": 12,
+        "strict": 12,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 12,
+        "strict": 12,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "staking",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 5,
+        "strict_rate": 0.8333333333333334,
+        "expected_share": 0.9444444444444443,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "routing",
+      "cases": 4,
+      "with_skill": {
+        "answers": 12,
+        "strict": 12,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 12,
+        "strict": 11,
+        "strict_rate": 0.9166666666666666,
+        "expected_share": 0.9166666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "lp",
+      "cases": 4,
+      "with_skill": {
+        "answers": 12,
+        "strict": 12,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 12,
+        "strict": 10,
+        "strict_rate": 0.8333333333333334,
+        "expected_share": 0.9722222222222222,
+        "forbidden_hits": 0.08333333333333333,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "hyperliquid",
+      "cases": 4,
+      "with_skill": {
+        "answers": 12,
+        "strict": 9,
+        "strict_rate": 0.75,
+        "expected_share": 0.9166666666666665,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.6666666666666666,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 12,
+        "strict": 5,
+        "strict_rate": 0.4166666666666667,
+        "expected_share": 0.7777777777777778,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0.3333333333333333,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "prediction",
+      "cases": 4,
+      "with_skill": {
+        "answers": 12,
+        "strict": 11,
+        "strict_rate": 0.9166666666666666,
+        "expected_share": 0.9166666666666666,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 12,
+        "strict": 7,
+        "strict_rate": 0.5833333333333334,
+        "expected_share": 0.5833333333333334,
+        "forbidden_hits": 0,
+        "strict_min": 0,
+        "strict_max": 1,
+        "expected_min": 0,
+        "expected_max": 1
+      }
+    },
+    {
+      "name": "security",
+      "cases": 2,
+      "with_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      },
+      "without_skill": {
+        "answers": 6,
+        "strict": 6,
+        "strict_rate": 1,
+        "expected_share": 1,
+        "forbidden_hits": 0,
+        "strict_min": 1,
+        "strict_max": 1,
+        "expected_min": 1,
+        "expected_max": 1
+      }
+    }
+  ],
+  "profile": {
+    "with_skill": {
+      "answers": 90,
+      "requests": 3.077777777777778,
+      "file_reads": 3.1,
+      "input_tokens": 8.155555555555555,
+      "cache_read_tokens": 6022.122222222222,
+      "cache_write_tokens": 2488.0666666666666,
+      "output_tokens": 1474.9,
+      "thinking_tokens": 325.0444444444444,
+      "answer_chars": 2745.0333333333333,
+      "wall_seconds": 21.65771111111112,
+      "cost_usd": 0.04317538000000002
+    },
+    "without_skill": {
+      "answers": 90,
+      "requests": 1,
+      "file_reads": 0,
+      "input_tokens": 210.46666666666667,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "output_tokens": 1228.3666666666666,
+      "thinking_tokens": 420.3777777777778,
+      "answer_chars": 2180.2444444444445,
+      "wall_seconds": 13.468955555555556,
+      "cost_usd": 0.02540919999999999
+    }
+  },
+  "grading": {
+    "grades": 180,
+    "criteria": 804,
+    "verdicts": {
+      "yes": 381,
+      "no": 421,
+      "unclear": 2
+    },
+    "figure_checks": 72,
+    "figure_overrides": 0,
+    "quotes": 770,
+    "quotes_found": 728,
+    "cost_per_grade_usd": 0.018767911111111108,
+    "output_tokens_per_grade": 540.6944444444445
+  },
+  "spend": {
+    "by_phase_kind": {
+      "pilot:answer": 0.7863428000000001,
+      "pilot:grade": 0.392648,
+      "phase2:answer": 6.172612199999997,
+      "phase2:grade": 3.3782239999999994
+    },
+    "total_usd": 10.729826999999991,
+    "ledger_requests": 607,
+    "failed_requests": 0
+  }
+}

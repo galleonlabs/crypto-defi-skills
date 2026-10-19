@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.4 · 2026-10-19
+
+- Replace the deleted Pons contracts repository link with the region-restricted V2 documentation and the Robinhood Chain explorer, and state that Pons publishes no public contract repository.
+
 ## 0.2.3 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

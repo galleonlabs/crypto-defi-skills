@@ -1,6 +1,10 @@
 # Changelog
 
-## 0.3.0 - Unreleased
+## 0.3.1 · 2026-10-19
+
+- Use only the documented Pendle `POST /v3/sdk/{chainId}/convert` operation; the older GET v2 Convert path is no longer documented.
+
+## 0.3.0 · 2026-10-12
 
 - Add an offline, dependency-free vault exit assessment with exact raw-unit arithmetic and block-bound observations.
 - Separate synchronous previews from ERC7540 controller limits, pending requests and claimable shares, including external ERC7575 share tokens.

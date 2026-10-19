@@ -1,11 +1,11 @@
 ---
 name: galleon-defi-derivatives
-description: Assess perpetuals, options and funding-rate derivatives, prepare bounded exposure plans, and reconcile order and margin state. Use when comparing GMX, Drift, Derive, Jupiter Perps or Boros, planning hedges, monitoring positions or recovering orders.
+description: Assess perpetuals, options and funding-rate derivatives, prepare bounded exposure plans, and reconcile order and margin state. Use when comparing GMX, Velocity (formerly Drift), Derive, Jupiter Perps or Boros, planning hedges, monitoring positions or recovering orders.
 license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs official venue data and optional user-authorized wallet tooling. No signer, provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.1.5"
+  version: "0.1.6"
 ---
 
 # DeFi derivatives
@@ -18,7 +18,7 @@ Read [task examples and user configuration](references/task-examples.md) for a c
 
 ## Select the product and tools
 
-Read [providers](references/providers.md) for GMX, Drift, Derive, Jupiter and Boros, their official integration surfaces and version gaps. Read [workflows](references/workflows.md) for risk planning and order reconciliation. [Evaluation cases](references/evaluation.md) provide bounded fixture scenarios.
+Read [providers](references/providers.md) for GMX, Velocity (formerly Drift), Derive, Jupiter and Boros, their official integration surfaces and version gaps. Read [workflows](references/workflows.md) for risk planning and order reconciliation. [Evaluation cases](references/evaluation.md) provide bounded fixture scenarios.
 
 For Hyperliquid, use the installed `hyperliquid-analyze`, `hyperliquid-plan`, `hyperliquid-execute` or `hyperliquid-monitor` skill when available. This pack provides the cross-venue comparison and handoff; it does not reproduce Hyperliquid signing or nonce rules. No other pack is required for the general workflow here.
 

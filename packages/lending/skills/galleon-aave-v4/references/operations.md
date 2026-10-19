@@ -10,7 +10,7 @@ Primary documentation reviewed 2026-10-08. Installed tool schemas and observed c
 
 ## AaveKit implementation route
 
-[V4 TypeScript](https://aave.com/docs/aave-v4/getting-started/typescript) currently documents `@aave/client@next`; V3 uses a different distribution track. Pin a reviewed compatible version when implementing. Read-only client actions need no wallet. Await `ResultAsync`, branch on `isOk()`/`isErr()`, and preserve the actual failure instead of converting it to empty positions. Display overrides change names/icons, not the underlying token identity.
+[V4 TypeScript](https://aave.com/docs/aave-v4/getting-started/typescript) still documents `@aave/client@next`, but on 2026-10-19 that tag was a March 2026 prerelease (`4.0.0-next.54`) while `latest` was the V4 client 6.7.0 from `aave/aave-v4-sdk`. V3 uses the 0.x line from `aave/aave-sdk`. Pin a reviewed compatible version when implementing. Read-only client actions need no wallet. Await `ResultAsync`, branch on `isOk()`/`isErr()`, and preserve the actual failure instead of converting it to empty positions. Display overrides change names/icons, not the underlying token identity.
 
 [Borrow](https://aave.com/docs/aave-v4/positions/borrow), [repay](https://aave.com/docs/aave-v4/positions/repay) and [withdraw](https://aave.com/docs/aave-v4/positions/withdraw) carry their own conditions and plans. Inspect the SDK's current union rather than assuming every result is a `TransactionRequest`. A balance failure is not approval to fund the wallet.
 

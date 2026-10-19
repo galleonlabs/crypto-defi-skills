@@ -1,0 +1,14 @@
+{
+  "pilot_spend_usd": 1.179,
+  "per_answer_with_skill_usd": 0.0512,
+  "per_answer_without_skill_usd": 0.0274,
+  "per_grade_usd": 0.0196,
+  "phase2_answers": 180,
+  "phase2_grades": 180,
+  "phase2_projection_usd": 10.61,
+  "phase2_projection_with_1_5x_buffer_usd": 15.92,
+  "projected_total_usd": 11.79,
+  "projected_total_with_buffer_usd": 17.1,
+  "cap_usd": 45,
+  "decision": "run all 30 cases with 3 repeats per arm; no reduction needed"
+}

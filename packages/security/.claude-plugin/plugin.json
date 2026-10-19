@@ -1,7 +1,7 @@
 {
   "name": "galleon-defi-security-skills",
   "displayName": "Galleon DeFi Security",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Token due diligence, transaction review, permissions and simulation evidence.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/security#readme",
   "license": "MIT",

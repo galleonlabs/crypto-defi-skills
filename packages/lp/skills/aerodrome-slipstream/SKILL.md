@@ -1,16 +1,20 @@
 ---
 name: aerodrome-slipstream
-description: "Use when depositing, staking, claiming, withdrawing, or evaluating Aerodrome Slipstream concentrated-liquidity NFT positions on Base. Distinguishes gauge emissions from unstaked fees, checks gauge custody and deployed-version penalties, and prepares a concrete exit."
+description: "Use when depositing, staking, claiming, withdrawing, or evaluating Aerodrome Slipstream concentrated-liquidity NFT positions on Base. Distinguishes gauge emissions from unstaked fees, checks gauge custody and deployed-version penalties, and prepares a concrete exit, including after the 2026-10-22 Aero upgrade deactivates Aerodrome gauges."
 license: MIT
 compatibility: "Read-only EVM RPC and official protocol APIs or UI. Optional Node.js 20 for offline helpers. No signer included."
 metadata:
   author: "Galleon Labs"
-  version: "0.6.1"
+  version: "0.6.2"
 ---
 
 # Aerodrome Slipstream
 
 Return the NFT's range, custodian, emissions eligibility, claim estimate, and exact next action. Aerodrome has both classic stable/volatile ERC-20 pools and Slipstream concentrated NFT pools. Identify the model before using any gauge ABI. This recipe covers Slipstream; an ERC-20 LP amount requires the classic pool's own router/gauge flow.
+
+## Aero upgrade
+
+At 2026-10-22 00:00 UTC Aerodrome and Velodrome upgrade to Aero ([launch hub](https://aero.xyz/aero-upgrade/)). From then all Aerodrome and Velodrome gauges are deactivated and their pools stop receiving emissions. The pools stay live, and unstaked liquidity keeps earning trading fees. Staked positions, ALMs and vaults do not move automatically, and AERO must be upgraded through the official portal. After launch, do not quote emissions for an Aerodrome gauge or prepare a new stake into one; treat a staked NFT as an exit candidate. Aero gauges are new contracts: resolve them from official Aero sources and verify them on-chain before any stake.
 
 ## Identify the real position
 
@@ -43,4 +47,4 @@ Synthetic NFT 42: owner is verified gauge G; stakedContains(Alice,42)=true; curr
 
 ## Sources and maintenance
 
-Primary sources checked 2026-09-27. [Protocol recipes and sources](references/recipes.md) contain the concrete calls. Recheck deployments and API schemas before preparing financial actions; documentation access alone proves no live position or transaction.
+Primary sources checked 2026-09-27; the Aero upgrade section was checked against the Aero launch hub on 2026-10-19. [Protocol recipes and sources](references/recipes.md) contain the concrete calls. Recheck deployments and API schemas before preparing financial actions; documentation access alone proves no live position or transaction.

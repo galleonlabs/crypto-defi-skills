@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="292" viewBox="0 0 760 292" role="img" aria-labelledby="t d">
+<title id="t">Strict pass rate by skill, 2 answers per skill per arm</title>
+<desc id="d">galleon-aave-position: 2 of 2 with the skill, 0 of 2 without; galleon-vault-exit: 2 of 2 with the skill, 2 of 2 without; lifi-cross-chain: 2 of 2 with the skill, 2 of 2 without; hyperliquid-wallet-audit: 1 of 2 with the skill, 0 of 2 without; galleon-prediction-market-resolution: 1 of 2 with the skill, 1 of 2 without</desc>
+<g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<text x="0" y="22" font-size="16" font-weight="600" fill="#1f2328">Strict pass rate by skill, 2 answers per skill per arm</text>
+<rect x="0" y="40" width="12" height="12" rx="2" fill="#2a78d6"/><text x="18" y="50" font-size="13" fill="#1f2328">With skill</text>
+<rect x="100" y="40" width="12" height="12" rx="2" fill="#eb6834"/><text x="118" y="50" font-size="13" fill="#1f2328">Without skill</text>
+<line x1="312" y1="72" x2="312" y2="248" stroke="#d1d9e0" stroke-width="1"/>
+<text x="312" y="266" font-size="12" fill="#59636e" text-anchor="middle">0%</text>
+<line x1="407" y1="72" x2="407" y2="248" stroke="#d1d9e0" stroke-width="1"/>
+<text x="407" y="266" font-size="12" fill="#59636e" text-anchor="middle">25%</text>
+<line x1="502" y1="72" x2="502" y2="248" stroke="#d1d9e0" stroke-width="1"/>
+<text x="502" y="266" font-size="12" fill="#59636e" text-anchor="middle">50%</text>
+<line x1="597" y1="72" x2="597" y2="248" stroke="#d1d9e0" stroke-width="1"/>
+<text x="597" y="266" font-size="12" fill="#59636e" text-anchor="middle">75%</text>
+<line x1="692" y1="72" x2="692" y2="248" stroke="#d1d9e0" stroke-width="1"/>
+<text x="692" y="266" font-size="12" fill="#59636e" text-anchor="middle">100%</text>
+<text x="502" y="286" font-size="12" fill="#59636e" text-anchor="middle">Strict pass rate (every expected criterion met, no forbidden criterion hit)</text>
+<text x="300" y="99" font-size="13" fill="#1f2328" text-anchor="end">galleon-aave-position</text>
+<path d="M312 83H688Q692 83 692 87V90Q692 94 688 94H312Z" fill="#2a78d6"/>
+<text x="698" y="93" font-size="11" fill="#59636e">2/2</text>
+
+<text x="318" y="106" font-size="11" fill="#59636e">0/2</text>
+<text x="300" y="133" font-size="13" fill="#1f2328" text-anchor="end">galleon-vault-exit</text>
+<path d="M312 117H688Q692 117 692 121V124Q692 128 688 128H312Z" fill="#2a78d6"/>
+<text x="698" y="127" font-size="11" fill="#59636e">2/2</text>
+<path d="M312 130H688Q692 130 692 134V137Q692 141 688 141H312Z" fill="#eb6834"/>
+<text x="698" y="140" font-size="11" fill="#59636e">2/2</text>
+<text x="300" y="167" font-size="13" fill="#1f2328" text-anchor="end">lifi-cross-chain</text>
+<path d="M312 151H688Q692 151 692 155V158Q692 162 688 162H312Z" fill="#2a78d6"/>
+<text x="698" y="161" font-size="11" fill="#59636e">2/2</text>
+<path d="M312 164H688Q692 164 692 168V171Q692 175 688 175H312Z" fill="#eb6834"/>
+<text x="698" y="174" font-size="11" fill="#59636e">2/2</text>
+<text x="300" y="201" font-size="13" fill="#1f2328" text-anchor="end">hyperliquid-wallet-audit</text>
+<path d="M312 185H498Q502 185 502 189V192Q502 196 498 196H312Z" fill="#2a78d6"/>
+<text x="508" y="195" font-size="11" fill="#59636e">1/2</text>
+
+<text x="318" y="208" font-size="11" fill="#59636e">0/2</text>
+<text x="300" y="235" font-size="13" fill="#1f2328" text-anchor="end">galleon-prediction-market-resolution</text>
+<path d="M312 219H498Q502 219 502 223V226Q502 230 498 230H312Z" fill="#2a78d6"/>
+<text x="508" y="229" font-size="11" fill="#59636e">1/2</text>
+<path d="M312 232H498Q502 232 502 236V239Q502 243 498 243H312Z" fill="#eb6834"/>
+<text x="508" y="242" font-size="11" fill="#59636e">1/2</text>
+</g></svg>
