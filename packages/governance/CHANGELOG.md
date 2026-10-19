@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4 · 2026-10-19
+
+- Note that the hosted Snapshot MCP returned 401 to an unauthenticated `initialize` on 2026-10-19, so reads may need a one-time OAuth connection.
+
 ## 0.1.3 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

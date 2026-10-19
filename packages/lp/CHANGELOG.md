@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.2 · 2026-10-19
+
+- Record that `@vfat-io/sickle-sdk` 0.1.0 is now on npm without a repository field while `@vfat-io/sickle-wrapper-sdk` is still unpublished.
+
 ## 0.6.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

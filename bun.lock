@@ -32,14 +32,14 @@
     },
     "packages/derivatives": {
       "name": "galleon-defi-derivatives-skills",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "bin": {
         "defi-derivatives-skills": "dist/cli.js",
       },
     },
     "packages/governance": {
       "name": "galleon-defi-governance-skills",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "bin": {
         "defi-governance-skills": "dist/cli.js",
       },
@@ -80,7 +80,7 @@
     },
     "packages/lp": {
       "name": "galleon-lp-skills",
-      "version": "0.6.1",
+      "version": "0.6.2",
       "bin": {
         "lp-skills": "dist/cli.js",
       },
@@ -121,7 +121,7 @@
     },
     "packages/security": {
       "name": "galleon-defi-security-skills",
-      "version": "0.2.3",
+      "version": "0.2.4",
       "bin": {
         "defi-security-skills": "dist/cli.js",
       },
@@ -149,7 +149,7 @@
     },
     "packages/yield": {
       "name": "galleon-defi-yield-skills",
-      "version": "0.2.1",
+      "version": "0.3.0",
       "bin": {
         "defi-yield-skills": "dist/cli.js",
       },
