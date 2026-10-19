@@ -18,7 +18,7 @@ If the hook issues fungible shares against internal reserves, do not use concent
 
 ## Aerodrome classic
 
-Classify stable versus volatile invariant. Plan add liquidity, LP receipt, optional gauge approval and deposit, reward claim, gauge withdrawal, and removal as separate states. Verify who receives trading fees in the selected route and how rewards accrue.
+Classify stable versus volatile invariant. Plan add liquidity, LP receipt, optional gauge approval and deposit, reward claim, gauge withdrawal, and removal as separate states. Verify who receives trading fees in the selected route and how rewards accrue. Aerodrome and Velodrome gauges stop paying emissions at the 2026-10-22 00:00 UTC Aero launch.
 
 ## Slipstream
 

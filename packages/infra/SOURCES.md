@@ -10,7 +10,7 @@ Reviewed 2026-09-05. Guidance is independently authored; provider runtimes and s
 - [Alchemy CLI](https://www.alchemy.com/docs/alchemy-cli): supported configuration variables and machine-readable command surface.
 - [Alchemy Agent Wallets](https://www.alchemy.com/docs/agent-wallets): session custody, expiry, capabilities and smart-wallet execution limits.
 - [Alchemy x402](https://www.alchemy.com/docs/x402-payments): quote inspection and bounded provider-managed payments.
-- [Coinbase for Agents](https://docs.cdp.coinbase.com/x402/agentic-accounts/coinbase-for-agents): isolated account portfolio and forthcoming account x402 support.
+- [Coinbase for Agents](https://docs.cdp.coinbase.com/x402/agentic-accounts/coinbase-for-agents): isolated account portfolio and x402 payments from the retail USDC balance on Base (checked 2026-10-19).
 - [Coinbase Agentic Wallet](https://docs.cdp.coinbase.com/x402/agentic-accounts/agentic-wallet): managed wallet and current x402 access.
 - [Coinbase CLI and remote MCP](https://docs.cdp.coinbase.com/coinbase-for-agents/overview): remote harness allowlist, portfolio/key onboarding and supported operations.
 - [Agentic Wallet CLI](https://docs.cdp.coinbase.com/agentic-wallet/cli/quickstart): email/OTP creation flow, chain flags and Node 24+ documented prerequisite.

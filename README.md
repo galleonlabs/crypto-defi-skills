@@ -85,7 +85,7 @@ npx skills add https://github.com/galleonlabs/crypto-defi-skills/tree/main/packa
 Source commands follow `main`. For reproducible use, select a reviewed source revision or use an exact npm release. Published packages include a local corpus CLI and an ESM `SKILL_CATALOG` export:
 
 ```bash
-npx --package galleon-defi-lending-skills@0.3.1 defi-lending-skills catalog --json
+npx --package galleon-defi-lending-skills@0.3.2 defi-lending-skills catalog --json
 ```
 
 Node 20+ runs the published corpus CLIs. The CLI reads the bundled skills; the installer or Boomkin places them in your agent's discovery directory. Provider tools and optional helpers have their own runtime and access requirements.

@@ -33,7 +33,7 @@ A hook-issued fungible share model has a different lifecycle: approve currencies
 
 ```text
 approve tokens -> add stable or volatile liquidity -> receive LP token
-approve LP token -> deposit in gauge -> accrue verified rewards
+approve LP token -> deposit in gauge -> accrue verified rewards (not into an Aerodrome or Velodrome gauge after the 2026-10-22 00:00 UTC Aero launch, when they are deactivated)
 claim rewards or withdraw gauge -> remove liquidity
 ```
 

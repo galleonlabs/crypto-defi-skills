@@ -1,6 +1,6 @@
 # Official derivatives providers
 
-Sources accessed 2026-09-05. This review verified documentation and official source repositories; no derivatives wallet, model, order, payment or account authorization was exercised. No execution capability is enabled by installing the skill. Pin the actual upstream version and discover current methods before integration.
+Sources accessed 2026-09-05; the Velocity and GMX SDK rows were rechecked on 2026-10-19. This review verified documentation and official source repositories; no derivatives wallet, model, order, payment or account authorization was exercised. No execution capability is enabled by installing the skill. Pin the actual upstream version and discover current methods before integration.
 
 | Provider / publisher | Primary sources | Supported path and material distinctions |
 | --- | --- | --- |

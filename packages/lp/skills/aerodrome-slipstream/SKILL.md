@@ -47,4 +47,4 @@ Synthetic NFT 42: owner is verified gauge G; stakedContains(Alice,42)=true; curr
 
 ## Sources and maintenance
 
-Primary sources checked 2026-09-27. [Protocol recipes and sources](references/recipes.md) contain the concrete calls. Recheck deployments and API schemas before preparing financial actions; documentation access alone proves no live position or transaction.
+Primary sources checked 2026-09-27; the Aero upgrade section was checked against the Aero launch hub on 2026-10-19. [Protocol recipes and sources](references/recipes.md) contain the concrete calls. Recheck deployments and API schemas before preparing financial actions; documentation access alone proves no live position or transaction.

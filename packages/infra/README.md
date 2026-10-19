@@ -45,7 +45,7 @@ defi-infra-skills doctor --chain-id 8453 --rpc-env DEFI_RPC_URL --json
 
 Supply `DEFI_RPC_URL` through your private environment. The doctor checks chain ID and latest-block freshness with two bounded read-only RPC requests. It prints no endpoint, key or provider error body. `presence` checks whether known variables are set; it does not authenticate. A non-ready doctor exits nonzero.
 
-No wallet creation, login, funding, signing or payment occurs when installing or validating this pack. The references explain operator-driven onboarding through upstream tools, including current availability limits. Coinbase for Agents' remote MCP does not currently support arbitrary harnesses such as Hermes; use its official CLI. Coinbase for Agents x402 is coming soon, while Agentic Wallet supports it today.
+No wallet creation, login, funding, signing or payment occurs when installing or validating this pack. The references explain operator-driven onboarding through upstream tools, including current availability limits. Coinbase for Agents' remote MCP does not currently support arbitrary harnesses such as Hermes; use its official CLI. Coinbase for Agents and Agentic Wallet both document x402 payments.
 
 See [sources and versions](SOURCES.md), [release notes](CHANGELOG.md), and [readiness details](skills/galleon-defi-infra/references/readiness.md). For development run `bun run check`; for the whole monorepo use its root release instructions.
 
