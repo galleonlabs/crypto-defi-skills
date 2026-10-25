@@ -11,3 +11,8 @@ Research lending markets, plan borrowing and monitor liquidation exposure.
 - [galleon-compound-borrow](skills/galleon-compound-borrow/SKILL.md)
 
 - [galleon-aave-v4](skills/galleon-aave-v4/SKILL.md)
+
+- [Euler V2 lending](skills/galleon-euler-lending/SKILL.md)
+- [SparkLend position review](skills/galleon-sparklend-position/SKILL.md)
+- [Kamino lending position](skills/galleon-kamino-lending/SKILL.md)
+- [Save lending on Solana](skills/galleon-save-lending/SKILL.md)

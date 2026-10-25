@@ -1,0 +1,6 @@
+interface:
+  display_name: "VFAT Sickle"
+  short_description: "VFAT Sickle workflow and evidence"
+  default_prompt: "Use $vfat-sickle for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

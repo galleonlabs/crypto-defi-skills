@@ -17,3 +17,12 @@ Docs were researched; no real lending, redemption or staking transactions were e
 - [galleon-aave-v4 sources](skills/galleon-aave-v4/references/operations.md): version-specific official procedures, exact amount scales, rights, prerequisites and recovery.
 
 Documentation was researched and synthetic cases were added; no financial operation or connected-provider simulation was performed.
+
+## Standalone protocol workflows, reviewed 2026-10-25
+
+- [Euler V2 lending](skills/galleon-euler-lending/references/sources.md): official interface sources and verification limits.
+- [SparkLend position review](skills/galleon-sparklend-position/references/sources.md): official interface sources and verification limits.
+- [Kamino lending position](skills/galleon-kamino-lending/references/sources.md): official interface sources and verification limits.
+- [Save lending on Solana](skills/galleon-save-lending/references/sources.md): official interface sources and verification limits.
+
+Every linked directory contains an operational SKILL.md, not only source links. Documentation and synthetic decisions were checked; no wallet action or live simulation was performed.

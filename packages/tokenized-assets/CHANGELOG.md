@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 - 2026-10-25
+
+- Add standalone protocol procedures for Ondo product access and settlement, OpenEden TBILL subscription and redemption.
+- Include concrete reads, worked decisions, failure handling, self-contained sources and routing/behavioral fixtures.
+
 ## 0.1.3 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

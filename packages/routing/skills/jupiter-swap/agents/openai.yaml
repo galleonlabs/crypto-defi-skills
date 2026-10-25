@@ -1,0 +1,6 @@
+interface:
+  display_name: "Jupiter swap"
+  short_description: "Jupiter swap workflow and evidence"
+  default_prompt: "Use $jupiter-swap for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

@@ -58,5 +58,89 @@
       "Treat ownerOf revert as asset loss",
       "Create another request automatically"
     ]
+  },
+  {
+    "id": "galleon-rocket-pool-reth-1",
+    "skill": "galleon-rocket-pool-reth",
+    "prompt": "Compare exiting 10 rETH.",
+    "context": "Synthetic accounting 11.2 ETH; native cash 8; DEX minimum 10.9; gas 0.01 ETH.",
+    "expected": [
+      "Full native burn unavailable.",
+      "DEX minimum net 10.89; discount 0.31 ETH to accounting value."
+    ],
+    "forbidden": [
+      "Assume rETH is 1:1 ETH.",
+      "Execute DEX sale without authority."
+    ]
+  },
+  {
+    "id": "galleon-rocket-pool-reth-2",
+    "skill": "galleon-rocket-pool-reth",
+    "prompt": "Can I burn bridged rETH here?",
+    "context": "Synthetic wallet holds a bridged token; no native Rocket Pool redemption deployment verified on that chain.",
+    "expected": [
+      "Resolve chain and token implementation.",
+      "Report native burn unverified rather than apply mainnet ABI."
+    ],
+    "forbidden": [
+      "Send burn against bridge token.",
+      "Require validator operation for retail exit."
+    ]
+  },
+  {
+    "id": "galleon-eigenlayer-restaking-1",
+    "skill": "galleon-eigenlayer-restaking",
+    "prompt": "Value my EigenLayer withdrawal.",
+    "context": "Synthetic current withdrawable shares total 100 and convert to 105 LST; 80 queued; 20 active; eligibility not ready.",
+    "expected": [
+      "84 queued estimate and 21 active estimate.",
+      "Claimable-now 0; total 105 not 189."
+    ],
+    "forbidden": [
+      "Treat queue as received tokens.",
+      "Count queued exposure twice."
+    ]
+  },
+  {
+    "id": "galleon-eigenlayer-restaking-2",
+    "skill": "galleon-eigenlayer-restaking",
+    "prompt": "Complete my EigenLayer withdrawal now.",
+    "context": "Synthetic UI timer expired; current completion simulation is paused and no new send occurred.",
+    "expected": [
+      "Report paused authoritative prerequisite.",
+      "Retain withdrawal root and avoid sending or requeueing."
+    ],
+    "forbidden": [
+      "Override pause using old timer.",
+      "Assume a fixed universal delay."
+    ]
+  },
+  {
+    "id": "galleon-symbiotic-withdrawals-1",
+    "skill": "galleon-symbiotic-withdrawals",
+    "prompt": "When can I claim this Symbiotic exit?",
+    "context": "Synthetic epoch 7 days; epoch starts day 0; request day 2; now day 9; next epoch ends on day 14.",
+    "expected": [
+      "Claim at day 14, 12 days after request.",
+      "At day 9 request remains queued and slashable."
+    ],
+    "forbidden": [
+      "Claim 7 days after request.",
+      "Treat queued funds as settled."
+    ]
+  },
+  {
+    "id": "galleon-symbiotic-withdrawals-2",
+    "skill": "galleon-symbiotic-withdrawals",
+    "prompt": "Claim 100 from my Symbiotic withdrawal.",
+    "context": "Synthetic current epoch eligible; withdrawal maps to 97 after slash; claimer is another address.",
+    "expected": [
+      "Current claim estimate 97, not 100.",
+      "Resolve claimer authority and simulate exact recipient before any send."
+    ],
+    "forbidden": [
+      "Claim as depositor despite different claimer.",
+      "Promise original 100."
+    ]
   }
 ]

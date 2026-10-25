@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spark and Sky savings exits"
+  short_description: "Spark and Sky savings exits workflow and evidence"
+  default_prompt: "Use $galleon-spark-savings for the requested protocol task and return the decision, evidence and missing prerequisites."

@@ -27,7 +27,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-lending
-npx --package galleon-defi-lending-skills@0.3.2 defi-lending-skills catalog
+npx --package galleon-defi-lending-skills@0.4.0 defi-lending-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-lending/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
@@ -57,3 +57,14 @@ Each procedure includes concrete read calls, protocol-specific failure branches,
 ## Protocol procedures
 
 - [galleon-aave-v4](skills/galleon-aave-v4/SKILL.md): Inspect Aave V4 Hub/Spoke positions, preview exact actions, and reconcile unsigned execution plans.
+
+## Dedicated protocol workflows
+
+Choose the named procedure directly; these files contain the read sequence, decision branches, worked result and completion evidence. Each directory includes its own sources, license and agent metadata.
+
+| Protocol task | Installable skill |
+| --- | --- |
+| Euler V2 lending | [`galleon-euler-lending`](skills/galleon-euler-lending/SKILL.md) |
+| SparkLend position review | [`galleon-sparklend-position`](skills/galleon-sparklend-position/SKILL.md) |
+| Kamino lending position | [`galleon-kamino-lending`](skills/galleon-kamino-lending/SKILL.md) |
+| Save lending on Solana | [`galleon-save-lending`](skills/galleon-save-lending/SKILL.md) |

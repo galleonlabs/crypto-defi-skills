@@ -1,0 +1,6 @@
+interface:
+  display_name: "Velocity position"
+  short_description: "Velocity position workflow and evidence"
+  default_prompt: "Use $velocity-position for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

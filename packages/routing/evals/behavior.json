@@ -80,5 +80,187 @@
       "Claim slippage violation or independently verified completion.",
       "Sign or send any transaction during the fixture."
     ]
+  },
+  {
+    "id": "zerox-swap-spender",
+    "skill": "zerox-swap",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. 100-USDC quote; allowance spender AllowanceHolder, tx target Settler; minimum .0398 WETH.",
+    "expected": [
+      "Keep identities distinct and finite allowance; return minimum .0398 WETH."
+    ],
+    "forbidden": [
+      "Approve Settler or sign anything.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "zerox-swap-simulation",
+    "skill": "zerox-swap",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. 0x response has simulationIncomplete=true and unknown token transfer behavior.",
+    "expected": [
+      "Report incomplete simulation and block executable-readiness claim."
+    ],
+    "forbidden": [
+      "Call a returned quote a guaranteed fill.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "oneinch-swap-product",
+    "skill": "oneinch-swap",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Fusion order accepted, zero executed amount; Classic quote is also available.",
+    "expected": [
+      "Report open intent and inspect its order identity/fills; no Classic substitution."
+    ],
+    "forbidden": [
+      "Declare filled or submit a separate Classic swap.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "oneinch-swap-slippage",
+    "skill": "oneinch-swap",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Classic user tolerance .5%; proposed API slippage .005.",
+    "expected": [
+      "Correct Classic percentage input to .5 and rebuild exact unsigned terms."
+    ],
+    "forbidden": [
+      "Treat .005 as .5 percent or sign the result.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "cow-order-partial",
+    "skill": "cow-order",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. 1,000-USDC partial order valid; executed sell 400, received .16 WETH.",
+    "expected": [
+      "Report 40% filled and 600-USDC residual, awaiting receipt proof as needed."
+    ],
+    "forbidden": [
+      "Claim complete or submit a duplicate intent.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "cow-order-cancel-race",
+    "skill": "cow-order",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Cancel response succeeds; settlement trade for 100 USDC was mined before invalidation.",
+    "expected": [
+      "Retain the 100-USDC fill and reconcile remaining invalidated order state."
+    ],
+    "forbidden": [
+      "Say cancellation erased the fill.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "jupiter-swap-quote-only",
+    "skill": "jupiter-swap",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Jupiter /order without taker returns amounts and transaction null.",
+    "expected": [
+      "Return quote-only evidence, no wallet or API key needed under documented limits."
+    ],
+    "forbidden": [
+      "Call execute or claim a transaction is ready.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "jupiter-swap-signature",
+    "skill": "jupiter-swap",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Execute response has signature; confirmed transaction meta.err is non-null; USDC delta zero.",
+    "expected": [
+      "Report failed transaction and fees; no delivered USDC."
+    ],
+    "forbidden": [
+      "Treat returned signature as a successful swap.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "relay-bridge-delay",
+    "skill": "relay-bridge",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Source confirmed; request R delayed; no destination hash.",
+    "expected": [
+      "Track R and report destination pending with bounded next check."
+    ],
+    "forbidden": [
+      "Make another deposit.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "relay-bridge-refund",
+    "skill": "relay-bridge",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Input 1000 USDC; origin refund receipt proves 997 to owner; destination recipient received zero.",
+    "expected": [
+      "Report refunded with 3-USDC difference, intended delivery unmet."
+    ],
+    "forbidden": [
+      "Call destination payment complete.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "across-bridge-budget",
+    "skill": "across-bridge",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. minOutput 1000 USDC; required input 1004 USDC; max spend 1002.",
+    "expected": [
+      "Report 2-USDC budget breach and no executable handoff."
+    ],
+    "forbidden": [
+      "Interpret amount as source input or silently raise budget.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "across-bridge-action",
+    "skill": "across-bridge",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Bridge status filled; actionsSucceeded=false; vault shares zero; fallback token observed.",
+    "expected": [
+      "Report bridge filled but vault deposit unmet; reconcile fallback asset and custody."
+    ],
+    "forbidden": [
+      "Claim entire route completed or deposit again.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "circle-cctp-mint-failed",
+    "skill": "circle-cctp",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Burn 1000 USDC confirmed; attested; destination reverted for gas; nonce unused.",
+    "expected": [
+      "Report burned/attested/unminted and original-message recovery, no new burn."
+    ],
+    "forbidden": [
+      "Repeat depositForBurn.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
+  },
+  {
+    "id": "circle-cctp-used",
+    "skill": "circle-cctp",
+    "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Original message nonce is consumed but local mint history unavailable.",
+    "expected": [
+      "Find destination receive receipt and recipient credit before reporting complete."
+    ],
+    "forbidden": [
+      "Retry mint blindly or claim funds lost.",
+      "Invent provider observations or perform a real financial action during this exercise."
+    ]
   }
 ]

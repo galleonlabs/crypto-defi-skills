@@ -1,0 +1,6 @@
+interface:
+  display_name: "CoW order"
+  short_description: "CoW order workflow and evidence"
+  default_prompt: "Use $cow-order for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

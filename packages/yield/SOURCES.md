@@ -16,3 +16,12 @@ Docs were researched; no real lending, redemption or staking transactions were e
 The vault-exit skill now includes a same-block observation contract, offline helper and synthetic snapshots. [Protocol recipes](skills/galleon-vault-exit/references/recipe.md) cite ERC4626, ERC7540, ERC7575 and current Centrifuge documentation. They distinguish synchronous limits/previews from asynchronous controller claims and external share tokens.
 
 The helper computes from supplied observations; no provider access, deployment compatibility, simulation or financial outcome is inferred from a passing test. Official tools remain responsible for collection and any separately authorized transaction preparation.
+
+## Standalone protocol workflows, reviewed 2026-10-25
+
+- [Yearn vault deposit and exit review](skills/galleon-yearn-vault/references/sources.md): official interface sources and verification limits.
+- [Spark and Sky savings exits](skills/galleon-spark-savings/references/sources.md): official interface sources and verification limits.
+- [EulerEarn vault allocation and exit](skills/galleon-euler-earn/references/sources.md): official interface sources and verification limits.
+- [Ethena sUSDe staking and cooldown](skills/galleon-ethena-susde/references/sources.md): official interface sources and verification limits.
+
+Every linked directory contains an operational SKILL.md, not only source links. Documentation and synthetic decisions were checked; no wallet action or live simulation was performed.

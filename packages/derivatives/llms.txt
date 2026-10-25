@@ -5,3 +5,11 @@ Plan derivatives positions and reconcile venue execution.
 - [Workflow](skills/galleon-defi-derivatives/SKILL.md)
 - [Providers](skills/galleon-defi-derivatives/references/providers.md)
 - [Sources](SOURCES.md)
+
+## Protocol workflows
+
+- [`gmx-position`](skills/gmx-position/SKILL.md): reviewing a GMX perpetual position or order through SDK v2, including market capacity, fees, keeper execution and request-id reconciliation.
+- [`derive-options`](skills/derive-options/SKILL.md): reviewing Derive v3 option instruments, premium and margin scenarios, or reconciling subaccount orders, fills and session scope.
+- [`velocity-position`](skills/velocity-position/SKILL.md): inspecting Velocity Exchange Solana positions and margin or distinguishing paused legacy Drift accounts from the new Velocity deployment.
+- [`pendle-boros`](skills/pendle-boros/SKILL.md): reviewing Boros funding-rate derivatives, implied versus realized rates, margin and delegated-agent scope before any trading action.
+- [`jupiter-perps`](skills/jupiter-perps/SKILL.md): inspecting Jupiter Perpetuals position and PositionRequest accounts, borrowing fees, triggers or pending close evidence on Solana.

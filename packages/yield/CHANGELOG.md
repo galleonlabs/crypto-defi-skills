@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0 - 2026-10-25
+
+- Add standalone protocol procedures for Yearn vault deposit and exit review, Spark and Sky savings exits, EulerEarn vault allocation and exit, Ethena sUSDe staking and cooldown.
+- Include concrete reads, worked decisions, failure handling, self-contained sources and routing/behavioral fixtures.
+
 ## 0.3.1 · 2026-10-19
 
 - Use only the documented Pendle `POST /v3/sdk/{chainId}/convert` operation; the older GET v2 Convert path is no longer documented.

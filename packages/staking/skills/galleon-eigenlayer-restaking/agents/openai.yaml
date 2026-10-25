@@ -1,0 +1,4 @@
+interface:
+  display_name: "EigenLayer LST restaking and withdrawal"
+  short_description: "EigenLayer LST restaking and withdrawal workflow and evidence"
+  default_prompt: "Use $galleon-eigenlayer-restaking for the requested protocol task and return the decision, evidence and missing prerequisites."

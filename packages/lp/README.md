@@ -5,7 +5,7 @@
 
 **Know what your liquidity position holds.**
 
-Inspect Uniswap and Aerodrome positions, ranges, fees, gauge custody and exits. Local helpers make the repeatable arithmetic inspectable.
+Inspect Uniswap, Aerodrome, Curve and Balancer liquidity, plus Revert and VFAT position custody, fees and exits. Local helpers make the repeatable arithmetic inspectable.
 
 [Install one skill](#install-one-skill) · [Try a first task](#try-a-first-task) · [Sources](SOURCES.md) · [All packs](https://github.com/galleonlabs/crypto-defi-skills#independent-packs)
 
@@ -28,6 +28,10 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 - [uniswap-v3-liquidity](skills/uniswap-v3-liquidity/SKILL.md): Manage v3 NFT inventory, usable ticks, fee collection and range changes.
 - [aerodrome-slipstream](skills/aerodrome-slipstream/SKILL.md): Resolve Slipstream gauge custody, emissions, staking and exits.
 
+- [`curve-liquidity`](skills/curve-liquidity/SKILL.md): planning a Curve pool deposit or withdrawal, comparing single-coin and balanced exits, or reconciling LP-token and gauge custody.
+- [`balancer-liquidity`](skills/balancer-liquidity/SKILL.md): adding to or exiting a Balancer V2 or V3 pool, reviewing BPT minima, Permit2, boosted assets or hook-dependent liquidity.
+- [`revert-position`](skills/revert-position/SKILL.md): inspecting a Revert-indexed LP position or preparing a Revert unsigned liquidity action, including custody, quote digests and approval-phase rebuilds.
+- [`vfat-sickle`](skills/vfat-sickle/SKILL.md): reviewing a VFAT farm or Sickle-held position, comparing harvest, compound and exit costs, or checking automation and strategy permissions.
 These independently installable skills include current primary-source recipes, worked outcomes and behavioral fixtures. Read-only helpers perform offline arithmetic; they do not supply wallet authority.
 
 ## Install
@@ -87,7 +91,7 @@ Re-run the install command to install current names. Update saved prompts/config
 
 `lp-research` and `lp-operate` remain as install-compatible rename notices so marketplace listings and saved `npx skills add ... --skill lp-research` or `--skill lp-operate` commands still resolve. They are not a second analysis or execution workflow. Canonical names stay `lp-analyze` and `lp-execute`.
 
-For reproducible npm use, install `galleon-lp-skills@0.6.2`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
+For reproducible npm use, install `galleon-lp-skills@0.7.0`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
 
 ## CLI
 

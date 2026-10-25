@@ -8,3 +8,13 @@ Compare swaps and bridges and track cross-chain settlement.
 
 - [uniswap-swap](skills/uniswap-swap/SKILL.md): Quote Uniswap swaps, inspect Permit2 and reconcile AMM or order execution.
 - [lifi-cross-chain](skills/lifi-cross-chain/SKILL.md): Compare LI.FI quotes and reconcile destination delivery, partial fills and refunds.
+
+## Protocol workflows
+
+- [`zerox-swap`](skills/zerox-swap/SKILL.md): quoting a 0x API v2 swap or inspecting AllowanceHolder, Permit2, issues and minimum-output evidence before an unsigned handoff.
+- [`oneinch-swap`](skills/oneinch-swap/SKILL.md): quoting a 1inch Classic Swap v6.1 or distinguishing direct calldata, Fusion intents and protected API access.
+- [`cow-order`](skills/cow-order/SKILL.md): comparing a CoW Protocol quote, reviewing a signed-intent boundary, or reconciling order UID, partial fills, expiry and cancellation.
+- [`jupiter-swap`](skills/jupiter-swap/SKILL.md): quoting Jupiter Swap v2 on Solana, inspecting immutable order transactions, or reconciling managed execution and token-account deltas.
+- [`relay-bridge`](skills/relay-bridge/SKILL.md): preparing a Relay quote or tracking a cross-chain request through source confirmation, destination execution, delay or refund.
+- [`across-bridge`](skills/across-bridge/SKILL.md): comparing Across Swap API routes, inspecting exactInput versus minOutput, or reconciling deposit fills, embedded actions and refunds.
+- [`circle-cctp`](skills/circle-cctp/SKILL.md): tracking a Circle CCTP USDC burn, attestation and destination mint, including domain IDs, finality and failed-mint recovery.

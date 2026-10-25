@@ -148,5 +148,165 @@
       "galleon-defi-routing"
     ],
     "reason": "Exit interface and request state determine the answer, independently of deposit behavior or swaps."
+  },
+  {
+    "prompt": "Can I exit my Yearn V3 vault with zero realized loss?",
+    "expected": "galleon-yearn-vault",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Yearn redeem default permits losses; encode my explicit bound.",
+    "expected": "galleon-yearn-vault",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "A Yearn custom withdrawal queue changes maxRedeem.",
+    "expected": "galleon-yearn-vault",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Compare Yearn accounting assets with immediately liquid assets.",
+    "expected": "galleon-yearn-vault",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Identify whether this Yearn address isV 2,V3 or TokenizedStrategy.",
+    "expected": "galleon-yearn-vault",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Check whether my Spark Savings spUSDC can return 10000 now.",
+    "expected": "galleon-spark-savings",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "sUSDS and bridged savings tokens show similar symbols; resolve redemption route.",
+    "expected": "galleon-spark-savings",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Spark previewRedeem reverts despite positive accounting assets.",
+    "expected": "galleon-spark-savings",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Find the latest Savings Vault Intent after a replacement.",
+    "expected": "galleon-spark-savings",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Compare Spark savings exit liquidity with accumulated share value.",
+    "expected": "galleon-spark-savings",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Inspect my EulerEarn withdrawal queue before exiting 500 assets.",
+    "expected": "galleon-euler-earn",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Is this Euler address an Earn vault or a direct EVK borrow vault?",
+    "expected": "galleon-euler-earn",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Compare EulerEarn strategy allocation with withdrawable owner assets.",
+    "expected": "galleon-euler-earn",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "EulerEarn indexer and current maxWithdraw disagree.",
+    "expected": "galleon-euler-earn",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Review EulerEarn curator fees and pending allocation changes.",
+    "expected": "galleon-euler-earn",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Inspect my sUSDe cooldown and claimable USDe.",
+    "expected": "galleon-ethena-susde",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Prepare 600 shares of sUSDe for cooldown without confusing asset units.",
+    "expected": "galleon-ethena-susde",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "A second sUSDe cooldown request changes my claim date.",
+    "expected": "galleon-ethena-susde",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "sUSDe redeem reverts while cooldownDuration is nonzero.",
+    "expected": "galleon-ethena-susde",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Compare sUSDe staking exit with direct issuer USDe redemption rights.",
+    "expected": "galleon-ethena-susde",
+    "mustNotInvoke": [
+      "galleon-defi-yield"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
   }
 ]

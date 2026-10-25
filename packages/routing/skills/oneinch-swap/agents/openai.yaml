@@ -1,0 +1,6 @@
+interface:
+  display_name: "1inch swap"
+  short_description: "1inch swap workflow and evidence"
+  default_prompt: "Use $oneinch-swap for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

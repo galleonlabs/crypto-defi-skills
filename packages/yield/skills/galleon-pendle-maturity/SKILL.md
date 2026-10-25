@@ -4,7 +4,7 @@ description: "Use when evaluating a Pendle PT or YT trade, comparing hold-to-mat
 license: MIT
 compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
 metadata:
-  version: "0.3.1"
+  version: "0.4.0"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

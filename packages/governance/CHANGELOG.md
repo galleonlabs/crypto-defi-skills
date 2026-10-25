@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0
+
+- Add standalone Snapshot proposal, Governor proposal, Safe transaction procedures with concrete reads, worked outcomes and failure handling.
+- Bundle source records, portable resources and routing/behavior exercises for independent installs.
+
 ## 0.1.4 · 2026-10-19
 
 - Note that the hosted Snapshot MCP returned 401 to an unauthenticated `initialize` on 2026-10-19, so reads may need a one-time OAuth connection.

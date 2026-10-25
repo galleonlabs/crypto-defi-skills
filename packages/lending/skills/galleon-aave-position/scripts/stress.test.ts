@@ -36,3 +36,30 @@ describe("fixed-point risk budget", () => {
     expect(stress({ ...fixture, collateralBase: "3", debtBase: "1", extraDebtBase: "0", liquidationThresholdBps: "5000", collateralFactorBps: "9000" }).passesStressFloor).toBe(false);
   });
 });
+
+describe("stress command", () => {
+  const script = new URL("./stress.ts", import.meta.url).pathname;
+  const run = (...args: string[]) => Bun.spawnSync([process.execPath, script, ...args]);
+  test("help explains offline inputs without opening a file", () => {
+    const result = run("--help");
+    expect(result.exitCode).toBe(0);
+    expect(result.stdout.toString()).toContain("scenario.json");
+    expect(result.stdout.toString()).toContain("no network or wallet calls");
+    expect(result.stderr.toString()).toBe("");
+  });
+  test("missing, unknown and extra arguments fail with usage", () => {
+    for (const args of [[], ["--unknown"], ["one.json", "two.json"]]) {
+      const result = run(...args);
+      expect(result.exitCode).toBe(1);
+      expect(result.stdout.toString()).toBe("");
+      expect(result.stderr.toString()).toContain("Usage:");
+      expect(result.stderr.toString()).not.toContain("ENOENT");
+    }
+  });
+  test("unreadable file reports one concise error", () => {
+    const result = run("/missing/aave-scenario.json");
+    expect(result.exitCode).toBe(1);
+    expect(result.stderr.toString()).toStartWith("stress:");
+    expect(result.stderr.toString()).not.toContain("at ");
+  });
+});

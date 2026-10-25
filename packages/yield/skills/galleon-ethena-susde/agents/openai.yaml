@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ethena sUSDe staking and cooldown"
+  short_description: "Ethena sUSDe staking and cooldown workflow and evidence"
+  default_prompt: "Use $galleon-ethena-susde for the requested protocol task and return the decision, evidence and missing prerequisites."

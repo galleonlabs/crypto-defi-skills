@@ -1,0 +1,6 @@
+interface:
+  display_name: "Balancer liquidity"
+  short_description: "Balancer liquidity workflow and evidence"
+  default_prompt: "Use $balancer-liquidity for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

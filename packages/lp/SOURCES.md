@@ -66,3 +66,12 @@ Expand official Curve and Balancer guidance, VFAT custody and fees, and Revert p
 
 - [uniswap-v3-liquidity primary sources](skills/uniswap-v3-liquidity/references/recipes.md)
 - [aerodrome-slipstream primary sources](skills/aerodrome-slipstream/references/recipes.md)
+
+## Protocol workflow review, 2026-10-25
+
+Standalone protocol procedures now bundle their exact read recipes and dated primary source lists under each skill. This review checked official documentation and source; it did not authorize accounts or test signing, trading, voting or settlement.
+
+- [Curve liquidity](skills/curve-liquidity/references/reads.md)
+- [Balancer liquidity](skills/balancer-liquidity/references/reads.md)
+- [Revert position](skills/revert-position/references/reads.md)
+- [VFAT Sickle](skills/vfat-sickle/references/reads.md)

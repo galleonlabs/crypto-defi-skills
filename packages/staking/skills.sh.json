@@ -7,7 +7,10 @@
       "description": "Plan liquid staking, restaking and queued withdrawals.",
       "skills": [
         "galleon-defi-staking",
-        "galleon-lido-withdrawals"
+        "galleon-lido-withdrawals",
+        "galleon-rocket-pool-reth",
+        "galleon-eigenlayer-restaking",
+        "galleon-symbiotic-withdrawals"
       ]
     }
   ]

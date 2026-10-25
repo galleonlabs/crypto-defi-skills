@@ -1,0 +1,6 @@
+interface:
+  display_name: "Jupiter perps"
+  short_description: "Jupiter perps workflow and evidence"
+  default_prompt: "Use $jupiter-perps for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

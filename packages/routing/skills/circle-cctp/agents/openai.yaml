@@ -1,0 +1,6 @@
+interface:
+  display_name: "Circle CCTP"
+  short_description: "Circle CCTP workflow and evidence"
+  default_prompt: "Use $circle-cctp for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

@@ -10,7 +10,7 @@
     {
       "name": "galleon-lp-skills",
       "source": "./packages/lp",
-      "description": "Uniswap and Aerodrome liquidity workflows."
+      "description": "Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity procedures."
     },
     {
       "name": "galleon-hyperliquid-skills",

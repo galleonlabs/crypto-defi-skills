@@ -1,0 +1,6 @@
+interface:
+  display_name: "Curve liquidity"
+  short_description: "Curve liquidity workflow and evidence"
+  default_prompt: "Use $curve-liquidity for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

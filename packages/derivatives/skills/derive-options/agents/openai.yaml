@@ -1,0 +1,6 @@
+interface:
+  display_name: "Derive options"
+  short_description: "Derive options workflow and evidence"
+  default_prompt: "Use $derive-options for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.0 - 2026-10-25
+
+- Fix the offline Aave stress helper help, argument errors and concise file-error reporting.
+
+- Add standalone protocol procedures for Euler V2 lending, SparkLend position review, Kamino lending position, Save lending on Solana.
+- Include concrete reads, worked decisions, failure handling, self-contained sources and routing/behavioral fixtures.
+
 ## 0.3.2 · 2026-10-19
 
 - Pin Aave clients by explicit version: npm `latest` for `@aave/client` is now the V4 client 6.x, `next` is a stale prerelease and V3 uses the 0.x line.
