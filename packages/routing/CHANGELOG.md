@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0
+
+- Add standalone 0x swap, 1inch swap, CoW order, Jupiter swap, Relay bridge, Across bridge, Circle CCTP procedures with concrete reads, worked outcomes and failure handling.
+- Bundle source records, portable resources and routing/behavior exercises for independent installs.
+
 ## 0.3.2 · 2026-10-19
 
 - Correct the CCTP API limit to 40 requests per second and the Uniswap quote field to `txFailureReasons`.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Save lending on Solana"
+  short_description: "Save lending on Solana workflow and evidence"
+  default_prompt: "Use $galleon-save-lending for the requested protocol task and return the decision, evidence and missing prerequisites."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "SparkLend position review"
+  short_description: "SparkLend position review workflow and evidence"
+  default_prompt: "Use $galleon-sparklend-position for the requested protocol task and return the decision, evidence and missing prerequisites."

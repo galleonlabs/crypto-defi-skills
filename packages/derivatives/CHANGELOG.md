@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0
+
+- Add standalone GMX position, Derive options, Velocity position, Pendle Boros, Jupiter perps procedures with concrete reads, worked outcomes and failure handling.
+- Bundle source records, portable resources and routing/behavior exercises for independent installs.
+
 ## 0.1.6 · 2026-10-19
 
 - Record that the Drift program is paused and its successor is Velocity, a new program deployment with new PDAs and the renamed `@velocity-exchange/sdk`; treat Drift SDK and accounts as legacy context.

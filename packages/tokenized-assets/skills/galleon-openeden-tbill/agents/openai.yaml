@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenEden TBILL subscription and redemption"
+  short_description: "OpenEden TBILL subscription and redemption workflow and evidence"
+  default_prompt: "Use $galleon-openeden-tbill for the requested protocol task and return the decision, evidence and missing prerequisites."

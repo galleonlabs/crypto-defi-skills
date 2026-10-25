@@ -22,9 +22,22 @@ The first useful answer should identify the exact market and assets, show curren
 
 For Aave V4, use [`galleon-aave-v4`](../packages/lending/skills/galleon-aave-v4/SKILL.md): Hub/Spoke identity and position reserve selectors differ from V3.
 
+### Try the arithmetic without a wallet
+
+From a source checkout with Bun, run the bundled synthetic scenario:
+
+```bash
+bun packages/lending/skills/galleon-aave-position/scripts/stress.ts \
+  packages/lending/skills/galleon-aave-position/scripts/scenario.example.json
+```
+
+The current health factor is **2.0**, the proposed debt lowers it to **1.6**, and the supplied collateral/debt shocks lower it to about **1.219**, below the scenario's **1.3** floor. The helper returns `passesStressFloor: false`; WAD values in its JSON use 18 decimal places. Change the scenario file to inspect another assumption.
+
+This is local common-base arithmetic. It makes no network call and does not simulate an Aave transaction, read reserve limits or establish a live position's health. The protocol skill supplies those additional reads.
+
 ## Find your next task
 
-Use a named procedure when it fits. Broader primitive skills cover cross-protocol questions and providers without a dedicated workflow; [the agent index](AGENT-INDEX.md#skill-routing) lists all 49 active skills.
+Use a named procedure when it fits. The [protocol table](../README.md#choose-a-protocol-task) opens the installed procedure for each supported protocol. Broader primitive skills cover cross-protocol questions and providers without a dedicated workflow; [the agent index](AGENT-INDEX.md#skill-routing) lists all 81 active skills.
 
 ### Positions, liquidity and exits
 

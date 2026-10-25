@@ -3,6 +3,17 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "Protocol workflows",
+      "description": "Protocol-specific reads, decisions and settlement evidence.",
+      "skills": [
+        "gmx-position",
+        "derive-options",
+        "velocity-position",
+        "pendle-boros",
+        "jupiter-perps"
+      ]
+    },
+    {
       "title": "DeFi derivatives",
       "description": "Plan derivatives positions and reconcile venue execution.",
       "skills": [

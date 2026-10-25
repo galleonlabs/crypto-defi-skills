@@ -92,5 +92,125 @@
       "galleon-defi-yield"
     ],
     "reason": "Native queue sizing and waiting risk belong to the dedicated Lido exit comparison."
+  },
+  {
+    "prompt": "Compare native redemption and a DEX sale of my 10 rETH.",
+    "expected": "galleon-rocket-pool-reth",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Rocket Pool rETH rate is 1.12 ETH but native collateral is low.",
+    "expected": "galleon-rocket-pool-reth",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "I hold bridged rETH; can I burn it on this chain?",
+    "expected": "galleon-rocket-pool-reth",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Value a fixed rETH token balance in ETH without assuming 1:1.",
+    "expected": "galleon-rocket-pool-reth",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Review a Rocket Pool retail deposit without installing Smartnode.",
+    "expected": "galleon-rocket-pool-reth",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Check my queued EigenLayer LST withdrawal for claimability.",
+    "expected": "galleon-eigenlayer-restaking",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Convert EigenLayer strategy shares into underlying without double counting.",
+    "expected": "galleon-eigenlayer-restaking",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "My EigenLayer countdown ended but completion is paused.",
+    "expected": "galleon-eigenlayer-restaking",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Review a new EigenLayer LST deposit and existing operator exposure.",
+    "expected": "galleon-eigenlayer-restaking",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Complete EigenLayer withdrawal as tokens rather than restaked shares, unsigned.",
+    "expected": "galleon-eigenlayer-restaking",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Check when my Symbiotic withdrawal requested on day 2 can be claimed.",
+    "expected": "galleon-symbiotic-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Symbiotic withdrawal shows 100 requested but 97 after a slash.",
+    "expected": "galleon-symbiotic-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "The Symbiotic depositor differs from claimer; verify ownership.",
+    "expected": "galleon-symbiotic-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Prepare an unsigned Symbiotic claim for this eligible epoch.",
+    "expected": "galleon-symbiotic-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "My Symbiotic claim returned AlreadyClaimed; reconcile it.",
+    "expected": "galleon-symbiotic-withdrawals",
+    "mustNotInvoke": [
+      "galleon-defi-staking"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
   }
 ]

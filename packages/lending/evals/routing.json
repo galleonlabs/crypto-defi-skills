@@ -212,5 +212,165 @@
       "galleon-aave-position"
     ],
     "reason": "Separate liquidity and collateral constraints."
+  },
+  {
+    "prompt": "Inspect my Euler V2 subaccount before borrowing another 2000 USDC.",
+    "expected": "galleon-euler-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Euler shows collateral shares, but they are not enabled in EVC; can I borrow?",
+    "expected": "galleon-euler-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "My Euler borrowing LTV passes liquidation LTV but fails the borrow limit.",
+    "expected": "galleon-euler-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "An Euler hook rejects my withdrawal; explain the supported next step.",
+    "expected": "galleon-euler-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Simulate this EVC repay and withdrawal batch without signing.",
+    "expected": "galleon-euler-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Review my SparkLend collateral withdrawal against a 1.3 health-factor floor.",
+    "expected": "galleon-sparklend-position",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Can I select stable-rate borrowing on the current SparkLend reserve?",
+    "expected": "galleon-sparklend-position",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "My SparkLend repayment approval confirmed; is debt cleared?",
+    "expected": "galleon-sparklend-position",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Check this frozen SparkLend deployment for permitted exits.",
+    "expected": "galleon-sparklend-position",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Prepare a SparkLend borrow without granting credit delegation.",
+    "expected": "galleon-sparklend-position",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Check my Kamino Borrow obligation before increasing USDC debt.",
+    "expected": "galleon-kamino-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Kamino has borrow factor 1.2; calculate risk-adjusted LTV.",
+    "expected": "galleon-kamino-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Can collateral in a different Kamino market support this loan?",
+    "expected": "galleon-kamino-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "My Kamino transaction blockhash expired; reconcile before rebuilding.",
+    "expected": "galleon-kamino-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Stress JitoSOL collateral against SOL and include depeg risk.",
+    "expected": "galleon-kamino-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Inspect my Save formerly Solend obligation before withdrawing USDC.",
+    "expected": "galleon-save-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Decode borrowedAmountWads without treating it as raw token amount.",
+    "expected": "galleon-save-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "My Save setup transaction succeeded but the lending action failed.",
+    "expected": "galleon-save-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Check reserve liquidity before a 25000 Save withdrawal.",
+    "expected": "galleon-save-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Reconcile an uncertain Solend SDK split transaction before retrying.",
+    "expected": "galleon-save-lending",
+    "mustNotInvoke": [
+      "galleon-defi-lending"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
   }
 ]

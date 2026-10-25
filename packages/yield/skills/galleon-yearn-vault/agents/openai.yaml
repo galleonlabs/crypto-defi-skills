@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yearn vault deposit and exit review"
+  short_description: "Yearn vault deposit and exit review workflow and evidence"
+  default_prompt: "Use $galleon-yearn-vault for the requested protocol task and return the decision, evidence and missing prerequisites."

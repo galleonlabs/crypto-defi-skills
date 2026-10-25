@@ -1,0 +1,6 @@
+interface:
+  display_name: "GMX position"
+  short_description: "GMX position workflow and evidence"
+  default_prompt: "Use $gmx-position for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

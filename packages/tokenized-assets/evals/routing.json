@@ -52,5 +52,85 @@
       "galleon-defi-portfolio"
     ],
     "reason": "Token custody versus issuer and fund legal claim is tokenized assets analysis, not EVM token diligence."
+  },
+  {
+    "prompt": "Review Ondo OUSG instant redemption eligibility for my amount.",
+    "expected": "galleon-ondo-assets",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Get a non-binding Ondo Stocks quote without requesting a binding attestation.",
+    "expected": "galleon-ondo-assets",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "My Ondo attestation expired before submission; reconcile status.",
+    "expected": "galleon-ondo-assets",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Does holding USDY grant OUSG investor eligibility?",
+    "expected": "galleon-ondo-assets",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Review a Solana Ondo Stocks token without applying ERC20 assumptions.",
+    "expected": "galleon-ondo-assets",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Estimate OpenEden TBILL redemption net of current fees.",
+    "expected": "galleon-openeden-tbill",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "My TBILL burn confirmed but USDC has not arrived.",
+    "expected": "galleon-openeden-tbill",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Can I transfer TBILL to an unwhitelisted recipient?",
+    "expected": "galleon-openeden-tbill",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Compare OpenEden custody reports and current token NAV evidence.",
+    "expected": "galleon-openeden-tbill",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
+  },
+  {
+    "prompt": "Check TBILL first-deposit minimum without submitting investor documents.",
+    "expected": "galleon-openeden-tbill",
+    "mustNotInvoke": [
+      "galleon-defi-tokenized-assets"
+    ],
+    "reason": "The named deployment and operation have a dedicated protocol procedure."
   }
 ]

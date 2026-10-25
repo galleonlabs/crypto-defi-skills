@@ -25,6 +25,10 @@ export const SKILL_CATALOG = [
   },
   { name: "uniswap-v3-liquidity", purpose: "Manage v3 NFT inventory, usable ticks, fee collection and range changes." },
   { name: "aerodrome-slipstream", purpose: "Resolve Slipstream gauge custody, emissions, staking and exits." },
+  {"name": "curve-liquidity", "purpose": "Use when planning a Curve pool deposit or withdrawal, comparing single-coin and balanced exits, or reconciling LP-token and gauge custody."},
+  {"name": "balancer-liquidity", "purpose": "Use when adding to or exiting a Balancer V2 or V3 pool, reviewing BPT minima, Permit2, boosted assets or hook-dependent liquidity."},
+  {"name": "revert-position", "purpose": "Use when inspecting a Revert-indexed LP position or preparing a Revert unsigned liquidity action, including custody, quote digests and approval-phase rebuilds."},
+  {"name": "vfat-sickle", "purpose": "Use when reviewing a VFAT farm or Sickle-held position, comparing harvest, compound and exit costs, or checking automation and strategy permissions."},
 ] as const;
 
 export type SkillName = (typeof SKILL_CATALOG)[number]["name"];

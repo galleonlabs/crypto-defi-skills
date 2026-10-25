@@ -28,13 +28,20 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 - [uniswap-swap](skills/uniswap-swap/SKILL.md): Quote Uniswap swaps, inspect Permit2 and reconcile AMM or order execution.
 - [lifi-cross-chain](skills/lifi-cross-chain/SKILL.md): Compare LI.FI quotes and reconcile destination delivery, partial fills and refunds.
 
+- [`zerox-swap`](skills/zerox-swap/SKILL.md): quoting a 0x API v2 swap or inspecting AllowanceHolder, Permit2, issues and minimum-output evidence before an unsigned handoff.
+- [`oneinch-swap`](skills/oneinch-swap/SKILL.md): quoting a 1inch Classic Swap v6.1 or distinguishing direct calldata, Fusion intents and protected API access.
+- [`cow-order`](skills/cow-order/SKILL.md): comparing a CoW Protocol quote, reviewing a signed-intent boundary, or reconciling order UID, partial fills, expiry and cancellation.
+- [`jupiter-swap`](skills/jupiter-swap/SKILL.md): quoting Jupiter Swap v2 on Solana, inspecting immutable order transactions, or reconciling managed execution and token-account deltas.
+- [`relay-bridge`](skills/relay-bridge/SKILL.md): preparing a Relay quote or tracking a cross-chain request through source confirmation, destination execution, delay or refund.
+- [`across-bridge`](skills/across-bridge/SKILL.md): comparing Across Swap API routes, inspecting exactInput versus minOutput, or reconciling deposit fills, embedded actions and refunds.
+- [`circle-cctp`](skills/circle-cctp/SKILL.md): tracking a Circle CCTP USDC burn, attestation and destination mint, including domain IDs, finality and failed-mint recovery.
 These independently installable skills include current primary-source recipes, worked outcomes and behavioral fixtures. Read-only helpers perform offline arithmetic; they do not supply wallet authority.
 
 ## Install
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-routing
-npx --package galleon-defi-routing-skills@0.3.2 defi-routing-skills catalog
+npx --package galleon-defi-routing-skills@0.4.0 defi-routing-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-routing/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

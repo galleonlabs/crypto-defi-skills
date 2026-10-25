@@ -1,0 +1,4 @@
+interface:
+  display_name: "Euler V2 lending"
+  short_description: "Euler V2 lending workflow and evidence"
+  default_prompt: "Use $galleon-euler-lending for the requested protocol task and return the decision, evidence and missing prerequisites."

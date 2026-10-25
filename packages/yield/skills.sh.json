@@ -8,7 +8,11 @@
       "skills": [
         "galleon-defi-yield",
         "galleon-pendle-maturity",
-        "galleon-vault-exit"
+        "galleon-vault-exit",
+        "galleon-yearn-vault",
+        "galleon-spark-savings",
+        "galleon-euler-earn",
+        "galleon-ethena-susde"
       ]
     }
   ]

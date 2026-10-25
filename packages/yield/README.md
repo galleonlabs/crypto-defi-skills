@@ -37,7 +37,7 @@ The example separates zero wallet shares, 600 pending shares and 400 claimable s
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-yield
-npx --package galleon-defi-yield-skills@0.3.1 defi-yield-skills catalog
+npx --package galleon-defi-yield-skills@0.4.0 defi-yield-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-yield/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
@@ -62,3 +62,14 @@ Source-backed corrections and reproducible workflow improvements are welcome. Se
 - [galleon-vault-exit](skills/galleon-vault-exit/SKILL.md)
 
 Each procedure includes concrete read calls, protocol-specific failure branches, a synthetic worked decision and dated official sources. No signer or all-packs dependency is included. Behavioral fixtures are review rubrics, not evidence of executed transactions.
+
+## Dedicated protocol workflows
+
+Choose the named procedure directly; these files contain the read sequence, decision branches, worked result and completion evidence. Each directory includes its own sources, license and agent metadata.
+
+| Protocol task | Installable skill |
+| --- | --- |
+| Yearn vault deposit and exit review | [`galleon-yearn-vault`](skills/galleon-yearn-vault/SKILL.md) |
+| Spark and Sky savings exits | [`galleon-spark-savings`](skills/galleon-spark-savings/SKILL.md) |
+| EulerEarn vault allocation and exit | [`galleon-euler-earn`](skills/galleon-euler-earn/SKILL.md) |
+| Ethena sUSDe staking and cooldown | [`galleon-ethena-susde`](skills/galleon-ethena-susde/SKILL.md) |

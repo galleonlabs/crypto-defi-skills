@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pendle Boros"
+  short_description: "Pendle Boros workflow and evidence"
+  default_prompt: "Use $pendle-boros for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

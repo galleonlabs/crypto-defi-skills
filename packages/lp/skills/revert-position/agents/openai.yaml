@@ -1,0 +1,6 @@
+interface:
+  display_name: "Revert position"
+  short_description: "Revert position workflow and evidence"
+  default_prompt: "Use $revert-position for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

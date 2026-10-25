@@ -1,0 +1,6 @@
+interface:
+  display_name: "Relay bridge"
+  short_description: "Relay bridge workflow and evidence"
+  default_prompt: "Use $relay-bridge for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

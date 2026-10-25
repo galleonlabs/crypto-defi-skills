@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.0
+
+- Add standalone Curve liquidity, Balancer liquidity, Revert position, VFAT Sickle procedures with concrete reads, worked outcomes and failure handling.
+- Bundle source records, portable resources and routing/behavior exercises for independent installs.
+
 ## 0.6.2 · 2026-10-19
 
 - Record that `@vfat-io/sickle-sdk` 0.1.0 is now on npm without a repository field while `@vfat-io/sickle-wrapper-sdk` is still unpublished.
