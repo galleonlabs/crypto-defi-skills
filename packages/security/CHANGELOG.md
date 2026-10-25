@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.5 - 2026-10-25
+
+- Remove repeated task-routing/persona scaffolding while retaining focused approval and token-control examples and their failure cases.
+- Reuse one maintained skill-file reader so show rejects symlinked skill roots, directories and files consistently.
+
 ## 0.2.4 · 2026-10-19
 
 - Replace the deleted Pons contracts repository link with the region-restricted V2 documentation and the Robinhood Chain explorer, and state that Pons publishes no public contract repository.

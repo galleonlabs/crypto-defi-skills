@@ -3,7 +3,7 @@ name: galleon-defi-tokenized-assets
 description: "Use when researching tokenized Treasury or securities eligibility, custody, subscriptions, transfers and redemption settlement for Ondo and OpenEden."
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -16,7 +16,7 @@ Read [providers](references/providers.md) for the exact product. Use [workflows]
 
 ## Start with the requested task
 
-Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
+Use supplied preferences and compatible tools for this request; ask only for missing terms that change its result. Public research needs no wallet. Preferences and tool access never grant financial authority.
 
 ## Workflow
 
@@ -30,3 +30,28 @@ Read [task examples and user configuration](references/task-examples.md) for a c
 ## Deliverable
 
 Return exact product and source dates, confirmed versus unknown eligibility, legal/custody structure, access/tooling status, price/NAV and cost basis, settlement stages and outstanding evidence. If issuer access is unavailable, provide the research and concrete prerequisites; do not invent an API, bypass geographic restrictions or connect a third-party MCP as though it were official.
+
+## Worked comparison
+
+Synthetic observations below illustrate the decision; they are not live quotes or receipts.
+
+**Request:** Compare redeeming 10,000 USD of these products by Friday. Eligibility is already confirmed.
+
+**Available evidence:** Synthetic current issuer terms: A costs 15 USD total and settles Wednesday; B costs 5 USD total and settles next Monday. Same USD valuation basis, no other charges, confirmed eligibility and cutoff compliance supplied.
+
+**Read sequence:** Read current issuer eligibility, claim structure, redemption fees, cutoff/calendar and settlement destination; compare net proceeds against the actual deadline.
+
+**Completed answer:** A yields 9,985 USD on Wednesday and meets Friday. B yields 9,995 USD next Monday and misses it. Choose A for the deadline; the extra 10 USD buys the evidenced earlier settlement. Issuer terms establish expected settlement, not a completed redemption.
+
+**Changed evidence:** A issuer calendar now marks Wednesday settlement suspended, with no replacement date.
+
+**Useful response:** Report A timing unknown and B too late; neither has evidenced Friday settlement. Keep fee comparison, identify the missing issuer settlement date and avoid suggesting a secondary-market quote guarantees redemption.
+
+Fetch a missing observation through an existing compatible read tool when available; otherwise return the supported partial result and exact gap. Reconcile an uncertain write through its original identity before considering a retry.
+
+## Focused protocol procedures
+
+For a named protocol task, load its focused skill when installed. Discover it by name; this comparison workflow remains usable without sibling files.
+
+- `galleon-ondo-assets`: reviewing Ondo Stocks, OUSG or USDY access, quotes, token identity or redemption settlement; keep each product and jurisdiction separate.
+- `galleon-openeden-tbill`: assessing OpenEden TBILL eligibility, subscriptions, whitelisted transfers or queued USDC redemption and fund settlement evidence.

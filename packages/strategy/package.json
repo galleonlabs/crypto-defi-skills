@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-strategy-skills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Frozen daily strategy validation with cost sensitivity, held-out periods and a reproducible benchmark.",
   "type": "module",
   "license": "MIT",

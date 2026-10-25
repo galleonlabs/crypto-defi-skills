@@ -27,7 +27,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-agent-plan --skill galleon-defi-agent-simulate
-npx --package galleon-defi-agent-skills@0.1.2 defi-agent-skills catalog --json
+npx --package galleon-defi-agent-skills@0.1.3 defi-agent-skills catalog --json
 ```
 
 - [Unsigned planning](skills/galleon-defi-agent-plan/SKILL.md) resolves bounded intent to maintained builders, including Nethermind playbooks and Aave's official MCP.

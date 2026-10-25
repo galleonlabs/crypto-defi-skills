@@ -4,7 +4,7 @@ description: "Use when assessing OpenEden TBILL eligibility, subscriptions, whit
 license: MIT
 compatibility: "Official read APIs, SDKs or chain RPC; provider access stays in the user's environment. No signer required for research."
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

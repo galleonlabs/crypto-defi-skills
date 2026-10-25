@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.1 - 2026-10-25
+
+- Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.
+- Consolidate current protocol routing and package documentation while preserving standalone skill resources and public names.
+
 ## 0.4.0 - 2026-10-25
 
 - Fix the offline Aave stress helper help, argument errors and concise file-error reporting.

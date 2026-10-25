@@ -11,3 +11,7 @@ Reviewed [Minara skills at b93aba1](https://github.com/Minara-AI/minara-skills/t
 ## Token diligence
 
 [Primary sources and research credit](skills/galleon-defi-security-token-diligence/references/tools.md) document Agent Chud's prompt and the official Ethereum, OpenZeppelin, Uniswap, Pons, Robinhood Chain and provider guidance reviewed on 2026-09-06. Instructions and deterministic helpers are independently authored. Synthetic fixtures establish local behavior, not token safety or live financial execution.
+
+## Content maintenance, 2026-10-25
+
+Remove repeated task-routing/persona scaffolding while retaining focused approval and token-control examples and their failure cases. Existing dated discovery and release receipts remain historical evidence; no live provider/account access or financial outcome is inferred from this cleanup.

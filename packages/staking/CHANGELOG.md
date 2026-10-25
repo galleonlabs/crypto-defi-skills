@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1 - 2026-10-25
+
+- Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.
+- Consolidate current protocol routing and package documentation while preserving standalone skill resources and public names.
+
 ## 0.3.0 - 2026-10-25
 
 - Add standalone protocol procedures for Rocket Pool rETH entry and exit, EigenLayer LST restaking and withdrawal, Symbiotic vault withdrawals.

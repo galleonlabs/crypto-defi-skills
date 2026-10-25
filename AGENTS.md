@@ -15,7 +15,7 @@ Read the selected package's `AGENTS.md` before changing it.
 | Root checks, package enumeration and release drift | `scripts/workspaces.ts`, `scripts/release-drift.ts`; `package.json` owns commands |
 | Plugin and discovery registration | `.claude-plugin/marketplace.json`, `skills.sh.json`, `scripts/build-discovery-index.ts` |
 | npm pack release or research plugin ZIP | `RELEASING.md`; `plugins/defi-research/README.md` for the separate plugin |
-| Routing fixtures and recorded output evaluations | `packages/<pack>/evals/`, `test/evals/`, `docs/SKILL-QUALITY.md` |
+| Routing and behavior fixtures, answer evaluation | `packages/<pack>/evals/`, `test/evals/`, `docs/SKILL-QUALITY.md`; dated results in `docs/HISTORY.md` |
 
 Package names and current versions come from each `packages/<pack>/package.json`; release tags record published surfaces. Preserve the root README's `## Independent packs` heading and machine-checked release row format (`scripts/check-readme-releases.ts`). Build outputs and release archives are generated. Development setup and validation are in `CONTRIBUTING.md#work-locally`.
 

@@ -4,7 +4,7 @@ description: "Implement or review Hyperliquid market-data, account, order, signi
 license: MIT
 compatibility: "Designed for typed integrations using current official APIs and SDKs. Architecture and safety rules apply in any language."
 metadata:
-  version: "0.4.1"
+  version: "0.4.2"
   protocol: "hyperliquid"
 ---
 
@@ -12,15 +12,13 @@ metadata:
 
 Build exchange software with typed intent, isolated signing, idempotent reconciliation, and explicit degraded states.
 
-If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+## Tools and resources
 
-## Tool selection
+Read [the tool contract](references/official-tools.md) only when selecting or verifying a capability. Resolve scripts and references from this skill's directory. Related skills are optional handoffs; their absence is not permission to invent state or bypass a prerequisite.
 
-When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
+## Task
 
-## First task and connected workflow
-
-Inventory one missing integration capability and produce a minimal adapter contract with failure fixtures before implementation. Keep signer material outside the agent context. Read [agent integration and handoffs](references/agent-integration.md) on first use or when a tool or related skill is missing.
+Inventory one missing integration capability and produce a minimal adapter contract with failure fixtures before implementation. Keep signer material outside the agent context.
 
 ## Task handling
 

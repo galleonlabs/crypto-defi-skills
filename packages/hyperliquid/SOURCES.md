@@ -37,7 +37,7 @@ A fresh isolated SDK 0.24.0 installation successfully called `Info(..., skip_ws=
 
 ## Primitive expansion - 2026-09-05
 
-Refresh account modes, dynamic asset namespaces, nonce lifecycle and explicit builder fee guidance. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
+Refresh account modes, dynamic asset namespaces, nonce lifecycle and explicit builder fee guidance. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/0fb6faf/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
 
 ## Minara workflow review
 
@@ -46,3 +46,7 @@ Reviewed [Minara skills at b93aba1](https://github.com/Minara-AI/minara-skills/t
 ## Public wallet diagnostics - 2026-10-09
 
 The independently authored wallet-audit helper uses the [official Info endpoint](https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint), [perpetual account and funding schemas](https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint/perpetuals), [spot balance schemas](https://hyperliquid.gitbook.io/hyperliquid-docs/for-developers/api/info-endpoint/spot) and [official SDK network constants](https://github.com/hyperliquid-dex/hyperliquid-python-sdk/blob/master/hyperliquid/utils/constants.py), verified 2026-10-09. The helper preserves inclusive pagination, 2000-row fills responses, the 10000-most-recent-fill retention limit, signed fee/funding denominations and the documented builder-fee inclusion. Public-wallet analytics research prompted this reproducible diagnostic; no competitor code, instructions or signer was copied. The committed example is synthetic, with hand-computed accounting and explicit coverage limits.
+
+## Content maintenance, 2026-10-25
+
+Remove repeated sibling-role handoff manuals, replace cloned full-stack tool guides with focused role references, and bundle the maintained standalone validator. Existing dated discovery and release receipts remain historical evidence; no live provider/account access or financial outcome is inferred from this cleanup.

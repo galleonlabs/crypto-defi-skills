@@ -1,5 +1,10 @@
 # 0.3.0 - 2026-09-27
 
+## 0.4.3 - 2026-10-25
+
+- Remove generic task scaffolding and superseded Hermes/CLI tool-count snapshots while retaining account-isolation and readiness requirements.
+- Reuse one maintained skill-file reader so show rejects symlinked skill roots, directories and files consistently.
+
 ## 0.4.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

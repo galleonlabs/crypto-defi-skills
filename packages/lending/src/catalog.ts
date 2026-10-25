@@ -1,7 +1,7 @@
 export const SKILL_CATALOG = [
   {
     name: "galleon-defi-lending",
-    purpose: "Use when researching lending markets, planning supply, borrow, repay or withdrawals, or monitoring liquidation risk across Aave, Morpho, Compound, Euler and Spark.",
+    purpose: "Use when researching lending markets, planning supply, borrow, repay or withdrawals, or monitoring liquidation risk across Aave, Morpho, Compound, Euler, Spark, Kamino and Save.",
   },
   {
     name: "galleon-aave-position",

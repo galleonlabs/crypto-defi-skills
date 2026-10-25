@@ -12,7 +12,7 @@ Route the user’s task to one primary skill, then load its conditional resource
 | Which npm release should a consumer pin? | [README release table](../README.md#independent-packs), then the exact registry version and package-qualified release tag; source `main` may advance |
 | What is actually installed? | Installed package manifest/CLI `--version`, skill `metadata.version`, complete resource files and recorded source pin/digests |
 | Which procedure should run? | Exact installed `SKILL.md` and the resources it names, rather than this short routing summary |
-| Where are provenance and review limits? | Owning pack `SOURCES.md`, dated skill references and the [research evidence](research/eth-skills-2026-10-08/README.md) |
+| Where are provenance and review limits? | Owning pack `SOURCES.md`, dated skill references and the [historical evidence](HISTORY.md) |
 | How is release integrity checked? | [RELEASING.md](../RELEASING.md), package-qualified tags and clean consumer/registry verification |
 
 Pack versions are independent. A root documentation change does not alter an installed npm corpus. This index links version-bearing manifests instead of duplicating seventeen changing version strings. For a reproducible source install, record the reviewed commit and pack path; for npm, pin the exact version. A pack’s CLI and ESM catalog expose its local corpus, not connected provider capability.

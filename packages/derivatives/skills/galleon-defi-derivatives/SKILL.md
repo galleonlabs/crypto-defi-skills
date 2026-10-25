@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs official venue data and optional user-authorized wallet tooling. No signer, provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # DeFi derivatives
@@ -14,7 +14,7 @@ Translate a market or hedge request into explicit exposure, collateral requireme
 
 ## Start with the requested task
 
-Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
+Use supplied preferences and compatible tools for this request; ask only for missing terms that change its result. Public research needs no wallet. Preferences and tool access never grant financial authority.
 
 ## Select the product and tools
 
@@ -45,3 +45,31 @@ Follow [the venue lifecycle](references/workflows.md): persist operation identit
 ## Deliver
 
 Return the market answer, comparison or proposed ticket with exact instrument and account identity, exposure, downside constraints, costs, source times, supported capabilities and material gaps. For monitoring, report position/order/margin changes with trigger conditions and a bounded next action. Creating a schedule, starting continuous trading or changing an existing automation requires the user's actual request; the skill does not start a background service.
+
+## Worked comparison
+
+Synthetic observations below illustrate the decision; they are not live quotes or receipts.
+
+**Request:** Calculate an incremental ETH hedge using my existing venue; target zero delta. Analysis only.
+
+**Available evidence:** Spot +10 ETH, filled linear ETH perp -3 ETH, live unfilled sell order -2 ETH. Contract multiplier 1 ETH, no other exposure. Assume the resting order fills for target planning and separately report current filled exposure.
+
+**Read sequence:** Read exact contract multiplier, filled positions, open orders and spot units; calculate current and contingent delta separately.
+
+**Completed answer:** Filled exposure is +7 ETH. If the resting sell fills, projected exposure is +5 ETH; an additional 5 ETH short targets zero projected delta. If that order does not fill, the additional hedge leaves +2 ETH. Recheck/cancel-or-account-for the resting order before preparing an executable order.
+
+**Changed evidence:** The open-order read times out after a prior submission.
+
+**Useful response:** Report +7 ETH filled exposure only, mark contingent exposure unknown and reconcile the existing order before computing a new executable size.
+
+Fetch a missing observation through an existing compatible read tool when available; otherwise return the supported partial result and exact gap. Reconcile an uncertain write through its original identity before considering a retry.
+
+## Focused protocol procedures
+
+For a named protocol task, load its focused skill when installed. Discover it by name; this comparison workflow remains usable without sibling files.
+
+- `gmx-position`: reviewing a GMX perpetual position or order through SDK v2, including market capacity, fees, keeper execution and request-id reconciliation.
+- `derive-options`: reviewing Derive v3 option instruments, premium and margin scenarios, or reconciling subaccount orders, fills and session scope.
+- `velocity-position`: inspecting Velocity Exchange Solana positions and margin or distinguishing paused legacy Drift accounts from the new Velocity deployment.
+- `pendle-boros`: reviewing Boros funding-rate derivatives, implied versus realized rates, margin and delegated-agent scope before any trading action.
+- `jupiter-perps`: inspecting Jupiter Perpetuals position and PositionRequest accounts, borrowing fees, triggers or pending close evidence on Solana.

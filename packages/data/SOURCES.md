@@ -32,7 +32,7 @@ For AIXBT v0.2.0, public documentation and the live v3 OpenAPI contract were ret
 
 ## Primitive expansion - 2026-09-05
 
-Add cross-primitive evidence, vault standards and portfolio accounting while preserving AIXBT research. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
+Add cross-primitive evidence, vault standards and portfolio accounting while preserving AIXBT research. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/0fb6faf/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
 
 ## galleon-coingecko-token-research
 
@@ -70,3 +70,7 @@ At 06:43:24–25 UTC on 2026-10-02, the new keyless snapshot completed CoinGecko
 ## Ethereum agent tool review, 2026-10-08
 
 [Onchain agent evidence sources](skills/galleon-defi-data/references/onchain-agents.md) document current primary Etherscan, Blockscout, Dune, GoldRush and Octav access, pagination, billing and freshness boundaries. Documentation was checked; this package did not authenticate to those services or perform paid queries.
+
+## Content maintenance, 2026-10-25
+
+Remove generic task scaffolding and unrelated research cadence; bundle the maintained standalone corpus validator and pin archived source evidence. Existing dated discovery and release receipts remain historical evidence; no live provider/account access or financial outcome is inferred from this cleanup.

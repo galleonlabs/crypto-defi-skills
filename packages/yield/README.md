@@ -37,7 +37,7 @@ The example separates zero wallet shares, 600 pending shares and 400 claimable s
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-yield
-npx --package galleon-defi-yield-skills@0.4.0 defi-yield-skills catalog
+npx --package galleon-defi-yield-skills@0.4.1 defi-yield-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-yield/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
@@ -58,18 +58,13 @@ Source-backed corrections and reproducible workflow improvements are welcome. Se
 
 ## Protocol tasks
 
-- [galleon-pendle-maturity](skills/galleon-pendle-maturity/SKILL.md)
-- [galleon-vault-exit](skills/galleon-vault-exit/SKILL.md)
-
-Each procedure includes concrete read calls, protocol-specific failure branches, a synthetic worked decision and dated official sources. No signer or all-packs dependency is included. Behavioral fixtures are review rubrics, not evidence of executed transactions.
-
-## Dedicated protocol workflows
-
-Choose the named procedure directly; these files contain the read sequence, decision branches, worked result and completion evidence. Each directory includes its own sources, license and agent metadata.
-
-| Protocol task | Installable skill |
+| Skill | Use for |
 | --- | --- |
-| Yearn vault deposit and exit review | [`galleon-yearn-vault`](skills/galleon-yearn-vault/SKILL.md) |
-| Spark and Sky savings exits | [`galleon-spark-savings`](skills/galleon-spark-savings/SKILL.md) |
-| EulerEarn vault allocation and exit | [`galleon-euler-earn`](skills/galleon-euler-earn/SKILL.md) |
-| Ethena sUSDe staking and cooldown | [`galleon-ethena-susde`](skills/galleon-ethena-susde/SKILL.md) |
+| [galleon-pendle-maturity](skills/galleon-pendle-maturity/SKILL.md) | evaluating a Pendle PT or YT trade, comparing hold-to-maturity with an early exit, or redeeming a matured position |
+| [galleon-vault-exit](skills/galleon-vault-exit/SKILL.md) | checking how much can leave an ERC4626 vault, reconciling pending and claimable ERC7540 redemptions, or choosing withdraw versus redeem under liquidity and fee constraints |
+| [galleon-yearn-vault](skills/galleon-yearn-vault/SKILL.md) | reviewing a Yearn V2 or V3 vault, strategy allocation, share value, withdrawal queue or explicit loss tolerance before an entry or exit |
+| [galleon-spark-savings](skills/galleon-spark-savings/SKILL.md) | reviewing sUSDS or Spark Savings Vaults V2 shares, idle liquidity, PSM conversion or request-based large exits; exclude SparkLend borrowing |
+| [galleon-euler-earn](skills/galleon-euler-earn/SKILL.md) | evaluating an EulerEarn strategy vault, curator allocation, fees, share position or withdrawal queue; distinguish direct EVK borrowing vaults |
+| [galleon-ethena-susde](skills/galleon-ethena-susde/SKILL.md) | reviewing Ethena sUSDe share value, USDe unstaking cooldown, silo claim or restrictions; distinguish issuer mint/redeem and campaign locks |
+
+Each procedure keeps its own references, agent metadata and notices. No signer or all-packs dependency is included.

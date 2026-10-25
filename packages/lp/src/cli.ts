@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 import { spawnSync } from "node:child_process";
-import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SKILL_CATALOG, canonicalSkillName } from "./catalog.js";
 import { buildRange, evaluateEconomics, evaluatePosition } from "./math.js";
 import { validateCorpus } from "./validation.js";
+import { readSkillFile } from "../../../scripts/content-pack/skill-file.ts";
 
 import packageMetadata from "../package.json";
 
@@ -129,7 +129,7 @@ async function main(): Promise<void> {
     const canonical = canonicalSkillName(name);
     if (!SKILL_CATALOG.some((skill) => skill.name === canonical)) throw new Error(`unknown skill: ${name}`);
     if (canonical !== name) process.stderr.write(`note: ${name} was renamed to ${canonical} in 0.4.0\n`);
-    process.stdout.write(await readFile(resolve(packageRoot(), "skills", canonical, "SKILL.md"), "utf8"));
+    process.stdout.write(await readSkillFile(packageRoot(), canonical));
     return;
   }
 

@@ -41,7 +41,7 @@ The local diagnostic uses standard EVM JSON-RPC reads and is tested against dete
 
 ## Primitive expansion - 2026-09-05
 
-Expand official DeFi tool selection, Hermes progressive disclosure and EVM/Solana transaction context. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
+Expand official DeFi tool selection, Hermes progressive disclosure and EVM/Solana transaction context. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/0fb6faf/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
 
 ## Minara workflow review
 
@@ -64,3 +64,7 @@ AgentKit upstream EVM provider source was inspected: `configureWithWallet` retri
 ## Wallet and simulation surface review, 2026-10-08
 
 Current [wallet models](skills/galleon-defi-infra/references/wallets.md) and [primitive tool wiring](skills/galleon-defi-infra/references/primitive-tools.md) record migrated Coinbase Wallet MCP, WalletConnect implicit funding/session behavior, Alchemy write-method boundaries and Tenderly context/coverage limits. Official documentation/source was reviewed; no wallet or paid provider was connected for this update.
+
+## Content maintenance, 2026-10-25
+
+Remove generic task scaffolding and superseded Hermes/CLI tool-count snapshots while retaining account-isolation and readiness requirements. Existing dated discovery and release receipts remain historical evidence; no live provider/account access or financial outcome is inferred from this cleanup.
