@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.1 - 2026-10-25
+
+- Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.
+- Consolidate current protocol routing and package documentation while preserving standalone skill resources and public names.
+- Correct the older Jupiter fixture to match current keyless quote-only v2 access and bounded rate-limit recovery.
+
 ## 0.4.0
 
 - Add standalone 0x swap, 1inch swap, CoW order, Jupiter swap, Relay bridge, Across bridge, Circle CCTP procedures with concrete reads, worked outcomes and failure handling.

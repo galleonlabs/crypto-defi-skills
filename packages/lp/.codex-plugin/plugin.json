@@ -1,7 +1,7 @@
 {
   "name": "galleon-lp-skills",
-  "version": "0.7.0",
-  "description": "Set up, analyze, plan, monitor, execute, and engineer Uniswap and Aerodrome liquidity positions.",
+  "version": "0.7.1",
+  "description": "Agent skills and deterministic tools for liquidity research, planning, monitoring and approved execution.",
   "author": {
     "name": "Galleon Labs"
   },
@@ -18,8 +18,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Galleon LP Skills",
-    "shortDescription": "Analyze and manage Uniswap and Aerodrome LP positions",
-    "longDescription": "Verify connections, analyze pools, plan ranges, monitor returns against HOLD, execute explicit wallet actions, and build protocol integrations for Uniswap and Aerodrome.",
+    "shortDescription": "Research, plan and manage DeFi liquidity positions",
+    "longDescription": "Verify connections, compare pools, plan liquidity, monitor returns against HOLD, execute approved actions, and review protocol integrations.",
     "developerName": "Galleon Labs",
     "category": "Developer Tools",
     "capabilities": [

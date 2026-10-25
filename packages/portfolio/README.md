@@ -27,7 +27,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-portfolio
-npx --package galleon-defi-portfolio-skills@0.2.1 defi-portfolio-skills catalog
+npx --package galleon-defi-portfolio-skills@0.2.2 defi-portfolio-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-portfolio/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

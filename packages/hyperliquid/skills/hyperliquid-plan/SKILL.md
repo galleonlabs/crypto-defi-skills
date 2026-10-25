@@ -4,7 +4,7 @@ description: "Build an exact unsigned Hyperliquid ticket for an entry, exit, red
 license: MIT
 compatibility: "Requires read-only market and account access for executable plans. The bundled risk script needs Node.js 20 or newer."
 metadata:
-  version: "0.4.1"
+  version: "0.4.2"
   protocol: "hyperliquid"
 ---
 
@@ -12,15 +12,13 @@ metadata:
 
 Turn one user intent into an unsigned ticket that can be reviewed, expired, and reconciled.
 
-If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+## Tools and resources
 
-## Tool selection
+Read [the tool contract](references/official-tools.md) only when selecting or verifying a capability. Resolve scripts and references from this skill's directory. Related skills are optional handoffs; their absence is not permission to invent state or bypass a prerequisite.
 
-When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
+## Task
 
-## First task and connected workflow
-
-Prepare an unsigned ticket for the selected action. For a hypothetical sizing example, state supplied inputs and missing live preflight fields. A cancel needs order identity, not an invented entry price. Read [agent integration and handoffs](references/agent-integration.md) on first use or when a tool or related skill is missing.
+Prepare an unsigned ticket for the selected action. For a hypothetical sizing example, state supplied inputs and missing live preflight fields. A cancel needs order identity, not an invented entry price.
 
 ## Task handling
 

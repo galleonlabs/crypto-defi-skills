@@ -7,3 +7,7 @@ These are independently authored operational procedures. Upstream code and docum
 ## Octav review, 2026-10-08
 
 [Official provider reference](skills/galleon-defi-portfolio/references/providers.md) now separates provider synchronization, position freshness, pagination, NAV/components and paid access. Primary documentation was reviewed without authenticated reads or financial actions.
+
+## Content maintenance, 2026-10-25
+
+Remove repeated task-routing/persona scaffolding; retain receipt deduplication, valuation gaps and cash-flow examples. Existing dated discovery and release receipts remain historical evidence; no live provider/account access or financial outcome is inferred from this cleanup.

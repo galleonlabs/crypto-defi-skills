@@ -4,17 +4,13 @@ description: Set up and diagnose DeFi agent infrastructure, RPC access, managed 
 license: MIT
 compatibility: Portable instructions; optional diagnostics require Node.js 20+ and public network access.
 metadata:
-  version: "0.4.2"
+  version: "0.4.3"
   author: Galleon Labs
 ---
 
 # DeFi infrastructure
 
 Make the requested agent capable of its first task through maintained provider tools. Separate installed software, available credentials, authenticated access, live reads and transaction authority; success at one does not prove the next.
-
-## Start with the requested task
-
-Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
 
 ## Pick the needed plumbing
 
@@ -42,3 +38,5 @@ After onboarding, hand the verified chain/account/capabilities to the requested 
 ## Named provider procedures
 
 For Coinbase AgentKit readiness, use `galleon-coinbase-agentkit-readiness` when installed. This generic skill remains independently usable for setup and cross-provider work.
+
+The [worked readiness task](references/task-examples.md) shows a chain match and chain-mismatch recovery.

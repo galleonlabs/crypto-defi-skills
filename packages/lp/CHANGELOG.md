@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.1 - 2026-10-25
+
+- Replace six identical all-provider manuals with role-specific standalone tool guidance.
+- Use the maintained shared corpus validator in the bundled CLI; reject broken nested references, escaping links and symlinks.
+- Share the safe skill reader in CLI show, retaining renamed aliases while rejecting symlinked skill roots, folders and files.
+- Remove duplicate package community documents and point contributors to the canonical repository guide.
+
 ## 0.7.0
 
 - Add standalone Curve liquidity, Balancer liquidity, Revert position, VFAT Sickle procedures with concrete reads, worked outcomes and failure handling.

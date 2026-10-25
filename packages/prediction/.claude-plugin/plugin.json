@@ -1,7 +1,6 @@
 {
   "name": "galleon-defi-prediction-skills",
-  "displayName": "Galleon Prediction Markets",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Research prediction market order books and reconcile resolution without signing or trading.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/prediction#readme",
   "license": "MIT",
@@ -14,6 +13,7 @@
     "name": "Galleon Labs"
   },
   "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "displayName": "Galleon Prediction Markets",
   "documentationUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/prediction/README.md",
   "supportUrl": "https://github.com/galleonlabs/crypto-defi-skills/issues",
   "privacyPolicyUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md",

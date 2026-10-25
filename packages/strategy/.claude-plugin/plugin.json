@@ -1,7 +1,6 @@
 {
   "name": "galleon-defi-strategy-skills",
-  "displayName": "Galleon DeFi Strategy",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Frozen daily strategy validation with cost sensitivity, held-out periods and a reproducible benchmark.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/strategy#readme",
   "license": "MIT",
@@ -15,6 +14,7 @@
     "name": "Galleon Labs"
   },
   "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "displayName": "Galleon DeFi Strategy",
   "documentationUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/strategy/README.md",
   "supportUrl": "https://github.com/galleonlabs/crypto-defi-skills/issues",
   "privacyPolicyUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md",

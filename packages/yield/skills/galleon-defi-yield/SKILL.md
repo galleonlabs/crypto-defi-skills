@@ -3,7 +3,7 @@ name: galleon-defi-yield
 description: "Use when comparing savings and strategy vaults, planning deposits or exits, or evaluating principal/yield tokens and maturity across Pendle, Yearn, Spark, Morpho, Euler and Ethena."
 license: MIT
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -16,7 +16,7 @@ Read [providers](references/providers.md) for the chosen product and version. Re
 
 ## Start with the requested task
 
-Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
+Use supplied preferences and compatible tools for this request; ask only for missing terms that change its result. Public research needs no wallet. Preferences and tool access never grant financial authority.
 
 ## Workflow
 
@@ -33,11 +33,32 @@ Show asset identity, observation block/time, APY methodology, underlying/strateg
 
 Do not connect/install services or enable broad tools automatically. Use official provider skills when building an integration instead of copying their SDK logic. Borrowing against a vault or PT introduces lending risk and requires a separate position analysis; Boros margin trades are derivatives, not passive vault deposits.
 
-## Protocol-specific procedures
 
-For a named protocol task, prefer its focused skill when installed:
+## Worked comparison
 
-- `galleon-pendle-maturity`: PT/YT maturity, accounting assets and exit comparisons.
-- `galleon-vault-exit`: ERC4626 previews versus limits and asynchronous redemption.
+Synthetic observations below illustrate the decision; they are not live quotes or receipts.
 
-This existing skill remains usable on its own for cross-protocol comparisons. Do not require another pack to complete its workflow.
+**Request:** Compare 10,000 USDC for 30 days, excluding incentives. I must withdraw on day 30.
+
+**Available evidence:** Vault base APR 6%, simple ACT/365, 10 USDC total costs; withdrawal available at day 30. PT matures day 90 and advertises 8% implied yield; no day-30 executable exit quote or depth supplied.
+
+**Read sequence:** Read asset/share units, base return basis, withdrawal conditions and all costs; for PT read maturity and a horizon-matched early-exit quote.
+
+**Completed answer:** Vault estimate: 10,000 × 0.06 × 30/365 - 10 = 39.32 USDC net interest. PT maturity yield cannot establish day-30 proceeds. Prefer the vault among evidenced options; its variable rate remains an assumption.
+
+**Changed evidence:** Vault withdrawals become queued past day 30 and PT still has no early-exit quote.
+
+**Useful response:** Neither option now has evidenced liquidity by the deadline. Retain the economic estimate but withdraw the liquidity recommendation and identify each missing exit condition.
+
+Fetch a missing observation through an existing compatible read tool when available; otherwise return the supported partial result and exact gap. Reconcile an uncertain write through its original identity before considering a retry.
+
+## Focused protocol procedures
+
+For a named protocol task, load its focused skill when installed. Discover it by name; this comparison workflow remains usable without sibling files.
+
+- `galleon-pendle-maturity`: evaluating a Pendle PT or YT trade, comparing hold-to-maturity with an early exit, or redeeming a matured position.
+- `galleon-vault-exit`: checking how much can leave an ERC4626 vault, reconciling pending and claimable ERC7540 redemptions, or choosing withdraw versus redeem under liquidity and fee constraints.
+- `galleon-yearn-vault`: reviewing a Yearn V2 or V3 vault, strategy allocation, share value, withdrawal queue or explicit loss tolerance before an entry or exit.
+- `galleon-spark-savings`: reviewing sUSDS or Spark Savings Vaults V2 shares, idle liquidity, PSM conversion or request-based large exits; exclude SparkLend borrowing.
+- `galleon-euler-earn`: evaluating an EulerEarn strategy vault, curator allocation, fees, share position or withdrawal queue; distinguish direct EVK borrowing vaults.
+- `galleon-ethena-susde`: reviewing Ethena sUSDe share value, USDe unstaking cooldown, silo claim or restrictions; distinguish issuer mint/redeem and campaign locks.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 - 2026-10-25
+
+- Bundle the maintained shared skill-file reader, preserving exact show output and rejection of symlinked standalone content.
+
 ## 0.1.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.

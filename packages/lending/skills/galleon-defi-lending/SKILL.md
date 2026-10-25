@@ -1,9 +1,9 @@
 ---
 name: galleon-defi-lending
-description: "Use when researching lending markets, planning supply, borrow, repay or withdrawals, or monitoring liquidation risk across Aave, Morpho, Compound, Euler and Spark."
+description: "Use when researching lending markets, planning supply, borrow, repay or withdrawals, or monitoring liquidation risk across Aave, Morpho, Compound, Euler, Spark, Kamino and Save."
 license: MIT
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -16,7 +16,7 @@ Read [providers](references/providers.md) for the chosen protocol and version. R
 
 ## Start with the requested task
 
-Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
+Use supplied preferences and compatible tools for this request; ask only for missing terms that change its result. Public research needs no wallet. Preferences and tool access never grant financial authority.
 
 ## Workflow
 
@@ -33,14 +33,34 @@ Return the target identity and block/time, tool/version actually used, rate basi
 
 Prefer adding collateral or repaying within authorized limits over assuming an unapproved refinance, bridge or asset sale. Monitoring alerts must state what changed and what action is proposed; scheduling and automated execution require their own explicit scope.
 
-## Protocol-specific procedures
 
-For a named protocol task, prefer its focused skill when installed:
+## Worked comparison
 
-- `galleon-aave-position`: Aave V3 health factor, eMode, isolation and stress sizing.
-- `galleon-morpho-market`: Morpho market identity, oracle and vault exit diligence.
-- `galleon-compound-borrow`: Comet base borrowing, minimum debt and dual collateral factors.
+Synthetic observations below illustrate the decision; they are not live quotes or receipts.
 
-This existing skill remains usable on its own for cross-protocol comparisons. Do not require another pack to complete its workflow.
+**Request:** Compare a 30-day supply of 10,000 USDC. Use my existing providers and exclude rewards.
 
-For an identified Aave V4 Hub/Spoke operation, prefer `galleon-aave-v4` when installed. V3 Pool operations continue to use `galleon-aave-position`. Each remains independently usable.
+**Available evidence:** Fresh supplied observations: market A base APR 5%, total entry/exit cost 8 USDC; B base APR 4.5%, cost 2 USDC. Both meet the supplied liquidity and risk constraints. Simple interest, ACT/365; rates may change.
+
+**Read sequence:** Read market identity, base rate methodology, liquidity and total costs at aligned observation times. Apply the requested horizon before ranking headline rates.
+
+**Completed answer:** A: 10,000 × 0.05 × 30/365 - 8 = 33.10 USDC. B: 10,000 × 0.045 × 30/365 - 2 = 34.99 USDC. B leads by 1.89 USDC at unchanged rates. Recommend B for this comparison; this is an estimate, with no transaction prepared.
+
+**Changed evidence:** B now lacks a fresh liquidity read; A is unchanged.
+
+**Useful response:** Keep both rate calculations, mark B liquidity unverified, and request that one read through an available compatible tool before recommending executable allocation.
+
+Fetch a missing observation through an existing compatible read tool when available; otherwise return the supported partial result and exact gap. Reconcile an uncertain write through its original identity before considering a retry.
+
+## Focused protocol procedures
+
+For a named protocol task, load its focused skill when installed. Discover it by name; this comparison workflow remains usable without sibling files.
+
+- `galleon-aave-position`: checking an Aave V3 health factor, sizing a borrow, or planning a repay and collateral withdrawal; use for eMode and isolation constraints, not Aave V4.
+- `galleon-morpho-market`: evaluating a specific Morpho Blue market or Morpho vault allocation, oracle, LLTV, borrow liquidity or exit risk.
+- `galleon-compound-borrow`: planning a Compound III Comet base-asset borrow, repayment or collateral withdrawal and checking baseBorrowMin and collateral factors.
+- `galleon-aave-v4`: Inspect Aave V4 Hub/Spoke positions, preview exact actions, and reconcile unsigned execution plans.
+- `galleon-euler-lending`: inspecting an Euler V2 EVK borrow, repay or collateral withdrawal, including EVC subaccounts, collateral enablement and controller risk.
+- `galleon-sparklend-position`: reviewing a SparkLend Pool supply, borrow, repay or collateral withdrawal; distinguish Spark Isolated Markets and savings vaults.
+- `galleon-kamino-lending`: inspecting a Kamino Borrow obligation on Solana, its market, reserve liquidity, borrow factors, elevation group and post-action risk.
+- `galleon-save-lending`: reviewing a Save (formerly Solend) lending market, reserve or obligation, including WAD debt, collateral exchange rates and split transactions.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 - 2026-10-25
+
+- Bundle the maintained shared skill-file reader, preserving exact show output and rejection of symlinked standalone content.
+
 ## 0.1.2 · 2026-10-19
 
 - Replace redirected Alchemy simulation citations with Alchemy's replacement guide for the deprecated methods.

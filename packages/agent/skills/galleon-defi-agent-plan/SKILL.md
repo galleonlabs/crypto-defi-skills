@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Optional official CLI, SDK or MCP providers have their own access requirements; no signer or provider runtime is installed.
 metadata:
   author: Andrew Wilkinson and Galleon Labs
-  version: "0.1.2"
+  version: "0.1.3"
 ---
 
 # Unsigned DeFi planning

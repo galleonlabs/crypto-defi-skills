@@ -27,7 +27,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-strategy-backtest
-npx --package galleon-defi-strategy-skills@0.2.0 defi-strategy-skills catalog --json
+npx --package galleon-defi-strategy-skills@0.2.1 defi-strategy-skills catalog --json
 ```
 
 The [skill](skills/galleon-defi-strategy-backtest/SKILL.md) turns an idea into a supported strategy specification, validates evidence and reports the limitations of the result. It includes a deterministic executable and a clearly labeled synthetic example.

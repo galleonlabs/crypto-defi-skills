@@ -4,7 +4,11 @@ import { join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const root = resolve(import.meta.dirname, "..");
-const revision = "7451b2cb578ce786cbd1e3ee55a4d12ba599739d";
+const revision = "27b7cc4478f68dc988bb129a66f8a8f884b76aca";
+const sourceManifest = spawnSync("git", ["show", `${revision}:packages/data/package.json`], { cwd: root, encoding: "utf8" });
+if (sourceManifest.status !== 0) throw new Error("Reviewed data-pack manifest is unavailable");
+const sourcePackage = JSON.parse(sourceManifest.stdout) as { name: string; version: string };
+if (sourcePackage.name !== "galleon-defi-data-skills") throw new Error("Unexpected reviewed data pack");
 const template = join(root, "plugins/defi-research");
 const manifest = JSON.parse(await readFile(join(template, "plugin.json"), "utf8"));
 const directory = join(root, "dist", "plugins", manifest.name);
@@ -24,7 +28,7 @@ for (const path of listing.stdout.trim().split("\n")) {
   await writeFile(target, new Uint8Array(blob.stdout));
   files[relative] = createHash("sha256").update(new Uint8Array(blob.stdout)).digest("hex");
 }
-await writeFile(join(directory, "integrity.json"), JSON.stringify({ schemaVersion: 1, source: "https://github.com/galleonlabs/crypto-defi-skills", revision, package: "galleon-defi-data-skills", version: "0.6.0", files }, null, 2) + "\n");
+await writeFile(join(directory, "integrity.json"), JSON.stringify({ schemaVersion: 1, source: "https://github.com/galleonlabs/crypto-defi-skills", revision, package: sourcePackage.name, version: sourcePackage.version, files }, null, 2) + "\n");
 const archive = join(root, "artifacts", `${manifest.name}-${manifest.version}.zip`);
 await mkdir(join(root, "artifacts"), { recursive: true });
 await rm(archive, { force: true });

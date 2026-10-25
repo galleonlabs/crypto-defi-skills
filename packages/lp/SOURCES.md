@@ -46,7 +46,7 @@ All instructions, schemas, examples, math utilities, tests, and transaction cont
 - [Velodrome/Aerodrome SDK guide](https://github.com/velodrome-finance/docs/blob/main/content/sdk.mdx), [Sugar SDK v0.4.1](https://github.com/velodrome-finance/sugar-sdk/tree/54bff249f306abe43f0c75ae4dfb7b2f469ef596), and [Sugar contracts](https://github.com/velodrome-finance/sugar). Verified pinned CLI installation and pool command help. A Base pool smoke returned one pool with exit code 0, but also path-chunk RPC errors; this is documented as degraded coverage requiring a suitable RPC, not clean live readiness. Reuse upstream SDK/CLI and skill rather than copying their runtime. See [Slipstream deployments](https://github.com/aerodrome-finance/slipstream#deployments) for coexisting factories, position managers and gauge generations.
 - [Revert agent interface](https://mcp.revert.finance/skill), served skill 1.9. Independently observed a public MCP initialize handshake (server 1.7.0), tools list, `get_protocol_capabilities`, and `get_chain_status` responses without credentials. No transaction planner or wallet action was called. Optional provider selection supersedes the earlier research-only treatment: disclose fees, permissions and custody, keep direct alternatives, and preserve local exact-authorization and receipt checks. No upstream skill text or runtime was copied.
 
-All guides are included inside each independently installable skill. The package neither registers external providers nor configures credentials. Reviewed versions are dated evidence, not timeless latest-version claims.
+Each independently installable skill includes the provider guidance needed by its role. The package neither registers external providers nor configures credentials. Reviewed versions are dated evidence, not timeless latest-version claims.
 
 ## VFAT research and optional tool access (2026-09-05)
 
@@ -60,7 +60,7 @@ All additions are independently written guidance. No VFAT code, contract address
 
 ## Primitive expansion - 2026-09-05
 
-Expand official Curve and Balancer guidance, VFAT custody and fees, and Revert planner/confirmation boundaries. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/main/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
+Expand official Curve and Balancer guidance, VFAT custody and fees, and Revert planner/confirmation boundaries. The [research ledger](https://github.com/galleonlabs/crypto-defi-skills/blob/0fb6faf0369951b628c6b146f055f3d5c8c5e6cb/docs/research/report-source.md) records primary sources, public discovery and untested access paths. No authenticated financial actions were performed for this release.
 
 ## Protocol workflow sources, checked 2026-09-27
 

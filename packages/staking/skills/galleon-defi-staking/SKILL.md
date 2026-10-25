@@ -3,7 +3,7 @@ name: galleon-defi-staking
 description: "Use when planning liquid staking, wrapping, restaking, delegation or queued exit claims for Lido, Rocket Pool, EigenLayer and Symbiotic."
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.3.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -16,7 +16,7 @@ Read the selected protocol in [providers](references/providers.md); use [workflo
 
 ## Start with the requested task
 
-Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
+Use supplied preferences and compatible tools for this request; ask only for missing terms that change its result. Public research needs no wallet. Preferences and tool access never grant financial authority.
 
 ## Workflow
 
@@ -33,10 +33,30 @@ Return chain/version and source time, underlying versus receipt units, available
 
 Do not auto-install/connect tools, import wallet secrets, select an operator, extend authority, or schedule claims merely because these capabilities are documented. Use native harness scheduling only when monitoring is requested, with explicit targets and actionable alerts.
 
-## Protocol-specific procedures
 
-For a named protocol task, prefer its focused skill when installed:
+## Worked comparison
 
-- `galleon-lido-withdrawals`: Lido request IDs, NFT ownership, finalization and ETH claims.
+Synthetic observations below illustrate the decision; they are not live quotes or receipts.
 
-This existing skill remains usable on its own for cross-protocol comparisons. Do not require another pack to complete its workflow.
+**Request:** I need ETH within 24 hours. Compare exiting 10 receipt tokens.
+
+**Available evidence:** Verified synthetic receipt exchange rate 1.2 ETH per token; redemption gives 12 ETH before 0.01 ETH cost, earliest queue completion 3 days. Current executable market quote gives 11.95 ETH net of all costs within one hour.
+
+**Read sequence:** Read receipt conversion, queue conditions, and executable quote for the exact receipt amount; compare net underlying units and earliest usable time.
+
+**Completed answer:** Queue exit estimates 11.99 ETH in at least 3 days; market exit quotes 11.95 ETH within an hour. The market route meets the deadline at a 0.04 ETH cost relative to queued redemption. Quote expiry and final settlement still apply.
+
+**Changed evidence:** The DEX quote expires before preparation and a fresh quote is unavailable.
+
+**Useful response:** Preserve the queue estimate and missed deadline. Mark the market outcome unavailable until requoted; do not reuse the expired price or claim a timely exit is available.
+
+Fetch a missing observation through an existing compatible read tool when available; otherwise return the supported partial result and exact gap. Reconcile an uncertain write through its original identity before considering a retry.
+
+## Focused protocol procedures
+
+For a named protocol task, load its focused skill when installed. Discover it by name; this comparison workflow remains usable without sibling files.
+
+- `galleon-lido-withdrawals`: requesting or claiming Lido stETH or wstETH withdrawals, reconciling unstETH NFTs, or comparing the native queue with a secondary-market exit.
+- `galleon-rocket-pool-reth`: valuing Rocket Pool rETH or comparing native ETH redemption with a secondary-market exit, without starting validator or Smartnode operation.
+- `galleon-eigenlayer-restaking`: reviewing EigenLayer liquid-token restaking, strategy shares, delegation/slashing exposure or queued withdrawal completion; exclude native EigenPod setup.
+- `galleon-symbiotic-withdrawals`: reviewing a Symbiotic vault withdrawal or claim, including epoch timing, active versus queued stake, slashing exposure and claimer ownership.

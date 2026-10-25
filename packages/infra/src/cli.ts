@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readSkillFile } from "../../../scripts/content-pack/skill-file.ts";
 import { credentialPresence, diagnoseRpc, SKILL_CATALOG } from "./index.js";
 import { validate } from "./validate.js";
-const VERSION = "0.4.2";
+const VERSION = "0.4.3";
 const HELP = `defi-infra-skills ${VERSION}
   catalog [--json]
   show <skill-name>
@@ -31,7 +31,7 @@ async function main() {
   }
   if (command !== "doctor" && [...flags.keys()].some((key) => key !== "--json")) throw new Error();
   if (command === "show" && positionals.length === 1 && flags.size === 0 && SKILL_CATALOG.some(skill => skill.name === positionals[0])) {
-    process.stdout.write(await readFile(fileURLToPath(new URL(`../skills/${positionals[0]}/SKILL.md`, import.meta.url)), "utf8"));
+    process.stdout.write(await readSkillFile(fileURLToPath(new URL("..", import.meta.url)), positionals[0]!));
     return;
   }
   let result: unknown;

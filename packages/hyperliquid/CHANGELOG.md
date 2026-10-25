@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.2 - 2026-10-25
+
+- Remove repeated sibling-role handoff manuals, replace cloned full-stack tool guides with focused role references, and bundle the maintained standalone validator.
+- Reuse one maintained skill-file reader so show rejects symlinked skill roots, directories and files consistently.
+
 ## 0.4.1 · 2026-10-19
 
 - Exclude outcome fills (coins beginning with `#`) from default-perp wallet audit accounting, with a regression test.

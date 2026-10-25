@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.2 · 2026-10-25
+
+- Bundle the reviewed data pack 0.6.2 cleanup with all four research skills and their self-contained resources.
+- Derive source package identity/version from the immutable manifest to prevent integrity metadata drifting from the selected source.
+- Preserve the single public CoinGecko MCP connection and the existing permission/install contract.
+
 ## 0.2.1 · 2026-10-08
 
 - Clarify the public download, integrity verification, first questions and host installation checks.

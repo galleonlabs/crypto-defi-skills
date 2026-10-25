@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.2 - 2026-10-25
+
+- Remove repeated task-routing/persona scaffolding; retain receipt deduplication, valuation gaps and cash-flow examples.
+- Reuse one maintained skill-file reader so show rejects symlinked skill roots, directories and files consistently.
+
 ## 0.2.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.
