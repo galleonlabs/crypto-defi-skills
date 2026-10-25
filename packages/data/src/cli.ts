@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import { spawnSync } from "node:child_process";
-import { readFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readSkillFile } from "../../../scripts/content-pack/skill-file.ts";
 import { SKILL_CATALOG } from "./catalog.js";
 import { validateCorpus } from "./validation.js";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const version = "0.6.1";
+const version = "0.6.2";
 const print = (value: unknown) => process.stdout.write(`${JSON.stringify(value, null, 2)}\n`);
 try {
   const [command = "help", ...args] = process.argv.slice(2);
@@ -16,7 +16,7 @@ try {
     print({ ok: true, skills: SKILL_CATALOG });
   } else if (command === "show") {
     if (args.length !== 1 || !SKILL_CATALOG.some(skill => skill.name === args[0])) throw new Error("show requires a catalog skill name");
-    process.stdout.write(await readFile(resolve(root, `skills/${args[0]}/SKILL.md`), "utf8"));
+    process.stdout.write(await readSkillFile(root, args[0]!));
   } else if (command === "validate") {
     if (args.filter(arg => arg !== "--json").length > 1 || args.some(arg => arg.startsWith("--") && arg !== "--json")) throw new Error("validate accepts [path] [--json]");
     const result = await validateCorpus(args.find(arg => arg !== "--json") ?? root);

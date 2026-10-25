@@ -27,7 +27,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-staking
-npx --package galleon-defi-staking-skills@0.3.0 defi-staking-skills catalog
+npx --package galleon-defi-staking-skills@0.3.1 defi-staking-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-staking/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
@@ -48,16 +48,11 @@ Source-backed corrections and reproducible workflow improvements are welcome. Se
 
 ## Protocol tasks
 
-- [galleon-lido-withdrawals](skills/galleon-lido-withdrawals/SKILL.md)
-
-Each procedure includes concrete read calls, protocol-specific failure branches, a synthetic worked decision and dated official sources. No signer or all-packs dependency is included. Behavioral fixtures are review rubrics, not evidence of executed transactions.
-
-## Dedicated protocol workflows
-
-Choose the named procedure directly; these files contain the read sequence, decision branches, worked result and completion evidence. Each directory includes its own sources, license and agent metadata.
-
-| Protocol task | Installable skill |
+| Skill | Use for |
 | --- | --- |
-| Rocket Pool rETH entry and exit | [`galleon-rocket-pool-reth`](skills/galleon-rocket-pool-reth/SKILL.md) |
-| EigenLayer LST restaking and withdrawal | [`galleon-eigenlayer-restaking`](skills/galleon-eigenlayer-restaking/SKILL.md) |
-| Symbiotic vault withdrawals | [`galleon-symbiotic-withdrawals`](skills/galleon-symbiotic-withdrawals/SKILL.md) |
+| [galleon-lido-withdrawals](skills/galleon-lido-withdrawals/SKILL.md) | requesting or claiming Lido stETH or wstETH withdrawals, reconciling unstETH NFTs, or comparing the native queue with a secondary-market exit |
+| [galleon-rocket-pool-reth](skills/galleon-rocket-pool-reth/SKILL.md) | valuing Rocket Pool rETH or comparing native ETH redemption with a secondary-market exit, without starting validator or Smartnode operation |
+| [galleon-eigenlayer-restaking](skills/galleon-eigenlayer-restaking/SKILL.md) | reviewing EigenLayer liquid-token restaking, strategy shares, delegation/slashing exposure or queued withdrawal completion; exclude native EigenPod setup |
+| [galleon-symbiotic-withdrawals](skills/galleon-symbiotic-withdrawals/SKILL.md) | reviewing a Symbiotic vault withdrawal or claim, including epoch timing, active versus queued stake, slashing exposure and claimer ownership |
+
+Each procedure keeps its own references, agent metadata and notices. No signer or all-packs dependency is included.

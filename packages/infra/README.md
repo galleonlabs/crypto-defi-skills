@@ -26,7 +26,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 ## Install
 
 ```bash
-npm install -g galleon-defi-infra-skills@0.4.2
+npm install -g galleon-defi-infra-skills@0.4.3
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-infra
 ```
 

@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs the selected provider's HTTP, MCP or SDK tools; signing stays in the user's trusted wallet. No provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # DeFi routing
@@ -13,11 +13,9 @@ metadata:
 Move from an exact asset intent to a comparable quote and, when authorized, a reconciled outcome. A quote, signature, source receipt and destination delivery are different facts.
 
 
-For Uniswap quote/Permit2/AMM/order tasks, prefer `uniswap-swap` when installed. For LI.FI quoting and transfer reconciliation, prefer `lifi-cross-chain`. Discover by exact skill name without assuming sibling files. Otherwise continue this standalone multi-provider procedure.
-
 ## Start with the requested task
 
-Read [task examples and user configuration](references/task-examples.md) for a completed example and recovery path. Apply only the workflow stages needed by the current request. Reuse supplied preferences and compatible tools; ask only for missing terms that affect this task. Public explanation or comparison does not require transaction fields. Keep any existing authorization within its exact scope.
+Use supplied preferences and compatible tools for this request; ask only for missing terms that change its result. Public research needs no wallet. Preferences and tool access never grant financial authority.
 
 ## Choose the task
 
@@ -48,3 +46,35 @@ For swaps, require the provider's fill record and matching chain/account state. 
 ## Deliver
 
 Return the selected route or comparison with provider/version, exact identities, amounts, costs, quote expiry, evidence timestamps and unresolved gaps. For a submitted operation, add request ID, source and destination receipts, actual received asset/amount, state and next action. Redact credentials, signed payloads and private evidence. Use the user's installed LP, lending or other skill for the next primitive if available; otherwise return a self-contained handoff rather than silently installing dependencies.
+
+## Worked comparison
+
+Synthetic observations below illustrate the decision; they are not live quotes or receipts.
+
+**Request:** Compare these bridge routes for the same input. Max cost 10 USDC. Use my available tools.
+
+**Available evidence:** Both quotes spend 1,000 USDC and have sufficient destination gas. A minimum net received 994 USDC, including a 4 USDC bridge fee and 2 USDC gas paid from input. B minimum net received 992 USDC, including all costs. Both meet deadline and freshness constraints.
+
+**Read sequence:** Compare exact input, minimum net output, separately paid fees, destination gas and deadlines; normalize included versus additional costs.
+
+**Completed answer:** A has 6 USDC total loss from input, B 8 USDC. Choose A with minimum 994 USDC received; both meet the 10 USDC budget. The nested fee breakdown is already included and is not deducted again. This comparison does not submit a route.
+
+**Changed evidence:** A source receipt succeeds but destination receipt is absent; status is pending and user asks whether to retry.
+
+**Useful response:** Report source confirmed, destination pending, route not reconciled. Track the same bridge message/route identifier and destination balance; do not submit a duplicate route.
+
+Fetch a missing observation through an existing compatible read tool when available; otherwise return the supported partial result and exact gap. Reconcile an uncertain write through its original identity before considering a retry.
+
+## Focused protocol procedures
+
+For a named protocol task, load its focused skill when installed. Discover it by name; this comparison workflow remains usable without sibling files.
+
+- `uniswap-swap`: Quote Uniswap swaps, inspect Permit2 and reconcile AMM or order execution.
+- `lifi-cross-chain`: Compare LI.FI quotes and reconcile destination delivery, partial fills and refunds.
+- `zerox-swap`: quoting a 0x API v2 swap or inspecting AllowanceHolder, Permit2, issues and minimum-output evidence before an unsigned handoff.
+- `oneinch-swap`: quoting a 1inch Classic Swap v6.1 or distinguishing direct calldata, Fusion intents and protected API access.
+- `cow-order`: comparing a CoW Protocol quote, reviewing a signed-intent boundary, or reconciling order UID, partial fills, expiry and cancellation.
+- `jupiter-swap`: quoting Jupiter Swap v2 on Solana, inspecting immutable order transactions, or reconciling managed execution and token-account deltas.
+- `relay-bridge`: preparing a Relay quote or tracking a cross-chain request through source confirmation, destination execution, delay or refund.
+- `across-bridge`: comparing Across Swap API routes, inspecting exactInput versus minOutput, or reconciling deposit fills, embedded actions and refunds.
+- `circle-cctp`: tracking a Circle CCTP USDC burn, attestation and destination mint, including domain IDs, finality and failed-mint recovery.

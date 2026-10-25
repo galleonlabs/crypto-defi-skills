@@ -5,7 +5,7 @@ license: MIT
 compatibility: Public official APIs or CLI reads. Node 20+ for the optional local book helper; no private key required.
 metadata:
   author: Galleon Labs
-  version: "0.1.1"
+  version: "0.1.2"
 ---
 
 # Research a prediction market

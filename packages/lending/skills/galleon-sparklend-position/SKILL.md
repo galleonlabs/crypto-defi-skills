@@ -4,7 +4,7 @@ description: "Use when reviewing a SparkLend Pool supply, borrow, repay or colla
 license: MIT
 compatibility: "Official read APIs, SDKs or chain RPC; provider access stays in the user's environment. No signer required for research."
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

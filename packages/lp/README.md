@@ -25,14 +25,16 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ## Protocol workflows
 
-- [uniswap-v3-liquidity](skills/uniswap-v3-liquidity/SKILL.md): Manage v3 NFT inventory, usable ticks, fee collection and range changes.
-- [aerodrome-slipstream](skills/aerodrome-slipstream/SKILL.md): Resolve Slipstream gauge custody, emissions, staking and exits.
+| Skill | Use for |
+| --- | --- |
+| [uniswap-v3-liquidity](skills/uniswap-v3-liquidity/SKILL.md) | NFT inventory, usable ticks, fees and range changes |
+| [aerodrome-slipstream](skills/aerodrome-slipstream/SKILL.md) | Gauge custody, fee rights, emissions and exits |
+| [curve-liquidity](skills/curve-liquidity/SKILL.md) | Ordered coins, pool deposits, balanced/single-coin exits and gauges |
+| [balancer-liquidity](skills/balancer-liquidity/SKILL.md) | V2/V3 liquidity, BPT bounds, boosted assets and hooks |
+| [revert-position](skills/revert-position/SKILL.md) | Indexed positions, unsigned actions and approval-phase rebuilds |
+| [vfat-sickle](skills/vfat-sickle/SKILL.md) | Farm economics, Sickle custody, strategy and automation permissions |
 
-- [`curve-liquidity`](skills/curve-liquidity/SKILL.md): planning a Curve pool deposit or withdrawal, comparing single-coin and balanced exits, or reconciling LP-token and gauge custody.
-- [`balancer-liquidity`](skills/balancer-liquidity/SKILL.md): adding to or exiting a Balancer V2 or V3 pool, reviewing BPT minima, Permit2, boosted assets or hook-dependent liquidity.
-- [`revert-position`](skills/revert-position/SKILL.md): inspecting a Revert-indexed LP position or preparing a Revert unsigned liquidity action, including custody, quote digests and approval-phase rebuilds.
-- [`vfat-sickle`](skills/vfat-sickle/SKILL.md): reviewing a VFAT farm or Sickle-held position, comparing harvest, compound and exit costs, or checking automation and strategy permissions.
-These independently installable skills include current primary-source recipes, worked outcomes and behavioral fixtures. Read-only helpers perform offline arithmetic; they do not supply wallet authority.
+Each procedure keeps its own sources, worked decision and completion evidence. Local helpers do arithmetic; they do not provide wallet authority.
 
 ## Install
 
@@ -67,7 +69,7 @@ The repository also ships Codex and Claude Code plugin manifests. Cursor discove
 | [lp-execute](skills/lp-execute/SKILL.md) | Carry out an explicit wallet action | Confirmed steps, receipts, state reconciliation |
 | [lp-engineer](skills/lp-engineer/SKILL.md) | Build or review LP integrations | Adapter contract, tests, security findings |
 
-Coverage includes Uniswap v2, v3, and v4, plus Aerodrome classic pools and Slipstream concentrated pools.
+The six role workflows cover Uniswap v2, v3 and v4, Aerodrome classic and Slipstream. Use the focused protocol workflows above for Curve, Balancer, Revert or VFAT tasks.
 
 The corpus also covers atomic one-token funding, range moves, automation and custody, LP backtesting, and v4 hooks that issue fungible shares against their own StableSwap-style reserves.
 
@@ -91,7 +93,7 @@ Re-run the install command to install current names. Update saved prompts/config
 
 `lp-research` and `lp-operate` remain as install-compatible rename notices so marketplace listings and saved `npx skills add ... --skill lp-research` or `--skill lp-operate` commands still resolve. They are not a second analysis or execution workflow. Canonical names stay `lp-analyze` and `lp-execute`.
 
-For reproducible npm use, install `galleon-lp-skills@0.7.0`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
+For reproducible npm use, install `galleon-lp-skills@0.7.1`; for a moving npm release use `npm install --global galleon-lp-skills@latest`. Pin a reviewed release when integrating this corpus into a deployer catalog, and validate the installed payload before switching versions.
 
 ## CLI
 
@@ -148,7 +150,7 @@ bun run pack
 
 ## Contributing
 
-Start with [CONTRIBUTING.md](CONTRIBUTING.md). New protocol claims need a primary source, a test or reproducible read, and explicit failure behavior.
+Start with [the contributor guide](https://github.com/galleonlabs/crypto-defi-skills/blob/main/CONTRIBUTING.md). New protocol claims need a primary source, a test or reproducible read, and explicit failure behavior.
 
 Security reports belong in [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new), not public issues.
 

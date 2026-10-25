@@ -12,3 +12,7 @@ The [x402 v2 reference](skills/galleon-defi-payments/references/x402-v2.md) was 
 - [galleon-superfluid-streams sources](skills/galleon-superfluid-streams/references/operations.md): version-specific official procedures, exact amount scales, rights, prerequisites and recovery.
 
 Documentation was researched and synthetic cases were added; no financial operation or connected-provider simulation was performed.
+
+## Content maintenance, 2026-10-25
+
+Remove repeated task-routing/persona scaffolding; retain stream arithmetic, authorization limits and uncertain-payment recovery. Existing dated discovery and release receipts remain historical evidence; no live provider/account access or financial outcome is inferred from this cleanup.

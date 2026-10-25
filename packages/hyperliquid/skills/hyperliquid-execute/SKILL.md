@@ -4,7 +4,7 @@ description: "Safely carry out a user-requested Hyperliquid trading action throu
 license: MIT
 compatibility: "Requires current read access, a trusted signer or official SDK boundary, and an approved API wallet. Never imports or stores a private key."
 metadata:
-  version: "0.4.1"
+  version: "0.4.2"
   protocol: "hyperliquid"
 ---
 
@@ -12,15 +12,13 @@ metadata:
 
 Execute one reviewed trading action, once, and prove the resulting exchange state.
 
-If a skill rule blocks progress, cite its file and exact rule, explain the missing input or authority, and continue independent work within this skill's boundary. User instructions govern workflow and style defaults; they do not bypass tool or financial controls.
+## Tools and resources
 
-## Tool selection
+Read [the tool contract](references/official-tools.md) only when selecting or verifying a capability. Resolve scripts and references from this skill's directory. Related skills are optional handoffs; their absence is not permission to invent state or bypass a prerequisite.
 
-When connecting or choosing tools, read [official tools](references/official-tools.md). Reuse a suitable maintained upstream capability before implementing new integration code; tool adoption stays optional and never supplies wallet authority.
+## Task
 
-## First task and connected workflow
-
-Inspect the supplied ticket and available execution/reconciliation tool schemas. Return readiness or exact missing inputs before any action; do not create a connection by handling secrets. Read [agent integration and handoffs](references/agent-integration.md) on first use or when a tool or related skill is missing.
+Inspect the supplied ticket and available execution/reconciliation tool schemas. Return readiness or exact missing inputs before any action; do not create a connection by handling secrets.
 
 ## Authorization gate
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 - 2026-10-25
+
+- Bundle the maintained shared skill-file reader, preserving exact show output and rejection of symlinked standalone content.
+
 ## 0.2.0 · 2026-10-09
 
 - Add independently funded buy-and-hold, weekly DCA and 10/30-day SMA starting templates with explicit daily data and horizon requirements.

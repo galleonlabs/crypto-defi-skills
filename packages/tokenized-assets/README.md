@@ -27,7 +27,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-tokenized-assets
-npx --package galleon-defi-tokenized-assets-skills@0.2.0 defi-tokenized-assets-skills catalog
+npx --package galleon-defi-tokenized-assets-skills@0.2.1 defi-tokenized-assets-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-tokenized-assets/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
@@ -46,11 +46,11 @@ Source-backed corrections and reproducible workflow improvements are welcome. Se
 
 [MIT](LICENSE), copyright Galleon Labs. Preserve the copyright and permission notice in reused copies or substantial portions. [Attribution](ATTRIBUTION.md) includes an optional credit line naming Andrew Wilkinson and Galleon Labs.
 
-## Dedicated protocol workflows
+## Protocol tasks
 
-Choose the named procedure directly; these files contain the read sequence, decision branches, worked result and completion evidence. Each directory includes its own sources, license and agent metadata.
-
-| Protocol task | Installable skill |
+| Skill | Use for |
 | --- | --- |
-| Ondo product access and settlement | [`galleon-ondo-assets`](skills/galleon-ondo-assets/SKILL.md) |
-| OpenEden TBILL subscription and redemption | [`galleon-openeden-tbill`](skills/galleon-openeden-tbill/SKILL.md) |
+| [galleon-ondo-assets](skills/galleon-ondo-assets/SKILL.md) | reviewing Ondo Stocks, OUSG or USDY access, quotes, token identity or redemption settlement; keep each product and jurisdiction separate |
+| [galleon-openeden-tbill](skills/galleon-openeden-tbill/SKILL.md) | assessing OpenEden TBILL eligibility, subscriptions, whitelisted transfers or queued USDC redemption and fund settlement evidence |
+
+Each procedure keeps its own references, agent metadata and notices. No signer or all-packs dependency is included.

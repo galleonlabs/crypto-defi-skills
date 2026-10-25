@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1 - 2026-10-25
+
+- Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.
+- Consolidate current protocol routing and package documentation while preserving standalone skill resources and public names.
+
 ## 0.2.0
 
 - Add standalone GMX position, Derive options, Velocity position, Pendle Boros, Jupiter perps procedures with concrete reads, worked outcomes and failure handling.

@@ -27,7 +27,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-payments
-npx --package galleon-defi-payments-skills@0.2.1 defi-payments-skills catalog
+npx --package galleon-defi-payments-skills@0.2.2 defi-payments-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-payments/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

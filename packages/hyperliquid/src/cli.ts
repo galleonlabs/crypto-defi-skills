@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-import { readFile } from "node:fs/promises";
 import { spawn } from "node:child_process";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { readSkillFile } from "../../../scripts/content-pack/skill-file.ts";
 import { SKILL_CATALOG } from "./catalog.js";
 import { liquidationDistance, normalizeFunding, reviewTrade, sizeRisk, type PositionSide } from "./math.js";
 import { validateCorpus } from "./validation.js";
 
-const VERSION = "0.4.1";
+const VERSION = "0.4.2";
 type Flags = Map<string, string | true>;
 
 interface ParsedArgs {
@@ -136,7 +136,7 @@ async function main(): Promise<void> {
     const [name, ...extra] = parsed.positionals;
     if (!name || extra.length > 0) throw new Error("show requires exactly one skill name");
     if (!SKILL_CATALOG.some((skill) => skill.name === name)) throw new Error(`unknown skill: ${name}`);
-    process.stdout.write(await readFile(resolve(packageRoot(), "skills", name, "SKILL.md"), "utf8"));
+    process.stdout.write(await readSkillFile(packageRoot(), name));
     return;
   }
   if (command === "validate") {

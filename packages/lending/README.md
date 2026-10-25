@@ -27,7 +27,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-lending
-npx --package galleon-defi-lending-skills@0.4.0 defi-lending-skills catalog
+npx --package galleon-defi-lending-skills@0.4.1 defi-lending-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-lending/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
@@ -48,23 +48,15 @@ Source-backed corrections and reproducible workflow improvements are welcome. Se
 
 ## Protocol tasks
 
-- [galleon-aave-position](skills/galleon-aave-position/SKILL.md)
-- [galleon-morpho-market](skills/galleon-morpho-market/SKILL.md)
-- [galleon-compound-borrow](skills/galleon-compound-borrow/SKILL.md)
-
-Each procedure includes concrete read calls, protocol-specific failure branches, a synthetic worked decision and dated official sources. No signer or all-packs dependency is included. Behavioral fixtures are review rubrics, not evidence of executed transactions.
-
-## Protocol procedures
-
-- [galleon-aave-v4](skills/galleon-aave-v4/SKILL.md): Inspect Aave V4 Hub/Spoke positions, preview exact actions, and reconcile unsigned execution plans.
-
-## Dedicated protocol workflows
-
-Choose the named procedure directly; these files contain the read sequence, decision branches, worked result and completion evidence. Each directory includes its own sources, license and agent metadata.
-
-| Protocol task | Installable skill |
+| Skill | Use for |
 | --- | --- |
-| Euler V2 lending | [`galleon-euler-lending`](skills/galleon-euler-lending/SKILL.md) |
-| SparkLend position review | [`galleon-sparklend-position`](skills/galleon-sparklend-position/SKILL.md) |
-| Kamino lending position | [`galleon-kamino-lending`](skills/galleon-kamino-lending/SKILL.md) |
-| Save lending on Solana | [`galleon-save-lending`](skills/galleon-save-lending/SKILL.md) |
+| [galleon-aave-position](skills/galleon-aave-position/SKILL.md) | checking an Aave V3 health factor, sizing a borrow, or planning a repay and collateral withdrawal; use for eMode and isolation constraints, not Aave V4 |
+| [galleon-morpho-market](skills/galleon-morpho-market/SKILL.md) | evaluating a specific Morpho Blue market or Morpho vault allocation, oracle, LLTV, borrow liquidity or exit risk |
+| [galleon-compound-borrow](skills/galleon-compound-borrow/SKILL.md) | planning a Compound III Comet base-asset borrow, repayment or collateral withdrawal and checking baseBorrowMin and collateral factors |
+| [galleon-aave-v4](skills/galleon-aave-v4/SKILL.md) | Inspect Aave V4 Hub/Spoke positions, preview exact actions, and reconcile unsigned execution plans |
+| [galleon-euler-lending](skills/galleon-euler-lending/SKILL.md) | inspecting an Euler V2 EVK borrow, repay or collateral withdrawal, including EVC subaccounts, collateral enablement and controller risk |
+| [galleon-sparklend-position](skills/galleon-sparklend-position/SKILL.md) | reviewing a SparkLend Pool supply, borrow, repay or collateral withdrawal; distinguish Spark Isolated Markets and savings vaults |
+| [galleon-kamino-lending](skills/galleon-kamino-lending/SKILL.md) | inspecting a Kamino Borrow obligation on Solana, its market, reserve liquidity, borrow factors, elevation group and post-action risk |
+| [galleon-save-lending](skills/galleon-save-lending/SKILL.md) | reviewing a Save (formerly Solend) lending market, reserve or obligation, including WAD debt, collateral exchange rates and split transactions |
+
+Each procedure keeps its own references, agent metadata and notices. No signer or all-packs dependency is included.

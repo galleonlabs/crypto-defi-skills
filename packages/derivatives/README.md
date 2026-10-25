@@ -23,34 +23,14 @@ Choose the receiving agent in the installer. Keep the skill's references and scr
 
 Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
 
-## Protocol workflows
+## Protocol tasks
 
-- [`gmx-position`](skills/gmx-position/SKILL.md): reviewing a GMX perpetual position or order through SDK v2, including market capacity, fees, keeper execution and request-id reconciliation.
-- [`derive-options`](skills/derive-options/SKILL.md): reviewing Derive v3 option instruments, premium and margin scenarios, or reconciling subaccount orders, fills and session scope.
-- [`velocity-position`](skills/velocity-position/SKILL.md): inspecting Velocity Exchange Solana positions and margin or distinguishing paused legacy Drift accounts from the new Velocity deployment.
-- [`pendle-boros`](skills/pendle-boros/SKILL.md): reviewing Boros funding-rate derivatives, implied versus realized rates, margin and delegated-agent scope before any trading action.
-- [`jupiter-perps`](skills/jupiter-perps/SKILL.md): inspecting Jupiter Perpetuals position and PositionRequest accounts, borrowing fees, triggers or pending close evidence on Solana.
+| Skill | Use for |
+| --- | --- |
+| [gmx-position](skills/gmx-position/SKILL.md) | reviewing a GMX perpetual position or order through SDK v2, including market capacity, fees, keeper execution and request-id reconciliation |
+| [derive-options](skills/derive-options/SKILL.md) | reviewing Derive v3 option instruments, premium and margin scenarios, or reconciling subaccount orders, fills and session scope |
+| [velocity-position](skills/velocity-position/SKILL.md) | inspecting Velocity Exchange Solana positions and margin or distinguishing paused legacy Drift accounts from the new Velocity deployment |
+| [pendle-boros](skills/pendle-boros/SKILL.md) | reviewing Boros funding-rate derivatives, implied versus realized rates, margin and delegated-agent scope before any trading action |
+| [jupiter-perps](skills/jupiter-perps/SKILL.md) | inspecting Jupiter Perpetuals position and PositionRequest accounts, borrowing fees, triggers or pending close evidence on Solana |
 
-
-## Install
-
-```bash
-npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-derivatives
-npx --package galleon-defi-derivatives-skills@0.2.0 defi-derivatives-skills catalog
-```
-
-Start with [the workflow](skills/galleon-defi-derivatives/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.
-
-## Package interface
-
-`defi-derivatives-skills` provides `catalog --json`, `show galleon-defi-derivatives`, `validate [path] --json`, and `--version`. It reads the packaged corpus and performs no network or wallet operations. The ESM export supplies `SKILL_CATALOG` and the skill document is available through `galleon-defi-derivatives-skills/skills/galleon-defi-derivatives`.
-
-[Boomkin](https://github.com/galleonlabs/boomkin) provides Hermes onboarding and optional pack selection. [Sources](SOURCES.md) record provider provenance and verification limits.
-
-## Contribute
-
-Source-backed corrections and reproducible workflow improvements are welcome. See the [contributor guide](https://github.com/galleonlabs/crypto-defi-skills/blob/main/CONTRIBUTING.md). Maintainers run `bun run check` in the workspace and the clean consumer smoke before publication.
-
-## License and credit
-
-[MIT](LICENSE), copyright Galleon Labs. Preserve the copyright and permission notice in reused copies or substantial portions. [Attribution](ATTRIBUTION.md) includes an optional credit line naming Andrew Wilkinson and Galleon Labs.
+Each procedure keeps its own references, agent metadata and notices. No signer or all-packs dependency is included.

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.2 - 2026-10-25
+
+- Remove generic task scaffolding and unrelated research cadence; bundle the maintained standalone corpus validator and pin archived source evidence.
+- Reuse one maintained skill-file reader so show rejects symlinked skill roots, directories and files consistently.
+
 ## 0.6.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.
