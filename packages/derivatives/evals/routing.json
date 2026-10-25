@@ -52,5 +52,205 @@
       "galleon-defi-portfolio"
     ],
     "reason": "Stale venue account state before sizing is derivatives judgement, not a connection fault or a holdings report."
+  },
+  {
+    "prompt": "Inspect a GMX position with current SDK v2 and its funding and borrowing fees.",
+    "expected": "gmx-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "GMX relay accepted my decrease but keeper has not executed. What is my exposure?",
+    "expected": "gmx-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Diagnose a GMX submit timeout using the original requestId and idempotency key.",
+    "expected": "gmx-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Check GMX JIT-aware trading capacity before unsigned order preparation.",
+    "expected": "gmx-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Explain GMX order creation versus keeper fill and resulting collateral.",
+    "expected": "gmx-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Review a Derive v3 call option and verify its exact expiry timestamp.",
+    "expected": "derive-options",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Derive public margin is positive but open orders consume more. Is account ready?",
+    "expected": "derive-options",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Estimate Derive long-option premium versus short-option margin exposure.",
+    "expected": "derive-options",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Derive partial fill changed Greeks; reconcile order and subaccount.",
+    "expected": "derive-options",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Explain why editing Derive session metadata is not onchain revocation.",
+    "expected": "derive-options",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Is my old Drift account automatically available on Velocity?",
+    "expected": "velocity-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Velocity subscribe returned false; can we trust the zero position display?",
+    "expected": "velocity-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Inspect Velocity margin using correct BN base and quote precision.",
+    "expected": "velocity-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Reconcile a resting Velocity order against its Solana signature and fills.",
+    "expected": "velocity-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Verify the current Velocity program before decoding a user account.",
+    "expected": "velocity-position",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Compare Boros implied funding with realized floating funding for the same term.",
+    "expected": "pendle-boros",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Does adding the Boros MCP grant automatic delegated trading?",
+    "expected": "pendle-boros",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Inspect Boros agent expiry and root-account mapping without provisioning keys.",
+    "expected": "pendle-boros",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Reconcile Boros partial fills and remaining rate exposure.",
+    "expected": "pendle-boros",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Explain why a Boros hedge and an external perp retain separate liquidation risk.",
+    "expected": "pendle-boros",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Inspect a Jupiter Perps PositionRequest and tell me whether the close executed.",
+    "expected": "jupiter-perps",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Explain Jupiter Perps borrowing fees versus cross-venue funding.",
+    "expected": "jupiter-perps",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Convert Jupiter sizeUsd 5000000000 using its documented scale.",
+    "expected": "jupiter-perps",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Jupiter Perps request disappeared; distinguish execution from rejection.",
+    "expected": "jupiter-perps",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Does Jupiter Swap MCP imply Perps order API support?",
+    "expected": "jupiter-perps",
+    "mustNotInvoke": [
+      "galleon-defi-derivatives"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
   }
 ]

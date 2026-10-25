@@ -23,11 +23,20 @@ Choose the receiving agent in the installer. Keep the skill's references and scr
 
 Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
 
+## Protocol workflows
+
+- [`gmx-position`](skills/gmx-position/SKILL.md): reviewing a GMX perpetual position or order through SDK v2, including market capacity, fees, keeper execution and request-id reconciliation.
+- [`derive-options`](skills/derive-options/SKILL.md): reviewing Derive v3 option instruments, premium and margin scenarios, or reconciling subaccount orders, fills and session scope.
+- [`velocity-position`](skills/velocity-position/SKILL.md): inspecting Velocity Exchange Solana positions and margin or distinguishing paused legacy Drift accounts from the new Velocity deployment.
+- [`pendle-boros`](skills/pendle-boros/SKILL.md): reviewing Boros funding-rate derivatives, implied versus realized rates, margin and delegated-agent scope before any trading action.
+- [`jupiter-perps`](skills/jupiter-perps/SKILL.md): inspecting Jupiter Perpetuals position and PositionRequest accounts, borrowing fees, triggers or pending close evidence on Solana.
+
+
 ## Install
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-derivatives
-npx --package galleon-defi-derivatives-skills@0.1.6 defi-derivatives-skills catalog
+npx --package galleon-defi-derivatives-skills@0.2.0 defi-derivatives-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-derivatives/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

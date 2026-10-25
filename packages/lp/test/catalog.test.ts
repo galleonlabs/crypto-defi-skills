@@ -12,7 +12,7 @@ function run(args: string[]) {
 
 test("canonical catalog excludes renamed install names", () => {
   const names = SKILL_CATALOG.map((skill) => skill.name);
-  expect(names).toEqual(["lp-setup", "lp-analyze", "lp-plan", "lp-monitor", "lp-execute", "lp-engineer", "uniswap-v3-liquidity", "aerodrome-slipstream"]);
+  expect(names).toEqual(["lp-setup", "lp-analyze", "lp-plan", "lp-monitor", "lp-execute", "lp-engineer", "uniswap-v3-liquidity", "aerodrome-slipstream", "curve-liquidity", "balancer-liquidity", "revert-position", "vfat-sickle"]);
   expect(RENAMED_SKILLS).toEqual({ "lp-research": "lp-analyze", "lp-operate": "lp-execute" });
   expect(canonicalSkillName("lp-research")).toBe("lp-analyze");
   expect(canonicalSkillName("lp-operate")).toBe("lp-execute");

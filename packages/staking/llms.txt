@@ -7,3 +7,7 @@ Plan liquid staking, restaking and queued withdrawals.
 - [Sources](SOURCES.md)
 
 - [galleon-lido-withdrawals](skills/galleon-lido-withdrawals/SKILL.md)
+
+- [Rocket Pool rETH entry and exit](skills/galleon-rocket-pool-reth/SKILL.md)
+- [EigenLayer LST restaking and withdrawal](skills/galleon-eigenlayer-restaking/SKILL.md)
+- [Symbiotic vault withdrawals](skills/galleon-symbiotic-withdrawals/SKILL.md)

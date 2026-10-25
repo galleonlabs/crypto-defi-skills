@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-governance-skills",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Research proposals, prepare votes and track governance execution.",
   "type": "module",
   "license": "MIT",

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Safe transaction"
+  short_description: "Safe transaction workflow and evidence"
+  default_prompt: "Use $safe-transaction for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

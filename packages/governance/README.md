@@ -23,11 +23,18 @@ Choose the receiving agent in the installer. Keep the skill's references and scr
 
 Expected result: the workflow's required evidence, explicit gaps and a concrete next step. Supply real task inputs in place of the bracketed placeholders. Provider access is configured in your agent; installation adds the procedures and local resources.
 
+## Protocol workflows
+
+- [`snapshot-proposal`](skills/snapshot-proposal/SKILL.md): researching Snapshot or Snapshot X proposal terms, voting eligibility and tally evidence without granting an alias or casting a vote.
+- [`governor-proposal`](skills/governor-proposal/SKILL.md): reviewing an OpenZeppelin Governor or Cactus-listed proposal, checking clock, quorum, Timelock and exact calldata through execution.
+- [`safe-transaction`](skills/safe-transaction/SKILL.md): reviewing a Safe multisig transaction, threshold and nonce, decoding batched calls, or reconciling proposal, confirmations and onchain execution.
+
+
 ## Install
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-governance
-npx --package galleon-defi-governance-skills@0.1.4 defi-governance-skills catalog
+npx --package galleon-defi-governance-skills@0.2.0 defi-governance-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-governance/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

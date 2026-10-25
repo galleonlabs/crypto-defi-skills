@@ -10,7 +10,11 @@
         "galleon-aave-position",
         "galleon-morpho-market",
         "galleon-compound-borrow",
-        "galleon-aave-v4"
+        "galleon-aave-v4",
+        "galleon-euler-lending",
+        "galleon-sparklend-position",
+        "galleon-kamino-lending",
+        "galleon-save-lending"
       ]
     }
   ]

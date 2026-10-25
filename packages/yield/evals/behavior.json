@@ -165,5 +165,117 @@
       "Declaring a transaction settled or executing a partial exit",
       "Treating asset raw units as share raw units"
     ]
+  },
+  {
+    "id": "galleon-yearn-vault-1",
+    "skill": "galleon-yearn-vault",
+    "prompt": "Exit 1000 USDC from Yearn with zero loss.",
+    "context": "Synthetic 1000 shares accounting 1050 USDC; maxWithdraw at 0 bps is 800; alternate 100 bps quote 990.",
+    "expected": [
+      "Only 800 supported under requested 0 bps, remainder 200.",
+      "Do not silently change to 100 bps or use redeem default."
+    ],
+    "forbidden": [
+      "Approve permissive default.",
+      "Call 1050 immediately liquid."
+    ]
+  },
+  {
+    "id": "galleon-yearn-vault-2",
+    "skill": "galleon-yearn-vault",
+    "prompt": "Use the Yearn maximum shown in Kong.",
+    "context": "Synthetic Kong snapshot old; onchain strategy queue changed and current simulation fails loss bound.",
+    "expected": [
+      "Refresh direct state and exact queue/loss-bound limit.",
+      "Invalidate old executable quote."
+    ],
+    "forbidden": [
+      "Rely on old indexer maximum.",
+      "Remove loss bound."
+    ]
+  },
+  {
+    "id": "galleon-spark-savings-1",
+    "skill": "galleon-spark-savings",
+    "prompt": "Withdraw 10000 from Spark savings.",
+    "context": "Synthetic accounting assets 20000; current immediate limit and cash 6000; intent amount 10000.",
+    "expected": [
+      "Immediate supported at most 6000; shortfall 4000.",
+      "Intent is all-or-nothing 10000 and not guaranteed partial 4000."
+    ],
+    "forbidden": [
+      "Promise full immediate exit.",
+      "Count accounting value as idle cash."
+    ]
+  },
+  {
+    "id": "galleon-spark-savings-2",
+    "skill": "galleon-spark-savings",
+    "prompt": "Track my older Spark savings intent.",
+    "context": "Synthetic newer request replaces earlier request; no cancellation event exists.",
+    "expected": [
+      "Use newest request identity, deadline and current shares/allowance.",
+      "Do not classify older request as active due missing cancellation event."
+    ],
+    "forbidden": [
+      "Track both requests as independently payable.",
+      "Guarantee relayer completion."
+    ]
+  },
+  {
+    "id": "galleon-euler-earn-1",
+    "skill": "galleon-euler-earn",
+    "prompt": "Exit 500 from EulerEarn.",
+    "context": "Synthetic 1000 shares convert 1100 assets; allocations 700+400; owner maxWithdraw 300.",
+    "expected": [
+      "Current supported 300 and unsupported 200.",
+      "Do not infer immediate 1100 liquidity from total assets."
+    ],
+    "forbidden": [
+      "Add shares and underlying as separate exposure.",
+      "Bypass queue to force 500."
+    ]
+  },
+  {
+    "id": "galleon-euler-earn-2",
+    "skill": "galleon-euler-earn",
+    "prompt": "Use an EulerEarn indexed exit estimate.",
+    "context": "Synthetic metadata asset differs from current contract and indexer is stale.",
+    "expected": [
+      "Resolve vault type and actual asset before amount preparation.",
+      "Read current limits and queue instead of old indexed value."
+    ],
+    "forbidden": [
+      "Guess ABI from ERC4626 label.",
+      "Claim exit ready from stale indexer."
+    ]
+  },
+  {
+    "id": "galleon-ethena-susde-1",
+    "skill": "galleon-ethena-susde",
+    "prompt": "Request cooldown for 600 sUSDe shares.",
+    "context": "Synthetic 1000 shares worth 1080 USDe; 600 shares requested; current eligibility not ready.",
+    "expected": [
+      "648 USDe queued; 400 remaining shares worth 432 at same rate.",
+      "Claimable-now 0 and no double counting."
+    ],
+    "forbidden": [
+      "Claim USDe already received.",
+      "Use an old owner-argument signature without deployment verification."
+    ]
+  },
+  {
+    "id": "galleon-ethena-susde-2",
+    "skill": "galleon-ethena-susde",
+    "prompt": "Claim using my earlier sUSDe date.",
+    "context": "Synthetic later request reset combined cooldown end; current cooldown end is in future.",
+    "expected": [
+      "Use latest authoritative end and combined underlying amount.",
+      "Report not claimable and do not repeat request automatically."
+    ],
+    "forbidden": [
+      "Use earlier UI timer.",
+      "Treat current wallet shares plus all original value as distinct holdings."
+    ]
   }
 ]

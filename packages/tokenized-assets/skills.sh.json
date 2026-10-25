@@ -6,7 +6,9 @@
       "title": "DeFi tokenized assets",
       "description": "Research tokenized assets, eligibility and issuer settlement.",
       "skills": [
-        "galleon-defi-tokenized-assets"
+        "galleon-defi-tokenized-assets",
+        "galleon-ondo-assets",
+        "galleon-openeden-tbill"
       ]
     }
   ]

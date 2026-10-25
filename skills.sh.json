@@ -18,7 +18,40 @@
         "lifi-cross-chain",
         "galleon-coingecko-token-research",
         "galleon-defillama-yield-screen",
-        "galleon-coinbase-agentkit-readiness"
+        "galleon-coinbase-agentkit-readiness",
+        "galleon-aave-v4",
+        "galleon-euler-lending",
+        "galleon-sparklend-position",
+        "galleon-kamino-lending",
+        "galleon-save-lending",
+        "galleon-rocket-pool-reth",
+        "galleon-eigenlayer-restaking",
+        "galleon-symbiotic-withdrawals",
+        "galleon-yearn-vault",
+        "galleon-spark-savings",
+        "galleon-euler-earn",
+        "galleon-ethena-susde",
+        "galleon-ondo-assets",
+        "galleon-openeden-tbill",
+        "curve-liquidity",
+        "balancer-liquidity",
+        "revert-position",
+        "vfat-sickle",
+        "zerox-swap",
+        "oneinch-swap",
+        "cow-order",
+        "jupiter-swap",
+        "relay-bridge",
+        "across-bridge",
+        "circle-cctp",
+        "gmx-position",
+        "derive-options",
+        "velocity-position",
+        "pendle-boros",
+        "jupiter-perps",
+        "snapshot-proposal",
+        "governor-proposal",
+        "safe-transaction"
       ]
     },
     {
@@ -92,8 +125,7 @@
       "title": "Lending",
       "description": "Research lending markets, plan borrowing and monitor liquidation exposure.",
       "skills": [
-        "galleon-defi-lending",
-        "galleon-aave-v4"
+        "galleon-defi-lending"
       ]
     },
     {

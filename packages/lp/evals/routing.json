@@ -509,5 +509,165 @@
       "lp-engineer"
     ],
     "reason": "Protocol-specific position and custody task."
+  },
+  {
+    "prompt": "Compare balanced and single-coin exits for my Curve pool, including the LP staked in its gauge.",
+    "expected": "curve-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "My Curve wallet LP balance is zero but the gauge has tokens. What can I redeem?",
+    "expected": "curve-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "The Curve quote uses wrapped coins while I want underlying USDC. Resolve the correct method.",
+    "expected": "curve-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Prepare the exact ordered input vector for a Curve StableSwap NG deposit, unsigned.",
+    "expected": "curve-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Curve removal timed out after returning a hash. Reconcile it before retrying.",
+    "expected": "curve-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Query a Balancer V3 deposit and show my minimum BPT without signing Permit2.",
+    "expected": "balancer-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Can I exit this Balancer V2 BPT through the V3 router?",
+    "expected": "balancer-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Explain the underlying tokens I receive when removing liquidity from a boosted Balancer pool.",
+    "expected": "balancer-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "This Balancer hook query fails; identify which liquidity plan is unsupported.",
+    "expected": "balancer-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Reconcile my Balancer deposit receipt against BPT minted and token balances.",
+    "expected": "balancer-liquidity",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Use my existing Revert connection to inspect this LP NFT and its indexer age.",
+    "expected": "revert-position",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Revert returned an approval plan digest. Is that ready for the liquidity transaction?",
+    "expected": "revert-position",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Prepare a Revert range move without borrowing or changing custody.",
+    "expected": "revert-position",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Revert indexes my pool but has no prepare capability. Show the supported path.",
+    "expected": "revert-position",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "The Revert transaction is pending; verify its original hash before any retry.",
+    "expected": "revert-position",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Explain who holds my VFAT LP tokens: EOA, Sickle or farm.",
+    "expected": "vfat-sickle",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Compare manual harvest, compound and rebalance costs using the right fee base.",
+    "expected": "vfat-sickle",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Does VFAT seven-day fee APR guarantee my next month return?",
+    "expected": "vfat-sickle",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Inspect Sickle strategy and target permissions without enabling automation.",
+    "expected": "vfat-sickle",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "My VFAT harvest succeeded but principal remains in the farm; reconcile my exit.",
+    "expected": "vfat-sickle",
+    "mustNotInvoke": [
+      "lp-plan"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
   }
 ]

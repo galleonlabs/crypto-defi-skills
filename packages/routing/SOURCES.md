@@ -12,3 +12,15 @@ These are independently authored operational procedures. Upstream code and docum
 ## Ethereum agent tool review, 2026-10-08
 
 [Agent route lifecycles](skills/galleon-defi-routing/references/agent-lifecycles.md) records Across amounts/embedded-action recovery, Socket deposit-address boundaries and Aave signed-order stages from current primary sources. No financial actions, paid quotes or signing were performed for this update.
+
+## Protocol workflow review, 2026-10-25
+
+Standalone protocol procedures now bundle their exact read recipes and dated primary source lists under each skill. This review checked official documentation and source; it did not authorize accounts or test signing, trading, voting or settlement.
+
+- [0x swap](skills/zerox-swap/references/reads.md)
+- [1inch swap](skills/oneinch-swap/references/reads.md)
+- [CoW order](skills/cow-order/references/reads.md)
+- [Jupiter swap](skills/jupiter-swap/references/reads.md)
+- [Relay bridge](skills/relay-bridge/references/reads.md)
+- [Across bridge](skills/across-bridge/references/reads.md)
+- [Circle CCTP](skills/circle-cctp/references/reads.md)

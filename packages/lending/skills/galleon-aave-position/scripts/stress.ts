@@ -43,8 +43,20 @@ export function stress(input: Scenario) {
     note: "Offline common-base scenario only; excludes interest, per-reserve mode changes, liquidity and protocol permission. Null HF means zero debt.",
   };
 }
+const usage = "Usage: bun scripts/stress.ts <scenario.json>\nOffline common-base Aave stress arithmetic; no network or wallet calls.\n";
 if (import.meta.main) {
-  const file = process.argv[2];
-  if (!file) throw new Error("Usage: bun scripts/stress.ts scenario.json");
-  process.stdout.write(`${JSON.stringify(stress(await Bun.file(file).json()), null, 2)}\n`);
+  const args = process.argv.slice(2);
+  if (args.length === 1 && (args[0] === "--help" || args[0] === "-h")) {
+    process.stdout.write(usage);
+  } else if (args.length !== 1 || args[0]!.startsWith("-")) {
+    process.stderr.write(usage);
+    process.exitCode = 1;
+  } else {
+    try {
+      process.stdout.write(`${JSON.stringify(stress(await Bun.file(args[0]!).json()), null, 2)}\n`);
+    } catch (error) {
+      process.stderr.write(`stress: ${error instanceof Error ? error.message : String(error)}\n`);
+      process.exitCode = 1;
+    }
+  }
 }

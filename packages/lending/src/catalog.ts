@@ -16,6 +16,22 @@ export const SKILL_CATALOG = [
     purpose: "Use when planning a Compound III Comet base-asset borrow, repayment or collateral withdrawal and checking baseBorrowMin and collateral factors.",
   },
   { name: "galleon-aave-v4", purpose: "Inspect Aave V4 Hub/Spoke positions, preview exact actions, and reconcile unsigned execution plans." },
+  {
+    name: "galleon-euler-lending",
+    purpose: "Use when inspecting an Euler V2 EVK borrow, repay or collateral withdrawal, including EVC subaccounts, collateral enablement and controller risk.",
+  },
+  {
+    name: "galleon-sparklend-position",
+    purpose: "Use when reviewing a SparkLend Pool supply, borrow, repay or collateral withdrawal; distinguish Spark Isolated Markets and savings vaults.",
+  },
+  {
+    name: "galleon-kamino-lending",
+    purpose: "Use when inspecting a Kamino Borrow obligation on Solana, its market, reserve liquidity, borrow factors, elevation group and post-action risk.",
+  },
+  {
+    name: "galleon-save-lending",
+    purpose: "Use when reviewing a Save (formerly Solend) lending market, reserve or obligation, including WAD debt, collateral exchange rates and split transactions.",
+  },
 ] as const;
 
 export type SkillName = (typeof SKILL_CATALOG)[number]["name"];

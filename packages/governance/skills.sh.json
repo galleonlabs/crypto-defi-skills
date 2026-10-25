@@ -3,6 +3,15 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "Protocol workflows",
+      "description": "Protocol-specific reads, decisions and settlement evidence.",
+      "skills": [
+        "snapshot-proposal",
+        "governor-proposal",
+        "safe-transaction"
+      ]
+    },
+    {
       "title": "DeFi governance",
       "description": "Research proposals, prepare votes and track governance execution.",
       "skills": [

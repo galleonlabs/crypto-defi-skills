@@ -1,0 +1,4 @@
+interface:
+  display_name: "EulerEarn vault allocation and exit"
+  short_description: "EulerEarn vault allocation and exit workflow and evidence"
+  default_prompt: "Use $galleon-euler-earn for the requested protocol task and return the decision, evidence and missing prerequisites."

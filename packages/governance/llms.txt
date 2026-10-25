@@ -5,3 +5,9 @@ Research proposals, prepare votes and track governance execution.
 - [Workflow](skills/galleon-defi-governance/SKILL.md)
 - [Providers](skills/galleon-defi-governance/references/providers.md)
 - [Sources](SOURCES.md)
+
+## Protocol workflows
+
+- [`snapshot-proposal`](skills/snapshot-proposal/SKILL.md): researching Snapshot or Snapshot X proposal terms, voting eligibility and tally evidence without granting an alias or casting a vote.
+- [`governor-proposal`](skills/governor-proposal/SKILL.md): reviewing an OpenZeppelin Governor or Cactus-listed proposal, checking clock, quorum, Timelock and exact calldata through execution.
+- [`safe-transaction`](skills/safe-transaction/SKILL.md): reviewing a Safe multisig transaction, threshold and nonce, decoding batched calls, or reconciling proposal, confirmations and onchain execution.

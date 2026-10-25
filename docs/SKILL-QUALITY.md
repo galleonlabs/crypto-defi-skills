@@ -12,7 +12,7 @@ Use the user's existing provider tools and authority. In this corpus, setup, dis
 
 | Check | Evidence it supplies |
 | --- | --- |
-| `bun run check` | Package checks plus a common standalone corpus validator for all 15 packs: metadata, directory names, line budget, local reference boundaries, symlinks and discovery metadata |
+| `bun run check` | Package checks plus a common standalone corpus validator for all 17 packs: metadata, directory names, line budget, local reference boundaries, symlinks and discovery metadata |
 | `validate-agent-skills packages/<pack>/skills` | Independent contributor validation of skill structure |
 | `bun run pack` and `bun run smoke` | Packaging boundaries, fresh independent installs, ESM imports and actual Node CLI behavior |
 | `packages/*/evals/routing.json` | Structure and coverage of the routing prompt sets: every skill carries at least five cases and names at least one skill that must not load. Structure only, never a pass rate |
@@ -46,3 +46,9 @@ See the [9 September evidence record](evaluations/2026-09-09/README.md) for sour
 Thirteen protocol skills now carry direct task triggers, concrete official reads, worked results and version-specific failure handling across lending, LPs, routing, staking, yields, market data and CDP readiness. Broad primitive skills remain available for cross-protocol work; their presence is no longer the only discovery path for a named protocol.
 
 The [forward-check record](evaluations/2026-09-27/README.md) records five independent synthetic requests and their actual responses. Offline helpers cover Aave stress arithmetic, Uniswap ticks, LI.FI settlement classification and DefiLlama filtering. Use `bun run smoke:registry <pack>` after publication to verify the exact public package and every skill resource against source. These checks are distinct from financial execution and from a measured model benchmark.
+
+## Protocol expansion, 2026-10-25
+
+Thirty-two protocol procedures extend the corpus to 81 active skills. Each new skill supplies its own protocol-specific inputs, reads, decision loop, worked synthetic result, failure branches and completion evidence. Supporting official sources carry a review date and ship inside the independently installable skill. A provider directory entry alone is not counted as a protocol workflow.
+
+Routing and behavior fixtures cover each new skill, but fixture validation is not a measured improvement in agent answers. The historical [benchmark](BENCHMARK.md) predates these procedures. Live public-read checks, where performed, establish only the specific reads recorded; no signing, financial execution, paid model calls or wallet provisioning is part of release verification.

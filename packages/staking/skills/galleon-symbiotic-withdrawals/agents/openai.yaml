@@ -1,0 +1,4 @@
+interface:
+  display_name: "Symbiotic vault withdrawals"
+  short_description: "Symbiotic vault withdrawals workflow and evidence"
+  default_prompt: "Use $galleon-symbiotic-withdrawals for the requested protocol task and return the decision, evidence and missing prerequisites."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ondo product access and settlement"
+  short_description: "Ondo product access and settlement workflow and evidence"
+  default_prompt: "Use $galleon-ondo-assets for the requested protocol task and return the decision, evidence and missing prerequisites."

@@ -7,7 +7,14 @@
       "description": "Concrete protocol procedures with executable read recipes and outcome fixtures.",
       "skills": [
         "uniswap-swap",
-        "lifi-cross-chain"
+        "lifi-cross-chain",
+        "zerox-swap",
+        "oneinch-swap",
+        "cow-order",
+        "jupiter-swap",
+        "relay-bridge",
+        "across-bridge",
+        "circle-cctp"
       ]
     },
     {

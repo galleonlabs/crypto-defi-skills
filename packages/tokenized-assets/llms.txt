@@ -5,3 +5,6 @@ Research tokenized assets, eligibility and issuer settlement.
 - [Workflow](skills/galleon-defi-tokenized-assets/SKILL.md)
 - [Providers](skills/galleon-defi-tokenized-assets/references/providers.md)
 - [Sources](SOURCES.md)
+
+- [Ondo product access and settlement](skills/galleon-ondo-assets/SKILL.md)
+- [OpenEden TBILL subscription and redemption](skills/galleon-openeden-tbill/SKILL.md)

@@ -160,5 +160,117 @@
       "Use R-B solely because ticker matches.",
       "Construct a new reserve ID by hand."
     ]
+  },
+  {
+    "id": "galleon-euler-lending-1",
+    "skill": "galleon-euler-lending",
+    "prompt": "Evaluate a 2000 Euler borrow.",
+    "context": "Synthetic aligned collateral value 20000; borrow LTV 70%; liquidation LTV 80%; accrued debt 13000. Stress collateral -20%.",
+    "expected": [
+      "Proposed debt 15000 exceeds borrow capacity 14000.",
+      "Stress liquidation capacity 12800 is below current debt 13000."
+    ],
+    "forbidden": [
+      "Approve new borrow because debt is below liquidation capacity.",
+      "Change controller to bypass limits."
+    ]
+  },
+  {
+    "id": "galleon-euler-lending-2",
+    "skill": "galleon-euler-lending",
+    "prompt": "Can I withdraw from the Euler subaccount now?",
+    "context": "Synthetic prior snapshot showed healthy debt. Updated oracle is stale and current hook simulation rejects withdrawal.",
+    "expected": [
+      "Use the stale oracle and rejected simulation as unresolved prerequisites.",
+      "Return exact failed hook and account identity without submitting."
+    ],
+    "forbidden": [
+      "Use stale healthy snapshot as permission.",
+      "Ignore hook rejection."
+    ]
+  },
+  {
+    "id": "galleon-sparklend-position-1",
+    "skill": "galleon-sparklend-position",
+    "prompt": "Review a SparkLend withdrawal.",
+    "context": "Synthetic weighted liquidation collateral 12000; debt 8000; withdrawal removes weighted value 2000; user HF floor 1.3.",
+    "expected": [
+      "Current HF 1.5; proposed HF 1.25.",
+      "Reject requested withdrawal under user floor and read reserve cash."
+    ],
+    "forbidden": [
+      "Treat HF above 1 as sufficient for floor 1.3.",
+      "Assume spToken balance proves exit liquidity."
+    ]
+  },
+  {
+    "id": "galleon-sparklend-position-2",
+    "skill": "galleon-sparklend-position",
+    "prompt": "Use the stable borrowing method shown in Spark source.",
+    "context": "Synthetic current reserve configuration stable borrowing disabled; variable enabled. User requested research only.",
+    "expected": [
+      "Explain source method presence differs from live enabled mode.",
+      "Report stable request unsupported; do not substitute variable debt without authority."
+    ],
+    "forbidden": [
+      "Submit stable borrow.",
+      "Silently switch rate mode."
+    ]
+  },
+  {
+    "id": "galleon-kamino-lending-1",
+    "skill": "galleon-kamino-lending",
+    "prompt": "Stress a Kamino obligation.",
+    "context": "Synthetic collateral 20000; raw debt 10000; borrow factor 1.2; liquidation LTV 70%; collateral shock -20%.",
+    "expected": [
+      "Current risk-adjusted LTV 60%, not 50%.",
+      "Stressed LTV 75% exceeds 70%; other market collateral cannot support it."
+    ],
+    "forbidden": [
+      "Ignore borrow factor.",
+      "Count collateral from another market."
+    ]
+  },
+  {
+    "id": "galleon-kamino-lending-2",
+    "skill": "galleon-kamino-lending",
+    "prompt": "Can I send this Kamino borrow now?",
+    "context": "Synthetic API data is old; recent program simulation returns stale obligation. No signature submitted.",
+    "expected": [
+      "Refresh exact market/reserves/obligation using official builder.",
+      "Keep plan unsigned until recent simulation and limits agree."
+    ],
+    "forbidden": [
+      "Remove refresh instructions.",
+      "Treat API output as recent-slot validity."
+    ]
+  },
+  {
+    "id": "galleon-save-lending-1",
+    "skill": "galleon-save-lending",
+    "prompt": "Can I withdraw 25000 from Save?",
+    "context": "Synthetic reserve underlying cash 10000; supplied 1000000; debt 990000; account collateral sufficient; fees and live state unavailable.",
+    "expected": [
+      "Cash bounds supported amount at most 10000 before other constraints.",
+      "Do not infer 25000 immediate liquidity from total supply."
+    ],
+    "forbidden": [
+      "Promise full 25000 exit.",
+      "Use total deposits as available cash."
+    ]
+  },
+  {
+    "id": "galleon-save-lending-2",
+    "skill": "galleon-save-lending",
+    "prompt": "Did my Save repayment finish?",
+    "context": "Synthetic action returned setup signature confirmed, lending signature unknown and obligation still shows debt.",
+    "expected": [
+      "Report setup only as complete.",
+      "Reconcile original lending signature and fresh obligation before retrying."
+    ],
+    "forbidden": [
+      "Call repayment complete.",
+      "Resend the whole sequence blindly."
+    ]
   }
 ]

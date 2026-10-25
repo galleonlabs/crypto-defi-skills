@@ -130,5 +130,285 @@
       "uniswap-swap"
     ],
     "reason": "Refund chain, asset, recipient and net amount are a distinct LI.FI terminal outcome."
+  },
+  {
+    "prompt": "Quote a 0x v2 swap and distinguish AllowanceHolder spender from Settler target.",
+    "expected": "zerox-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "0x says simulationIncomplete; can I call this swap ready?",
+    "expected": "zerox-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Inspect this 0x Permit2 payload without signing it.",
+    "expected": "zerox-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "My 0x swap hash is pending after a timeout. Resolve it before resubmission.",
+    "expected": "zerox-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "0x firm quote changed after approval; identify which terms need rebuilding.",
+    "expected": "zerox-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Build an unsigned 1inch Classic v6.1 swap and check its spender.",
+    "expected": "oneinch-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "The 1inch Fusion order is accepted with no fills. Is it settled?",
+    "expected": "oneinch-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Explain the unit for 1inch Classic slippage 0.5.",
+    "expected": "oneinch-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "1inch protected quote is 401 but docs MCP works. Diagnose access.",
+    "expected": "oneinch-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "After a 1inch swap timeout, check the original receipt and recipient balances.",
+    "expected": "oneinch-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Get a CoW quote without a signer and show exact sell fee treatment.",
+    "expected": "cow-order",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "CoW returned an order UID. Prove whether any trade filled.",
+    "expected": "cow-order",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "My partially fillable CoW order sold 400 of 1000 USDC; calculate remaining intent.",
+    "expected": "cow-order",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "CoW cancellation raced a solver fill. Reconcile final state.",
+    "expected": "cow-order",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Inspect CoW appData hooks and the order receiver before signing.",
+    "expected": "cow-order",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Get a keyless Jupiter v2 quote without a taker wallet.",
+    "expected": "jupiter-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Can I modify the assembled Jupiter order transaction before execute?",
+    "expected": "jupiter-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Jupiter returned a signature but USDC balance did not change. Resolve it.",
+    "expected": "jupiter-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Inspect Jupiter SPL token destinations and lookup tables before unsigned handoff.",
+    "expected": "jupiter-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Jupiter blockhash expired after a timeout. Check the original signature first.",
+    "expected": "jupiter-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Prepare an unsigned Relay quote v2 and inspect every step.",
+    "expected": "relay-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Relay source confirmed but status delayed; should I deposit again?",
+    "expected": "relay-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Reconcile Relay refunded amount to the correct origin owner.",
+    "expected": "relay-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Relay destination submitted is not mined; explain the remaining evidence.",
+    "expected": "relay-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Relay quote changed recipient; rebuild bound signature and transaction steps.",
+    "expected": "relay-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Quote Across minOutput for 1000 destination USDC with a strict input budget.",
+    "expected": "across-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Across filled but the embedded vault action failed; reconcile fallback assets.",
+    "expected": "across-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Across quote API requires a key although old examples were keyless. Diagnose.",
+    "expected": "across-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Inspect Across refundOnOrigin and refund recipient before an unsigned route.",
+    "expected": "across-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "A sweep has several Across deposits. Identify my specific beneficiary result.",
+    "expected": "across-bridge",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "CCTP burn succeeded but destination mint failed; recover the original message.",
+    "expected": "circle-cctp",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Explain why Circle CCTP sourceDomain differs from chainId.",
+    "expected": "circle-cctp",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Track several CCTP messages from one source transaction to the correct recipient.",
+    "expected": "circle-cctp",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "CCTP attestation is pending finality. Is source success enough?",
+    "expected": "circle-cctp",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "CCTP message is already consumed; find the original mint before retrying.",
+    "expected": "circle-cctp",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
   }
 ]

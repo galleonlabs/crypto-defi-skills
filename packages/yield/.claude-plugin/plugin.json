@@ -1,7 +1,6 @@
 {
   "name": "galleon-defi-yield-skills",
-  "displayName": "Galleon DeFi Yield",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Evaluate vaults and yield tokens, including liquidity and maturity.",
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/yield#readme",
   "license": "MIT",
@@ -18,6 +17,7 @@
     "name": "Galleon Labs"
   },
   "repository": "https://github.com/galleonlabs/crypto-defi-skills",
+  "displayName": "Galleon DeFi Yield",
   "documentationUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/packages/yield/README.md",
   "supportUrl": "https://github.com/galleonlabs/crypto-defi-skills/issues",
   "privacyPolicyUrl": "https://github.com/galleonlabs/crypto-defi-skills/blob/main/PRIVACY.md",

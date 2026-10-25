@@ -1,0 +1,6 @@
+interface:
+  display_name: "Snapshot proposal"
+  short_description: "Snapshot proposal workflow and evidence"
+  default_prompt: "Use $snapshot-proposal for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true

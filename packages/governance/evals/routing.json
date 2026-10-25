@@ -51,5 +51,125 @@
       "galleon-defi-data"
     ],
     "reason": "Reading the governor clock mode into a real deadline is governance mechanics."
+  },
+  {
+    "prompt": "Research a Snapshot proposal without voting or creating an alias.",
+    "expected": "snapshot-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "My token balance changed after Snapshot block. What voting power counts?",
+    "expected": "snapshot-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Snapshot proposal passed; has the treasury transaction executed?",
+    "expected": "snapshot-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Distinguish Snapshot X onchain execution from classic offchain voting.",
+    "expected": "snapshot-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Snapshot MCP says 401; use existing public reads without granting wallet authority.",
+    "expected": "snapshot-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Review this Cactus-listed Governor proposal and decode every target call.",
+    "expected": "governor-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Governor CLOCK_MODE uses timestamp. Interpret its voting deadline correctly.",
+    "expected": "governor-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "A Governor proposal succeeded but Timelock delay remains. Is it executable?",
+    "expected": "governor-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Governor source execution completed; check destination cross-chain effect.",
+    "expected": "governor-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "My queue call timed out. Reconcile original proposal and operation identity.",
+    "expected": "governor-proposal",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Review a Safe transaction hash and decode its MultiSend calls without signing.",
+    "expected": "safe-transaction",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Safe has 2-of-3 signatures at nonce 8 but current nonce 7. Is it ready?",
+    "expected": "safe-transaction",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Outer Safe execution receipt succeeded but ExecutionFailure emitted. Reconcile it.",
+    "expected": "safe-transaction",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Check Safe modules and guard before a treasury action review.",
+    "expected": "safe-transaction",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Safe service post timed out; resolve original Safe hash and nonce before retrying.",
+    "expected": "safe-transaction",
+    "mustNotInvoke": [
+      "galleon-defi-governance"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
   }
 ]

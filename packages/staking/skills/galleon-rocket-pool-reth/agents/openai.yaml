@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rocket Pool rETH entry and exit"
+  short_description: "Rocket Pool rETH entry and exit workflow and evidence"
+  default_prompt: "Use $galleon-rocket-pool-reth for the requested protocol task and return the decision, evidence and missing prerequisites."

@@ -1,6 +1,6 @@
 # Agent index
 
-Route the user’s task to one primary skill, then load its conditional resources as needed. This index covers **17 packs, 49 active skills and 2 retired LP compatibility notices**. The broad primitive workflows and named protocol procedures serve different triggers; installing the collection is optional.
+Route the user’s task to one primary skill, then load its conditional resources as needed. This index covers **17 packs, 81 active skills and 2 retired LP compatibility notices**. The broad primitive workflows and named protocol procedures serve different triggers; installing the collection is optional.
 
 [Human getting-started guide](GETTING-STARTED.md) · [Exact release table](../README.md#independent-packs) · [Repository contributor instructions](../AGENTS.md)
 
@@ -58,11 +58,15 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 
 | Skill | Use when | Routing / authority boundary |
 | --- | --- | --- |
-| [`galleon-defi-lending`](../packages/lending/skills/galleon-defi-lending/SKILL.md) | Compare or plan lending across supported protocols | Broad lending workflow; use the exact Aave/Morpho/Compound procedure when it fits |
+| [`galleon-defi-lending`](../packages/lending/skills/galleon-defi-lending/SKILL.md) | Compare or plan lending across supported protocols | Cross-protocol comparison; prefer the exact named protocol procedure when it fits |
 | [`galleon-aave-position`](../packages/lending/skills/galleon-aave-position/SKILL.md) | Read and stress-test Aave V3 positions | V3 reserves, debt and health; keep V4 selectors and operations separate |
 | [`galleon-aave-v4`](../packages/lending/skills/galleon-aave-v4/SKILL.md) | Inspect Aave V4 Hub/Spoke positions and preview actions | V4 exact owned-position reserve IDs for exits, builder operations and receipt corroboration |
 | [`galleon-morpho-market`](../packages/lending/skills/galleon-morpho-market/SKILL.md) | Inspect Morpho markets, vaults and exit/allocation limits | Resolve market/vault identity, oracle, IRM, LLTV and current liquidity |
 | [`galleon-compound-borrow`](../packages/lending/skills/galleon-compound-borrow/SKILL.md) | Assess Compound III borrow or repay capacity | Base debt and collateral limits; Compound III accounting, not a generic V2 calculation |
+| [`galleon-euler-lending`](../packages/lending/skills/galleon-euler-lending/SKILL.md) | Inspect Euler collateral, debt and account liquidity | Vault and account health, collateral eligibility, oracle/LLTV, borrow liquidity and an unsigned next step. |
+| [`galleon-sparklend-position`](../packages/lending/skills/galleon-sparklend-position/SKILL.md) | Inspect a SparkLend position and reserve limits | SparkLend collateral/debt, health factor, reserve limits and current liquidity, distinct from Spark savings and Morpho vaults. |
+| [`galleon-kamino-lending`](../packages/lending/skills/galleon-kamino-lending/SKILL.md) | Inspect a Kamino lending obligation | Obligation collateral/debt, reserve and oracle freshness, liquidation limits and a bounded unsigned plan. |
+| [`galleon-save-lending`](../packages/lending/skills/galleon-save-lending/SKILL.md) | Inspect a Save or legacy Solend lending position | Deployment status, obligation health, reserve liquidity and supported next step with unavailable or legacy state explicit. |
 
 ### Liquidity
 
@@ -78,6 +82,10 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | [`lp-engineer`](../packages/lp/skills/lp-engineer/SKILL.md) | Build or review LP integrations, math, keepers and accounting | Software engineering; separate from a user’s investment choice or wallet action |
 | [`uniswap-v3-liquidity`](../packages/lp/skills/uniswap-v3-liquidity/SKILL.md) | Inspect or manage a Uniswap V3 NFT position | V3 manager calls, tick/fee/inventory accounting; v4 and gauge custody are separate |
 | [`aerodrome-slipstream`](../packages/lp/skills/aerodrome-slipstream/SKILL.md) | Inspect or manage Slipstream NFTs and gauge rewards | Base deployment, gauge custody, fees versus emissions and exit constraints |
+| [`curve-liquidity`](../packages/lp/skills/curve-liquidity/SKILL.md) | Inspect Curve pool accounting and an LP exit | Pool/coin identity, balances, gauge custody, expected withdrawal amounts and an unsigned exit plan. |
+| [`balancer-liquidity`](../packages/lp/skills/balancer-liquidity/SKILL.md) | Inspect Balancer liquidity and pool exit limits | Pool/Vault identity, balances, recovery/paused state and version-specific exit quotation and constraints. |
+| [`revert-position`](../packages/lp/skills/revert-position/SKILL.md) | Inspect a Revert-managed liquidity position | Underlying NFT identity, custody/automation permissions, fee/cost accounting and supported withdrawal evidence. |
+| [`vfat-sickle`](../packages/lp/skills/vfat-sickle/SKILL.md) | Inspect a VFAT Sickle position and exit dependencies | Sickle ownership, strategy approvals, gauge balances, rewards and ordered unsigned exit dependencies. |
 
 ### Staking and restaking
 
@@ -87,6 +95,9 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | --- | --- | --- |
 | [`galleon-defi-staking`](../packages/staking/skills/galleon-defi-staking/SKILL.md) | Plan liquid staking, restaking, wrapping or queued exits | Protocol-specific delegation, custody, queues and claim evidence |
 | [`galleon-lido-withdrawals`](../packages/staking/skills/galleon-lido-withdrawals/SKILL.md) | Request, compare or reconcile Lido stETH/wstETH withdrawals | unstETH ownership, finalization, claimability and actual claimed ETH |
+| [`galleon-rocket-pool-reth`](../packages/staking/skills/galleon-rocket-pool-reth/SKILL.md) | Compare rETH redemption with a market exit | rETH/ETH conversion, available protocol redemption liquidity, market comparison and received-asset evidence requirements. |
+| [`galleon-eigenlayer-restaking`](../packages/staking/skills/galleon-eigenlayer-restaking/SKILL.md) | Inspect delegated restaking and queued withdrawals | Strategy shares, delegation/slashing exposure, withdrawal delay and completion eligibility without assuming a queue is claimable. |
+| [`galleon-symbiotic-withdrawals`](../packages/staking/skills/galleon-symbiotic-withdrawals/SKILL.md) | Track a Symbiotic withdrawal through its epoch | Vault identity, active versus pending balances, epoch eligibility, claim state and returned collateral evidence. |
 
 ### Vaults and yield tokens
 
@@ -97,6 +108,10 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | [`galleon-defi-yield`](../packages/yield/skills/galleon-defi-yield/SKILL.md) | Compare vaults, savings and yield-token strategies | Cross-protocol terms, liquidity, fees and maturity; use exact exit/maturity tasks below |
 | [`galleon-pendle-maturity`](../packages/yield/skills/galleon-pendle-maturity/SKILL.md) | Compare Pendle PT/YT maturity with early exit | V2 lifecycle and underlying accounting; Boros margin belongs in derivatives |
 | [`galleon-vault-exit`](../packages/yield/skills/galleon-vault-exit/SKILL.md) | Check an ERC4626 withdrawal/redemption or asynchronous exit | Block-pinned exit assessment, exact partial previews, controller limits and pending/claimable request coverage |
+| [`galleon-yearn-vault`](../packages/yield/skills/galleon-yearn-vault/SKILL.md) | Inspect a Yearn vault and owner exit limits | Vault identity, share accounting, owner limits, strategy liquidity and loss assumptions with an unsigned exit assessment. |
+| [`galleon-spark-savings`](../packages/yield/skills/galleon-spark-savings/SKILL.md) | Compare Spark or Sky savings conversion and exit | Savings/share conversion, rate assumptions, owner limits, liquidity and the product-specific exit route. |
+| [`galleon-euler-earn`](../packages/yield/skills/galleon-euler-earn/SKILL.md) | Inspect EulerEarn allocation and withdrawal capacity | Allocator/strategy exposure, fees, share conversion and available owner exit capacity with unresolved liquidity explicit. |
+| [`galleon-ethena-susde`](../packages/yield/skills/galleon-ethena-susde/SKILL.md) | Check sUSDe cooldown and unstaking eligibility | Current cooldown configuration, owner withdrawal state, share conversion and the supported USDe claim path. |
 
 ### Swaps and bridges
 
@@ -107,6 +122,13 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | [`galleon-defi-routing`](../packages/routing/skills/galleon-defi-routing/SKILL.md) | Compare swaps/bridges and prepare or recover route handoffs | Quotes, exact units, dependencies, destination delivery and refunds |
 | [`uniswap-swap`](../packages/routing/skills/uniswap-swap/SKILL.md) | Quote or prepare a Uniswap swap and reconcile submitted routes | Trading API route type, Permit2/approval identity, expiry and route-specific lifecycle |
 | [`lifi-cross-chain`](../packages/routing/skills/lifi-cross-chain/SKILL.md) | Compare LI.FI routes or reconcile a transfer’s arrival/refund | Actual destination token, amount and recipient; source confirmation alone is incomplete |
+| [`zerox-swap`](../packages/routing/skills/zerox-swap/SKILL.md) | Review a 0x quote and exact allowance target | Quote identity, fees, AllowanceHolder/Permit2 target, simulation caveats and an unsigned swap review. |
+| [`oneinch-swap`](../packages/routing/skills/oneinch-swap/SKILL.md) | Review a 1inch swap quote and execution mode | Route type, allowances, fees, recipient, minimum output and mode-specific fulfillment evidence. |
+| [`cow-order`](../packages/routing/skills/cow-order/SKILL.md) | Review a CoW order and settlement evidence | Auction/order identity, signed terms, fees, fill state and actual received assets with cancellation/expiry limits. |
+| [`jupiter-swap`](../packages/routing/skills/jupiter-swap/SKILL.md) | Review a Jupiter Swap v2 route | Quote route, fees, executable-versus-quote-only status and Solana transaction validity and settlement checks. |
+| [`relay-bridge`](../packages/routing/skills/relay-bridge/SKILL.md) | Reconcile a Relay cross-chain route | Quote/step identity, outstanding dependencies, destination delivery and unresolved or refundable state. |
+| [`across-bridge`](../packages/routing/skills/across-bridge/SKILL.md) | Review an Across route and destination fill | Quote fees/limits, deposit identity, fill deadline and actual destination token/recipient/amount or refund status. |
+| [`circle-cctp`](../packages/routing/skills/circle-cctp/SKILL.md) | Track a CCTP message through attestation and mint | Burn/message identity, attestation/finality state, destination nonce consumption and actual USDC mint evidence. |
 
 ### Payments and streams
 
@@ -159,6 +181,11 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | Skill | Use when | Routing / authority boundary |
 | --- | --- | --- |
 | [`galleon-defi-derivatives`](../packages/derivatives/skills/galleon-defi-derivatives/SKILL.md) | Inspect derivatives positions or plan/reconcile venue actions | GMX, Derive, Velocity (formerly Drift) and Boros lifecycle/margin/funding; preserve venue-specific mechanics |
+| [`gmx-position`](../packages/derivatives/skills/gmx-position/SKILL.md) | Inspect GMX V2 positions and pending requests | Collateral/margin, funding/borrowing costs, keeper request state and executed/cancelled outcome evidence. |
+| [`derive-options`](../packages/derivatives/skills/derive-options/SKILL.md) | Review Derive options risk and margin | Contract unit/payoff, portfolio margin, collateral, expiry/settlement terms and order/fill evidence requirements. |
+| [`velocity-position`](../packages/derivatives/skills/velocity-position/SKILL.md) | Check Velocity or legacy Drift position support | Current service status, supported account reads, position/margin evidence and explicit unsupported or legacy boundaries. |
+| [`pendle-boros`](../packages/derivatives/skills/pendle-boros/SKILL.md) | Inspect Boros margin and rate exposure | Implied-versus-realized rate exposure, margin, accrued funding and liquidation/settlement constraints. |
+| [`jupiter-perps`](../packages/derivatives/skills/jupiter-perps/SKILL.md) | Inspect a Jupiter Perps position and exit request | Position leverage, liquidation/fee assumptions, custody liquidity and request/settlement state. |
 
 ### Tokenized assets
 
@@ -167,6 +194,8 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | Skill | Use when | Routing / authority boundary |
 | --- | --- | --- |
 | [`galleon-defi-tokenized-assets`](../packages/tokenized-assets/skills/galleon-defi-tokenized-assets/SKILL.md) | Research tokenized Treasury/security access and redemption | Eligibility, issuer/custody risk, subscription restrictions and settlement evidence |
+| [`galleon-ondo-assets`](../packages/tokenized-assets/skills/galleon-ondo-assets/SKILL.md) | Review an Ondo product's eligibility and settlement | Product-specific eligibility, transfer restrictions, issuer/custody risk and supported subscription/redemption evidence. |
+| [`galleon-openeden-tbill`](../packages/tokenized-assets/skills/galleon-openeden-tbill/SKILL.md) | Inspect TBILL eligibility and redemption terms | Investor restrictions, vault/share accounting, NAV timing and subscription/redemption settlement conditions. |
 
 ### Governance
 
@@ -175,6 +204,9 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | Skill | Use when | Routing / authority boundary |
 | --- | --- | --- |
 | [`galleon-defi-governance`](../packages/governance/skills/galleon-defi-governance/SKILL.md) | Research proposals, prepare votes or reconcile execution | Snapshot/Governor/Cactus/Safe mechanics; voting and permission changes need their own authority |
+| [`snapshot-proposal`](../packages/governance/skills/snapshot-proposal/SKILL.md) | Review Snapshot proposal rules and voting evidence | Proposal identity, snapshot block, strategies, choice encoding, vote validity and execution-module boundaries. |
+| [`governor-proposal`](../packages/governance/skills/governor-proposal/SKILL.md) | Inspect a Governor proposal and timelock state | Proposal state, clock/quorum, exact operation hash, timelock readiness and execution receipt/state evidence. |
+| [`safe-transaction`](../packages/governance/skills/safe-transaction/SKILL.md) | Review a Safe transaction and confirmation state | Decoded effects, owner threshold, confirmations, nonce, modules/guards and executed transaction/state evidence. |
 
 ### Hyperliquid
 

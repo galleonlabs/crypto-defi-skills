@@ -1,0 +1,6 @@
+interface:
+  display_name: "Governor proposal"
+  short_description: "Governor proposal workflow and evidence"
+  default_prompt: "Use $governor-proposal for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true
