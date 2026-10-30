@@ -36,7 +36,11 @@ jobs:
         with:
           bun-version: 1.3.14
       - run: bun install --frozen-lockfile
+      # Workspace validation plus the release, validation-boundary and security
+      # test subset in scripts/workspaces.ts; `bun run test` is the optional full suite.
       - run: bun run check
+      # Offline routing and behavior fixture contracts; no model or credentials.
+      - run: bun run evals
       # Smoke packs every workspace and checks the installed tarballs; a separate
       # dry-run pack repeats the same npm packaging pass without extra coverage.
       - run: bun run smoke

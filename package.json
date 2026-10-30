@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "check": "bun scripts/workspaces.ts check",
-    "test": "bun test ./test ./scripts/content-pack/validation.test.ts",
+    "test": "bun scripts/workspaces.ts test",
+    "evals": "bun scripts/workspaces.ts evals",
     "pack": "bun scripts/workspaces.ts pack",
     "link-health": "bun scripts/link-health.ts",
     "release-drift": "bun scripts/release-drift.ts",
