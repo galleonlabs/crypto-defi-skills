@@ -25,7 +25,8 @@ Package names and current versions come from each `packages/<pack>/package.json`
 - Prefer maintained official tools to copied runtimes or custom protocol adapters.
 - Skills are procedures, not permission to sign, trade, transfer, or expose credentials.
 - Preserve existing package names, CLI names, and persisted consumer contracts.
-- Run `bun run check` and `bun run pack`; after skill edits also run `validate-agent-skills packages/<pack>/skills`.
+- Run `bun run check`, `bun run evals`, `bun run smoke` and `bun run pack`; after skill edits also run `validate-agent-skills packages/<pack>/skills`.
+- Cover new behavior with the smoke journey, a CLI or fixture contract, or an eval case, not a new unit test. Only release-integrity, validation-boundary and security tests join the required `gateTests` in `scripts/workspaces.ts`; `bun run test` is the optional full suite.
 - New packs must supply package metadata, a self-contained skills directory, plugin manifests, and a check script. Register them in the root marketplace and skill discovery grouping.
 - Release one pack at a time from a clean commit using `RELEASING.md`.
 
