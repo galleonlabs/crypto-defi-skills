@@ -47,19 +47,17 @@ export function capture(command: string, args: string[], cwd: string): string {
   return result.stdout.trim();
 }
 
-export function preflight(root: string, name: string, version: string): { revision: string; release: string } {
+export function preflight(root: string, name: string, version: string, { allowExisting = false } = {}): { revision: string; release: string; exists: boolean } {
   if (capture("git", ["status", "--porcelain"], root)) throw new Error("Release requires a clean Git checkout");
   const revision = capture("git", ["rev-parse", "HEAD"], root);
   const release = `${name}@${version}`;
-  capture("npm", ["whoami", "--registry=https://registry.npmjs.org"], root);
   requireSuccessfulRun(JSON.parse(capture("gh", ["run", "list", "--workflow", "ci.yml", "--commit", revision, "--limit", "10", "--json", "headSha,status,conclusion"], root)), revision);
   requireSuccessfulRun(JSON.parse(capture("gh", ["run", "list", "--workflow", "discovery.yml", "--commit", revision, "--limit", "10", "--json", "headSha,status,conclusion"], root)), revision);
   requireDiscovery(JSON.parse(capture("gh", ["release", "view", `agent-skills-${revision}`, "--json", "isDraft,tagName,assets"], root)), revision);
   requireDiscoveryTag(capture("git", ["ls-remote", "--tags", "origin", `refs/tags/agent-skills-${revision}`, `refs/tags/agent-skills-${revision}^{}`], root), revision);
   const lookup = spawnSync("npm", ["view", release, "version", "--json", "--registry=https://registry.npmjs.org"], { cwd: root, encoding: "utf8", timeout: 120_000 });
   if (lookup.error) throw new Error("Registry version lookup failed; check network access");
-  if (classifyRegistryLookup(lookup.status ?? 1, lookup.stdout, lookup.stderr) === "available") {
-    throw new Error(`${release} already exists; verify it instead of republishing`);
-  }
-  return { revision, release };
+  const exists = classifyRegistryLookup(lookup.status ?? 1, lookup.stdout, lookup.stderr) === "available";
+  if (exists && !allowExisting) throw new Error(`${release} already exists; verify it instead of republishing`);
+  return { revision, release, exists };
 }
