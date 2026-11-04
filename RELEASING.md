@@ -3,7 +3,24 @@
 1. Update the selected package version in `package.json`, both plugin manifests, CLI version (content-only CLIs read the manifest), every skill's metadata, and its changelog. Other packages retain their versions.
 2. Run `bun install`, `bun run check`, `bun run pack`, and `validate-agent-skills packages/<pack>/skills` when skills changed.
 3. Commit and push the source. Wait for CI and the discovery artifact release for that exact commit.
-4. In a clean checkout with npm publishing access and authenticated `gh`, run `bun run release lp` or `bun run release lending` (any package directory is supported). The command requires successful CI and a published discovery index for that exact commit, checks registry authentication and refuses an existing version, then validates and publishes only the selected package to the public npm registry. Use `bun run release <pack> --preflight` to check readiness without publishing. Never print or commit registry credentials.
+4. Publish through the `publish.yml` workflow, which authenticates with npm trusted publishing; no npm token is involved. It only runs from `main`, on the exact commit from step 3. Check first with the default dry run, then publish:
+
+   ```bash
+   gh workflow run publish.yml -R galleonlabs/crypto-defi-skills -f pack=lp
+   gh workflow run publish.yml -R galleonlabs/crypto-defi-skills -f pack=lp -f dry_run=false
+   ```
+
+   The workflow requires successful CI and a published discovery index for that exact commit, refuses an existing version, then validates and publishes only the selected package with provenance. `bun run release <pack> --preflight` checks the same gates from a clean checkout and never publishes. `bun run release` refuses to publish outside the workflow.
+
+   **First release of each pack:** the owner creates its trusted publisher with 2FA, then the release must follow within 2 days, because npm expires a configuration that has not completed a publish by then. So create it just before the release rather than for every pack at once. A 2FA-bypass token cannot do this. From the home directory, not the personal workspace, whose `.npmrc` would override the login:
+
+   ```bash
+   U=$(mktemp); npm login --userconfig "$U" --auth-type=web && npm trust github <npm-name> --userconfig "$U" --repo galleonlabs/crypto-defi-skills --file publish.yml --env npm-release --allow-publish --yes; rm -f "$U"
+   ```
+
+   Once a pack's first trusted publish has landed, set its npm **Settings → Publishing access** to "Require two-factor authentication and disallow tokens".
+
+   If Actions is unavailable, stage from a clean dappnode checkout with `npx -y npm@11.21.1 stage publish --access public --ignore-scripts` in the package directory; it goes live only when the owner approves it with 2FA on npmjs.com. npm removes direct publishing by 2FA-bypass tokens around January 2027.
 5. Independently verify `npm view <name>@<version> repository dist` and install that exact version into a clean consumer project. Check CLI version (content-only CLIs read the manifest), catalog, validation, and the expected skills and references.
    Run `bun run smoke:registry <package-directory>` to check the public registry metadata, install the exact version without lifecycle scripts, verify the Node CLI and exports, and compare every published skill resource byte-for-byte with this checkout. Omit the directory arguments to check all packs. This explicit release check accesses the network; ordinary tests do not.
 6. Tag the published commit as `<npm-name>@<version>` and create a GitHub release from the package changelog. Use package-qualified tags, not a shared `v<version>`.
