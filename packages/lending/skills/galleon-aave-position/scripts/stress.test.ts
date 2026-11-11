@@ -1,4 +1,7 @@
 import { describe, expect, test } from "bun:test";
+import { mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { stress, type Scenario } from "./stress";
 const fixture: Scenario = {
   collateralBase: "10000000000", debtBase: "4000000000", extraDebtBase: "1000000000",
@@ -55,6 +58,16 @@ describe("stress command", () => {
       expect(result.stderr.toString()).toContain("Usage:");
       expect(result.stderr.toString()).not.toContain("ENOENT");
     }
+  });
+  test("malformed scenario JSON is not echoed", async () => {
+    const directory = mkdtempSync(join(tmpdir(), "aave-stress-"));
+    const file = join(directory, "scenario.json");
+    await Bun.write(file, "sensitiveScenarioSecret");
+    const result = run(file);
+    expect(result.exitCode).toBe(1);
+    const output = result.stdout.toString() + result.stderr.toString();
+    expect(output).not.toContain("sensitive");
+    expect(result.stderr.toString()).toContain("stress: invalid JSON input");
   });
   test("unreadable file reports one concise error", () => {
     const result = run("/missing/aave-scenario.json");

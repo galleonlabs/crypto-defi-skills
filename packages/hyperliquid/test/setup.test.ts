@@ -4,7 +4,7 @@ import { tmpdir } from "node:os";
 import { resolve, join } from "node:path";
 // Standalone JavaScript is intentionally dependency-free for installed Agent Skills.
 // @ts-expect-error portable script has no separate declaration file
-import { summarize } from "../skills/hyperliquid-setup/scripts/market-snapshot.mjs";
+import { decodeInfoBody, summarize } from "../skills/hyperliquid-setup/scripts/market-snapshot.mjs";
 import fixture from "./fixtures/market.json";
 
 const root = resolve(import.meta.dirname, "..");
@@ -15,6 +15,15 @@ test("snapshot distinguishes fixture provenance and checks current live book tim
   expect(result.markPrice).toBe(3000.1);
   expect(() => summarize(fixture.metaAndAssetCtxs, fixture.l2Book, "ETH", "live", fixture.l2Book.time + 61000)).toThrow();
   expect(summarize(fixture.metaAndAssetCtxs, fixture.l2Book, "ETH", "live", fixture.l2Book.time + 1000).book.ageMs).toBe(1000);
+});
+test("info body keeps characters split across response chunks", () => {
+  const text = '{"coin":"ETH","note":"café"}';
+  const bytes = new TextEncoder().encode(text);
+  const splitAt = bytes.findIndex((byte, index) => index > 0 && byte >= 0x80);
+  expect(splitAt).toBeGreaterThan(0);
+  const chunks = [bytes.slice(0, splitAt), bytes.slice(splitAt, splitAt + 1), bytes.slice(splitAt + 1)];
+  expect(decodeInfoBody(chunks)).toBe(text);
+  expect(() => decodeInfoBody([new Uint8Array(2_000_001)])).toThrow("size limit");
 });
 test("malformed, wrong-market, empty and crossed responses fail closed", () => {
   for (const change of [
