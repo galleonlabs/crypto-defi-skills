@@ -29,11 +29,11 @@ Primary-source review: **2026-09-05**. Interfaces below are documented by their 
 
 [Unstake and Withdraw - Eigen Labs](https://docs.eigencloud.xyz/eigenlayer/restakers/restaking-guides/restaking-user-guide/liquid-restaking/withdraw-from-eigenlayer) distinguishes queueing/escrow from final transfer. [Withdrawal Delay - Eigen Labs](https://docs.eigencloud.xyz/eigenlayer/security/withdrawal-delay) documents pause/upgrade and escrow boundaries. Official historical sources have used different delays and an escrow link resolved to a testnet page in this review. Read current deployed delay and request eligibility rather than embedding 7, 14 or 17.5 days as a universal rule.
 
-[Slashing for stakers - Eigen Labs](https://blog.eigencloud.xyz/intro-to-slashing-on-eigenlayer-stakers-edition/) explains operator allocations and slashable operator sets. Monitor allocation changes and current safety-delay parameters; a new deposit may join existing exposure. Native restaking includes validator exits, proof/checkpoint steps and EigenPod withdrawal credentials, which are outside ordinary LST-only consent.
+[Slashing for stakers - Eigen Labs](https://www.eigenlabs.org/blog/intro-to-slashing-on-eigenlayer-stakers-edition/) explains operator allocations and slashable operator sets. Monitor allocation changes and current safety-delay parameters; a new deposit may join existing exposure. Native restaking includes validator exits, proof/checkpoint steps and EigenPod withdrawal credentials, which are outside ordinary LST-only consent.
 
 ## Symbiotic
 
-[Accounting - Symbiotic](https://docs.symbiotic.fi/modules/vault/accounting) describes active balances, queued withdrawals, curator management and optional deposit access controls. Total slashable balance, active stake and claimable withdrawals are different quantities.
+[Accounting - Symbiotic](https://docs.symbiotic.fi/learn/core-concepts/vault#accounting-and-epochs) describes active balances, queued withdrawals, curator management and optional deposit access controls. Total slashable balance, active stake and claimable withdrawals are different quantities.
 
 [Epochs and Delays - Symbiotic](https://docs.symbiotic.fi/learn/mechanics/epochs-and-delays): request in epoch `k` becomes claimable after epoch `k+1` ends, producing a delay in `[E, 2E)`. Queued funds remain slashable until that boundary. Read the vault's actual epoch duration and state, including later configuration changes; don't promise one epoch from request time.
 

@@ -26,9 +26,9 @@ Prepared operations include approvals in their transaction array. Review outcome
 
 ## Compound III
 
-[Collateral & Borrowing - Compound](https://docs.compound.finance/collateral-and-borrowing/) distinguishes the single market base token from collateral. Positive base supply earns interest; collateral does not. `supply` may repay a borrow, while `withdraw` may create one. Check the signed base balance, `baseBorrowMin`, caps, recipient and manager permissions before planning either operation.
+[Collateral & Borrowing - Compound](https://docs.compound.xyz/collateral-and-borrowing/) distinguishes the single market base token from collateral. Positive base supply earns interest; collateral does not. `supply` may repay a borrow, while `withdraw` may create one. Check the signed base balance, `baseBorrowMin`, caps, recipient and manager permissions before planning either operation.
 
-[Liquidation - Compound](https://docs.compound.finance/liquidation/) uses separate borrow and liquidation collateral factors. `absorb` moves the account's debt/collateral to the protocol; buying protocol collateral is a separate reserves-dependent action. Do not model Comet as V2 repay-and-seize. No official agent MCP was established in this review; use official contract interfaces, not an unverified community server.
+[Liquidation - Compound](https://docs.compound.xyz/liquidation/) uses separate borrow and liquidation collateral factors. `absorb` moves the account's debt/collateral to the protocol; buying protocol collateral is a separate reserves-dependent action. Do not model Comet as V2 repay-and-seize. No official agent MCP was established in this review; use official contract interfaces, not an unverified community server.
 
 ## Euler
 

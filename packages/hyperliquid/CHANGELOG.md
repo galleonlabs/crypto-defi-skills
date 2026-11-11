@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4 - 2026-11-12
+
+- Point the Minara source pin at the renamed minara-skills repository.
+
 ## 0.4.3 - 2026-11-12
 
 - Floor eight-decimal risk size by integer steps so the printed size cannot exceed the raw size or the risk budget.

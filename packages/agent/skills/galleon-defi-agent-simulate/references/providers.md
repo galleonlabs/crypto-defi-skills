@@ -6,7 +6,7 @@ Reviewed 2026-10-08; provider documentation, entitlement and observed execution 
 
 [Quickstart](https://docs.tenderly.co/ai-tools/quickstart) documents remote MCP at `https://mcp.tenderly.co/mcp`, OAuth and selected project context. A 403 may mean the plan excludes MCP access; authentication success does not remove that restriction. Inspect current tool schemas and project/network before simulation. The server also offers infrastructure changes, so expose only selected operations for this task.
 
-[Simulation documentation](https://docs.tenderly.co/simulations-and-forks) distinguishes simulated execution from virtual environments and forks. Preserve the actual chain/block, sender, full payload and overrides. Resolve an active virtual environment explicitly instead of accepting whichever context a previous session left selected. Trace/event truncation means missing evidence: request targeted detail or report the omitted coverage.
+[Simulation documentation](https://docs.tenderly.co/simulations/overview) covers single and bundled transaction simulation, including state overrides, in a virtual replica of the chain. It does not document forks. Preserve the actual chain/block, sender, full payload and overrides. Resolve an active virtual environment explicitly instead of accepting whichever context a previous session left selected. Trace/event truncation means missing evidence: request targeted detail or report the omitted coverage.
 
 ## Alchemy: deprecated API and unverified CLI capability
 
@@ -24,6 +24,6 @@ Any independently verified replacement still needs single-versus-stateful-bundle
 
 ## Existing RPC and forks
 
-[`eth_call` and chain reads](https://ethereum.org/en/developers/docs/apis/json-rpc/) can establish bounded execution at a chosen block but do not supply all decoded state changes. An omitted field or empty result is not proof that no authority changed. Record provider limitations explicitly. A local or hosted fork shares neither the real chain's future block production nor a bridge solver's destination execution.
+[`eth_call` and chain reads](https://ethereum.org/developers/docs/apis/json-rpc/) can establish bounded execution at a chosen block but do not supply all decoded state changes. An omitted field or empty result is not proof that no authority changed. Record provider limitations explicitly. A local or hosted fork shares neither the real chain's future block production nor a bridge solver's destination execution.
 
 No integration runtime is bundled here. Recheck schemas and supported networks; link documentation when access is missing instead of silently substituting a differently scoped service.

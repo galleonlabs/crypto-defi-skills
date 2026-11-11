@@ -21,8 +21,8 @@ Troubleshooting: `isLiquidatable=false` and `isBorrowCollateralized=false` can b
 
 ## Primary sources checked 2026-09-27
 
-- [Collateral and borrowing](https://docs.compound.finance/collateral-and-borrowing/)
-- [Helper functions](https://docs.compound.finance/helper-functions/)
+- [Collateral and borrowing](https://docs.compound.xyz/collateral-and-borrowing/)
+- [Helper functions](https://docs.compound.xyz/helper-functions/)
 - [Comet specification](https://github.com/compound-finance/comet/blob/main/SPEC.md)
 - [Deployment configurations](https://github.com/compound-finance/comet/tree/main/deployments)
 

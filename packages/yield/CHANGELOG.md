@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2 - 2026-11-11
+
+- Point Ethena staking and mint-order docs at the current technical-design paths.
+
 ## 0.4.1 - 2026-10-25
 
 - Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.
