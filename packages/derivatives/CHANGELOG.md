@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 - 2026-11-04
+
+- Remove the dead link to the legacy Drift account-management guide; the Velocity SDK README in the same entry covers the current program.
+
 ## 0.2.1 - 2026-10-25
 
 - Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.
