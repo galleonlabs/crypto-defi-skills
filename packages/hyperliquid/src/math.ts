@@ -109,7 +109,15 @@ export function roundDown(value: number, decimals: number): number {
     throw new Error("decimals must be an integer between 0 and 18");
   }
   const factor = 10 ** decimals;
-  return Math.floor(value * factor) / factor;
+  // Float multiplication can land above the true product. Flooring that
+  // value can still exceed the input and a risk budget sized from it.
+  let scaled = Math.floor(value * factor);
+  let result = scaled / factor;
+  while (result > value && scaled > 0) {
+    scaled -= 1;
+    result = scaled / factor;
+  }
+  return result;
 }
 
 export function sizeRisk(input: RiskSizingInput): RiskSizingResult {

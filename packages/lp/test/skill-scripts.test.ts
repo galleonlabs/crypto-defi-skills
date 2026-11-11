@@ -36,6 +36,14 @@ test("portable position script keeps the upper tick exclusive", () => {
   expect(output.accounting.lpNetValueUsd).toBe(1000);
 });
 
+test("portable position script does not echo malformed JSON", () => {
+  const script = resolve(import.meta.dirname, "../skills/lp-monitor/scripts/position.mjs");
+  const result = run(script, ["--input", "-"], "sensitive malformed input");
+  expect(result.status).toBe(1);
+  expect(result.stdout + result.stderr).not.toContain("sensitive");
+  expect(result.stdout).toContain("invalid JSON input");
+});
+
 test("portable Uniswap link script builds a reviewable custom-range URL", () => {
   const script = resolve(import.meta.dirname, "../skills/lp-plan/scripts/uniswap-link.mjs");
   const result = run(script, [

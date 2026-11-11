@@ -1,4 +1,7 @@
 import { describe, expect, test } from "bun:test";
+import { mkdtemp, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import {
   collect,
   compare,
@@ -448,5 +451,32 @@ describe("review regression checks", () => {
     expect(stderr).toContain("RPC URL is invalid");
     expect(stdout + stderr).not.toContain(secret);
     expect(stdout + stderr).not.toContain("https://[");
+  });
+  test("malformed report JSON never appears in CLI output", async () => {
+    const secret = "sensitiveReportSecret";
+    const directory = await mkdtemp(join(tmpdir(), "evidence-json-"));
+    const file = join(directory, "report.json");
+    await Bun.write(file, secret);
+    const helper = new URL(
+      "../skills/galleon-defi-security-token-diligence/scripts/evidence.ts",
+      import.meta.url,
+    ).pathname;
+    try {
+      const child = Bun.spawn([process.execPath, helper, "validate", file], {
+        stdout: "pipe",
+        stderr: "pipe",
+      });
+      const [exitCode, stdout, stderr] = await Promise.all([
+        child.exited,
+        new Response(child.stdout).text(),
+        new Response(child.stderr).text(),
+      ]);
+      expect(exitCode).toBe(1);
+      expect(stdout).toBe("");
+      expect(stderr).toBe("Invalid report JSON\n");
+      expect(stdout + stderr).not.toContain(secret);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
   });
 });

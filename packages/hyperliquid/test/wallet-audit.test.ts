@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { cp, mkdtemp, readFile, rm } from "node:fs/promises";
+import { cp, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { tmpdir } from "node:os";
 import { spawnSync } from "node:child_process";
@@ -174,6 +174,18 @@ test("wallet audit works from a copied skill with Node and preserves previous ou
     expect(offline.status).toBe(0); expect(await readFile(join(directory, "offline/report.json"), "utf8")).toBe(report);
     const again = spawnSync("node", [script, "example", "--out", out, "--json"], { encoding: "utf8" });
     expect(again.status).toBe(1); expect(await readFile(join(out, "report.json"), "utf8")).toBe(report);
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
+test("analyze does not echo a malformed capture", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "hl-audit-json-"));
+  try {
+    const input = join(directory, "capture.json");
+    await writeFile(input, "sensitiveWalletCapture");
+    const result = spawnSync("node", [join(root, "skills/hyperliquid-wallet-audit/scripts/wallet-audit.mjs"), "analyze", "--input", input, "--out", join(directory, "out"), "--json"], { encoding: "utf8" });
+    expect(result.status).toBe(1);
+    expect(result.stdout + result.stderr).not.toContain("sensitive");
+    expect(JSON.parse(result.stdout).error.message).toBe("invalid JSON input");
   } finally { await rm(directory, { recursive: true, force: true }); }
 });
 

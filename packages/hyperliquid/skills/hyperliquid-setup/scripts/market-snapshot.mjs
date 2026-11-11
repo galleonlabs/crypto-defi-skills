@@ -38,16 +38,23 @@ export function summarize(metaAndAssetCtxs, book, coin, source, now = Date.now()
     limits: ["Two sequential public reads, not an atomic snapshot", "Book depth is only the returned page", "Funding interval must be verified before normalization", "No account state, trade recommendation, or execution readiness established"],
   };
 }
+export function decodeInfoBody(chunks) {
+  const decoder = new TextDecoder("utf-8", { fatal: true });
+  let text = "", bytes = 0;
+  for (const chunk of chunks) {
+    bytes += chunk.byteLength;
+    if (bytes > 2_000_000) throw new Error("Info response exceeds size limit");
+    text += decoder.decode(chunk, { stream: true });
+  }
+  text += decoder.decode();
+  return text;
+}
 async function request(endpoint, body) {
   const response = await fetch(endpoint, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body), redirect: "error", signal: AbortSignal.timeout(10000) });
   if (!response.ok) throw new Error(`Public info request failed: HTTP ${response.status}`);
-  let text = "", bytes = 0;
-  for await (const chunk of response.body ?? []) {
-    bytes += chunk.byteLength;
-    if (bytes > 2_000_000) throw new Error("Info response exceeds size limit");
-    text += new TextDecoder().decode(chunk, { stream: true });
-  }
-  return JSON.parse(text);
+  const chunks = [];
+  for await (const chunk of response.body ?? []) chunks.push(chunk);
+  return JSON.parse(decodeInfoBody(chunks));
 }
 async function main() {
   const { values } = parseArgs({ options: { coin: { type: "string" }, network: { type: "string", default: "mainnet" }, fixture: { type: "string" }, help: { type: "boolean" } } });

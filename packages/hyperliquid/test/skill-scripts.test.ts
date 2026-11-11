@@ -1,6 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
+import { sizeRisk } from "../src/math.ts";
 
 const root = resolve(import.meta.dirname, "..");
 
@@ -19,6 +20,31 @@ describe("portable skill scripts", () => {
     ]);
     expect(result.size).toBe(0.4827);
     expect(result.stressedRiskUsd as number).toBeLessThanOrEqual(51);
+  });
+
+  test("eight-decimal risk stays inside the budget and matches the package", () => {
+    const equity = "94914791.13476461";
+    const result = run("skills/hyperliquid-plan/scripts/risk.mjs", [
+      "--side", "long", "--equity", equity, "--risk-percent", "100", "--entry", "100", "--stop", "99",
+      "--stop-slippage-bps", "0", "--entry-fee-bps", "0", "--exit-fee-bps", "0", "--size-decimals", "8",
+    ]);
+    const packaged = sizeRisk({
+      side: "long", equityUsd: Number(equity), riskPercent: 100, entryPrice: 100, stopPrice: 99,
+      stopSlippageBps: 0, entryFeeBps: 0, exitFeeBps: 0, sizeDecimals: 8,
+    });
+    expect(result.size).toBe(packaged.size);
+    expect(result.size as number).toBeLessThanOrEqual(result.rawSize as number);
+    expect(result.stressedRiskUsd as number).toBeLessThanOrEqual(result.riskBudgetUsd as number);
+  });
+
+  test("risk rejects a duplicate option before sizing", () => {
+    const result = spawnSync(process.execPath, [
+      resolve(root, "skills/hyperliquid-plan/scripts/risk.mjs"),
+      "--side", "long", "--side", "short",
+    ], { encoding: "utf8" });
+    expect(result.status).not.toBe(0);
+    expect(result.stderr).toContain("duplicate option");
+    expect(result.stdout).toBe("");
   });
 
   test("funding uses the supplied interval", () => {

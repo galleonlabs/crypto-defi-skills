@@ -910,9 +910,15 @@ if (import.meta.main) {
       );
     process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
   } catch (error) {
-    process.stderr.write(
-      `${error instanceof Error ? error.message : "Evidence helper failed"}\n`,
-    );
+    // Parser errors quote file text. Validation messages do not.
+    const message =
+      error instanceof SyntaxError ||
+      (error instanceof Error && error.message.startsWith("JSON Parse error"))
+        ? "Invalid report JSON"
+        : error instanceof Error
+          ? error.message
+          : "Evidence helper failed";
+    process.stderr.write(`${message}\n`);
     process.exitCode = 1;
   }
 }
