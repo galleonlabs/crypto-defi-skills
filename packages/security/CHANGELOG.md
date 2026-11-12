@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.6 - 2026-11-12
+
+- Report malformed token-diligence evidence as `Invalid report JSON` instead of echoing the file text.
+
 ## 0.2.5 - 2026-10-25
 
 - Remove repeated task-routing/persona scaffolding while retaining focused approval and token-control examples and their failure cases.
