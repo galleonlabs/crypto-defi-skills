@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable Agent Skills instructions. Live work needs the selected provider's HTTP, MCP or SDK tools; signing stays in the user's trusted wallet. No provider or runtime is installed by this skill.
 metadata:
   author: Galleon Labs
-  version: "0.4.2"
+  version: "0.4.3"
 ---
 
 # DeFi routing
@@ -76,5 +76,5 @@ For a named protocol task, load its focused skill when installed. Discover it by
 - `cow-order`: comparing a CoW Protocol quote, reviewing a signed-intent boundary, or reconciling order UID, partial fills, expiry and cancellation.
 - `jupiter-swap`: quoting Jupiter Swap v2 on Solana, inspecting immutable order transactions, or reconciling managed execution and token-account deltas.
 - `relay-bridge`: preparing a Relay quote or tracking a cross-chain request through source confirmation, destination execution, delay or refund.
-- `across-bridge`: comparing Across Swap API routes, inspecting exactInput versus minOutput, or reconciling deposit fills, embedded actions and refunds.
+- `across-bridge`: comparing Across API quotes, inspecting exact_input versus min_output, or reconciling transfer status, destination actions and refunds.
 - `circle-cctp`: tracking a Circle CCTP USDC burn, attestation and destination mint, including domain IDs, finality and failed-mint recovery.

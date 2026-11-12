@@ -7,7 +7,7 @@ export const SKILL_CATALOG = [
   {"name": "cow-order", "purpose": "Use when comparing a CoW Protocol quote, reviewing a signed-intent boundary, or reconciling order UID, partial fills, expiry and cancellation."},
   {"name": "jupiter-swap", "purpose": "Use when quoting Jupiter Swap v2 on Solana, inspecting immutable order transactions, or reconciling managed execution and token-account deltas."},
   {"name": "relay-bridge", "purpose": "Use when preparing a Relay quote or tracking a cross-chain request through source confirmation, destination execution, delay or refund."},
-  {"name": "across-bridge", "purpose": "Use when comparing Across Swap API routes, inspecting exactInput versus minOutput, or reconciling deposit fills, embedded actions and refunds."},
+  {"name": "across-bridge", "purpose": "Use when comparing Across API quotes, inspecting exact_input versus min_output, or reconciling transfer status, destination actions and refunds."},
   {"name": "circle-cctp", "purpose": "Use when tracking a Circle CCTP USDC burn, attestation and destination mint, including domain IDs, finality and failed-mint recovery."},
 ] as const;
 export type SkillName = (typeof SKILL_CATALOG)[number]["name"];
