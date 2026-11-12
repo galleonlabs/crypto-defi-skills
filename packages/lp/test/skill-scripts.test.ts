@@ -32,8 +32,76 @@ test("portable position script keeps the upper tick exclusive", () => {
     range: { state: string; inRange: boolean };
     accounting: { lpNetValueUsd: number };
   };
-  expect(output.range).toEqual(expect.objectContaining({ state: "above-range", inRange: false }));
+  expect(output.range).toEqual(expect.objectContaining({ state: "above-range", inRange: false, percentThroughRange: null }));
   expect(output.accounting.lpNetValueUsd).toBe(1000);
+});
+
+test("portable range script floors a boundary price to its protocol tick", () => {
+  const script = resolve(import.meta.dirname, "../skills/lp-plan/scripts/range.mjs");
+  for (const [price, tick] of [["0.6065458221578348", -5000], ["1.0005001000100004", 4]] as const) {
+    const result = run(script, ["--price", price, "--width", "10", "--tick-spacing", "1"]);
+    expect(result.status).toBe(0);
+    const output = JSON.parse(result.stdout) as { tickCurrent: number; tickLower: number; tickUpper: number };
+    expect(output.tickCurrent).toBe(tick);
+    expect(output.tickCurrent).toBeGreaterThanOrEqual(output.tickLower);
+    expect(output.tickCurrent).toBeLessThan(output.tickUpper);
+  }
+});
+
+test("portable position script reports exact divergence at the range edges", () => {
+  const script = resolve(import.meta.dirname, "../skills/lp-monitor/scripts/position.mjs");
+  const atLower = run(script, ["--input", "-"], JSON.stringify({
+    tickCurrent: 0,
+    tickLower: 0,
+    tickUpper: 100,
+    edgeBufferTicks: 0,
+    positionAssetsUsd: 4,
+    holdValueUsd: 8,
+    claimableFeesUsd: 6,
+    costsUsd: 1,
+  }));
+  expect(atLower.status).toBe(0);
+  const lower = JSON.parse(atLower.stdout) as {
+    range: { state: string; nearEdge: boolean; percentThroughRange: number; distanceToLower: number };
+    accounting: { lpNetValueUsd: number; inventoryDivergencePercent: number; netResultVsHoldPercent: number };
+  };
+  expect(lower.range).toEqual(expect.objectContaining({ state: "in-range", nearEdge: true, percentThroughRange: 0, distanceToLower: 0 }));
+  expect(lower.accounting).toEqual(expect.objectContaining({ lpNetValueUsd: 9, inventoryDivergencePercent: -50, netResultVsHoldPercent: 12.5 }));
+
+  const below = run(script, ["--input", "-"], JSON.stringify({
+    tickCurrent: -5,
+    tickLower: 0,
+    tickUpper: 10,
+    positionAssetsUsd: 0,
+    holdValueUsd: 8,
+  }));
+  expect(below.status).toBe(0);
+  const missed = JSON.parse(below.stdout) as {
+    range: { state: string; inRange: boolean; percentThroughRange: number | null; distanceToLower: number; distanceToUpper: number };
+    accounting: { inventoryDivergencePercent: number; netResultVsHoldPercent: number };
+  };
+  expect(missed.range).toEqual(expect.objectContaining({
+    state: "below-range",
+    inRange: false,
+    percentThroughRange: null,
+    distanceToLower: -5,
+    distanceToUpper: 15,
+  }));
+  expect(missed.accounting.inventoryDivergencePercent).toBe(-100);
+  expect(missed.accounting.netResultVsHoldPercent).toBe(-100);
+});
+
+test("portable position script rejects a zero hold, negative value and fractional tick", () => {
+  const script = resolve(import.meta.dirname, "../skills/lp-monitor/scripts/position.mjs");
+  for (const input of [
+    { tickCurrent: 0, tickLower: 0, tickUpper: 1, positionAssetsUsd: 1, holdValueUsd: 0 },
+    { tickCurrent: 0, tickLower: 0, tickUpper: 1, positionAssetsUsd: -1, holdValueUsd: 1 },
+    { tickCurrent: 0.5, tickLower: 0, tickUpper: 1, positionAssetsUsd: 1, holdValueUsd: 1 },
+  ]) {
+    const result = run(script, ["--input", "-"], JSON.stringify(input));
+    expect(result.status).toBe(1);
+    expect(JSON.parse(result.stdout).ok).toBe(false);
+  }
 });
 
 test("portable position script does not echo malformed JSON", () => {

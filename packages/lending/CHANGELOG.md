@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4 - 2026-11-12
+
+- Pin liquidation-boundary health factor and debt-budget edges in the offline Aave stress helper.
+
 ## 0.4.3 - 2026-11-12
 
 - Point Aave, Compound, Kamino and Morpho documentation links at their current URLs.
