@@ -2,6 +2,13 @@ import { describe, expect, test } from "bun:test";
 import { buildRange, evaluateEconomics, evaluatePosition } from "../src/math.ts";
 
 describe("buildRange", () => {
+
+  test("keeps the exact tick check cheap for common far-from-zero ticks", () => {
+    const start = performance.now();
+    const result = buildRange({ price: 2000, widthPercent: 5, tickSpacing: 10, decimals0: 18, decimals1: 6 });
+    expect(result.tickCurrent).toBe(-200312);
+    expect(performance.now() - start).toBeLessThan(100);
+  });
   test("snaps outward to usable ticks", () => {
     const result = buildRange({ price: 1, widthPercent: 10, tickSpacing: 60 });
     expect(result.tickCurrent).toBe(0);

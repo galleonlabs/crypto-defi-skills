@@ -2,7 +2,7 @@
 
 ## 0.7.4 - 2026-11-12
 
-- Report the current tick as the floor of ln(price) / ln(1.0001). A float log could miss that floor by one tick.
+- Report the current tick as the floor of ln(price) / ln(1.0001) for ticks within ±20,000, where a float log could miss that floor by one tick. Larger ticks keep the float result, because the exact check would exhaust BigInt memory.
 
 ## 0.7.3 - 2026-11-12
 
