@@ -22,7 +22,7 @@
 
    If Actions is unavailable, stage from a clean dappnode checkout with `npx -y npm@11.21.1 stage publish --access public --ignore-scripts` in the package directory; it goes live only when the owner approves it with 2FA on npmjs.com. npm removes direct publishing by 2FA-bypass tokens around January 2027.
 5. Independently verify `npm view <name>@<version> repository dist` and install that exact version into a clean consumer project. Check CLI version (content-only CLIs read the manifest), catalog, validation, and the expected skills and references.
-   Run `bun run smoke:registry <package-directory>` to check the public registry metadata, install the exact version without lifecycle scripts, verify the Node CLI and exports, and compare every published skill resource byte-for-byte with this checkout. Omit the directory arguments to check all packs. This explicit release check accesses the network; ordinary tests do not.
+   Run `bun run smoke:registry <pack>` to check the public registry metadata, install the exact version without lifecycle scripts, verify the Node CLI and exports, and compare every published skill resource byte-for-byte with this checkout. `<pack>` is the workspace id, such as `lp`. A directory path is rejected before any registry request. Omit the pack id to check all packs. This explicit release check accesses the network; ordinary tests do not.
 6. Tag the published commit as `<npm-name>@<version>` and create a GitHub release from the package changelog. Use package-qualified tags, not a shared `v<version>`.
 7. Consumers such as Boomkin pin the reviewed commit, package subdirectory, version and expected skill list. Update their catalog only after the new source and npm release are available.
 
