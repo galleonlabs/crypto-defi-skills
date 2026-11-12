@@ -1,5 +1,9 @@
 # 0.3.0 - 2026-09-27
 
+## 0.4.4 - 2026-11-11
+
+- Point Coinbase agent and API-key wallet links, and Hermes docs links, at their current URLs.
+
 ## 0.4.3 - 2026-10-25
 
 - Remove generic task scaffolding and superseded Hermes/CLI tool-count snapshots while retaining account-isolation and readiness requirements.

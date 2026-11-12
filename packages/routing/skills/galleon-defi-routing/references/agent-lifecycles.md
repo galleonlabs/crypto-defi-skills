@@ -4,7 +4,7 @@ Primary sources reviewed 2026-10-08. This is original procedural guidance based 
 
 ## Across quote and preparation
 
-[Official Swap API skill](https://github.com/across-protocol/skills/blob/master/skills/swap/SKILL.md) documents `/swap/approval`. Discover route/token support; bind depositor, final recipient, refund address/chain, exact asset addresses and raw units. `exactInput` amount is input; `minOutput` and `exactOutput` use output. Numeric slippage is a fraction, so `0.005` is 0.5%. Set user-approved limits explicitly rather than accepting `auto` or ambiguous estimation defaults.
+[Current Across skill](https://github.com/across-protocol/skills/blob/master/skills/SKILL.md) deprecates `/swap/*`, including `/swap/approval`. The old `skills/swap/SKILL.md` path returns HTTP 404. On that retired surface, discover route/token support; bind depositor, final recipient, refund address/chain, exact asset addresses and raw units. `exactInput` amount is input; `minOutput` and `exactOutput` use output. Numeric slippage is a fraction, so `0.005` is 0.5%. Set user-approved limits explicitly rather than accepting `auto` or ambiguous estimation defaults.
 
 Preserve approval transactions, `swapTx`, amount maxima/minima, fees, quote expiry and request identity. An `appFee` or analytics/integrator field is not an unstated fee mandate. Do not cache an executable quote across state changes. A source simulation field proves only its reported scope.
 

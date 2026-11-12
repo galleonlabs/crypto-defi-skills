@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.3 - 2026-11-12
+
+- Point Aave, Compound, Kamino and Morpho documentation links at their current URLs.
+
 ## 0.4.2 - 2026-11-12
 
 - Report malformed Aave stress JSON as `stress: invalid JSON input` instead of echoing the file text.

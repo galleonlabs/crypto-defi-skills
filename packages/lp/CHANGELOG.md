@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.3 - 2026-11-12
+
+- Point Permit2, Revert and Minara links at their current documentation URLs.
+
 ## 0.7.2 - 2026-11-12
 
 - Report malformed position JSON as `invalid JSON input` instead of echoing the file text.

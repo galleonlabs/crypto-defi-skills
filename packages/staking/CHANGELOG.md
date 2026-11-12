@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2 - 2026-11-11
+
+- Point the EigenLayer slashing post and Symbiotic vault accounting link at their current URLs.
+
 ## 0.3.1 - 2026-10-25
 
 - Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.

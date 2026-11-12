@@ -1,6 +1,6 @@
 # Wiring tools across DeFi primitives
 
-Reviewed 2026-09-05 against [Agent Skills](https://agentskills.io/specification), [Hermes skills](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills/), [Hermes MCP](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp/) and the primary provider sources below. Documentation availability is distinct from a tested connection. No authenticated protocol action was performed for this review.
+Reviewed 2026-09-05 against [Agent Skills](https://agentskills.io/specification), [Hermes skills](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills), [Hermes MCP](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp) and the primary provider sources below. Documentation availability is distinct from a tested connection. No authenticated protocol action was performed for this review.
 
 ## Reuse by interface, not provider branding
 

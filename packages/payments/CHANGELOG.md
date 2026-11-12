@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3 - 2026-11-11
+
+- Point the x402 protocol link at the current introduction page.
+
 ## 0.2.2 - 2026-10-25
 
 - Remove repeated task-routing/persona scaffolding; retain stream arithmetic, authorization limits and uncertain-payment recovery.

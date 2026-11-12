@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3 - 2026-11-11
+
+- Drop the trailing slash from Hermes docs links that redirect to the same pages.
+
 ## 0.2.2 - 2026-10-25
 
 - Remove repeated task-routing/persona scaffolding; retain receipt deduplication, valuation gaps and cash-flow examples.

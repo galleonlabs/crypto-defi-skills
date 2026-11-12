@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2 - 2026-11-11
+
+- Point the CoW SDK documentation link at docs.cow.fi; the old Mintlify host returns 404.
+- Point the LI.FI quote docs at the current API reference.
+- Replace the dead Across swap-skill path with the current skill, which deprecates `/swap/*`.
+
 ## 0.4.1 - 2026-10-25
 
 - Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.

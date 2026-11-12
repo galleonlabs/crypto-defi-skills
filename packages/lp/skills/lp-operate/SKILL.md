@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Install-compatible rename notice. Not a second execution workflow."
 metadata:
   author: "Galleon Labs"
-  version: "0.7.2"
+  version: "0.7.3"
   renamed-to: "lp-execute"
 ---
 

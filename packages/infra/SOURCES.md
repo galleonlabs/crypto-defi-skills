@@ -12,7 +12,7 @@ Reviewed 2026-09-05. Guidance is independently authored; provider runtimes and s
 - [Alchemy x402](https://www.alchemy.com/docs/x402-payments): quote inspection and bounded provider-managed payments.
 - [Coinbase for Agents](https://docs.cdp.coinbase.com/x402/agentic-accounts/coinbase-for-agents): isolated account portfolio and x402 payments from the retail USDC balance on Base (checked 2026-10-19).
 - [Coinbase Agentic Wallet](https://docs.cdp.coinbase.com/x402/agentic-accounts/agentic-wallet): managed wallet and current x402 access.
-- [Coinbase CLI and remote MCP](https://docs.cdp.coinbase.com/coinbase-for-agents/overview): remote harness allowlist, portfolio/key onboarding and supported operations.
+- [Coinbase CLI and remote MCP](https://docs.cdp.coinbase.com/ai-agents/coinbase-for-agents/coinbase-mcp): remote harness allowlist, portfolio/key onboarding and supported operations.
 - [Agentic Wallet CLI](https://docs.cdp.coinbase.com/agentic-wallet/cli/quickstart): email/OTP creation flow, chain flags and Node 24+ documented prerequisite.
 - [Agentic Wallet MCP](https://docs.cdp.coinbase.com/agentic-wallet/mcp/quickstart): operator installer and separate account/payment steps.
 - [Hermes upstream](https://github.com/NousResearch/hermes-agent/tree/2e24e06e): native home/skills and MCP configuration. The consuming Boomkin project owns runtime installation and integration validation; this package does not fork Hermes.
@@ -54,7 +54,7 @@ Reviewed 2026-09-27. Recipes target CDP SDK v2 account APIs and the current Agen
 - [Coinbase AgentKit repository](https://github.com/coinbase/agentkit): framework integration and wallet/action provider separation; Node.js 22+ for current TypeScript quickstart.
 - [EVM provider implementation](https://github.com/coinbase/agentkit/blob/main/typescript/agentkit/src/wallet-providers/cdpEvmWalletProvider.ts): environment names and initialization lifecycle. Inspect the installed revision before calling it.
 - [CDP SDK](https://github.com/coinbase/cdp-sdk): installed types and existing-account retrieval.
-- [API Key Wallet quickstart](https://docs.cdp.coinbase.com/wallet-api/v2/introduction/quickstart): separate creation, funding and transaction operations; none is a readiness test.
+- [API Key Wallet quickstart](https://docs.cdp.coinbase.com/wallets/quickstart/api-key-auth): separate creation, funding and transaction operations; none is a readiness test.
 - [Agentic Wallet CLI](https://docs.cdp.coinbase.com/agentic-wallet/cli/quickstart): separate email authentication and read commands; current prerequisites specify Node.js 24+.
 
 ## Release verification 2026-09-27

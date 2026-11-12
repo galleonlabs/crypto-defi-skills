@@ -27,5 +27,5 @@ Decision record: `M | chain | five parameters | block | oracle composition | deb
 - [Liquidation](https://docs.morpho.org/learn/concepts/liquidation/)
 - [Legacy vault queues](https://docs.morpho.org/curate/tutorials-v1/manage-markets/)
 - [MetaMorpho source](https://github.com/morpho-org/metamorpho)
-- [Maintained API coverage](https://docs.morpho.org/developers/api/morpho/)
+- [Maintained API coverage](https://docs.morpho.org/api)
 

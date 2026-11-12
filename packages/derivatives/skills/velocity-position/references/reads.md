@@ -10,4 +10,4 @@ Check `await client.subscribe()` is true. `getPerpMarketAccountOrThrow(marketInd
 
 - [Velocity SDK and read methods](https://github.com/velocity-exchange/velocity-v1/tree/master/packages/sdk)
 - [Drift-to-Velocity migration](https://github.com/velocity-exchange/velocity-v1/blob/master/docs/DRIFT-TO-VELOCITY.md)
-- [Velocity docs](https://docs.velocity.exchange)
+- [Velocity docs](https://docs.velocity.exchange/protocol)
