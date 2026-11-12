@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.2 - 2026-11-12
+
+- Report malformed position JSON as `invalid JSON input` instead of echoing the file text.
+
 ## 0.7.1 - 2026-10-25
 
 - Replace six identical all-provider manuals with role-specific standalone tool guidance.

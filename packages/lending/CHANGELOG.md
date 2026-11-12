@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2 - 2026-11-12
+
+- Report malformed Aave stress JSON as `stress: invalid JSON input` instead of echoing the file text.
+
 ## 0.4.1 - 2026-10-25
 
 - Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.
