@@ -106,6 +106,11 @@ function scaledPriceRatio(price: number, decimals0: number, decimals1: number): 
   return { num: ratio.num, den: ratio.den * 10n ** BigInt(-scale) };
 }
 
+// 1.0001^|tick| as an exact ratio is only cheap for modest ticks: at the
+// protocol bounds (|tick| up to 887272) the power has millions of digits and
+// exhausts BigInt memory. Past this bound the Math.log tick is kept as is.
+const EXACT_TICK_CHECK_LIMIT = 20_000;
+
 function priceReachedTick(num: bigint, den: bigint, tick: number): boolean {
   const exponent = BigInt(Math.abs(tick));
   const numeratorBase = tick < 0 ? 10000n : 10001n;
@@ -115,6 +120,7 @@ function priceReachedTick(num: bigint, den: bigint, tick: number): boolean {
 
 function floorTick(price: number, decimals0: number, decimals1: number): number {
   let tick = clamp(Math.floor(priceToTick(price, decimals0, decimals1)), MIN_TICK, MAX_TICK);
+  if (Math.abs(tick) >= EXACT_TICK_CHECK_LIMIT) return tick;
   const { num, den } = scaledPriceRatio(price, decimals0, decimals1);
   // Math.log can miss floor(ln(price) / ln(1.0001)) by one tick.
   if (tick < MAX_TICK && priceReachedTick(num, den, tick + 1)) tick += 1;
