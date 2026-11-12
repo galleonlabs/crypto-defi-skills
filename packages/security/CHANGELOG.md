@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.8 - 2026-11-12
+
+- Reject C1 control characters in token name and symbol ABI strings.
+
 ## 0.2.7 - 2026-11-12
 
 - Point Ethereum JSON-RPC, Foundry fork-testing and Hermes docs links at their current URLs.

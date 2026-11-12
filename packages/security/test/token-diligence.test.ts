@@ -327,6 +327,20 @@ describe("bounded collector", () => {
       expect(() => decodeMetadata(value, false)).toThrow();
     expect(() => decodeMetadata(`0x${word(256n)}`, true, true)).toThrow();
   });
+  test("accepts bounded unicode metadata and rejects C1 controls", () => {
+    expect(decodeMetadata(abiString("caf\u00e9"), false)).toBe("caf\u00e9");
+    expect(decodeMetadata(abiString("A\u{1f600}B"), false)).toBe("A\u{1f600}B");
+    expect(decodeMetadata(abiString("A".repeat(4096)), false)).toHaveLength(4096);
+    expect(decodeMetadata(`0x${abiString("Ab").slice(2).toUpperCase()}`, false)).toBe("Ab");
+    expect(decodeMetadata(`0x${word(255n)}`, true, true)).toBe("255");
+    expect(decodeMetadata(`0x${word((1n << 256n) - 1n)}`, true)).toBe(((1n << 256n) - 1n).toString());
+    for (const value of [" ", "A\u0080B", "A\u0085B", "A\u009fB"]) {
+      expect(() => decodeMetadata(abiString(value), false)).toThrow("unsafe metadata string");
+    }
+    expect(() => decodeMetadata(abiString(""), false)).toThrow("metadata string length out of bounds");
+    expect(() => decodeMetadata(abiString("A".repeat(4097)), false)).toThrow("metadata string length out of bounds");
+    expect(() => decodeMetadata(`0x${word(32n)}${word(1n)}${"ff".padEnd(64, "0")}`, false)).toThrow();
+  });
 });
 
 function withHistory(): any {

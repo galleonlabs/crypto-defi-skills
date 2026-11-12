@@ -702,7 +702,7 @@ export function decodeMetadata(
     Uint8Array.from(Buffer.from(hex.slice(128, 128 + length * 2), "hex")),
   );
   assert(
-    result.trim().length > 0 && !/[\u0000-\u001f\u007f]/.test(result),
+    result.trim().length > 0 && !/[\u0000-\u001f\u007f-\u009f]/.test(result),
     "unsafe metadata string",
   );
   return result;

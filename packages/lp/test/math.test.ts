@@ -19,6 +19,7 @@ describe("buildRange", () => {
       decimals0: 18,
       decimals1: 6,
     });
+    expect(result.tickCurrent).toBe(-200312);
     expect(result.snappedPriceLower).toBeLessThanOrEqual(1900);
     expect(result.snappedPriceUpper).toBeGreaterThanOrEqual(2100);
   });
@@ -29,6 +30,15 @@ describe("buildRange", () => {
 
   test("rejects prices outside protocol tick bounds", () => {
     expect(() => buildRange({ price: 1e100, widthPercent: 10, tickSpacing: 60 })).toThrow();
+  });
+
+  test("floors the current tick when the float log is off by one", () => {
+    for (const [price, tick] of [[0.6065458221578348, -5000], [1.0005001000100004, 4]] as const) {
+      const result = buildRange({ price, widthPercent: 10, tickSpacing: 1 });
+      expect(result.tickCurrent).toBe(tick);
+      expect(result.tickCurrent).toBeGreaterThanOrEqual(result.tickLower);
+      expect(result.tickCurrent).toBeLessThan(result.tickUpper);
+    }
   });
 });
 

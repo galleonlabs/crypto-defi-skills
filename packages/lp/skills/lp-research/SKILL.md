@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Install-compatible rename notice. Not a second analysis workflow."
 metadata:
   author: "Galleon Labs"
-  version: "0.7.3"
+  version: "0.7.4"
   renamed-to: "lp-analyze"
 ---
 

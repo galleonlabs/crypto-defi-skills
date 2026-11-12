@@ -1,6 +1,6 @@
 {
   "name": "galleon-lp-skills",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Agent skills and deterministic tools for liquidity research, planning, monitoring and approved execution.",
   "type": "module",
   "license": "MIT",

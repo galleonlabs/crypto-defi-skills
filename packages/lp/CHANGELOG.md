@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.4 - 2026-11-12
+
+- Report the current tick as the floor of ln(price) / ln(1.0001). A float log could miss that floor by one tick.
+
 ## 0.7.3 - 2026-11-12
 
 - Point Permit2, Revert and Minara links at their current documentation URLs.

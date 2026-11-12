@@ -83,6 +83,45 @@ function clamp(value: number, minimum: number, maximum: number): number {
   return Math.min(maximum, Math.max(minimum, value));
 }
 
+function floatRatio(value: number): { num: bigint; den: bigint } {
+  const bytes = new ArrayBuffer(8);
+  const floatBits = new Float64Array(bytes);
+  const intBits = new BigUint64Array(bytes);
+  floatBits[0] = value;
+  const bits = intBits[0];
+  if (bits === undefined) throw new Error("price must be finite");
+  const exponent = Number((bits >> 52n) & 0x7ffn);
+  const fraction = bits & ((1n << 52n) - 1n);
+  if (exponent === 0) return { num: fraction, den: 1n << 1074n };
+  const mantissa = fraction | (1n << 52n);
+  const power = exponent - 1023 - 52;
+  if (power >= 0) return { num: mantissa << BigInt(power), den: 1n };
+  return { num: mantissa, den: 1n << BigInt(-power) };
+}
+
+function scaledPriceRatio(price: number, decimals0: number, decimals1: number): { num: bigint; den: bigint } {
+  const ratio = floatRatio(price);
+  const scale = decimals1 - decimals0;
+  if (scale >= 0) return { num: ratio.num * 10n ** BigInt(scale), den: ratio.den };
+  return { num: ratio.num, den: ratio.den * 10n ** BigInt(-scale) };
+}
+
+function priceReachedTick(num: bigint, den: bigint, tick: number): boolean {
+  const exponent = BigInt(Math.abs(tick));
+  const numeratorBase = tick < 0 ? 10000n : 10001n;
+  const denominatorBase = tick < 0 ? 10001n : 10000n;
+  return numeratorBase ** exponent * den <= num * denominatorBase ** exponent;
+}
+
+function floorTick(price: number, decimals0: number, decimals1: number): number {
+  let tick = clamp(Math.floor(priceToTick(price, decimals0, decimals1)), MIN_TICK, MAX_TICK);
+  const { num, den } = scaledPriceRatio(price, decimals0, decimals1);
+  // Math.log can miss floor(ln(price) / ln(1.0001)) by one tick.
+  if (tick < MAX_TICK && priceReachedTick(num, den, tick + 1)) tick += 1;
+  else if (tick > MIN_TICK && !priceReachedTick(num, den, tick)) tick -= 1;
+  return tick;
+}
+
 export function buildRange(input: RangeInput): RangeResult {
   const decimals0 = input.decimals0 ?? 18;
   const decimals1 = input.decimals1 ?? 18;
@@ -134,7 +173,7 @@ export function buildRange(input: RangeInput): RangeResult {
 
   return {
     orientation: "token1 per token0",
-    tickCurrent: Math.floor(rawCurrent),
+    tickCurrent: floorTick(input.price, decimals0, decimals1),
     tickLower,
     tickUpper,
     requestedPriceLower,
