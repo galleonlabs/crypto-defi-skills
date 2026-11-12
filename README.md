@@ -62,7 +62,7 @@ Install only the packs you need. Each has its own npm version, CLI, plugin manif
 | [Infra](packages/infra) | [`galleon-defi-infra-skills@0.4.4`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.4.4) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
 | [Data](packages/data) | [`galleon-defi-data-skills@0.6.3`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.6.3) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
 | [LP](packages/lp) | [`galleon-lp-skills@0.7.3`](https://www.npmjs.com/package/galleon-lp-skills/v/0.7.3) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
-| [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.4.4`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.4.4) | Public wallet cost audits, spot, perps, HIP-3, account modes and review |
+| [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.4.5`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.4.5) | Public wallet cost audits, spot, perps, HIP-3, account modes and review |
 | [Lending](packages/lending) | [`galleon-defi-lending-skills@0.4.3`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.4.3) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
 | [Staking](packages/staking) | [`galleon-defi-staking-skills@0.3.2`](https://www.npmjs.com/package/galleon-defi-staking-skills/v/0.3.2) | Lido, Rocket Pool, EigenLayer and Symbiotic staking and exits |
 | [Yield](packages/yield) | [`galleon-defi-yield-skills@0.4.2`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.4.2) | Yearn, Spark/Sky savings, EulerEarn, sUSDe, vault exits and Pendle PT/YT |
