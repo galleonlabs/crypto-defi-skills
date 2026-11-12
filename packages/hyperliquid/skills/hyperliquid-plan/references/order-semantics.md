@@ -5,7 +5,7 @@ Verify every field against current official docs and SDK types.
 ## Identity and precision
 
 - Default perps use their index in `meta.universe`.
-- Spot uses `10000 + spotMeta.universe index`; size precision comes from the base token.
+- Spot uses `10000 + spotInfo["index"]` from `spotMeta`. That field is not the array position and is not the token index. Size precision comes from the base token.
 - HIP-3 uses its DEX index and that DEX's metadata. Use the official asset-ID formula and verify the resulting coin mapping.
 - Mainnet and testnet identities differ.
 - Price obeys the current significant-figure and decimal rules. Size rounds down to `szDecimals`.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.5 - 2026-11-12
+
+- Use `spotInfo["index"]` for the spot asset ID. The field is not the `spotMeta.universe` array position.
+
 ## 0.4.4 - 2026-11-12
 
 - Point the Minara source pin at the renamed minara-skills repository.
