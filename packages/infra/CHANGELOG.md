@@ -1,5 +1,11 @@
 # 0.3.0 - 2026-09-27
 
+## 0.4.5 - 2026-11-13
+
+- Replace unavailable Agentic Wallet quickstarts with current Wallet MCP setup and approval references.
+- Preserve legacy CLI inspection while distinguishing connection, scoped reads, pending approvals and completed writes.
+- Correct the account MCP's stale Hermes exclusion and add synthetic wallet-readiness exercises.
+
 ## 0.4.4 - 2026-11-11
 
 - Point Coinbase agent and API-key wallet links, and Hermes docs links, at their current URLs.

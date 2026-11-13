@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions; optional offline helper uses Bun. Live recipes require an existing official provider or public HTTPS access.
 metadata:
   author: Galleon Labs
-  version: "0.4.4"
+  version: "0.4.5"
 ---
 
 # Coinbase AgentKit readiness
@@ -14,7 +14,7 @@ Find the exact missing capability between “AgentKit installed” and “this e
 
 ## Procedure
 
-1. Identify the user's product: CDP API Key Wallet, AgentKit wallet provider, or email-authenticated Agentic Wallet (`awal`). They have different authentication and lifecycle behavior. A Coinbase exchange API key is not automatically a CDP wallet credential.
+1. Identify the user's product: CDP API Key Wallet, AgentKit wallet provider, hosted Wallet MCP, or a legacy email-authenticated Agentic Wallet (`awal`) installation. They have different authentication and lifecycle behavior. A Coinbase exchange API key is not automatically a CDP wallet credential.
 2. Inspect installed package versions and the existing application's selected provider, network ID, account address and exposed action list. Use [the inspection recipe](references/inspection.md). Reuse its environment without displaying values. Public market research does not require a wallet.
 3. Match the expected account to its owner and the requested network. Distinguish Base mainnet `base` / 8453 from `base-sepolia` / 84532. A smart account and its owner EOA are different identities; a funded owner does not prove the smart account can pay gas.
 4. Test only the reads required for the task: public chain identity, head timestamp and existing account balance; optionally authenticated retrieval of the exact existing CDP account. Record what was actually tested. Missing signer credentials do not block a public balance read.
