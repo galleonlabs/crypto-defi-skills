@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Read-only protocol APIs or RPC through existing configured tools. No signer included."
 metadata:
   author: "Galleon Labs"
-  version: "0.7.4"
+  version: "0.7.5"
 ---
 
 # Revert position

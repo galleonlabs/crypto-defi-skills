@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.6 - 2026-11-13
+
+- Remove the unused per-pack discovery command; repository discovery stays at the root. Skill procedures, resource paths and CLI commands are preserved.
+
 ## 0.4.5 - 2026-11-12
 
 - Use `spotInfo["index"]` for the spot asset ID. The field is not the `spotMeta.universe` array position.
