@@ -11,10 +11,10 @@ Reviewed 2026-09-05. Guidance is independently authored; provider runtimes and s
 - [Alchemy Agent Wallets](https://www.alchemy.com/docs/agent-wallets): session custody, expiry, capabilities and smart-wallet execution limits.
 - [Alchemy x402](https://www.alchemy.com/docs/x402-payments): quote inspection and bounded provider-managed payments.
 - [Coinbase for Agents](https://docs.cdp.coinbase.com/x402/agentic-accounts/coinbase-for-agents): isolated account portfolio and x402 payments from the retail USDC balance on Base (checked 2026-10-19).
-- [Coinbase Agentic Wallet](https://docs.cdp.coinbase.com/x402/agentic-accounts/agentic-wallet): managed wallet and current x402 access.
+- [Coinbase Wallet MCP](https://docs.cdp.coinbase.com/coinbase-for-agents/wallet-mcp/skill.md): current wallet tool discovery and x402 scope (checked 2026-11-13).
 - [Coinbase CLI and remote MCP](https://docs.cdp.coinbase.com/ai-agents/coinbase-for-agents/coinbase-mcp): remote harness allowlist, portfolio/key onboarding and supported operations.
-- [Agentic Wallet CLI](https://docs.cdp.coinbase.com/agentic-wallet/cli/quickstart): email/OTP creation flow, chain flags and Node 24+ documented prerequisite.
-- [Agentic Wallet MCP](https://docs.cdp.coinbase.com/agentic-wallet/mcp/quickstart): operator installer and separate account/payment steps.
+- [Wallet MCP installation](https://docs.cdp.coinbase.com/coinbase-for-agents/wallet-mcp/references/install.md): hosted endpoint, client setup and OAuth connection (checked 2026-11-13).
+- [Wallet MCP approval mode](https://docs.cdp.coinbase.com/coinbase-for-agents/wallet-mcp/references/approval-mode.md): per-write approval and status readback (checked 2026-11-13).
 - [Hermes upstream](https://github.com/NousResearch/hermes-agent/tree/2e24e06e): native home/skills and MCP configuration. The consuming Boomkin project owns runtime installation and integration validation; this package does not fork Hermes.
 
 ## Reviewed public distributions
@@ -23,7 +23,7 @@ Reviewed 2026-09-05. Guidance is independently authored; provider runtimes and s
 | --- | --- | --- |
 | `@alchemy/cli` | 0.24.0 | npm metadata; Node >=22; official documented CLI and environment surface |
 | `@coinbase/coinbase-cli` | 0.0.7 | npm tarball, MIT, Node >=22; inspected bundled configuration and stdio server; `mcp --help`, initialize and tools/list executed without credentials or account calls |
-| `awal` | 2.12.1 | npm tarball and current quickstart; npm engines >=18 differs from documented Node 24+ requirement; OS-based storage inspected, no portable profile override established |
+| `awal` | 2.12.1 | historical npm tarball inspection; former primary quickstart now 404; current support/runtime requirements unverified; OS-based storage inspected, no portable profile override established |
 | `@coinbase/payments-mcp` | 1.0.5 | npm tarball; installer generates Node plus installed `bundle.js` stdio config and downloads a separately versioned runtime; installer not executed |
 
 Coinbase CLI 0.0.7 discovery returned 32 tools. Only initialize, notification and tool-list messages were sent. Its configuration supports `COINBASE_CONFIG_DIR` and `COINBASE_ENV`; OS keyring service is `coinbase-cli` with secrets keyed by environment name, so profile integration requires unique environment names. No existing credential files or account state were read. The `live-` environment prefix resolves to official production endpoints; this is configuration behavior, not authority to trade.
@@ -55,7 +55,7 @@ Reviewed 2026-09-27. Recipes target CDP SDK v2 account APIs and the current Agen
 - [EVM provider implementation](https://github.com/coinbase/agentkit/blob/main/typescript/agentkit/src/wallet-providers/cdpEvmWalletProvider.ts): environment names and initialization lifecycle. Inspect the installed revision before calling it.
 - [CDP SDK](https://github.com/coinbase/cdp-sdk): installed types and existing-account retrieval.
 - [API Key Wallet quickstart](https://docs.cdp.coinbase.com/wallets/quickstart/api-key-auth): separate creation, funding and transaction operations; none is a readiness test.
-- [Agentic Wallet CLI](https://docs.cdp.coinbase.com/agentic-wallet/cli/quickstart): separate email authentication and read commands; current prerequisites specify Node.js 24+.
+- [Wallet MCP installation](https://docs.cdp.coinbase.com/coinbase-for-agents/wallet-mcp/references/install.md): current wallet connection procedure, separate from CDP/AgentKit account lookup (checked 2026-11-13).
 
 ## Release verification 2026-09-27
 
@@ -68,3 +68,7 @@ Current [wallet models](skills/galleon-defi-infra/references/wallets.md) and [pr
 ## Content maintenance, 2026-10-25
 
 Remove generic task scaffolding and superseded Hermes/CLI tool-count snapshots while retaining account-isolation and readiness requirements. Existing dated discovery and release receipts remain historical evidence; no live provider/account access or financial outcome is inferred from this cleanup.
+
+## Coinbase wallet documentation refresh, 2026-11-13
+
+The former Agentic Wallet CLI/MCP quickstarts and x402 wallet page return 404. The current documentation index exposes Wallet MCP; use its hosted connection, live tool schemas and per-write approval model. This is a current documented route, not evidence of an official Agentic Wallet rename or deprecation. npm still lists `awal` (latest 2.12.2) and `@coinbase/payments-mcp` (1.0.5) without deprecation notices. Preserve legacy installations and inspect installed help rather than initiating login or a migration. The Coinbase account MCP's current allowlist now includes Hermes; do not apply its historical exclusion to Wallet MCP or supported account clients. No account, session or financial action was exercised.

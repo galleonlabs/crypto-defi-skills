@@ -4,7 +4,7 @@ description: Set up and diagnose DeFi agent infrastructure, RPC access, managed 
 license: MIT
 compatibility: Portable instructions; optional diagnostics require Node.js 20+ and public network access.
 metadata:
-  version: "0.4.4"
+  version: "0.4.5"
   author: Galleon Labs
 ---
 
