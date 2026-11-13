@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.5 - 2026-11-13
+
+- Remove the unused per-pack discovery command; repository discovery stays at the root. Skill procedures, resource paths and CLI commands are preserved.
+
 ## 0.7.4 - 2026-11-12
 
 - Report the current tick as the floor of ln(price) / ln(1.0001) for ticks within ±20,000, where a float log could miss that floor by one tick. Larger ticks keep the float result, because the exact check would exhaust BigInt memory.
