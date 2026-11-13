@@ -68,7 +68,7 @@ Install only the packs you need. Each has its own npm version, CLI, plugin manif
 | [Yield](packages/yield) | [`galleon-defi-yield-skills@0.4.2`](https://www.npmjs.com/package/galleon-defi-yield-skills/v/0.4.2) | Yearn, Spark/Sky savings, EulerEarn, sUSDe, vault exits and Pendle PT/YT |
 | [Tokenized Assets](packages/tokenized-assets) | [`galleon-defi-tokenized-assets-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-tokenized-assets-skills/v/0.2.1) | Ondo and OpenEden eligibility, issuer risk and settlement |
 | [Routing](packages/routing) | [`galleon-defi-routing-skills@0.4.3`](https://www.npmjs.com/package/galleon-defi-routing-skills/v/0.4.3) | 0x, 1inch, CoW, Jupiter, LI.FI, Relay, Across and CCTP |
-| [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.2.2`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.2.2) | GMX, Derive, Velocity (formerly Drift) and Pendle Boros trading lifecycles |
+| [Derivatives](packages/derivatives) | [`galleon-defi-derivatives-skills@0.2.2`](https://www.npmjs.com/package/galleon-defi-derivatives-skills/v/0.2.2) | GMX, Derive, Velocity (formerly Drift), Jupiter Perps and Pendle Boros trading lifecycles |
 | [Strategy](packages/strategy) | [`galleon-defi-strategy-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-strategy-skills/v/0.2.1) | Frozen-rule templates, held-out validation, higher-cost tests and reproducible benchmarks |
 | [Portfolio](packages/portfolio) | [`galleon-defi-portfolio-skills@0.2.3`](https://www.npmjs.com/package/galleon-defi-portfolio-skills/v/0.2.3) | Positions, liabilities, net exposure, cash flows and performance |
 | [Security](packages/security) | [`galleon-defi-security-skills@0.2.8`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.2.8) | Token diligence, transaction decoding, permissions and simulation review |
@@ -115,6 +115,8 @@ A passing format check, simulation or historical benchmark does not establish cu
 ```bash
 bun install --frozen-lockfile
 bun run check
+bun run evals
+bun run smoke
 bun run pack
 ```
 
