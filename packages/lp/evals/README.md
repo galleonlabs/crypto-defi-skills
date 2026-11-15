@@ -3,3 +3,5 @@
 `routing.json` is a portable prompt set for testing skill selection. Each case names one expected skill and skills that must not load.
 
 CI validates the dataset's structure and coverage. It does not claim a model score. Record the model, client, date, prompt wrapper, and raw results before publishing any routing score.
+
+Output-quality cases for this pack are the manual [connected workflow acceptance cases](workflows.md). Run them in a fresh agent context with the installed skills, grade every expected behavior with quoted evidence, and keep those outcomes separate from this structural validation.
