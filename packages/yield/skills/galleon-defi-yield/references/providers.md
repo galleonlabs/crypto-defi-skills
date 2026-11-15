@@ -23,7 +23,7 @@ Primary-source review: **2026-09-05**. Documented tools below are not automatica
 
 ## Yearn
 
-[Data Services - Yearn](https://docs.yearn.fi/developers/data-services/yearn-data) documents public Kong GraphQL at `https://kong.yearn.fi/api/gql`. [yDaemon source - Yearn](https://github.com/yearn/ydaemon) labels itself legacy and recommends Kong, although the docs retain conflicting language about current vault data. Prefer Kong for covered data, document any necessary compatibility fallback, and compare fresh contract state before a transaction.
+[Data Services - Yearn](https://docs.yearn.fi/developers/data-services/yearn-data) documents public Kong GraphQL at `https://kong.yearn.fi/api/gql`. [yDaemon source - Yearn](https://github.com/yearn/ydaemon) is archived as a legacy REST API and points to Kong, although the data services page still describes yDaemon. Use Kong for covered data, do not depend on yDaemon as a fallback, and compare fresh contract state before a transaction.
 
 [VaultV3 - Yearn](https://docs.yearn.fi/developers/smart-contracts/V3/VaultV3) distinguishes assets versus shares and documents a critical asymmetry: `withdraw` defaults to no loss, while `redeem` defaults to allowing realized losses. Specify `max_loss` in basis points explicitly for the requested risk tolerance. Check `apiVersion`, owner-specific limits and strategy queue order; a wrong queue can misstate maximum exits.
 

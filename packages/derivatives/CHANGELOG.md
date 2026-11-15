@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.3 - 2026-11-15
+
+- Drop the stale Jupiter Trading MCP domain count; the docs still list no Perps domain.
+
 ## 0.2.2 - 2026-11-11
 
 - Remove the dead link to the legacy Drift account-management guide; the Velocity SDK README in the same entry covers the current program.

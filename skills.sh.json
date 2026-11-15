@@ -44,6 +44,8 @@
         "relay-bridge",
         "across-bridge",
         "circle-cctp",
+        "galleon-sablier-streams",
+        "galleon-superfluid-streams",
         "gmx-position",
         "derive-options",
         "velocity-position",
@@ -182,9 +184,7 @@
       "title": "Payments",
       "description": "Plan stablecoin payments, x402 purchases and token streams.",
       "skills": [
-        "galleon-defi-payments",
-        "galleon-sablier-streams",
-        "galleon-superfluid-streams"
+        "galleon-defi-payments"
       ]
     },
     {
