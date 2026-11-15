@@ -16,7 +16,7 @@ Produce a generation-specific liquidity plan with queried BPT or token limits. B
 
 Collect chain, pool address/ID, owner, deposit or exit intent, amount vector and accepted slippage. Read the exact pool generation, token order, decimals, pool type and vault/router identities. For boosted pools identify the underlying and wrapped claim; for hooks record the actual hook and supported query behavior. Verify current deployment code, paused/recovery state and the user's BPT custody, including gauges or external wrappers.
 
-Use current `@balancer/sdk` pool data and onchain queries as described in [reads](references/reads.md). Keep one block/time context for the comparison. API metadata does not prove the pool is currently operable.
+Use Balancer API pool data and onchain queries as described in [reads](references/reads.md). Balancer deprecated `@balancer/sdk` on 2026-10-28 and it receives no further updates: use it only at a pinned, reviewed version, and treat the onchain query result as authoritative when the two disagree. Keep one block/time context for the comparison. API metadata does not prove the pool is currently operable.
 
 ## Query before construction
 

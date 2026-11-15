@@ -10,7 +10,7 @@ Sugar SDK/CLI covers Aerodrome discovery and unsigned lifecycle calls; use offic
 
 For optional Revert MCP integration, discover capabilities and chain freshness; reads, `prepare_*`, website handoffs and `confirm_transaction` have different effects. The last updates provider accounting and is not a read-only diagnostic. Support for reading a venue does not establish construction support. Preserve exact-plan/digest checks, approval-phase rebuilds, disclosed fees and custody, one send and independent receipt/state reconciliation. Do not reproduce its hosted runtime or assume its schema remains unchanged.
 
-Curve's `@curvefi/api` requires factory, ordered coin and wrapped/underlying distinctions; slippage arguments documented as percentages must not be treated as bps. Balancer's SDK uses state/query/build with generation-specific vaults, token order, permits, hooks and boosted assets. Keep SDK methods that can execute behind a signer boundary separate from reads and unsigned construction.
+Curve's `@curvefi/api` requires factory, ordered coin and wrapped/underlying distinctions; slippage arguments documented as percentages must not be treated as bps. Balancer's SDK, deprecated and unmaintained since 2026-10-28, uses state/query/build with generation-specific vaults, token order, permits, hooks and boosted assets. Keep SDK methods that can execute behind a signer boundary separate from reads and unsigned construction.
 
 VFAT source can inform Sickle ownership, strategy permissions, automation and fees. No supported public VFAT MCP/API or wrapper distribution was verified; do not invent one. Automation enrollment is a separate permission change. Keep only application policy and thin mapping around upstream tools; test stale data, changed schemas, wrong custody, hidden fees, partial discovery, outage and ambiguous submission.
 
@@ -21,5 +21,5 @@ Record required capability, upstream pin, live read evidence, missing coverage a
 - [Uniswap AI](https://developers.uniswap.org/docs/uniswap-ai/overview) and [LP API integration](https://developers.uniswap.org/docs/liquidity/liquidity-provisioning-api/integration-guide).
 - [Aerodrome/Sugar integration](https://github.com/velodrome-finance/docs/blob/main/content/sdk.mdx), [Sugar SDK](https://github.com/velodrome-finance/sugar-sdk) and [Slipstream deployments](https://github.com/aerodrome-finance/slipstream#deployments).
 - [Revert agent interface](https://mcp.revert.finance/skill); optional remote MCP at `https://mcp.revert.finance/mcp`.
-- [Curve SDK](https://github.com/curvefi/curve-js) and [Balancer liquidity SDK](https://docs.balancer.fi/integration-guides/add-liquidity/sdk-tutorial.html).
+- [Curve SDK](https://github.com/curvefi/curve-js) and [Balancer liquidity SDK](https://docs.balancer.fi/integration-guides/add-liquidity/sdk-tutorial.html) (`@balancer/sdk` is deprecated as of 2026-10-28; pin and review it).
 - [VFAT documentation](https://github.com/vfat-io/vfat-docs); role-specific [VFAT guidance](vfat.md) covers Sickle permissions and fees.
