@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4 - 2026-11-15
+
+- Note that the CoW SDK adapter requirement applies from v7 onward; the current major is v9.
+
 ## 0.4.3 - 2026-11-12
 
 - Name CCTP Fast and Standard Transfer `minFinalityThreshold` values. 1000 and 2000 are finality thresholds, not request counts.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.6 - 2026-11-15
+
+- Mark `@balancer/sdk` as deprecated by Balancer (2026-10-28): pin and review any version used and treat onchain router queries as authoritative.
+
 ## 0.7.5 - 2026-11-13
 
 - Remove the unused per-pack discovery command; repository discovery stays at the root. Skill procedures, resource paths and CLI commands are preserved.

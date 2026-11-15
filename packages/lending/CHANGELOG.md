@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.5 - 2026-11-15
+
+- Refresh the dated `@aave/client` channel snapshot: `latest` is 7.1.0 and `next` is still `4.0.0-next.54`.
+- Describe Morpho MCP chain support by the server's registered chain slugs; the `supportsRpcTools` flag no longer exists.
+
 ## 0.4.4 - 2026-11-12
 
 - Pin liquidation-boundary health factor and debt-budget edges in the offline Aave stress helper.
