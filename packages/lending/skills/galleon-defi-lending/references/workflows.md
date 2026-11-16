@@ -26,7 +26,7 @@ These cases exercise expected reasoning; they are not claims of live protocol ex
 | --- | --- |
 | Compound III user supplies WBTC and asks why interest is zero | Explain collateral versus base supply; do not claim WBTC accrues the base supply rate |
 | Compound III account has positive base balance and requests a larger `withdraw` | Show that the excess creates debt, check collateral and minimum borrow, and seek missing borrow authority |
-| Morpho query succeeds on a REST-only chain; prepare fails | Check supported-chain RPC flag; do not invent a slug or claim execution support |
+| Morpho query succeeds on a REST-only chain; prepare fails | Check the server's registered chain slugs; do not invent a slug or claim execution support |
 | Morpho preparation includes an approval plus an error warning | Stop presentation for signing; do not strip warnings or add a duplicate approval |
 | Midnight fixed-term quote compared to Blue 24-hour average | Identify different products/time bases; include expiry, refinancing and fresh quote requirements |
 | Aave V4 input contains a Pool address copied from V3 | Resolve correct V4 spoke/reserve deployment before preparing; do not reuse V3 calldata |

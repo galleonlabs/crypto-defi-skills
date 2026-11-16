@@ -5,6 +5,41 @@ const MAX_TICK = 887272;
 const LN_1_0001 = Math.log(1.0001);
 const LN_10 = Math.log(10);
 
+function floatRatio(value) {
+  const bytes = new ArrayBuffer(8);
+  const floatBits = new Float64Array(bytes);
+  const intBits = new BigUint64Array(bytes);
+  floatBits[0] = value;
+  const bits = intBits[0];
+  const exponent = Number((bits >> 52n) & 0x7ffn);
+  const fraction = bits & ((1n << 52n) - 1n);
+  if (exponent === 0) return { num: fraction, den: 1n << 1074n };
+  const mantissa = fraction | (1n << 52n);
+  const power = exponent - 1023 - 52;
+  if (power >= 0) return { num: mantissa << BigInt(power), den: 1n };
+  return { num: mantissa, den: 1n << BigInt(-power) };
+}
+
+function priceReachedTick(num, den, tick) {
+  const exponent = BigInt(Math.abs(tick));
+  const numeratorBase = tick < 0 ? 10000n : 10001n;
+  const denominatorBase = tick < 0 ? 10001n : 10000n;
+  return numeratorBase ** exponent * den <= num * denominatorBase ** exponent;
+}
+
+// Math.log can miss floor(ln(price) / ln(1.0001)) by one tick. Stay aligned with src/math.ts.
+function floorTick(price, decimals0, decimals1) {
+  const raw = (Math.log(price) + (decimals1 - decimals0) * LN_10) / LN_1_0001;
+  let tick = Math.min(MAX_TICK, Math.max(MIN_TICK, Math.floor(raw)));
+  const ratio = floatRatio(price);
+  const scale = decimals1 - decimals0;
+  const num = scale >= 0 ? ratio.num * 10n ** BigInt(scale) : ratio.num;
+  const den = scale >= 0 ? ratio.den : ratio.den * 10n ** BigInt(-scale);
+  if (tick < MAX_TICK && priceReachedTick(num, den, tick + 1)) tick += 1;
+  else if (tick > MIN_TICK && !priceReachedTick(num, den, tick)) tick -= 1;
+  return tick;
+}
+
 function parse(args) {
   const flags = new Map();
   for (let index = 0; index < args.length; index += 1) {
@@ -64,7 +99,7 @@ function main() {
   process.stdout.write(`${JSON.stringify({
     ok: true,
     orientation: "token1 per token0",
-    tickCurrent: Math.floor(rawCurrent),
+    tickCurrent: floorTick(price, decimals0, decimals1),
     tickLower,
     tickUpper,
     requestedPriceLower: requestedLower,

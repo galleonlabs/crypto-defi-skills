@@ -55,7 +55,10 @@ if (import.meta.main) {
     try {
       process.stdout.write(`${JSON.stringify(stress(await Bun.file(args[0]!).json()), null, 2)}\n`);
     } catch (error) {
-      process.stderr.write(`stress: ${error instanceof Error ? error.message : String(error)}\n`);
+      const message = error instanceof SyntaxError || (error instanceof Error && error.message.startsWith("JSON Parse error"))
+        ? "invalid JSON input"
+        : error instanceof Error ? error.message : String(error);
+      process.stderr.write(`stress: ${message}\n`);
       process.exitCode = 1;
     }
   }

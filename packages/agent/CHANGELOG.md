@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4 - 2026-11-11
+
+- Point Tenderly simulation and Ethereum JSON-RPC links at their current documentation URLs. The simulations overview does not document forks.
+
 ## 0.1.3 - 2026-10-25
 
 - Bundle the maintained shared skill-file reader, preserving exact show output and rejection of symlinked standalone content.

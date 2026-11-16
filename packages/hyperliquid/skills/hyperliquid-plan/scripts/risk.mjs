@@ -79,7 +79,14 @@ function main() {
   const stressedDistance = Math.abs(entryPrice - stressedStopFill) + feesPerUnit;
   const rawSize = riskBudgetUsd / stressedDistance;
   const factor = 10 ** sizeDecimals;
-  const size = Math.floor(rawSize * factor) / factor;
+  // Same guard as the package roundDown: a float product can floor to a
+  // decimal larger than rawSize and spend more than the risk budget.
+  let scaled = Math.floor(rawSize * factor);
+  let size = scaled / factor;
+  while (size > rawSize && scaled > 0) {
+    scaled -= 1;
+    size = scaled / factor;
+  }
   const entryNotionalUsd = size * entryPrice;
   const stressedRiskUsd = size * stressedDistance;
   process.stdout.write(`${JSON.stringify({

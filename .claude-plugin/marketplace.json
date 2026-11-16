@@ -20,12 +20,12 @@
     {
       "name": "galleon-defi-infra-skills",
       "source": "./packages/infra",
-      "description": "RPC, wallet and agent infrastructure using official Alchemy and Coinbase tooling."
+      "description": "RPC, wallet and agent infrastructure using official Alchemy, Coinbase and Hermes tooling."
     },
     {
       "name": "galleon-defi-data-skills",
       "source": "./packages/data",
-      "description": "DeFi and market data access using official DeFiLlama and CoinGecko sources."
+      "description": "DeFi and market data access using official DeFiLlama, CoinGecko and AIXBT sources."
     },
     {
       "name": "galleon-defi-lending-skills",

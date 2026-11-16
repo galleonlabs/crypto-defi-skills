@@ -6,6 +6,8 @@ describe("roundDown", () => {
     const value = 1.23456789;
     expect(roundDown(value, 4)).toBe(1.2345);
     expect(roundDown(value, 4)).toBeLessThanOrEqual(value);
+    const wide = 94914791.13476461;
+    expect(roundDown(wide, 8)).toBeLessThanOrEqual(wide);
   });
 });
 
@@ -28,6 +30,24 @@ describe("sizeRisk", () => {
     expect(result.size).toBe(0.4827);
     expect(result.stressedRiskUsd).toBeLessThanOrEqual(51);
     expect(result.marginUsd).toBeCloseTo(482.7, 8);
+  });
+
+  test("eight-decimal rounding stays inside the risk budget", () => {
+    const equityUsd = 94914791.13476461;
+    const result = sizeRisk({
+      side: "long",
+      equityUsd,
+      riskPercent: 100,
+      entryPrice: 100,
+      stopPrice: 99,
+      stopSlippageBps: 0,
+      entryFeeBps: 0,
+      exitFeeBps: 0,
+      sizeDecimals: 8,
+    });
+    expect(result.rawSize).toBe(equityUsd);
+    expect(result.size).toBeLessThanOrEqual(result.rawSize);
+    expect(result.stressedRiskUsd).toBeLessThanOrEqual(result.riskBudgetUsd);
   });
 
   test("rejects a stop on the wrong side", () => {

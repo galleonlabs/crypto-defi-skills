@@ -1,4 +1,7 @@
 import { describe, expect, test } from "bun:test";
+import { mkdtemp, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import {
   collect,
   compare,
@@ -324,6 +327,20 @@ describe("bounded collector", () => {
       expect(() => decodeMetadata(value, false)).toThrow();
     expect(() => decodeMetadata(`0x${word(256n)}`, true, true)).toThrow();
   });
+  test("accepts bounded unicode metadata and rejects C1 controls", () => {
+    expect(decodeMetadata(abiString("caf\u00e9"), false)).toBe("caf\u00e9");
+    expect(decodeMetadata(abiString("A\u{1f600}B"), false)).toBe("A\u{1f600}B");
+    expect(decodeMetadata(abiString("A".repeat(4096)), false)).toHaveLength(4096);
+    expect(decodeMetadata(`0x${abiString("Ab").slice(2).toUpperCase()}`, false)).toBe("Ab");
+    expect(decodeMetadata(`0x${word(255n)}`, true, true)).toBe("255");
+    expect(decodeMetadata(`0x${word((1n << 256n) - 1n)}`, true)).toBe(((1n << 256n) - 1n).toString());
+    for (const value of [" ", "A\u0080B", "A\u0085B", "A\u009fB"]) {
+      expect(() => decodeMetadata(abiString(value), false)).toThrow("unsafe metadata string");
+    }
+    expect(() => decodeMetadata(abiString(""), false)).toThrow("metadata string length out of bounds");
+    expect(() => decodeMetadata(abiString("A".repeat(4097)), false)).toThrow("metadata string length out of bounds");
+    expect(() => decodeMetadata(`0x${word(32n)}${word(1n)}${"ff".padEnd(64, "0")}`, false)).toThrow();
+  });
 });
 
 function withHistory(): any {
@@ -448,5 +465,32 @@ describe("review regression checks", () => {
     expect(stderr).toContain("RPC URL is invalid");
     expect(stdout + stderr).not.toContain(secret);
     expect(stdout + stderr).not.toContain("https://[");
+  });
+  test("malformed report JSON never appears in CLI output", async () => {
+    const secret = "sensitiveReportSecret";
+    const directory = await mkdtemp(join(tmpdir(), "evidence-json-"));
+    const file = join(directory, "report.json");
+    await Bun.write(file, secret);
+    const helper = new URL(
+      "../skills/galleon-defi-security-token-diligence/scripts/evidence.ts",
+      import.meta.url,
+    ).pathname;
+    try {
+      const child = Bun.spawn([process.execPath, helper, "validate", file], {
+        stdout: "pipe",
+        stderr: "pipe",
+      });
+      const [exitCode, stdout, stderr] = await Promise.all([
+        child.exited,
+        new Response(child.stdout).text(),
+        new Response(child.stderr).text(),
+      ]);
+      expect(exitCode).toBe(1);
+      expect(stdout).toBe("");
+      expect(stderr).toBe("Invalid report JSON\n");
+      expect(stdout + stderr).not.toContain(secret);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
   });
 });

@@ -1,27 +1,42 @@
-# 0.3.0 - 2026-09-27
+# Changelog
+
+## 0.4.6 - 2026-11-16
+
+- Remove the untested `galleon-coinbase-agentkit-readiness` evals/evals.json from the shipped skill folder; the pack's tested routing and behavior evals cover that skill.
+- Restore this changelog's version order.
+
+## 0.4.5 - 2026-11-13
+
+- Replace unavailable Agentic Wallet quickstarts with current Wallet MCP setup and approval references.
+- Preserve legacy CLI inspection while distinguishing connection, scoped reads, pending approvals and completed writes.
+- Correct the account MCP's stale Hermes exclusion and add synthetic wallet-readiness exercises.
+
+## 0.4.4 - 2026-11-11
+
+- Point Coinbase agent and API-key wallet links, and Hermes docs links, at their current URLs.
 
 ## 0.4.3 - 2026-10-25
 
 - Remove generic task scaffolding and superseded Hermes/CLI tool-count snapshots while retaining account-isolation and readiness requirements.
 - Reuse one maintained skill-file reader so show rejects symlinked skill roots, directories and files consistently.
 
+## 0.4.2 · 2026-10-19
+
+- Record that Coinbase for Agents now documents x402 payments from the retail USDC balance on Base.
+
 ## 0.4.1 · 2026-10-08
 
 - Clarify the pack's purpose, single-skill installation and a first prompt with expected evidence.
 - Align current npm examples and discovery metadata with this release; preserve protocol procedures and standalone package interfaces.
 
-- Add `galleon-coinbase-agentkit-readiness` with official provider recipes, evidence outputs and failure cases.
-
-# Changelog
-
-## 0.4.2 · 2026-10-19
-
-- Record that Coinbase for Agents now documents x402 payments from the retail USDC balance on Base.
-
 ## 0.4.0 - 2026-10-08
 
 - Document the Coinbase Wallet MCP migration and native wallet/session authority boundaries.
 - Flag WalletConnect implicit bridging and Alchemy state-changing contract calls.
+
+## 0.3.0 - 2026-09-27
+
+- Add `galleon-coinbase-agentkit-readiness` with official provider recipes, evidence outputs and failure cases.
 
 ## 0.2.3 - 2026-09-09
 

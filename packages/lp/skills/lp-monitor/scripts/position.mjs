@@ -65,9 +65,16 @@ async function main() {
   }, null, 2)}\n`);
 }
 
+function reportedError(error) {
+  // JSON.parse SyntaxError messages quote the input. Node quotes a prefix;
+  // Bun quotes the first identifier. Neither belongs in the result.
+  if (error instanceof SyntaxError || (error instanceof Error && error.message.startsWith("JSON Parse error"))) return "invalid JSON input";
+  return error instanceof Error ? error.message : String(error);
+}
+
 try {
   await main();
 } catch (error) {
-  process.stdout.write(`${JSON.stringify({ ok: false, error: error instanceof Error ? error.message : String(error) })}\n`);
+  process.stdout.write(`${JSON.stringify({ ok: false, error: reportedError(error) })}\n`);
   process.exitCode = 1;
 }

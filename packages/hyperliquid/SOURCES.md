@@ -18,7 +18,7 @@ This corpus reorganizes public Galleon Labs operating knowledge around portable 
 
 ## Prior skill research
 
-- [Minara AI skills](https://github.com/Minara-AI/skills/tree/b93aba1029827c37cf5ad82b19bfa8c289912091), MIT. Used for confirmation and tool-boundary patterns.
+- [Minara AI skills](https://github.com/Minara-AI/minara-skills/tree/b93aba1029827c37cf5ad82b19bfa8c289912091), MIT. Used for confirmation and tool-boundary patterns.
 - [BankrBot skills](https://github.com/BankrBot/skills/tree/5fa72464c855c49ef3d6d85846424f61b0f50922). No repository license was present at the reviewed commit, so no Bankr text or code was copied.
 
 ## Implementation

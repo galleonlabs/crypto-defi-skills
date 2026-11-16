@@ -1,6 +1,6 @@
 {
   "name": "galleon-hyperliquid-skills",
-  "version": "0.4.2",
+  "version": "0.4.6",
   "description": "Agent skills for Hyperliquid public wallet diagnostics, setup, market analysis, trade planning and execution, monitoring, and performance review.",
   "type": "module",
   "license": "MIT",
@@ -52,7 +52,6 @@
   "scripts": {
     "build": "bun scripts/build.ts",
     "check": "bun run style && bun run typecheck && bun test && bun run validate && bun run build",
-    "discovery": "bun ../../scripts/build-discovery-index.ts",
     "prepack": "bun run check",
     "style": "bun ../../scripts/check-style.ts",
     "test": "bun test",

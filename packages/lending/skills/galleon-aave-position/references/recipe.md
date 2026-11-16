@@ -24,6 +24,6 @@ The bundled [stress calculator](../scripts/stress.ts) accepts already-normalized
 
 - [Pool interface](https://aave.com/docs/aave-v3/smart-contracts/pool): call signatures and units.
 - [Health factor](https://aave.com/help/borrowing/liquidations): liquidation mechanics.
-- [Address book](https://github.com/bgd-labs/aave-address-book): select deployment and version at runtime.
+- [Address book](https://github.com/aave-dao/aave-address-book): select deployment and version at runtime.
 - [Positions](https://www.aave.com/docs/aave-v3/markets/positions): maintained SDK read surface.
 

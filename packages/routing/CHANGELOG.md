@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.4.4 - 2026-11-15
+
+- Note that the CoW SDK adapter requirement applies from v7 onward; the current major is v9.
+
+## 0.4.3 - 2026-11-12
+
+- Name CCTP Fast and Standard Transfer `minFinalityThreshold` values. 1000 and 2000 are finality thresholds, not request counts.
+- Point Across reads at API V5 on `api.across.to`. Swap API paths, `integratorId`, `tradeType` and fractional `slippage` are legacy.
+
+## 0.4.2 - 2026-11-11
+
+- Point the CoW SDK documentation link at docs.cow.fi; the old Mintlify host returns 404.
+- Point the LI.FI quote docs at the current API reference.
+- Replace the dead Across swap-skill path with the current skill, which deprecates `/swap/*`.
+
 ## 0.4.1 - 2026-10-25
 
 - Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.

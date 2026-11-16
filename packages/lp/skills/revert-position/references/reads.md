@@ -14,4 +14,4 @@ Only advertised matching `prepare_*` tools return unsigned plans. `confirm_trans
 ## Primary sources
 
 - [Revert official MCP skill](https://mcp.revert.finance/skill)
-- [Revert documentation](https://docs.revert.finance/)
+- [Revert documentation](https://docs.revert.finance/revert)

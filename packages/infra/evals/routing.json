@@ -68,5 +68,21 @@
       "galleon-defi-infra"
     ],
     "reason": "The existing CDP provider and action inventory need the dedicated readiness recipe rather than general provider provisioning."
+  },
+  {
+    "prompt": "Wallet MCP tools are absent during Coinbase setup; identify the current connection route without logging in.",
+    "expected": "galleon-defi-infra",
+    "mustNotInvoke": [
+      "galleon-coinbase-agentkit-readiness"
+    ],
+    "reason": "Missing connector and provider selection belong to general infrastructure setup."
+  },
+  {
+    "prompt": "Inspect an existing legacy awal installation with missing primary docs; verify only its installed read capability.",
+    "expected": "galleon-coinbase-agentkit-readiness",
+    "mustNotInvoke": [
+      "galleon-defi-infra"
+    ],
+    "reason": "Existing Coinbase installation inspection uses the dedicated readiness recipe."
   }
 ]

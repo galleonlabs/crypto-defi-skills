@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.3 - 2026-11-15
+
+- Record that the yDaemon repository is archived and stop suggesting it as a compatibility fallback to Kong.
+
+## 0.4.2 - 2026-11-11
+
+- Point Ethena staking and mint-order docs at the current technical-design paths.
+
 ## 0.4.1 - 2026-10-25
 
 - Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.

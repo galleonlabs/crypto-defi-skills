@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.8 - 2026-11-12
+
+- Reject C1 control characters in token name and symbol ABI strings.
+
+## 0.2.7 - 2026-11-12
+
+- Point Ethereum JSON-RPC, Foundry fork-testing and Hermes docs links at their current URLs.
+
+## 0.2.6 - 2026-11-12
+
+- Report malformed token-diligence evidence as `Invalid report JSON` instead of echoing the file text.
+
 ## 0.2.5 - 2026-10-25
 
 - Remove repeated task-routing/persona scaffolding while retaining focused approval and token-control examples and their failure cases.

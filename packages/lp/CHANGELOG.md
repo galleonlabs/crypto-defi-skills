@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.7.6 - 2026-11-15
+
+- Mark `@balancer/sdk` as deprecated by Balancer (2026-10-28): pin and review any version used and treat onchain router queries as authoritative.
+
+## 0.7.5 - 2026-11-13
+
+- Remove the unused per-pack discovery command; repository discovery stays at the root. Skill procedures, resource paths and CLI commands are preserved.
+
+## 0.7.4 - 2026-11-12
+
+- Report the current tick as the floor of ln(price) / ln(1.0001) for ticks within ±20,000, where a float log could miss that floor by one tick. Larger ticks keep the float result, because the exact check would exhaust BigInt memory.
+
+## 0.7.3 - 2026-11-12
+
+- Point Permit2, Revert and Minara links at their current documentation URLs.
+
+## 0.7.2 - 2026-11-12
+
+- Report malformed position JSON as `invalid JSON input` instead of echoing the file text.
+
 ## 0.7.1 - 2026-10-25
 
 - Replace six identical all-provider manuals with role-specific standalone tool guidance.

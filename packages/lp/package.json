@@ -1,6 +1,6 @@
 {
   "name": "galleon-lp-skills",
-  "version": "0.7.1",
+  "version": "0.7.6",
   "description": "Agent skills and deterministic tools for liquidity research, planning, monitoring and approved execution.",
   "type": "module",
   "license": "MIT",
@@ -53,7 +53,6 @@
   "scripts": {
     "build": "bun scripts/build.ts",
     "check": "bun run style && bun run typecheck && bun test && bun run validate && bun run build",
-    "discovery": "bun ../../scripts/build-discovery-index.ts",
     "prepack": "bun run check",
     "style": "bun ../../scripts/check-style.ts",
     "test": "bun test",

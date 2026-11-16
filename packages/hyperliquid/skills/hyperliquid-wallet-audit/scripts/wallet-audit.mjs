@@ -85,7 +85,7 @@ Exit 0: report produced, including explicit partial coverage. Exit 1: invalid in
 }
 if (process.argv[1] && realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url))) {
   runAudit().catch((error) => {
-    const message = error instanceof Error ? error.message : String(error);
+    const message = error instanceof SyntaxError || (error instanceof Error && error.message.startsWith("JSON Parse error")) ? "invalid JSON input" : error instanceof Error ? error.message : String(error);
     if (process.argv.includes("--json")) process.stdout.write(`${JSON.stringify({ ok: false, error: { code: "AUDIT_FAILED", message } })}\n`);
     else process.stderr.write(`error: ${message}\n`);
     process.exitCode = 1;

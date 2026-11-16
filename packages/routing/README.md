@@ -34,7 +34,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 | [cow-order](skills/cow-order/SKILL.md) | comparing a CoW Protocol quote, reviewing a signed-intent boundary, or reconciling order UID, partial fills, expiry and cancellation |
 | [jupiter-swap](skills/jupiter-swap/SKILL.md) | quoting Jupiter Swap v2 on Solana, inspecting immutable order transactions, or reconciling managed execution and token-account deltas |
 | [relay-bridge](skills/relay-bridge/SKILL.md) | preparing a Relay quote or tracking a cross-chain request through source confirmation, destination execution, delay or refund |
-| [across-bridge](skills/across-bridge/SKILL.md) | comparing Across Swap API routes, inspecting exactInput versus minOutput, or reconciling deposit fills, embedded actions and refunds |
+| [across-bridge](skills/across-bridge/SKILL.md) | comparing Across API quotes, inspecting exact_input versus min_output, or reconciling transfer status, destination actions and refunds |
 | [circle-cctp](skills/circle-cctp/SKILL.md) | tracking a Circle CCTP USDC burn, attestation and destination mint, including domain IDs, finality and failed-mint recovery |
 
 Each procedure keeps its own references, agent metadata and notices. No signer or all-packs dependency is included.

@@ -1,0 +1,63 @@
+# Publishes through npm trusted publishing (OIDC): no npm token exists here, and
+# the npm-release environment only admits main, so a pushed branch cannot publish.
+name: Publish npm package
+on:
+  workflow_dispatch:
+    inputs:
+      pack:
+        description: Package directory under packages/, such as lp or lending
+        type: string
+        required: true
+      dry_run:
+        description: Run every release check without publishing
+        type: boolean
+        default: true
+permissions:
+  contents: read
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: npm-release
+    permissions:
+      id-token: write
+      contents: read
+      actions: read
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.14
+      # Trusted publishing needs npm 11.5.1 or later; Node 22 ships npm 10.
+      - run: npm install -g npm@11.21.1
+      - run: bun install --frozen-lockfile
+      - name: Read the package identity
+        env:
+          PACK: ${{ inputs.pack }}
+        run: |-
+          set -euo pipefail
+          [[ "$PACK" =~ ^[a-z0-9-]+$ && -f "packages/$PACK/package.json" ]] || { echo "::error::Unknown pack $PACK"; exit 1; }
+          echo "NPM_NAME=$(node -p "require(\"./packages/$PACK/package.json\").name")" >> "$GITHUB_ENV"
+      - name: Check and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PACK: ${{ inputs.pack }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |-
+          set -euo pipefail
+          if [[ "$DRY_RUN" == true ]]; then bun run release "$PACK" --dry-run; else bun run release "$PACK"; fi
+      - name: Report whether npm trusts this workflow
+        if: inputs.dry_run
+        run: |-
+          set -euo pipefail
+          id_token=$(curl -fsS -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=npm:registry.npmjs.org" | jq -r .value)
+          echo "::add-mask::$id_token"
+          # A success mints a short-lived token; the body is discarded, and nothing is published.
+          status=$(curl -sS -o /dev/null -w "%{http_code}" -X POST -H "Authorization: Bearer $id_token" "https://registry.npmjs.org/-/npm/v1/oidc/token/exchange/package/${NPM_NAME//\//%2f}")
+          if [[ "$status" == 201 ]]; then echo "npm trusts this workflow for $NPM_NAME"; else echo "::notice::npm has no usable trusted publisher for $NPM_NAME (HTTP $status); create it just before the first real release"; fi

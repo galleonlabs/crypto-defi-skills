@@ -2,7 +2,7 @@
 
 Reviewed 2026-10-25. These recipes establish documented interfaces, not a live account or executed outcome.
 
-Current SDK tutorial flow:
+Official SDK tutorial flow. Balancer deprecated `@balancer/sdk` on 2026-10-28 ([README](https://github.com/balancer/b-sdk#readme)); it is unmaintained, so pin and review any version you use and confirm results with onchain router queries. No successor package was announced.
 
 ```ts
 const api = new BalancerApi('https://api-v3.balancer.fi/', chainId);
@@ -16,4 +16,4 @@ const queryOutput = await addLiquidity.query(addLiquidityInput, poolState);
 
 - [Balancer add-liquidity SDK tutorial](https://docs.balancer.fi/integration-guides/add-liquidity/sdk-tutorial.html)
 - [Balancer removal SDK tutorial](https://docs.balancer.fi/integration-guides/remove-liquidity/sdk-tutorial.html)
-- [Official SDK](https://github.com/balancer/b-sdk)
+- [Official SDK, deprecated 2026-10-28](https://github.com/balancer/b-sdk)

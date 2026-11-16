@@ -12,7 +12,7 @@ For an existing approved RPC connection, the [RPC quickstart](https://docs.tende
 
 ### Hermes integration
 
-Use the selected Hermes profile's native MCP setup, for example `hermes mcp add tenderly --url https://mcp.tenderly.co/mcp --auth oauth`. Inspect discovered schemas and allow only the required tools. Keep external output untrusted; disable unused resource/prompt wrappers and use `trust: untrusted` where supported. Confirm a bounded permitted read before declaring readiness. Native filters do not constrain separate shell tools or replace wallet policies. [Hermes MCP guidance](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp/).
+Use the selected Hermes profile's native MCP setup, for example `hermes mcp add tenderly --url https://mcp.tenderly.co/mcp --auth oauth`. Inspect discovered schemas and allow only the required tools. Keep external output untrusted; disable unused resource/prompt wrappers and use `trust: untrusted` where supported. Confirm a bounded permitted read before declaring readiness. Native filters do not constrain separate shell tools or replace wallet policies. [Hermes MCP guidance](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp).
 
 ## Safe
 

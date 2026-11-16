@@ -24,7 +24,7 @@ Store source receipt block/hash and status timestamp alongside `sending`, `recei
 
 ## Primary sources
 
-- [Quote endpoint](https://docs.li.fi/li.fi-api/li.fi-api/requesting-a-quote)
+- [Quote endpoint](https://docs.li.fi/api-reference/get-a-quote-for-a-token-transfer)
 - [Status lifecycle and reconciliation](https://docs.li.fi/introduction/user-flows-and-examples/status-tracking)
 - [Quote versus route and step construction](https://docs.li.fi/introduction/user-flows-and-examples/difference-between-quote-and-route)
 - [API documentation index](https://docs.li.fi/llms.txt)

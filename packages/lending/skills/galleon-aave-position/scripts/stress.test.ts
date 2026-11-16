@@ -1,4 +1,7 @@
 import { describe, expect, test } from "bun:test";
+import { mkdtempSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { stress, type Scenario } from "./stress";
 const fixture: Scenario = {
   collateralBase: "10000000000", debtBase: "4000000000", extraDebtBase: "1000000000",
@@ -35,6 +38,60 @@ describe("fixed-point risk budget", () => {
   test("conservative rounding cannot improve health", () => {
     expect(stress({ ...fixture, collateralBase: "3", debtBase: "1", extraDebtBase: "0", liquidationThresholdBps: "5000", collateralFactorBps: "9000" }).passesStressFloor).toBe(false);
   });
+  test("half a unit of collateral floors to health factor 1", () => {
+    const result = stress({
+      ...fixture,
+      collateralBase: "3",
+      debtBase: "1",
+      extraDebtBase: "0",
+      liquidationThresholdBps: "5000",
+      collateralFactorBps: "10000",
+      debtFactorBps: "10000",
+      minimumHealthFactorWad: "1000000000000000000",
+    });
+    expect(result.currentHealthFactorWad).toBe("1000000000000000000");
+    expect(result.passesStressFloor).toBe(true);
+  });
+  test("health factor 1 is the liquidation boundary", () => {
+    const boundary = {
+      ...fixture,
+      extraDebtBase: "0",
+      debtFactorBps: "10000",
+      minimumHealthFactorWad: "1000000000000000000",
+    };
+    const solvent = stress({ ...boundary, collateralFactorBps: "5000" });
+    expect(solvent.stressedHealthFactorWad).toBe("1000000000000000000");
+    expect(solvent.passesStressFloor).toBe(true);
+    expect(solvent.additionalDebtBudgetBase).toBe("0");
+    const liquidatable = stress({ ...boundary, collateralFactorBps: "4999" });
+    expect(liquidatable.stressedHealthFactorWad).toBe("999800000000000000");
+    expect(liquidatable.passesStressFloor).toBe(false);
+    expect(liquidatable.additionalDebtBudgetBase).toBe("0");
+  });
+  test("spending the additional debt budget still meets the floor", () => {
+    const budget = stress(fixture).additionalDebtBudgetBase;
+    expect(stress({ ...fixture, extraDebtBase: budget }).passesStressFloor).toBe(true);
+  });
+  test("zero collateral and zero debt has no finite health factor", () => {
+    const result = stress({ ...fixture, collateralBase: "0", debtBase: "0", extraDebtBase: "0" });
+    expect(result.currentHealthFactorWad).toBeNull();
+    expect(result.stressedHealthFactorWad).toBeNull();
+    expect(result.passesStressFloor).toBe(true);
+    expect(result.additionalDebtBudgetBase).toBe("0");
+  });
+  test("zero liquidation threshold with debt fails the floor", () => {
+    const result = stress({
+      ...fixture,
+      extraDebtBase: "0",
+      liquidationThresholdBps: "0",
+      collateralFactorBps: "10000",
+      debtFactorBps: "10000",
+      minimumHealthFactorWad: "1000000000000000000",
+    });
+    expect(result.currentHealthFactorWad).toBe("0");
+    expect(result.passesStressFloor).toBe(false);
+    expect(result.additionalDebtBudgetBase).toBe("0");
+  });
 });
 
 describe("stress command", () => {
@@ -55,6 +112,16 @@ describe("stress command", () => {
       expect(result.stderr.toString()).toContain("Usage:");
       expect(result.stderr.toString()).not.toContain("ENOENT");
     }
+  });
+  test("malformed scenario JSON is not echoed", async () => {
+    const directory = mkdtempSync(join(tmpdir(), "aave-stress-"));
+    const file = join(directory, "scenario.json");
+    await Bun.write(file, "sensitiveScenarioSecret");
+    const result = run(file);
+    expect(result.exitCode).toBe(1);
+    const output = result.stdout.toString() + result.stderr.toString();
+    expect(output).not.toContain("sensitive");
+    expect(result.stderr.toString()).toContain("stress: invalid JSON input");
   });
   test("unreadable file reports one concise error", () => {
     const result = run("/missing/aave-scenario.json");

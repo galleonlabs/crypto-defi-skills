@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.4.5 - 2026-11-15
+
+- Refresh the dated `@aave/client` channel snapshot: `latest` is 7.1.0 and `next` is still `4.0.0-next.54`.
+- Describe Morpho MCP chain support by the server's registered chain slugs; the `supportsRpcTools` flag no longer exists.
+
+## 0.4.4 - 2026-11-12
+
+- Pin liquidation-boundary health factor and debt-budget edges in the offline Aave stress helper.
+
+## 0.4.3 - 2026-11-12
+
+- Point Aave, Compound, Kamino and Morpho documentation links at their current URLs.
+
+## 0.4.2 - 2026-11-12
+
+- Report malformed Aave stress JSON as `stress: invalid JSON input` instead of echoing the file text.
+
 ## 0.4.1 - 2026-10-25
 
 - Inline the domain-specific worked comparison and recovery case; remove the repeated intake/preferences wrapper.
