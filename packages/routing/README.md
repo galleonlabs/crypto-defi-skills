@@ -33,8 +33,11 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 | [oneinch-swap](skills/oneinch-swap/SKILL.md) | quoting a 1inch Classic Swap v6.1 or distinguishing direct calldata, Fusion intents and protected API access |
 | [cow-order](skills/cow-order/SKILL.md) | comparing a CoW Protocol quote, reviewing a signed-intent boundary, or reconciling order UID, partial fills, expiry and cancellation |
 | [jupiter-swap](skills/jupiter-swap/SKILL.md) | quoting Jupiter Swap v2 on Solana, inspecting immutable order transactions, or reconciling managed execution and token-account deltas |
+| [lcx-liberty-swap](skills/lcx-liberty-swap/SKILL.md) | quoting an LCX Liberty DEX swap on an EVM chain, comparing its after-gas floor with other providers, or building and checking its unsigned same-chain or cross-chain transaction |
 | [relay-bridge](skills/relay-bridge/SKILL.md) | preparing a Relay quote or tracking a cross-chain request through source confirmation, destination execution, delay or refund |
 | [across-bridge](skills/across-bridge/SKILL.md) | comparing Across API quotes, inspecting exact_input versus min_output, or reconciling transfer status, destination actions and refunds |
 | [circle-cctp](skills/circle-cctp/SKILL.md) | tracking a Circle CCTP USDC burn, attestation and destination mint, including domain IDs, finality and failed-mint recovery |
 
 Each procedure keeps its own references, agent metadata and notices. No signer or all-packs dependency is included.
+
+`lcx-liberty-swap` reads a free LCX Liberty DEX API key from the `LCX_API_KEY` environment variable and stops with a message naming the variable and where to create a key when it is unset. The key is never sent in a query string.

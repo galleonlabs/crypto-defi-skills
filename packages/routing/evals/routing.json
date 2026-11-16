@@ -410,5 +410,48 @@
       "galleon-defi-routing"
     ],
     "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Quote an LCX Liberty DEX swap from ETH to USDC on Base and give me the after-gas floor.",
+    "expected": "lcx-liberty-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "zerox-swap"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "My LCX Liberty DEX build returned QUOTE_EXPIRED. Should I retry the same quoteId?",
+    "expected": "lcx-liberty-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "The LCX Liberty DEX quote names a spender and the build has swap.to. Which one do I approve?",
+    "expected": "lcx-liberty-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "zerox-swap"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "LCX Liberty DEX build says simulation skipped, awaiting_allowance. Is the swap ready to send?",
+    "expected": "lcx-liberty-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
+  },
+  {
+    "prompt": "Track my LCX Liberty DEX cross-chain swap: the source transaction confirmed but nothing arrived on Arbitrum.",
+    "expected": "lcx-liberty-swap",
+    "mustNotInvoke": [
+      "galleon-defi-routing",
+      "across-bridge"
+    ],
+    "reason": "This names a specific protocol lifecycle with its own identity, units and completion evidence."
   }
 ]
