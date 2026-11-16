@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions; optional offline helper uses Bun. Live recipes require an existing official provider or public HTTPS access.
 metadata:
   author: Galleon Labs
-  version: "0.4.5"
+  version: "0.4.6"
 ---
 
 # Coinbase AgentKit readiness

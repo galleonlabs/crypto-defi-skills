@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.4 - 2026-11-16
+
+- Remove the untested evals/evals.json from the shipped `galleon-coingecko-token-research` and `galleon-defillama-yield-screen` skill folders; the pack's tested routing and behavior evals cover both skills. `galleon-defi-data` keeps its tested offline cases.
+
 ## 0.6.3 - 2026-11-11
 
 - Point Ethereum proof-of-stake and AIXBT docs at current pages. The old AIXBT MCP and research-workflow docs URLs are no longer in the docs index.
