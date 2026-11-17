@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.7 - 2026-11-17
+
+- Say that a TWAP action carries no client order ID or limit price and is reconciled by its `twapId`.
+- Allow the user's own trusted signer in the pre-send signer check, matching the execution skill.
+- Describe wallet-audit percentages as truncated, as the report contract and arithmetic already do, and note that the review helper accepts only non-negative fees.
+
 ## 0.4.6 - 2026-11-13
 
 - Remove the unused per-pack discovery command; repository discovery stays at the root. Skill procedures, resource paths and CLI commands are preserved.

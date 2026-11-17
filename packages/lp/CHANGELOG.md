@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.7.7 - 2026-11-17
+
+- Report the exact current tick at any distance from zero. Beyond 20,000 ticks, where 18/6-decimal pairs sit, `lp-skills range` kept the float result and could report a boundary price one tick too high; the package and `scripts/range.mjs` now share one bounded exact check.
+- State that an approval and the action it enables are confirmed separately, and that an `approval-required` result is finite unless an unlimited approval was separately confirmed.
+- Drop the Aerodrome Slipstream compatibility claim about offline helpers the skill does not ship.
+
 ## 0.7.6 - 2026-11-15
 
 - Mark `@balancer/sdk` as deprecated by Balancer (2026-10-28): pin and review any version used and treat onchain router queries as authoritative.

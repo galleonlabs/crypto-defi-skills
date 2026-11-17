@@ -4,7 +4,7 @@ description: "Use when evaluating a Pendle PT or YT trade, comparing hold-to-mat
 license: MIT
 compatibility: "Read-only EVM RPC or official provider tools. No signer required."
 metadata:
-  version: "0.4.3"
+  version: "0.4.4"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

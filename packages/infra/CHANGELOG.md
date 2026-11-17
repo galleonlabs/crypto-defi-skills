@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.7 - 2026-11-17
+
+- Drop the Coinbase AgentKit readiness compatibility claim about an offline helper the skill does not ship.
+
 ## 0.4.6 - 2026-11-16
 
 - Remove the untested `galleon-coinbase-agentkit-readiness` evals/evals.json from the shipped skill folder; the pack's tested routing and behavior evals cover that skill.

@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions. Live recipes require an existing official provider or public HTTPS access.
 metadata:
   author: Galleon Labs
-  version: "0.6.4"
+  version: "0.6.5"
 ---
 
 # CoinGecko token research

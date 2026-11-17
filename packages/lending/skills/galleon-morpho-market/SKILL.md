@@ -4,7 +4,7 @@ description: "Use when evaluating a specific Morpho Blue market or Morpho vault 
 license: MIT
 compatibility: "Read-only EVM RPC or official provider tools. No signer required."
 metadata:
-  version: "0.4.5"
+  version: "0.4.6"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions. Live recipes require an existing official provider or public HTTPS access.
 metadata:
   author: Galleon Labs
-  version: "0.4.6"
+  version: "0.4.7"
 ---
 
 # Coinbase AgentKit readiness
