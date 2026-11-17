@@ -8,7 +8,7 @@ curl --fail --silent --show-error --max-time 20 --max-redirs 0 --max-filesize 25
 bun scripts/screen.ts pools.json Base 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 1000000 base aave-v3
 ```
 
-Run from this skill directory. The helper reads only the supplied JSON; it never fetches or loads credentials. It caps input size and result count. The final optional argument restricts the exact project slug (`aave-v3` here); omit it for a cross-protocol screen. It does not infer a lending category from a token. Inspect its JSON summary, including exclusions. The example address is Base native USDC; confirm it against the issuer before consequential use.
+Run from this skill directory. The helper reads only the supplied JSON; it never fetches or loads credentials. It caps input size and returns at most five rows; a longer shortlist needs your own transparent filter. The final optional argument restricts the exact project slug (`aave-v3` here); omit it for a cross-protocol screen. It does not infer a lending category from a token. Inspect its JSON summary, including exclusions. The example address is Base native USDC; confirm it against the issuer before consequential use.
 
 For each selected UUID, read `https://yields.llama.fi/chart/{pool}` with the same timeout and response cap. Validate the UUID before substitution, fetch no more than three histories and do not retry automatically. Filter returned timestamps to the requested window. Reject malformed/status-error responses; don't treat them as empty pools.
 

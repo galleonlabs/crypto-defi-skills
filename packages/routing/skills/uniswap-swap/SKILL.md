@@ -2,7 +2,7 @@
 name: uniswap-swap
 description: "Use when quoting or preparing a Uniswap token swap, reviewing Permit2 authorization, choosing an AMM versus UniswapX path, or reconciling a submitted swap. Uses the official Trading API with exact raw amounts and route-specific lifecycle handling."
 license: MIT
-compatibility: "Read-only EVM RPC and official protocol APIs or UI. Optional Node.js 20 for offline helpers. No signer included."
+compatibility: "Read-only EVM RPC and official protocol APIs or UI. No signer included."
 metadata:
   author: "Galleon Labs"
   version: "0.4.4"

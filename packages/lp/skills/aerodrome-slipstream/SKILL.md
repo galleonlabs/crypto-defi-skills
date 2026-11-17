@@ -2,7 +2,7 @@
 name: aerodrome-slipstream
 description: "Use when depositing, staking, claiming, withdrawing, or evaluating Aerodrome Slipstream concentrated-liquidity NFT positions on Base. Distinguishes gauge emissions from unstaked fees, checks gauge custody and deployed-version penalties, and prepares a concrete exit, including after the 2026-10-22 Aero upgrade deactivates Aerodrome gauges."
 license: MIT
-compatibility: "Read-only EVM RPC and official protocol APIs or UI. Optional Node.js 20 for offline helpers. No signer included."
+compatibility: "Read-only EVM RPC and official protocol APIs or UI. No signer included."
 metadata:
   author: "Galleon Labs"
   version: "0.7.6"

@@ -2,7 +2,7 @@
 name: galleon-pendle-maturity
 description: "Use when evaluating a Pendle PT or YT trade, comparing hold-to-maturity with an early exit, or redeeming a matured position."
 license: MIT
-compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
+compatibility: "Read-only EVM RPC or official provider tools. No signer required."
 metadata:
   version: "0.4.3"
   author: "Andrew Wilkinson and Galleon Labs"

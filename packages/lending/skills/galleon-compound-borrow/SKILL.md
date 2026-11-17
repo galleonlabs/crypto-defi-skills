@@ -2,7 +2,7 @@
 name: galleon-compound-borrow
 description: "Use when planning a Compound III Comet base-asset borrow, repayment or collateral withdrawal and checking baseBorrowMin and collateral factors."
 license: MIT
-compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
+compatibility: "Read-only EVM RPC or official provider tools. No signer required."
 metadata:
   version: "0.4.5"
   author: "Andrew Wilkinson and Galleon Labs"

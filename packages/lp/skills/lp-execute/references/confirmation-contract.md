@@ -22,4 +22,4 @@ State:
 
 Ask for an unambiguous confirmation of those exact terms. Do not treat a response to a different parameter set as confirmation. Any material change in wallet, chain, target, pool, token, amount, approval, range, price limit, deadline, action order, hook, gauge, or native value voids confirmation.
 
-A bounded multi-step sequence may share one confirmation only when all targets, maximum spends, minimum receipts, dependencies, and stop conditions are shown in advance. Get separate confirmation for an unlimited approval or any approval materially broader than the intended position.
+A bounded multi-step sequence may share one confirmation only when all targets, maximum spends, minimum receipts, dependencies, and stop conditions are shown in advance. An approval and the action it enables never share one: the action is rebuilt after the approval receipt and confirmed against its new digest. Get separate confirmation for an unlimited approval or any approval materially broader than the intended position.

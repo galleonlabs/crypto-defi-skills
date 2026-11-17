@@ -12,7 +12,7 @@ metadata:
 
 Use the provider's maintained SDK, API, contracts or documented MCP for the selected deployment. This skill supplies operational judgment; it does not supply a wallet, signer, runtime adapter or authority to transact.
 
-Read [providers](references/providers.md) for the chosen protocol and version. Read [workflows](references/workflows.md) for position planning, monitoring and evaluation cases. Keep unrelated provider manuals out of context.
+Read [providers](references/providers.md) for the chosen protocol and version; it covers Aave, Morpho, Compound, Euler and Spark, while Kamino and Save are covered by their focused skills. Read [workflows](references/workflows.md) for position planning, monitoring and evaluation cases. Keep unrelated provider manuals out of context.
 
 ## Start with the requested task
 

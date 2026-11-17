@@ -2,7 +2,7 @@
 name: galleon-morpho-market
 description: "Use when evaluating a specific Morpho Blue market or Morpho vault allocation, oracle, LLTV, borrow liquidity or exit risk."
 license: MIT
-compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
+compatibility: "Read-only EVM RPC or official provider tools. No signer required."
 metadata:
   version: "0.4.5"
   author: "Andrew Wilkinson and Galleon Labs"

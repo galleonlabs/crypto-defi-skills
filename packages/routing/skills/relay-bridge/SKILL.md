@@ -26,13 +26,13 @@ Quote terms are not signing authority. Return the ordered unsigned steps, expiry
 
 ## Track delivery or refund
 
-Query current status v3 with the same requestId. Retain source hashes and destination/refund hashes separately. `delayed`, `pending`, `submitted`, refund or failure labels require different evidence; destination submission is not final success. Read actual destination receipt and beneficiary token deltas against the accepted minimum.
+Query current status v3 with the same requestId. Retain source hashes and destination/refund hashes separately. `waiting`, `depositing`, `pending`, `submitted`, `refund` and `failure` require different evidence; only `success` and `refund` are final, and `failure` can still move to `pending` or `refund`; destination submission is not final success. Read actual destination receipt and beneficiary token deltas against the accepted minimum.
 
 For a refund identify chain, recipient, currency and net amount. A refunded source obligation is not payment at the destination. If the status endpoint is delayed or unknown, use original onchain evidence and a bounded next-check time; never repair uncertainty by another deposit.
 
 ## Worked result
 
-Synthetic 1,000-USDC request has a source-confirmed deposit and Relay status delayed; no destination hash exists. Report funds in transit, the same requestId and the missing destination stage. If a later 997-USDC refund reaches the origin owner, report refunded with 3-USDC cost, while the intended recipient remains unpaid.
+Synthetic 1,000-USDC request has a source-confirmed deposit and Relay status `pending`; no destination hash exists. Report funds in transit, the same requestId and the missing destination stage. If a later 997-USDC refund reaches the origin owner, report refunded with 3-USDC cost, while the intended recipient remains unpaid.
 
 ## Sources and limits
 

@@ -20,7 +20,7 @@ Use `/price` for exploration. A firm `/quote` requires the correct taker and fre
 
 ## Bind allowance and transaction
 
-For AllowanceHolder resolve the returned allowance spender against current official deployment records. For Permit2 inspect typed data, amount, nonce, spender, domain and deadline independently. Never approve Settler. Verify `transaction.to`, data, native value and chain against the quoted intent; execution target and approval target can differ.
+For AllowanceHolder resolve the returned allowance spender against current official deployment records. For Permit2 inspect typed data, amount, nonce, spender, domain and deadline independently. Never approve Settler. Verify `transaction.to`, data, native value and chain against the quoted intent. In the AllowanceHolder flow the spender and `transaction.to` are both AllowanceHolder; in the Permit2 flow the spender is Permit2 and `transaction.to` is Settler.
 
 Return finite allowance needs and an unsigned handoff with exact minimum output, costs, recipient and quote age. After any changed amount, token, chain or approval state, refresh the quote; signatures and calldata are bound to the reviewed terms. Do not inject affiliate fees or a surplus recipient.
 
@@ -30,7 +30,7 @@ A quote, successful simulation or send response is not a fill. For a submitted s
 
 ## Worked result
 
-Synthetic quote sells 100 USDC, expects 0.040 WETH and requires at least 0.0398 WETH. The allowance spender is AllowanceHolder while calldata targets Settler. Return those as separate identities, a 0.0398-WETH floor and finite 100-USDC allowance need. A proposal to approve Settler must be rejected before any wallet handoff.
+Synthetic quote sells 100 USDC, expects 0.040 WETH and requires at least 0.0398 WETH. On the AllowanceHolder endpoint the allowance spender and `transaction.to` are both AllowanceHolder; Settler is the target only on the Permit2 endpoint, where the spender is Permit2. Return the spender and target identities, a 0.0398-WETH floor and finite 100-USDC allowance need. A proposal to approve Settler must be rejected before any wallet handoff.
 
 ## Sources and limits
 

@@ -31,7 +31,7 @@ npx --package galleon-defi-agent-skills@0.1.4 defi-agent-skills catalog --json
 ```
 
 - [Unsigned planning](skills/galleon-defi-agent-plan/SKILL.md) resolves bounded intent to maintained builders, including Nethermind playbooks and Aave's official MCP.
-- [Simulation](skills/galleon-defi-agent-simulate/SKILL.md) binds exact sender, sequence, chain and state to recorded effects; covers Tenderly, Alchemy and Portals Foresight.
+- [Simulation](skills/galleon-defi-agent-simulate/SKILL.md) binds exact sender, sequence, chain and state to recorded effects; covers Tenderly and Portals Foresight, and records that Alchemy's simulation API is deprecated.
 
 Infrastructure onboarding and security review are optional next steps when installed. Neither is a dependency. Installation does not connect a wallet or authorize signing, paid requests, new projects or virtual networks.
 

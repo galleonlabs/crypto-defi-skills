@@ -2,7 +2,7 @@
 name: galleon-coinbase-agentkit-readiness
 description: Inspect Coinbase CDP and AgentKit wallet configuration, verify an existing account with read-only tools, and inventory exposed actions before protocol use. Use when an agent cannot find its wallet, uses the wrong Base network, or needs a scoped Coinbase capability report without creating accounts or signing.
 license: MIT
-compatibility: Portable instructions; optional offline helper uses Bun. Live recipes require an existing official provider or public HTTPS access.
+compatibility: Portable instructions. Live recipes require an existing official provider or public HTTPS access.
 metadata:
   author: Galleon Labs
   version: "0.4.6"

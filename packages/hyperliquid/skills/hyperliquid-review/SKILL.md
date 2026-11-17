@@ -31,7 +31,7 @@ Keep the user's strategy ID/revision and separate historical simulation, forward
 1. Bind the network, user account, market and DEX, review window, ticket ID, account mode, and known client order IDs.
 2. Gather [review evidence](references/review-evidence.md): ticket, approvals, order status, historical and detailed open orders, fills, funding, ledger changes, positions, portfolio samples, and incident records.
 3. Deduplicate fills by trade ID. Preserve maker or taker status, fee token, signed funding, partial fills, and position before each fill.
-4. Compute gross PnL, fees, funding, net PnL, slippage against the ticket, holding time, protection gaps, and result in the ticket's original risk unit. Use `node scripts/review.mjs --help` for simple round-trip arithmetic.
+4. Compute gross PnL, fees, funding, net PnL, slippage against the ticket, holding time, protection gaps, and result in the ticket's original risk unit. Use `node scripts/review.mjs --help` for simple round-trip arithmetic; it accepts only non-negative fees, so compute a maker rebate separately.
 5. Grade [process and incidents](references/process-review.md) before reading the profit or loss verdict.
 6. Append facts to [the journal contract](references/journal-contract.md). Corrections are new entries, never rewrites.
 7. Deliver one repeatable finding with an owner or next test. Do not produce a list nobody will act on.
