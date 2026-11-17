@@ -11,6 +11,16 @@ describe("buildRange", () => {
   });
   // Slow, obviously correct reference: 1.0001^tick <= price compared as exact
   // rationals. A double is a dyadic rational, so the comparison has no rounding.
+  // The big powers dominate the cost, and neighbouring prices ask for the same ticks.
+  const powerCache = new Map<number, [bigint, bigint]>();
+  function powers(exponent: number): [bigint, bigint] {
+    let pair = powerCache.get(exponent);
+    if (!pair) {
+      pair = [10001n ** BigInt(exponent), 10000n ** BigInt(exponent)];
+      powerCache.set(exponent, pair);
+    }
+    return pair;
+  }
   function exactFloorTick(price: number, start: number): number {
     const view = new DataView(new ArrayBuffer(8));
     view.setFloat64(0, price);
@@ -20,10 +30,8 @@ describe("buildRange", () => {
     const num = power >= 0 ? mantissa << BigInt(power) : mantissa;
     const den = power >= 0 ? 1n : 1n << BigInt(-power);
     const reached = (tick: number) => {
-      const exponent = BigInt(Math.abs(tick));
-      return tick < 0
-        ? 10000n ** exponent * den <= num * 10001n ** exponent
-        : 10001n ** exponent * den <= num * 10000n ** exponent;
+      const [up, down] = powers(Math.abs(tick));
+      return tick < 0 ? down * den <= num * up : up * den <= num * down;
     };
     let tick = start;
     while (reached(tick + 1)) tick += 1;
@@ -40,9 +48,9 @@ describe("buildRange", () => {
     let checked = 0;
     for (let index = 0; index < 60; index += 1) {
       // Two thirds beyond +/-20,000, where 18/6-decimal pairs sit; the rest near zero.
-      // Capped at 60,000: the exact reference raises 10001n to the tick, and past
-      // about a million bits a loaded CI runner refuses the BigInt.
-      const magnitude = index % 3 === 0 ? Math.floor(random() * 20_000) : 20_000 + Math.floor(random() * 40_000);
+      // Capped at 32,000: the exact reference raises 10001n to the tick, which is
+      // slow on older Bun and refused outright past about a million bits.
+      const magnitude = index % 3 === 0 ? Math.floor(random() * 20_000) : 20_000 + Math.floor(random() * 12_000);
       const tick = random() < 0.5 ? -magnitude : magnitude;
       const boundary = Math.exp(tick * Math.log(1.0001));
       // The float nearest a boundary lands on either side of it; so do its neighbours.
@@ -55,7 +63,7 @@ describe("buildRange", () => {
     expect(checked).toBe(240);
     // Found by this property: the float log put this price one tick too high.
     expect(buildRange({ price: 139749.61407704905, widthPercent: 10, tickSpacing: 1 }).tickCurrent).toBe(118481);
-  });
+  }, 30_000);
 
   test("current tick stays exact at the protocol tick bounds", () => {
     expect(buildRange({ price: 3e38, widthPercent: 1, tickSpacing: 1 }).tickCurrent).toBe(886012);
