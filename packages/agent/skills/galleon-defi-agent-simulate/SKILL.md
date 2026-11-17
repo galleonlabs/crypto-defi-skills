@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable instructions for official Tenderly, Alchemy, Portals Foresight or existing EVM tools. Optional offline record diagnostic uses Bun; no provider client or signer is bundled.
 metadata:
   author: Andrew Wilkinson and Galleon Labs
-  version: "0.1.4"
+  version: "0.1.5"
 ---
 
 # DeFi transaction simulation
@@ -38,7 +38,7 @@ A source-chain bridge simulation cannot prove the future destination call. Separ
 
 ## Deliver and preserve evidence
 
-Return the task mode, exact payload/sequence, observed block/hash/time, provider/tool version, real versus overridden state, per-call outcomes, expected/observed asset and authority changes, coverage gaps and reproducible next step. Classify it as ready for intent review, incomplete, reverted/mismatched, or an experiment only. Never label it “safe” or “executed.”
+Return the task mode, exact payload/sequence, observed block/hash/time, provider/tool version, real versus overridden state, per-call outcomes, expected/observed asset and authority changes, coverage gaps and reproducible next step. Classify it as ready for intent review, incomplete, reverted/mismatched, or an experiment only; the offline helper reports these as `ready-for-review`, `incomplete`, `blocked` and `experiment-only`. Never label it “safe” or “executed.”
 
 For a prepared execution, preserve reviewed payload identity and refresh when chain state, sender, nonce, calldata, limits or quote expire. After an independently authorized submission, compare receipt and actual account state with this prediction. Replay establishes diagnosis; it does not retry the original write.
 

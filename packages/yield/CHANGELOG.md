@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.4 - 2026-11-17
+
+- Drop the Pendle maturity compatibility claim about offline examples the skill does not ship.
+
 ## 0.4.3 - 2026-11-15
 
 - Record that the yDaemon repository is archived and stop suggesting it as a compatibility fallback to Kong.

@@ -29,7 +29,7 @@ those choices exist.
 | Cancel | Exact live order ID/client ID and scope, whether it is protective or a parent, remaining exposure/protection and race with fills | Entry price, new notional, or a new stop-distance sizing calculation |
 | Modify or replace protection | Exact existing order, requested changed fields, current position, post-change risk, and replacement sequence | Rebuilding unrelated strategy settings |
 | Leverage or isolated margin | Current mode/value, exact requested mode/value or signed margin delta, balance and liquidation effect, aggregate risk | A fictitious entry order or order client ID for a non-order action |
-| TWAP | Total quantity, side, duration/options supported by the actual tool, price/exposure limits and protection of partial fills | Assumed cancellation semantics or guaranteed average price |
+| TWAP | Total quantity, side, duration/options supported by the actual tool, price/exposure limits and protection of partial fills | Assumed cancellation semantics, guaranteed average price, or a client order ID or per-order limit price, which the TWAP action does not carry |
 
 An exit cannot reverse the position. A cancel that removes the only protective
 stop is materially different from canceling a resting entry. Surface the difference

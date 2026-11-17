@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.5 - 2026-11-17
+
+- 0x: in the AllowanceHolder flow the spender and `transaction.to` are both AllowanceHolder; Settler is the target only in the Permit2 flow.
+- Relay: replace the nonexistent `delayed` status with the status v3 values and say which are final.
+- CCTP: only the 1000 and 2000 finality thresholds exist; other values are mapped to them.
+- Drop the Uniswap swap compatibility claim about offline helpers the skill does not ship.
+
 ## 0.4.4 - 2026-11-15
 
 - Note that the CoW SDK adapter requirement applies from v7 onward; the current major is v9.

@@ -2,9 +2,9 @@
 name: galleon-lido-withdrawals
 description: "Use when requesting or claiming Lido stETH or wstETH withdrawals, reconciling unstETH NFTs, or comparing the native queue with a secondary-market exit."
 license: MIT
-compatibility: "Read-only EVM RPC or official provider tools; Bun is optional for offline examples. No signer required."
+compatibility: "Read-only EVM RPC or official provider tools. No signer required."
 metadata:
-  version: "0.3.2"
+  version: "0.3.3"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---

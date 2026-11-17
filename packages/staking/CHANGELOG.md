@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.3 - 2026-11-17
+
+- Drop the Lido withdrawals compatibility claim about offline examples the skill does not ship.
+
 ## 0.3.2 - 2026-11-11
 
 - Point the EigenLayer slashing post and Symbiotic vault accounting link at their current URLs.

@@ -132,7 +132,7 @@
     "reason": "Refund chain, asset, recipient and net amount are a distinct LI.FI terminal outcome."
   },
   {
-    "prompt": "Quote a 0x v2 swap and distinguish AllowanceHolder spender from Settler target.",
+    "prompt": "Quote a 0x v2 swap and distinguish the allowance spender from the transaction target.",
     "expected": "zerox-swap",
     "mustNotInvoke": [
       "galleon-defi-routing"

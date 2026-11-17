@@ -23,7 +23,7 @@ Synthetic proposal: token transfer from account with zero balance. Provider cred
 
 ## Stale sender
 
-Synthetic proposal sender A; simulation sender B has a large allowance. Same calldata and token do not make the observations applicable to A. Classification: mismatched. Rerun using A and its current prerequisites.
+Synthetic proposal sender A; simulation sender B has a large allowance. Same calldata and token do not make the observations applicable to A. Classification: mismatched (`blocked` from the helper). Rerun using A and its current prerequisites.
 
 ## Complete source bridge preflight
 

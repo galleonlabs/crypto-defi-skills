@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.5 - 2026-11-17
+
+- State that the yield screener returns at most five rows, and that the market snapshot error-code list is not exhaustive.
+- Drop the CoinGecko token research compatibility claim about an offline helper the skill does not ship.
+
 ## 0.6.4 - 2026-11-16
 
 - Remove the untested evals/evals.json from the shipped `galleon-coingecko-token-research` and `galleon-defillama-yield-screen` skill folders; the pack's tested routing and behavior evals cover both skills. `galleon-defi-data` keeps its tested offline cases.

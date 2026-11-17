@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.4 - 2026-11-17
+
+- Say that a stream rate is encoded in the protocol's rate scale, not the token's decimals: Sablier Flow uses UD21x18 and Superfluid Super Tokens are always 18 decimals.
+
 ## 0.2.3 - 2026-11-11
 
 - Point the x402 protocol link at the current introduction page.
