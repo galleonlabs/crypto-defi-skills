@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.6 - 2026-11-17
+
+- Say which protocols the provider reference covers and that Kamino and Save use their focused skills.
+- Name the SparkLend receipt token consistently as the spToken.
+- Drop compatibility claims about offline examples from the Compound and Morpho skills, which ship none.
+
 ## 0.4.5 - 2026-11-15
 
 - Refresh the dated `@aave/client` channel snapshot: `latest` is 7.1.0 and `next` is still `4.0.0-next.54`.

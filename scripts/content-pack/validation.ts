@@ -85,6 +85,40 @@ async function checkMarkdownLinks(
   }
 }
 
+// Resource paths written as code (`node scripts/x.mjs`, `examples/y.json`) are not
+// markdown links, so the link check never sees them. A path under one of the
+// skill's own resource folders must exist, relative to the skill or to the file.
+const RESOURCE_PATH = /(?<![\w./-])(?:scripts|examples|references)\/[\w.-]+(?:\/[\w.-]+)*\.(?:mjs|cjs|js|ts|json|md)\b/g;
+
+async function checkResourcePaths(
+  root: string,
+  skillRoot: string,
+  file: string,
+  source: string,
+  issues: ValidationIssue[],
+): Promise<void> {
+  // A path inside a link target or a longer path belongs to the link check.
+  const prose = source.replace(/\]\([^)]*\)/g, "]()").replace(/https?:\/\/\S+/g, "");
+  for (const path of new Set(prose.match(RESOURCE_PATH) ?? [])) {
+    const found = await Promise.all(
+      [skillRoot, dirname(file)].map((base) => lstat(resolve(base, path)).then(() => true, () => false)),
+    );
+    if (!found.includes(true)) issue(issues, "error", relativeFile(root, file), `missing skill resource: ${path}`);
+  }
+}
+
+// The compatibility line is what a host shows before loading the skill. Saying a
+// helper, script or offline example ships is only true when the folder is there.
+const BUNDLED_CLAIM = /\b(?:helpers?|scripts?|diagnostics?|offline (?:examples?|backtest|assessment))\b/i;
+
+async function hasFiles(directory: string): Promise<boolean> {
+  try {
+    return (await readdir(directory)).length > 0;
+  } catch {
+    return false;
+  }
+}
+
 async function checkSkill(
   root: string,
   folder: string,
@@ -151,13 +185,25 @@ async function checkSkill(
   }
 
   const skillRoot = resolve(root, "skills", folder);
+  if (
+    typeof metadata.compatibility === "string" &&
+    BUNDLED_CLAIM.test(metadata.compatibility) &&
+    !(await hasFiles(resolve(skillRoot, "scripts"))) &&
+    !(await hasFiles(resolve(skillRoot, "examples")))
+  ) {
+    issue(issues, "error", displayFile, "compatibility mentions a bundled helper, script or example, but the skill ships no scripts/ or examples/");
+  }
   async function checkTree(directory: string): Promise<void> {
     for (const entry of await readdir(directory, { withFileTypes: true })) {
       const file = resolve(directory, entry.name);
       if (entry.isSymbolicLink()) {
         issue(issues, "error", relativeFile(root, file), "standalone skills must not contain symlinks");
       } else if (entry.isDirectory()) await checkTree(file);
-      else if (entry.name.endsWith(".md")) await checkMarkdownLinks(skillRoot, file, await readFile(file, "utf8"), issues);
+      else if (entry.name.endsWith(".md")) {
+        const text = await readFile(file, "utf8");
+        await checkMarkdownLinks(skillRoot, file, text, issues);
+        await checkResourcePaths(root, skillRoot, file, text, issues);
+      }
     }
   }
   await checkTree(skillRoot);

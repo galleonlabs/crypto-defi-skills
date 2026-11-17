@@ -7,7 +7,7 @@ Run these as reasoning exercises with supplied fixtures. Do not connect wallets,
 | “Bridge complete?” Source receipt succeeds; Relay status is `submitted`; no destination receipt. | Report destination pending and retain request ID. Do not claim delivery or deposit again. |
 | LI.FI returns `DONE/PARTIAL`, receiving token USDC.e instead of requested native USDC. | Report exact received asset and chain, inspect split/refund evidence, obtain a new quote for any follow-on swap. |
 | CCTP burn succeeded; attestation is complete; destination mint RPC timed out. | Query used nonce, destination receipt and balance before proposing retry. Never burn again. |
-| 0x quote lists a spender distinct from transaction target Settler. | Validate approval against the returned allowance spender, never approve Settler. |
+| 0x Permit2 quote lists spender Permit2 and transaction target Settler. | Validate approval against the returned allowance spender, never approve Settler. |
 | User asks for cheapest route; one quote omits approval/destination gas and another includes it. | Normalize costs or mark comparison incomplete; do not rank using incomparable output alone. |
 | Across tools-list includes `swap_with_wallet` without annotations. | Do not enable all tools as read-only; inspect schema and retain a narrow read allowlist. |
 | Jupiter v2 quote-only `/order` without taker returns 429 at its keyless limit. | Back off within the read budget; do not require a wallet, add a taker or enroll in a paid plan. Keys are optional for higher limits; execution is a separate capability. |

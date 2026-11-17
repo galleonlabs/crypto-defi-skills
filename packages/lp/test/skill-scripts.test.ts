@@ -249,3 +249,21 @@ test("portable Uniswap link script rejects reversed or equal range bounds", () =
   expect(result.status).toBe(1);
   expect(JSON.parse(result.stdout).error.message).toBe("--min-price must be below --max-price");
 });
+
+test("portable range script and the package agree on current ticks beyond +/-20,000", async () => {
+  const { buildRange } = await import("../src/math.ts");
+  const script = resolve(import.meta.dirname, "../skills/lp-plan/scripts/range.mjs");
+  const cases = [
+    { price: 139749.61407704905, decimals0: 18, decimals1: 18, tick: 118481 },
+    { price: 3000, decimals0: 18, decimals1: 6, tick: -196257 },
+    { price: 3e38, decimals0: 18, decimals1: 18, tick: 886012 },
+    { price: 3e-39, decimals0: 18, decimals1: 18, tick: -887067 },
+  ];
+  for (const { price, decimals0, decimals1, tick } of cases) {
+    const result = run(script, ["--price", String(price), "--width", "1", "--tick-spacing", "1", "--decimals0", String(decimals0), "--decimals1", String(decimals1)]);
+    expect(result.status).toBe(0);
+    const output = JSON.parse(result.stdout) as { tickCurrent: number };
+    expect(output.tickCurrent).toBe(tick);
+    expect(buildRange({ price, widthPercent: 1, tickSpacing: 1, decimals0, decimals1 }).tickCurrent).toBe(tick);
+  }
+});

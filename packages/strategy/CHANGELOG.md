@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 - 2026-11-17
+
+- State the retrieval-time rule as the engine enforces it: no observation may be later than the retrieval time.
+
 ## 0.2.1 - 2026-10-25
 
 - Bundle the maintained shared skill-file reader, preserving exact show output and rejection of symlinked standalone content.

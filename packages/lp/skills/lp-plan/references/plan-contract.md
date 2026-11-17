@@ -65,7 +65,7 @@ Emit this structure in prose, JSON, or both.
 
 A plan is ready only when identity, balances, approvals, quote, gas, deadlines, targets, calldata, simulations, handoff terms, and expected state changes are internally consistent. A deferred downstream step is acceptable only when the plan explains which mined value is required to build it.
 
-An `approval-required` result contains only the finite approvals needed for the next action. It does not contain ready action calldata. After approval receipts, reread state and create a new action-phase digest.
+An `approval-required` result contains only the approvals needed for the next action. They are finite unless the user separately confirmed an unlimited approval under the approval policy. It does not contain ready action calldata. After approval receipts, reread state and create a new action-phase digest.
 
 A `ready` result contains one exact next transaction. Bind the digest to chain, wallet, pool, position, inputs, recipients, target, calldata, native value, limits, quote, observation block, and expiry. Any material change expires it.
 

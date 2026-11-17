@@ -1,6 +1,6 @@
 {
   "name": "galleon-defi-data-skills",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "Portable DeFi data skills for CoinGecko, DefiLlama, AIXBT, and source-aware research.",
   "type": "module",
   "license": "MIT",
