@@ -25,8 +25,9 @@ Standalone protocol procedures now bundle their exact read recipes and dated pri
 - [Across bridge](skills/across-bridge/references/reads.md)
 - [Circle CCTP](skills/circle-cctp/references/reads.md)
 
-## LCX Liberty DEX procedure, 2026-11-16
+## LCX Liberty DEX procedure, 2026-11-17
 
-Contributed by LCX. Documentation was checked against the live API without a key and a non-production instance. No account authorization, signing or financial action was tested.
+Contributed by LCX. Documentation was checked against the live API without a key and a non-production instance; router selectors were recomputed from their signatures. No account authorization, signing or financial action was tested.
 
 - [LCX Liberty DEX swap](skills/lcx-liberty-swap/references/reads.md)
+- [LCX Liberty DEX handoff check](skills/lcx-liberty-swap/references/handoff.md)

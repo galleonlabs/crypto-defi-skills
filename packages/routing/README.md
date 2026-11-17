@@ -40,4 +40,4 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 Each procedure keeps its own references, agent metadata and notices. No signer or all-packs dependency is included.
 
-`lcx-liberty-swap` reads a free LCX Liberty DEX API key from the `LCX_API_KEY` environment variable and stops with a message naming the variable and where to create a key when it is unset. The key is never sent in a query string.
+`lcx-liberty-swap` reads the user's own LCX Liberty DEX API key from the `LCX_API_KEY` environment variable only; no key is stored in this repository or the skill. When the variable is unset it stops with a message naming it and pointing to https://dex.lcx.com/dashboard, where a key is created by signing in. The key is never sent in a query string.
