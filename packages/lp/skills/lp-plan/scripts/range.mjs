@@ -20,14 +20,48 @@ function floatRatio(value) {
   return { num: mantissa, den: 1n << BigInt(-power) };
 }
 
-function priceReachedTick(num, den, tick) {
-  const exponent = BigInt(Math.abs(tick));
-  const numeratorBase = tick < 0 ? 10000n : 10001n;
-  const denominatorBase = tick < 0 ? 10001n : 10000n;
-  return numeratorBase ** exponent * den <= num * denominatorBase ** exponent;
+// 1.0001^|tick| as an exact ratio has millions of digits near the protocol
+// bounds, so the comparison uses a 256-bit fixed-point bracket instead: `low`
+// only rounds down and `high` only rounds up, which keeps the true power
+// between them. A double is never close enough to a tick boundary for the
+// bracket to straddle it; if it ever did, the answer is undefined and the
+// float tick is kept.
+const POWER_BITS = 256n;
+const POWER_ONE = 1n << POWER_BITS;
+
+function powerBracket(exponent) {
+  let low = POWER_ONE;
+  let high = POWER_ONE;
+  let baseLow = (POWER_ONE * 10001n) / 10000n;
+  let baseHigh = baseLow + 1n;
+  for (let remaining = exponent; remaining > 0; remaining = Math.floor(remaining / 2)) {
+    if (remaining % 2 === 1) {
+      low = (low * baseLow) >> POWER_BITS;
+      high = ((high * baseHigh) >> POWER_BITS) + 1n;
+    }
+    baseLow = (baseLow * baseLow) >> POWER_BITS;
+    baseHigh = ((baseHigh * baseHigh) >> POWER_BITS) + 1n;
+  }
+  return { low, high };
 }
 
-// Math.log can miss floor(ln(price) / ln(1.0001)) by one tick. Stay aligned with src/math.ts.
+// True when 1.0001^tick <= num / den.
+function priceReachedTick(num, den, tick) {
+  const { low, high } = powerBracket(Math.abs(tick));
+  const price = num * POWER_ONE;
+  if (tick >= 0) {
+    if (high * den <= price) return true;
+    if (low * den > price) return false;
+    return undefined;
+  }
+  // 1.0001^tick is 1 / 1.0001^|tick|, so compare den <= num * 1.0001^|tick|.
+  const scaledDen = den * POWER_ONE;
+  if (num * low >= scaledDen) return true;
+  if (num * high < scaledDen) return false;
+  return undefined;
+}
+
+// Stay aligned with src/math.ts.
 function floorTick(price, decimals0, decimals1) {
   const raw = (Math.log(price) + (decimals1 - decimals0) * LN_10) / LN_1_0001;
   let tick = Math.min(MAX_TICK, Math.max(MIN_TICK, Math.floor(raw)));
@@ -35,8 +69,9 @@ function floorTick(price, decimals0, decimals1) {
   const scale = decimals1 - decimals0;
   const num = scale >= 0 ? ratio.num * 10n ** BigInt(scale) : ratio.num;
   const den = scale >= 0 ? ratio.den : ratio.den * 10n ** BigInt(-scale);
-  if (tick < MAX_TICK && priceReachedTick(num, den, tick + 1)) tick += 1;
-  else if (tick > MIN_TICK && !priceReachedTick(num, den, tick)) tick -= 1;
+  // Math.log can miss floor(ln(price) / ln(1.0001)) by one tick.
+  if (tick < MAX_TICK && priceReachedTick(num, den, tick + 1) === true) tick += 1;
+  else if (tick > MIN_TICK && priceReachedTick(num, den, tick) === false) tick -= 1;
   return tick;
 }
 
