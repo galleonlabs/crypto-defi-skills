@@ -20,6 +20,10 @@ test("every package is independently releasable with aligned metadata and unique
       expect(plugin.name).toBe(pack.manifest.name);
       expect(plugin.version).toBe(pack.manifest.version);
     }
+    // A CLI that hardcodes its version instead of reading the manifest must match it.
+    const cli = resolve(path, "src/cli.ts");
+    const hardcoded = existsSync(cli) ? (await readFile(cli, "utf8")).match(/^const (?:version|VERSION) = "([^"]+)";$/m) : null;
+    if (hardcoded) expect(`${pack.id} cli ${hardcoded[1]}`).toBe(`${pack.id} cli ${pack.manifest.version}`);
     for (const skill of await readdir(resolve(path, "skills"))) {
       const body = await readFile(resolve(path, "skills", skill, "SKILL.md"), "utf8");
       const meta = parse(body.match(/^---\n([\s\S]*?)\n---/)![1]!);

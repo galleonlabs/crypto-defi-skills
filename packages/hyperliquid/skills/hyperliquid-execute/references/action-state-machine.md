@@ -26,7 +26,7 @@ Use client order ID or order ID, detailed open orders, fills from the send windo
 A timeout, disconnect, 5xx, or exception after transmission means the action may have arrived.
 
 1. Do not resend.
-2. Query each client order ID, open orders, fills, and resulting account state.
+2. Query each client order ID (for a TWAP, its `twapId` and slice fills), open orders, fills, and resulting account state.
 3. If found, continue from the observed state.
 4. If absent, keep the result unknown. Negative reads do not prove non-arrival.
 5. Once the signed expiry has passed, repeat reconciliation. The original action is then incapable of late acceptance under the documented expiry rule.

@@ -85,7 +85,7 @@
     "id": "zerox-swap-spender",
     "skill": "zerox-swap",
     "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
-    "context": "Synthetic fixture only; no wallet, account authorization or financial action. 100-USDC quote; allowance spender AllowanceHolder, tx target Settler; minimum .0398 WETH.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. 100-USDC Permit2-flow quote; allowance spender Permit2, tx target Settler; minimum .0398 WETH.",
     "expected": [
       "Keep identities distinct and finite allowance; return minimum .0398 WETH."
     ],
@@ -189,7 +189,7 @@
     "id": "relay-bridge-delay",
     "skill": "relay-bridge",
     "prompt": "Resolve this protocol-specific task using the supplied evidence and return the concrete outcome.",
-    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Source confirmed; request R delayed; no destination hash.",
+    "context": "Synthetic fixture only; no wallet, account authorization or financial action. Source confirmed; request R status pending; no destination hash.",
     "expected": [
       "Track R and report destination pending with bounded next check."
     ],

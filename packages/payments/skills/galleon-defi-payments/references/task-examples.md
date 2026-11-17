@@ -10,7 +10,7 @@ Synthetic observations only; descriptive steps refer to discovered provider sche
 
 **Read sequence:** Resolve asset decimals, recipient and clock; calculate integer rate and remainder, inspect enforceable cap/end time and simulated funding before signing.
 
-**Completed answer:** Rate = 86,400,000 atomic units / 86,400 seconds = 1,000 atomic units per second, or 0.001 USDC/s. Total cap 86.4 USDC; duration 24 hours. Return the calculated stream terms and the supplied simulation result. No encoded unsigned payload or absolute start time was supplied, so an actual signable artifact still needs retrieval and review. Terms are calculated; no stream is confirmed. Do not describe terms alone as a constructed transaction or request the same valid authorization again.
+**Completed answer:** Rate = 86,400,000 atomic units / 86,400 seconds = 1,000 atomic units per second, or 0.001 USDC/s. That is the economic rate in token base units, not the value a protocol call takes: Sablier Flow encodes 0.001 tokens per second as UD21x18 (`1e15`), and a Superfluid Super Token is always 18 decimals (`1e15` per second), so encode with the selected protocol's rate scale. Total cap 86.4 USDC; duration 24 hours. Return the calculated stream terms and the supplied simulation result. No encoded unsigned payload or absolute start time was supplied, so an actual signable artifact still needs retrieval and review. Terms are calculated; no stream is confirmed. Do not describe terms alone as a constructed transaction or request the same valid authorization again.
 
 ## Recovery and continuation
 

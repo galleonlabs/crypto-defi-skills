@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5 - 2026-11-17
+
+- Map the simulation classifications to the labels the offline record helper prints, and describe Alchemy's simulation API as deprecated in the README.
+
 ## 0.1.4 - 2026-11-11
 
 - Point Tenderly simulation and Ethereum JSON-RPC links at their current documentation URLs. The simulations overview does not document forks.

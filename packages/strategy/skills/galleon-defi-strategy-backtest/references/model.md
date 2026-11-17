@@ -24,7 +24,7 @@ The engine accepts one asset's consecutive daily USD observations. The CLI also 
 }
 ```
 
-Values above illustrate shape; they are not live Bitcoin evidence. Use exact ISO UTC midnight dates, 2 to 10,000 rows in ascending consecutive-day order, and finite prices from `1e-12` to `1e12`. Retrieval time must follow every observation. Identity uses lowercase provider namespace and an opaque ID. Non-synthetic sources must be HTTPS without URL credentials, query strings or fragments; retain safe normalized parameters separately in the research record. Optional `rawSha256` identifies original response bytes. A synthetic dataset must explicitly set `synthetic: true` and a `fixture:<name>` source.
+Values above illustrate shape; they are not live Bitcoin evidence. Use exact ISO UTC midnight dates, 2 to 10,000 rows in ascending consecutive-day order, and finite prices from `1e-12` to `1e12`. No observation may be later than the retrieval time. Identity uses lowercase provider namespace and an opaque ID. Non-synthetic sources must be HTTPS without URL credentials, query strings or fragments; retain safe normalized parameters separately in the research record. Optional `rawSha256` identifies original response bytes. A synthetic dataset must explicitly set `synthetic: true` and a `fixture:<name>` source.
 
 ## Strategy specification
 

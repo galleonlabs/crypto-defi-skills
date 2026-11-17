@@ -122,4 +122,41 @@ describe("local show command", () => {
     expect(JSON.parse(result.stdout).ok).toBe(false);
     expect(result.stdout).not.toContain("OUTSIDE_FIXTURE_CONTENT");
   });
+  test("rejects a command or code path naming a resource the skill does not ship", async () => {
+    const { root, skill } = await fixture("Run `node scripts/missing.mjs --help`, then read `examples/case.json`.\n");
+    await mkdir(resolve(skill, "scripts"));
+    const missing = await validateCorpus(root);
+    expect(missing.ok).toBe(false);
+    expect(missing.issues.map(issue => issue.message)).toEqual([
+      "missing skill resource: scripts/missing.mjs",
+      "missing skill resource: examples/case.json",
+    ]);
+    await writeFile(resolve(skill, "scripts/missing.mjs"), "");
+    await mkdir(resolve(skill, "examples"));
+    await writeFile(resolve(skill, "examples/case.json"), "{}\n");
+    expect((await validateCorpus(root)).ok).toBe(true);
+  });
+
+  test("accepts resource paths relative to the reference file, in URLs and in other packages", async () => {
+    const { root, skill } = await fixture("See https://example.com/repo/scripts/build.ts and `packages/other/scripts/build.ts`.\n");
+    await mkdir(resolve(skill, "references/examples"), { recursive: true });
+    await writeFile(resolve(skill, "references/examples/case.json"), "{}\n");
+    await writeFile(resolve(skill, "references/guide.md"), "Open `examples/case.json` beside this file.\n");
+    expect((await validateCorpus(root)).issues).toEqual([]);
+  });
+
+  test("rejects a compatibility line that promises a helper the skill does not ship", async () => {
+    const { root, skill } = await fixture("Body.\n");
+    const withCompatibility = (text: string) => frontmatter.replace("license: MIT\n", `license: MIT\ncompatibility: "${text}"\n`) + "Body.\n";
+    await writeFile(resolve(skill, "SKILL.md"), withCompatibility("Read-only RPC. Optional Node.js 20 for offline helpers."));
+    const promised = await validateCorpus(root);
+    expect(promised.ok).toBe(false);
+    expect(promised.issues.some(issue => issue.message.includes("compatibility mentions a bundled helper"))).toBe(true);
+    await mkdir(resolve(skill, "scripts"));
+    await writeFile(resolve(skill, "scripts/helper.mjs"), "");
+    expect((await validateCorpus(root)).ok).toBe(true);
+    await rm(resolve(skill, "scripts"), { recursive: true });
+    await writeFile(resolve(skill, "SKILL.md"), withCompatibility("Read-only RPC. No signer included."));
+    expect((await validateCorpus(root)).ok).toBe(true);
+  });
 });

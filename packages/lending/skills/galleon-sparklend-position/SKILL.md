@@ -4,7 +4,7 @@ description: "Use when reviewing a SparkLend Pool supply, borrow, repay or colla
 license: MIT
 compatibility: "Official read APIs, SDKs or chain RPC; provider access stays in the user's environment. No signer required for research."
 metadata:
-  version: "0.4.5"
+  version: "0.4.6"
   author: "Andrew Wilkinson and Galleon Labs"
   source: "https://github.com/galleonlabs/crypto-defi-skills"
 ---
@@ -19,7 +19,7 @@ Ask for or discover chain, account, asset, amount and requested action. Confirm 
 
 Read `Pool.getUserAccountData(account)`, `getUserConfiguration(account)`, `getUserEMode(account)` and `getReserveData(asset)`. Use the matching data provider for `getUserReserveData(asset, account)` and reserve configuration; preserve raw token decimals, oracle base units and WAD health factor. Read the oracle route, current prices, liquidation thresholds, borrowing LTV, debt balances, supply/borrow caps, pause/freeze flags, eMode category and isolation debt ceiling. Verify the actual deployment still supports the requested action; a historical network listing is insufficient.
 
-Read underlying liquidity held by the reserve's aToken separately from total supply. Compare fresh accrued debt, available borrowing capacity and proposed post-state. Never infer withdrawable collateral solely from the wallet's spToken balance.
+Read underlying liquidity held by the reserve's spToken (its aToken-interface receipt contract) separately from total supply. Compare fresh accrued debt, available borrowing capacity and proposed post-state. Never infer withdrawable collateral solely from the wallet's spToken balance.
 
 ## Prepare only the requested sequence
 
