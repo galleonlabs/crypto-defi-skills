@@ -40,7 +40,9 @@ describe("buildRange", () => {
     let checked = 0;
     for (let index = 0; index < 60; index += 1) {
       // Two thirds beyond +/-20,000, where 18/6-decimal pairs sit; the rest near zero.
-      const magnitude = index % 3 === 0 ? Math.floor(random() * 20_000) : 20_000 + Math.floor(random() * 100_000);
+      // Capped at 60,000: the exact reference raises 10001n to the tick, and past
+      // about a million bits a loaded CI runner refuses the BigInt.
+      const magnitude = index % 3 === 0 ? Math.floor(random() * 20_000) : 20_000 + Math.floor(random() * 40_000);
       const tick = random() < 0.5 ? -magnitude : magnitude;
       const boundary = Math.exp(tick * Math.log(1.0001));
       // The float nearest a boundary lands on either side of it; so do its neighbours.
