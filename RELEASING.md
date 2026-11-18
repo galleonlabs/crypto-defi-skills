@@ -20,6 +20,8 @@
 
    Once a pack's first trusted publish has landed, set its npm **Settings → Publishing access** to "Require two-factor authentication and disallow tokens".
 
+   Trusted publishes that have landed, as of 17 November 2026: `lp`, `hyperliquid`, `routing`, `payments`, `agent`, `infra`, `lending`, `yield`, `staking`, `data` and `strategy`. The other packs are not recorded here. The dry run's "Report whether npm trusts this workflow" step shows the live state for any pack; a pack without a publisher passes the dry run and then fails the real publish with `ENEEDAUTH`.
+
    If Actions is unavailable, stage from a clean, trusted local checkout with `npx -y npm@11.21.1 stage publish --access public --ignore-scripts` in the package directory; it goes live only when the owner approves it with 2FA on npmjs.com. npm removes direct publishing by 2FA-bypass tokens around January 2027.
 5. Independently verify `npm view <name>@<version> repository dist` and install that exact version into a clean consumer project. Check CLI version (content-only CLIs read the manifest), catalog, validation, and the expected skills and references.
    Run `bun run smoke:registry <pack>` to check the public registry metadata, install the exact version without lifecycle scripts, verify the Node CLI and exports, and compare every published skill resource byte-for-byte with this checkout. `<pack>` is the workspace id, such as `lp`. A directory path is rejected before any registry request. Omit the pack id to check all packs. This explicit release check accesses the network; ordinary tests do not.
