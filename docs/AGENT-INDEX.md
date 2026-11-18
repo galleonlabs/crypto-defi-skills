@@ -1,6 +1,6 @@
 # Agent index
 
-Route the user’s task to one primary skill, then load its conditional resources as needed. This index covers **17 packs, 81 active skills and 2 retired LP compatibility notices**. The broad primitive workflows and named protocol procedures serve different triggers; installing the collection is optional.
+Route the user’s task to one primary skill, then load its conditional resources as needed. This index covers **17 packs, 82 active skills and 2 retired LP compatibility notices**. The broad primitive workflows and named protocol procedures serve different triggers; installing the collection is optional.
 
 [Human getting-started guide](GETTING-STARTED.md) · [Exact release table](../README.md#independent-packs) · [Repository contributor instructions](../AGENTS.md)
 
@@ -126,6 +126,7 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | [`oneinch-swap`](../packages/routing/skills/oneinch-swap/SKILL.md) | Review a 1inch swap quote and execution mode | Route type, allowances, fees, recipient, minimum output and mode-specific fulfillment evidence. |
 | [`cow-order`](../packages/routing/skills/cow-order/SKILL.md) | Review a CoW order and settlement evidence | Auction/order identity, signed terms, fees, fill state and actual received assets with cancellation/expiry limits. |
 | [`jupiter-swap`](../packages/routing/skills/jupiter-swap/SKILL.md) | Review a Jupiter Swap v2 route | Quote route, fees, executable-versus-quote-only status and Solana transaction validity and settlement checks. |
+| [`lcx-liberty-swap`](../packages/routing/skills/lcx-liberty-swap/SKILL.md) | Review an LCX Liberty DEX quote and unsigned build | Key check, after-gas floor, spender and router target, quote expiry, simulation state and cross-chain delivery tracking. |
 | [`relay-bridge`](../packages/routing/skills/relay-bridge/SKILL.md) | Reconcile a Relay cross-chain route | Quote/step identity, outstanding dependencies, destination delivery and unresolved or refundable state. |
 | [`across-bridge`](../packages/routing/skills/across-bridge/SKILL.md) | Review an Across route and destination fill | Quote fees/limits, deposit identity, fill deadline and actual destination token/recipient/amount or refund status. |
 | [`circle-cctp`](../packages/routing/skills/circle-cctp/SKILL.md) | Track a CCTP message through attestation and mint | Burn/message identity, attestation/finality state, destination nonce consumption and actual USDC mint evidence. |
