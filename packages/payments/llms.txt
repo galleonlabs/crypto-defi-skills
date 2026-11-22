@@ -6,5 +6,6 @@ Plan stablecoin payments, x402 purchases and token streams.
 - [Providers](skills/galleon-defi-payments/references/providers.md)
 - [Sources](SOURCES.md)
 
+- [ERC-20 payment receipt](skills/galleon-erc20-payment-receipt/SKILL.md)
 - [galleon-sablier-streams](skills/galleon-sablier-streams/SKILL.md)
 - [galleon-superfluid-streams](skills/galleon-superfluid-streams/SKILL.md)

@@ -1,6 +1,6 @@
 # Crypto DeFi Skills
 
-> Installable DeFi procedures for existing agents: 17 independent packs, 82 active skills and 2 retired LP compatibility notices. Each skill bundles its procedure, supporting sources, helpers and completion evidence.
+> Installable DeFi procedures for existing agents: 17 independent packs, 83 active skills and 2 retired LP compatibility notices. Each skill bundles its procedure, supporting sources, helpers and completion evidence.
 
 ## Select and install
 

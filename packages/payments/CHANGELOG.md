@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 - 2026-11-22
+
+- Verify a submitted ERC-20 payment against its intended payer, recipient, token and exact amount. The new standalone skill includes an offline Node.js verifier, a synthetic example and read-only RPC instructions.
+
 ## 0.2.4 - 2026-11-17
 
 - Say that a stream rate is encoded in the protocol's rate scale, not the token's decimals: Sablier Flow uses UD21x18 and Superfluid Super Tokens are always 18 decimals.

@@ -1,10 +1,13 @@
 {
   "name": "galleon-defi-payments-skills",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Plan stablecoin payments, x402 purchases and token streams.",
   "type": "module",
   "license": "MIT",
-  "author": "Galleon Labs",
+  "author": {
+    "name": "Andrew Wilkinson (Galleon Labs)",
+    "url": "https://github.com/ADWilkinson"
+  },
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/payments#readme",
   "repository": {
     "type": "git",
@@ -51,9 +54,10 @@
   },
   "scripts": {
     "build": "bun ../../scripts/build-content-pack.ts",
-    "check": "bun run style && bun ../../scripts/check-content-pack.ts",
+    "check": "bun run style && bun test ./test/receipt-contract.test.ts && bun ../../scripts/check-content-pack.ts",
     "prepack": "bun run check",
     "validate": "bun ../../scripts/check-content-pack.ts --validate-only",
     "style": "bun ../../scripts/check-style.ts"
-  }
+  },
+  "funding": "https://github.com/sponsors/ADWilkinson"
 }

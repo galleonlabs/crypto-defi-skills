@@ -45,6 +45,7 @@
         "relay-bridge",
         "across-bridge",
         "circle-cctp",
+        "galleon-erc20-payment-receipt",
         "galleon-sablier-streams",
         "galleon-superfluid-streams",
         "gmx-position",

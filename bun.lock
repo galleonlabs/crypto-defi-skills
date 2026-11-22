@@ -93,7 +93,7 @@
     },
     "packages/payments": {
       "name": "galleon-defi-payments-skills",
-      "version": "0.2.4",
+      "version": "0.3.0",
       "bin": {
         "defi-payments-skills": "dist/cli.js",
       },

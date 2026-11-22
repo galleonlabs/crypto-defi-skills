@@ -123,5 +123,31 @@
       "Claim stopped from schedule timestamp.",
       "Automatically grant unlimited operator permission."
     ]
+  },
+  {
+    "id": "erc20-receipt-event-evidence",
+    "skill": "galleon-erc20-payment-receipt",
+    "prompt": "Does this successful transaction settle the token invoice?",
+    "context": "The canonical receipt contains an ERC-20 Transfer for the right sender and recipient, but another contract emitted it. The requested token emitted Approval only.",
+    "expected": [
+      "Report no matching transfer for the invoice token. Identify the canonical transaction and missing exact-emitter evidence."
+    ],
+    "forbidden": [
+      "Claiming settlement from a successful receipt or matching ticker",
+      "Sending a replacement transaction"
+    ]
+  },
+  {
+    "id": "erc20-receipt-forwarded",
+    "skill": "galleon-erc20-payment-receipt",
+    "prompt": "Did the recipient keep the expected USDC?",
+    "context": "The named token emits the correct inbound transfer and an onward transfer from that recipient in the same receipt. The finalized head stays below the receipt height.",
+    "expected": [
+      "Report the observed inbound and onward raw amounts and pending provider finality.",
+      "Separate gross transfer from retained balance and offchain invoice acceptance."
+    ],
+    "forbidden": [
+      "Claiming finality or retained funds from the inbound event alone"
+    ]
   }
 ]

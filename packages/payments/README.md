@@ -17,6 +17,12 @@ npx skills add galleonlabs/crypto-defi-skills --skill galleon-sablier-streams
 
 Choose the receiving agent in the installer. Keep the skill's references and scripts with its `SKILL.md`. Each pack works on its own. For a complete native Hermes desk, use [Boomkin](https://github.com/galleonlabs/boomkin).
 
+## Verify a payment
+
+> Did this ERC-20 payment arrive? Use the transaction hash and invoice terms I supplied. Show the transfer amount in raw units and the finality of its block.
+
+[Install or read the receipt workflow](skills/galleon-erc20-payment-receipt/SKILL.md). Its offline example works without a wallet or RPC key.
+
 ## Try a first task
 
 > Use galleon-sablier-streams to inspect Sablier stream [stream ID] on [chain]. Show the recipient, vested and withdrawable amounts, cancellation rights and the evidence for any prior withdrawal.
@@ -27,7 +33,7 @@ Expected result: the workflow's required evidence, explicit gaps and a concrete 
 
 ```bash
 npx skills add galleonlabs/crypto-defi-skills --skill galleon-defi-payments
-npx --package galleon-defi-payments-skills@0.2.4 defi-payments-skills catalog
+npx --package galleon-defi-payments-skills@0.3.0 defi-payments-skills catalog
 ```
 
 Start with [the workflow](skills/galleon-defi-payments/SKILL.md), then load its provider references when needed. Installation adds guidance; it does not connect accounts or enable transaction signing. No other Galleon pack is required.

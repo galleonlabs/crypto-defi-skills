@@ -16,3 +16,7 @@ Documentation was researched and synthetic cases were added; no financial operat
 ## Content maintenance, 2026-10-25
 
 Remove repeated task-routing/persona scaffolding; retain stream arithmetic, authorization limits and uncertain-payment recovery. Existing dated discovery and release receipts remain historical evidence; no live provider/account access or financial outcome is inferred from this cleanup.
+
+## ERC-20 receipt reconciliation
+
+Reviewed on 2026-11-22 using the [ERC-20 standard](https://eips.ethereum.org/EIPS/eip-20), [execution API schemas](https://github.com/ethereum/execution-apis) and [Circle’s deployment list](https://developers.circle.com/stablecoins/usdc-contract-addresses). On Base, a public receipt and matching canonical and finalized headers identified a native USDC transfer of 600000 raw units in [this transaction](https://basescan.org/tx/0xee9b0ca7d51ebf9d51c09a384665c3fe9cd38c717c47179e94136afae60589fd). The expected terms of that smoke check came from the public event. Invoice acceptance and an independent commercial obligation were outside that observation.
