@@ -149,5 +149,29 @@
       "lifi-cross-chain"
     ],
     "reason": "A submitted same-chain ERC-20 transfer needs receipt and event evidence."
+  },
+  {
+    "prompt": "My L1 receipt succeeded, but only an Approval log appears. Did the ERC-20 invoice get paid?",
+    "expected": "galleon-erc20-payment-receipt",
+    "mustNotInvoke": [
+      "galleon-defi-security"
+    ],
+    "reason": "The question is about delivered payment evidence, not whether the approval should have been signed."
+  },
+  {
+    "prompt": "An Ethereum transaction shows two smaller USDC transfers for my single payment. How much of the invoice can I reconcile?",
+    "expected": "galleon-erc20-payment-receipt",
+    "mustNotInvoke": [
+      "galleon-defi-portfolio"
+    ],
+    "reason": "Match this individual obligation before aggregating portfolio cash flows."
+  },
+  {
+    "prompt": "I have the Base invoice terms and a transaction hash, but the canonical block hash changed. Can I mark it final?",
+    "expected": "galleon-erc20-payment-receipt",
+    "mustNotInvoke": [
+      "across-bridge"
+    ],
+    "reason": "A same-chain payment receipt needs canonicality checks, not bridge status."
   }
 ]
