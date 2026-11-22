@@ -19,7 +19,7 @@
     },
     "packages/data": {
       "name": "galleon-defi-data-skills",
-      "version": "0.7.0",
+      "version": "0.8.0",
       "bin": {
         "defi-data-skills": "dist/cli.js",
       },

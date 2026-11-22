@@ -77,3 +77,7 @@ At 06:43:24–25 UTC on 2026-10-02, the new keyless snapshot completed CoinGecko
 ## Content maintenance, 2026-10-25
 
 Remove generic task scaffolding and unrelated research cadence; bundle the maintained standalone corpus validator and pin archived source evidence. Existing dated discovery and release receipts remain historical evidence; no live provider/account access or financial outcome is inferred from this cleanup.
+
+## Coinbase Exchange venue comparison
+
+Verified 2026-11-22. The public product ticker supplies the last USD trade price, ID and UTC trade time. The helper reads one exact product without an account. [Coinbase Exchange product ticker](https://docs.cdp.coinbase.com/api-reference/exchange-api/rest-api/products/get-product-ticker)

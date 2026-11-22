@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.0 - 2026-11-22
+
+- Compare a fresh CoinGecko USD mark with a timestamped Coinbase Exchange trade for BTC, ETH or SOL. The existing snapshot CLI returns the USD product, trade ID, source hash and timestamp-aligned spread in one opt-in read.
+
 ## 0.7.0 - 2026-11-22
 
 - Screen DefiLlama pools on Solana by an exact, case-sensitive mint. The same offline helper supports EVM contract addresses and preserves the base or total APY ranking and exclusions.

@@ -60,7 +60,7 @@ Install only the packs you need. Each has its own npm version, CLI, plugin manif
 | [Agent](packages/agent) | [`galleon-defi-agent-skills@0.1.5`](https://www.npmjs.com/package/galleon-defi-agent-skills/v/0.1.5) | Official unsigned builders, playbooks and stateful simulation evidence |
 | [Prediction](packages/prediction) | [`galleon-defi-prediction-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-prediction-skills/v/0.1.2) | Polymarket rules, order-book depth, versioned ledgers and resolution evidence |
 | [Infra](packages/infra) | [`galleon-defi-infra-skills@0.4.7`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.4.7) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
-| [Data](packages/data) | [`galleon-defi-data-skills@0.7.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.7.0) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
+| [Data](packages/data) | [`galleon-defi-data-skills@0.8.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.8.0) | CoinGecko, DeFiLlama, Coinbase Exchange, AIXBT and source-aware cross-protocol evidence |
 | [LP](packages/lp) | [`galleon-lp-skills@0.7.7`](https://www.npmjs.com/package/galleon-lp-skills/v/0.7.7) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
 | [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.4.7`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.4.7) | Public wallet cost audits, spot, perps, HIP-3, account modes and review |
 | [Lending](packages/lending) | [`galleon-defi-lending-skills@0.4.6`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.4.6) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
