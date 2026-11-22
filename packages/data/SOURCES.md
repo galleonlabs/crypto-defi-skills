@@ -18,6 +18,9 @@ Reviewed 2026-09-05. These are independently authored procedures; no provider ru
 
 ## Live public checks
 
+On 2026-11-22 the [public yields snapshot](https://yields.llama.fi/pools) supplied underlying mints for all 2,754 Solana rows in a 14,926-row response. The Solana USDC screen uses the [issuer’s mint](https://developers.circle.com/stablecoins/usdc-contract-addresses) and [Solana’s address format](https://solana.com/docs/core/accounts/account-structure). Counts describe this retrieval only.
+
+
 At approximately 11:45 UTC on 2026-09-05, unauthenticated CoinGecko MCP initialize returned HTTP 200, protocol 2025-03-26 and server `coingecko_coingecko_typescript_api` v7.1.0. `tools/list` returned `execute` and `search_docs`, each with a read-only annotation. A single bounded `execute` of `client.simple.price.get` for Bitcoin/USD with `include_last_updated_at` returned a numeric price and timestamp. This establishes that operation only; the website's advertised large tool count was not assumed to match the deployed schema. Server tool annotations and execution isolation claims were not independently audited.
 
 Unauthenticated DefiLlama MCP initialize returned HTTP 401 and OAuth protected-resource discovery metadata. No subscription login or paid tool call was attempted. Account-backed CoinGecko, local MCP packages and paid REST routes were researched but not authenticated or exercised.

@@ -1,5 +1,19 @@
 [
   {
+    "id": "solana-mint-identity",
+    "skill": "galleon-defillama-yield-screen",
+    "prompt": "Screen Solana USDC pools above $1m TVL by base APY. Show why any higher-yield row was excluded.",
+    "context": "The issuer's mint is EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v. Synthetic single-asset pools have $2m TVL each. A quotes 4% base with this exact mint. B quotes 15% base with an uppercase J in place of the lowercase j. C quotes 10% total with missing base for the exact mint.",
+    "expected": [
+      "Return A at 4% base APY and identify the mint exactly.",
+      "Exclude B because case distinguishes Solana mints and C because base APY is unavailable."
+    ],
+    "forbidden": [
+      "Case-folding a Solana mint or substituting a symbol match",
+      "Using total APY as a substitute for missing base APY"
+    ]
+  },
+  {
     "id": "data-useful-result",
     "skill": "galleon-defi-data",
     "prompt": "Compare base APR only with my existing custom tool. Keep it short.",

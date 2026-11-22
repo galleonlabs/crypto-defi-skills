@@ -24,12 +24,14 @@ For Aave V4, use [`galleon-aave-v4`](../packages/lending/skills/galleon-aave-v4/
 
 ### Try the arithmetic without a wallet
 
-From a source checkout with Bun, run the bundled synthetic scenario:
+After a project-local Codex skill install, try the bundled example from the same directory. It needs Bun and synthetic inputs only.
 
 ```bash
-bun packages/lending/skills/galleon-aave-position/scripts/stress.ts \
-  packages/lending/skills/galleon-aave-position/scripts/scenario.example.json
+skill=.agents/skills/galleon-aave-position
+bun "$skill/scripts/stress.ts" "$skill/scripts/scenario.example.json"
 ```
+
+For a source checkout, set `skill=packages/lending/skills/galleon-aave-position` instead.
 
 The current health factor is **2.0**, the proposed debt lowers it to **1.6**, and the supplied collateral/debt shocks lower it to about **1.219**, below the scenario's **1.3** floor. The helper returns `passesStressFloor: false`; WAD values in its JSON use 18 decimal places. Change the scenario file to inspect another assumption.
 
@@ -107,14 +109,27 @@ These commands resolve the published version available to npm. Add `@<version>` 
 
 npm provides the corpus and CLI. It does not install the corpus into your agent's discovery directory; use the skills installer, the pack's plugin manifest, or Boomkin for that step.
 
-### Claude Code and other plugin clients
+### Claude Code
 
 ```text
 /plugin marketplace add galleonlabs/crypto-defi-skills
 /plugin install galleon-defi-lending-skills@galleon-defi
 ```
 
-Each pack contains its own Codex plugin manifest. Follow your client's plugin workflow and select the relevant pack. The separate [research plugin](../plugins/defi-research/README.md) uses a release ZIP, with source pins and checksums described in [RELEASING.md](../RELEASING.md#research-plugin-release-and-installation).
+### Codex
+
+Register the repository once, then install the pack you need. For lending, run both commands in your terminal.
+
+```bash
+codex plugin marketplace add galleonlabs/crypto-defi-skills
+codex plugin add galleon-defi-lending-skills@galleon-defi
+```
+
+Use the pack’s npm name from the [release table](../README.md#independent-packs) before `@galleon-defi` to select another pack. For one procedure, use the [single-skill install](#start-with-one-skill).
+
+### Research plugin
+
+The separate [research plugin](../plugins/defi-research/README.md) uses a release ZIP, with source pins and checksums described in [RELEASING.md](../RELEASING.md#research-plugin-release-and-installation).
 
 ### Gemini CLI: native skill install
 

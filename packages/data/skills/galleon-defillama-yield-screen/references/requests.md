@@ -10,6 +10,14 @@ bun scripts/screen.ts pools.json Base 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
 
 Run from this skill directory. The helper reads only the supplied JSON; it never fetches or loads credentials. It caps input size and returns at most five rows; a longer shortlist needs your own transparent filter. The final optional argument restricts the exact project slug (`aave-v3` here); omit it for a cross-protocol screen. It does not infer a lending category from a token. Inspect its JSON summary, including exclusions. The example address is Base native USDC; confirm it against the issuer before consequential use.
 
+For native USDC on Solana, run this against the same snapshot:
+
+```sh
+bun scripts/screen.ts pools.json Solana EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v 1000000 base
+```
+
+Use the exact case-sensitive mint from [Circle’s USDC address list](https://developers.circle.com/stablecoins/usdc-contract-addresses). Solana uses a 32-byte base58 address. On EVM chains the helper compares 20-byte hexadecimal addresses without case sensitivity. A matching underlying identifies the adapter’s reported exposure. Inspect the pool before treating its deposit or withdrawal asset as interchangeable.
+
 For each selected UUID, read `https://yields.llama.fi/chart/{pool}` with the same timeout and response cap. Validate the UUID before substitution, fetch no more than three histories and do not retry automatically. Filter returned timestamps to the requested window. Reject malformed/status-error responses; don't treat them as empty pools.
 
 APY fields are percentage points (5 means 5%), not fractions. `apyBase` and `apyReward` can both be null even when total `apy` exists. DefiLlama's adapter methodology excludes certain inaccessible incentives and generally uses unboosted reward assumptions; verify the specific adapter before claiming this matches the user's position. Pool TVL on lending markets can represent supplied value minus borrowed value; it is not a guarantee of immediately withdrawable funds. The provider's intended update cadence does not establish freshness of a particular row.

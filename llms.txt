@@ -10,6 +10,8 @@
 - [Independent packs](https://github.com/galleonlabs/crypto-defi-skills#independent-packs): Exact npm releases and pack coverage
 - [Boomkin](https://github.com/galleonlabs/boomkin): Reviewed source pins and native Hermes onboarding
 
+For a full pack in Codex, run `codex plugin marketplace add galleonlabs/crypto-defi-skills`, then `codex plugin add <pack-npm-name>@galleon-defi`.
+
 Use `npx skills add galleonlabs/crypto-defi-skills --skill <name>` for one procedure. Source installs follow main; record an exact source revision or npm version for reproducibility. Package CLIs inspect the local corpus, not provider or wallet readiness.
 
 ## Load only the selected procedure
