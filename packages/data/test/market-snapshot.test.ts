@@ -109,3 +109,37 @@ test('CLI parsing rejects duplicate/unknown/missing parameters and unsupported c
   expect(parseArgs(['history', '--id', 'bitcoin', '--days', '180'])).toEqual({ command: 'history', options: { id: 'bitcoin', days: 180 } });
   for (const args of [['snapshot', '--ids'], ['snapshot', '--provider', 'both', '--provider', 'both'], ['history', '--key', 'secret'], ['trade']]) expect(() => parseArgs(args)).toThrow(MarketDataError);
 });
+
+test('venue comparison binds one USD product to a timestamped trade and preserves partial evidence', async () => {
+  const ticker = 'https://api.exchange.coinbase.com/products/ETH-USD/ticker';
+  const trade = { price: '101.00', trade_id: 123, time: '2026-10-02T11:59:45.234567892Z' };
+  const options = { provider: 'coinbase-compare', ids: ['ethereum'] };
+  for (const [body, error] of [
+    [trade, null],
+    [{ ...trade, trade_id: 0 }, 'invalid_venue_trade'],
+    [{ ...trade, price: '0x14' }, 'invalid_price'],
+    [{ ...trade, time: '2026-10-01T00:00:00Z' }, 'stale_observation'],
+    [{ ...trade, time: '2026-10-02T12:10:00Z' }, 'future_timestamp'],
+  ] as const) {
+    const urls: string[] = [];
+    const report = await marketSnapshot(options, dependencies(async url => {
+      urls.push(url);
+      return url === ticker ? json(body) : json({ ethereum: observation(100) });
+    }));
+    expect(urls).toEqual(['https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&include_last_updated_at=true', ticker]);
+    expect(report.reads[0].observations[0].ok).toBe(true);
+    if (error) {
+      expect(report.reads[1].observations[0].error).toBe(error);
+      expect(report.comparisons[0]).toMatchObject({ status: 'incomplete', spreadPct: null });
+    } else {
+      expect(report.reads[1].observations[0]).toMatchObject({ venueProduct: 'ETH-USD', priceType: 'last-trade', tradeId: 123, priceUsd: 101, observedAt: '2026-10-02T11:59:45.234Z' });
+      expect(report.comparisons[0]).toMatchObject({ status: 'aligned', skewSeconds: 15.234 });
+    }
+  }
+  for (const ids of [['bitcoin', 'ethereum'], ['wrapped-bitcoin']]) {
+    let calls = 0;
+    const result = await marketSnapshot({ ...options, ids }, dependencies(async () => { calls++; return json({}); }));
+    expect(calls).toBe(0);
+    expect(result.error).toBe('unsupported_venue_product');
+  }
+});

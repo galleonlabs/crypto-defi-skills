@@ -3,10 +3,10 @@
 # Crypto DeFi Skills
 
 [![CI](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/galleonlabs/crypto-defi-skills/actions/workflows/ci.yml)
-[![82 active skills](https://img.shields.io/badge/active_skills-82-0f766e)](docs/AGENT-INDEX.md)
+[![83 active skills](https://img.shields.io/badge/active_skills-83-0f766e)](docs/AGENT-INDEX.md)
 [![MIT](https://img.shields.io/badge/license-MIT-0f766e)](LICENSE)
 
-**Installable DeFi procedures for the agent you already use.** Give Claude Code, Codex, Cursor, Gemini CLI, Hermes or OpenClaw a concrete task: inspect lending risk, review a swap, check a vault exit or trace a bridge delivery. **82 active skills across 17 independent packs.** Named protocol skills contain the reads, calculations, decision branches and evidence needed to complete the task; official documentation supports those procedures.
+**Installable DeFi procedures for the agent you already use.** Give Claude Code, Codex, Cursor, Gemini CLI, Hermes or OpenClaw a concrete task: inspect lending risk, review a swap, check a vault exit or trace a bridge delivery. **83 active skills across 17 independent packs.** Named protocol skills contain the reads, calculations, decision branches and evidence needed to complete the task; official documentation supports those procedures.
 
 ## Start with one skill
 
@@ -32,7 +32,7 @@ Choose the skill that names the job. Each procedure includes the inputs to read,
 | Vaults and savings | [Pendle V2](packages/yield/skills/galleon-pendle-maturity/SKILL.md) · [ERC-4626 exits](packages/yield/skills/galleon-vault-exit/SKILL.md) · [Yearn](packages/yield/skills/galleon-yearn-vault/SKILL.md) · [Spark/Sky savings](packages/yield/skills/galleon-spark-savings/SKILL.md) · [EulerEarn](packages/yield/skills/galleon-euler-earn/SKILL.md) · [Ethena sUSDe](packages/yield/skills/galleon-ethena-susde/SKILL.md) |
 | Swaps and bridges | [Uniswap](packages/routing/skills/uniswap-swap/SKILL.md) · [LI.FI](packages/routing/skills/lifi-cross-chain/SKILL.md) · [0x](packages/routing/skills/zerox-swap/SKILL.md) · [1inch](packages/routing/skills/oneinch-swap/SKILL.md) · [CoW](packages/routing/skills/cow-order/SKILL.md) · [Jupiter Swap](packages/routing/skills/jupiter-swap/SKILL.md) · [LCX Liberty DEX](packages/routing/skills/lcx-liberty-swap/SKILL.md) · [Relay](packages/routing/skills/relay-bridge/SKILL.md) · [Across](packages/routing/skills/across-bridge/SKILL.md) · [Circle CCTP](packages/routing/skills/circle-cctp/SKILL.md) |
 | Derivatives | [Hyperliquid](packages/hyperliquid/skills/hyperliquid-analyze/SKILL.md) · [GMX](packages/derivatives/skills/gmx-position/SKILL.md) · [Derive](packages/derivatives/skills/derive-options/SKILL.md) · [Velocity](packages/derivatives/skills/velocity-position/SKILL.md) · [Pendle Boros](packages/derivatives/skills/pendle-boros/SKILL.md) · [Jupiter Perps](packages/derivatives/skills/jupiter-perps/SKILL.md) |
-| Streams | [Sablier](packages/payments/skills/galleon-sablier-streams/SKILL.md) · [Superfluid](packages/payments/skills/galleon-superfluid-streams/SKILL.md) |
+| Payments | [Verify an ERC-20 receipt](packages/payments/skills/galleon-erc20-payment-receipt/SKILL.md) · [Sablier](packages/payments/skills/galleon-sablier-streams/SKILL.md) · [Superfluid](packages/payments/skills/galleon-superfluid-streams/SKILL.md) |
 | Prediction markets | [Polymarket research](packages/prediction/skills/galleon-prediction-market-research/SKILL.md) · [Resolution](packages/prediction/skills/galleon-prediction-market-resolution/SKILL.md) |
 | Governance | [Snapshot](packages/governance/skills/snapshot-proposal/SKILL.md) · [Governor](packages/governance/skills/governor-proposal/SKILL.md) · [Safe](packages/governance/skills/safe-transaction/SKILL.md) |
 | Tokenized assets | [Ondo](packages/tokenized-assets/skills/galleon-ondo-assets/SKILL.md) · [OpenEden](packages/tokenized-assets/skills/galleon-openeden-tbill/SKILL.md) |
@@ -60,7 +60,7 @@ Install only the packs you need. Each has its own npm version, CLI, plugin manif
 | [Agent](packages/agent) | [`galleon-defi-agent-skills@0.1.5`](https://www.npmjs.com/package/galleon-defi-agent-skills/v/0.1.5) | Official unsigned builders, playbooks and stateful simulation evidence |
 | [Prediction](packages/prediction) | [`galleon-defi-prediction-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-prediction-skills/v/0.1.2) | Polymarket rules, order-book depth, versioned ledgers and resolution evidence |
 | [Infra](packages/infra) | [`galleon-defi-infra-skills@0.4.7`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.4.7) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
-| [Data](packages/data) | [`galleon-defi-data-skills@0.7.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.7.0) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
+| [Data](packages/data) | [`galleon-defi-data-skills@0.8.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.8.0) | CoinGecko, DeFiLlama, Coinbase Exchange, AIXBT and source-aware cross-protocol evidence |
 | [LP](packages/lp) | [`galleon-lp-skills@0.7.7`](https://www.npmjs.com/package/galleon-lp-skills/v/0.7.7) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
 | [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.4.7`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.4.7) | Public wallet cost audits, spot, perps, HIP-3, account modes and review |
 | [Lending](packages/lending) | [`galleon-defi-lending-skills@0.4.6`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.4.6) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
@@ -72,7 +72,7 @@ Install only the packs you need. Each has its own npm version, CLI, plugin manif
 | [Strategy](packages/strategy) | [`galleon-defi-strategy-skills@0.2.2`](https://www.npmjs.com/package/galleon-defi-strategy-skills/v/0.2.2) | Frozen-rule templates, held-out validation, higher-cost tests and reproducible benchmarks |
 | [Portfolio](packages/portfolio) | [`galleon-defi-portfolio-skills@0.2.3`](https://www.npmjs.com/package/galleon-defi-portfolio-skills/v/0.2.3) | Positions, liabilities, net exposure, cash flows and performance |
 | [Security](packages/security) | [`galleon-defi-security-skills@0.2.8`](https://www.npmjs.com/package/galleon-defi-security-skills/v/0.2.8) | Token diligence, transaction decoding, permissions and simulation review |
-| [Payments](packages/payments) | [`galleon-defi-payments-skills@0.2.4`](https://www.npmjs.com/package/galleon-defi-payments-skills/v/0.2.4) | Stablecoin transfers, x402, Sablier and Superfluid |
+| [Payments](packages/payments) | [`galleon-defi-payments-skills@0.3.0`](https://www.npmjs.com/package/galleon-defi-payments-skills/v/0.3.0) | Stablecoin transfers, x402, Sablier and Superfluid |
 | [Governance](packages/governance) | [`galleon-defi-governance-skills@0.2.1`](https://www.npmjs.com/package/galleon-defi-governance-skills/v/0.2.1) | Snapshot, Cactus, Governor, voting and Safe execution |
 
 ## Install only what you need

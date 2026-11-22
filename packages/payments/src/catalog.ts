@@ -3,6 +3,7 @@ export const SKILL_CATALOG = [
     "name": "galleon-defi-payments",
     "purpose": "Plan payments, x402 requests and token streams"
   },
+  { name: "galleon-erc20-payment-receipt", purpose: "Verify a submitted ERC-20 transfer against an independent payment instruction and report RPC finality." },
   { name: "galleon-sablier-streams", purpose: "Plan and reconcile Sablier Flow debt, Lockup vesting and current withdrawal/cancellation rights." },
   { name: "galleon-superfluid-streams", purpose: "Plan and reconcile Superfluid CFA flows, GDA pools, funding buffers and operator permissions." },
 ] as const;

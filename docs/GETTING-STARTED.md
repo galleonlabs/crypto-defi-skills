@@ -39,7 +39,7 @@ This is local common-base arithmetic. It makes no network call and does not simu
 
 ## Find your next task
 
-Use a named procedure when it fits. The [protocol table](../README.md#choose-a-protocol-task) opens the installed procedure for each supported protocol. Broader primitive skills cover cross-protocol questions and providers without a dedicated workflow; [the agent index](AGENT-INDEX.md#skill-routing) lists all 82 active skills.
+Use a named procedure when it fits. The [protocol table](../README.md#choose-a-protocol-task) opens the installed procedure for each supported protocol. Broader primitive skills cover cross-protocol questions and providers without a dedicated workflow; [the agent index](AGENT-INDEX.md#skill-routing) lists all 83 active skills.
 
 ### Positions, liquidity and exits
 
@@ -65,6 +65,7 @@ Use a named procedure when it fits. The [protocol table](../README.md#choose-a-p
 | Prepare a Uniswap quote | [`uniswap-swap`](../packages/routing/skills/uniswap-swap/SKILL.md) | Quote identity, route type, approval/Permit2 terms and unsigned payload review |
 | Reconcile a bridge arrival | [`lifi-cross-chain`](../packages/routing/skills/lifi-cross-chain/SKILL.md) | Actual recipient, destination asset and amount, or remaining/refunded leg |
 | Review a payload or permission | [`galleon-defi-security`](../packages/security/skills/galleon-defi-security/SKILL.md) | Decoded effects, authority changes, simulation limits and unresolved risks |
+| Verify an ERC-20 payment | [`galleon-erc20-payment-receipt`](../packages/payments/skills/galleon-erc20-payment-receipt/SKILL.md) | Matched token, accounts, raw units and block finality for a submitted transaction |
 | Plan a Sablier stream | [`galleon-sablier-streams`](../packages/payments/skills/galleon-sablier-streams/SKILL.md) | Flow versus Lockup, funding/debt, current rights and cancellation consequences |
 | Inspect a Superfluid obligation | [`galleon-superfluid-streams`](../packages/payments/skills/galleon-superfluid-streams/SKILL.md) | Flow or distribution state, permissions, buffer and funded runway |
 

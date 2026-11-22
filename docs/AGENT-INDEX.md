@@ -1,6 +1,6 @@
 # Agent index
 
-Route the user’s task to one primary skill, then load its conditional resources as needed. This index covers **17 packs, 82 active skills and 2 retired LP compatibility notices**. The broad primitive workflows and named protocol procedures serve different triggers; installing the collection is optional.
+Route the user’s task to one primary skill, then load its conditional resources as needed. This index covers **17 packs, 83 active skills and 2 retired LP compatibility notices**. The broad primitive workflows and named protocol procedures serve different triggers; installing the collection is optional.
 
 [Human getting-started guide](GETTING-STARTED.md) · [Exact release table](../README.md#independent-packs) · [Repository contributor instructions](../AGENTS.md)
 
@@ -138,6 +138,7 @@ Prefer the named protocol procedure when it matches the task and deployment. Use
 | Skill | Use when | Routing / authority boundary |
 | --- | --- | --- |
 | [`galleon-defi-payments`](../packages/payments/skills/galleon-defi-payments/SKILL.md) | Plan/reconcile transfers, x402 purchases, streams or distributions | Payment obligation, payer authority, actual settlement and service delivery |
+| [`galleon-erc20-payment-receipt`](../packages/payments/skills/galleon-erc20-payment-receipt/SKILL.md) | Check whether an ERC-20 payment arrived | Canonical block, exact event, token owner, recipient, raw amount and finality |
 | [`galleon-sablier-streams`](../packages/payments/skills/galleon-sablier-streams/SKILL.md) | Plan or inspect Sablier Flow debt or Lockup vesting | Product/deployment, NFT rights, covered debt, vested amounts and cancellation consequences |
 | [`galleon-superfluid-streams`](../packages/payments/skills/galleon-superfluid-streams/SKILL.md) | Plan or inspect CFA flows, GDA pools, wrapping or schedules | Real-time funding, buffer, operator rights, funded runway and actual flow state |
 
