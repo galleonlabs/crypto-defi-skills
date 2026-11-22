@@ -37,7 +37,7 @@ This is local common-base arithmetic. It makes no network call and does not simu
 
 ## Find your next task
 
-Use a named procedure when it fits. The [protocol table](../README.md#choose-a-protocol-task) opens the installed procedure for each supported protocol. Broader primitive skills cover cross-protocol questions and providers without a dedicated workflow; [the agent index](AGENT-INDEX.md#skill-routing) lists all 81 active skills.
+Use a named procedure when it fits. The [protocol table](../README.md#choose-a-protocol-task) opens the installed procedure for each supported protocol. Broader primitive skills cover cross-protocol questions and providers without a dedicated workflow; [the agent index](AGENT-INDEX.md#skill-routing) lists all 82 active skills.
 
 ### Positions, liquidity and exits
 

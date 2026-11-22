@@ -1,0 +1,6 @@
+interface:
+  display_name: "LCX Liberty DEX swap"
+  short_description: "LCX Liberty DEX swap workflow and evidence"
+  default_prompt: "Use $lcx-liberty-swap for this protocol task and return a concrete decision with evidence."
+policy:
+  allow_implicit_invocation: true
