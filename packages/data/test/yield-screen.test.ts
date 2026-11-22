@@ -24,3 +24,18 @@ test("project scope excludes unrelated vault strategies before ranking", () => {
  const r = screen({status:"success",data:[pool(1,4),{...pool(2,50),project:"other-vault"}]}, "Base", token, 1e6, "base", "aave-v3");
  expect(r.rows).toHaveLength(1); expect(r.rows[0]!.project).toBe("aave-v3"); expect(r.excluded.project).toBe(1);
 });
+
+test("Solana requires an exact case-sensitive 32-byte mint", () => {
+  const mint = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
+  const otherMint = mint.replace("j", "J");
+  const snapshot = { status: "success", data: [mint, otherMint].map((address, index) => ({
+    ...pool(index, 4), chain: "Solana", underlyingTokens: [address],
+  })) };
+  const result = screen(snapshot, "solana", mint, 0, "base");
+  expect(result.rows.map(row => row.underlyingTokens)).toEqual([[mint]]);
+  expect(result.excluded.asset_exposure).toBe(1);
+  for (const invalid of [token, "0".repeat(32), "1".repeat(33), "z".repeat(44)]) {
+    expect(() => screen(snapshot, "Solana", invalid, 0, "base")).toThrow("invalid_filter");
+  }
+  expect(screen(snapshot, "Solana", "1".repeat(32), 0, "base").matchedRows).toBe(0);
+});

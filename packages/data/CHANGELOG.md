@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0 - 2026-11-22
+
+- Screen DefiLlama pools on Solana by an exact, case-sensitive mint. The same offline helper supports EVM contract addresses and preserves the base or total APY ranking and exclusions.
+
 ## 0.6.5 - 2026-11-17
 
 - State that the yield screener returns at most five rows, and that the market snapshot error-code list is not exhaustive.

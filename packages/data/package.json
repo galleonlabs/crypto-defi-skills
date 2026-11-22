@@ -1,10 +1,13 @@
 {
   "name": "galleon-defi-data-skills",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "description": "Portable DeFi data skills for CoinGecko, DefiLlama, AIXBT, and source-aware research.",
   "type": "module",
   "license": "MIT",
-  "author": "Galleon Labs",
+  "author": {
+    "name": "Andrew Wilkinson (Galleon Labs)",
+    "url": "https://github.com/ADWilkinson"
+  },
   "homepage": "https://github.com/galleonlabs/crypto-defi-skills/tree/main/packages/data#readme",
   "repository": {
     "type": "git",
@@ -62,5 +65,6 @@
     "@types/node": "^24.3.0",
     "typescript": "^5.9.3",
     "yaml": "2.9.0"
-  }
+  },
+  "funding": "https://github.com/sponsors/ADWilkinson"
 }

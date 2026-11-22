@@ -60,7 +60,7 @@ Install only the packs you need. Each has its own npm version, CLI, plugin manif
 | [Agent](packages/agent) | [`galleon-defi-agent-skills@0.1.5`](https://www.npmjs.com/package/galleon-defi-agent-skills/v/0.1.5) | Official unsigned builders, playbooks and stateful simulation evidence |
 | [Prediction](packages/prediction) | [`galleon-defi-prediction-skills@0.1.2`](https://www.npmjs.com/package/galleon-defi-prediction-skills/v/0.1.2) | Polymarket rules, order-book depth, versioned ledgers and resolution evidence |
 | [Infra](packages/infra) | [`galleon-defi-infra-skills@0.4.7`](https://www.npmjs.com/package/galleon-defi-infra-skills/v/0.4.7) | RPC, wallet access, Alchemy, Coinbase and Hermes tool configuration |
-| [Data](packages/data) | [`galleon-defi-data-skills@0.6.5`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.6.5) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
+| [Data](packages/data) | [`galleon-defi-data-skills@0.7.0`](https://www.npmjs.com/package/galleon-defi-data-skills/v/0.7.0) | CoinGecko, DeFiLlama, AIXBT and source-aware cross-protocol evidence |
 | [LP](packages/lp) | [`galleon-lp-skills@0.7.7`](https://www.npmjs.com/package/galleon-lp-skills/v/0.7.7) | Uniswap, Aerodrome, Curve, Balancer, Revert and VFAT liquidity workflows |
 | [Hyperliquid](packages/hyperliquid) | [`galleon-hyperliquid-skills@0.4.7`](https://www.npmjs.com/package/galleon-hyperliquid-skills/v/0.4.7) | Public wallet cost audits, spot, perps, HIP-3, account modes and review |
 | [Lending](packages/lending) | [`galleon-defi-lending-skills@0.4.6`](https://www.npmjs.com/package/galleon-defi-lending-skills/v/0.4.6) | Aave, Morpho, Compound, Euler, Spark and Solana lending |
@@ -92,7 +92,7 @@ npx --package galleon-defi-lending-skills@0.4.6 defi-lending-skills catalog --js
 
 Node 20+ runs the published corpus CLIs. The CLI reads the bundled skills; the installer or Boomkin places them in your agent's discovery directory. Provider tools and optional helpers have their own runtime and access requirements.
 
-Claude Code can install packs through `/plugin marketplace add galleonlabs/crypto-defi-skills`, then `/plugin install galleon-defi-lending-skills@galleon-defi`. Gemini CLI installs a pack natively with `gemini skills install https://github.com/galleonlabs/crypto-defi-skills.git --path packages/lending/skills`. Each pack also carries a Codex plugin manifest. The separate [research plugin](plugins/defi-research/README.md) has its own ZIP installation path.
+Claude Code can install packs through `/plugin marketplace add galleonlabs/crypto-defi-skills`, then `/plugin install galleon-defi-lending-skills@galleon-defi`. Gemini CLI installs a pack natively with `gemini skills install https://github.com/galleonlabs/crypto-defi-skills.git --path packages/lending/skills`. Codex can [install a complete pack from the same marketplace](docs/GETTING-STARTED.md#codex). The separate [research plugin](plugins/defi-research/README.md) has its own ZIP installation path.
 
 See [the getting-started guide](docs/GETTING-STARTED.md#installation-options) for pack selection, plugins, pinned versions and first-use checks. Installation adds procedures; it does not authenticate a provider or grant wallet authority.
 
@@ -128,4 +128,6 @@ The root workspace is private. Packs publish independently under `<npm-name>@<ve
 
 Clearer examples, source-backed corrections and reproducible integration failures are welcome. Read the [contributor guide](CONTRIBUTING.md), or use [private vulnerability reporting](https://github.com/galleonlabs/crypto-defi-skills/security/advisories/new) for a security issue.
 
-[MIT licensed](LICENSE), created by [Andrew Wilkinson](https://andrewwilkinson.io) and [Galleon Labs](https://github.com/galleonlabs). Retain the copyright and permission notice when reusing copies or substantial portions; [ATTRIBUTION.md](ATTRIBUTION.md) explains credit and third-party notices.
+I’m [Andrew Wilkinson](https://github.com/ADWilkinson), the maintainer behind these [Galleon Labs](https://github.com/galleonlabs) skills. You can [find me on X](https://x.com/andrewwilkinson) or [sponsor my work on GitHub](https://github.com/sponsors/ADWilkinson).
+
+The skills use the [MIT license](LICENSE). Keep the copyright and permission notice with copies or substantial portions. See [attribution and third-party notices](ATTRIBUTION.md).

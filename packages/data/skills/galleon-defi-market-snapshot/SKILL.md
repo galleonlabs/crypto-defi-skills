@@ -5,7 +5,7 @@ license: MIT
 compatibility: Portable agent instructions. Bundled read-only helper requires Node.js 20+ and public HTTPS access. It reads no credentials, follows no redirects, does not retry and never signs, pays or creates a scheduler.
 metadata:
   author: Galleon Labs
-  version: "0.6.5"
+  version: "0.7.0"
 ---
 
 # Source-backed market evidence
