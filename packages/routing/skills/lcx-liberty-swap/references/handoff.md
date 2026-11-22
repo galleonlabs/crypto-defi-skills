@@ -39,6 +39,8 @@ All five are payable and return `uint256 amountOut`. Selectors were recomputed f
 - `Hop` is `(uint8 family, address pool, address tokenIn, address tokenOut, uint256 aux)`.
 - `FeeSwapArgs` is `(address tokenIn, address tokenOut, uint256 totalIn, uint256 minAmountOut, address recipient, uint256 deadline, address integrator)`.
 
+Live check, 2026-11-22: the `/v1/chains` routers on Ethereum, Base, Arbitrum and Polygon implement `swapSplit` and `makerSwap`, and recent Ethereum swaps used `swapSplit`. `swapSplitWithFee`, `swapSplitViaPropAMM` and `swapSplitWithPropAMMSplit` reverted there as unknown selectors in an `eth_call`, so a build carrying one would revert onchain. The routers also implement `swapSplitAllowance` and `permitBatchAndSwap`, which this check does not cover; under check 3 a build with either is a stop.
+
 Decode with Foundry's `cast`, choosing the signature whose selector matches the first four bytes of `swap.data`:
 
 ```bash
@@ -53,4 +55,4 @@ cast decode-calldata "makerSwap((address,address,uint256,uint256,address,uint256
 
 ## Cross-chain builds
 
-A cross-chain `transactionRequest` targets the cross router named by the build's `approval.target`, not one of the entrypoints above, and no published ABI or live address source covers it. Check `transactionRequest.chainId`, `approval.amount`, the priced recipient and `endToEndMinOut` as the skill describes, and report the target and calldata as not independently decoded.
+A cross-chain `transactionRequest` targets the cross router named by the build's `approval.target`, not one of the entrypoints above, and no published ABI or live address source covers it. Check `transactionRequest.chainId`, `approval.amount`, the priced recipient and `endToEndMinOut` as the skill describes, and report the target and calldata as not independently decoded. The target is not always an LCX contract: on 2026-11-22 a `DIRECT` USDC quote from Base to Arbitrum named Across's Base SpokePool as `approval.target`, matching the SpokePool Across's HubPool records for Base.
