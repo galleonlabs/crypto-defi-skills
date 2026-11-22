@@ -16,7 +16,7 @@ Prefer a focused protocol procedure for a named venue. Broad skills serve compar
 
 | Check | Evidence |
 | --- | --- |
-| `bun run check` | Gate tests (release integrity, validation boundaries and security), type checks, metadata, local resource boundaries, discovery and release drift |
+| `bun run check` | Gate tests (release integrity, validation boundaries and security), type checks, metadata, local resource boundaries (every `scripts/`, `examples/` or `references/` path a skill names must exist, and a compatibility line may mention a helper, script or example only when the skill ships one), a hardcoded CLI version matching its manifest, discovery and release drift |
 | `bun run evals` | Routing and behavior fixtures for every pack, required by CI |
 | `validate-agent-skills packages/<pack>/skills` | Independent Agent Skills format validation |
 | `bun run pack` and `bun run smoke` | Package contents, clean independent installs, Node CLIs and ESM exports |

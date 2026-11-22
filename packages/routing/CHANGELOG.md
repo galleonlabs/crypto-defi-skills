@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0 - 2026-11-22
+
+- Add the standalone `lcx-liberty-swap` procedure for LCX Liberty DEX quotes and unsigned same-chain or cross-chain builds. It stops before any request when `LCX_API_KEY` is unset, names the gas coin by its token contract where `/v1/chains` reports `nativeIsToken`, compares guaranteed minimum output in the output token's own units net of separately paid swap and approval gas without subtracting fees the output already carries, and hands off only when the build matches the live `/v1/chains` router, chain, native value and decoded tokens, amount, recipient, minimum and deadline. Its handoff reference records which router entrypoints were live on 2026-11-22.
+
 ## 0.4.5 - 2026-11-17
 
 - 0x: in the AllowanceHolder flow the spender and `transaction.to` are both AllowanceHolder; Settler is the target only in the Permit2 flow.
