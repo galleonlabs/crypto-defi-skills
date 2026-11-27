@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Read-only EVM RPC and official protocol APIs or UI. No signer included."
 metadata:
   author: "Galleon Labs"
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # Uniswap Swap
