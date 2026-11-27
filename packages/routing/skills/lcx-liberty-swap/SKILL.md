@@ -5,7 +5,7 @@ license: MIT
 compatibility: "Read-only protocol API through existing configured tools. Needs LCX_API_KEY in the environment. No signer included."
 metadata:
   author: "Galleon Labs"
-  version: "0.5.0"
+  version: "0.5.1"
 ---
 
 # LCX Liberty DEX swap
@@ -42,17 +42,17 @@ Matching addresses alone do not bind a build to the request. Re-read `GET /v1/ch
 
 - `swap.chainId` is the requested chain, `routerDeployed` is true, and `swap.to`, the quote's `spender` and the chain's live `router` are one address. A `to` that equals `spender` but not `router` is a stop.
 - `swap.value` equals the amount sold when selling the native coin and is 0 otherwise, including every sale on a `nativeIsToken` chain.
-- `swap.data` decodes against one of the router's five swap entrypoints, and its sell and buy tokens, amount sold, recipient, minimum output (at least the quote's `minimumAmount` and the user's own limit) and future deadline match the reviewed request and quote, with the maker-leg and integrator rules satisfied.
+- `swap.data` decodes against `swapSplit` or `makerSwap`, and its sell and buy tokens, amount sold, recipient, minimum output (at least the quote's `minimumAmount` and the user's own limit) and future deadline match the reviewed request and quote, with the maker-leg checks satisfied when applicable.
 
-Never keep a router address list: the live `/v1/chains` row is the source. On any mismatch, report the failed check and re-quote; never edit calldata.
+Use the live `/v1/chains` row to bind the handoff. Check that the method is deployed on that chain before returning calldata. On OP Mainnet, the checked deployment accepts `swapSplit`; stop and re-quote if the build uses `makerSwap`. On any mismatch, report the failed check and re-quote; never edit calldata.
 
-Approve only that router, for the finite sell amount, after checking `GET /v1/allowance`. Native input needs no approval (`nativeIn: true`). `simulation.status` `ok` with `deliveredVsQuotedBps` near zero supports the plan but is not a fill. An ERC-20 build made before approval returns `status` `skipped` with `why` `awaiting_allowance`: report the simulation as not yet run, then rebuild and rerun the checks after the approval receipt. Never request an integrator; a decoded integrator other than the zero address is a stop.
+Approve only that router, for the finite sell amount, after checking `GET /v1/allowance`. Native input needs no approval (`nativeIn: true`). `simulation.status` `ok` with `deliveredVsQuotedBps` near zero supports the plan but is not a fill. An ERC-20 build made before approval returns `status` `skipped` with `why` `awaiting_allowance`: report the simulation as not yet run, then rebuild and rerun the checks after the approval receipt. Build without an integrator. Stop if the quote or build applies an integrator fee.
 
 ## Cross chains
 
 Add `toChainId` and `recipient` to the quote. The answer is a journey: read `shape`, `legs`, `endToEndMinOut`, `endToEndOut`, `etaSec` and `expiresAt`. `endToEndMinOut` is the floor for the whole journey; the last leg's `minOut` is not. Each bridge leg is a short-lived offer, so read `expiresAt` instead of assuming 120 seconds. `bridge_too_small` and `bridge_too_large` carry the limit in their message, and refused options come back in `rejected` with a reason.
 
-The build returns one `transactionRequest` on the source chain and an `approval.target`, the cross router, which can differ from the quote's spender: approve the build's target. Stop unless `transactionRequest.chainId` is the source chain, `approval.amount` equals the amount sold, the build is for the recipient the quote was priced for and `endToEndMinOut` meets the user's limit. No published ABI or live address source covers the cross router, so report its target and calldata as not independently decoded rather than as a bound handoff. A confirmed source transaction is not delivery. Poll `tracking.status` (`/v1/bridge/transfers/{transferId}`) and never send a second transfer to repair a pending one.
+The build returns one `transactionRequest` on the source chain and an `approval.target`, the cross router, which can differ from the quote's spender: approve the build's target. Stop unless `transactionRequest.chainId` is the source chain, `approval.amount` equals the amount sold, the build is for the recipient the quote was priced for and `endToEndMinOut` meets the user's limit. Report the target and calldata as not independently decoded. The build can use an adapter's contract, so the LCX method table alone cannot bind that transaction. A confirmed source transaction is not delivery. Poll `tracking.status` (`/v1/bridge/transfers/{transferId}`) and never send a second transfer to repair a pending one.
 
 ## Resolve the result
 
@@ -64,4 +64,4 @@ Synthetic quote sells 0.01 ETH on Base for USDC: `output.amount` 18.226954 USDC,
 
 ## Sources and limits
 
-Primary documentation reviewed 2026-11-17. Response shapes were checked against the live API without a key and a non-production instance; no account authorization, signing or financial action was tested. [Read recipes and current primary sources](references/reads.md) and the [handoff check](references/handoff.md) ship with this skill. Recheck supported chains and schemas before a consequential handoff. Research adds no permission to trade, transfer or change account authority.
+Primary documentation reviewed 2026-11-17. Router methods and deployments checked 2026-11-27. Response shapes were checked against the live API without a key and a non-production instance; no account authorization, signing or financial action was tested. [Read recipes and current primary sources](references/reads.md) and the [handoff check](references/handoff.md) ship with this skill. Recheck supported chains and schemas before a consequential handoff. Research adds no permission to trade, transfer or change account authority.
